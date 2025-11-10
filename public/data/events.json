@@ -1,0 +1,101 @@
+[
+  {
+    "id": "La-voz-de-la-tierra",
+    "title": "Voyager 1 ",
+    "date": "1977-09-05",
+    "category": "Espacio ",
+    "imageUrl": "/images/Voyager-1.jpg",
+    "summary": [
+      "En 1977, la NASA lanzó la Voyager 1, una sonda destinada a explorar Júpiter y Saturno, convirtiéndose en la actualidad en el objeto humano más alejado de la Tierra."
+    ],
+    "context": [
+      "En la década de 1970, la NASA se encontraba en plena era dorada de la exploración espacial. Las misiones Apolo habían terminado, y la agencia buscaba nuevos horizontes más allá de la Luna. Fue entonces cuando los científicos descubrieron algo extraordinario: una alineación única de los planetas exteriores —Júpiter, Saturno, Urano y Neptuno— que ocurriría solo una vez cada 176 años.",
+      "Esta disposición permitiría que una nave pudiera aprovechar la gravedad de cada planeta como impulso, acelerándose sin gastar tanto combustible y visitando varios mundos en un solo viaje. A esto se le conoce como asistencia gravitacional. Así nació el ambicioso Proyecto Voyager.",
+      "La NASA diseñó dos sondas gemelas, Voyager 1 y Voyager 2, con una misión doble:",
+      "Explorar los planetas gigantes del Sistema Solar exterior, en especial Júpiter y Saturno.",
+      "Estudiar sus lunas, anillos y campos magnéticos, obteniendo imágenes y datos científicos jamás vistos.",
+      "Aunque se planeó que Voyager 2 continuara hacia Urano y Neptuno, Voyager 1 tenía un propósito más enfocado: realizar un sobrevuelo cercano a Titán, la luna de Saturno, que intrigaba a los científicos por su atmósfera espesa y misteriosa.",
+      "Esa maniobra determinó que Voyager 1 siguiera una trayectoria más vertical, alejándose del plano de los planetas… rumbo al infinito.",
+      "Durante su paso por los planetas, Voyager 1 revolucionó nuestro conocimiento del Sistema Solar:",
+      "En Júpiter, mostró tormentas gigantes y descubrió volcanes activos en Ío, una de las lunas de Júpiter, la primera evidencia de actividad volcánica fuera de la Tierra.",
+      "En Saturno, reveló la complejidad de sus anillos y los misterios de Titán, confirmando su densa atmósfera de nitrógeno.",
+      "Después de ese punto, ya no había más destinos planetarios en su ruta. Así, la misión principal se dio por completada, pero la NASA decidió mantenerla activa como Misión Interestelar, para estudiar los límites del entorno solar.",
+      "Con el tiempo, la sonda siguió alejándose a velocidades enormes (más de 60 000 km/h).",
+      "En 2012, Voyager 1 cruzó la heliopausa, la frontera donde termina la influencia del viento solar y comienza el espacio interestelar.",
+      "Fue la primera nave humana en salir del Sistema Solar."
+    ],
+    "keyFacts": [
+      {
+        "title": "El viajero más lejano",
+        "description": "La Voyager 1 es el objeto humano que más se ha alejado de la Tierra: más de 24 mil millones de kilómetros (y aumentando cada segundo). Su señal tarda más de 22 horas en llegar a nosotros"
+      },
+      {
+        "title": "Lanzada después de su hermana",
+        "description": "Aunque lleva el número 1, la Voyager 1 fue lanzada 16 días después que la Voyager 2 (el 5 de septiembre de 1977). Sin embargo, siguió una ruta más rápida y la adelantó en su viaje"
+      },
+      {
+        "title": "Primera nave en el espacio interestelar",
+        "description": "El 25 de agosto de 2012, cruzó la heliopausa, el límite donde termina la influencia del Sol. Se convirtió así en la primera nave en llegar al espacio interestelar"
+      },
+      {
+        "title": "El Disco de Oro",
+        "description": "Lleva un Disco de Oro con sonidos, saludos e imágenes de la Tierra: 90 minutos de música, saludos en 55 idiomas y sonidos naturales (truenos, olas, risas, animales, etc.). Incluye desde Bach y Beethoven hasta Chuck Berry con Johnny B. Goode"
+      },
+      {
+        "title": "Instrucciones para extraterrestres",
+        "description": "El disco viene acompañado por un diagrama grabado en la cubierta, que explica con símbolos cómo reproducirlo. Usa pulsos de hidrógeno para definir el tiempo y un mapa con la posición del Sol respecto a 14 púlsares. Una forma de poder decirle a otras civilizaciones extraterrestres en qué lugar del cosmos nos encontramos"
+      },
+      {
+        "title": "La voz de la Tierra",
+        "description": "Entre los saludos grabados hay mensajes como: Hola desde los niños del planeta Tierra, dicho por una niña estadounidense de 6 años. También se escuchan saludos en español, latín, griego antiguo, árabe, chino y más"
+      },
+      {
+        "title": "Energía limitada, pero fiel",
+        "description": "Funciona con un generador nuclear de plutonio que produce cada año menos energía. Aun así, más de 45 años después del lanzamiento, sigue enviando señales a la Tierra"
+      },
+      {
+        "title": "Una señal más débil que una bombilla",
+        "description": "La potencia de transmisión de su antena es de apenas 23 vatios, menos que una bombilla doméstica. Sin embargo, el gigantesco sistema de antenas Deep Space Network logra captar su señal"
+      },
+      {
+        "title": "Durará miles de millones de años",
+        "description": "Incluso cuando sus instrumentos se apaguen, la Voyager 1 seguirá viajando durante miles de millones de años, llevando consigo el Disco de Oro: la huella más duradera de la humanidad"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "1972",
+        "event": "Comienza el diseño del Proyecto Voyager, aprovechando la futura alineación de los planetas exteriores"
+      },
+      {
+        "date": "1975–1977",
+        "event": "Se construyen las dos sondas gemelas Voyager 1 y Voyager 2, con 11 instrumentos científicos cada una"
+      },
+      {
+        "date": "1977-09-05",
+        "event": "Despegue de la Voyager 1 a bordo de un cohete Titan IIIE-Centaur. Su objetivo inicial: explorar Júpiter y Saturno"
+      },
+      {
+        "date": "1979-03-05",
+        "event": "Llega a Júpiter, enviando imágenes inéditas de sus nubes y de la Gran Mancha Roja. Descubre volcanes activos en Ío, el primer hallazgo de vulcanismo fuera de la Tierra"
+      },
+      {
+        "date": "1980-11-12",
+        "event": "Confirma la existencia de una atmósfera densa en Titán, lo que cambia su trayectoria: la nave se desvía hacia el espacio exterior en lugar de continuar hacia Urano y Neptuno"
+      },
+      {
+        "date": "2012-08-25",
+        "event": "La Voyager 1 cruza la heliopausa, convirtiéndose en la primera nave humana en llegar al espacio interestelar. Desde entonces estudia las partículas y el campo magnético del medio interestelar"
+      },
+      {
+        "date": "2025",
+        "event": "Aún envía datos a la NASA con energía limitada. Se prevé que sus instrumentos científicos funcionen hasta aproximadamente 2030. Luego seguirá su viaje por miles de millones de años, llevando el Disco de Oro como mensaje eterno de la humanidad"
+      }
+    ],
+    "consequences": [
+      "La misión Voyager 1 marcó un antes y un después en la historia de la exploración espacial.",
+      "No solo expandió nuestro conocimiento sobre los planetas gigantes y sus lunas, sino que también demostró que la humanidad puede enviar su voz más allá de los límites del Sol.",
+      "Su viaje simboliza la unión entre ciencia, curiosidad y esperanza: un pequeño artefacto creado por manos humanas que sigue viajando entre las estrellas, llevando consigo el mensaje eterno de que, en un rincón del universo, existió una especie que quiso comprenderlo todo."
+    ]
+  }
+]

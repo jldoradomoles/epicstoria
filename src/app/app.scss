@@ -1,0 +1,14 @@
+/* Estilos específicos del componente App */
+
+/* Estilos de la tarjeta con animación sutil */
+.history-card {
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.history-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.3),
+    0 8px 10px -6px rgba(0, 0, 0, 0.2);
+  border-color: var(--color-primary);
+}
