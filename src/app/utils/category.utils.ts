@@ -11,11 +11,13 @@ export const CATEGORY_COLORS: { [key: string]: string } = {
   Política: 'bg-yellow-600',
   Libertad: 'bg-purple-600',
   Tecnología: 'bg-indigo-600',
-  Historia: 'bg-blue-600',
+  Historia: 'bg-red-600',
   Cultura: 'bg-pink-600',
   Economía: 'bg-orange-600',
   Deporte: 'bg-teal-600',
   Arte: 'bg-rose-600',
+  Monumentos: 'bg-yellow-600',
+  Espacio: 'bg-green-600',
 };
 
 /**
@@ -24,7 +26,9 @@ export const CATEGORY_COLORS: { [key: string]: string } = {
  * @returns Clase CSS de Tailwind para el color de fondo
  */
 export function getCategoryColor(category: string): string {
-  return CATEGORY_COLORS[category] || 'bg-gray-600';
+  // Limpiar espacios en blanco al principio y final
+  const cleanCategory = category.trim();
+  return CATEGORY_COLORS[cleanCategory] || 'bg-gray-600';
 }
 
 /**

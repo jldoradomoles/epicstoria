@@ -1,13 +1,15 @@
+import { NgClass } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Event } from '../../models/event.model';
 import { DateFormatPipe } from '../../pipes/date-format.pipe';
+import { getCategoryColor } from '../../utils/category.utils';
 import { getPlainText } from '../../utils/text.utils';
 
 @Component({
   selector: 'app-event-cards',
-  imports: [RouterLink, DateFormatPipe],
+  imports: [RouterLink, DateFormatPipe, NgClass],
   templateUrl: './event-cards.html',
   styleUrl: './event-cards.scss',
 })
@@ -18,7 +20,8 @@ export class EventCards implements OnInit {
 
   readonly defaultImage = 'https://placehold.co/600x400/1F2937/FFFFFF?text=Evento+Hist%C3%B3rico';
 
-  // Hacer la función disponible en el template
+  // Hacer las funciones disponibles en el template
+  getCategoryColor = getCategoryColor;
   getPlainText = getPlainText;
 
   ngOnInit() {

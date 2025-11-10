@@ -1,5 +1,5 @@
 <!-- Sección de Tarjetas de Eventos Históricos -->
-<section id="eventos" class="bg-gray-900 py-20">
+<section id="eventos" class="py-20">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <h3
       class="mb-16 inline-block border-b-4 border-blue-500/50 pb-2 text-center text-4xl font-bold text-white"
@@ -10,7 +10,7 @@
     <!-- Grid de Tarjetas (Responsive) -->
     <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
       @for (event of events; track event.id) {
-        <div class="history-card flex flex-col overflow-hidden rounded-xl bg-gray-800 shadow-2xl">
+        <div class="history-card flex flex-col overflow-hidden rounded-xl shadow-2xl">
           <div class="relative h-56 bg-gradient-to-tr from-gray-700 to-gray-900">
             <img
               [src]="event.imageUrl"
@@ -19,20 +19,21 @@
               (error)="onImageError($event)"
             />
             <span
-              class="absolute left-4 top-4 rounded-full bg-red-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white"
+              class="text-color absolute left-4 top-4 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider"
+              [ngClass]="getCategoryColor(event.category)"
             >
               {{ event.category }}
             </span>
           </div>
           <div class="flex flex-grow flex-col p-6">
-            <p class="mb-2 text-sm font-semibold text-blue-400">{{ event.date | dateFormat }}</p>
-            <h4 class="mb-3 text-2xl font-bold text-white">{{ event.title }}</h4>
-            <p class="mb-4 text-base text-gray-400 line-clamp-3">
+            <p class="text-color mb-2 text-sm font-semibold">{{ event.date | dateFormat }}</p>
+            <h4 class="text-color mb-3 text-2xl font-bold">{{ event.title }}</h4>
+            <p class="text-color mb-4 text-base line-clamp-3">
               {{ getPlainText(event.summary) }}
             </p>
             <a
               [routerLink]="['/evento', event.id]"
-              class="mt-4 self-start text-sm font-medium text-blue-400 hover:text-blue-300"
+              class="text-color mt-4 self-start text-sm font-medium hover:text-blue-300"
             >
               Ver Más →
             </a>
@@ -41,7 +42,7 @@
       }
 
       <!-- Tarjeta de Llamada a la Acción -->
-      <div
+      <!-- <div
         class="flex flex-col items-center justify-center overflow-hidden rounded-xl border-2 border-dashed border-blue-500 bg-blue-900/40 p-8 text-center shadow-2xl transition duration-300 hover:bg-blue-900/60"
       >
         <svg
@@ -58,7 +59,7 @@
             d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
           ></path>
         </svg>
-        <h4 class="mb-2 text-xl font-bold text-white">¿Qué Sucederá Mañana?</h4>
+        <h4 class="mb-2 text-xl font-bold">¿Qué Sucederá Mañana?</h4>
         <p class="mb-6 text-sm text-gray-300">
           La historia continúa. Explora miles de sucesos diarios y sus imágenes conceptuales.
         </p>
@@ -67,7 +68,7 @@
         >
           Ver Calendario Completo
         </button>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>

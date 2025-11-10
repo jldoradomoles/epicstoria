@@ -9,15 +9,17 @@
 :root {
   --color-primary: #1e40af; /* Azul Intenso */
   --color-secondary: #dc2626; /* Rojo para destacar */
-  --color-text-light: #f9fafb;
+  --color-text-light: #e1c7b1;
   --color-bg-dark: #111827;
   --color-card-bg: #1f2937;
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--color-bg-dark);
-  color: var(--color-text-light);
+  background-color: #e8dcc4; /* color base beige/crema */
+  background-image: url('/images/fondo_home.jpg'); /* patrón sutil */
+  background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 /* Estilos de la tarjeta con animación sutil */
@@ -28,7 +30,7 @@ body {
 .history-card:hover {
   transform: translateY(-5px) scale(1.01);
   box-shadow:
-    0 20px 25px -5px rgba(0, 0, 0, 0.3),
-    0 8px 10px -6px rgba(0, 0, 0, 0.2);
-  border-color: var(--color-primary);
+    19px 20px 25px 6px rgba(0, 0, 0, 0.3),
+    17px 20px 9px 0px rgba(0, 0, 0, 0.2);
+  border-color: whitesmoke;
 }
