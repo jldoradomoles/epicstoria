@@ -34,3 +34,25 @@ body {
     17px 20px 9px 0px rgba(0, 0, 0, 0.2);
   border-color: whitesmoke;
 }
+
+.text-color-dark {
+  color: #1f150c;
+}
+
+.text-color {
+  color: #e1c7b1;
+}
+
+.container-custom {
+  background-color: #1f150c;
+  color: #e1c7b1;
+}
+
+.btns-color {
+  background-color: #fcf8d8;
+  color: #1f150c;
+}
+
+.btns-color:hover {
+  background-color: #f0e6b8;
+}
