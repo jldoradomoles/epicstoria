@@ -5,6 +5,7 @@ import { RouterLink } from '@angular/router';
 import { Event } from '../../models/event.model';
 import { DateFormatPipe } from '../../pipes/date-format.pipe';
 import { getCategoryColor } from '../../utils/category.utils';
+import { handleImageError } from '../../utils/image.utils';
 import { getPlainText } from '../../utils/text.utils';
 
 @Component({
@@ -27,9 +28,10 @@ export class EventCards implements OnInit {
   ngOnInit() {
     console.log('Loading events from /data/events.json');
     this.http.get<Event[]>('/data/events.json').subscribe({
-      next: (data) => {
+      next: async (data) => {
         console.log('Events loaded successfully:', data);
-        this.events = data;
+        // Procesar las URLs de imágenes para asegurar formatos correctos
+        this.events = await this.processEventImages(data);
         this.cdr.markForCheck();
       },
       error: (error) => {
@@ -38,7 +40,33 @@ export class EventCards implements OnInit {
     });
   }
 
-  onImageError(event: any) {
-    (event.target as HTMLImageElement).src = this.defaultImage;
+  private async processEventImages(events: Event[]): Promise<Event[]> {
+    // Si quieres procesar automáticamente todas las imágenes al cargar,
+    // descomenta el código siguiente. Por ahora se maneja bajo demanda con onImageError.
+
+    /*
+    const processedEvents = await Promise.all(
+      events.map(async (event) => {
+        if (event.imageUrl && !event.imageUrl.includes('.')) {
+          // Si no tiene extensión, buscar automáticamente
+          try {
+            const workingUrl = await tryLoadImageFormats(event.imageUrl);
+            return { ...event, imageUrl: workingUrl };
+          } catch {
+            return event;
+          }
+        }
+        return event;
+      })
+    );
+    return processedEvents;
+    */
+
+    return events;
+  }
+
+  async onImageError(event: any) {
+    const imgElement = event.target as HTMLImageElement;
+    await handleImageError(event, imgElement.src, this.defaultImage);
   }
 }

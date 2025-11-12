@@ -5,3 +5,17 @@
 .text-color {
   color: #e1c7b1;
 }
+
+.container-custom:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow:
+    19px 20px 25px 6px rgba(0, 0, 0, 0.3),
+    17px 20px 9px 0px rgba(0, 0, 0, 0.2);
+  border-color: whitesmoke;
+}
+
+/* Estilos de la tarjeta con animación sutil */
+.container-custom {
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}

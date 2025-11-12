@@ -6,7 +6,6 @@
  * Mapa de colores por categoría
  */
 export const CATEGORY_COLORS: { [key: string]: string } = {
-  Hazaña: 'bg-red-600',
   Ciencia: 'bg-green-600',
   Política: 'bg-yellow-600',
   Libertad: 'bg-purple-600',
@@ -14,10 +13,13 @@ export const CATEGORY_COLORS: { [key: string]: string } = {
   Historia: 'bg-red-600',
   Cultura: 'bg-pink-600',
   Economía: 'bg-orange-600',
-  Deporte: 'bg-teal-600',
   Arte: 'bg-rose-600',
-  Monumentos: 'bg-yellow-600',
-  Espacio: 'bg-green-600',
+  Monumentos: 'bg-gray-600',
+  Espacio: 'bg-blue-600',
+  Descubrimientos: 'bg-teal-600',
+  'Poder y Corrupción': 'bg-black',
+  Catástrofes: 'bg-gray-800',
+  'Personajes históricos': 'bg-yellow-700',
 };
 
 /**

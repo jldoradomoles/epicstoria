@@ -3,7 +3,7 @@
     "id": "La-voz-de-la-tierra",
     "title": "Voyager 1 ",
     "date": "1977-09-05",
-    "category": "Ciencia ",
+    "category": "Espacio ",
     "imageUrl": "/images/Voyager-1.jpg",
     "summary": [
       "En 1977, la NASA lanzó la Voyager 1, una sonda destinada a explorar Júpiter y Saturno, convirtiéndose en la actualidad en el objeto humano más alejado de la Tierra."
@@ -72,19 +72,19 @@
         "event": "Se construyen las dos sondas gemelas Voyager 1 y Voyager 2, con 11 instrumentos científicos cada una"
       },
       {
-        "date": "1977-09-05",
+        "date": "05-09-1977",
         "event": "Despegue de la Voyager 1 a bordo de un cohete Titan IIIE-Centaur. Su objetivo inicial: explorar Júpiter y Saturno"
       },
       {
-        "date": "1979-03-05",
+        "date": "05-03-1979",
         "event": "Llega a Júpiter, enviando imágenes inéditas de sus nubes y de la Gran Mancha Roja. Descubre volcanes activos en Ío, el primer hallazgo de vulcanismo fuera de la Tierra"
       },
       {
-        "date": "1980-11-12",
+        "date": "12-11-1980",
         "event": "Confirma la existencia de una atmósfera densa en Titán, lo que cambia su trayectoria: la nave se desvía hacia el espacio exterior en lugar de continuar hacia Urano y Neptuno"
       },
       {
-        "date": "2012-08-25",
+        "date": "25-08-2012",
         "event": "La Voyager 1 cruza la heliopausa, convirtiéndose en la primera nave humana en llegar al espacio interestelar. Desde entonces estudia las partículas y el campo magnético del medio interestelar"
       },
       {
@@ -179,11 +179,11 @@
         "event": "Se construye la estatua en los talleres de Bartholdi en París, con estructura interna diseñada por Gustave Eiffel."
       },
       {
-        "date": "1884-07-04",
+        "date": "04-07-1884",
         "event": "Francia celebra la finalización oficial de la estatua en París y la entrega simbólicamente a Estados Unidos."
       },
       {
-        "date": "1885-06-17",
+        "date": "17-06-1885",
         "event": "El barco Isère llega al puerto de Nueva York con la estatua desmontada en 350 piezas y 214 cajas. Miles de personas la reciben con júbilo."
       },
       {
@@ -200,7 +200,7 @@
     "id": "Juicios-por-traición",
     "title": "Roma",
     "date": "103-a.C.",
-    "category": "Historia",
+    "category": "Poder y Corrupción",
     "imageUrl": "/images/Roma-juicios-por-traición.jpg",
     "summary": [
       "Los juicios por traición surgieron en Roma en el 103 a. C. con la Ley Appuleia de Maiestas, creada para castigar a quienes pusieran en riesgo al pueblo o al ejército romano.",
@@ -308,6 +308,323 @@
       "Lo que comenzó como una medida para proteger la seguridad del Estado terminó convirtiéndose en un instrumento de miedo y control político. Bajo emperadores como Tiberio, Calígula o Nerón, la acusación de Maiestas sirvió para eliminar rivales, castigar la disidencia y consolidar el culto al poder personal.",
       "Sin embargo, también muestran cómo la sociedad romana aprendió de sus excesos. Con los emperadores adoptivos, el uso de estos juicios se moderó, y Roma entró en una etapa de mayor estabilidad y racionalidad jurídica.",
       ""
+    ]
+  },
+  {
+    "id": "El-viaje-de-Colón",
+    "title": "El Descubrimiento de América",
+    "date": "1492-10-12",
+    "category": "Descubrimientos",
+    "imageUrl": "/images/El-descubrimiento-de-America.jpg",
+    "summary": [
+      "Cristóbal Colón y su expedición, financiada por los Reyes Católicos, llegaron el 12 de octubre de 1492 a una isla del actual archipiélago de las Bahamas, llamada San Salvador, tras más de dos meses de viaje desde Palos de la Frontera. Rodrigo de Triana, desde La Pinta, fue el primero en avistar tierra. Este acontecimiento marcó el inicio del encuentro entre Europa y América, cambiando para siempre el curso de la historia."
+    ],
+    "context": [
+      "A finales del siglo XV, el mundo conocido por los europeos se extendía solo por Europa, África y Asia. Las rutas comerciales hacia Oriente, esenciales para obtener especias, seda y otros productos valiosos, estaban controladas por el Imperio Otomano, que tras conquistar Constantinopla en 1453, bloqueó los caminos tradicionales entre Europa y Asia. Esto impulsó a las potencias europeas a buscar nuevas rutas marítimas.",
+      "En aquella época, Europa vivía una etapa de cambio profundo. El pensamiento medieval comenzaba a transformarse gracias a los avances en cartografía, astronomía y navegación, impulsados por el Renacimiento. El uso de nuevos instrumentos como la brújula, el astrolabio y el cuadrante permitía orientarse con mayor precisión en mar abierto, alentando a los exploradores a desafiar los límites del mundo conocido.",
+      "Mientras Portugal exploraba la costa africana hacia el sur, el navegante genovés Cristóbal Colón propuso una alternativa audaz: llegar a Asia navegando hacia el oeste, atravesando el Atlántico. Su proyecto fue rechazado en varias cortes, pero encontró apoyo en Castilla, donde los Reyes Católicos, Isabel I y Fernando II, recién triunfantes tras la conquista de Granada, vieron en su plan una oportunidad de expansión política, comercial y religiosa.",
+      "El 3 de agosto de 1492, Colón partió del puerto de Palos de la Frontera (Huelva) con tres embarcaciones: La Santa María, La Pinta y La Niña. Tras una escala en las Islas Canarias, la expedición se adentró en mares desconocidos durante más de dos meses, guiada por la fe, el cálculo y la determinación.",
+      "Durante la larga travesía, el cansancio y la incertidumbre comenzaron a apoderarse de la tripulación. La ausencia de tierra y el temor a lo desconocido provocaron tensiones y rumores de motín. Colón, firme en sus cálculos y convencido de su destino, logró mantener el control prometiendo regresar si en tres días no avistaban costas. A la madrugada del 12 de octubre de 1492, el grito de “¡Tierra!” rompió el silencio del océano, cambiando para siempre la historia del mundo.",
+      "La expedición había llegado a una isla del actual archipiélago de las Bahamas, llamada Guanahaní por los pueblos taínos y rebautizada San Salvador por Colón. Creyendo haber alcanzado las Indias Orientales, tomó posesión en nombre de los Reyes Católicos e inició la exploración de nuevas tierras caribeñas, como Cuba y La Española.",
+      "Tras varios meses de exploración, Colón emprendió el regreso a España el 15 de enero de 1493 a bordo de La Niña y La Pinta. Llegó al puerto de Palos de la Frontera el 15 de marzo del mismo año, siendo recibido como un héroe."
+    ],
+    "keyFacts": [
+      {
+        "title": "El viaje comenzó con una condena",
+        "description": "Colón zarpó del puerto de Palos de la Frontera el 3 de agosto de 1492, un puerto elegido no por azar, sino porque el pueblo estaba obligado por una sanción real a proporcionar dos embarcaciones y tripulación para la expedición."
+      },
+      {
+        "title": "El rumbo desconocido",
+        "description": "Nadie sabía qué habría al navegar hacia el oeste. Muchos marineros creían que el océano terminaba en un abismo o que monstruos marinos habitaban sus profundidades. Fue un viaje de auténtica fe y valentía."
+      },
+      {
+        "title": "América... sin saberlo",
+        "description": "Colón nunca supo que había descubierto un nuevo continente. Murió convencido de que había llegado a las costas de Asia, a las “Indias Orientales”."
+      },
+      {
+        "title": "Rodrigo de Triana, el olvidado",
+        "description": "Aunque fue Rodrigo de Triana quien primero gritó “¡Tierra!”, Colón se atribuyó el mérito del descubrimiento alegando que había visto una luz la noche anterior. Rodrigo nunca recibió la recompensa prometida."
+      },
+      {
+        "title": "La Pinta fue más rápida",
+        "description": "De las tres carabelas, La Pinta era la más veloz y maniobrable, por eso fue la primera en avistar tierra. Sin embargo, la nave capitana era La Santa María, la más grande de las tres."
+      },
+      {
+        "title": "El naufragio de la Santa María",
+        "description": "La nave capitana encalló la noche de Navidad de 1492 frente a las costas de La Española. Con su madera, Colón ordenó construir el primer asentamiento europeo en América: el Fuerte de la Navidad."
+      },
+      {
+        "title": "Un viaje que cambió el mapa",
+        "description": "Antes de Colón, el mapa del mundo terminaba en Europa, África y Asia. Después de 1492, los cartógrafos comenzaron a redibujar el planeta, dando origen a la visión global moderna."
+      },
+      {
+        "title": "El apoyo de los Reyes Católicos",
+        "description": "Isabel I de Castilla fue quien apostó por Colón cuando nadie más creyó en su proyecto. Vendió parte de sus joyas para financiar el viaje, aunque algunos historiadores matizan que fue más una decisión de Estado que un acto personal."
+      },
+      {
+        "title": "Colón murió sin gloria",
+        "description": "Cristóbal Colón murió en Valladolid en 1506, sin saber la magnitud de su hazaña y sin reconocimiento pleno. Sus restos fueron trasladados varias veces entre España y América, y aún existe debate sobre su paradero final."
+      },
+      {
+        "title": "El inicio de la era global",
+        "description": "El encuentro de 1492 marcó el comienzo de la globalización: intercambio de culturas, alimentos, animales, enfermedades y conocimientos entre Europa, África y América. Nada volvió a ser igual."
+      }
+    ],
+    "timeline": [
+      {
+        "date": "1492-03-08",
+        "event": "La expedición parte del puerto de Palos de la Frontera (Huelva) con tres embarcaciones: La Santa María, La Pinta y La Niña."
+      },
+      {
+        "date": "1492-06-09",
+        "event": "Tras una breve escala en las Islas Canarias, las naves retoman rumbo hacia el oeste por mares desconocidas."
+      },
+      {
+        "date": "1492-10-10",
+        "event": "La tripulación, cansada y temerosa, amenaza con amotinarse por no ver tierra. Colón logra calmarlos prometiendo regresar si en tres días no avistaban costas."
+      },
+      {
+        "date": "1492-12-10",
+        "event": "Rodrigo de Triana, desde La Pinta, grita “¡Tierra!” al avistar una isla del actual archipiélago de las Bahamas, llamada Guanahaní por los taínos y bautizada San Salvador por Colón. Colón desembarca y toma posesión en nombre de los Reyes Católicos, creyendo haber llegado a las Indias Orientales."
+      },
+      {
+        "date": "1492-28-10",
+        "event": "La expedición llega a Cuba, creyendo que era parte del continente asiático."
+      },
+      {
+        "date": "1492-06-12",
+        "event": "Arriban a La Española (actual Haití y República Dominicana), donde fundan el primer asentamiento europeo en América: La Navidad."
+      },
+      {
+        "date": "1492-25-12",
+        "event": "La Santa María encalla y se hunde en la costa norte de La Española."
+      },
+      {
+        "date": "1493-15-01",
+        "event": "Colón inicia el regreso a España con La Niña y La Pinta."
+      },
+      {
+        "date": "1493-15-03",
+        "event": "Colón llega a Palos de la Frontera, siendo recibido como héroe tras su primer viaje al Nuevo Mundo."
+      }
+    ],
+    "consequences": [
+      "El descubrimiento de América marcó uno de los momentos más trascendentales de la historia universal: el encuentro entre Europa y América. Este hecho abrió el camino a la expansión europea, el intercambio de culturas, recursos, conocimientos y también al inicio de profundas transformaciones políticas, económicas y sociales a ambos lados del Atlántico.",
+      "El viaje de Cristóbal Colón, financiado por los Reyes Católicos, no solo cambió la geografía conocida hasta entonces, sino que dio comienzo a la Edad Moderna, conectando por primera vez de forma permanente los dos hemisferios. A partir de este suceso, el mundo se volvió verdaderamente global, con un intercambio continuo de personas, ideas, especies y culturas que definiría la historia moderna."
+    ]
+  },
+  {
+    "id": "El-último-día",
+    "title": "Pompeya",
+    "date": "79-d.C.",
+    "category": "Catástrofes",
+    "imageUrl": "/images/Pompeya.jpg",
+    "summary": [
+      "En el año 79 d.C., el Monte Vesubio despertó con una fuerza devastadora, sepultando Pompeya bajo cenizas y fuego. Miles murieron en segundos, y la ciudad quedó congelada en el tiempo durante siglos. Hoy, sus ruinas revelan el último instante de una civilización sorprendida por la furia de la naturaleza."
+    ],
+    "context": [
+      "La erupción del Monte Vesubio tuvo lugar en el año 79 d.C., durante el reinado del emperador Tito, en una de las regiones más prósperas del Imperio romano. Entre las ciudades situadas en sus faldas, Pompeya era una de las más activas y florecientes: contaba con templos, termas, teatros, talleres, tabernas y lujosas casas decoradas con frescos y mosaicos. Era un reflejo del bienestar y la vida cotidiana romana.",
+      "El entorno del golfo de Nápoles ofrecía un clima templado, suelos fértiles y un intenso comercio marítimo. El Vesubio, que dominaba el horizonte, era considerado una montaña pacífica y productiva. Nadie imaginaba que bajo sus laderas dormía una de las fuerzas más destructivas de la historia.",
+      "En los días previos al desastre se registraron ligeros temblores y alteraciones en los manantiales, pero los habitantes de Pompeya estaban acostumbrados a la actividad sísmica. Nadie pensó en abandonar la ciudad. No existía conocimiento de que aquel monte era un volcán, ni de que su interior albergaba una cámara de magma bajo enorme presión.",
+      "En la mañana del 24 de agosto del 79 d.C. —aunque estudios recientes sugieren una fecha más tardía, hacia octubre o noviembre—, el Vesubio despertó violentamente. Una colosal columna de humo, ceniza y piedra pómez se elevó más de veinte kilómetros en el aire, oscureciendo el sol y cubriendo Pompeya en una penumbra asfixiante. Durante horas, una lluvia continua de fragmentos volcánicos cayó sobre la ciudad, haciendo que los techos se derrumbaran y las calles quedaran cubiertas de escombros.",
+      "El pánico se apoderó de los habitantes. Muchos intentaron huir por las puertas de la muralla o hacia el puerto, pero el espesor de la ceniza y la oscuridad lo hicieron casi imposible. Otros buscaron refugio en sus casas o sótanos, esperando que la tormenta terminara.",
+      "Con la llegada de la madrugada del día siguiente, el Vesubio liberó su furia final. Una oleada ardiente de gases y cenizas incandescentes descendió sobre Pompeya a más de 100 km/h, alcanzando temperaturas superiores a 400 °C. En cuestión de segundos, el aire se volvió irrespirable y toda vida en la ciudad se extinguió al instante. Los cuerpos quedaron donde estaban: algunos protegiendo a sus hijos, otros cubriéndose el rostro o intentando escapar.",
+      "En pocas horas, Pompeya desapareció bajo varios metros de ceniza y piedra pómez. Cuando la erupción cesó, el lugar era un desierto gris, sin sonido ni movimiento. Las casas, los templos y los cuerpos quedaron sellados por el material volcánico, preservados de manera sorprendente por el paso del tiempo.",
+      "Los días siguientes fueron de oscuridad y silencio. Los supervivientes de las zonas cercanas huyeron dejando atrás todo. El Vesubio continuó lanzando humo durante varios días hasta que finalmente se apagó."
+    ],
+    "keyFacts": [
+      {
+        "title": "El perro encadenado",
+        "description": "Uno de los hallazgos más impactantes es el cuerpo de un perro atado con su cadena. Murió intentando liberarse mientras la ceniza lo cubría. Su molde, obtenido al rellenar con yeso el espacio que dejó su cuerpo, muestra al animal en posición de lucha, arqueado por el dolor."
+      },
+      {
+        "title": "El mar estaba mucho más cerca",
+        "description": "En la época romana, el mar llegaba hasta las puertas de Pompeya, a unos 500 metros de la ciudad. Tras la erupción, los depósitos volcánicos extendieron la línea de costa más de 2 kilómetros hacia el oeste. Hoy, el mar está a unos 2,5 kilómetros de las ruinas."
+      },
+      {
+        "title": "Pompeya fue redescubierta por accidente",
+        "description": "En 1748, mientras se realizaban excavaciones cerca de Nápoles, los obreros hallaron muros y frescos bajo la tierra. No sabían que era Pompeya: se creyó primero que eran restos de otra villa romana. Solo años después se comprendió la magnitud del descubrimiento."
+      },
+      {
+        "title": "Las cenizas conservaron todo",
+        "description": "La gruesa capa de ceniza y piedra pómez actuó como un sello natural, protegiendo edificios, pinturas y objetos del aire y la humedad. Gracias a eso, hoy se conservan murales, pan carbonizado, utensilios de cocina y hasta grafitis escritos en las paredes."
+      },
+      {
+        "title": "Los moldes de las víctimas",
+        "description": "Cuando los arqueólogos descubrieron que bajo la ceniza quedaban huecos con forma de cuerpos, los llenaron con yeso líquido para recrear sus posturas. Así surgieron las figuras de hombres, mujeres, niños y animales, capturados exactamente en el momento de su muerte."
+      },
+      {
+        "title": "La temperatura fue letal",
+        "description": "Estudios recientes revelan que el flujo piroclástico alcanzó temperaturas de hasta 500 °C, suficientes para provocar la muerte instantánea por choque térmico, antes incluso de que los cuerpos quedaran sepultados."
+      },
+      {
+        "title": "Una ciudad llena de mensajes",
+        "description": "En las paredes de Pompeya se han encontrado más de 11.000 inscripciones: anuncios, mensajes amorosos, chistes, críticas políticas y hasta bromas de taberna. Algunas aún se leen claramente, mostrando la voz cotidiana de sus habitantes."
+      },
+      {
+        "title": "Colores originales preservados",
+        "description": "A diferencia de otras ruinas romanas, en Pompeya los frescos aún conservan colores vivos gracias a la ceniza que los aisló de la luz. Los rojos, amarillos y azules que decoraban las casas revelan el lujo y el gusto artístico de sus habitantes."
+      },
+      {
+        "title": "Una vida interrumpida",
+        "description": "En Pompeya se han encontrado ollas aún sobre el fuego, comidas a medio preparar, y mesas servidas, tal como quedaron en el instante de la erupción. Es una fotografía exacta del último día de una ciudad romana."
+      }
+    ],
+    "timeline": [
+      {
+        "date": "Días previos, año 79 d.C.",
+        "event": "Pequeños temblores y cambios en los manantiales alteran la región del golfo de Nápoles. Los habitantes, acostumbrados a los sismos, no imaginan el peligro que se avecina."
+      },
+      {
+        "date": "La erupción: Mediodía",
+        "event": "Según las cartas de Plinio el Joven, el Vesubio entra en erupción a media mañana. Una columna de humo y ceniza se eleva más de 20 km sobre el cielo. Durante horas, cae una lluvia incesante de piedra pómez y ceniza que cubre Pompeya."
+      },
+      {
+        "date": "La erupción: Tarde",
+        "event": "Las calles se vuelven intransitables, los tejados colapsan y la ciudad queda sumida en la oscuridad. Muchos buscan refugio en casas o templos, mientras otros intentan huir hacia el mar."
+      },
+      {
+        "date": "La erupción: Madrugada",
+        "event": "Ocurre la fase más mortal del desastre, una oleada piroclástica desciende del volcán a más de 100 km/h y más de 400 °C. Pompeya es arrasada en segundos, y miles de personas mueren instantáneamente."
+      },
+      {
+        "date": "Días posteriores",
+        "event": "El Vesubio sigue expulsando ceniza y gases durante días. El paisaje queda transformado, cubierto de piedra pómez y silencio. Los supervivientes abandonan la zona, dejando las ciudades sepultadas."
+      },
+      {
+        "date": "Años 100–200 d.C.",
+        "event": "Años después de la erupción, saqueadores excavan túneles entre los restos para recuperar objetos valiosos y joyas."
+      },
+      {
+        "date": "1748",
+        "event": "Pompeya es redescubierta por accidente durante unas obras cerca de Nápoles. Empiezan las primeras excavaciones, que revelan murales, frescos y objetos cotidianos."
+      },
+      {
+        "date": "Años 2000–2010 d.C.",
+        "event": "Nuevos estudios arqueológicos y hallazgos —como frutas otoñales, braseros encendidos y una inscripción fechada el 17 de octubre— demuestran que la erupción no ocurrió en agosto, sino entre octubre y noviembre del 79 d.C. Esta fecha es hoy la más aceptada por la comunidad científica."
+      },
+      {
+        "date": "Actualidad",
+        "event": "Pompeya es Patrimonio Mundial de la UNESCO y uno de los yacimientos arqueológicos más visitados del mundo. El Monte Vesubio continúa activo, bajo vigilancia constante por parte de la Protección Civil italiana."
+      }
+    ],
+    "consequences": [
+      "La erupción del Vesubio en el año 79 d.C. es uno de los desastres naturales más célebres de la Antigüedad y una fuente invaluable para la historia. La destrucción de Pompeya no solo marcó una tragedia humana, sino que permitió conservar una instantánea única de la vida romana en el momento exacto en que el tiempo se detuvo.",
+      "Gracias a las cenizas que cubrieron la ciudad, hoy se conocen con precisión cómo vivían, trabajaban y pensaban los romanos: su arquitectura, sus costumbres, su arte y su organización social. Pompeya se convirtió así en un testimonio arqueológico sin precedentes, esencial para comprender la civilización romana.",
+      "Además, el suceso impulsó el desarrollo de la arqueología moderna, inspiró a generaciones de artistas y científicos, y continúa recordando la fragilidad del ser humano frente a la fuerza de la naturaleza."
+    ]
+  },
+  {
+    "id": "El-último-águila-de-Tenochtitlán",
+    "title": "Cuauhtémoc",
+    "date": "1904-02-03",
+    "category": "Personajes históricos",
+    "imageUrl": "/images/Cuauhtémoc.jpg",
+    "summary": [
+      "Cuauhtémoc, último emperador mexica, ascendió al trono tras la muerte de Moctezuma II y la huida de los españoles en la Noche Triste. Con apenas 25 años lideró una resistencia heroica contra Hernán Cortés, enfrentando hambre, epidemias y traiciones. Capturado y ejecutado en 1525, su figura se convirtió en símbolo eterno de valentía y dignidad mexicana."
+    ],
+    "context": [
+      "Cuauhtémoc nació hacia 1495 en Tenochtitlán, dentro de una de las familias nobles más destacadas del Imperio mexica. Era descendiente del tlatoani Ahuízotl, lo que lo situaba dentro de la línea dinástica de los gobernantes de la capital. Desde joven fue instruido en el calmécac, la escuela de los nobles, donde aprendió religión, filosofía, estrategia militar y las leyes que regían la vida pública mexica. Su nombre, Cuāuhtémōc, significa “el que desciende como águila”, símbolo de fuerza, vigilancia y determinación.",
+      "En su juventud, Cuauhtémoc destacó como guerrero en las campañas contra pueblos rebeldes del Valle de México, ganando reputación por su valentía y sentido del deber. Pero el destino del imperio cambió en 1519 con la llegada de Hernán Cortés y sus hombres a las costas del Golfo de México. Los españoles avanzaron hacia el interior con el apoyo de pueblos indígenas enemigos de los mexicas, como los tlaxcaltecas, y se dirigieron a Tenochtitlán.",
+      "Moctezuma II, gobernante del imperio, dudó entre enfrentarse o recibir a los extranjeros como enviados divinos, influido por los presagios que anunciaban el fin de una era. Su indecisión permitió a Cortés entrar en la ciudad y tomarlo prisionero. La tensión se desbordó cuando los españoles masacraron a los nobles mexicas durante una ceremonia religiosa en el Templo Mayor, provocando un levantamiento general. Moctezuma murió durante los enfrentamientos —según las versiones, apedreado por su propio pueblo o abatido en el caos— y los conquistadores tuvieron que huir.",
+      "La noche del 30 de junio de 1520, los españoles fueron expulsados de Tenochtitlán en un episodio que pasaría a la historia como la Noche Triste. Cientos de soldados murieron en los canales y calzadas de la ciudad, cargando el oro que intentaban llevar consigo. Días después, el trono fue ocupado por Cuitláhuac, quien reorganizó la resistencia, pero murió poco después a causa de la viruela.",
+      "En ese contexto de ruina y desesperación, Cuauhtémoc fue elegido tlatoani en 1520, con apenas veinticinco años, para liderar la defensa del imperio. Durante su corto reinado, se preparó para una guerra total: fortificó los templos, organizó la producción de armas y coordinó las defensas sobre el lago. El asedio español de 1521 fue brutal: las calzadas fueron cortadas, los canales bloqueados y las reservas de agua y alimentos destruidas. Aun así, Cuauhtémoc resistió con coraje, combatiendo junto a sus guerreros hasta el final.",
+      "El 13 de agosto de 1521, al ver la derrota inevitable, Cuauhtémoc intentó huir por el lago de Texcoco en una canoa junto a su esposa, su familia y su primo Tetlepanquetzal, señor de Tlacopan. Sin embargo, fueron capturados por los hombres de Cortés y llevados ante él como prisioneros. Poco después, Cortés ordenó la tortura de Cuauhtémoc y de Tetlepanquetzal, buscando obligarlos a revelar el paradero del tesoro imperial mexica, que los conquistadores no habían logrado encontrar. Según las crónicas, ambos soportaron el tormento con dignidad, negándose a hablar.",
+      "Años más tarde, en 1525, Cortés emprendió una expedición hacia Honduras. Temiendo rebeliones y sospechando conspiraciones, llevó encadenados a Cuauhtémoc y a su primo. Durante la marcha por las selvas de Tabasco y el Petén, la desconfianza creció entre los españoles; Cortés acusó a los prisioneros de traición y ordenó su ejecución. El 28 de febrero de 1525, Cuauhtémoc y Tetlepanquetzal fueron ahorcados en Itzamkanac, poniendo fin al linaje de los tlatoanis mexicas."
+    ],
+    "keyFacts": [
+      {
+        "title": "El significado de su nombre",
+        "description": "Cuāuhtémōc en náhuatl significa “el que desciende como águila”, una metáfora del guerrero que se lanza desde el cielo sobre su enemigo, símbolo de valentía y visión."
+      },
+      {
+        "title": "El más joven de los tlatoanis",
+        "description": "Cuauhtémoc tenía apenas 25 años cuando fue elegido gobernante de Tenochtitlán, lo que lo convierte en el tlatoani más joven del imperio mexica en toda su historia registrada."
+      },
+      {
+        "title": "El tormento del oro",
+        "description": "Tras su captura, Hernán Cortés buscó desesperadamente el tesoro imperial mexica. Para obtener su ubicación, ordenó torturar a Cuauhtémoc y a su primo Tetlepanquetzal, señor de Tlacopan. Ambos fueron atados de pies y manos sobre braseros encendidos, y les vertieron aceite hirviendo en los pies, mientras eran interrogados una y otra vez."
+      },
+      {
+        "title": "Capturado por un bergantín",
+        "description": "Cuauhtémoc fue capturado en el lago de Texcoco cuando intentaba huir con su familia. Su canoa fue interceptada por un bergantín español, embarcación de guerra que Cortés había construido durante el sitio."
+      },
+      {
+        "title": "Su cuerpo nunca fue hallado",
+        "description": "El paradero exacto de los restos de Cuauhtémoc sigue siendo incierto. Existen varios monumentos y sitios conmemorativos, pero ninguno ha sido confirmado como su tumba real."
+      },
+      {
+        "title": "La muerte en la selva",
+        "description": "Cuauhtémoc fue ahorcado el 28 de febrero de 1525, acusado falsamente de conspirar contra Cortés durante la expedición a Honduras. Murió lejos de su tierra natal, en Itzamkanac."
+      },
+      {
+        "title": "Símbolo nacional",
+        "description": "Durante el siglo XIX, su figura fue recuperada como símbolo del honor y la resistencia mexicana, especialmente durante la Independencia. En 1887 se inauguró su monumento en el Paseo de la Reforma, Ciudad de México."
+      },
+      {
+        "title": "Fue sacerdote antes de ser guerrero",
+        "description": "Antes de dirigir ejércitos, Cuauhtémoc fue instruido en los templos como sacerdote del dios Huitzilopochtli, donde aprendió astronomía, rituales y filosofía mexica. Esta formación influenció su visión espiritual del deber y del sacrificio."
+      },
+      {
+        "title": "El propio Cortés admiró a Cuauhtémoc",
+        "description": "A pesar de haberlo derrotado, Hernán Cortés reconoció públicamente su valentía. En sus Cartas de relación lo llama “gran señor y persona de mucha autoridad”."
+      },
+      {
+        "title": ""
+      }
+    ],
+    "timeline": [
+      {
+        "date": "1495",
+        "event": "Cuauhtémoc nace alrededor de 1495, descendiente de la nobleza mexica y del tlatoani Ahuízotl. Desde joven es educado como guerrero y sacerdote en el calmécac."
+      },
+      {
+        "date": "1519",
+        "event": "Los españoles desembarcan en las costas del Golfo de México. Moctezuma II recibe noticias del avance de los extranjeros; Cuauhtémoc es ya un joven capitán de guerra."
+      },
+      {
+        "date": "1520",
+        "event": "Durante una ceremonia religiosa, los españoles atacan a los nobles mexicas. El pueblo se levanta contra ellos; Moctezuma es asesinado en medio del caos."
+      },
+      {
+        "date": "1520-06-30",
+        "event": "Los mexicas expulsan a los españoles de Tenochtitlán, causando numerosas bajas. Entre los defensores destaca Cuauhtémoc, que demuestra su liderazgo militar."
+      },
+      {
+        "date": "1520",
+        "event": "El nuevo tlatoani, Cuitláhuac, muere víctima de la viruela. El imperio queda sin líder en plena crisis."
+      },
+      {
+        "date": "1520",
+        "event": "A los 25 años, Cuauhtémoc es proclamado gobernante de Tenochtitlán. Reorganiza las fuerzas y prepara la defensa total de la ciudad ante el inminente regreso de Cortés."
+      },
+      {
+        "date": "1521",
+        "event": "Durante 93 días, la ciudad resiste el bloqueo español. Faltan alimentos y agua, y las epidemias se expanden. Cuauhtémoc dirige la defensa personalmente."
+      },
+      {
+        "date": "1521-08-13",
+        "event": "Cuauhtémoc intenta huir por el lago de Texcoco junto a su esposa, su familia y su primo Tetlepanquetzal, pero son capturados por los hombres de Cortés. El Imperio mexica cae."
+      },
+      {
+        "date": "1521",
+        "event": "Cortés ordena torturar a Cuauhtémoc y a Tetlepanquetzal para que revelen el paradero del tesoro mexica. Les queman los pies con braseros encendidos, pero ninguno confiesa."
+      },
+      {
+        "date": "1525",
+        "event": "Cortés obliga a Cuauhtémoc a acompañarlo en su marcha por la selva. Durante el viaje lo acusa de conspirar contra él."
+      },
+      {
+        "date": "1525-02-28",
+        "event": "Cortés ordena ahorcar a Cuauhtémoc y a Tetlepanquetzal en Itzamkanac. El último tlatoani de Tenochtitlán muere a los 30 años, símbolo de honor y resistencia."
+      },
+      {
+        "date": "Siglo XIX",
+        "event": "Durante la Independencia de México, Cuauhtémoc es reivindicado como héroe nacional. Su estatua se erige en el Paseo de la Reforma en 1887."
+      }
+    ],
+    "consequences": [
+      "Cuauhtémoc fue el último tlatoani del Imperio mexica y símbolo de la resistencia ante la conquista española. Asumió el poder en medio del caos tras la muerte de Moctezuma y defendió Tenochtitlán hasta su caída en 1521. Capturado, torturado y finalmente ejecutado por Hernán Cortés, su valor y dignidad lo convirtieron en un emblema eterno del honor y la identidad del pueblo mexicano."
     ]
   }
 ]

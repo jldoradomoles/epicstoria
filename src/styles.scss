@@ -27,19 +27,6 @@ body {
   font-family: cursive !important;
 }
 
-/* Estilos de la tarjeta con animación sutil */
-.history-card {
-  transition: all 0.3s ease-in-out;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.history-card:hover {
-  transform: translateY(-5px) scale(1.01);
-  box-shadow:
-    19px 20px 25px 6px rgba(0, 0, 0, 0.3),
-    17px 20px 9px 0px rgba(0, 0, 0, 0.2);
-  border-color: whitesmoke;
-}
-
 .text-color-dark {
   color: #1f150c;
 }
@@ -64,4 +51,8 @@ body {
 
 .btns-color:hover {
   background-color: #f0e6b8;
+}
+
+.w-100 {
+  width: 100%;
 }

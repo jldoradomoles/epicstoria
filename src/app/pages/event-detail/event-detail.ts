@@ -4,6 +4,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Event } from '../../models/event.model';
 import { DateFormatPipe } from '../../pipes/date-format.pipe';
 import { getCategoryColor as getCategoryColorUtil } from '../../utils/category.utils';
+import { handleImageError } from '../../utils/image.utils';
 import { getParagraphs } from '../../utils/text.utils';
 
 @Component({
@@ -37,7 +38,8 @@ export class EventDetail implements OnInit {
     });
   }
 
-  onImageError(event: any) {
-    (event.target as HTMLImageElement).src = this.defaultImage;
+  async onImageError(event: any) {
+    const imgElement = event.target as HTMLImageElement;
+    await handleImageError(event, imgElement.src, this.defaultImage);
   }
 }

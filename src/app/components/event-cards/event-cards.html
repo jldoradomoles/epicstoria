@@ -1,16 +1,14 @@
 <!-- Sección de Tarjetas de Eventos Históricos -->
 <section id="eventos" class="py-20">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <h3
-      class="mb-16 inline-block border-b-4 border-blue-500/50 pb-2 text-center text-4xl font-bold text-white"
-    >
+    <h3 class="mb-16 inline-block pb-2 text-center text-4xl font-bold text-color w-100">
       Eventos Destacados
     </h3>
 
     <!-- Grid de Tarjetas (Responsive) -->
     <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
       @for (event of events; track event.id) {
-        <div class="history-card flex flex-col overflow-hidden rounded-xl shadow-2xl">
+        <div class="container-custom flex flex-col overflow-hidden rounded-xl shadow-2xl">
           <div class="relative h-56 bg-gradient-to-tr from-gray-700 to-gray-900">
             <img
               [src]="event.imageUrl"
