@@ -42,4 +42,138 @@ export class EventDetail implements OnInit {
     const imgElement = event.target as HTMLImageElement;
     await handleImageError(event, imgElement.src, this.defaultImage);
   }
+
+  /**
+   * Obtiene el icono apropiado para un dato curioso basado en su título y descripción
+   */
+  getFactIcon(title: string, description: string): { icon: string; color: string } {
+    const text = (title + ' ' + description).toLowerCase();
+
+    // Palabras clave y sus iconos correspondientes
+    if (
+      text.includes('distancia') ||
+      text.includes('kilómetros') ||
+      text.includes('alejado') ||
+      text.includes('espacio') ||
+      text.includes('años luz')
+    ) {
+      return { icon: 'fas fa-rocket', color: 'text-blue-500' };
+    }
+    if (
+      text.includes('tiempo') ||
+      text.includes('años') ||
+      text.includes('horas') ||
+      text.includes('días') ||
+      text.includes('duración')
+    ) {
+      return { icon: 'fas fa-clock', color: 'text-green-500' };
+    }
+    if (
+      text.includes('música') ||
+      text.includes('sonidos') ||
+      text.includes('disco') ||
+      text.includes('audio')
+    ) {
+      return { icon: 'fas fa-music', color: 'text-purple-500' };
+    }
+    if (
+      text.includes('mensaje') ||
+      text.includes('idiomas') ||
+      text.includes('comunicación') ||
+      text.includes('saludos')
+    ) {
+      return { icon: 'fas fa-comment', color: 'text-blue-400' };
+    }
+    if (
+      text.includes('primera') ||
+      text.includes('primer') ||
+      text.includes('único') ||
+      text.includes('primero')
+    ) {
+      return { icon: 'fas fa-trophy', color: 'text-yellow-500' };
+    }
+    if (
+      text.includes('tierra') ||
+      text.includes('planeta') ||
+      text.includes('mundo') ||
+      text.includes('global')
+    ) {
+      return { icon: 'fas fa-globe', color: 'text-green-400' };
+    }
+    if (
+      text.includes('tecnología') ||
+      text.includes('instrumento') ||
+      text.includes('equipo') ||
+      text.includes('dispositivo')
+    ) {
+      return { icon: 'fas fa-cog', color: 'text-gray-500' };
+    }
+    if (
+      text.includes('descubrimiento') ||
+      text.includes('hallazgo') ||
+      text.includes('encontró') ||
+      text.includes('reveló')
+    ) {
+      return { icon: 'fas fa-search', color: 'text-orange-500' };
+    }
+    if (
+      text.includes('científico') ||
+      text.includes('investigación') ||
+      text.includes('estudio') ||
+      text.includes('ciencia')
+    ) {
+      return { icon: 'fas fa-flask', color: 'text-cyan-500' };
+    }
+    if (
+      text.includes('récord') ||
+      text.includes('máximo') ||
+      text.includes('mayor') ||
+      text.includes('extremo')
+    ) {
+      return { icon: 'fas fa-medal', color: 'text-amber-500' };
+    }
+
+    // Icono por defecto
+    return { icon: 'fas fa-star', color: 'text-yellow-500' };
+  }
+
+  /**
+   * Obtiene el icono apropiado para un elemento de cronología basado en la fecha y período histórico
+   */
+  getTimelineIcon(dateString: string): { icon: string; color: string } {
+    const year = parseInt(dateString.split('-')[0]);
+
+    // Prehistoria y Antigüedad (antes del año 500)
+    if (year < 500) {
+      return { icon: 'fas fa-mountain', color: 'text-amber-800' };
+    }
+    // Edad Media (500-1450)
+    else if (year >= 500 && year < 1450) {
+      return { icon: 'fas fa-chess-rook', color: 'text-gray-600' };
+    }
+    // Renacimiento y Edad Moderna (1450-1800)
+    else if (year >= 1450 && year < 1800) {
+      return { icon: 'fas fa-feather', color: 'text-purple-600' };
+    }
+    // Revolución Industrial (1800-1900)
+    else if (year >= 1800 && year < 1900) {
+      return { icon: 'fas fa-industry', color: 'text-orange-600' };
+    }
+    // Siglo XX temprano (1900-1950)
+    else if (year >= 1900 && year < 1950) {
+      return { icon: 'fas fa-car', color: 'text-blue-600' };
+    }
+    // Era Espacial/Nuclear (1950-1990)
+    else if (year >= 1950 && year < 1990) {
+      return { icon: 'fas fa-rocket', color: 'text-cyan-500' };
+    }
+    // Era Digital (1990-2010)
+    else if (year >= 1990 && year < 2010) {
+      return { icon: 'fas fa-desktop', color: 'text-green-500' };
+    }
+    // Era Moderna/Internet (2010+)
+    else {
+      return { icon: 'fas fa-wifi', color: 'text-blue-400' };
+    }
+  }
 }
