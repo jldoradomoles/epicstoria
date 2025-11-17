@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { QuizComponent } from '../../components/quiz/quiz';
 import { Event } from '../../models/event.model';
 import { DateFormatPipe } from '../../pipes/date-format.pipe';
 import { getCategoryColor as getCategoryColorUtil } from '../../utils/category.utils';
@@ -9,7 +10,7 @@ import { getParagraphs } from '../../utils/text.utils';
 
 @Component({
   selector: 'app-event-detail',
-  imports: [RouterLink, DateFormatPipe],
+  imports: [RouterLink, DateFormatPipe, QuizComponent],
   templateUrl: './event-detail.html',
   styleUrl: './event-detail.scss',
 })

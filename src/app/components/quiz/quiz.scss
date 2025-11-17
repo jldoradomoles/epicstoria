@@ -1,0 +1,44 @@
+/* Estilos específicos para el componente Quiz */
+
+.quiz-container {
+  transition: all 0.3s ease-in-out;
+}
+
+.question-option {
+  transition: all 0.2s ease-in-out;
+}
+
+.question-option:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.progress-bar {
+  transition: width 0.3s ease-in-out;
+}
+
+.score-animation {
+  animation: scoreReveal 0.8s ease-out;
+}
+
+@keyframes scoreReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.result-item {
+  transition: all 0.2s ease-in-out;
+}
+
+.result-item:hover {
+  background-color: rgba(75, 85, 99, 0.3);
+}

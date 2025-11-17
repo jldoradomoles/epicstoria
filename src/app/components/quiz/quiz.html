@@ -1,0 +1,194 @@
+<!-- Componente Quiz -->
+<div
+  class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 shadow-2xl border border-gray-700"
+>
+  <!-- Estado inicial - No iniciado -->
+  @if (!isQuizStarted && !showResult) {
+    <div class="text-center">
+      <div class="mb-6">
+        <i class="fas fa-brain text-4xl text-purple-500 mb-4"></i>
+        <h3 class="text-2xl font-bold text-white mb-2">Quiz sobre {{ event.title }}</h3>
+        <p class="text-gray-300">
+          Pon a prueba tus conocimientos sobre este evento histórico.
+          {{ quiz?.questions?.length || 0 }} preguntas te esperan.
+        </p>
+      </div>
+
+      <button
+        (click)="startQuiz()"
+        class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105"
+      >
+        <i class="fas fa-play mr-2"></i>
+        Comenzar Quiz
+      </button>
+    </div>
+  }
+
+  <!-- Quiz en progreso -->
+  @if (isQuizStarted && !showResult && currentQuestion) {
+    <div>
+      <!-- Barra de progreso -->
+      <div class="mb-6">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm text-gray-400">
+            Pregunta {{ currentQuestionIndex + 1 }} de {{ quiz?.questions?.length || 0 }}
+          </span>
+          <span class="text-sm text-gray-400">
+            {{ progressPercentage.toFixed(0) }}% completado
+          </span>
+        </div>
+        <div class="w-full bg-gray-700 rounded-full h-2">
+          <div
+            class="bg-purple-500 h-2 rounded-full transition-all duration-300"
+            [style.width.%]="progressPercentage"
+          ></div>
+        </div>
+      </div>
+
+      <!-- Pregunta actual -->
+      <div class="mb-6">
+        <h4 class="text-xl font-bold text-white mb-4">
+          {{ currentQuestion.question }}
+        </h4>
+
+        <!-- Opciones de respuesta -->
+        <div class="space-y-3">
+          @for (option of currentQuestion.options; track i; let i = $index) {
+            <div
+              (click)="selectAnswer(i)"
+              class="p-4 rounded-lg border-2 transition duration-300 cursor-pointer"
+              [class]="
+                selectedAnswers[currentQuestionIndex] === i
+                  ? 'bg-purple-600 border-purple-500 text-white'
+                  : 'bg-gray-800 border-gray-600 text-gray-300 hover:border-purple-400 hover:bg-gray-700'
+              "
+            >
+              <div class="flex items-center">
+                <div
+                  class="w-6 h-6 rounded-full border-2 mr-3 flex items-center justify-center"
+                  [class]="
+                    selectedAnswers[currentQuestionIndex] === i
+                      ? 'border-white bg-white'
+                      : 'border-gray-500'
+                  "
+                >
+                  @if (selectedAnswers[currentQuestionIndex] === i) {
+                    <div class="w-2 h-2 rounded-full bg-purple-600"></div>
+                  }
+                </div>
+                <span class="text-sm font-medium">{{ option || 'Opción no disponible' }}</span>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Botones de navegación -->
+      <div class="flex justify-between items-center">
+        @if (!isFirstQuestion) {
+          <button
+            (click)="previousQuestion()"
+            class="bg-gray-600 hover:bg-gray-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300"
+          >
+            <i class="fas fa-arrow-left mr-2"></i>
+            Anterior
+          </button>
+        } @else {
+          <div></div>
+        }
+
+        @if (!isLastQuestion) {
+          <button
+            (click)="nextQuestion()"
+            [disabled]="!hasSelectedAnswer"
+            class="bg-purple-600 hover:bg-purple-700 disabled:bg-gray-500 disabled:cursor-not-allowed text-white font-medium py-2 px-4 rounded-lg transition duration-300"
+          >
+            Siguiente
+            <i class="fas fa-arrow-right ml-2"></i>
+          </button>
+        } @else {
+          <button
+            (click)="finishQuiz()"
+            [disabled]="!hasSelectedAnswer"
+            class="bg-green-600 hover:bg-green-700 disabled:bg-gray-500 disabled:cursor-not-allowed text-white font-medium py-2 px-4 rounded-lg transition duration-300"
+          >
+            <i class="fas fa-flag-checkered mr-2"></i>
+            Finalizar Quiz
+          </button>
+        }
+      </div>
+    </div>
+  }
+
+  <!-- Resultados -->
+  @if (showResult && quizResult) {
+    <div class="text-center">
+      <!-- Puntuación principal -->
+      <div class="mb-6">
+        <div class="text-6xl font-bold mb-2" [class]="scoreMessage?.color">
+          {{ quizResult.percentage }}%
+        </div>
+        <i class="text-4xl mb-4" [class]="scoreMessage?.icon + ' ' + scoreMessage?.color"></i>
+        <h3 class="text-2xl font-bold text-white mb-2">¡Quiz Completado!</h3>
+        <p class="text-lg mb-4" [class]="scoreMessage?.color">
+          {{ scoreMessage?.message }}
+        </p>
+        <div class="text-gray-300">
+          Respondiste correctamente {{ quizResult.correctAnswers }} de
+          {{ quizResult.totalQuestions }} preguntas.
+        </div>
+      </div>
+
+      <!-- Resumen detallado -->
+      <div class="bg-gray-800 rounded-lg p-4 mb-6">
+        <h4 class="text-lg font-bold text-white mb-4">Resumen de Respuestas</h4>
+        @for (answer of quizResult.answers; track answer.questionId; let i = $index) {
+          <div class="mb-3 text-left">
+            <div class="flex items-start gap-3">
+              <div class="flex-shrink-0">
+                <i
+                  class="text-lg"
+                  [class]="
+                    answer.isCorrect
+                      ? 'fas fa-check-circle text-green-500'
+                      : 'fas fa-times-circle text-red-500'
+                  "
+                ></i>
+              </div>
+              <div class="flex-grow">
+                <p class="text-sm text-gray-300 mb-1">
+                  <strong>Pregunta {{ i + 1 }}:</strong> {{ getQuestionText(i) }}
+                </p>
+                <p class="text-xs" [class]="answer.isCorrect ? 'text-green-400' : 'text-red-400'">
+                  <strong>Tu respuesta:</strong>
+                  {{
+                    answer.selectedAnswer >= 0
+                      ? getOptionText(i, answer.selectedAnswer)
+                      : 'Sin respuesta'
+                  }}
+                </p>
+                @if (!answer.isCorrect) {
+                  <p class="text-xs text-green-400">
+                    <strong>Respuesta correcta:</strong>
+                    {{ getCorrectAnswerText(i) }}
+                  </p>
+                }
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+
+      <!-- Botones de acción -->
+      <div class="flex gap-4 justify-center">
+        <button
+          (click)="restartQuiz()"
+          class="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-6 rounded-lg transition duration-300"
+        >
+          <i class="fas fa-redo mr-2"></i>
+          Intentar de Nuevo
+        </button>
+      </div>
+    </div>
+  }
+</div>
