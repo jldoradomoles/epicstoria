@@ -1,753 +1,753 @@
 [
-  {
-    "id": "La-voz-de-la-tierra",
-    "title": "Voyager 1 ",
-    "date": "1977-09-05",
-    "category": "Espacio ",
-    "imageUrl": "/images/Voyager-1.jpg",
-    "summary": [
-      "En 1977, la NASA lanzó la Voyager 1, una sonda destinada a explorar Júpiter y Saturno, convirtiéndose en la actualidad en el objeto humano más alejado de la Tierra."
-    ],
-    "context": [
-      "En la década de 1970, la NASA se encontraba en plena era dorada de la exploración espacial. Las misiones Apolo habían terminado, y la agencia buscaba nuevos horizontes más allá de la Luna. Fue entonces cuando los científicos descubrieron algo extraordinario: una alineación única de los planetas exteriores —Júpiter, Saturno, Urano y Neptuno— que ocurriría solo una vez cada 176 años.",
-      "Esta disposición permitiría que una nave pudiera aprovechar la gravedad de cada planeta como impulso, acelerándose sin gastar tanto combustible y visitando varios mundos en un solo viaje. A esto se le conoce como asistencia gravitacional. Así nació el ambicioso Proyecto Voyager.",
-      "La NASA diseñó dos sondas gemelas, Voyager 1 y Voyager 2, con una misión doble:",
-      "Explorar los planetas gigantes del Sistema Solar exterior, en especial Júpiter y Saturno.",
-      "Estudiar sus lunas, anillos y campos magnéticos, obteniendo imágenes y datos científicos jamás vistos.",
-      "Aunque se planeó que Voyager 2 continuara hacia Urano y Neptuno, Voyager 1 tenía un propósito más enfocado: realizar un sobrevuelo cercano a Titán, la luna de Saturno, que intrigaba a los científicos por su atmósfera espesa y misteriosa.",
-      "Esa maniobra determinó que Voyager 1 siguiera una trayectoria más vertical, alejándose del plano de los planetas… rumbo al infinito.",
-      "Durante su paso por los planetas, Voyager 1 revolucionó nuestro conocimiento del Sistema Solar:",
-      "En Júpiter, mostró tormentas gigantes y descubrió volcanes activos en Ío, una de las lunas de Júpiter, la primera evidencia de actividad volcánica fuera de la Tierra.",
-      "En Saturno, reveló la complejidad de sus anillos y los misterios de Titán, confirmando su densa atmósfera de nitrógeno.",
-      "Después de ese punto, ya no había más destinos planetarios en su ruta. Así, la misión principal se dio por completada, pero la NASA decidió mantenerla activa como Misión Interestelar, para estudiar los límites del entorno solar.",
-      "Con el tiempo, la sonda siguió alejándose a velocidades enormes (más de 60 000 km/h).",
-      "En 2012, Voyager 1 cruzó la heliopausa, la frontera donde termina la influencia del viento solar y comienza el espacio interestelar.",
-      "Fue la primera nave humana en salir del Sistema Solar."
-    ],
-    "keyFacts": [
-      {
-        "title": "El viajero más lejano",
-        "description": "La Voyager 1 es el objeto humano que más se ha alejado de la Tierra: más de 24 mil millones de kilómetros (y aumentando cada segundo). Su señal tarda más de 22 horas en llegar a nosotros"
-      },
-      {
-        "title": "Lanzada después de su hermana",
-        "description": "Aunque lleva el número 1, la Voyager 1 fue lanzada 16 días después que la Voyager 2 (el 5 de septiembre de 1977). Sin embargo, siguió una ruta más rápida y la adelantó en su viaje"
-      },
-      {
-        "title": "Primera nave en el espacio interestelar",
-        "description": "El 25 de agosto de 2012, cruzó la heliopausa, el límite donde termina la influencia del Sol. Se convirtió así en la primera nave en llegar al espacio interestelar"
-      },
-      {
-        "title": "El Disco de Oro",
-        "description": "Lleva un Disco de Oro con sonidos, saludos e imágenes de la Tierra: 90 minutos de música, saludos en 55 idiomas y sonidos naturales (truenos, olas, risas, animales, etc.). Incluye desde Bach y Beethoven hasta Chuck Berry con Johnny B. Goode"
-      },
-      {
-        "title": "Instrucciones para extraterrestres",
-        "description": "El disco viene acompañado por un diagrama grabado en la cubierta, que explica con símbolos cómo reproducirlo. Usa pulsos de hidrógeno para definir el tiempo y un mapa con la posición del Sol respecto a 14 púlsares. Una forma de poder decirle a otras civilizaciones extraterrestres en qué lugar del cosmos nos encontramos"
-      },
-      {
-        "title": "La voz de la Tierra",
-        "description": "Entre los saludos grabados hay mensajes como: Hola desde los niños del planeta Tierra, dicho por una niña estadounidense de 6 años. También se escuchan saludos en español, latín, griego antiguo, árabe, chino y más"
-      },
-      {
-        "title": "Energía limitada, pero fiel",
-        "description": "Funciona con un generador nuclear de plutonio que produce cada año menos energía. Aun así, más de 45 años después del lanzamiento, sigue enviando señales a la Tierra"
-      },
-      {
-        "title": "Una señal más débil que una bombilla",
-        "description": "La potencia de transmisión de su antena es de apenas 23 vatios, menos que una bombilla doméstica. Sin embargo, el gigantesco sistema de antenas Deep Space Network logra captar su señal"
-      },
-      {
-        "title": "Durará miles de millones de años",
-        "description": "Incluso cuando sus instrumentos se apaguen, la Voyager 1 seguirá viajando durante miles de millones de años, llevando consigo el Disco de Oro: la huella más duradera de la humanidad"
-      }
-    ],
-    "timeline": [
-      {
-        "date": "1972",
-        "event": "Comienza el diseño del Proyecto Voyager, aprovechando la futura alineación de los planetas exteriores"
-      },
-      {
-        "date": "1975–1977",
-        "event": "Se construyen las dos sondas gemelas Voyager 1 y Voyager 2, con 11 instrumentos científicos cada una"
-      },
-      {
-        "date": "05-09-1977",
-        "event": "Despegue de la Voyager 1 a bordo de un cohete Titan IIIE-Centaur. Su objetivo inicial: explorar Júpiter y Saturno"
-      },
-      {
-        "date": "05-03-1979",
-        "event": "Llega a Júpiter, enviando imágenes inéditas de sus nubes y de la Gran Mancha Roja. Descubre volcanes activos en Ío, el primer hallazgo de vulcanismo fuera de la Tierra"
-      },
-      {
-        "date": "12-11-1980",
-        "event": "Confirma la existencia de una atmósfera densa en Titán, lo que cambia su trayectoria: la nave se desvía hacia el espacio exterior en lugar de continuar hacia Urano y Neptuno"
-      },
-      {
-        "date": "25-08-2012",
-        "event": "La Voyager 1 cruza la heliopausa, convirtiéndose en la primera nave humana en llegar al espacio interestelar. Desde entonces estudia las partículas y el campo magnético del medio interestelar"
-      },
-      {
-        "date": "2025",
-        "event": "Aún envía datos a la NASA con energía limitada. Se prevé que sus instrumentos científicos funcionen hasta aproximadamente 2030. Luego seguirá su viaje por miles de millones de años, llevando el Disco de Oro como mensaje eterno de la humanidad"
-      }
-    ],
-    "consequences": [
-      "La misión Voyager 1 marcó un antes y un después en la historia de la exploración espacial.",
-      "No solo expandió nuestro conocimiento sobre los planetas gigantes y sus lunas, sino que también demostró que la humanidad puede enviar su voz más allá de los límites del Sol.",
-      "Su viaje simboliza la unión entre ciencia, curiosidad y esperanza: un pequeño artefacto creado por manos humanas que sigue viajando entre las estrellas, llevando consigo el mensaje eterno de que, en un rincón del universo, existió una especie que quiso comprenderlo todo."
-    ]
-  },
-  {
-    "id": "La-inauguración",
-    "title": "La Estatua de la Libertad",
-    "date": "1886-10-28",
-    "category": "Monumentos",
-    "imageUrl": "/images/La-Estatua-de-la-Libertad.jpg",
-    "summary": [
-      "El 28 de octubre de 1886, Nueva York presenció la inauguración de un símbolo eterno. Regalo de Francia a Estados Unidos, la Estatua de la Libertad unió arte, ingeniería y un ideal universal. Su silueta marcaría para siempre el horizonte de la ciudad y la historia del mundo moderno."
-    ],
-    "context": [
-      "El 28 de octubre de 1886, una densa niebla cubría el puerto de Nueva York mientras miles de personas se reunían frente a la isla de Bedloe —hoy conocida como Liberty Island— para presenciar un acontecimiento sin precedentes. En medio del sonido de los barcos y las sirenas, emergía lentamente una silueta colosal: la Estatua de la Libertad, el regalo que Francia ofrecía a Estados Unidos como símbolo de amistad, esperanza y de los valores compartidos de libertad y democracia.",
-      "El monumento era la culminación de un proyecto concebido dos décadas antes por el pensador francés Édouard René de Laboulaye, quien quiso rendir homenaje a la independencia estadounidense y celebrar los ideales que inspiraron tanto la Revolución Americana como la Francesa. El escultor Frédéric Auguste Bartholdi fue el encargado de dar forma a esa visión, mientras que el ingeniero Gustave Eiffel —futuro creador de la célebre torre parisina— diseñó el armazón interno que permitiría sostener la gigantesca estructura de cobre.",
-      "Un año antes de su inauguración, la estatua había cruzado el Atlántico desmontada a bordo del barco francés Isère, enviada desde París en más de doscientas cajas. En Nueva York, miles de voluntarios trabajaron para ensamblar sus piezas sobre un pedestal diseñado por el arquitecto Richard Morris Hunt. Su construcción fue posible gracias a una campaña nacional de donaciones, en la que ciudadanos de todas las clases aportaron dinero para completar la obra.",
-      "Durante las semanas previas al acto oficial, la ciudad de Nueva York se preparó con desfiles, banquetes y ceremonias en honor a la delegación francesa. La prensa siguió cada detalle, desde la llegada del buque Isère hasta la colocación final de la antorcha. En la víspera de la inauguración, Bartholdi supervisó personalmente los preparativos del monumento y dispuso la gran bandera estadounidense que cubriría el rostro de la estatua, la misma que él mismo retiraría al día siguiente durante la ceremonia como gesto simbólico de unión entre ambas naciones.",
-      "La ceremonia de inauguración fue un evento nacional. Miles de personas acudieron al puerto, junto a autoridades, marineros, delegaciones francesas y norteamericanas. El presidente Grover Cleveland presidió el acto y, al descubrir la estatua, pronunció una frase que pasaría a la historia:",
-      "“La libertad ha elegido su morada; jamás verá extinguirse su luz.”"
-    ],
-    "keyFacts": [
-      {
-        "title": "El rostro de la libertad",
-        "description": "El escultor Frédéric Auguste Bartholdi se inspiró en el rostro de su madre para dar vida a la expresión serena de la Estatua de la Libertad."
-      },
-      {
-        "title": "Un ingeniero de altura",
-        "description": "La estructura interna fue diseñada por Gustave Eiffel, el mismo ingeniero que años más tarde levantaría la Torre Eiffel en París."
-      },
-      {
-        "title": "Financiada por el pueblo",
-        "description": "El pedestal se construyó gracias a miles de donaciones ciudadanas, impulsadas por una campaña del editor Joseph Pulitzer, que publicó en su periódico los nombres de todos los donantes."
-      },
-      {
-        "title": "Una antorcha renovada",
-        "description": "La antorcha original, iluminada con gas, fue reemplazada en 1986 por una réplica cubierta con pan de oro para celebrar el centenario del monumento."
-      },
-      {
-        "title": "Siete rayos para el mundo",
-        "description": "Cada uno de los siete rayos de su corona representa los siete continentes y los siete mares: un mensaje de libertad universal."
-      },
-      {
-        "title": "La fecha de la independencia",
-        "description": "En la tablilla que sostiene con su mano izquierda puede leerse “JULY IV MDCCLXXVI”, la fecha de la independencia de Estados Unidos: 4 de julio de 1776."
-      },
-      {
-        "title": "De Francia a Nueva York",
-        "description": "La estatua fue enviada desde Francia en 350 piezas, distribuidas en más de 200 cajas, y ensamblada durante cuatro meses en la isla de Bedloe."
-      },
-      {
-        "title": "Un coloso de cobre y hierro",
-        "description": "La Estatua de la Libertad mide 93 metros desde el suelo hasta la punta de la antorcha y pesa más de 200 toneladas, con un esqueleto de hierro cubierto por placas de cobre."
-      },
-      {
-        "title": "La primera “ticker-tape parade”",
-        "description": "En las calles de Manhattan, los oficinistas comenzaron espontáneamente a arrojar recortes de papel desde las ventanas, creando una lluvia blanca sobre la multitud. Sin saberlo, estaban inaugurando la primera “ticker-tape parade” de la historia, una tradición que más tarde se repetiría para celebrar victorias, héroes y momentos históricos."
-      }
-    ],
-    "timeline": [
-      {
-        "date": "1865",
-        "event": "El jurista y pensador francés Édouard René de Laboulaye propone crear un monumento que simbolice la amistad entre Francia y Estados Unidos y los ideales de libertad."
-      },
-      {
-        "date": "1870",
-        "event": "El escultor Frédéric Auguste Bartholdi comienza a diseñar la estatua, inspirándose en la figura clásica de Libertas, la diosa romana de la libertad."
-      },
-      {
-        "date": "1875",
-        "event": "Se formaliza el proyecto con el nombre La Liberté éclairant le monde (“La libertad iluminando el mundo”). Francia se compromete a construir la estatua, y Estados Unidos, el pedestal."
-      },
-      {
-        "date": "1876",
-        "event": "Se presenta la mano con la antorcha en la Exposición del Centenario en Filadelfia para recaudar fondos."
-      },
-      {
-        "date": "1878",
-        "event": "Se exhibe la cabeza de la estatua en la Exposición Universal de París, atrayendo gran atención internacional."
-      },
-      {
-        "date": "1881–1884",
-        "event": "Se construye la estatua en los talleres de Bartholdi en París, con estructura interna diseñada por Gustave Eiffel."
-      },
-      {
-        "date": "04-07-1884",
-        "event": "Francia celebra la finalización oficial de la estatua en París y la entrega simbólicamente a Estados Unidos."
-      },
-      {
-        "date": "17-06-1885",
-        "event": "El barco Isère llega al puerto de Nueva York con la estatua desmontada en 350 piezas y 214 cajas. Miles de personas la reciben con júbilo."
-      },
-      {
-        "date": "1885–1886",
-        "event": "Se construye el pedestal en la isla de Bedloe (hoy Liberty Island), diseñado por el arquitecto Richard Morris Hunt, financiado mediante donaciones populares impulsadas por Joseph Pulitzer."
-      }
-    ],
-    "consequences": [
-      "La inauguración de la Estatua de la Libertad en 1886 marcó un antes y un después en la historia moderna. Más que un monumento, se convirtió en un símbolo universal de libertad, esperanza y unión entre pueblos. Representó la amistad entre Francia y Estados Unidos, celebró el triunfo de los ideales democráticos y dio la bienvenida a millones de inmigrantes que llegaban a América en busca de un nuevo comienzo.",
-      "Su imagen, visible desde el mar, transformó el horizonte de Nueva York en un emblema global de los derechos humanos y la dignidad. Desde entonces, la antorcha de la Libertad brilla como una promesa: la de un mundo donde todos puedan aspirar a ser libres."
-    ]
-  },
-  {
-    "id": "Juicios-por-traición",
-    "title": "Roma",
-    "date": "103-a.C.",
-    "category": "Poder y Corrupción",
-    "imageUrl": "/images/Roma-juicios-por-traición.jpg",
-    "summary": [
-      "Los juicios por traición surgieron en Roma en el 103 a. C. con la Ley Appuleia de Maiestas, creada para castigar a quienes pusieran en riesgo al pueblo o al ejército romano.",
-      "Durante la época imperial, la ley cambió de sentido: ya no protegía al Estado, sino al emperador.",
-      "Muchos emperadores se aprovecharon de la ley en beneficio propio, llegando a realizar grandes matanzas, mientras que otros, aunque no la abolieron, dieron un uso más moderado.",
-      "Con el tiempo, los juicios por traición perdieron su función política y desaparecieron en la práctica, marcando el paso de una Roma dominada por el temor a una más racional y estable."
-    ],
-    "context": [
-      "Los juicios por traición en Roma tienen su origen en el 103 a. C., durante la República, con la promulgación de la Ley Appuleia de Maiestas, impulsada por el tribuno Lucio Apuleyo Saturnino.",
-      "Su finalidad era proteger la majestad del pueblo romano (Maiestas populi Romani) y castigar los actos que pusieran en peligro la seguridad del Estado o del ejército. En ese contexto, el delito de Maiestas equivalía a una forma de alta traición contra la autoridad y la estabilidad de Roma, y se aplicaba a los ciudadanos que atentaran contra las instituciones republicanas o las campañas militares.",
-      "Durante la República, esta ley formó parte de un sistema judicial que buscaba salvaguardar el orden político en una época marcada por tensiones internas, guerras civiles y luchas entre facciones. Sin embargo, su alcance se limitaba a los delitos contra el Estado y no tenía relación con figuras personales o religiosas.",
-      "Con la llegada del Imperio, a partir del 27 a. C., el significado del delito de Maiestas cambió profundamente. Roma ya no estaba gobernada por magistrados electos, sino por un solo hombre: el emperador. Así, el concepto de traición dejó de referirse a la seguridad del pueblo o de las instituciones y pasó a centrarse en la lealtad hacia el emperador. Hablar mal de él, cuestionar su autoridad o no mostrarle el debido respeto podía ser considerado un acto de traición.",
-      "Durante el gobierno de Tiberio (14–37 d. C.), los juicios por traición se multiplicaron. El Senado, que debía actuar como órgano judicial, se vio dominado por el miedo, ya que cualquier acusación de Maiestas podía significar la pérdida de bienes, el destierro o la muerte. Este clima de desconfianza marcó el inicio del uso político de la ley como herramienta de represión.",
-      "Con Calígula (37–41 d. C.) y Nerón (54–68 d. C.), el abuso del delito alcanzó su punto máximo. En estos periodos, los juicios por traición se convirtieron en instrumentos de control absoluto, empleados para eliminar enemigos políticos, senadores o incluso familiares sospechosos de deslealtad. Las acusaciones eran muchas veces arbitrarias y respondían más al temor o al interés personal que a la justicia.",
-      "Tras la crisis del Año de los Cuatro Emperadores (69 d. C.), los nuevos gobernantes Vespasiano y Tito (69–79 d. C.) buscaron estabilizar el Imperio y restaurar la confianza entre el poder y el Senado. Bajo su gobierno, el uso del delito de Maiestas se moderó considerablemente, volviendo a un ámbito más legal que político.",
-      "Durante el gobierno de Domiciano (81–96 d. C.), la situación se tensó de nuevo. Este emperador restableció parcialmente los juicios por traición para castigar supuestas conspiraciones, especialmente entre senadores y filósofos. Sin embargo, tras su muerte, el sistema judicial romano evolucionó hacia una mayor racionalidad y estabilidad.",
-      "Con los emperadores adoptivos —Nerva, Trajano, Adriano, Antonino Pío y Marco Aurelio—, el delito de Maiestas permaneció en el derecho romano, pero sin los abusos que habían caracterizado a épocas anteriores. Los juicios por traición se convirtieron en una figura residual, más simbólica que práctica.",
-      "A lo largo de los siglos, la ley nunca fue abolida oficialmente, pero su aplicación desapareció gradualmente. Lo que en la República había nacido como una defensa del pueblo y del ejército terminó transformándose en un instrumento de control imperial, y finalmente, en una reliquia jurídica sin uso real.",
-      "De este modo, los juicios por traición reflejan la evolución del poder en Roma: el paso de una República legalista y colectiva a un Imperio centralizado en la figura del emperador, y posteriormente, el retorno a una administración más moderada y estable.",
-      "De este modo, los juicios por traición reflejan la evolución del poder en Roma: el paso de una República legalista y colectiva a un Imperio centralizado en la figura del emperador, y posteriormente, el retorno a una administración más moderada y estable."
-    ],
-    "keyFacts": [
-      {
-        "title": "Los delatores se enriquecían acusando a otros",
-        "description": "Existía una figura oficial llamada el delator, un ciudadano que denunciaba a presuntos traidores. Si el acusado era condenado, el delator recibía una parte de sus bienes confiscados. Esto provocó una ola de falsas acusaciones y corrupción dentro del Senado."
-      },
-      {
-        "title": "Calígula convirtió los juicios en espectáculos",
-        "description": "El emperador Calígula asistía a los juicios por traición como si fueran representaciones teatrales. En ocasiones, presenciaba las ejecuciones personalmente y hasta bromeaba sobre las condenas."
-      },
-      {
-        "title": "Condenado por una estatua sin cabeza",
-        "description": "Durante el gobierno de Tiberio, un ciudadano fue acusado de traición porque una de sus estatuas de bronce se cayó y perdió la cabeza. El hecho fue interpretado como un mal augurio contra el emperador, y bastó para abrir un proceso por Maiestas."
-      },
-      {
-        "title": "Un senador fue ejecutado por hablar durante la cena",
-        "description": "También bajo Tiberio, un senador fue acusado de traición por haber comentado un chiste político durante un banquete. Sus palabras fueron interpretadas como una crítica al emperador… y acabó ejecutado."
-      },
-      {
-        "title": "Un esclavo fue acusado por repetir palabras que oyó",
-        "description": "En una de las anécdotas más escalofriantes del periodo, un esclavo doméstico fue denunciado porque repitió una frase escuchada en casa de su amo que sonaba irrespetuosa hacia el emperador. Ambos —esclavo y amo— fueron juzgados por Maiestas."
-      },
-      {
-        "title": "Calígula mandó ejecutar a hombres por su peinado",
-        "description": "El emperador Calígula ordenó castigar a varios senadores porque llevaban el mismo tipo de peinado que él, considerándolo una falta de respeto. Según Suetonio, incluso mandó ejecutar a quien lo miraba directamente a los ojos."
-      },
-      {
-        "title": "No juró por la fortuna del César",
-        "description": "Durante el mismo periodo, se exigía que los ciudadanos juraran fidelidad al emperador “por su fortuna”. Un ciudadano olvidó hacerlo y fue acusado de traición por negligencia al no pronunciar la fórmula completa del juramento."
-      },
-      {
-        "title": "Nerón hacía ensayos de muerte",
-        "description": "Nerón usaba los juicios por traición para eliminar a sus rivales literarios y políticos. Según Tácito, ordenaba ejecuciones como si fueran escenas teatrales, a veces improvisando frases o gestos trágicos mientras observaba cómo se cumplían las sentencias."
-      },
-      {
-        "title": "Una mujer fue acusada por haber soñado con la caída del emperador",
-        "description": "En los últimos años de Tiberio, una mujer fue denunciada por haber contado que soñó con la caída de la estatua del emperador. Ese sueño fue interpretado como un deseo de su muerte… y fue procesada por Maiestas."
-      },
-      {
-        "title": "Calígula reabrió juicios antiguos para humillar al Senado",
-        "description": "Calígula mandó revisar expedientes de décadas pasadas para condenar otra vez a los descendientes de quienes ya habían sido castigados. El objetivo era dejar claro que solo él tenía poder sobre la memoria y la historia."
-      },
-      {
-        "title": "Domiciano castigó incluso a los muertos",
-        "description": "El emperador Domiciano llegó a reabrir causas contra personas ya fallecidas y ordenó que sus estatuas fueran destruidas. Borrar su memoria (damnatio memoriae) era considerado un castigo equivalente a la traición."
-      }
-    ],
-    "timeline": [
-      {
-        "date": "103 a. C.",
-        "event": "Creada por Lucio Apuleyo Saturnino durante la República. Buscaba castigar a quienes traicionaran al pueblo o pusieran en peligro al ejército romano."
-      },
-      {
-        "date": "27 a. C.",
-        "event": "Con Augusto, la ley comienza a reinterpretarse: la Maiestas pasa de proteger al Estado a proteger la figura del emperador."
-      },
-      {
-        "date": "14–37 d. C.",
-        "event": "Con el imperio de Tiberio los juicios por traición se multiplican. Una palabra o gesto contra el emperador bastaba para ser condenado. El Senado vivía aterrorizado."
-      },
-      {
-        "date": "37–41 d. C.",
-        "event": "Con Calígula al principio promete eliminar los juicios, pero tras enfermar enloquece. Reabre casos antiguos, confisca fortunas y convierte los juicios en espectáculos crueles."
-      },
-      {
-        "date": "41–68 d. C.",
-        "event": "Con Claudio y Nerón, el delito de Maiestas se usa como herramienta política. Bajo Nerón, los juicios se vuelven aún más sangrientos y arbitrarios."
-      },
-      {
-        "date": "69–79 d. C.",
-        "event": "Con los emperadores Vespasiano y Tito, tras el “Año de los Cuatro Emperadores”, buscan estabilidad. Moderan los juicios y reducen su uso como arma política."
-      },
-      {
-        "date": "81–96 d. C.",
-        "event": "Con el emperador Domiciano se revive parcialmente los juicios. Persigue a filósofos y senadores acusados de conspiración o deslealtad."
-      },
-      {
-        "date": "96–180 d. C.",
-        "event": "Durante la época de Nerva, Trajano, Adriano y los Antoninos, el delito de Maiestas permanece en la ley, pero deja de usarse con fines políticos. Los juicios por traición caen en desuso."
-      }
-    ],
-    "consequences": [
-      "Los juicios por traición reflejan la transformación del poder en Roma:",
-      "de una República basada en la ley y el pueblo, a un Imperio dominado por la figura del emperador.",
-      "Lo que comenzó como una medida para proteger la seguridad del Estado terminó convirtiéndose en un instrumento de miedo y control político. Bajo emperadores como Tiberio, Calígula o Nerón, la acusación de Maiestas sirvió para eliminar rivales, castigar la disidencia y consolidar el culto al poder personal.",
-      "Sin embargo, también muestran cómo la sociedad romana aprendió de sus excesos. Con los emperadores adoptivos, el uso de estos juicios se moderó, y Roma entró en una etapa de mayor estabilidad y racionalidad jurídica.",
-      ""
-    ]
-  },
-  {
-    "id": "El-viaje-de-Colón",
-    "title": "El Descubrimiento de América",
-    "date": "1492-10-12",
-    "category": "Descubrimientos",
-    "imageUrl": "/images/El-descubrimiento-de-America.jpg",
-    "summary": [
-      "Cristóbal Colón y su expedición, financiada por los Reyes Católicos, llegaron el 12 de octubre de 1492 a una isla del actual archipiélago de las Bahamas, llamada San Salvador, tras más de dos meses de viaje desde Palos de la Frontera. Rodrigo de Triana, desde La Pinta, fue el primero en avistar tierra. Este acontecimiento marcó el inicio del encuentro entre Europa y América, cambiando para siempre el curso de la historia."
-    ],
-    "context": [
-      "A finales del siglo XV, el mundo conocido por los europeos se extendía solo por Europa, África y Asia. Las rutas comerciales hacia Oriente, esenciales para obtener especias, seda y otros productos valiosos, estaban controladas por el Imperio Otomano, que tras conquistar Constantinopla en 1453, bloqueó los caminos tradicionales entre Europa y Asia. Esto impulsó a las potencias europeas a buscar nuevas rutas marítimas.",
-      "En aquella época, Europa vivía una etapa de cambio profundo. El pensamiento medieval comenzaba a transformarse gracias a los avances en cartografía, astronomía y navegación, impulsados por el Renacimiento. El uso de nuevos instrumentos como la brújula, el astrolabio y el cuadrante permitía orientarse con mayor precisión en mar abierto, alentando a los exploradores a desafiar los límites del mundo conocido.",
-      "Mientras Portugal exploraba la costa africana hacia el sur, el navegante genovés Cristóbal Colón propuso una alternativa audaz: llegar a Asia navegando hacia el oeste, atravesando el Atlántico. Su proyecto fue rechazado en varias cortes, pero encontró apoyo en Castilla, donde los Reyes Católicos, Isabel I y Fernando II, recién triunfantes tras la conquista de Granada, vieron en su plan una oportunidad de expansión política, comercial y religiosa.",
-      "El 3 de agosto de 1492, Colón partió del puerto de Palos de la Frontera (Huelva) con tres embarcaciones: La Santa María, La Pinta y La Niña. Tras una escala en las Islas Canarias, la expedición se adentró en mares desconocidos durante más de dos meses, guiada por la fe, el cálculo y la determinación.",
-      "Durante la larga travesía, el cansancio y la incertidumbre comenzaron a apoderarse de la tripulación. La ausencia de tierra y el temor a lo desconocido provocaron tensiones y rumores de motín. Colón, firme en sus cálculos y convencido de su destino, logró mantener el control prometiendo regresar si en tres días no avistaban costas. A la madrugada del 12 de octubre de 1492, el grito de “¡Tierra!” rompió el silencio del océano, cambiando para siempre la historia del mundo.",
-      "La expedición había llegado a una isla del actual archipiélago de las Bahamas, llamada Guanahaní por los pueblos taínos y rebautizada San Salvador por Colón. Creyendo haber alcanzado las Indias Orientales, tomó posesión en nombre de los Reyes Católicos e inició la exploración de nuevas tierras caribeñas, como Cuba y La Española.",
-      "Tras varios meses de exploración, Colón emprendió el regreso a España el 15 de enero de 1493 a bordo de La Niña y La Pinta. Llegó al puerto de Palos de la Frontera el 15 de marzo del mismo año, siendo recibido como un héroe."
-    ],
-    "keyFacts": [
-      {
-        "title": "El viaje comenzó con una condena",
-        "description": "Colón zarpó del puerto de Palos de la Frontera el 3 de agosto de 1492, un puerto elegido no por azar, sino porque el pueblo estaba obligado por una sanción real a proporcionar dos embarcaciones y tripulación para la expedición."
-      },
-      {
-        "title": "El rumbo desconocido",
-        "description": "Nadie sabía qué habría al navegar hacia el oeste. Muchos marineros creían que el océano terminaba en un abismo o que monstruos marinos habitaban sus profundidades. Fue un viaje de auténtica fe y valentía."
-      },
-      {
-        "title": "América... sin saberlo",
-        "description": "Colón nunca supo que había descubierto un nuevo continente. Murió convencido de que había llegado a las costas de Asia, a las “Indias Orientales”."
-      },
-      {
-        "title": "Rodrigo de Triana, el olvidado",
-        "description": "Aunque fue Rodrigo de Triana quien primero gritó “¡Tierra!”, Colón se atribuyó el mérito del descubrimiento alegando que había visto una luz la noche anterior. Rodrigo nunca recibió la recompensa prometida."
-      },
-      {
-        "title": "La Pinta fue más rápida",
-        "description": "De las tres carabelas, La Pinta era la más veloz y maniobrable, por eso fue la primera en avistar tierra. Sin embargo, la nave capitana era La Santa María, la más grande de las tres."
-      },
-      {
-        "title": "El naufragio de la Santa María",
-        "description": "La nave capitana encalló la noche de Navidad de 1492 frente a las costas de La Española. Con su madera, Colón ordenó construir el primer asentamiento europeo en América: el Fuerte de la Navidad."
-      },
-      {
-        "title": "Un viaje que cambió el mapa",
-        "description": "Antes de Colón, el mapa del mundo terminaba en Europa, África y Asia. Después de 1492, los cartógrafos comenzaron a redibujar el planeta, dando origen a la visión global moderna."
-      },
-      {
-        "title": "El apoyo de los Reyes Católicos",
-        "description": "Isabel I de Castilla fue quien apostó por Colón cuando nadie más creyó en su proyecto. Vendió parte de sus joyas para financiar el viaje, aunque algunos historiadores matizan que fue más una decisión de Estado que un acto personal."
-      },
-      {
-        "title": "Colón murió sin gloria",
-        "description": "Cristóbal Colón murió en Valladolid en 1506, sin saber la magnitud de su hazaña y sin reconocimiento pleno. Sus restos fueron trasladados varias veces entre España y América, y aún existe debate sobre su paradero final."
-      },
-      {
-        "title": "El inicio de la era global",
-        "description": "El encuentro de 1492 marcó el comienzo de la globalización: intercambio de culturas, alimentos, animales, enfermedades y conocimientos entre Europa, África y América. Nada volvió a ser igual."
-      }
-    ],
-    "timeline": [
-      {
-        "date": "1492-03-08",
-        "event": "La expedición parte del puerto de Palos de la Frontera (Huelva) con tres embarcaciones: La Santa María, La Pinta y La Niña."
-      },
-      {
-        "date": "1492-06-09",
-        "event": "Tras una breve escala en las Islas Canarias, las naves retoman rumbo hacia el oeste por mares desconocidas."
-      },
-      {
-        "date": "1492-10-10",
-        "event": "La tripulación, cansada y temerosa, amenaza con amotinarse por no ver tierra. Colón logra calmarlos prometiendo regresar si en tres días no avistaban costas."
-      },
-      {
-        "date": "1492-12-10",
-        "event": "Rodrigo de Triana, desde La Pinta, grita “¡Tierra!” al avistar una isla del actual archipiélago de las Bahamas, llamada Guanahaní por los taínos y bautizada San Salvador por Colón. Colón desembarca y toma posesión en nombre de los Reyes Católicos, creyendo haber llegado a las Indias Orientales."
-      },
-      {
-        "date": "1492-28-10",
-        "event": "La expedición llega a Cuba, creyendo que era parte del continente asiático."
-      },
-      {
-        "date": "1492-06-12",
-        "event": "Arriban a La Española (actual Haití y República Dominicana), donde fundan el primer asentamiento europeo en América: La Navidad."
-      },
-      {
-        "date": "1492-25-12",
-        "event": "La Santa María encalla y se hunde en la costa norte de La Española."
-      },
-      {
-        "date": "1493-15-01",
-        "event": "Colón inicia el regreso a España con La Niña y La Pinta."
-      },
-      {
-        "date": "1493-15-03",
-        "event": "Colón llega a Palos de la Frontera, siendo recibido como héroe tras su primer viaje al Nuevo Mundo."
-      }
-    ],
-    "consequences": [
-      "El descubrimiento de América marcó uno de los momentos más trascendentales de la historia universal: el encuentro entre Europa y América. Este hecho abrió el camino a la expansión europea, el intercambio de culturas, recursos, conocimientos y también al inicio de profundas transformaciones políticas, económicas y sociales a ambos lados del Atlántico.",
-      "El viaje de Cristóbal Colón, financiado por los Reyes Católicos, no solo cambió la geografía conocida hasta entonces, sino que dio comienzo a la Edad Moderna, conectando por primera vez de forma permanente los dos hemisferios. A partir de este suceso, el mundo se volvió verdaderamente global, con un intercambio continuo de personas, ideas, especies y culturas que definiría la historia moderna."
-    ]
-  },
-  {
-    "id": "El-último-día",
-    "title": "Pompeya",
-    "date": "79-d.C.",
-    "category": "Catástrofes",
-    "imageUrl": "/images/Pompeya.jpg",
-    "summary": [
-      "En el año 79 d.C., el Monte Vesubio despertó con una fuerza devastadora, sepultando Pompeya bajo cenizas y fuego. Miles murieron en segundos, y la ciudad quedó congelada en el tiempo durante siglos. Hoy, sus ruinas revelan el último instante de una civilización sorprendida por la furia de la naturaleza."
-    ],
-    "context": [
-      "La erupción del Monte Vesubio tuvo lugar en el año 79 d.C., durante el reinado del emperador Tito, en una de las regiones más prósperas del Imperio romano. Entre las ciudades situadas en sus faldas, Pompeya era una de las más activas y florecientes: contaba con templos, termas, teatros, talleres, tabernas y lujosas casas decoradas con frescos y mosaicos. Era un reflejo del bienestar y la vida cotidiana romana.",
-      "El entorno del golfo de Nápoles ofrecía un clima templado, suelos fértiles y un intenso comercio marítimo. El Vesubio, que dominaba el horizonte, era considerado una montaña pacífica y productiva. Nadie imaginaba que bajo sus laderas dormía una de las fuerzas más destructivas de la historia.",
-      "En los días previos al desastre se registraron ligeros temblores y alteraciones en los manantiales, pero los habitantes de Pompeya estaban acostumbrados a la actividad sísmica. Nadie pensó en abandonar la ciudad. No existía conocimiento de que aquel monte era un volcán, ni de que su interior albergaba una cámara de magma bajo enorme presión.",
-      "En la mañana del 24 de agosto del 79 d.C. —aunque estudios recientes sugieren una fecha más tardía, hacia octubre o noviembre—, el Vesubio despertó violentamente. Una colosal columna de humo, ceniza y piedra pómez se elevó más de veinte kilómetros en el aire, oscureciendo el sol y cubriendo Pompeya en una penumbra asfixiante. Durante horas, una lluvia continua de fragmentos volcánicos cayó sobre la ciudad, haciendo que los techos se derrumbaran y las calles quedaran cubiertas de escombros.",
-      "El pánico se apoderó de los habitantes. Muchos intentaron huir por las puertas de la muralla o hacia el puerto, pero el espesor de la ceniza y la oscuridad lo hicieron casi imposible. Otros buscaron refugio en sus casas o sótanos, esperando que la tormenta terminara.",
-      "Con la llegada de la madrugada del día siguiente, el Vesubio liberó su furia final. Una oleada ardiente de gases y cenizas incandescentes descendió sobre Pompeya a más de 100 km/h, alcanzando temperaturas superiores a 400 °C. En cuestión de segundos, el aire se volvió irrespirable y toda vida en la ciudad se extinguió al instante. Los cuerpos quedaron donde estaban: algunos protegiendo a sus hijos, otros cubriéndose el rostro o intentando escapar.",
-      "En pocas horas, Pompeya desapareció bajo varios metros de ceniza y piedra pómez. Cuando la erupción cesó, el lugar era un desierto gris, sin sonido ni movimiento. Las casas, los templos y los cuerpos quedaron sellados por el material volcánico, preservados de manera sorprendente por el paso del tiempo.",
-      "Los días siguientes fueron de oscuridad y silencio. Los supervivientes de las zonas cercanas huyeron dejando atrás todo. El Vesubio continuó lanzando humo durante varios días hasta que finalmente se apagó."
-    ],
-    "keyFacts": [
-      {
-        "title": "El perro encadenado",
-        "description": "Uno de los hallazgos más impactantes es el cuerpo de un perro atado con su cadena. Murió intentando liberarse mientras la ceniza lo cubría. Su molde, obtenido al rellenar con yeso el espacio que dejó su cuerpo, muestra al animal en posición de lucha, arqueado por el dolor."
-      },
-      {
-        "title": "El mar estaba mucho más cerca",
-        "description": "En la época romana, el mar llegaba hasta las puertas de Pompeya, a unos 500 metros de la ciudad. Tras la erupción, los depósitos volcánicos extendieron la línea de costa más de 2 kilómetros hacia el oeste. Hoy, el mar está a unos 2,5 kilómetros de las ruinas."
-      },
-      {
-        "title": "Pompeya fue redescubierta por accidente",
-        "description": "En 1748, mientras se realizaban excavaciones cerca de Nápoles, los obreros hallaron muros y frescos bajo la tierra. No sabían que era Pompeya: se creyó primero que eran restos de otra villa romana. Solo años después se comprendió la magnitud del descubrimiento."
-      },
-      {
-        "title": "Las cenizas conservaron todo",
-        "description": "La gruesa capa de ceniza y piedra pómez actuó como un sello natural, protegiendo edificios, pinturas y objetos del aire y la humedad. Gracias a eso, hoy se conservan murales, pan carbonizado, utensilios de cocina y hasta grafitis escritos en las paredes."
-      },
-      {
-        "title": "Los moldes de las víctimas",
-        "description": "Cuando los arqueólogos descubrieron que bajo la ceniza quedaban huecos con forma de cuerpos, los llenaron con yeso líquido para recrear sus posturas. Así surgieron las figuras de hombres, mujeres, niños y animales, capturados exactamente en el momento de su muerte."
-      },
-      {
-        "title": "La temperatura fue letal",
-        "description": "Estudios recientes revelan que el flujo piroclástico alcanzó temperaturas de hasta 500 °C, suficientes para provocar la muerte instantánea por choque térmico, antes incluso de que los cuerpos quedaran sepultados."
-      },
-      {
-        "title": "Una ciudad llena de mensajes",
-        "description": "En las paredes de Pompeya se han encontrado más de 11.000 inscripciones: anuncios, mensajes amorosos, chistes, críticas políticas y hasta bromas de taberna. Algunas aún se leen claramente, mostrando la voz cotidiana de sus habitantes."
-      },
-      {
-        "title": "Colores originales preservados",
-        "description": "A diferencia de otras ruinas romanas, en Pompeya los frescos aún conservan colores vivos gracias a la ceniza que los aisló de la luz. Los rojos, amarillos y azules que decoraban las casas revelan el lujo y el gusto artístico de sus habitantes."
-      },
-      {
-        "title": "Una vida interrumpida",
-        "description": "En Pompeya se han encontrado ollas aún sobre el fuego, comidas a medio preparar, y mesas servidas, tal como quedaron en el instante de la erupción. Es una fotografía exacta del último día de una ciudad romana."
-      }
-    ],
-    "timeline": [
-      {
-        "date": "Días previos, año 79 d.C.",
-        "event": "Pequeños temblores y cambios en los manantiales alteran la región del golfo de Nápoles. Los habitantes, acostumbrados a los sismos, no imaginan el peligro que se avecina."
-      },
-      {
-        "date": "La erupción: Mediodía",
-        "event": "Según las cartas de Plinio el Joven, el Vesubio entra en erupción a media mañana. Una columna de humo y ceniza se eleva más de 20 km sobre el cielo. Durante horas, cae una lluvia incesante de piedra pómez y ceniza que cubre Pompeya."
-      },
-      {
-        "date": "La erupción: Tarde",
-        "event": "Las calles se vuelven intransitables, los tejados colapsan y la ciudad queda sumida en la oscuridad. Muchos buscan refugio en casas o templos, mientras otros intentan huir hacia el mar."
-      },
-      {
-        "date": "La erupción: Madrugada",
-        "event": "Ocurre la fase más mortal del desastre, una oleada piroclástica desciende del volcán a más de 100 km/h y más de 400 °C. Pompeya es arrasada en segundos, y miles de personas mueren instantáneamente."
-      },
-      {
-        "date": "Días posteriores",
-        "event": "El Vesubio sigue expulsando ceniza y gases durante días. El paisaje queda transformado, cubierto de piedra pómez y silencio. Los supervivientes abandonan la zona, dejando las ciudades sepultadas."
-      },
-      {
-        "date": "Años 100–200 d.C.",
-        "event": "Años después de la erupción, saqueadores excavan túneles entre los restos para recuperar objetos valiosos y joyas."
-      },
-      {
-        "date": "1748",
-        "event": "Pompeya es redescubierta por accidente durante unas obras cerca de Nápoles. Empiezan las primeras excavaciones, que revelan murales, frescos y objetos cotidianos."
-      },
-      {
-        "date": "Años 2000–2010 d.C.",
-        "event": "Nuevos estudios arqueológicos y hallazgos —como frutas otoñales, braseros encendidos y una inscripción fechada el 17 de octubre— demuestran que la erupción no ocurrió en agosto, sino entre octubre y noviembre del 79 d.C. Esta fecha es hoy la más aceptada por la comunidad científica."
-      },
-      {
-        "date": "Actualidad",
-        "event": "Pompeya es Patrimonio Mundial de la UNESCO y uno de los yacimientos arqueológicos más visitados del mundo. El Monte Vesubio continúa activo, bajo vigilancia constante por parte de la Protección Civil italiana."
-      }
-    ],
-    "consequences": [
-      "La erupción del Vesubio en el año 79 d.C. es uno de los desastres naturales más célebres de la Antigüedad y una fuente invaluable para la historia. La destrucción de Pompeya no solo marcó una tragedia humana, sino que permitió conservar una instantánea única de la vida romana en el momento exacto en que el tiempo se detuvo.",
-      "Gracias a las cenizas que cubrieron la ciudad, hoy se conocen con precisión cómo vivían, trabajaban y pensaban los romanos: su arquitectura, sus costumbres, su arte y su organización social. Pompeya se convirtió así en un testimonio arqueológico sin precedentes, esencial para comprender la civilización romana.",
-      "Además, el suceso impulsó el desarrollo de la arqueología moderna, inspiró a generaciones de artistas y científicos, y continúa recordando la fragilidad del ser humano frente a la fuerza de la naturaleza."
-    ]
-  },
-  {
-    "id": "El-último-águila-de-Tenochtitlán",
-    "title": "Cuauhtémoc",
-    "date": "1904-02-03",
-    "category": "Personajes históricos",
-    "imageUrl": "/images/Cuauhtémoc.jpg",
-    "summary": [
-      "Cuauhtémoc, último emperador mexica, ascendió al trono tras la muerte de Moctezuma II y la huida de los españoles en la Noche Triste. Con apenas 25 años lideró una resistencia heroica contra Hernán Cortés, enfrentando hambre, epidemias y traiciones. Capturado y ejecutado en 1525, su figura se convirtió en símbolo eterno de valentía y dignidad mexicana."
-    ],
-    "context": [
-      "Cuauhtémoc nació hacia 1495 en Tenochtitlán, dentro de una de las familias nobles más destacadas del Imperio mexica. Era descendiente del tlatoani Ahuízotl, lo que lo situaba dentro de la línea dinástica de los gobernantes de la capital. Desde joven fue instruido en el calmécac, la escuela de los nobles, donde aprendió religión, filosofía, estrategia militar y las leyes que regían la vida pública mexica. Su nombre, Cuāuhtémōc, significa “el que desciende como águila”, símbolo de fuerza, vigilancia y determinación.",
-      "En su juventud, Cuauhtémoc destacó como guerrero en las campañas contra pueblos rebeldes del Valle de México, ganando reputación por su valentía y sentido del deber. Pero el destino del imperio cambió en 1519 con la llegada de Hernán Cortés y sus hombres a las costas del Golfo de México. Los españoles avanzaron hacia el interior con el apoyo de pueblos indígenas enemigos de los mexicas, como los tlaxcaltecas, y se dirigieron a Tenochtitlán.",
-      "Moctezuma II, gobernante del imperio, dudó entre enfrentarse o recibir a los extranjeros como enviados divinos, influido por los presagios que anunciaban el fin de una era. Su indecisión permitió a Cortés entrar en la ciudad y tomarlo prisionero. La tensión se desbordó cuando los españoles masacraron a los nobles mexicas durante una ceremonia religiosa en el Templo Mayor, provocando un levantamiento general. Moctezuma murió durante los enfrentamientos —según las versiones, apedreado por su propio pueblo o abatido en el caos— y los conquistadores tuvieron que huir.",
-      "La noche del 30 de junio de 1520, los españoles fueron expulsados de Tenochtitlán en un episodio que pasaría a la historia como la Noche Triste. Cientos de soldados murieron en los canales y calzadas de la ciudad, cargando el oro que intentaban llevar consigo. Días después, el trono fue ocupado por Cuitláhuac, quien reorganizó la resistencia, pero murió poco después a causa de la viruela.",
-      "En ese contexto de ruina y desesperación, Cuauhtémoc fue elegido tlatoani en 1520, con apenas veinticinco años, para liderar la defensa del imperio. Durante su corto reinado, se preparó para una guerra total: fortificó los templos, organizó la producción de armas y coordinó las defensas sobre el lago. El asedio español de 1521 fue brutal: las calzadas fueron cortadas, los canales bloqueados y las reservas de agua y alimentos destruidas. Aun así, Cuauhtémoc resistió con coraje, combatiendo junto a sus guerreros hasta el final.",
-      "El 13 de agosto de 1521, al ver la derrota inevitable, Cuauhtémoc intentó huir por el lago de Texcoco en una canoa junto a su esposa, su familia y su primo Tetlepanquetzal, señor de Tlacopan. Sin embargo, fueron capturados por los hombres de Cortés y llevados ante él como prisioneros. Poco después, Cortés ordenó la tortura de Cuauhtémoc y de Tetlepanquetzal, buscando obligarlos a revelar el paradero del tesoro imperial mexica, que los conquistadores no habían logrado encontrar. Según las crónicas, ambos soportaron el tormento con dignidad, negándose a hablar.",
-      "Años más tarde, en 1525, Cortés emprendió una expedición hacia Honduras. Temiendo rebeliones y sospechando conspiraciones, llevó encadenados a Cuauhtémoc y a su primo. Durante la marcha por las selvas de Tabasco y el Petén, la desconfianza creció entre los españoles; Cortés acusó a los prisioneros de traición y ordenó su ejecución. El 28 de febrero de 1525, Cuauhtémoc y Tetlepanquetzal fueron ahorcados en Itzamkanac, poniendo fin al linaje de los tlatoanis mexicas."
-    ],
-    "keyFacts": [
-      {
-        "title": "El significado de su nombre",
-        "description": "Cuāuhtémōc en náhuatl significa “el que desciende como águila”, una metáfora del guerrero que se lanza desde el cielo sobre su enemigo, símbolo de valentía y visión."
-      },
-      {
-        "title": "El más joven de los tlatoanis",
-        "description": "Cuauhtémoc tenía apenas 25 años cuando fue elegido gobernante de Tenochtitlán, lo que lo convierte en el tlatoani más joven del imperio mexica en toda su historia registrada."
-      },
-      {
-        "title": "El tormento del oro",
-        "description": "Tras su captura, Hernán Cortés buscó desesperadamente el tesoro imperial mexica. Para obtener su ubicación, ordenó torturar a Cuauhtémoc y a su primo Tetlepanquetzal, señor de Tlacopan. Ambos fueron atados de pies y manos sobre braseros encendidos, y les vertieron aceite hirviendo en los pies, mientras eran interrogados una y otra vez."
-      },
-      {
-        "title": "Capturado por un bergantín",
-        "description": "Cuauhtémoc fue capturado en el lago de Texcoco cuando intentaba huir con su familia. Su canoa fue interceptada por un bergantín español, embarcación de guerra que Cortés había construido durante el sitio."
-      },
-      {
-        "title": "Su cuerpo nunca fue hallado",
-        "description": "El paradero exacto de los restos de Cuauhtémoc sigue siendo incierto. Existen varios monumentos y sitios conmemorativos, pero ninguno ha sido confirmado como su tumba real."
-      },
-      {
-        "title": "La muerte en la selva",
-        "description": "Cuauhtémoc fue ahorcado el 28 de febrero de 1525, acusado falsamente de conspirar contra Cortés durante la expedición a Honduras. Murió lejos de su tierra natal, en Itzamkanac."
-      },
-      {
-        "title": "Símbolo nacional",
-        "description": "Durante el siglo XIX, su figura fue recuperada como símbolo del honor y la resistencia mexicana, especialmente durante la Independencia. En 1887 se inauguró su monumento en el Paseo de la Reforma, Ciudad de México."
-      },
-      {
-        "title": "Fue sacerdote antes de ser guerrero",
-        "description": "Antes de dirigir ejércitos, Cuauhtémoc fue instruido en los templos como sacerdote del dios Huitzilopochtli, donde aprendió astronomía, rituales y filosofía mexica. Esta formación influenció su visión espiritual del deber y del sacrificio."
-      },
-      {
-        "title": "El propio Cortés admiró a Cuauhtémoc",
-        "description": "A pesar de haberlo derrotado, Hernán Cortés reconoció públicamente su valentía. En sus Cartas de relación lo llama “gran señor y persona de mucha autoridad”."
-      },
-      {
-        "title": ""
-      }
-    ],
-    "timeline": [
-      {
-        "date": "1495",
-        "event": "Cuauhtémoc nace alrededor de 1495, descendiente de la nobleza mexica y del tlatoani Ahuízotl. Desde joven es educado como guerrero y sacerdote en el calmécac."
-      },
-      {
-        "date": "1519",
-        "event": "Los españoles desembarcan en las costas del Golfo de México. Moctezuma II recibe noticias del avance de los extranjeros; Cuauhtémoc es ya un joven capitán de guerra."
-      },
-      {
-        "date": "1520",
-        "event": "Durante una ceremonia religiosa, los españoles atacan a los nobles mexicas. El pueblo se levanta contra ellos; Moctezuma es asesinado en medio del caos."
-      },
-      {
-        "date": "1520-06-30",
-        "event": "Los mexicas expulsan a los españoles de Tenochtitlán, causando numerosas bajas. Entre los defensores destaca Cuauhtémoc, que demuestra su liderazgo militar."
-      },
-      {
-        "date": "1520",
-        "event": "El nuevo tlatoani, Cuitláhuac, muere víctima de la viruela. El imperio queda sin líder en plena crisis."
-      },
-      {
-        "date": "1520",
-        "event": "A los 25 años, Cuauhtémoc es proclamado gobernante de Tenochtitlán. Reorganiza las fuerzas y prepara la defensa total de la ciudad ante el inminente regreso de Cortés."
-      },
-      {
-        "date": "1521",
-        "event": "Durante 93 días, la ciudad resiste el bloqueo español. Faltan alimentos y agua, y las epidemias se expanden. Cuauhtémoc dirige la defensa personalmente."
-      },
-      {
-        "date": "1521-08-13",
-        "event": "Cuauhtémoc intenta huir por el lago de Texcoco junto a su esposa, su familia y su primo Tetlepanquetzal, pero son capturados por los hombres de Cortés. El Imperio mexica cae."
-      },
-      {
-        "date": "1521",
-        "event": "Cortés ordena torturar a Cuauhtémoc y a Tetlepanquetzal para que revelen el paradero del tesoro mexica. Les queman los pies con braseros encendidos, pero ninguno confiesa."
-      },
-      {
-        "date": "1525",
-        "event": "Cortés obliga a Cuauhtémoc a acompañarlo en su marcha por la selva. Durante el viaje lo acusa de conspirar contra él."
-      },
-      {
-        "date": "1525-02-28",
-        "event": "Cortés ordena ahorcar a Cuauhtémoc y a Tetlepanquetzal en Itzamkanac. El último tlatoani de Tenochtitlán muere a los 30 años, símbolo de honor y resistencia."
-      },
-      {
-        "date": "Siglo XIX",
-        "event": "Durante la Independencia de México, Cuauhtémoc es reivindicado como héroe nacional. Su estatua se erige en el Paseo de la Reforma en 1887."
-      }
-    ],
-    "consequences": [
-      "Cuauhtémoc fue el último tlatoani del Imperio mexica y símbolo de la resistencia ante la conquista española. Asumió el poder en medio del caos tras la muerte de Moctezuma y defendió Tenochtitlán hasta su caída en 1521. Capturado, torturado y finalmente ejecutado por Hernán Cortés, su valor y dignidad lo convirtieron en un emblema eterno del honor y la identidad del pueblo mexicano."
-    ]
-  },
-  {
-    "id": "El-mito",
-    "title": "Orfeo y Eurídice",
-    "date": "Siglos VIII y VI a. C.",
-    "category": "Mitología",
-    "imageUrl": "/images/Orfeo-y-Euridice.jpg",
-    "summary": [
-      "Orfeo, un músico prodigioso cuya lira podía calmar a los animales y conmover incluso a los dioses, se enamora profundamente de la ninfa Eurídice y se casa con ella. Pero el mismo día de su boda, mientras celebra entre los prados, una serpiente muerde a Eurídice y la joven muere de inmediato. Abrumado por el dolor, Orfeo se niega a aceptar la pérdida y decide realizar lo imposible: descender al inframundo para recuperarla. No lleva armas ni aliados; solo confía en el poder de su música."
-    ],
-    "context": [
-      "En los primeros tiempos del mundo, cuando los dioses aún caminaban entre los hombres y el eco de la poesía guiaba a los mortales, nació Orfeo, hijo del rey tracio Eagro y de Calíope, la más inspirada de las Musas. Desde niño, su música no se parecía a ninguna otra. Su lira no era solo un instrumento: era un puente entre lo humano y lo divino. Cuando Orfeo tocaba, los animales se detenían, los árboles se inclinaban y hasta los espíritus del viento parecían escuchar su melodía. La naturaleza, entera, se dejaba llevar por él.",
-      "Durante su juventud, Orfeo conoció a Eurídice, una ninfa de gracia luminosa. Su belleza no residía en adornos ni coronas, sino en una pureza casi celestial. El encuentro entre ambos fue inmediato, profundo, arrebatador. Pronto se casaron, celebrando su unión entre prados y flores. Pero la alegría duró poco: mientras bailaba entre la hierba, Eurídice pisó una serpiente escondida, y el veneno se extendió por su cuerpo como una sombra rápida. Murió en los brazos de sus compañeras ninfas, y la luz abandonó de golpe la vida de Orfeo.",
-      "Sumido en un dolor insoportable, Orfeo vagó días enteros tocando su lira con notas tan tristes que hasta las rocas lloraron. No aceptaba la muerte de Eurídice; no aceptaba que el destino le arrebatara lo que más amaba. Entonces tomó una decisión que ningún mortal había osado antes: descender al inframundo para traerla de vuelta.",
-      "El viaje hacia las profundidades era un camino reservado a héroes o a quienes no temían la muerte. Orfeo no llevó armas ni aliados. Su única defensa era su música. Al llegar a la ribera del río Aqueronte, el viejo barquero Caronte, guardián de la frontera entre la vida y la muerte, se negó a llevarlo. Pero cuando escuchó la melodía de Orfeo, una música llena de amor y súplica, sus manos temblaron: por primera vez dejó pasar a un mortal sin exigir el óbolo.",
-      "Más adelante, el guardián de tres cabezas, Cerbero, la bestia que jamás dormía, se derrumbó como un cachorro ante una melodía suave que hablaba de praderas y días dorados. Las almas errantes se detuvieron a su paso; algunas recordaron emociones que creían olvidadas hacía siglos. Incluso las Erinias, las Furias del castigo, dejaron escapar lágrimas.",
-      "Al fin, Orfeo llegó ante Hades y Perséfone, los soberanos del reino de los muertos. Allí, en ese trono oscuro donde el tiempo no existe, tocó para ellos. No pidió gloria ni desafío: solo el retorno de Eurídice. Cada nota era un ruego, cada acorde entregaba una parte de su alma. Y los dioses, conmovidos como nunca, aceptaron concederle lo imposible.",
-      "Sin embargo, había una condición: \nOrfeo debía caminar hacia la salida del inframundo con Eurídice detrás de él. No podía mirarla hasta cruzar el umbral del mundo de los vivos. Si lo hacía, la perdería para siempre.",
-      "El regreso fue casi insoportable. Orfeo avanzaba sin mirar atrás, y a sus espaldas escuchaba lo que parecían ser los pasos suaves de Eurídice. Pero el silencio del inframundo era tan profundo que empezó a dudar. ¿De verdad venía con él? ¿O todo era un engaño? ¿Era ella… o solo el eco de lo que deseaba escuchar? Cada paso hacia la salida se volvió una lucha entre la esperanza y el miedo.",
-      "Cuando la luz del mundo de los vivos apareció a unos metros, la angustia lo venció. En un instante de desesperación, giró la cabeza. Solo vio a Eurídice extender la mano hacia él, desvaneciéndose lentamente, murmurando su nombre con infinita tristeza.",
-      "Orfeo salió al mundo sin ella. Desde ese día, su música cambió. Ya no cantó sobre la alegría ni sobre los banquetes de los dioses; solo tocó melodías melancólicas que hablaban de amor perdido, de caminos rotos y de la fragilidad del destino. Vivió aislado, evitando a los mortales, hasta que finalmente la muerte lo alcanzó.",
-      "Cuando su alma descendió al inframundo, el reino de las sombras no fue un castigo. Allí, en el lugar donde una vez tuvo esperanza, encontró por fin a Eurídice. Y esta vez no hubo condiciones, ni pruebas, ni fronteras. Los dos permanecieron juntos para toda la eternidad, unidos por un amor tan profundo que ni la muerte pudo apagar."
-    ],
-    "keyFacts": [
-      {
-        "title": "Orfeo no solo encantaba animales",
-        "description": "En varios poemas antiguos se dice que las piedras y los árboles lo seguían cuando tocaba. No es metáfora: literalmente se movían para acercarse a él."
-      },
-      {
-        "title": "Eurídice tiene diferentes muertes según la versión",
-        "description": "La forma más conocida es la mordedura de serpiente, pero en otra versión antigua Eurídice huye de un pastor que intenta atacarla y, en esa huida, pisa accidentalmente la serpiente que la mata."
-      },
-      {
-        "title": "Orfeo es uno de los pocos mortales que entran al inframundo vivos",
-        "description": "En la mitología griega solo unos pocos logran esto: Heracles, Teseo, Ulises y Orfeo. Pero Orfeo es el único que lo hace sin armas y sin violencia."
-      },
-      {
-        "title": "Hades es sorprendentemente comprensivo",
-        "description": "Pese a su fama, Hades pocas veces aparece como “malo” en los mitos. En esta historia es justo pero inflexible: acepta que Eurídice viva, pero impone la famosa condición de no mirar atrás."
-      },
-      {
-        "title": "Orfeo crea una religión",
-        "description": "En la Antigüedad surgió el orfismo, un movimiento religioso real inspirado en él. Enseñaba: \n\nLa reencarnación del alma."
-      },
-      {
-        "title": "La purificación espiritual."
-      },
-      {
-        "title": "La música como camino hacia lo divino."
-      },
-      {
-        "title": "Su muerte también tiene dos versiones",
-        "description": "Versión famosa: las Ménades (seguidoras de Dioniso) lo despedazan por rechazar sus rituales o por despreciar a las mujeres tras perder a Eurídice."
-      },
-      {
-        "title": "Versión alternativa: muere por un rayo de Zeus por revelar secretos divinos."
-      },
-      {
-        "title": "Su cabeza siguió cantando",
-        "description": "Según la leyenda, su cabeza decapitada cayó al río Hebro y siguió cantando mientras flotaba, llevando su lira hasta llegar a la isla de Lesbos."
-      },
-      {
-        "title": "En la tradición romana sí se vuelven a reunir",
-        "description": "Los romanos suavizaron el mito: cuando Orfeo muere, su alma desciende al inframundo y por fin se reúne con Eurídice para siempre."
-      }
-    ],
-    "timeline": [
-      {
-        "date": "1. Nacimiento de Orfeo",
-        "event": "Hijo del rey Eagro y de Calíope, musa de la poesía; desde niño demuestra un talento musical sobrenatural."
-      },
-      {
-        "date": "2. Encuentro con Eurídice",
-        "event": "Orfeo conoce a la ninfa Eurídice y ambos se enamoran profundamente."
-      },
-      {
-        "date": "3. La boda",
-        "event": "Se casan rodeados de naturaleza y alegría."
-      },
-      {
-        "date": "4. La tragedia",
-        "event": "Durante la celebración, una serpiente muerde a Eurídice y ella muere de inmediato."
-      },
-      {
-        "date": "5. El duelo de Orfeo",
-        "event": "Desesperado, Orfeo toca canciones de dolor y decide descender al inframundo para recuperarla."
-      },
-      {
-        "date": "6. El descenso",
-        "event": "Con su música conmueve a Caronte, duerme a Cerbero y hace llorar a las Furias. Ningún mortal había llegado tan lejos sin violencia."
-      },
-      {
-        "date": "7. El encuentro con Hades y Perséfone",
-        "event": "Orfeo toca para ellos y logra lo imposible: los dioses permiten que Eurídice regrese al mundo de los vivos."
-      },
-      {
-        "date": "8. La condición",
-        "event": "Orfeo debe caminar hacia la salida sin mirar atrás hasta llegar por completo a la luz del mundo de los vivos."
-      },
-      {
-        "date": "9. El regreso",
-        "event": "Caminan en silencio: Orfeo delante, Eurídice detrás. La duda empieza a consumirlo."
-      },
-      {
-        "date": "10. La mirada prohibida",
-        "event": "Cuando está a punto de salir, Orfeo se gira impulsado por el miedo. Eurídice se desvanece para siempre."
-      },
-      {
-        "date": "11. La soledad de Orfeo",
-        "event": "Vuelve al mundo sin ella, deja de cantar melodías alegres y vive apartado, consumido por la tristeza."
-      },
-      {
-        "date": "12. La muerte de Orfeo",
-        "event": "Finalmente muere, y su alma desciende al inframundo."
-      },
-      {
-        "date": "13. El reencuentro",
-        "event": "Allí, por fin, Orfeo y Eurídice vuelven a encontrarse y permanecen juntos en la eternidad."
-      }
-    ],
-    "consequences": [
-      "El mito de Orfeo y Eurídice es uno de los relatos más importantes de la antigüedad porque simboliza el amor que se atreve a desafiar incluso a la muerte. Su historia convirtió a Orfeo en el ejemplo máximo del poder del arte: no vence con fuerza ni armas, sino con música, mostrando que la belleza puede conmover a dioses y criaturas oscuras. Al mismo tiempo, la tragedia final revela la fragilidad humana: Orfeo pierde a Eurídice por una duda, por un instante de miedo, recordando que a veces la inseguridad arruina aquello que más deseamos. Este mito también dio origen al orfismo, una corriente espiritual real que hablaba de la inmortalidad del alma, la reencarnación y la pureza moral. Además, su descenso al inframundo se convirtió en un modelo narrativo usado por escritores durante siglos, y su figura explicó para los antiguos griegos por qué existe una música capaz de expresar tristeza profunda. Por todo esto, el mito de Orfeo no solo cuenta una historia de amor trágico: también reflexiona sobre la pérdida, la esperanza y el poder transformador del arte."
-    ]
-  }
+    {
+        "id":  "La-voz-de-la-tierra",
+        "title":  "Voyager 1 ",
+        "date":  "1977-09-05",
+        "category":  "Espacio ",
+        "imageUrl":  "images/Voyager-1.jpg",
+        "summary":  [
+                        "En 1977, la NASA lanzó la Voyager 1, una sonda destinada a explorar Júpiter y Saturno, convirtiéndose en la actualidad en el objeto humano más alejado de la Tierra."
+                    ],
+        "context":  [
+                        "En la década de 1970, la NASA se encontraba en plena era dorada de la exploración espacial. Las misiones Apolo habían terminado, y la agencia buscaba nuevos horizontes más allá de la Luna. Fue entonces cuando los científicos descubrieron algo extraordinario: una alineación única de los planetas exteriores —Júpiter, Saturno, Urano y Neptuno— que ocurriría solo una vez cada 176 años.",
+                        "Esta disposición permitiría que una nave pudiera aprovechar la gravedad de cada planeta como impulso, acelerándose sin gastar tanto combustible y visitando varios mundos en un solo viaje. A esto se le conoce como asistencia gravitacional. Así nació el ambicioso Proyecto Voyager.",
+                        "La NASA diseñó dos sondas gemelas, Voyager 1 y Voyager 2, con una misión doble:",
+                        "Explorar los planetas gigantes del Sistema Solar exterior, en especial Júpiter y Saturno.",
+                        "Estudiar sus lunas, anillos y campos magnéticos, obteniendo imágenes y datos científicos jamás vistos.",
+                        "Aunque se planeó que Voyager 2 continuara hacia Urano y Neptuno, Voyager 1 tenía un propósito más enfocado: realizar un sobrevuelo cercano a Titán, la luna de Saturno, que intrigaba a los científicos por su atmósfera espesa y misteriosa.",
+                        "Esa maniobra determinó que Voyager 1 siguiera una trayectoria más vertical, alejándose del plano de los planetas… rumbo al infinito.",
+                        "Durante su paso por los planetas, Voyager 1 revolucionó nuestro conocimiento del Sistema Solar:",
+                        "En Júpiter, mostró tormentas gigantes y descubrió volcanes activos en Ío, una de las lunas de Júpiter, la primera evidencia de actividad volcánica fuera de la Tierra.",
+                        "En Saturno, reveló la complejidad de sus anillos y los misterios de Titán, confirmando su densa atmósfera de nitrógeno.",
+                        "Después de ese punto, ya no había más destinos planetarios en su ruta. Así, la misión principal se dio por completada, pero la NASA decidió mantenerla activa como Misión Interestelar, para estudiar los límites del entorno solar.",
+                        "Con el tiempo, la sonda siguió alejándose a velocidades enormes (más de 60 000 km/h).",
+                        "En 2012, Voyager 1 cruzó la heliopausa, la frontera donde termina la influencia del viento solar y comienza el espacio interestelar.",
+                        "Fue la primera nave humana en salir del Sistema Solar."
+                    ],
+        "keyFacts":  [
+                         {
+                             "title":  "El viajero más lejano",
+                             "description":  "La Voyager 1 es el objeto humano que más se ha alejado de la Tierra: más de 24 mil millones de kilómetros (y aumentando cada segundo). Su señal tarda más de 22 horas en llegar a nosotros"
+                         },
+                         {
+                             "title":  "Lanzada después de su hermana",
+                             "description":  "Aunque lleva el número 1, la Voyager 1 fue lanzada 16 días después que la Voyager 2 (el 5 de septiembre de 1977). Sin embargo, siguió una ruta más rápida y la adelantó en su viaje"
+                         },
+                         {
+                             "title":  "Primera nave en el espacio interestelar",
+                             "description":  "El 25 de agosto de 2012, cruzó la heliopausa, el límite donde termina la influencia del Sol. Se convirtió así en la primera nave en llegar al espacio interestelar"
+                         },
+                         {
+                             "title":  "El Disco de Oro",
+                             "description":  "Lleva un Disco de Oro con sonidos, saludos e imágenes de la Tierra: 90 minutos de música, saludos en 55 idiomas y sonidos naturales (truenos, olas, risas, animales, etc.). Incluye desde Bach y Beethoven hasta Chuck Berry con Johnny B. Goode"
+                         },
+                         {
+                             "title":  "Instrucciones para extraterrestres",
+                             "description":  "El disco viene acompañado por un diagrama grabado en la cubierta, que explica con símbolos cómo reproducirlo. Usa pulsos de hidrógeno para definir el tiempo y un mapa con la posición del Sol respecto a 14 púlsares. Una forma de poder decirle a otras civilizaciones extraterrestres en qué lugar del cosmos nos encontramos"
+                         },
+                         {
+                             "title":  "La voz de la Tierra",
+                             "description":  "Entre los saludos grabados hay mensajes como: Hola desde los niños del planeta Tierra, dicho por una niña estadounidense de 6 años. También se escuchan saludos en español, latín, griego antiguo, árabe, chino y más"
+                         },
+                         {
+                             "title":  "Energía limitada, pero fiel",
+                             "description":  "Funciona con un generador nuclear de plutonio que produce cada año menos energía. Aun así, más de 45 años después del lanzamiento, sigue enviando señales a la Tierra"
+                         },
+                         {
+                             "title":  "Una señal más débil que una bombilla",
+                             "description":  "La potencia de transmisión de su antena es de apenas 23 vatios, menos que una bombilla doméstica. Sin embargo, el gigantesco sistema de antenas Deep Space Network logra captar su señal"
+                         },
+                         {
+                             "title":  "Durará miles de millones de años",
+                             "description":  "Incluso cuando sus instrumentos se apaguen, la Voyager 1 seguirá viajando durante miles de millones de años, llevando consigo el Disco de Oro: la huella más duradera de la humanidad"
+                         }
+                     ],
+        "timeline":  [
+                         {
+                             "date":  "1972",
+                             "event":  "Comienza el diseño del Proyecto Voyager, aprovechando la futura alineación de los planetas exteriores"
+                         },
+                         {
+                             "date":  "1975–1977",
+                             "event":  "Se construyen las dos sondas gemelas Voyager 1 y Voyager 2, con 11 instrumentos científicos cada una"
+                         },
+                         {
+                             "date":  "05-09-1977",
+                             "event":  "Despegue de la Voyager 1 a bordo de un cohete Titan IIIE-Centaur. Su objetivo inicial: explorar Júpiter y Saturno"
+                         },
+                         {
+                             "date":  "05-03-1979",
+                             "event":  "Llega a Júpiter, enviando imágenes inéditas de sus nubes y de la Gran Mancha Roja. Descubre volcanes activos en Ío, el primer hallazgo de vulcanismo fuera de la Tierra"
+                         },
+                         {
+                             "date":  "12-11-1980",
+                             "event":  "Confirma la existencia de una atmósfera densa en Titán, lo que cambia su trayectoria: la nave se desvía hacia el espacio exterior en lugar de continuar hacia Urano y Neptuno"
+                         },
+                         {
+                             "date":  "25-08-2012",
+                             "event":  "La Voyager 1 cruza la heliopausa, convirtiéndose en la primera nave humana en llegar al espacio interestelar. Desde entonces estudia las partículas y el campo magnético del medio interestelar"
+                         },
+                         {
+                             "date":  "2025",
+                             "event":  "Aún envía datos a la NASA con energía limitada. Se prevé que sus instrumentos científicos funcionen hasta aproximadamente 2030. Luego seguirá su viaje por miles de millones de años, llevando el Disco de Oro como mensaje eterno de la humanidad"
+                         }
+                     ],
+        "consequences":  [
+                             "La misión Voyager 1 marcó un antes y un después en la historia de la exploración espacial.",
+                             "No solo expandió nuestro conocimiento sobre los planetas gigantes y sus lunas, sino que también demostró que la humanidad puede enviar su voz más allá de los límites del Sol.",
+                             "Su viaje simboliza la unión entre ciencia, curiosidad y esperanza: un pequeño artefacto creado por manos humanas que sigue viajando entre las estrellas, llevando consigo el mensaje eterno de que, en un rincón del universo, existió una especie que quiso comprenderlo todo."
+                         ]
+    },
+    {
+        "id":  "La-inauguración",
+        "title":  "La Estatua de la Libertad",
+        "date":  "1886-10-28",
+        "category":  "Monumentos",
+        "imageUrl":  "images/La-Estatua-de-la-Libertad.jpg",
+        "summary":  [
+                        "El 28 de octubre de 1886, Nueva York presenció la inauguración de un símbolo eterno. Regalo de Francia a Estados Unidos, la Estatua de la Libertad unió arte, ingeniería y un ideal universal. Su silueta marcaría para siempre el horizonte de la ciudad y la historia del mundo moderno."
+                    ],
+        "context":  [
+                        "El 28 de octubre de 1886, una densa niebla cubría el puerto de Nueva York mientras miles de personas se reunían frente a la isla de Bedloe —hoy conocida como Liberty Island— para presenciar un acontecimiento sin precedentes. En medio del sonido de los barcos y las sirenas, emergía lentamente una silueta colosal: la Estatua de la Libertad, el regalo que Francia ofrecía a Estados Unidos como símbolo de amistad, esperanza y de los valores compartidos de libertad y democracia.",
+                        "El monumento era la culminación de un proyecto concebido dos décadas antes por el pensador francés Édouard René de Laboulaye, quien quiso rendir homenaje a la independencia estadounidense y celebrar los ideales que inspiraron tanto la Revolución Americana como la Francesa. El escultor Frédéric Auguste Bartholdi fue el encargado de dar forma a esa visión, mientras que el ingeniero Gustave Eiffel —futuro creador de la célebre torre parisina— diseñó el armazón interno que permitiría sostener la gigantesca estructura de cobre.",
+                        "Un año antes de su inauguración, la estatua había cruzado el Atlántico desmontada a bordo del barco francés Isère, enviada desde París en más de doscientas cajas. En Nueva York, miles de voluntarios trabajaron para ensamblar sus piezas sobre un pedestal diseñado por el arquitecto Richard Morris Hunt. Su construcción fue posible gracias a una campaña nacional de donaciones, en la que ciudadanos de todas las clases aportaron dinero para completar la obra.",
+                        "Durante las semanas previas al acto oficial, la ciudad de Nueva York se preparó con desfiles, banquetes y ceremonias en honor a la delegación francesa. La prensa siguió cada detalle, desde la llegada del buque Isère hasta la colocación final de la antorcha. En la víspera de la inauguración, Bartholdi supervisó personalmente los preparativos del monumento y dispuso la gran bandera estadounidense que cubriría el rostro de la estatua, la misma que él mismo retiraría al día siguiente durante la ceremonia como gesto simbólico de unión entre ambas naciones.",
+                        "La ceremonia de inauguración fue un evento nacional. Miles de personas acudieron al puerto, junto a autoridades, marineros, delegaciones francesas y norteamericanas. El presidente Grover Cleveland presidió el acto y, al descubrir la estatua, pronunció una frase que pasaría a la historia:",
+                        "“La libertad ha elegido su morada; jamás verá extinguirse su luz.”"
+                    ],
+        "keyFacts":  [
+                         {
+                             "title":  "El rostro de la libertad",
+                             "description":  "El escultor Frédéric Auguste Bartholdi se inspiró en el rostro de su madre para dar vida a la expresión serena de la Estatua de la Libertad."
+                         },
+                         {
+                             "title":  "Un ingeniero de altura",
+                             "description":  "La estructura interna fue diseñada por Gustave Eiffel, el mismo ingeniero que años más tarde levantaría la Torre Eiffel en París."
+                         },
+                         {
+                             "title":  "Financiada por el pueblo",
+                             "description":  "El pedestal se construyó gracias a miles de donaciones ciudadanas, impulsadas por una campaña del editor Joseph Pulitzer, que publicó en su periódico los nombres de todos los donantes."
+                         },
+                         {
+                             "title":  "Una antorcha renovada",
+                             "description":  "La antorcha original, iluminada con gas, fue reemplazada en 1986 por una réplica cubierta con pan de oro para celebrar el centenario del monumento."
+                         },
+                         {
+                             "title":  "Siete rayos para el mundo",
+                             "description":  "Cada uno de los siete rayos de su corona representa los siete continentes y los siete mares: un mensaje de libertad universal."
+                         },
+                         {
+                             "title":  "La fecha de la independencia",
+                             "description":  "En la tablilla que sostiene con su mano izquierda puede leerse “JULY IV MDCCLXXVI”, la fecha de la independencia de Estados Unidos: 4 de julio de 1776."
+                         },
+                         {
+                             "title":  "De Francia a Nueva York",
+                             "description":  "La estatua fue enviada desde Francia en 350 piezas, distribuidas en más de 200 cajas, y ensamblada durante cuatro meses en la isla de Bedloe."
+                         },
+                         {
+                             "title":  "Un coloso de cobre y hierro",
+                             "description":  "La Estatua de la Libertad mide 93 metros desde el suelo hasta la punta de la antorcha y pesa más de 200 toneladas, con un esqueleto de hierro cubierto por placas de cobre."
+                         },
+                         {
+                             "title":  "La primera “ticker-tape parade”",
+                             "description":  "En las calles de Manhattan, los oficinistas comenzaron espontáneamente a arrojar recortes de papel desde las ventanas, creando una lluvia blanca sobre la multitud. Sin saberlo, estaban inaugurando la primera “ticker-tape parade” de la historia, una tradición que más tarde se repetiría para celebrar victorias, héroes y momentos históricos."
+                         }
+                     ],
+        "timeline":  [
+                         {
+                             "date":  "1865",
+                             "event":  "El jurista y pensador francés Édouard René de Laboulaye propone crear un monumento que simbolice la amistad entre Francia y Estados Unidos y los ideales de libertad."
+                         },
+                         {
+                             "date":  "1870",
+                             "event":  "El escultor Frédéric Auguste Bartholdi comienza a diseñar la estatua, inspirándose en la figura clásica de Libertas, la diosa romana de la libertad."
+                         },
+                         {
+                             "date":  "1875",
+                             "event":  "Se formaliza el proyecto con el nombre La Liberté éclairant le monde (“La libertad iluminando el mundo”). Francia se compromete a construir la estatua, y Estados Unidos, el pedestal."
+                         },
+                         {
+                             "date":  "1876",
+                             "event":  "Se presenta la mano con la antorcha en la Exposición del Centenario en Filadelfia para recaudar fondos."
+                         },
+                         {
+                             "date":  "1878",
+                             "event":  "Se exhibe la cabeza de la estatua en la Exposición Universal de París, atrayendo gran atención internacional."
+                         },
+                         {
+                             "date":  "1881–1884",
+                             "event":  "Se construye la estatua en los talleres de Bartholdi en París, con estructura interna diseñada por Gustave Eiffel."
+                         },
+                         {
+                             "date":  "04-07-1884",
+                             "event":  "Francia celebra la finalización oficial de la estatua en París y la entrega simbólicamente a Estados Unidos."
+                         },
+                         {
+                             "date":  "17-06-1885",
+                             "event":  "El barco Isère llega al puerto de Nueva York con la estatua desmontada en 350 piezas y 214 cajas. Miles de personas la reciben con júbilo."
+                         },
+                         {
+                             "date":  "1885–1886",
+                             "event":  "Se construye el pedestal en la isla de Bedloe (hoy Liberty Island), diseñado por el arquitecto Richard Morris Hunt, financiado mediante donaciones populares impulsadas por Joseph Pulitzer."
+                         }
+                     ],
+        "consequences":  [
+                             "La inauguración de la Estatua de la Libertad en 1886 marcó un antes y un después en la historia moderna. Más que un monumento, se convirtió en un símbolo universal de libertad, esperanza y unión entre pueblos. Representó la amistad entre Francia y Estados Unidos, celebró el triunfo de los ideales democráticos y dio la bienvenida a millones de inmigrantes que llegaban a América en busca de un nuevo comienzo.",
+                             "Su imagen, visible desde el mar, transformó el horizonte de Nueva York en un emblema global de los derechos humanos y la dignidad. Desde entonces, la antorcha de la Libertad brilla como una promesa: la de un mundo donde todos puedan aspirar a ser libres."
+                         ]
+    },
+    {
+        "id":  "Juicios-por-traición",
+        "title":  "Roma",
+        "date":  "103-a.C.",
+        "category":  "Poder y Corrupción",
+        "imageUrl":  "images/Roma-juicios-por-traición.jpg",
+        "summary":  [
+                        "Los juicios por traición surgieron en Roma en el 103 a. C. con la Ley Appuleia de Maiestas, creada para castigar a quienes pusieran en riesgo al pueblo o al ejército romano.",
+                        "Durante la época imperial, la ley cambió de sentido: ya no protegía al Estado, sino al emperador.",
+                        "Muchos emperadores se aprovecharon de la ley en beneficio propio, llegando a realizar grandes matanzas, mientras que otros, aunque no la abolieron, dieron un uso más moderado.",
+                        "Con el tiempo, los juicios por traición perdieron su función política y desaparecieron en la práctica, marcando el paso de una Roma dominada por el temor a una más racional y estable."
+                    ],
+        "context":  [
+                        "Los juicios por traición en Roma tienen su origen en el 103 a. C., durante la República, con la promulgación de la Ley Appuleia de Maiestas, impulsada por el tribuno Lucio Apuleyo Saturnino.",
+                        "Su finalidad era proteger la majestad del pueblo romano (Maiestas populi Romani) y castigar los actos que pusieran en peligro la seguridad del Estado o del ejército. En ese contexto, el delito de Maiestas equivalía a una forma de alta traición contra la autoridad y la estabilidad de Roma, y se aplicaba a los ciudadanos que atentaran contra las instituciones republicanas o las campañas militares.",
+                        "Durante la República, esta ley formó parte de un sistema judicial que buscaba salvaguardar el orden político en una época marcada por tensiones internas, guerras civiles y luchas entre facciones. Sin embargo, su alcance se limitaba a los delitos contra el Estado y no tenía relación con figuras personales o religiosas.",
+                        "Con la llegada del Imperio, a partir del 27 a. C., el significado del delito de Maiestas cambió profundamente. Roma ya no estaba gobernada por magistrados electos, sino por un solo hombre: el emperador. Así, el concepto de traición dejó de referirse a la seguridad del pueblo o de las instituciones y pasó a centrarse en la lealtad hacia el emperador. Hablar mal de él, cuestionar su autoridad o no mostrarle el debido respeto podía ser considerado un acto de traición.",
+                        "Durante el gobierno de Tiberio (14–37 d. C.), los juicios por traición se multiplicaron. El Senado, que debía actuar como órgano judicial, se vio dominado por el miedo, ya que cualquier acusación de Maiestas podía significar la pérdida de bienes, el destierro o la muerte. Este clima de desconfianza marcó el inicio del uso político de la ley como herramienta de represión.",
+                        "Con Calígula (37–41 d. C.) y Nerón (54–68 d. C.), el abuso del delito alcanzó su punto máximo. En estos periodos, los juicios por traición se convirtieron en instrumentos de control absoluto, empleados para eliminar enemigos políticos, senadores o incluso familiares sospechosos de deslealtad. Las acusaciones eran muchas veces arbitrarias y respondían más al temor o al interés personal que a la justicia.",
+                        "Tras la crisis del Año de los Cuatro Emperadores (69 d. C.), los nuevos gobernantes Vespasiano y Tito (69–79 d. C.) buscaron estabilizar el Imperio y restaurar la confianza entre el poder y el Senado. Bajo su gobierno, el uso del delito de Maiestas se moderó considerablemente, volviendo a un ámbito más legal que político.",
+                        "Durante el gobierno de Domiciano (81–96 d. C.), la situación se tensó de nuevo. Este emperador restableció parcialmente los juicios por traición para castigar supuestas conspiraciones, especialmente entre senadores y filósofos. Sin embargo, tras su muerte, el sistema judicial romano evolucionó hacia una mayor racionalidad y estabilidad.",
+                        "Con los emperadores adoptivos —Nerva, Trajano, Adriano, Antonino Pío y Marco Aurelio—, el delito de Maiestas permaneció en el derecho romano, pero sin los abusos que habían caracterizado a épocas anteriores. Los juicios por traición se convirtieron en una figura residual, más simbólica que práctica.",
+                        "A lo largo de los siglos, la ley nunca fue abolida oficialmente, pero su aplicación desapareció gradualmente. Lo que en la República había nacido como una defensa del pueblo y del ejército terminó transformándose en un instrumento de control imperial, y finalmente, en una reliquia jurídica sin uso real.",
+                        "De este modo, los juicios por traición reflejan la evolución del poder en Roma: el paso de una República legalista y colectiva a un Imperio centralizado en la figura del emperador, y posteriormente, el retorno a una administración más moderada y estable.",
+                        "De este modo, los juicios por traición reflejan la evolución del poder en Roma: el paso de una República legalista y colectiva a un Imperio centralizado en la figura del emperador, y posteriormente, el retorno a una administración más moderada y estable."
+                    ],
+        "keyFacts":  [
+                         {
+                             "title":  "Los delatores se enriquecían acusando a otros",
+                             "description":  "Existía una figura oficial llamada el delator, un ciudadano que denunciaba a presuntos traidores. Si el acusado era condenado, el delator recibía una parte de sus bienes confiscados. Esto provocó una ola de falsas acusaciones y corrupción dentro del Senado."
+                         },
+                         {
+                             "title":  "Calígula convirtió los juicios en espectáculos",
+                             "description":  "El emperador Calígula asistía a los juicios por traición como si fueran representaciones teatrales. En ocasiones, presenciaba las ejecuciones personalmente y hasta bromeaba sobre las condenas."
+                         },
+                         {
+                             "title":  "Condenado por una estatua sin cabeza",
+                             "description":  "Durante el gobierno de Tiberio, un ciudadano fue acusado de traición porque una de sus estatuas de bronce se cayó y perdió la cabeza. El hecho fue interpretado como un mal augurio contra el emperador, y bastó para abrir un proceso por Maiestas."
+                         },
+                         {
+                             "title":  "Un senador fue ejecutado por hablar durante la cena",
+                             "description":  "También bajo Tiberio, un senador fue acusado de traición por haber comentado un chiste político durante un banquete. Sus palabras fueron interpretadas como una crítica al emperador… y acabó ejecutado."
+                         },
+                         {
+                             "title":  "Un esclavo fue acusado por repetir palabras que oyó",
+                             "description":  "En una de las anécdotas más escalofriantes del periodo, un esclavo doméstico fue denunciado porque repitió una frase escuchada en casa de su amo que sonaba irrespetuosa hacia el emperador. Ambos —esclavo y amo— fueron juzgados por Maiestas."
+                         },
+                         {
+                             "title":  "Calígula mandó ejecutar a hombres por su peinado",
+                             "description":  "El emperador Calígula ordenó castigar a varios senadores porque llevaban el mismo tipo de peinado que él, considerándolo una falta de respeto. Según Suetonio, incluso mandó ejecutar a quien lo miraba directamente a los ojos."
+                         },
+                         {
+                             "title":  "No juró por la fortuna del César",
+                             "description":  "Durante el mismo periodo, se exigía que los ciudadanos juraran fidelidad al emperador “por su fortuna”. Un ciudadano olvidó hacerlo y fue acusado de traición por negligencia al no pronunciar la fórmula completa del juramento."
+                         },
+                         {
+                             "title":  "Nerón hacía ensayos de muerte",
+                             "description":  "Nerón usaba los juicios por traición para eliminar a sus rivales literarios y políticos. Según Tácito, ordenaba ejecuciones como si fueran escenas teatrales, a veces improvisando frases o gestos trágicos mientras observaba cómo se cumplían las sentencias."
+                         },
+                         {
+                             "title":  "Una mujer fue acusada por haber soñado con la caída del emperador",
+                             "description":  "En los últimos años de Tiberio, una mujer fue denunciada por haber contado que soñó con la caída de la estatua del emperador. Ese sueño fue interpretado como un deseo de su muerte… y fue procesada por Maiestas."
+                         },
+                         {
+                             "title":  "Calígula reabrió juicios antiguos para humillar al Senado",
+                             "description":  "Calígula mandó revisar expedientes de décadas pasadas para condenar otra vez a los descendientes de quienes ya habían sido castigados. El objetivo era dejar claro que solo él tenía poder sobre la memoria y la historia."
+                         },
+                         {
+                             "title":  "Domiciano castigó incluso a los muertos",
+                             "description":  "El emperador Domiciano llegó a reabrir causas contra personas ya fallecidas y ordenó que sus estatuas fueran destruidas. Borrar su memoria (damnatio memoriae) era considerado un castigo equivalente a la traición."
+                         }
+                     ],
+        "timeline":  [
+                         {
+                             "date":  "103 a. C.",
+                             "event":  "Creada por Lucio Apuleyo Saturnino durante la República. Buscaba castigar a quienes traicionaran al pueblo o pusieran en peligro al ejército romano."
+                         },
+                         {
+                             "date":  "27 a. C.",
+                             "event":  "Con Augusto, la ley comienza a reinterpretarse: la Maiestas pasa de proteger al Estado a proteger la figura del emperador."
+                         },
+                         {
+                             "date":  "14–37 d. C.",
+                             "event":  "Con el imperio de Tiberio los juicios por traición se multiplican. Una palabra o gesto contra el emperador bastaba para ser condenado. El Senado vivía aterrorizado."
+                         },
+                         {
+                             "date":  "37–41 d. C.",
+                             "event":  "Con Calígula al principio promete eliminar los juicios, pero tras enfermar enloquece. Reabre casos antiguos, confisca fortunas y convierte los juicios en espectáculos crueles."
+                         },
+                         {
+                             "date":  "41–68 d. C.",
+                             "event":  "Con Claudio y Nerón, el delito de Maiestas se usa como herramienta política. Bajo Nerón, los juicios se vuelven aún más sangrientos y arbitrarios."
+                         },
+                         {
+                             "date":  "69–79 d. C.",
+                             "event":  "Con los emperadores Vespasiano y Tito, tras el “Año de los Cuatro Emperadores”, buscan estabilidad. Moderan los juicios y reducen su uso como arma política."
+                         },
+                         {
+                             "date":  "81–96 d. C.",
+                             "event":  "Con el emperador Domiciano se revive parcialmente los juicios. Persigue a filósofos y senadores acusados de conspiración o deslealtad."
+                         },
+                         {
+                             "date":  "96–180 d. C.",
+                             "event":  "Durante la época de Nerva, Trajano, Adriano y los Antoninos, el delito de Maiestas permanece en la ley, pero deja de usarse con fines políticos. Los juicios por traición caen en desuso."
+                         }
+                     ],
+        "consequences":  [
+                             "Los juicios por traición reflejan la transformación del poder en Roma:",
+                             "de una República basada en la ley y el pueblo, a un Imperio dominado por la figura del emperador.",
+                             "Lo que comenzó como una medida para proteger la seguridad del Estado terminó convirtiéndose en un instrumento de miedo y control político. Bajo emperadores como Tiberio, Calígula o Nerón, la acusación de Maiestas sirvió para eliminar rivales, castigar la disidencia y consolidar el culto al poder personal.",
+                             "Sin embargo, también muestran cómo la sociedad romana aprendió de sus excesos. Con los emperadores adoptivos, el uso de estos juicios se moderó, y Roma entró en una etapa de mayor estabilidad y racionalidad jurídica.",
+                             ""
+                         ]
+    },
+    {
+        "id":  "El-viaje-de-Colón",
+        "title":  "El Descubrimiento de América",
+        "date":  "1492-10-12",
+        "category":  "Descubrimientos",
+        "imageUrl":  "images/El-descubrimiento-de-America.jpg",
+        "summary":  [
+                        "Cristóbal Colón y su expedición, financiada por los Reyes Católicos, llegaron el 12 de octubre de 1492 a una isla del actual archipiélago de las Bahamas, llamada San Salvador, tras más de dos meses de viaje desde Palos de la Frontera. Rodrigo de Triana, desde La Pinta, fue el primero en avistar tierra. Este acontecimiento marcó el inicio del encuentro entre Europa y América, cambiando para siempre el curso de la historia."
+                    ],
+        "context":  [
+                        "A finales del siglo XV, el mundo conocido por los europeos se extendía solo por Europa, África y Asia. Las rutas comerciales hacia Oriente, esenciales para obtener especias, seda y otros productos valiosos, estaban controladas por el Imperio Otomano, que tras conquistar Constantinopla en 1453, bloqueó los caminos tradicionales entre Europa y Asia. Esto impulsó a las potencias europeas a buscar nuevas rutas marítimas.",
+                        "En aquella época, Europa vivía una etapa de cambio profundo. El pensamiento medieval comenzaba a transformarse gracias a los avances en cartografía, astronomía y navegación, impulsados por el Renacimiento. El uso de nuevos instrumentos como la brújula, el astrolabio y el cuadrante permitía orientarse con mayor precisión en mar abierto, alentando a los exploradores a desafiar los límites del mundo conocido.",
+                        "Mientras Portugal exploraba la costa africana hacia el sur, el navegante genovés Cristóbal Colón propuso una alternativa audaz: llegar a Asia navegando hacia el oeste, atravesando el Atlántico. Su proyecto fue rechazado en varias cortes, pero encontró apoyo en Castilla, donde los Reyes Católicos, Isabel I y Fernando II, recién triunfantes tras la conquista de Granada, vieron en su plan una oportunidad de expansión política, comercial y religiosa.",
+                        "El 3 de agosto de 1492, Colón partió del puerto de Palos de la Frontera (Huelva) con tres embarcaciones: La Santa María, La Pinta y La Niña. Tras una escala en las Islas Canarias, la expedición se adentró en mares desconocidos durante más de dos meses, guiada por la fe, el cálculo y la determinación.",
+                        "Durante la larga travesía, el cansancio y la incertidumbre comenzaron a apoderarse de la tripulación. La ausencia de tierra y el temor a lo desconocido provocaron tensiones y rumores de motín. Colón, firme en sus cálculos y convencido de su destino, logró mantener el control prometiendo regresar si en tres días no avistaban costas. A la madrugada del 12 de octubre de 1492, el grito de “¡Tierra!” rompió el silencio del océano, cambiando para siempre la historia del mundo.",
+                        "La expedición había llegado a una isla del actual archipiélago de las Bahamas, llamada Guanahaní por los pueblos taínos y rebautizada San Salvador por Colón. Creyendo haber alcanzado las Indias Orientales, tomó posesión en nombre de los Reyes Católicos e inició la exploración de nuevas tierras caribeñas, como Cuba y La Española.",
+                        "Tras varios meses de exploración, Colón emprendió el regreso a España el 15 de enero de 1493 a bordo de La Niña y La Pinta. Llegó al puerto de Palos de la Frontera el 15 de marzo del mismo año, siendo recibido como un héroe."
+                    ],
+        "keyFacts":  [
+                         {
+                             "title":  "El viaje comenzó con una condena",
+                             "description":  "Colón zarpó del puerto de Palos de la Frontera el 3 de agosto de 1492, un puerto elegido no por azar, sino porque el pueblo estaba obligado por una sanción real a proporcionar dos embarcaciones y tripulación para la expedición."
+                         },
+                         {
+                             "title":  "El rumbo desconocido",
+                             "description":  "Nadie sabía qué habría al navegar hacia el oeste. Muchos marineros creían que el océano terminaba en un abismo o que monstruos marinos habitaban sus profundidades. Fue un viaje de auténtica fe y valentía."
+                         },
+                         {
+                             "title":  "América... sin saberlo",
+                             "description":  "Colón nunca supo que había descubierto un nuevo continente. Murió convencido de que había llegado a las costas de Asia, a las “Indias Orientales”."
+                         },
+                         {
+                             "title":  "Rodrigo de Triana, el olvidado",
+                             "description":  "Aunque fue Rodrigo de Triana quien primero gritó “¡Tierra!”, Colón se atribuyó el mérito del descubrimiento alegando que había visto una luz la noche anterior. Rodrigo nunca recibió la recompensa prometida."
+                         },
+                         {
+                             "title":  "La Pinta fue más rápida",
+                             "description":  "De las tres carabelas, La Pinta era la más veloz y maniobrable, por eso fue la primera en avistar tierra. Sin embargo, la nave capitana era La Santa María, la más grande de las tres."
+                         },
+                         {
+                             "title":  "El naufragio de la Santa María",
+                             "description":  "La nave capitana encalló la noche de Navidad de 1492 frente a las costas de La Española. Con su madera, Colón ordenó construir el primer asentamiento europeo en América: el Fuerte de la Navidad."
+                         },
+                         {
+                             "title":  "Un viaje que cambió el mapa",
+                             "description":  "Antes de Colón, el mapa del mundo terminaba en Europa, África y Asia. Después de 1492, los cartógrafos comenzaron a redibujar el planeta, dando origen a la visión global moderna."
+                         },
+                         {
+                             "title":  "El apoyo de los Reyes Católicos",
+                             "description":  "Isabel I de Castilla fue quien apostó por Colón cuando nadie más creyó en su proyecto. Vendió parte de sus joyas para financiar el viaje, aunque algunos historiadores matizan que fue más una decisión de Estado que un acto personal."
+                         },
+                         {
+                             "title":  "Colón murió sin gloria",
+                             "description":  "Cristóbal Colón murió en Valladolid en 1506, sin saber la magnitud de su hazaña y sin reconocimiento pleno. Sus restos fueron trasladados varias veces entre España y América, y aún existe debate sobre su paradero final."
+                         },
+                         {
+                             "title":  "El inicio de la era global",
+                             "description":  "El encuentro de 1492 marcó el comienzo de la globalización: intercambio de culturas, alimentos, animales, enfermedades y conocimientos entre Europa, África y América. Nada volvió a ser igual."
+                         }
+                     ],
+        "timeline":  [
+                         {
+                             "date":  "1492-03-08",
+                             "event":  "La expedición parte del puerto de Palos de la Frontera (Huelva) con tres embarcaciones: La Santa María, La Pinta y La Niña."
+                         },
+                         {
+                             "date":  "1492-06-09",
+                             "event":  "Tras una breve escala en las Islas Canarias, las naves retoman rumbo hacia el oeste por mares desconocidas."
+                         },
+                         {
+                             "date":  "1492-10-10",
+                             "event":  "La tripulación, cansada y temerosa, amenaza con amotinarse por no ver tierra. Colón logra calmarlos prometiendo regresar si en tres días no avistaban costas."
+                         },
+                         {
+                             "date":  "1492-12-10",
+                             "event":  "Rodrigo de Triana, desde La Pinta, grita “¡Tierra!” al avistar una isla del actual archipiélago de las Bahamas, llamada Guanahaní por los taínos y bautizada San Salvador por Colón. Colón desembarca y toma posesión en nombre de los Reyes Católicos, creyendo haber llegado a las Indias Orientales."
+                         },
+                         {
+                             "date":  "1492-28-10",
+                             "event":  "La expedición llega a Cuba, creyendo que era parte del continente asiático."
+                         },
+                         {
+                             "date":  "1492-06-12",
+                             "event":  "Arriban a La Española (actual Haití y República Dominicana), donde fundan el primer asentamiento europeo en América: La Navidad."
+                         },
+                         {
+                             "date":  "1492-25-12",
+                             "event":  "La Santa María encalla y se hunde en la costa norte de La Española."
+                         },
+                         {
+                             "date":  "1493-15-01",
+                             "event":  "Colón inicia el regreso a España con La Niña y La Pinta."
+                         },
+                         {
+                             "date":  "1493-15-03",
+                             "event":  "Colón llega a Palos de la Frontera, siendo recibido como héroe tras su primer viaje al Nuevo Mundo."
+                         }
+                     ],
+        "consequences":  [
+                             "El descubrimiento de América marcó uno de los momentos más trascendentales de la historia universal: el encuentro entre Europa y América. Este hecho abrió el camino a la expansión europea, el intercambio de culturas, recursos, conocimientos y también al inicio de profundas transformaciones políticas, económicas y sociales a ambos lados del Atlántico.",
+                             "El viaje de Cristóbal Colón, financiado por los Reyes Católicos, no solo cambió la geografía conocida hasta entonces, sino que dio comienzo a la Edad Moderna, conectando por primera vez de forma permanente los dos hemisferios. A partir de este suceso, el mundo se volvió verdaderamente global, con un intercambio continuo de personas, ideas, especies y culturas que definiría la historia moderna."
+                         ]
+    },
+    {
+        "id":  "El-último-día",
+        "title":  "Pompeya",
+        "date":  "79-d.C.",
+        "category":  "Catástrofes",
+        "imageUrl":  "images/Pompeya.jpg",
+        "summary":  [
+                        "En el año 79 d.C., el Monte Vesubio despertó con una fuerza devastadora, sepultando Pompeya bajo cenizas y fuego. Miles murieron en segundos, y la ciudad quedó congelada en el tiempo durante siglos. Hoy, sus ruinas revelan el último instante de una civilización sorprendida por la furia de la naturaleza."
+                    ],
+        "context":  [
+                        "La erupción del Monte Vesubio tuvo lugar en el año 79 d.C., durante el reinado del emperador Tito, en una de las regiones más prósperas del Imperio romano. Entre las ciudades situadas en sus faldas, Pompeya era una de las más activas y florecientes: contaba con templos, termas, teatros, talleres, tabernas y lujosas casas decoradas con frescos y mosaicos. Era un reflejo del bienestar y la vida cotidiana romana.",
+                        "El entorno del golfo de Nápoles ofrecía un clima templado, suelos fértiles y un intenso comercio marítimo. El Vesubio, que dominaba el horizonte, era considerado una montaña pacífica y productiva. Nadie imaginaba que bajo sus laderas dormía una de las fuerzas más destructivas de la historia.",
+                        "En los días previos al desastre se registraron ligeros temblores y alteraciones en los manantiales, pero los habitantes de Pompeya estaban acostumbrados a la actividad sísmica. Nadie pensó en abandonar la ciudad. No existía conocimiento de que aquel monte era un volcán, ni de que su interior albergaba una cámara de magma bajo enorme presión.",
+                        "En la mañana del 24 de agosto del 79 d.C. —aunque estudios recientes sugieren una fecha más tardía, hacia octubre o noviembre—, el Vesubio despertó violentamente. Una colosal columna de humo, ceniza y piedra pómez se elevó más de veinte kilómetros en el aire, oscureciendo el sol y cubriendo Pompeya en una penumbra asfixiante. Durante horas, una lluvia continua de fragmentos volcánicos cayó sobre la ciudad, haciendo que los techos se derrumbaran y las calles quedaran cubiertas de escombros.",
+                        "El pánico se apoderó de los habitantes. Muchos intentaron huir por las puertas de la muralla o hacia el puerto, pero el espesor de la ceniza y la oscuridad lo hicieron casi imposible. Otros buscaron refugio en sus casas o sótanos, esperando que la tormenta terminara.",
+                        "Con la llegada de la madrugada del día siguiente, el Vesubio liberó su furia final. Una oleada ardiente de gases y cenizas incandescentes descendió sobre Pompeya a más de 100 km/h, alcanzando temperaturas superiores a 400 °C. En cuestión de segundos, el aire se volvió irrespirable y toda vida en la ciudad se extinguió al instante. Los cuerpos quedaron donde estaban: algunos protegiendo a sus hijos, otros cubriéndose el rostro o intentando escapar.",
+                        "En pocas horas, Pompeya desapareció bajo varios metros de ceniza y piedra pómez. Cuando la erupción cesó, el lugar era un desierto gris, sin sonido ni movimiento. Las casas, los templos y los cuerpos quedaron sellados por el material volcánico, preservados de manera sorprendente por el paso del tiempo.",
+                        "Los días siguientes fueron de oscuridad y silencio. Los supervivientes de las zonas cercanas huyeron dejando atrás todo. El Vesubio continuó lanzando humo durante varios días hasta que finalmente se apagó."
+                    ],
+        "keyFacts":  [
+                         {
+                             "title":  "El perro encadenado",
+                             "description":  "Uno de los hallazgos más impactantes es el cuerpo de un perro atado con su cadena. Murió intentando liberarse mientras la ceniza lo cubría. Su molde, obtenido al rellenar con yeso el espacio que dejó su cuerpo, muestra al animal en posición de lucha, arqueado por el dolor."
+                         },
+                         {
+                             "title":  "El mar estaba mucho más cerca",
+                             "description":  "En la época romana, el mar llegaba hasta las puertas de Pompeya, a unos 500 metros de la ciudad. Tras la erupción, los depósitos volcánicos extendieron la línea de costa más de 2 kilómetros hacia el oeste. Hoy, el mar está a unos 2,5 kilómetros de las ruinas."
+                         },
+                         {
+                             "title":  "Pompeya fue redescubierta por accidente",
+                             "description":  "En 1748, mientras se realizaban excavaciones cerca de Nápoles, los obreros hallaron muros y frescos bajo la tierra. No sabían que era Pompeya: se creyó primero que eran restos de otra villa romana. Solo años después se comprendió la magnitud del descubrimiento."
+                         },
+                         {
+                             "title":  "Las cenizas conservaron todo",
+                             "description":  "La gruesa capa de ceniza y piedra pómez actuó como un sello natural, protegiendo edificios, pinturas y objetos del aire y la humedad. Gracias a eso, hoy se conservan murales, pan carbonizado, utensilios de cocina y hasta grafitis escritos en las paredes."
+                         },
+                         {
+                             "title":  "Los moldes de las víctimas",
+                             "description":  "Cuando los arqueólogos descubrieron que bajo la ceniza quedaban huecos con forma de cuerpos, los llenaron con yeso líquido para recrear sus posturas. Así surgieron las figuras de hombres, mujeres, niños y animales, capturados exactamente en el momento de su muerte."
+                         },
+                         {
+                             "title":  "La temperatura fue letal",
+                             "description":  "Estudios recientes revelan que el flujo piroclástico alcanzó temperaturas de hasta 500 °C, suficientes para provocar la muerte instantánea por choque térmico, antes incluso de que los cuerpos quedaran sepultados."
+                         },
+                         {
+                             "title":  "Una ciudad llena de mensajes",
+                             "description":  "En las paredes de Pompeya se han encontrado más de 11.000 inscripciones: anuncios, mensajes amorosos, chistes, críticas políticas y hasta bromas de taberna. Algunas aún se leen claramente, mostrando la voz cotidiana de sus habitantes."
+                         },
+                         {
+                             "title":  "Colores originales preservados",
+                             "description":  "A diferencia de otras ruinas romanas, en Pompeya los frescos aún conservan colores vivos gracias a la ceniza que los aisló de la luz. Los rojos, amarillos y azules que decoraban las casas revelan el lujo y el gusto artístico de sus habitantes."
+                         },
+                         {
+                             "title":  "Una vida interrumpida",
+                             "description":  "En Pompeya se han encontrado ollas aún sobre el fuego, comidas a medio preparar, y mesas servidas, tal como quedaron en el instante de la erupción. Es una fotografía exacta del último día de una ciudad romana."
+                         }
+                     ],
+        "timeline":  [
+                         {
+                             "date":  "Días previos, año 79 d.C.",
+                             "event":  "Pequeños temblores y cambios en los manantiales alteran la región del golfo de Nápoles. Los habitantes, acostumbrados a los sismos, no imaginan el peligro que se avecina."
+                         },
+                         {
+                             "date":  "La erupción: Mediodía",
+                             "event":  "Según las cartas de Plinio el Joven, el Vesubio entra en erupción a media mañana. Una columna de humo y ceniza se eleva más de 20 km sobre el cielo. Durante horas, cae una lluvia incesante de piedra pómez y ceniza que cubre Pompeya."
+                         },
+                         {
+                             "date":  "La erupción: Tarde",
+                             "event":  "Las calles se vuelven intransitables, los tejados colapsan y la ciudad queda sumida en la oscuridad. Muchos buscan refugio en casas o templos, mientras otros intentan huir hacia el mar."
+                         },
+                         {
+                             "date":  "La erupción: Madrugada",
+                             "event":  "Ocurre la fase más mortal del desastre, una oleada piroclástica desciende del volcán a más de 100 km/h y más de 400 °C. Pompeya es arrasada en segundos, y miles de personas mueren instantáneamente."
+                         },
+                         {
+                             "date":  "Días posteriores",
+                             "event":  "El Vesubio sigue expulsando ceniza y gases durante días. El paisaje queda transformado, cubierto de piedra pómez y silencio. Los supervivientes abandonan la zona, dejando las ciudades sepultadas."
+                         },
+                         {
+                             "date":  "Años 100–200 d.C.",
+                             "event":  "Años después de la erupción, saqueadores excavan túneles entre los restos para recuperar objetos valiosos y joyas."
+                         },
+                         {
+                             "date":  "1748",
+                             "event":  "Pompeya es redescubierta por accidente durante unas obras cerca de Nápoles. Empiezan las primeras excavaciones, que revelan murales, frescos y objetos cotidianos."
+                         },
+                         {
+                             "date":  "Años 2000–2010 d.C.",
+                             "event":  "Nuevos estudios arqueológicos y hallazgos —como frutas otoñales, braseros encendidos y una inscripción fechada el 17 de octubre— demuestran que la erupción no ocurrió en agosto, sino entre octubre y noviembre del 79 d.C. Esta fecha es hoy la más aceptada por la comunidad científica."
+                         },
+                         {
+                             "date":  "Actualidad",
+                             "event":  "Pompeya es Patrimonio Mundial de la UNESCO y uno de los yacimientos arqueológicos más visitados del mundo. El Monte Vesubio continúa activo, bajo vigilancia constante por parte de la Protección Civil italiana."
+                         }
+                     ],
+        "consequences":  [
+                             "La erupción del Vesubio en el año 79 d.C. es uno de los desastres naturales más célebres de la Antigüedad y una fuente invaluable para la historia. La destrucción de Pompeya no solo marcó una tragedia humana, sino que permitió conservar una instantánea única de la vida romana en el momento exacto en que el tiempo se detuvo.",
+                             "Gracias a las cenizas que cubrieron la ciudad, hoy se conocen con precisión cómo vivían, trabajaban y pensaban los romanos: su arquitectura, sus costumbres, su arte y su organización social. Pompeya se convirtió así en un testimonio arqueológico sin precedentes, esencial para comprender la civilización romana.",
+                             "Además, el suceso impulsó el desarrollo de la arqueología moderna, inspiró a generaciones de artistas y científicos, y continúa recordando la fragilidad del ser humano frente a la fuerza de la naturaleza."
+                         ]
+    },
+    {
+        "id":  "El-último-águila-de-Tenochtitlán",
+        "title":  "Cuauhtémoc",
+        "date":  "1904-02-03",
+        "category":  "Personajes históricos",
+        "imageUrl":  "images/Cuauhtémoc.jpg",
+        "summary":  [
+                        "Cuauhtémoc, último emperador mexica, ascendió al trono tras la muerte de Moctezuma II y la huida de los españoles en la Noche Triste. Con apenas 25 años lideró una resistencia heroica contra Hernán Cortés, enfrentando hambre, epidemias y traiciones. Capturado y ejecutado en 1525, su figura se convirtió en símbolo eterno de valentía y dignidad mexicana."
+                    ],
+        "context":  [
+                        "Cuauhtémoc nació hacia 1495 en Tenochtitlán, dentro de una de las familias nobles más destacadas del Imperio mexica. Era descendiente del tlatoani Ahuízotl, lo que lo situaba dentro de la línea dinástica de los gobernantes de la capital. Desde joven fue instruido en el calmécac, la escuela de los nobles, donde aprendió religión, filosofía, estrategia militar y las leyes que regían la vida pública mexica. Su nombre, Cuāuhtémōc, significa “el que desciende como águila”, símbolo de fuerza, vigilancia y determinación.",
+                        "En su juventud, Cuauhtémoc destacó como guerrero en las campañas contra pueblos rebeldes del Valle de México, ganando reputación por su valentía y sentido del deber. Pero el destino del imperio cambió en 1519 con la llegada de Hernán Cortés y sus hombres a las costas del Golfo de México. Los españoles avanzaron hacia el interior con el apoyo de pueblos indígenas enemigos de los mexicas, como los tlaxcaltecas, y se dirigieron a Tenochtitlán.",
+                        "Moctezuma II, gobernante del imperio, dudó entre enfrentarse o recibir a los extranjeros como enviados divinos, influido por los presagios que anunciaban el fin de una era. Su indecisión permitió a Cortés entrar en la ciudad y tomarlo prisionero. La tensión se desbordó cuando los españoles masacraron a los nobles mexicas durante una ceremonia religiosa en el Templo Mayor, provocando un levantamiento general. Moctezuma murió durante los enfrentamientos —según las versiones, apedreado por su propio pueblo o abatido en el caos— y los conquistadores tuvieron que huir.",
+                        "La noche del 30 de junio de 1520, los españoles fueron expulsados de Tenochtitlán en un episodio que pasaría a la historia como la Noche Triste. Cientos de soldados murieron en los canales y calzadas de la ciudad, cargando el oro que intentaban llevar consigo. Días después, el trono fue ocupado por Cuitláhuac, quien reorganizó la resistencia, pero murió poco después a causa de la viruela.",
+                        "En ese contexto de ruina y desesperación, Cuauhtémoc fue elegido tlatoani en 1520, con apenas veinticinco años, para liderar la defensa del imperio. Durante su corto reinado, se preparó para una guerra total: fortificó los templos, organizó la producción de armas y coordinó las defensas sobre el lago. El asedio español de 1521 fue brutal: las calzadas fueron cortadas, los canales bloqueados y las reservas de agua y alimentos destruidas. Aun así, Cuauhtémoc resistió con coraje, combatiendo junto a sus guerreros hasta el final.",
+                        "El 13 de agosto de 1521, al ver la derrota inevitable, Cuauhtémoc intentó huir por el lago de Texcoco en una canoa junto a su esposa, su familia y su primo Tetlepanquetzal, señor de Tlacopan. Sin embargo, fueron capturados por los hombres de Cortés y llevados ante él como prisioneros. Poco después, Cortés ordenó la tortura de Cuauhtémoc y de Tetlepanquetzal, buscando obligarlos a revelar el paradero del tesoro imperial mexica, que los conquistadores no habían logrado encontrar. Según las crónicas, ambos soportaron el tormento con dignidad, negándose a hablar.",
+                        "Años más tarde, en 1525, Cortés emprendió una expedición hacia Honduras. Temiendo rebeliones y sospechando conspiraciones, llevó encadenados a Cuauhtémoc y a su primo. Durante la marcha por las selvas de Tabasco y el Petén, la desconfianza creció entre los españoles; Cortés acusó a los prisioneros de traición y ordenó su ejecución. El 28 de febrero de 1525, Cuauhtémoc y Tetlepanquetzal fueron ahorcados en Itzamkanac, poniendo fin al linaje de los tlatoanis mexicas."
+                    ],
+        "keyFacts":  [
+                         {
+                             "title":  "El significado de su nombre",
+                             "description":  "Cuāuhtémōc en náhuatl significa “el que desciende como águila”, una metáfora del guerrero que se lanza desde el cielo sobre su enemigo, símbolo de valentía y visión."
+                         },
+                         {
+                             "title":  "El más joven de los tlatoanis",
+                             "description":  "Cuauhtémoc tenía apenas 25 años cuando fue elegido gobernante de Tenochtitlán, lo que lo convierte en el tlatoani más joven del imperio mexica en toda su historia registrada."
+                         },
+                         {
+                             "title":  "El tormento del oro",
+                             "description":  "Tras su captura, Hernán Cortés buscó desesperadamente el tesoro imperial mexica. Para obtener su ubicación, ordenó torturar a Cuauhtémoc y a su primo Tetlepanquetzal, señor de Tlacopan. Ambos fueron atados de pies y manos sobre braseros encendidos, y les vertieron aceite hirviendo en los pies, mientras eran interrogados una y otra vez."
+                         },
+                         {
+                             "title":  "Capturado por un bergantín",
+                             "description":  "Cuauhtémoc fue capturado en el lago de Texcoco cuando intentaba huir con su familia. Su canoa fue interceptada por un bergantín español, embarcación de guerra que Cortés había construido durante el sitio."
+                         },
+                         {
+                             "title":  "Su cuerpo nunca fue hallado",
+                             "description":  "El paradero exacto de los restos de Cuauhtémoc sigue siendo incierto. Existen varios monumentos y sitios conmemorativos, pero ninguno ha sido confirmado como su tumba real."
+                         },
+                         {
+                             "title":  "La muerte en la selva",
+                             "description":  "Cuauhtémoc fue ahorcado el 28 de febrero de 1525, acusado falsamente de conspirar contra Cortés durante la expedición a Honduras. Murió lejos de su tierra natal, en Itzamkanac."
+                         },
+                         {
+                             "title":  "Símbolo nacional",
+                             "description":  "Durante el siglo XIX, su figura fue recuperada como símbolo del honor y la resistencia mexicana, especialmente durante la Independencia. En 1887 se inauguró su monumento en el Paseo de la Reforma, Ciudad de México."
+                         },
+                         {
+                             "title":  "Fue sacerdote antes de ser guerrero",
+                             "description":  "Antes de dirigir ejércitos, Cuauhtémoc fue instruido en los templos como sacerdote del dios Huitzilopochtli, donde aprendió astronomía, rituales y filosofía mexica. Esta formación influenció su visión espiritual del deber y del sacrificio."
+                         },
+                         {
+                             "title":  "El propio Cortés admiró a Cuauhtémoc",
+                             "description":  "A pesar de haberlo derrotado, Hernán Cortés reconoció públicamente su valentía. En sus Cartas de relación lo llama “gran señor y persona de mucha autoridad”."
+                         },
+                         {
+                             "title":  ""
+                         }
+                     ],
+        "timeline":  [
+                         {
+                             "date":  "1495",
+                             "event":  "Cuauhtémoc nace alrededor de 1495, descendiente de la nobleza mexica y del tlatoani Ahuízotl. Desde joven es educado como guerrero y sacerdote en el calmécac."
+                         },
+                         {
+                             "date":  "1519",
+                             "event":  "Los españoles desembarcan en las costas del Golfo de México. Moctezuma II recibe noticias del avance de los extranjeros; Cuauhtémoc es ya un joven capitán de guerra."
+                         },
+                         {
+                             "date":  "1520",
+                             "event":  "Durante una ceremonia religiosa, los españoles atacan a los nobles mexicas. El pueblo se levanta contra ellos; Moctezuma es asesinado en medio del caos."
+                         },
+                         {
+                             "date":  "1520-06-30",
+                             "event":  "Los mexicas expulsan a los españoles de Tenochtitlán, causando numerosas bajas. Entre los defensores destaca Cuauhtémoc, que demuestra su liderazgo militar."
+                         },
+                         {
+                             "date":  "1520",
+                             "event":  "El nuevo tlatoani, Cuitláhuac, muere víctima de la viruela. El imperio queda sin líder en plena crisis."
+                         },
+                         {
+                             "date":  "1520",
+                             "event":  "A los 25 años, Cuauhtémoc es proclamado gobernante de Tenochtitlán. Reorganiza las fuerzas y prepara la defensa total de la ciudad ante el inminente regreso de Cortés."
+                         },
+                         {
+                             "date":  "1521",
+                             "event":  "Durante 93 días, la ciudad resiste el bloqueo español. Faltan alimentos y agua, y las epidemias se expanden. Cuauhtémoc dirige la defensa personalmente."
+                         },
+                         {
+                             "date":  "1521-08-13",
+                             "event":  "Cuauhtémoc intenta huir por el lago de Texcoco junto a su esposa, su familia y su primo Tetlepanquetzal, pero son capturados por los hombres de Cortés. El Imperio mexica cae."
+                         },
+                         {
+                             "date":  "1521",
+                             "event":  "Cortés ordena torturar a Cuauhtémoc y a Tetlepanquetzal para que revelen el paradero del tesoro mexica. Les queman los pies con braseros encendidos, pero ninguno confiesa."
+                         },
+                         {
+                             "date":  "1525",
+                             "event":  "Cortés obliga a Cuauhtémoc a acompañarlo en su marcha por la selva. Durante el viaje lo acusa de conspirar contra él."
+                         },
+                         {
+                             "date":  "1525-02-28",
+                             "event":  "Cortés ordena ahorcar a Cuauhtémoc y a Tetlepanquetzal en Itzamkanac. El último tlatoani de Tenochtitlán muere a los 30 años, símbolo de honor y resistencia."
+                         },
+                         {
+                             "date":  "Siglo XIX",
+                             "event":  "Durante la Independencia de México, Cuauhtémoc es reivindicado como héroe nacional. Su estatua se erige en el Paseo de la Reforma en 1887."
+                         }
+                     ],
+        "consequences":  [
+                             "Cuauhtémoc fue el último tlatoani del Imperio mexica y símbolo de la resistencia ante la conquista española. Asumió el poder en medio del caos tras la muerte de Moctezuma y defendió Tenochtitlán hasta su caída en 1521. Capturado, torturado y finalmente ejecutado por Hernán Cortés, su valor y dignidad lo convirtieron en un emblema eterno del honor y la identidad del pueblo mexicano."
+                         ]
+    },
+    {
+        "id":  "El-mito",
+        "title":  "Orfeo y Eurídice",
+        "date":  "Siglos VIII y VI a. C.",
+        "category":  "Mitología",
+        "imageUrl":  "images/Orfeo-y-Euridice.jpg",
+        "summary":  [
+                        "Orfeo, un músico prodigioso cuya lira podía calmar a los animales y conmover incluso a los dioses, se enamora profundamente de la ninfa Eurídice y se casa con ella. Pero el mismo día de su boda, mientras celebra entre los prados, una serpiente muerde a Eurídice y la joven muere de inmediato. Abrumado por el dolor, Orfeo se niega a aceptar la pérdida y decide realizar lo imposible: descender al inframundo para recuperarla. No lleva armas ni aliados; solo confía en el poder de su música."
+                    ],
+        "context":  [
+                        "En los primeros tiempos del mundo, cuando los dioses aún caminaban entre los hombres y el eco de la poesía guiaba a los mortales, nació Orfeo, hijo del rey tracio Eagro y de Calíope, la más inspirada de las Musas. Desde niño, su música no se parecía a ninguna otra. Su lira no era solo un instrumento: era un puente entre lo humano y lo divino. Cuando Orfeo tocaba, los animales se detenían, los árboles se inclinaban y hasta los espíritus del viento parecían escuchar su melodía. La naturaleza, entera, se dejaba llevar por él.",
+                        "Durante su juventud, Orfeo conoció a Eurídice, una ninfa de gracia luminosa. Su belleza no residía en adornos ni coronas, sino en una pureza casi celestial. El encuentro entre ambos fue inmediato, profundo, arrebatador. Pronto se casaron, celebrando su unión entre prados y flores. Pero la alegría duró poco: mientras bailaba entre la hierba, Eurídice pisó una serpiente escondida, y el veneno se extendió por su cuerpo como una sombra rápida. Murió en los brazos de sus compañeras ninfas, y la luz abandonó de golpe la vida de Orfeo.",
+                        "Sumido en un dolor insoportable, Orfeo vagó días enteros tocando su lira con notas tan tristes que hasta las rocas lloraron. No aceptaba la muerte de Eurídice; no aceptaba que el destino le arrebatara lo que más amaba. Entonces tomó una decisión que ningún mortal había osado antes: descender al inframundo para traerla de vuelta.",
+                        "El viaje hacia las profundidades era un camino reservado a héroes o a quienes no temían la muerte. Orfeo no llevó armas ni aliados. Su única defensa era su música. Al llegar a la ribera del río Aqueronte, el viejo barquero Caronte, guardián de la frontera entre la vida y la muerte, se negó a llevarlo. Pero cuando escuchó la melodía de Orfeo, una música llena de amor y súplica, sus manos temblaron: por primera vez dejó pasar a un mortal sin exigir el óbolo.",
+                        "Más adelante, el guardián de tres cabezas, Cerbero, la bestia que jamás dormía, se derrumbó como un cachorro ante una melodía suave que hablaba de praderas y días dorados. Las almas errantes se detuvieron a su paso; algunas recordaron emociones que creían olvidadas hacía siglos. Incluso las Erinias, las Furias del castigo, dejaron escapar lágrimas.",
+                        "Al fin, Orfeo llegó ante Hades y Perséfone, los soberanos del reino de los muertos. Allí, en ese trono oscuro donde el tiempo no existe, tocó para ellos. No pidió gloria ni desafío: solo el retorno de Eurídice. Cada nota era un ruego, cada acorde entregaba una parte de su alma. Y los dioses, conmovidos como nunca, aceptaron concederle lo imposible.",
+                        "Sin embargo, había una condición: \nOrfeo debía caminar hacia la salida del inframundo con Eurídice detrás de él. No podía mirarla hasta cruzar el umbral del mundo de los vivos. Si lo hacía, la perdería para siempre.",
+                        "El regreso fue casi insoportable. Orfeo avanzaba sin mirar atrás, y a sus espaldas escuchaba lo que parecían ser los pasos suaves de Eurídice. Pero el silencio del inframundo era tan profundo que empezó a dudar. ¿De verdad venía con él? ¿O todo era un engaño? ¿Era ella… o solo el eco de lo que deseaba escuchar? Cada paso hacia la salida se volvió una lucha entre la esperanza y el miedo.",
+                        "Cuando la luz del mundo de los vivos apareció a unos metros, la angustia lo venció. En un instante de desesperación, giró la cabeza. Solo vio a Eurídice extender la mano hacia él, desvaneciéndose lentamente, murmurando su nombre con infinita tristeza.",
+                        "Orfeo salió al mundo sin ella. Desde ese día, su música cambió. Ya no cantó sobre la alegría ni sobre los banquetes de los dioses; solo tocó melodías melancólicas que hablaban de amor perdido, de caminos rotos y de la fragilidad del destino. Vivió aislado, evitando a los mortales, hasta que finalmente la muerte lo alcanzó.",
+                        "Cuando su alma descendió al inframundo, el reino de las sombras no fue un castigo. Allí, en el lugar donde una vez tuvo esperanza, encontró por fin a Eurídice. Y esta vez no hubo condiciones, ni pruebas, ni fronteras. Los dos permanecieron juntos para toda la eternidad, unidos por un amor tan profundo que ni la muerte pudo apagar."
+                    ],
+        "keyFacts":  [
+                         {
+                             "title":  "Orfeo no solo encantaba animales",
+                             "description":  "En varios poemas antiguos se dice que las piedras y los árboles lo seguían cuando tocaba. No es metáfora: literalmente se movían para acercarse a él."
+                         },
+                         {
+                             "title":  "Eurídice tiene diferentes muertes según la versión",
+                             "description":  "La forma más conocida es la mordedura de serpiente, pero en otra versión antigua Eurídice huye de un pastor que intenta atacarla y, en esa huida, pisa accidentalmente la serpiente que la mata."
+                         },
+                         {
+                             "title":  "Orfeo es uno de los pocos mortales que entran al inframundo vivos",
+                             "description":  "En la mitología griega solo unos pocos logran esto: Heracles, Teseo, Ulises y Orfeo. Pero Orfeo es el único que lo hace sin armas y sin violencia."
+                         },
+                         {
+                             "title":  "Hades es sorprendentemente comprensivo",
+                             "description":  "Pese a su fama, Hades pocas veces aparece como “malo” en los mitos. En esta historia es justo pero inflexible: acepta que Eurídice viva, pero impone la famosa condición de no mirar atrás."
+                         },
+                         {
+                             "title":  "Orfeo crea una religión",
+                             "description":  "En la Antigüedad surgió el orfismo, un movimiento religioso real inspirado en él. Enseñaba: \n\nLa reencarnación del alma."
+                         },
+                         {
+                             "title":  "La purificación espiritual."
+                         },
+                         {
+                             "title":  "La música como camino hacia lo divino."
+                         },
+                         {
+                             "title":  "Su muerte también tiene dos versiones",
+                             "description":  "Versión famosa: las Ménades (seguidoras de Dioniso) lo despedazan por rechazar sus rituales o por despreciar a las mujeres tras perder a Eurídice."
+                         },
+                         {
+                             "title":  "Versión alternativa: muere por un rayo de Zeus por revelar secretos divinos."
+                         },
+                         {
+                             "title":  "Su cabeza siguió cantando",
+                             "description":  "Según la leyenda, su cabeza decapitada cayó al río Hebro y siguió cantando mientras flotaba, llevando su lira hasta llegar a la isla de Lesbos."
+                         },
+                         {
+                             "title":  "En la tradición romana sí se vuelven a reunir",
+                             "description":  "Los romanos suavizaron el mito: cuando Orfeo muere, su alma desciende al inframundo y por fin se reúne con Eurídice para siempre."
+                         }
+                     ],
+        "timeline":  [
+                         {
+                             "date":  "1. Nacimiento de Orfeo",
+                             "event":  "Hijo del rey Eagro y de Calíope, musa de la poesía; desde niño demuestra un talento musical sobrenatural."
+                         },
+                         {
+                             "date":  "2. Encuentro con Eurídice",
+                             "event":  "Orfeo conoce a la ninfa Eurídice y ambos se enamoran profundamente."
+                         },
+                         {
+                             "date":  "3. La boda",
+                             "event":  "Se casan rodeados de naturaleza y alegría."
+                         },
+                         {
+                             "date":  "4. La tragedia",
+                             "event":  "Durante la celebración, una serpiente muerde a Eurídice y ella muere de inmediato."
+                         },
+                         {
+                             "date":  "5. El duelo de Orfeo",
+                             "event":  "Desesperado, Orfeo toca canciones de dolor y decide descender al inframundo para recuperarla."
+                         },
+                         {
+                             "date":  "6. El descenso",
+                             "event":  "Con su música conmueve a Caronte, duerme a Cerbero y hace llorar a las Furias. Ningún mortal había llegado tan lejos sin violencia."
+                         },
+                         {
+                             "date":  "7. El encuentro con Hades y Perséfone",
+                             "event":  "Orfeo toca para ellos y logra lo imposible: los dioses permiten que Eurídice regrese al mundo de los vivos."
+                         },
+                         {
+                             "date":  "8. La condición",
+                             "event":  "Orfeo debe caminar hacia la salida sin mirar atrás hasta llegar por completo a la luz del mundo de los vivos."
+                         },
+                         {
+                             "date":  "9. El regreso",
+                             "event":  "Caminan en silencio: Orfeo delante, Eurídice detrás. La duda empieza a consumirlo."
+                         },
+                         {
+                             "date":  "10. La mirada prohibida",
+                             "event":  "Cuando está a punto de salir, Orfeo se gira impulsado por el miedo. Eurídice se desvanece para siempre."
+                         },
+                         {
+                             "date":  "11. La soledad de Orfeo",
+                             "event":  "Vuelve al mundo sin ella, deja de cantar melodías alegres y vive apartado, consumido por la tristeza."
+                         },
+                         {
+                             "date":  "12. La muerte de Orfeo",
+                             "event":  "Finalmente muere, y su alma desciende al inframundo."
+                         },
+                         {
+                             "date":  "13. El reencuentro",
+                             "event":  "Allí, por fin, Orfeo y Eurídice vuelven a encontrarse y permanecen juntos en la eternidad."
+                         }
+                     ],
+        "consequences":  [
+                             "El mito de Orfeo y Eurídice es uno de los relatos más importantes de la antigüedad porque simboliza el amor que se atreve a desafiar incluso a la muerte. Su historia convirtió a Orfeo en el ejemplo máximo del poder del arte: no vence con fuerza ni armas, sino con música, mostrando que la belleza puede conmover a dioses y criaturas oscuras. Al mismo tiempo, la tragedia final revela la fragilidad humana: Orfeo pierde a Eurídice por una duda, por un instante de miedo, recordando que a veces la inseguridad arruina aquello que más deseamos. Este mito también dio origen al orfismo, una corriente espiritual real que hablaba de la inmortalidad del alma, la reencarnación y la pureza moral. Además, su descenso al inframundo se convirtió en un modelo narrativo usado por escritores durante siglos, y su figura explicó para los antiguos griegos por qué existe una música capaz de expresar tristeza profunda. Por todo esto, el mito de Orfeo no solo cuenta una historia de amor trágico: también reflexiona sobre la pérdida, la esperanza y el poder transformador del arte."
+                         ]
+    }
 ]
