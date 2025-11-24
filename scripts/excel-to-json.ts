@@ -16,6 +16,20 @@ interface ExcelRow {
 }
 
 /**
+ * Normaliza la ruta de la imagen para que sea relativa (sin barra inicial)
+ */
+function normalizeImageUrl(imageUrl: string): string {
+  if (!imageUrl) return imageUrl;
+
+  // Si la ruta empieza con "/", eliminarla para hacerla relativa
+  if (imageUrl.startsWith('/')) {
+    return imageUrl.substring(1);
+  }
+
+  return imageUrl;
+}
+
+/**
  * Convierte una fecha de formato dd-mm-yyyy a yyyy-mm-dd
  * También maneja fechas seriales de Excel (números)
  */
@@ -107,7 +121,7 @@ function excelToJson(excelFilePath: string, outputJsonPath: string) {
         title: row.title,
         date: convertDate(row.date),
         category: row.category,
-        imageUrl: row.imageUrl,
+        imageUrl: normalizeImageUrl(row.imageUrl),
         summary,
         context,
         keyFacts,

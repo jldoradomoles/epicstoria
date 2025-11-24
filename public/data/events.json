@@ -4,7 +4,7 @@
     "title": "Voyager 1 ",
     "date": "1977-09-05",
     "category": "Espacio ",
-    "imageUrl": "/images/Voyager-1.jpg",
+    "imageUrl": "images/Voyager-1.jpg",
     "summary": [
       "En 1977, la NASA lanzó la Voyager 1, una sonda destinada a explorar Júpiter y Saturno, convirtiéndose en la actualidad en el objeto humano más alejado de la Tierra."
     ],
@@ -103,7 +103,7 @@
     "title": "La Estatua de la Libertad",
     "date": "1886-10-28",
     "category": "Monumentos",
-    "imageUrl": "/images/La-Estatua-de-la-Libertad.jpg",
+    "imageUrl": "images/La-Estatua-de-la-Libertad.jpg",
     "summary": [
       "El 28 de octubre de 1886, Nueva York presenció la inauguración de un símbolo eterno. Regalo de Francia a Estados Unidos, la Estatua de la Libertad unió arte, ingeniería y un ideal universal. Su silueta marcaría para siempre el horizonte de la ciudad y la historia del mundo moderno."
     ],
@@ -201,7 +201,7 @@
     "title": "Roma",
     "date": "103-a.C.",
     "category": "Poder y Corrupción",
-    "imageUrl": "/images/Roma-juicios-por-traición.jpg",
+    "imageUrl": "images/Roma-juicios-por-traición.jpg",
     "summary": [
       "Los juicios por traición surgieron en Roma en el 103 a. C. con la Ley Appuleia de Maiestas, creada para castigar a quienes pusieran en riesgo al pueblo o al ejército romano.",
       "Durante la época imperial, la ley cambió de sentido: ya no protegía al Estado, sino al emperador.",
@@ -315,7 +315,7 @@
     "title": "El Descubrimiento de América",
     "date": "1492-10-12",
     "category": "Descubrimientos",
-    "imageUrl": "/images/El-descubrimiento-de-America.jpg",
+    "imageUrl": "images/El-descubrimiento-de-America.jpg",
     "summary": [
       "Cristóbal Colón y su expedición, financiada por los Reyes Católicos, llegaron el 12 de octubre de 1492 a una isla del actual archipiélago de las Bahamas, llamada San Salvador, tras más de dos meses de viaje desde Palos de la Frontera. Rodrigo de Triana, desde La Pinta, fue el primero en avistar tierra. Este acontecimiento marcó el inicio del encuentro entre Europa y América, cambiando para siempre el curso de la historia."
     ],
@@ -418,7 +418,7 @@
     "title": "Pompeya",
     "date": "79-d.C.",
     "category": "Catástrofes",
-    "imageUrl": "/images/Pompeya.jpg",
+    "imageUrl": "images/Pompeya.jpg",
     "summary": [
       "En el año 79 d.C., el Monte Vesubio despertó con una fuerza devastadora, sepultando Pompeya bajo cenizas y fuego. Miles murieron en segundos, y la ciudad quedó congelada en el tiempo durante siglos. Hoy, sus ruinas revelan el último instante de una civilización sorprendida por la furia de la naturaleza."
     ],
@@ -519,7 +519,7 @@
     "title": "Cuauhtémoc",
     "date": "1904-02-03",
     "category": "Personajes históricos",
-    "imageUrl": "/images/Cuauhtémoc.jpg",
+    "imageUrl": "images/Cuauhtémoc.jpg",
     "summary": [
       "Cuauhtémoc, último emperador mexica, ascendió al trono tras la muerte de Moctezuma II y la huida de los españoles en la Noche Triste. Con apenas 25 años lideró una resistencia heroica contra Hernán Cortés, enfrentando hambre, epidemias y traiciones. Capturado y ejecutado en 1525, su figura se convirtió en símbolo eterno de valentía y dignidad mexicana."
     ],
@@ -632,7 +632,7 @@
     "title": "Orfeo y Eurídice",
     "date": "Siglos VIII y VI a. C.",
     "category": "Mitología",
-    "imageUrl": "/images/Orfeo-y-Euridice.jpg",
+    "imageUrl": "images/Orfeo-y-Euridice.jpg",
     "summary": [
       "Orfeo, un músico prodigioso cuya lira podía calmar a los animales y conmover incluso a los dioses, se enamora profundamente de la ninfa Eurídice y se casa con ella. Pero el mismo día de su boda, mientras celebra entre los prados, una serpiente muerde a Eurídice y la joven muere de inmediato. Abrumado por el dolor, Orfeo se niega a aceptar la pérdida y decide realizar lo imposible: descender al inframundo para recuperarla. No lleva armas ni aliados; solo confía en el poder de su música."
     ],
