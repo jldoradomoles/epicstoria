@@ -26,8 +26,8 @@ export class EventCards implements OnInit {
   getPlainText = getPlainText;
 
   ngOnInit() {
-    console.log('Loading events from /data/events.json');
-    this.http.get<Event[]>('/data/events.json').subscribe({
+    console.log('Loading events from data/events.json');
+    this.http.get<Event[]>('data/events.json').subscribe({
       next: async (data) => {
         console.log('Events loaded successfully:', data);
         // Procesar las URLs de imágenes para asegurar formatos correctos

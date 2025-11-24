@@ -28,7 +28,7 @@ export class EventDetail implements OnInit {
   ngOnInit() {
     const eventId = this.route.snapshot.paramMap.get('id');
 
-    this.http.get<Event[]>('/data/events.json').subscribe({
+    this.http.get<Event[]>('data/events.json').subscribe({
       next: (events) => {
         this.event = events.find((e) => e.id === eventId);
         this.cdr.markForCheck();
