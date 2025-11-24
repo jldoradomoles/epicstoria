@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:gh-pages": "ng build --configuration production --base-href /epicstoria/ && node fix-css-for-gh-pages.js",
+    "deploy": "npm run build:gh-pages && npx angular-cli-ghpages --dir=dist/epicstoria/browser",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "format": "prettier --write \"src/**/*.{ts,html,scss,css,json}\"",
