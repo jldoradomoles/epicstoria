@@ -73,7 +73,31 @@
         </h2>
         <div class="space-y-4">
           @for (paragraph of getParagraphs(event.context); track $index) {
-            <p class="text-lg leading-relaxed">{{ paragraph }}</p>
+            @if ($index === 0) {
+              <!-- Párrafo con imagen al lado izquierdo (primer párrafo) -->
+              <div class="flex flex-col md:flex-row gap-6 items-start">
+                <div class="md:w-1/3">
+                  <img
+                    [src]="event.imageUrl"
+                    [alt]="event.title"
+                    class="w-full h-auto rounded-lg shadow-lg object-cover imagen-dato-curioso"
+                    (error)="onImageError($event)"
+                  />
+                </div>
+                <div class="md:w-2/3">
+                  <p class="text-lg leading-relaxed">{{ paragraph }}</p>
+                </div>
+              </div>
+            } @else if ($index === 2) {
+              <!-- Párrafo con imagen al lado derecho (tercer párrafo) -->
+              <div class="flex flex-col md:flex-row gap-6 items-start">
+                <div class="md:w-2/3">
+                  <p class="text-lg leading-relaxed">{{ paragraph }}</p>
+                </div>
+              </div>
+            } @else {
+              <p class="text-lg leading-relaxed">{{ paragraph }}</p>
+            }
           }
         </div>
       </div>
@@ -84,22 +108,102 @@
           Datos Curiosos
         </h2>
         <div class="grid gap-6 md:grid-cols-2">
-          @for (fact of event.keyFacts; track fact.title) {
-            <div
-              class="rounded-xl container-custom p-6 transition duration-300 hover:border-blue-500/50 hover:shadow-xl"
-            >
-              <h3 class="mb-2 text-lg font-bold flex items-center gap-2">
-                <i
-                  [class]="
-                    getFactIcon(fact.title, fact.description).icon +
-                    ' text-sm ' +
-                    getFactIcon(fact.title, fact.description).color
-                  "
-                ></i>
-                {{ fact.title }}
-              </h3>
-              <p>{{ fact.description }}</p>
-            </div>
+          @for (fact of event.keyFacts; track fact.title; let idx = $index; let isLast = $last) {
+            @if (idx === 0) {
+              <!-- Primer dato curioso - imagen a la izquierda -->
+              <div class="rounded-xl overflow-hidden">
+                <img
+                  [src]="event.imageUrl"
+                  [alt]="event.title"
+                  class="imagen-dato-curioso"
+                  (error)="onImageError($event)"
+                />
+              </div>
+              <div
+                class="rounded-xl container-custom p-6 transition duration-300 hover:border-blue-500/50 hover:shadow-xl"
+              >
+                <h3 class="mb-2 text-lg font-bold flex items-center gap-2">
+                  <i
+                    [class]="
+                      getFactIcon(fact.title, fact.description).icon +
+                      ' text-sm ' +
+                      getFactIcon(fact.title, fact.description).color
+                    "
+                  ></i>
+                  {{ fact.title }}
+                </h3>
+                <p>{{ fact.description }}</p>
+              </div>
+            } @else if (idx === 4) {
+              <!-- Quinto dato curioso con imagen al lado derecho - fila 3 -->
+              <div
+                class="rounded-xl container-custom p-6 transition duration-300 hover:border-blue-500/50 hover:shadow-xl md:col-start-1 md:row-start-3"
+              >
+                <h3 class="mb-2 text-lg font-bold flex items-center gap-2">
+                  <i
+                    [class]="
+                      getFactIcon(fact.title, fact.description).icon +
+                      ' text-sm ' +
+                      getFactIcon(fact.title, fact.description).color
+                    "
+                  ></i>
+                  {{ fact.title }}
+                </h3>
+                <p>{{ fact.description }}</p>
+              </div>
+              <div
+                class="rounded-xl overflow-hidden w-full aspect-square md:col-start-2 md:row-start-3"
+              >
+                <img
+                  [src]="event.imageUrl"
+                  [alt]="event.title"
+                  class="w-full h-full object-cover"
+                  (error)="onImageError($event)"
+                />
+              </div>
+            } @else if (isLast && event.keyFacts.length % 2 !== 0) {
+              <!-- Último dato si el total es impar - imagen a la izquierda -->
+              <div class="rounded-xl overflow-hidden">
+                <img
+                  [src]="event.imageUrl"
+                  [alt]="event.title"
+                  class="imagen-dato-curioso"
+                  (error)="onImageError($event)"
+                />
+              </div>
+              <div
+                class="rounded-xl container-custom p-6 transition duration-300 hover:border-blue-500/50 hover:shadow-xl"
+              >
+                <h3 class="mb-2 text-lg font-bold flex items-center gap-2">
+                  <i
+                    [class]="
+                      getFactIcon(fact.title, fact.description).icon +
+                      ' text-sm ' +
+                      getFactIcon(fact.title, fact.description).color
+                    "
+                  ></i>
+                  {{ fact.title }}
+                </h3>
+                <p>{{ fact.description }}</p>
+              </div>
+            } @else {
+              <!-- Resto de datos curiosos -->
+              <div
+                class="rounded-xl container-custom p-6 transition duration-300 hover:border-blue-500/50 hover:shadow-xl"
+              >
+                <h3 class="mb-2 text-lg font-bold flex items-center gap-2">
+                  <i
+                    [class]="
+                      getFactIcon(fact.title, fact.description).icon +
+                      ' text-sm ' +
+                      getFactIcon(fact.title, fact.description).color
+                    "
+                  ></i>
+                  {{ fact.title }}
+                </h3>
+                <p>{{ fact.description }}</p>
+              </div>
+            }
           }
         </div>
       </div>
