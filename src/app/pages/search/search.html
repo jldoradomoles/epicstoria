@@ -1,0 +1,151 @@
+<div class="min-h-screen py-12">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <!-- Encabezado -->
+    <div class="mb-8">
+      <h1 class="text-5xl font-black text-color-dark mb-4 text-center">Buscador de Eventos</h1>
+      <p class="text-xl text-gray-600 text-center">
+        Encuentra eventos históricos por nombre, fecha, categoría o contenido
+      </p>
+    </div>
+
+    <!-- Panel de Búsqueda -->
+    <div class="container-custom rounded-xl p-8 shadow-2xl mb-8">
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <!-- Búsqueda por Nombre -->
+        <div>
+          <label class="block text-sm font-bold text-color-dark mb-2">
+            <i class="fas fa-signature text-blue-500 mr-2"></i>
+            Nombre del Evento
+          </label>
+          <input
+            type="text"
+            [(ngModel)]="searchName"
+            (input)="applyFilters()"
+            placeholder="Ej: Revolución, Guerra..."
+            class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+          />
+        </div>
+
+        <!-- Búsqueda por Fecha -->
+        <div>
+          <label class="block text-sm font-bold text-color-dark mb-2">
+            <i class="fas fa-calendar text-green-500 mr-2"></i>
+            Fecha
+          </label>
+          <input
+            type="text"
+            [(ngModel)]="searchDate"
+            (input)="applyFilters()"
+            placeholder="Ej: 1789, siglo XX..."
+            class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+          />
+        </div>
+
+        <!-- Búsqueda por Contenido -->
+        <div>
+          <label class="block text-sm font-bold text-color-dark mb-2">
+            <i class="fas fa-search text-purple-500 mr-2"></i>
+            Palabras Clave
+          </label>
+          <input
+            type="text"
+            [(ngModel)]="searchContent"
+            (input)="applyFilters()"
+            placeholder="Buscar en descripción..."
+            class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+          />
+        </div>
+
+        <!-- Filtro por Categoría -->
+        <div>
+          <label class="block text-sm font-bold text-color-dark mb-2">
+            <i class="fas fa-filter text-amber-500 mr-2"></i>
+            Categoría
+          </label>
+          <select
+            [(ngModel)]="selectedCategory"
+            (change)="applyFilters()"
+            class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+          >
+            <option value="all">Todas las Categorías</option>
+            @for (category of categories; track category) {
+              <option [value]="category">{{ category }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <!-- Botones de Acción -->
+      <div class="mt-6 flex justify-center gap-4">
+        <button
+          (click)="clearFilters()"
+          class="btns-color rounded-full px-6 py-2 font-semibold shadow-lg transition duration-150 hover:shadow-xl"
+        >
+          <i class="fas fa-redo mr-2"></i>
+          Limpiar Filtros
+        </button>
+      </div>
+
+      <!-- Contador de Resultados -->
+      <div class="mt-4 text-center">
+        <p class="text-lg font-semibold text-color-dark">
+          <i class="fas fa-list-check text-blue-500 mr-2"></i>
+          {{ filteredEvents.length }} evento(s) encontrado(s)
+        </p>
+      </div>
+    </div>
+
+    <!-- Resultados -->
+    <div class="space-y-6">
+      @if (filteredEvents.length === 0) {
+        <div class="container-custom rounded-xl p-12 text-center shadow-2xl">
+          <i class="fas fa-search text-6xl text-gray-400 mb-4"></i>
+          <h3 class="text-2xl font-bold text-color-dark mb-2">No se encontraron eventos</h3>
+          <p class="text-lg text-gray-600">
+            Intenta ajustar los filtros de búsqueda para encontrar más resultados
+          </p>
+        </div>
+      } @else {
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          @for (event of filteredEvents; track event.id) {
+            <div
+              class="container-custom rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105"
+            >
+              <div class="relative h-48 overflow-hidden">
+                <img
+                  [src]="event.imageUrl"
+                  [alt]="event.title"
+                  class="h-full w-full object-cover"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <span
+                  [class]="
+                    'absolute top-4 right-4 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider text-white ' +
+                    getCategoryColor(event.category)
+                  "
+                >
+                  {{ event.category }}
+                </span>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-color-dark mb-2">{{ event.title }}</h3>
+                <p class="text-sm text-gray-600 mb-3">
+                  <i class="fas fa-calendar-alt text-blue-500 mr-2"></i>
+                  {{ event.date | dateFormat }}
+                </p>
+                <p class="text-sm text-gray-700 mb-4 line-clamp-3">{{ event.summary }}</p>
+                <a
+                  [routerLink]="['/evento', event.id]"
+                  class="btns-color inline-block rounded-full px-4 py-2 text-sm font-semibold shadow transition duration-150 hover:shadow-lg"
+                >
+                  Ver Detalles
+                  <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</div>
