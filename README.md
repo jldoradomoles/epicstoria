@@ -1,52 +1,143 @@
 # Epicstoria
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.8.
+Plataforma interactiva para explorar eventos históricos con quiz educativos.
 
-## Development server
+## 🏗️ Arquitectura
 
-To start a local development server, run:
+El proyecto consta de dos partes:
 
-```bash
-ng serve
-```
+- **Frontend**: Angular 20+ con Tailwind CSS
+- **Backend**: Node.js/Express con PostgreSQL
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🚀 Inicio Rápido
 
-## Code scaffolding
+### Requisitos
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Node.js 18+
+- Docker (para PostgreSQL) o PostgreSQL 15+ instalado localmente
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### 1. Clonar e instalar
 
 ```bash
-ng generate --help
+git clone https://github.com/jldoradomoles/epicstoria.git
+cd epicstoria
+
+# Frontend
+npm install
+
+# Backend
+cd backend
+npm install
 ```
 
-## Building
-
-To build the project run:
+### 2. Configurar base de datos
 
 ```bash
-ng build
+cd backend
+
+# Opción A: Usando Docker (recomendado)
+docker-compose up -d
+
+# Opción B: PostgreSQL local
+# Crear base de datos 'epicstoria' manualmente
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### 3. Configurar variables de entorno
 
 ```bash
-ng test
+# El archivo .env ya viene configurado para desarrollo
+# Edita backend/.env si necesitas cambiar algo
 ```
 
-## Running end-to-end tests
+### 4. Ejecutar migraciones y seed
 
-For end-to-end (e2e) testing, run:
+```bash
+cd backend
+npm run db:migrate  # Crear tablas
+npm run db:seed     # Cargar eventos desde JSON
+```
+
+### 5. Iniciar servidores
+
+```bash
+# Terminal 1 - Backend (puerto 3000)
+cd backend
+npm run dev
+
+# Terminal 2 - Frontend (puerto 4200)
+npm start
+```
+
+Abre http://localhost:4200 en tu navegador.
+
+## 📁 Estructura del Proyecto
+
+```
+epicstoria/
+├── src/                    # Frontend Angular
+│   ├── app/
+│   │   ├── components/     # Componentes reutilizables
+│   │   ├── guards/         # Guards de autenticación
+│   │   ├── models/         # Interfaces TypeScript
+│   │   ├── pages/          # Páginas/vistas
+│   │   ├── pipes/          # Pipes personalizados
+│   │   ├── services/       # Servicios (Auth, API)
+│   │   └── utils/          # Utilidades
+│   └── environments/       # Configuración de entornos
+├── backend/                # Backend Node.js
+│   ├── src/
+│   │   ├── config/         # Configuración BD
+│   │   ├── database/       # Migraciones y seeds
+│   │   ├── middleware/     # Middleware (auth, error)
+│   │   ├── models/         # Modelos de datos
+│   │   ├── routes/         # Rutas API
+│   │   └── services/       # Lógica de negocio
+│   └── docker-compose.yml  # PostgreSQL en Docker
+└── public/                 # Assets estáticos
+    ├── data/               # Datos JSON (eventos)
+    └── images/             # Imágenes
+```
+
+## 🔑 API Endpoints
+
+### Autenticación
+
+- `POST /api/auth/register` - Registrar usuario
+- `POST /api/auth/login` - Iniciar sesión
+- `GET /api/auth/profile` - Obtener perfil (auth)
+- `PUT /api/auth/profile` - Actualizar perfil (auth)
+- `PUT /api/auth/change-password` - Cambiar contraseña (auth)
+
+### Eventos
+
+- `GET /api/events` - Listar todos los eventos
+- `GET /api/events/:id` - Obtener evento por ID
+- `GET /api/events/categories` - Listar categorías
+- `GET /api/events/category/:category` - Eventos por categoría
+- `GET /api/events/search?q=term` - Buscar eventos
+
+## 🛠️ Scripts Disponibles
+
+### Frontend
+
+```bash
+npm start          # Servidor de desarrollo
+npm run build      # Build de producción
+npm run deploy     # Deploy a GitHub Pages
+```
+
+### Backend
+
+```bash
+npm run dev        # Servidor con hot reload
+npm run build      # Compilar TypeScript
+npm run db:migrate # Ejecutar migraciones
+npm run db:seed    # Cargar datos iniciales
+```
+
+## 📝 Licencia
+
+MIT
 
 ```bash
 ng e2e

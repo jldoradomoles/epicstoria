@@ -1,0 +1,333 @@
+<app-header />
+
+<div class="min-h-screen py-12 px-4">
+  <div class="max-w-3xl mx-auto">
+    <!-- Título de la página -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl font-bold text-amber-100 mb-2">Mi Perfil</h1>
+      <p class="text-amber-200/70">Administra tu información personal</p>
+    </div>
+
+    @if (currentUser) {
+      <!-- Card principal -->
+      <div class="container-custom rounded-xl overflow-hidden">
+        <!-- Header con avatar -->
+        <div
+          class="bg-gradient-to-r from-amber-900/50 to-stone-900/50 p-6 border-b border-amber-900/30"
+        >
+          <div class="flex items-center gap-4">
+            <!-- Avatar -->
+            <div
+              class="w-20 h-20 rounded-full bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center text-2xl font-bold text-white shadow-lg"
+            >
+              {{ getInitials() }}
+            </div>
+            <div>
+              <h2 class="text-xl font-semibold text-amber-100">
+                {{ currentUser.name }} {{ currentUser.lastname }}
+              </h2>
+              <p class="text-amber-200/60">{{ currentUser.email }}</p>
+              <p class="text-amber-200/40 text-sm mt-1">
+                Miembro desde {{ currentUser.created_at | date: 'MMMM yyyy' }}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="flex border-b border-amber-900/30">
+          <button
+            (click)="setActiveTab('profile')"
+            [class]="
+              activeTab() === 'profile'
+                ? 'flex-1 py-4 px-6 text-amber-100 border-b-2 border-amber-500 font-medium bg-amber-900/20'
+                : 'flex-1 py-4 px-6 text-amber-200/60 hover:text-amber-200 hover:bg-amber-900/10 transition-colors'
+            "
+          >
+            <i class="fas fa-user mr-2"></i>
+            Datos Personales
+          </button>
+          <button
+            (click)="setActiveTab('password')"
+            [class]="
+              activeTab() === 'password'
+                ? 'flex-1 py-4 px-6 text-amber-100 border-b-2 border-amber-500 font-medium bg-amber-900/20'
+                : 'flex-1 py-4 px-6 text-amber-200/60 hover:text-amber-200 hover:bg-amber-900/10 transition-colors'
+            "
+          >
+            <i class="fas fa-lock mr-2"></i>
+            Cambiar Contraseña
+          </button>
+        </div>
+
+        <!-- Contenido del tab -->
+        <div class="p-6">
+          <!-- Tab: Datos Personales -->
+          @if (activeTab() === 'profile') {
+            <!-- Mensajes -->
+            @if (successMessage()) {
+              <div
+                class="mb-6 p-4 bg-green-900/50 border border-green-500/50 rounded-lg text-green-200 text-sm flex items-center gap-3"
+              >
+                <i class="fas fa-check-circle text-green-400"></i>
+                <span>{{ successMessage() }}</span>
+              </div>
+            }
+            @if (errorMessage()) {
+              <div
+                class="mb-6 p-4 bg-red-900/50 border border-red-500/50 rounded-lg text-red-200 text-sm flex items-center gap-3"
+              >
+                <i class="fas fa-exclamation-circle text-red-400"></i>
+                <span>{{ errorMessage() }}</span>
+              </div>
+            }
+
+            <form [formGroup]="profileForm" (ngSubmit)="onProfileSubmit()">
+              <div class="grid md:grid-cols-2 gap-6">
+                <!-- Nombre -->
+                <div>
+                  <label for="name" class="block text-amber-100 text-sm font-medium mb-2">
+                    Nombre <span class="text-red-400">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    formControlName="name"
+                    class="w-full px-4 py-3 bg-stone-800/50 border border-amber-900/30 rounded-lg text-amber-100 placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
+                    placeholder="Tu nombre"
+                  />
+                  @if (profileForm.get('name')?.touched && profileForm.get('name')?.errors) {
+                    <p class="mt-2 text-red-400 text-sm">El nombre es requerido</p>
+                  }
+                </div>
+
+                <!-- Apellido -->
+                <div>
+                  <label for="lastname" class="block text-amber-100 text-sm font-medium mb-2">
+                    Apellido
+                  </label>
+                  <input
+                    type="text"
+                    id="lastname"
+                    formControlName="lastname"
+                    class="w-full px-4 py-3 bg-stone-800/50 border border-amber-900/30 rounded-lg text-amber-100 placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
+                    placeholder="Tu apellido"
+                  />
+                </div>
+              </div>
+
+              <!-- Categoría favorita -->
+              <div class="mt-6">
+                <label
+                  for="favorite_category"
+                  class="block text-amber-100 text-sm font-medium mb-2"
+                >
+                  Categoría favorita
+                </label>
+                <select
+                  id="favorite_category"
+                  formControlName="favorite_category"
+                  class="w-full px-4 py-3 bg-stone-800/50 border border-amber-900/30 rounded-lg text-amber-100 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
+                >
+                  <option value="">Selecciona una categoría</option>
+                  @for (category of categories; track category) {
+                    <option [value]="category">{{ category }}</option>
+                  }
+                </select>
+              </div>
+
+              <!-- Bio -->
+              <div class="mt-6">
+                <label for="bio" class="block text-amber-100 text-sm font-medium mb-2">
+                  Sobre mí
+                </label>
+                <textarea
+                  id="bio"
+                  formControlName="bio"
+                  rows="4"
+                  class="w-full px-4 py-3 bg-stone-800/50 border border-amber-900/30 rounded-lg text-amber-100 placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors resize-none"
+                  placeholder="Cuéntanos un poco sobre ti..."
+                ></textarea>
+              </div>
+
+              <!-- Botón guardar -->
+              <div class="mt-8">
+                <button
+                  type="submit"
+                  [disabled]="isLoading"
+                  class="px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                >
+                  @if (isLoading) {
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <span>Guardando...</span>
+                  } @else {
+                    <i class="fas fa-save"></i>
+                    <span>Guardar Cambios</span>
+                  }
+                </button>
+              </div>
+            </form>
+          }
+
+          <!-- Tab: Cambiar Contraseña -->
+          @if (activeTab() === 'password') {
+            <!-- Mensajes -->
+            @if (passwordSuccessMessage()) {
+              <div
+                class="mb-6 p-4 bg-green-900/50 border border-green-500/50 rounded-lg text-green-200 text-sm flex items-center gap-3"
+              >
+                <i class="fas fa-check-circle text-green-400"></i>
+                <span>{{ passwordSuccessMessage() }}</span>
+              </div>
+            }
+            @if (passwordErrorMessage()) {
+              <div
+                class="mb-6 p-4 bg-red-900/50 border border-red-500/50 rounded-lg text-red-200 text-sm flex items-center gap-3"
+              >
+                <i class="fas fa-exclamation-circle text-red-400"></i>
+                <span>{{ passwordErrorMessage() }}</span>
+              </div>
+            }
+
+            <form [formGroup]="passwordForm" (ngSubmit)="onPasswordSubmit()" class="max-w-md">
+              <!-- Contraseña actual -->
+              <div class="mb-6">
+                <label for="currentPassword" class="block text-amber-100 text-sm font-medium mb-2">
+                  Contraseña actual <span class="text-red-400">*</span>
+                </label>
+                <div class="relative">
+                  <input
+                    [type]="showCurrentPassword() ? 'text' : 'password'"
+                    id="currentPassword"
+                    formControlName="currentPassword"
+                    class="w-full px-4 py-3 pr-12 bg-stone-800/50 border border-amber-900/30 rounded-lg text-amber-100 placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
+                    placeholder="Tu contraseña actual"
+                  />
+                  <button
+                    type="button"
+                    (click)="toggleCurrentPassword()"
+                    class="absolute right-3 top-1/2 -translate-y-1/2 text-amber-400/60 hover:text-amber-400 transition-colors"
+                  >
+                    <i [class]="showCurrentPassword() ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+                  </button>
+                </div>
+                @if (
+                  passwordForm.get('currentPassword')?.touched &&
+                  passwordForm.get('currentPassword')?.errors?.['required']
+                ) {
+                  <p class="mt-2 text-red-400 text-sm">La contraseña actual es requerida</p>
+                }
+              </div>
+
+              <!-- Nueva contraseña -->
+              <div class="mb-6">
+                <label for="newPassword" class="block text-amber-100 text-sm font-medium mb-2">
+                  Nueva contraseña <span class="text-red-400">*</span>
+                </label>
+                <div class="relative">
+                  <input
+                    [type]="showNewPassword() ? 'text' : 'password'"
+                    id="newPassword"
+                    formControlName="newPassword"
+                    class="w-full px-4 py-3 pr-12 bg-stone-800/50 border border-amber-900/30 rounded-lg text-amber-100 placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
+                    placeholder="Mínimo 6 caracteres"
+                  />
+                  <button
+                    type="button"
+                    (click)="toggleNewPassword()"
+                    class="absolute right-3 top-1/2 -translate-y-1/2 text-amber-400/60 hover:text-amber-400 transition-colors"
+                  >
+                    <i [class]="showNewPassword() ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+                  </button>
+                </div>
+                @if (
+                  passwordForm.get('newPassword')?.touched &&
+                  passwordForm.get('newPassword')?.errors
+                ) {
+                  <p class="mt-2 text-red-400 text-sm">
+                    @if (passwordForm.get('newPassword')?.errors?.['required']) {
+                      La nueva contraseña es requerida
+                    } @else if (passwordForm.get('newPassword')?.errors?.['minlength']) {
+                      Mínimo 6 caracteres
+                    }
+                  </p>
+                }
+              </div>
+
+              <!-- Confirmar nueva contraseña -->
+              <div class="mb-6">
+                <label
+                  for="confirmNewPassword"
+                  class="block text-amber-100 text-sm font-medium mb-2"
+                >
+                  Confirmar nueva contraseña <span class="text-red-400">*</span>
+                </label>
+                <input
+                  type="password"
+                  id="confirmNewPassword"
+                  formControlName="confirmNewPassword"
+                  class="w-full px-4 py-3 bg-stone-800/50 border border-amber-900/30 rounded-lg text-amber-100 placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
+                  placeholder="Repite la nueva contraseña"
+                />
+                @if (
+                  passwordForm.get('confirmNewPassword')?.touched &&
+                  passwordForm.get('confirmNewPassword')?.errors
+                ) {
+                  <p class="mt-2 text-red-400 text-sm">
+                    @if (passwordForm.get('confirmNewPassword')?.errors?.['required']) {
+                      Confirma la nueva contraseña
+                    } @else if (passwordForm.get('confirmNewPassword')?.errors?.['mismatch']) {
+                      Las contraseñas no coinciden
+                    }
+                  </p>
+                }
+              </div>
+
+              <!-- Botón cambiar contraseña -->
+              <div class="mt-8">
+                <button
+                  type="submit"
+                  [disabled]="isLoading"
+                  class="px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                >
+                  @if (isLoading) {
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <span>Cambiando...</span>
+                  } @else {
+                    <i class="fas fa-key"></i>
+                    <span>Cambiar Contraseña</span>
+                  }
+                </button>
+              </div>
+            </form>
+          }
+        </div>
+      </div>
+
+      <!-- Botón cerrar sesión -->
+      <div class="mt-8 text-center">
+        <button
+          (click)="authService.logout()"
+          class="text-red-400 hover:text-red-300 transition-colors inline-flex items-center gap-2"
+        >
+          <i class="fas fa-sign-out-alt"></i>
+          Cerrar Sesión
+        </button>
+      </div>
+    } @else {
+      <!-- No autenticado -->
+      <div class="container-custom rounded-xl p-8 text-center">
+        <i class="fas fa-user-lock text-4xl text-amber-400/50 mb-4"></i>
+        <p class="text-amber-200/70 mb-4">Debes iniciar sesión para ver tu perfil</p>
+        <a
+          routerLink="/login"
+          class="inline-block px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-semibold rounded-lg transition-all duration-300"
+        >
+          Iniciar Sesión
+        </a>
+      </div>
+    }
+  </div>
+</div>
+
+<app-footer />

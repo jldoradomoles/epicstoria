@@ -6,7 +6,7 @@
     <a routerLink="/" class="transition duration-150 hover:opacity-80">
       <img src="images/logo_transparent.png" alt="EpicStoria" class="h-17" />
     </a>
-    <nav class="hidden space-x-6 text-sm font-medium sm:flex">
+    <nav class="hidden items-center space-x-6 text-sm font-medium sm:flex">
       <a
         routerLink="/"
         fragment="inicio"
@@ -19,6 +19,62 @@
       <a routerLink="/acerca" class="text-gray-300 transition duration-150 hover:text-blue-400"
         >Acerca</a
       >
+
+      <!-- Separador -->
+      <span class="mx-2 h-5 w-px bg-gray-600"></span>
+
+      <!-- Auth buttons -->
+      @if (isAuthenticated) {
+        <!-- Usuario autenticado -->
+        <div class="flex items-center gap-4">
+          <a
+            routerLink="/perfil"
+            class="flex items-center gap-2 text-gray-300 transition duration-150 hover:text-amber-400"
+          >
+            <span
+              class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-amber-600 to-amber-800 text-xs font-bold text-white"
+            >
+              {{ getInitials() }}
+            </span>
+            <span class="hidden lg:inline">{{ currentUser?.name }}</span>
+          </a>
+          <button
+            (click)="logout()"
+            class="text-gray-400 transition duration-150 hover:text-red-400"
+            title="Cerrar sesión"
+          >
+            <i class="fas fa-sign-out-alt"></i>
+          </button>
+        </div>
+      } @else {
+        <!-- Usuario no autenticado -->
+        <a routerLink="/login" class="text-gray-300 transition duration-150 hover:text-amber-400">
+          <i class="fas fa-sign-in-alt mr-1"></i>
+          Entrar
+        </a>
+        <a
+          routerLink="/register"
+          class="rounded-lg bg-gradient-to-r from-amber-600 to-amber-700 px-4 py-2 text-white transition duration-150 hover:from-amber-500 hover:to-amber-600"
+        >
+          Registrarse
+        </a>
+      }
     </nav>
+
+    <!-- Mobile menu button -->
+    <div class="flex items-center gap-3 sm:hidden">
+      @if (isAuthenticated) {
+        <a
+          routerLink="/perfil"
+          class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-amber-600 to-amber-800 text-xs font-bold text-white"
+        >
+          {{ getInitials() }}
+        </a>
+      } @else {
+        <a routerLink="/login" class="text-gray-300 hover:text-amber-400">
+          <i class="fas fa-sign-in-alt"></i>
+        </a>
+      }
+    </div>
   </div>
 </header>

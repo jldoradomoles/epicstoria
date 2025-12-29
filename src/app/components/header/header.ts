@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +8,26 @@ import { RouterLink } from '@angular/router';
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
-export class Header {}
+export class Header {
+  constructor(public authService: AuthService) {}
+
+  get currentUser() {
+    return this.authService.currentUser();
+  }
+
+  get isAuthenticated() {
+    return this.authService.isAuthenticated();
+  }
+
+  getInitials(): string {
+    const user = this.currentUser;
+    if (!user) return '?';
+    const firstInitial = user.name?.charAt(0) || '';
+    const lastInitial = user.lastname?.charAt(0) || '';
+    return (firstInitial + lastInitial).toUpperCase() || '?';
+  }
+
+  logout(): void {
+    this.authService.logout();
+  }
+}

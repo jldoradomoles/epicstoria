@@ -1,0 +1,130 @@
+<div class="min-h-screen py-12 px-4">
+  <div class="max-w-md mx-auto">
+    <!-- Logo / Título -->
+    <div class="text-center mb-8">
+      <a routerLink="/" class="inline-block">
+        <h1 class="title-font text-4xl text-amber-100 hover:text-amber-200 transition-colors">
+          Epicstoria
+        </h1>
+      </a>
+      <p class="mt-2 text-amber-200/70">Inicia sesión para continuar</p>
+    </div>
+
+    <!-- Card del formulario -->
+    <div class="container-custom rounded-xl p-8">
+      <!-- Mensaje de error -->
+      @if (errorMessage()) {
+        <div
+          class="mb-6 p-4 bg-red-900/50 border border-red-500/50 rounded-lg text-red-200 text-sm flex items-center gap-3"
+        >
+          <i class="fas fa-exclamation-circle text-red-400"></i>
+          <span>{{ errorMessage() }}</span>
+        </div>
+      }
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <!-- Email -->
+        <div class="mb-6">
+          <label for="email" class="block text-amber-100 text-sm font-medium mb-2">
+            Correo electrónico
+          </label>
+          <div class="relative">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-amber-400/60">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              class="w-full pl-10 pr-4 py-3 bg-stone-800/50 border border-amber-900/30 rounded-lg text-amber-100 placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
+              placeholder="tu@email.com"
+            />
+          </div>
+          @if (loginForm.get('email')?.touched && loginForm.get('email')?.errors) {
+            <p class="mt-2 text-red-400 text-sm">
+              @if (loginForm.get('email')?.errors?.['required']) {
+                El correo es requerido
+              } @else if (loginForm.get('email')?.errors?.['email']) {
+                Ingresa un correo válido
+              }
+            </p>
+          }
+        </div>
+
+        <!-- Password -->
+        <div class="mb-6">
+          <label for="password" class="block text-amber-100 text-sm font-medium mb-2">
+            Contraseña
+          </label>
+          <div class="relative">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-amber-400/60">
+              <i class="fas fa-lock"></i>
+            </span>
+            <input
+              [type]="showPassword() ? 'text' : 'password'"
+              id="password"
+              formControlName="password"
+              class="w-full pl-10 pr-12 py-3 bg-stone-800/50 border border-amber-900/30 rounded-lg text-amber-100 placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
+              placeholder="••••••••"
+            />
+            <button
+              type="button"
+              (click)="togglePassword()"
+              class="absolute right-3 top-1/2 -translate-y-1/2 text-amber-400/60 hover:text-amber-400 transition-colors"
+            >
+              <i [class]="showPassword() ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+            </button>
+          </div>
+          @if (loginForm.get('password')?.touched && loginForm.get('password')?.errors) {
+            <p class="mt-2 text-red-400 text-sm">
+              @if (loginForm.get('password')?.errors?.['required']) {
+                La contraseña es requerida
+              } @else if (loginForm.get('password')?.errors?.['minlength']) {
+                Mínimo 6 caracteres
+              }
+            </p>
+          }
+        </div>
+
+        <!-- Botón submit -->
+        <button
+          type="submit"
+          [disabled]="isLoading"
+          class="w-full py-3 px-4 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        >
+          @if (isLoading) {
+            <i class="fas fa-spinner fa-spin"></i>
+            <span>Iniciando sesión...</span>
+          } @else {
+            <i class="fas fa-sign-in-alt"></i>
+            <span>Iniciar Sesión</span>
+          }
+        </button>
+      </form>
+
+      <!-- Enlace a registro -->
+      <div class="mt-6 text-center">
+        <p class="text-amber-200/70 text-sm">
+          ¿No tienes cuenta?
+          <a
+            routerLink="/register"
+            class="text-amber-400 hover:text-amber-300 font-medium transition-colors"
+          >
+            Regístrate aquí
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Volver al inicio -->
+    <div class="mt-6 text-center">
+      <a
+        routerLink="/"
+        class="text-amber-200/60 hover:text-amber-200 text-sm transition-colors inline-flex items-center gap-2"
+      >
+        <i class="fas fa-arrow-left"></i>
+        Volver al inicio
+      </a>
+    </div>
+  </div>
+</div>

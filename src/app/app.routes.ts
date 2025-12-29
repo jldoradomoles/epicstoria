@@ -1,8 +1,12 @@
 import { Routes } from '@angular/router';
+import { authGuard, guestGuard } from './guards/auth.guard';
 import { About } from './pages/about/about';
 import { EventDetail } from './pages/event-detail/event-detail';
 import { Home } from './pages/home/home';
+import { LoginComponent } from './pages/login/login';
 import { Privacy } from './pages/privacy/privacy';
+import { ProfileComponent } from './pages/profile/profile';
+import { RegisterComponent } from './pages/register/register';
 import { Search } from './pages/search/search';
 import { Terms } from './pages/terms/terms';
 
@@ -30,5 +34,24 @@ export const routes: Routes = [
   {
     path: 'privacidad',
     component: Privacy,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [guestGuard],
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    canActivate: [guestGuard],
+  },
+  {
+    path: 'perfil',
+    component: ProfileComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: '**',
+    redirectTo: '',
   },
 ];
