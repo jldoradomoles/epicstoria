@@ -1,9 +1,15 @@
+export enum UserRole {
+  USER = 'user',
+  ADMIN = 'admin',
+}
+
 export interface User {
   id: number;
   email: string;
   password: string;
   name: string;
   lastname?: string;
+  role: UserRole;
   avatar_url?: string;
   bio?: string;
   favorite_category?: string;
@@ -16,6 +22,7 @@ export interface UserCreateDTO {
   password: string;
   name: string;
   lastname?: string;
+  role?: UserRole;
 }
 
 export interface UserUpdateDTO {
@@ -31,6 +38,7 @@ export interface UserPublic {
   email: string;
   name: string;
   lastname?: string;
+  role: UserRole;
   avatar_url?: string;
   bio?: string;
   favorite_category?: string;

@@ -4,6 +4,16 @@ const createTables = async () => {
   console.log('🔧 Starting database migration...');
 
   try {
+    // Create user role enum type
+    await query(`
+      DO $$ BEGIN
+        CREATE TYPE user_role AS ENUM ('user', 'admin');
+      EXCEPTION
+        WHEN duplicate_object THEN null;
+      END $$;
+    `);
+    console.log('✅ User role enum created');
+
     // Create users table
     await query(`
       CREATE TABLE IF NOT EXISTS users (
@@ -12,6 +22,7 @@ const createTables = async () => {
         password VARCHAR(255) NOT NULL,
         name VARCHAR(255) NOT NULL,
         lastname VARCHAR(255),
+        role user_role DEFAULT 'user' NOT NULL,
         avatar_url VARCHAR(500),
         bio TEXT,
         favorite_category VARCHAR(100),
@@ -20,6 +31,16 @@ const createTables = async () => {
       )
     `);
     console.log('✅ Users table created');
+
+    // Add role column if it doesn't exist (for existing databases)
+    await query(`
+      DO $$ BEGIN
+        ALTER TABLE users ADD COLUMN IF NOT EXISTS role user_role DEFAULT 'user' NOT NULL;
+      EXCEPTION
+        WHEN duplicate_column THEN null;
+      END $$;
+    `);
+    console.log('✅ Role column ensured');
 
     // Create events table
     await query(`

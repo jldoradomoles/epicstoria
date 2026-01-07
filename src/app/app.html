@@ -1,8 +1,12 @@
 <!-- Encabezado Fijo y Navegación -->
-<app-header />
+@if (showHeaderFooter()) {
+  <app-header />
+}
 
 <!-- Contenido de la Página -->
 <router-outlet />
 
 <!-- Pie de Página -->
-<app-footer />
+@if (showHeaderFooter()) {
+  <app-footer />
+}

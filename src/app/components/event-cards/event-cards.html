@@ -8,7 +8,10 @@
     <!-- Grid de Tarjetas (Responsive) -->
     <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
       @for (event of events; track event.id) {
-        <div class="container-custom flex flex-col overflow-hidden rounded-xl shadow-2xl">
+        <a
+          [routerLink]="['/evento', event.id]"
+          class="container-custom flex flex-col overflow-hidden rounded-xl shadow-2xl transition duration-300 hover:shadow-blue-500/20 hover:scale-[1.02] cursor-pointer"
+        >
           <div class="relative h-56 bg-gradient-to-tr from-gray-700 to-gray-900">
             <img
               [src]="event.imageUrl"
@@ -29,14 +32,11 @@
             <p class="text-color mb-4 text-base line-clamp-3">
               {{ getPlainText(event.summary) }}
             </p>
-            <a
-              [routerLink]="['/evento', event.id]"
-              class="text-color mt-4 self-start text-sm font-medium hover:text-blue-300"
-            >
+            <span class="text-color mt-4 self-start text-sm font-medium hover:text-blue-300">
               Ver Más →
-            </a>
+            </span>
           </div>
-        </div>
+        </a>
       }
 
       <!-- Tarjeta de Llamada a la Acción -->

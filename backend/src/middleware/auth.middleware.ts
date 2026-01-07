@@ -1,9 +1,11 @@
 import { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import { AppError } from './error.middleware';
+import { UserRole } from '../models/user.model';
 
 export interface AuthRequest extends Request {
   userId?: number;
+  userRole?: UserRole;
 }
 
 export const authMiddleware = (req: AuthRequest, res: Response, next: NextFunction) => {
@@ -17,8 +19,9 @@ export const authMiddleware = (req: AuthRequest, res: Response, next: NextFuncti
     const token = authHeader.split(' ')[1];
     const secret = process.env.JWT_SECRET || 'default_secret';
 
-    const decoded = jwt.verify(token, secret) as { userId: number };
+    const decoded = jwt.verify(token, secret) as { userId: number; role: UserRole };
     req.userId = decoded.userId;
+    req.userRole = decoded.role;
 
     next();
   } catch (error) {
@@ -30,4 +33,12 @@ export const authMiddleware = (req: AuthRequest, res: Response, next: NextFuncti
     }
     next(error);
   }
+};
+
+// Middleware para verificar si el usuario es administrador
+export const adminMiddleware = (req: AuthRequest, res: Response, next: NextFunction) => {
+  if (req.userRole !== UserRole.ADMIN) {
+    return next(new AppError('Access denied. Admin role required.', 403));
+  }
+  next();
 };

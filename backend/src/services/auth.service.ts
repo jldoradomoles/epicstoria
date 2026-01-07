@@ -2,7 +2,14 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { query } from '../config/database';
 import { AppError } from '../middleware/error.middleware';
-import { AuthResponse, User, UserCreateDTO, UserPublic, UserUpdateDTO } from '../models/user.model';
+import {
+  AuthResponse,
+  User,
+  UserCreateDTO,
+  UserPublic,
+  UserRole,
+  UserUpdateDTO,
+} from '../models/user.model';
 
 export class AuthService {
   private static toPublicUser(user: User): UserPublic {
@@ -11,6 +18,7 @@ export class AuthService {
       email: user.email,
       name: user.name,
       lastname: user.lastname,
+      role: user.role,
       avatar_url: user.avatar_url,
       bio: user.bio,
       favorite_category: user.favorite_category,
@@ -18,10 +26,10 @@ export class AuthService {
     };
   }
 
-  private static generateToken(userId: number): string {
+  private static generateToken(userId: number, role: UserRole): string {
     const secret = process.env.JWT_SECRET || 'default_secret';
     const expiresIn = process.env.JWT_EXPIRES_IN || '7d';
-    return jwt.sign({ userId }, secret, { expiresIn });
+    return jwt.sign({ userId, role }, secret, { expiresIn } as jwt.SignOptions);
   }
 
   static async register(userData: UserCreateDTO): Promise<AuthResponse> {
@@ -34,16 +42,17 @@ export class AuthService {
     // Hash password
     const hashedPassword = await bcrypt.hash(userData.password, 12);
 
-    // Insert user
+    // Insert user with default role 'user'
+    const role = userData.role || UserRole.USER;
     const result = await query(
-      `INSERT INTO users (email, password, name, lastname)
-       VALUES ($1, $2, $3, $4)
+      `INSERT INTO users (email, password, name, lastname, role)
+       VALUES ($1, $2, $3, $4, $5)
        RETURNING *`,
-      [userData.email, hashedPassword, userData.name, userData.lastname || null],
+      [userData.email, hashedPassword, userData.name, userData.lastname || null, role],
     );
 
     const user = result.rows[0] as User;
-    const token = this.generateToken(user.id);
+    const token = this.generateToken(user.id, user.role);
 
     return {
       user: this.toPublicUser(user),
@@ -66,7 +75,7 @@ export class AuthService {
       throw new AppError('Invalid email or password', 401);
     }
 
-    const token = this.generateToken(user.id);
+    const token = this.generateToken(user.id, user.role);
 
     return {
       user: this.toPublicUser(user),

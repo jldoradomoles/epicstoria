@@ -1,7 +1,62 @@
 import { NextFunction, Request, Response, Router } from 'express';
+import multer, { FileFilterCallback } from 'multer';
+import { adminMiddleware, authMiddleware, AuthRequest } from '../middleware/auth.middleware';
 import { EventService } from '../services/event.service';
 
 const router = Router();
+
+// Interfaz para request con archivo
+interface MulterRequest extends AuthRequest {
+  file?: Express.Multer.File;
+}
+
+// Configurar multer para manejar archivos en memoria
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: {
+    fileSize: 10 * 1024 * 1024, // 10MB máximo
+  },
+  fileFilter: (req: Request, file: Express.Multer.File, cb: FileFilterCallback) => {
+    // Solo aceptar archivos Excel
+    const allowedMimes = [
+      'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      'application/vnd.ms-excel',
+    ];
+    if (allowedMimes.includes(file.mimetype)) {
+      cb(null, true);
+    } else {
+      cb(new Error('Solo se permiten archivos Excel (.xlsx, .xls)'));
+    }
+  },
+});
+
+// POST /api/events/upload - Subir archivo Excel (solo admin)
+router.post(
+  '/upload',
+  authMiddleware,
+  adminMiddleware,
+  upload.single('file'),
+  async (req: MulterRequest, res: Response, next: NextFunction) => {
+    try {
+      if (!req.file) {
+        return res.status(400).json({
+          success: false,
+          message: 'No se ha proporcionado ningún archivo',
+        });
+      }
+
+      const result = await EventService.processExcelUpload(req.file.buffer);
+
+      res.json({
+        success: true,
+        data: result,
+        message: `Procesados: ${result.created} creados, ${result.updated} actualizados`,
+      });
+    } catch (error) {
+      next(error);
+    }
+  },
+);
 
 // GET /api/events
 router.get('/', async (req: Request, res: Response, next: NextFunction) => {

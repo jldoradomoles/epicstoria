@@ -2,14 +2,14 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { Footer } from '../../components/footer/footer';
-import { Header } from '../../components/header/header';
+import { UserRole } from '../../models/user.model';
 import { AuthService } from '../../services/auth.service';
+import { EventApiService } from '../../services/event-api.service';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [CommonModule, RouterLink, ReactiveFormsModule, Header, Footer],
+  imports: [CommonModule, RouterLink, ReactiveFormsModule],
   templateUrl: './profile.html',
   styleUrls: ['./profile.scss'],
 })
@@ -21,16 +21,24 @@ export class ProfileComponent implements OnInit {
   errorMessage = signal<string>('');
   passwordSuccessMessage = signal<string>('');
   passwordErrorMessage = signal<string>('');
+  adminSuccessMessage = signal<string>('');
+  adminErrorMessage = signal<string>('');
 
   showCurrentPassword = signal<boolean>(false);
   showNewPassword = signal<boolean>(false);
-  activeTab = signal<'profile' | 'password'>('profile');
+  activeTab = signal<'profile' | 'password' | 'admin'>('profile');
+
+  // Admin upload state
+  selectedFile = signal<File | null>(null);
+  isUploading = signal<boolean>(false);
+  uploadResult = signal<{ created: number; updated: number; errors: string[] } | null>(null);
 
   categories = ['Espacio', 'Historia', 'Ciencia', 'Arte', 'Tecnología', 'Naturaleza', 'Mitología'];
 
   constructor(
     private fb: FormBuilder,
     public authService: AuthService,
+    private eventApiService: EventApiService,
   ) {
     this.profileForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
@@ -86,7 +94,7 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  setActiveTab(tab: 'profile' | 'password'): void {
+  setActiveTab(tab: 'profile' | 'password' | 'admin'): void {
     this.activeTab.set(tab);
     this.clearMessages();
   }
@@ -96,6 +104,13 @@ export class ProfileComponent implements OnInit {
     this.errorMessage.set('');
     this.passwordSuccessMessage.set('');
     this.passwordErrorMessage.set('');
+    this.adminSuccessMessage.set('');
+    this.adminErrorMessage.set('');
+    this.uploadResult.set(null);
+  }
+
+  get isAdmin(): boolean {
+    return this.currentUser?.role === UserRole.ADMIN;
   }
 
   toggleCurrentPassword(): void {
@@ -155,5 +170,61 @@ export class ProfileComponent implements OnInit {
     const lastInitial = user.lastname?.charAt(0) || '';
 
     return (firstInitial + lastInitial).toUpperCase() || '?';
+  }
+
+  // Admin methods
+  onFileSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      const file = input.files[0];
+      const allowedTypes = [
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        'application/vnd.ms-excel',
+      ];
+
+      if (!allowedTypes.includes(file.type)) {
+        this.adminErrorMessage.set('Solo se permiten archivos Excel (.xlsx, .xls)');
+        this.selectedFile.set(null);
+        return;
+      }
+
+      this.selectedFile.set(file);
+      this.adminErrorMessage.set('');
+    }
+  }
+
+  onUploadExcel(): void {
+    const file = this.selectedFile();
+    if (!file) {
+      this.adminErrorMessage.set('Por favor selecciona un archivo Excel');
+      return;
+    }
+
+    this.isUploading.set(true);
+    this.adminSuccessMessage.set('');
+    this.adminErrorMessage.set('');
+    this.uploadResult.set(null);
+
+    this.eventApiService.uploadEventsExcel(file).subscribe({
+      next: (result) => {
+        this.uploadResult.set(result);
+        this.adminSuccessMessage.set(
+          `Proceso completado: ${result.created} eventos creados, ${result.updated} actualizados`,
+        );
+        this.selectedFile.set(null);
+        this.isUploading.set(false);
+
+        // Reset file input
+        const fileInput = document.getElementById('excelFile') as HTMLInputElement;
+        if (fileInput) {
+          fileInput.value = '';
+        }
+      },
+      error: (error) => {
+        const message = error.error?.message || 'Error al procesar el archivo Excel';
+        this.adminErrorMessage.set(message);
+        this.isUploading.set(false);
+      },
+    });
   }
 }

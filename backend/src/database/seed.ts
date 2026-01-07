@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import bcrypt from 'bcryptjs';
 import { query } from '../config/database';
 
 interface EventData {
@@ -14,6 +15,43 @@ interface EventData {
   timeline: Array<{ date: string; event: string }>;
   consequences: string | string[];
 }
+
+const seedAdminUsers = async () => {
+  console.log('👤 Creating admin users...');
+
+  const adminUsers = [
+    {
+      email: 'admin@epicstoria.com',
+      password: 'Admin@Secure#2026!$gHI',
+      name: 'Admin',
+      lastname: 'Principal',
+      role: 'admin',
+    },
+    {
+      email: 'superadmin@epicstoria.com',
+      password: 'SuperAdmin@Secure#2026!$gHI',
+      name: 'Super',
+      lastname: 'Administrador',
+      role: 'admin',
+    },
+  ];
+
+  for (const admin of adminUsers) {
+    const hashedPassword = await bcrypt.hash(admin.password, 10);
+
+    await query(
+      `INSERT INTO users (email, password, name, lastname, role)
+       VALUES ($1, $2, $3, $4, $5)
+       ON CONFLICT (email) DO UPDATE SET
+         password = EXCLUDED.password,
+         name = EXCLUDED.name,
+         lastname = EXCLUDED.lastname,
+         role = EXCLUDED.role`,
+      [admin.email, hashedPassword, admin.name, admin.lastname, admin.role],
+    );
+    console.log(`  ✅ Admin created: ${admin.email}`);
+  }
+};
 
 const seedEvents = async () => {
   console.log('🌱 Starting database seeding...');
@@ -71,4 +109,9 @@ const seedEvents = async () => {
   process.exit(0);
 };
 
-seedEvents();
+const runSeed = async () => {
+  await seedAdminUsers();
+  await seedEvents();
+};
+
+runSeed();

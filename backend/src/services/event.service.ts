@@ -1,6 +1,26 @@
+import * as XLSX from 'xlsx';
 import { query } from '../config/database';
 import { AppError } from '../middleware/error.middleware';
 import { Event, EventResponse } from '../models/event.model';
+
+interface ExcelRow {
+  id: string;
+  title: string;
+  date: string | number;
+  category: string;
+  imageUrl: string;
+  summary: string;
+  context: string;
+  keyFacts: string;
+  timeline: string;
+  consequences: string;
+}
+
+interface UploadResult {
+  created: number;
+  updated: number;
+  errors: string[];
+}
 
 export class EventService {
   private static toEventResponse(event: Event): EventResponse {
@@ -55,5 +75,185 @@ export class EventService {
   static async getCategories(): Promise<string[]> {
     const result = await query('SELECT DISTINCT category FROM events ORDER BY category');
     return result.rows.map((row: { category: string }) => row.category);
+  }
+
+  /**
+   * Convierte una fecha de formato dd-mm-yyyy a yyyy-mm-dd
+   * También maneja fechas seriales de Excel (números)
+   */
+  private static convertDate(dateStr: string | number): string {
+    // Si es un número (fecha serial de Excel), convertirla
+    if (typeof dateStr === 'number') {
+      const date = XLSX.SSF.parse_date_code(dateStr);
+      const year = date.y;
+      const month = String(date.m).padStart(2, '0');
+      const day = String(date.d).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+    }
+
+    const dateString = String(dateStr);
+
+    // Si la fecha ya está en formato yyyy-mm-dd, devolverla tal cual
+    if (/^\d{4}-\d{2}-\d{2}$/.test(dateString)) {
+      return dateString;
+    }
+
+    // Si está en formato dd-mm-yyyy o dd/mm/yyyy, convertirla
+    const dateParts = dateString.split(/[-/]/);
+    if (dateParts.length === 3) {
+      const [day, month, year] = dateParts;
+      return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+    }
+
+    return dateString;
+  }
+
+  /**
+   * Normaliza la ruta de la imagen
+   */
+  private static normalizeImageUrl(imageUrl: string): string {
+    if (!imageUrl) return imageUrl;
+    if (imageUrl.startsWith('/')) {
+      return imageUrl.substring(1);
+    }
+    return imageUrl;
+  }
+
+  /**
+   * Procesa un archivo Excel y actualiza/crea eventos en la base de datos
+   */
+  static async processExcelUpload(buffer: Buffer): Promise<UploadResult> {
+    const result: UploadResult = {
+      created: 0,
+      updated: 0,
+      errors: [],
+    };
+
+    try {
+      // Leer el archivo Excel desde el buffer
+      const workbook = XLSX.read(buffer, { type: 'buffer' });
+      const sheetName = workbook.SheetNames[0];
+      const worksheet = workbook.Sheets[sheetName];
+
+      // Convertir a JSON
+      const data: ExcelRow[] = XLSX.utils.sheet_to_json(worksheet);
+
+      if (data.length === 0) {
+        throw new AppError('El archivo Excel está vacío', 400);
+      }
+
+      // Procesar cada fila
+      for (const row of data) {
+        try {
+          if (!row.id || !row.title) {
+            result.errors.push(`Fila sin ID o título: ${JSON.stringify(row).substring(0, 100)}`);
+            continue;
+          }
+
+          // Procesar keyFacts
+          const keyFacts = row.keyFacts
+            ? row.keyFacts.split('||').map((fact) => {
+                const [title, description] = fact.split('|').map((s) => s.trim());
+                return { title, description };
+              })
+            : [];
+
+          // Procesar timeline
+          const timeline = row.timeline
+            ? row.timeline.split('||').map((item) => {
+                const [date, event] = item.split('|').map((s) => s.trim());
+                return { date: this.convertDate(date), event };
+              })
+            : [];
+
+          // Procesar summary (array de párrafos)
+          const summary = row.summary ? row.summary.split('||').map((p) => p.trim()) : [];
+
+          // Procesar context (array de párrafos)
+          const context = row.context ? row.context.split('||').map((p) => p.trim()) : [];
+
+          // Procesar consequences (array de párrafos)
+          const consequences = row.consequences
+            ? row.consequences.split('||').map((p) => p.trim())
+            : [];
+
+          const eventData = {
+            id: row.id,
+            title: row.title,
+            date: this.convertDate(row.date),
+            category: row.category,
+            image_url: this.normalizeImageUrl(row.imageUrl),
+            summary: JSON.stringify(summary),
+            context: JSON.stringify(context),
+            key_facts: JSON.stringify(keyFacts),
+            timeline: JSON.stringify(timeline),
+            consequences: JSON.stringify(consequences),
+          };
+
+          // Verificar si el evento ya existe
+          const existingEvent = await query('SELECT id FROM events WHERE id = $1', [row.id]);
+
+          if (existingEvent.rows.length > 0) {
+            // Actualizar evento existente
+            await query(
+              `UPDATE events SET
+                title = $1,
+                date = $2,
+                category = $3,
+                image_url = $4,
+                summary = $5,
+                context = $6,
+                key_facts = $7,
+                timeline = $8,
+                consequences = $9,
+                updated_at = NOW()
+              WHERE id = $10`,
+              [
+                eventData.title,
+                eventData.date,
+                eventData.category,
+                eventData.image_url,
+                eventData.summary,
+                eventData.context,
+                eventData.key_facts,
+                eventData.timeline,
+                eventData.consequences,
+                eventData.id,
+              ],
+            );
+            result.updated++;
+          } else {
+            // Crear nuevo evento
+            await query(
+              `INSERT INTO events (id, title, date, category, image_url, summary, context, key_facts, timeline, consequences)
+               VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
+              [
+                eventData.id,
+                eventData.title,
+                eventData.date,
+                eventData.category,
+                eventData.image_url,
+                eventData.summary,
+                eventData.context,
+                eventData.key_facts,
+                eventData.timeline,
+                eventData.consequences,
+              ],
+            );
+            result.created++;
+          }
+        } catch (rowError: unknown) {
+          const errorMessage = rowError instanceof Error ? rowError.message : 'Error desconocido';
+          result.errors.push(`Error en evento ${row.id}: ${errorMessage}`);
+        }
+      }
+
+      return result;
+    } catch (error) {
+      if (error instanceof AppError) {
+        throw error;
+      }
+      throw new AppError('Error al procesar el archivo Excel', 500);
+    }
   }
 }

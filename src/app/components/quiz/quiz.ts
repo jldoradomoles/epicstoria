@@ -160,7 +160,11 @@ export class QuizComponent implements OnInit {
 
   get progressPercentage(): number {
     if (!this.quiz) return 0;
-    return ((this.currentQuestionIndex + 1) / this.quiz.questions.length) * 100;
+    // Contar cuántas preguntas han sido respondidas
+    const answeredQuestions = this.selectedAnswers.filter(
+      (answer) => typeof answer === 'number' && !isNaN(answer) && answer >= 0,
+    ).length;
+    return (answeredQuestions / this.quiz.questions.length) * 100;
   }
 
   get scoreMessage() {
