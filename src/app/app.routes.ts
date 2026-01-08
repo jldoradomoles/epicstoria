@@ -2,7 +2,10 @@ import { Routes } from '@angular/router';
 import { authGuard, guestGuard } from './guards/auth.guard';
 import { About } from './pages/about/about';
 import { EventDetail } from './pages/event-detail/event-detail';
+import { Eventos } from './pages/eventos/eventos';
+import { Galeria } from './pages/galeria/galeria';
 import { Home } from './pages/home/home';
+import { Juegos } from './pages/juegos/juegos';
 import { LoginComponent } from './pages/login/login';
 import { Privacy } from './pages/privacy/privacy';
 import { ProfileComponent } from './pages/profile/profile';
@@ -22,6 +25,18 @@ export const routes: Routes = [
   {
     path: 'buscar',
     component: Search,
+  },
+  {
+    path: 'eventos',
+    component: Eventos,
+  },
+  {
+    path: 'juegos',
+    component: Juegos,
+  },
+  {
+    path: 'galeria',
+    component: Galeria,
   },
   {
     path: 'acerca',
