@@ -315,157 +315,296 @@
 
           <!-- Tab: Administración (solo admin) -->
           @if (activeTab() === 'admin' && isAdmin) {
-            <div class="space-y-6">
-              <!-- Título de sección -->
-              <div class="mb-6">
-                <h3 class="text-xl font-semibold text-amber-100 mb-2">
-                  <i class="fas fa-upload mr-2"></i>
-                  Cargar Eventos desde Excel
-                </h3>
-                <p class="text-amber-200/60 text-sm">
-                  Sube un archivo Excel (.xlsx) para crear o actualizar eventos en la base de datos.
-                </p>
-              </div>
-
-              <!-- Mensajes -->
-              @if (adminSuccessMessage()) {
-                <div
-                  class="p-4 bg-green-900/50 border border-green-500/50 rounded-lg text-green-200 text-sm flex items-center gap-3"
-                >
-                  <i class="fas fa-check-circle text-green-400"></i>
-                  <span>{{ adminSuccessMessage() }}</span>
+            <div class="space-y-8">
+              <!-- Sección: Subida de Imágenes -->
+              <div class="border-b border-amber-900/30 pb-8">
+                <div class="mb-6">
+                  <h3 class="text-xl font-semibold text-amber-100 mb-2">
+                    <i class="fas fa-images mr-2"></i>
+                    Subir Imágenes de Eventos
+                  </h3>
+                  <p class="text-amber-200/60 text-sm">
+                    Sube una o varias imágenes (JPG, PNG, GIF, WEBP) para usar en los eventos.
+                  </p>
                 </div>
-              }
-              @if (adminErrorMessage()) {
-                <div
-                  class="p-4 bg-red-900/50 border border-red-500/50 rounded-lg text-red-200 text-sm flex items-center gap-3"
-                >
-                  <i class="fas fa-exclamation-circle text-red-400"></i>
-                  <span>{{ adminErrorMessage() }}</span>
-                </div>
-              }
 
-              <!-- Resultado de upload -->
-              @if (uploadResult()) {
-                <div class="p-4 bg-stone-800/50 border border-amber-900/30 rounded-lg">
-                  <h4 class="text-amber-100 font-medium mb-3">Resultado del proceso:</h4>
-                  <div class="grid grid-cols-2 gap-4 text-sm">
-                    <div class="flex items-center gap-2">
-                      <i class="fas fa-plus-circle text-green-400"></i>
-                      <span class="text-amber-200">Eventos creados:</span>
-                      <span class="text-green-400 font-semibold">{{
-                        uploadResult()!.created
-                      }}</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <i class="fas fa-sync-alt text-blue-400"></i>
-                      <span class="text-amber-200">Eventos actualizados:</span>
-                      <span class="text-blue-400 font-semibold">{{ uploadResult()!.updated }}</span>
+                <!-- Mensajes de imagen -->
+                @if (imageSuccessMessage()) {
+                  <div
+                    class="p-4 bg-green-900/50 border border-green-500/50 rounded-lg text-green-200 text-sm flex items-center gap-3 mb-4"
+                  >
+                    <i class="fas fa-check-circle text-green-400"></i>
+                    <span>{{ imageSuccessMessage() }}</span>
+                  </div>
+                }
+                @if (imageErrorMessage()) {
+                  <div
+                    class="p-4 bg-red-900/50 border border-red-500/50 rounded-lg text-red-200 text-sm flex items-center gap-3 mb-4"
+                  >
+                    <i class="fas fa-exclamation-circle text-red-400"></i>
+                    <span>{{ imageErrorMessage() }}</span>
+                  </div>
+                }
+
+                <!-- Resultado de upload de imágenes -->
+                @if (imageUploadResult() && imageUploadResult()!.length > 0) {
+                  <div class="p-4 bg-stone-800/50 border border-amber-900/30 rounded-lg mb-4">
+                    <h4 class="text-amber-100 font-medium mb-3">
+                      Imágenes subidas ({{ imageUploadResult()!.length }}):
+                    </h4>
+                    <div class="space-y-3">
+                      @for (image of imageUploadResult(); track image.filename) {
+                        <div
+                          class="flex items-center gap-3 p-3 bg-stone-900/50 rounded-lg border border-amber-900/20"
+                        >
+                          <i class="fas fa-image text-green-400"></i>
+                          <div class="flex-1 min-w-0">
+                            <p class="text-amber-100 text-sm truncate">{{ image.originalName }}</p>
+                            <p class="text-amber-200/60 text-xs font-mono truncate">
+                              {{ image.imageUrl }}
+                            </p>
+                          </div>
+                          <button
+                            (click)="copyToClipboard(image.imageUrl)"
+                            class="px-3 py-1 bg-amber-600/20 hover:bg-amber-600/30 text-amber-200 text-xs rounded transition-colors"
+                            title="Copiar URL"
+                          >
+                            <i class="fas fa-copy"></i>
+                          </button>
+                        </div>
+                      }
                     </div>
                   </div>
-                  @if (uploadResult()!.errors.length > 0) {
-                    <div class="mt-4 pt-4 border-t border-amber-900/30">
-                      <h5 class="text-red-400 font-medium mb-2 flex items-center gap-2">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        Errores ({{ uploadResult()!.errors.length }}):
-                      </h5>
-                      <ul class="text-red-300 text-sm space-y-1 max-h-32 overflow-y-auto">
-                        @for (error of uploadResult()!.errors; track error) {
-                          <li class="flex items-start gap-2">
-                            <i class="fas fa-times text-red-400 mt-0.5"></i>
-                            <span>{{ error }}</span>
-                          </li>
+                }
+
+                <!-- Selector de imágenes -->
+                <div class="space-y-4">
+                  <div
+                    class="border-2 border-dashed border-amber-900/50 rounded-lg p-8 text-center hover:border-amber-600/50 transition-colors"
+                  >
+                    <input
+                      type="file"
+                      id="imageFiles"
+                      accept="image/jpeg,image/jpg,image/png,image/gif,image/webp"
+                      multiple
+                      (change)="onImagesSelected($event)"
+                      class="hidden"
+                    />
+                    <label for="imageFiles" class="cursor-pointer block">
+                      <i class="fas fa-image text-4xl text-amber-400/60 mb-4"></i>
+                      <p class="text-amber-200 mb-2">
+                        @if (selectedImages().length > 0) {
+                          <span class="text-amber-100 font-medium">
+                            {{ selectedImages().length }} imagen(es) seleccionada(s)
+                          </span>
+                        } @else {
+                          Haz clic para seleccionar imágenes
                         }
-                      </ul>
+                      </p>
+                      <p class="text-amber-200/50 text-sm">
+                        Formatos: JPG, PNG, GIF, WEBP (máx. 5MB cada una, hasta 10 imágenes)
+                      </p>
+                    </label>
+                  </div>
+
+                  <!-- Lista de imágenes seleccionadas -->
+                  @if (selectedImages().length > 0) {
+                    <div class="space-y-2">
+                      @for (image of selectedImages(); track image.name; let i = $index) {
+                        <div
+                          class="flex items-center gap-3 p-3 bg-stone-800/30 rounded-lg border border-amber-900/20"
+                        >
+                          <i class="fas fa-image text-amber-400"></i>
+                          <div class="flex-1 min-w-0">
+                            <p class="text-amber-100 text-sm truncate">{{ image.name }}</p>
+                            <p class="text-amber-200/60 text-xs">
+                              {{ (image.size / 1024 / 1024).toFixed(2) }} MB
+                            </p>
+                          </div>
+                          <button
+                            (click)="removeImage(i)"
+                            class="text-red-400 hover:text-red-300 transition-colors"
+                            title="Eliminar"
+                          >
+                            <i class="fas fa-times"></i>
+                          </button>
+                        </div>
+                      }
                     </div>
                   }
-                </div>
-              }
 
-              <!-- Selector de archivo -->
-              <div class="space-y-4">
-                <div
-                  class="border-2 border-dashed border-amber-900/50 rounded-lg p-8 text-center hover:border-amber-600/50 transition-colors"
-                >
-                  <input
-                    type="file"
-                    id="excelFile"
-                    accept=".xlsx,.xls"
-                    (change)="onFileSelected($event)"
-                    class="hidden"
-                  />
-                  <label for="excelFile" class="cursor-pointer block">
-                    <i class="fas fa-file-excel text-4xl text-amber-400/60 mb-4"></i>
-                    <p class="text-amber-200 mb-2">
-                      @if (selectedFile()) {
-                        <span class="text-amber-100 font-medium">{{ selectedFile()!.name }}</span>
-                      } @else {
-                        Haz clic para seleccionar un archivo Excel
-                      }
-                    </p>
-                    <p class="text-amber-200/50 text-sm">
-                      Formatos aceptados: .xlsx, .xls (máx. 10MB)
-                    </p>
-                  </label>
+                  <!-- Botón subir imágenes -->
+                  <button
+                    (click)="onUploadImages()"
+                    [disabled]="selectedImages().length === 0 || isUploadingImages()"
+                    class="w-full px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  >
+                    @if (isUploadingImages()) {
+                      <i class="fas fa-spinner fa-spin"></i>
+                      <span>Subiendo imágenes...</span>
+                    } @else {
+                      <i class="fas fa-cloud-upload-alt"></i>
+                      <span>Subir Imágenes</span>
+                    }
+                  </button>
                 </div>
-
-                <!-- Botón subir -->
-                <button
-                  (click)="onUploadExcel()"
-                  [disabled]="!selectedFile() || isUploading()"
-                  class="w-full px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                >
-                  @if (isUploading()) {
-                    <i class="fas fa-spinner fa-spin"></i>
-                    <span>Procesando archivo...</span>
-                  } @else {
-                    <i class="fas fa-cloud-upload-alt"></i>
-                    <span>Subir y Procesar Excel</span>
-                  }
-                </button>
               </div>
 
-              <!-- Instrucciones -->
-              <div class="mt-6 p-4 bg-stone-800/30 rounded-lg border border-amber-900/20">
-                <h4 class="text-amber-100 font-medium mb-3 flex items-center gap-2">
-                  <i class="fas fa-info-circle text-amber-400"></i>
-                  Formato del archivo Excel
-                </h4>
-                <p class="text-amber-200/60 text-sm mb-3">
-                  El archivo debe contener las siguientes columnas:
-                </p>
-                <ul class="text-amber-200/70 text-sm space-y-1">
-                  <li>
-                    <strong class="text-amber-100">id:</strong> Identificador único del evento (ej:
-                    apolo-11)
-                  </li>
-                  <li><strong class="text-amber-100">title:</strong> Título del evento</li>
-                  <li>
-                    <strong class="text-amber-100">date:</strong> Fecha (DD-MM-YYYY o YYYY-MM-DD)
-                  </li>
-                  <li><strong class="text-amber-100">category:</strong> Categoría del evento</li>
-                  <li><strong class="text-amber-100">imageUrl:</strong> URL de la imagen</li>
-                  <li>
-                    <strong class="text-amber-100">summary:</strong> Resumen (párrafos separados por
-                    ||)
-                  </li>
-                  <li>
-                    <strong class="text-amber-100">context:</strong> Contexto (párrafos separados
-                    por ||)
-                  </li>
-                  <li>
-                    <strong class="text-amber-100">keyFacts:</strong> Datos clave
-                    (Título|Desc||Título2|Desc2)
-                  </li>
-                  <li>
-                    <strong class="text-amber-100">timeline:</strong> Línea de tiempo
-                    (Fecha|Evento||Fecha2|Evento2)
-                  </li>
-                  <li>
-                    <strong class="text-amber-100">consequences:</strong> Consecuencias (párrafos
-                    separados por ||)
-                  </li>
-                </ul>
+              <!-- Sección: Cargar Eventos desde Excel -->
+              <div>
+                <div class="mb-6">
+                  <h3 class="text-xl font-semibold text-amber-100 mb-2">
+                    <i class="fas fa-upload mr-2"></i>
+                    Cargar Eventos desde Excel
+                  </h3>
+                  <p class="text-amber-200/60 text-sm">
+                    Sube un archivo Excel (.xlsx) para crear o actualizar eventos en la base de
+                    datos.
+                  </p>
+                </div>
+
+                <!-- Mensajes -->
+                @if (adminSuccessMessage()) {
+                  <div
+                    class="p-4 bg-green-900/50 border border-green-500/50 rounded-lg text-green-200 text-sm flex items-center gap-3"
+                  >
+                    <i class="fas fa-check-circle text-green-400"></i>
+                    <span>{{ adminSuccessMessage() }}</span>
+                  </div>
+                }
+                @if (adminErrorMessage()) {
+                  <div
+                    class="p-4 bg-red-900/50 border border-red-500/50 rounded-lg text-red-200 text-sm flex items-center gap-3"
+                  >
+                    <i class="fas fa-exclamation-circle text-red-400"></i>
+                    <span>{{ adminErrorMessage() }}</span>
+                  </div>
+                }
+
+                <!-- Resultado de upload -->
+                @if (uploadResult()) {
+                  <div class="p-4 bg-stone-800/50 border border-amber-900/30 rounded-lg">
+                    <h4 class="text-amber-100 font-medium mb-3">Resultado del proceso:</h4>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                      <div class="flex items-center gap-2">
+                        <i class="fas fa-plus-circle text-green-400"></i>
+                        <span class="text-amber-200">Eventos creados:</span>
+                        <span class="text-green-400 font-semibold">{{
+                          uploadResult()!.created
+                        }}</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <i class="fas fa-sync-alt text-blue-400"></i>
+                        <span class="text-amber-200">Eventos actualizados:</span>
+                        <span class="text-blue-400 font-semibold">{{
+                          uploadResult()!.updated
+                        }}</span>
+                      </div>
+                    </div>
+                    @if (uploadResult()!.errors.length > 0) {
+                      <div class="mt-4 pt-4 border-t border-amber-900/30">
+                        <h5 class="text-red-400 font-medium mb-2 flex items-center gap-2">
+                          <i class="fas fa-exclamation-triangle"></i>
+                          Errores ({{ uploadResult()!.errors.length }}):
+                        </h5>
+                        <ul class="text-red-300 text-sm space-y-1 max-h-32 overflow-y-auto">
+                          @for (error of uploadResult()!.errors; track error) {
+                            <li class="flex items-start gap-2">
+                              <i class="fas fa-times text-red-400 mt-0.5"></i>
+                              <span>{{ error }}</span>
+                            </li>
+                          }
+                        </ul>
+                      </div>
+                    }
+                  </div>
+                }
+
+                <!-- Selector de archivo -->
+                <div class="space-y-4">
+                  <div
+                    class="border-2 border-dashed border-amber-900/50 rounded-lg p-8 text-center hover:border-amber-600/50 transition-colors"
+                  >
+                    <input
+                      type="file"
+                      id="excelFile"
+                      accept=".xlsx,.xls"
+                      (change)="onFileSelected($event)"
+                      class="hidden"
+                    />
+                    <label for="excelFile" class="cursor-pointer block">
+                      <i class="fas fa-file-excel text-4xl text-amber-400/60 mb-4"></i>
+                      <p class="text-amber-200 mb-2">
+                        @if (selectedFile()) {
+                          <span class="text-amber-100 font-medium">{{ selectedFile()!.name }}</span>
+                        } @else {
+                          Haz clic para seleccionar un archivo Excel
+                        }
+                      </p>
+                      <p class="text-amber-200/50 text-sm">
+                        Formatos aceptados: .xlsx, .xls (máx. 10MB)
+                      </p>
+                    </label>
+                  </div>
+
+                  <!-- Botón subir -->
+                  <button
+                    (click)="onUploadExcel()"
+                    [disabled]="!selectedFile() || isUploading()"
+                    class="w-full px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  >
+                    @if (isUploading()) {
+                      <i class="fas fa-spinner fa-spin"></i>
+                      <span>Procesando archivo...</span>
+                    } @else {
+                      <i class="fas fa-cloud-upload-alt"></i>
+                      <span>Subir y Procesar Excel</span>
+                    }
+                  </button>
+                </div>
+
+                <!-- Instrucciones -->
+                <div class="mt-6 p-4 bg-stone-800/30 rounded-lg border border-amber-900/20">
+                  <h4 class="text-amber-100 font-medium mb-3 flex items-center gap-2">
+                    <i class="fas fa-info-circle text-amber-400"></i>
+                    Formato del archivo Excel
+                  </h4>
+                  <p class="text-amber-200/60 text-sm mb-3">
+                    El archivo debe contener las siguientes columnas:
+                  </p>
+                  <ul class="text-amber-200/70 text-sm space-y-1">
+                    <li>
+                      <strong class="text-amber-100">id:</strong> Identificador único del evento
+                      (ej: apolo-11)
+                    </li>
+                    <li><strong class="text-amber-100">title:</strong> Título del evento</li>
+                    <li>
+                      <strong class="text-amber-100">date:</strong> Fecha (DD-MM-YYYY o YYYY-MM-DD)
+                    </li>
+                    <li><strong class="text-amber-100">category:</strong> Categoría del evento</li>
+                    <li><strong class="text-amber-100">imageUrl:</strong> URL de la imagen</li>
+                    <li>
+                      <strong class="text-amber-100">summary:</strong> Resumen (párrafos separados
+                      por ||)
+                    </li>
+                    <li>
+                      <strong class="text-amber-100">context:</strong> Contexto (párrafos separados
+                      por ||)
+                    </li>
+                    <li>
+                      <strong class="text-amber-100">keyFacts:</strong> Datos clave
+                      (Título|Desc||Título2|Desc2)
+                    </li>
+                    <li>
+                      <strong class="text-amber-100">timeline:</strong> Línea de tiempo
+                      (Fecha|Evento||Fecha2|Evento2)
+                    </li>
+                    <li>
+                      <strong class="text-amber-100">consequences:</strong> Consecuencias (párrafos
+                      separados por ||)
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           }

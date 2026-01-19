@@ -1,9 +1,9 @@
-import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { QuizComponent } from '../../components/quiz/quiz';
 import { Event } from '../../models/event.model';
 import { DateFormatPipe } from '../../pipes/date-format.pipe';
+import { EventApiService } from '../../services/event-api.service';
 import { getCategoryColor as getCategoryColorUtil } from '../../utils/category.utils';
 import { handleImageError } from '../../utils/image.utils';
 import { getParagraphs } from '../../utils/text.utils';
@@ -15,7 +15,7 @@ import { getParagraphs } from '../../utils/text.utils';
   styleUrl: './event-detail.scss',
 })
 export class EventDetail implements OnInit {
-  private http = inject(HttpClient);
+  private eventApiService = inject(EventApiService);
   private route = inject(ActivatedRoute);
   private cdr = inject(ChangeDetectorRef);
 
@@ -28,15 +28,19 @@ export class EventDetail implements OnInit {
   ngOnInit() {
     const eventId = this.route.snapshot.paramMap.get('id');
 
-    this.http.get<Event[]>('data/events.json').subscribe({
-      next: (events) => {
-        this.event = events.find((e) => e.id === eventId);
-        this.cdr.markForCheck();
-      },
-      error: (error) => {
-        console.error('Error loading event:', error);
-      },
-    });
+    if (eventId) {
+      console.log('Loading event from database:', eventId);
+      this.eventApiService.getEventById(eventId).subscribe({
+        next: (event) => {
+          console.log('Event loaded successfully:', event);
+          this.event = event;
+          this.cdr.markForCheck();
+        },
+        error: (error) => {
+          console.error('Error loading event:', error);
+        },
+      });
+    }
   }
 
   async onImageError(event: any) {

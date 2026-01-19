@@ -3,12 +3,12 @@
  */
 
 /**
- * Intenta cargar una imagen con diferentes extensiones (jpg, png)
+ * Intenta cargar una imagen con diferentes extensiones (jpg, jpeg, png, gif, webp)
  * @param basePath - Ruta base sin extensión (ej: "/images/evento-id")
  * @returns Promise con la URL de la imagen que se cargó exitosamente
  */
 export async function tryLoadImageFormats(basePath: string): Promise<string> {
-  const extensions = ['jpg', 'png'];
+  const extensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
 
   for (const ext of extensions) {
     const imageUrl = `${basePath}.${ext}`;
@@ -20,8 +20,8 @@ export async function tryLoadImageFormats(basePath: string): Promise<string> {
     }
   }
 
-  // Si ninguna funciona, retorna la primera como fallback
-  return `${basePath}.jpg`;
+  // Si ninguna funciona, lanzar error
+  throw new Error(`No valid image format found for: ${basePath}`);
 }
 
 /**
@@ -50,7 +50,7 @@ export function getEventImageUrl(event: { id: string; imageUrl?: string }): stri
   }
 
   // Generar automáticamente basado en el ID
-  return `/images/${event.id}`;
+  return `/images/eventos/${event.id}`;
 }
 
 /**
@@ -66,18 +66,26 @@ export async function handleImageError(
 ): Promise<void> {
   const imgElement = event.target as HTMLImageElement;
 
+  // Si ya estamos mostrando la imagen por defecto, no hacer nada más
+  if (originalUrl === defaultImage || imgElement.src === defaultImage) {
+    return;
+  }
+
   // Extraer la ruta base sin extensión
-  const pathWithoutExt = originalUrl.replace(/\.(jpg|png)$/i, '');
+  const pathWithoutExt = originalUrl.replace(/\.(jpg|jpeg|png|gif|webp)$/i, '');
 
   try {
+    // Intentar con diferentes formatos
     const workingUrl = await tryLoadImageFormats(pathWithoutExt);
     if (workingUrl !== originalUrl) {
       imgElement.src = workingUrl;
+      console.log(`Image found with alternative format: ${workingUrl}`);
       return;
     }
   } catch {
-    // Si todo falla, usar imagen por defecto
+    // Si todo falla, continuar con imagen por defecto
   }
 
+  console.warn(`Image not found: ${originalUrl}, using default`);
   imgElement.src = defaultImage;
 }

@@ -115,6 +115,24 @@ epicstoria/
 - `GET /api/events/categories` - Listar categorías
 - `GET /api/events/category/:category` - Eventos por categoría
 - `GET /api/events/search?q=term` - Buscar eventos
+- `POST /api/events/upload` - Subir archivo Excel (admin)
+- `POST /api/events/upload-image` - Subir imagen única (admin)
+- `POST /api/events/upload-images` - Subir múltiples imágenes (admin)
+
+## 👨‍💼 Funcionalidades de Administración
+
+### Sistema de Subida de Datos
+
+Los administradores tienen acceso a herramientas especiales en su perfil:
+
+1. **Subida de Eventos por Excel** - Carga masiva de eventos desde archivo `.xlsx`
+2. **Subida de Imágenes** - Sistema para subir imágenes de eventos (hasta 10 simultáneas, 5MB cada una)
+
+Para más detalles, consulta:
+
+- [SISTEMA-SUBIDA-IMAGENES.md](SISTEMA-SUBIDA-IMAGENES.md) - Documentación del sistema de imágenes
+- [GUIA-NOMBRES-IMAGENES.md](GUIA-NOMBRES-IMAGENES.md) - Guía de buenas prácticas para nombrar imágenes
+- [DESPLIEGUE-HOSTINGER-VPS.md](DESPLIEGUE-HOSTINGER-VPS.md) - Guía de despliegue en VPS
 
 ## 🛠️ Scripts Disponibles
 

@@ -110,12 +110,21 @@ export class EventService {
 
   /**
    * Normaliza la ruta de la imagen
+   * Asegura que tenga un / al inicio para rutas relativas
    */
   private static normalizeImageUrl(imageUrl: string): string {
     if (!imageUrl) return imageUrl;
-    if (imageUrl.startsWith('/')) {
-      return imageUrl.substring(1);
+
+    // Si ya es una URL absoluta (http/https), dejarla como está
+    if (imageUrl.startsWith('http://') || imageUrl.startsWith('https://')) {
+      return imageUrl;
     }
+
+    // Para rutas relativas, asegurar que empiecen con /
+    if (!imageUrl.startsWith('/')) {
+      return `/${imageUrl}`;
+    }
+
     return imageUrl;
   }
 

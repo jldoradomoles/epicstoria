@@ -12,7 +12,7 @@ function createTemplate() {
       title: 'Alunizaje del Apolo 11',
       date: '20-07-1969',
       category: 'Ciencia',
-      imageUrl: '/images/apolo-11.jpg',
+      imageUrl: '/images/eventos/apolo-11.jpg',
       summary:
         'Neil Armstrong y Buzz Aldrin se convierten en los primeros seres humanos en caminar sobre la superficie lunar.||Este hito histórico marcó el triunfo del programa espacial estadounidense y demostró la capacidad humana para explorar otros mundos.',
       context:
@@ -29,7 +29,7 @@ function createTemplate() {
       title: 'Caída del Muro de Berlín',
       date: '09-11-1989',
       category: 'Política',
-      imageUrl: '/images/muro-berlin.jpg',
+      imageUrl: '/images/eventos/muro-berlin.jpg',
       summary:
         'El Muro de Berlín es derribado por ciudadanos alemanes en un acto histórico de reunificación.||Miles de personas celebraron la apertura de las fronteras que habían dividido la ciudad durante casi tres décadas.',
       context:

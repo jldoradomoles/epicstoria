@@ -33,6 +33,18 @@ export class ProfileComponent implements OnInit {
   isUploading = signal<boolean>(false);
   uploadResult = signal<{ created: number; updated: number; errors: string[] } | null>(null);
 
+  // Admin image upload state
+  selectedImages = signal<File[]>([]);
+  isUploadingImages = signal<boolean>(false);
+  imageUploadResult = signal<Array<{
+    filename: string;
+    imageUrl: string;
+    originalName: string;
+    size: number;
+  }> | null>(null);
+  imageSuccessMessage = signal<string>('');
+  imageErrorMessage = signal<string>('');
+
   categories = ['Espacio', 'Historia', 'Ciencia', 'Arte', 'Tecnología', 'Naturaleza', 'Mitología'];
 
   constructor(
@@ -107,6 +119,9 @@ export class ProfileComponent implements OnInit {
     this.adminSuccessMessage.set('');
     this.adminErrorMessage.set('');
     this.uploadResult.set(null);
+    this.imageSuccessMessage.set('');
+    this.imageErrorMessage.set('');
+    this.imageUploadResult.set(null);
   }
 
   get isAdmin(): boolean {
@@ -195,6 +210,8 @@ export class ProfileComponent implements OnInit {
 
   onUploadExcel(): void {
     const file = this.selectedFile();
+    console.log(file);
+
     if (!file) {
       this.adminErrorMessage.set('Por favor selecciona un archivo Excel');
       return;
@@ -225,6 +242,117 @@ export class ProfileComponent implements OnInit {
         this.adminErrorMessage.set(message);
         this.isUploading.set(false);
       },
+    });
+  }
+
+  // Admin image methods
+  onImagesSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      const files = Array.from(input.files);
+      const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
+      const maxSize = 5 * 1024 * 1024; // 5MB
+
+      const validFiles: File[] = [];
+      const errors: string[] = [];
+
+      files.forEach((file) => {
+        if (!allowedTypes.includes(file.type)) {
+          errors.push(`${file.name}: Formato no permitido`);
+        } else if (file.size > maxSize) {
+          errors.push(`${file.name}: Tamaño máximo 5MB`);
+        } else {
+          validFiles.push(file);
+        }
+      });
+
+      if (errors.length > 0) {
+        this.imageErrorMessage.set(errors.join(', '));
+      } else {
+        this.imageErrorMessage.set('');
+      }
+
+      this.selectedImages.set(validFiles);
+    }
+  }
+
+  onUploadImages(): void {
+    const files = this.selectedImages();
+
+    if (files.length === 0) {
+      this.imageErrorMessage.set('Por favor selecciona al menos una imagen');
+      return;
+    }
+
+    this.isUploadingImages.set(true);
+    this.imageSuccessMessage.set('');
+    this.imageErrorMessage.set('');
+    this.imageUploadResult.set(null);
+
+    // Si es una sola imagen
+    if (files.length === 1) {
+      this.eventApiService.uploadEventImage(files[0]).subscribe({
+        next: (result) => {
+          this.imageUploadResult.set([result]);
+          this.imageSuccessMessage.set(`Imagen subida exitosamente: ${result.imageUrl}`);
+          this.selectedImages.set([]);
+          this.isUploadingImages.set(false);
+
+          // Reset file input
+          const fileInput = document.getElementById('imageFiles') as HTMLInputElement;
+          if (fileInput) {
+            fileInput.value = '';
+          }
+        },
+        error: (error) => {
+          const message = error.error?.message || 'Error al subir la imagen';
+          this.imageErrorMessage.set(message);
+          this.isUploadingImages.set(false);
+        },
+      });
+    } else {
+      // Múltiples imágenes
+      this.eventApiService.uploadEventImages(files).subscribe({
+        next: (results) => {
+          this.imageUploadResult.set(results);
+          this.imageSuccessMessage.set(`${results.length} imágenes subidas exitosamente`);
+          this.selectedImages.set([]);
+          this.isUploadingImages.set(false);
+
+          // Reset file input
+          const fileInput = document.getElementById('imageFiles') as HTMLInputElement;
+          if (fileInput) {
+            fileInput.value = '';
+          }
+        },
+        error: (error) => {
+          const message = error.error?.message || 'Error al subir las imágenes';
+          this.imageErrorMessage.set(message);
+          this.isUploadingImages.set(false);
+        },
+      });
+    }
+  }
+
+  removeImage(index: number): void {
+    const currentImages = this.selectedImages();
+    currentImages.splice(index, 1);
+    this.selectedImages.set([...currentImages]);
+
+    if (currentImages.length === 0) {
+      const fileInput = document.getElementById('imageFiles') as HTMLInputElement;
+      if (fileInput) {
+        fileInput.value = '';
+      }
+    }
+  }
+
+  copyToClipboard(text: string): void {
+    navigator.clipboard.writeText(text).then(() => {
+      this.imageSuccessMessage.set('URL copiada al portapapeles');
+      setTimeout(() => {
+        this.imageSuccessMessage.set('');
+      }, 2000);
     });
   }
 }

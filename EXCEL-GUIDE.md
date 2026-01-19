@@ -33,7 +33,7 @@ Esto genera `public/data/events.json` automáticamente.
 | title        | Texto libre                      | `Alunizaje del Apolo 11`                         |
 | date         | DD-MM-YYYY o YYYY-MM-DD          | `20-07-1969` o `1969-07-20`                      |
 | category     | Texto                            | `Ciencia`                                        |
-| imageUrl     | Ruta                             | `/images/apolo-11.jpg`                           |
+| imageUrl     | Ruta                             | `/images/eventos/apolo-11.jpg`                   |
 | summary      | Párrafos con `\|\|`              | `Párrafo 1\|\|Párrafo 2`                         |
 | context      | Párrafos con `\|\|`              | `Párrafo 1\|\|Párrafo 2`                         |
 | keyFacts     | `Título\|Desc\|\|Título\|Desc`   | `Hecho 1\|Info 1\|\|Hecho 2\|Info 2`             |

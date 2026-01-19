@@ -1,6 +1,7 @@
 import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
+import path from 'path';
 import { errorHandler } from './middleware/error.middleware';
 import authRoutes from './routes/auth.routes';
 import eventRoutes from './routes/event.routes';
@@ -19,6 +20,9 @@ app.use(
   }),
 );
 app.use(express.json());
+
+// Servir archivos estáticos (imágenes subidas)
+app.use('/images', express.static(path.join(__dirname, '../../public/images')));
 
 // Routes
 app.use('/api/auth', authRoutes);

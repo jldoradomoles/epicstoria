@@ -1,9 +1,9 @@
 import { NgClass } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Event } from '../../models/event.model';
 import { DateFormatPipe } from '../../pipes/date-format.pipe';
+import { EventApiService } from '../../services/event-api.service';
 import { getCategoryColor } from '../../utils/category.utils';
 import { handleImageError } from '../../utils/image.utils';
 import { getPlainText } from '../../utils/text.utils';
@@ -15,7 +15,7 @@ import { getPlainText } from '../../utils/text.utils';
   styleUrl: './event-cards.scss',
 })
 export class EventCards implements OnInit {
-  private http = inject(HttpClient);
+  private eventApiService = inject(EventApiService);
   private cdr = inject(ChangeDetectorRef);
   events: Event[] = [];
 
@@ -26,12 +26,12 @@ export class EventCards implements OnInit {
   getPlainText = getPlainText;
 
   ngOnInit() {
-    console.log('Loading events from data/events.json');
-    this.http.get<Event[]>('data/events.json').subscribe({
-      next: async (data) => {
+    console.log('Loading events from database');
+    this.eventApiService.getAllEvents().subscribe({
+      next: (data) => {
         console.log('Events loaded successfully:', data);
         // Procesar las URLs de imágenes para asegurar formatos correctos
-        this.events = await this.processEventImages(data);
+        this.events = this.processEventImages(data);
         this.cdr.markForCheck();
       },
       error: (error) => {
@@ -40,29 +40,34 @@ export class EventCards implements OnInit {
     });
   }
 
-  private async processEventImages(events: Event[]): Promise<Event[]> {
-    // Si quieres procesar automáticamente todas las imágenes al cargar,
-    // descomenta el código siguiente. Por ahora se maneja bajo demanda con onImageError.
+  private processEventImages(events: Event[]): Event[] {
+    // Procesar eventos para asegurar que las URLs de imágenes tengan formato correcto
+    return events.map((event) => {
+      let imageUrl = event.imageUrl;
 
-    /*
-    const processedEvents = await Promise.all(
-      events.map(async (event) => {
-        if (event.imageUrl && !event.imageUrl.includes('.')) {
-          // Si no tiene extensión, buscar automáticamente
-          try {
-            const workingUrl = await tryLoadImageFormats(event.imageUrl);
-            return { ...event, imageUrl: workingUrl };
-          } catch {
-            return event;
-          }
-        }
-        return event;
-      })
-    );
-    return processedEvents;
-    */
+      // Si no hay imageUrl, usar imagen por defecto
+      if (!imageUrl) {
+        return { ...event, imageUrl: this.defaultImage };
+      }
 
-    return events;
+      // Si la URL ya es absoluta (http/https), dejarla como está
+      if (imageUrl.startsWith('http')) {
+        return { ...event, imageUrl };
+      }
+
+      // Para URLs relativas, asegurar que empiecen con /
+      if (!imageUrl.startsWith('/')) {
+        imageUrl = `/${imageUrl}`;
+      }
+
+      // Si no tiene extensión, agregar .jpg por defecto
+      if (!imageUrl.match(/\.(jpg|jpeg|png|gif|webp)$/i)) {
+        imageUrl = `${imageUrl}.jpg`;
+      }
+
+      console.log(`Processed image URL for ${event.id}: ${imageUrl}`);
+      return { ...event, imageUrl };
+    });
   }
 
   async onImageError(event: any) {

@@ -1,12 +1,18 @@
+import { registerLocaleData } from '@angular/common';
 import { provideHttpClient } from '@angular/common/http';
+import localeEs from '@angular/common/locales/es';
 import {
   ApplicationConfig,
+  LOCALE_ID,
   provideBrowserGlobalErrorListeners,
   provideZonelessChangeDetection,
 } from '@angular/core';
 import { provideRouter, withViewTransitions } from '@angular/router';
 
 import { routes } from './app.routes';
+
+// Registrar locale español
+registerLocaleData(localeEs);
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -22,5 +28,6 @@ export const appConfig: ApplicationConfig = {
       }),
     ),
     provideHttpClient(),
+    { provide: LOCALE_ID, useValue: 'es' },
   ],
 };

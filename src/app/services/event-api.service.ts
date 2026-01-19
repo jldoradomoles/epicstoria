@@ -64,4 +64,44 @@ export class EventApiService {
       .get<ApiResponse<string[]>>(`${this.apiUrl}/events/categories`)
       .pipe(map((response) => response.data));
   }
+
+  uploadEventImage(
+    file: File,
+  ): Observable<{ filename: string; imageUrl: string; originalName: string; size: number }> {
+    const formData = new FormData();
+    formData.append('image', file);
+
+    const token = this.authService.getToken();
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+    });
+
+    return this.http
+      .post<
+        ApiResponse<{ filename: string; imageUrl: string; originalName: string; size: number }>
+      >(`${this.apiUrl}/events/upload-image`, formData, { headers })
+      .pipe(map((response) => response.data));
+  }
+
+  uploadEventImages(
+    files: File[],
+  ): Observable<Array<{ filename: string; imageUrl: string; originalName: string; size: number }>> {
+    const formData = new FormData();
+    files.forEach((file) => {
+      formData.append('images', file);
+    });
+
+    const token = this.authService.getToken();
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+    });
+
+    return this.http
+      .post<
+        ApiResponse<
+          Array<{ filename: string; imageUrl: string; originalName: string; size: number }>
+        >
+      >(`${this.apiUrl}/events/upload-images`, formData, { headers })
+      .pipe(map((response) => response.data));
+  }
 }

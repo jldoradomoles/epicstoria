@@ -10,8 +10,8 @@ interface MulterRequest extends AuthRequest {
   file?: Express.Multer.File;
 }
 
-// Configurar multer para manejar archivos en memoria
-const upload = multer({
+// Configurar multer para manejar archivos Excel en memoria
+const uploadExcel = multer({
   storage: multer.memoryStorage(),
   limits: {
     fileSize: 10 * 1024 * 1024, // 10MB máximo
@@ -30,12 +30,48 @@ const upload = multer({
   },
 });
 
+// Configurar multer para manejar imágenes con almacenamiento en disco
+const uploadImage = multer({
+  storage: multer.diskStorage({
+    destination: (req, file, cb) => {
+      const path = require('path');
+      const fs = require('fs');
+      const uploadDir = path.join(__dirname, '../../../public/images/eventos');
+
+      // Crear directorio si no existe
+      if (!fs.existsSync(uploadDir)) {
+        fs.mkdirSync(uploadDir, { recursive: true });
+      }
+      cb(null, uploadDir);
+    },
+    filename: (req, file, cb) => {
+      // Mantener el nombre original del archivo
+      // Se sanitiza el nombre para evitar problemas
+      const originalName = file.originalname;
+      const sanitizedName = originalName.replace(/[^a-zA-Z0-9._-]/g, '_');
+      cb(null, sanitizedName);
+    },
+  }),
+  limits: {
+    fileSize: 5 * 1024 * 1024, // 5MB máximo para imágenes
+  },
+  fileFilter: (req: Request, file: Express.Multer.File, cb: FileFilterCallback) => {
+    // Solo aceptar imágenes
+    const allowedMimes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
+    if (allowedMimes.includes(file.mimetype)) {
+      cb(null, true);
+    } else {
+      cb(new Error('Solo se permiten imágenes (jpg, jpeg, png, gif, webp)'));
+    }
+  },
+});
+
 // POST /api/events/upload - Subir archivo Excel (solo admin)
 router.post(
   '/upload',
   authMiddleware,
   adminMiddleware,
-  upload.single('file'),
+  uploadExcel.single('file'),
   async (req: MulterRequest, res: Response, next: NextFunction) => {
     try {
       if (!req.file) {
@@ -51,6 +87,75 @@ router.post(
         success: true,
         data: result,
         message: `Procesados: ${result.created} creados, ${result.updated} actualizados`,
+      });
+    } catch (error) {
+      next(error);
+    }
+  },
+);
+
+// POST /api/events/upload-image - Subir imagen de evento (solo admin)
+router.post(
+  '/upload-image',
+  authMiddleware,
+  adminMiddleware,
+  uploadImage.single('image'),
+  async (req: MulterRequest, res: Response, next: NextFunction) => {
+    try {
+      if (!req.file) {
+        return res.status(400).json({
+          success: false,
+          message: 'No se ha proporcionado ninguna imagen',
+        });
+      }
+
+      // Obtener la URL relativa de la imagen
+      const imageUrl = `/images/eventos/${req.file.filename}`;
+
+      res.json({
+        success: true,
+        data: {
+          filename: req.file.filename,
+          imageUrl: imageUrl,
+          originalName: req.file.originalname,
+          size: req.file.size,
+        },
+        message: 'Imagen subida exitosamente',
+      });
+    } catch (error) {
+      next(error);
+    }
+  },
+);
+
+// POST /api/events/upload-images - Subir múltiples imágenes (solo admin)
+router.post(
+  '/upload-images',
+  authMiddleware,
+  adminMiddleware,
+  uploadImage.array('images', 10), // Máximo 10 imágenes
+  async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const files = req.files as Express.Multer.File[];
+
+      if (!files || files.length === 0) {
+        return res.status(400).json({
+          success: false,
+          message: 'No se han proporcionado imágenes',
+        });
+      }
+
+      const uploadedImages = files.map((file) => ({
+        filename: file.filename,
+        imageUrl: `/images/eventos/${file.filename}`,
+        originalName: file.originalname,
+        size: file.size,
+      }));
+
+      res.json({
+        success: true,
+        data: uploadedImages,
+        message: `${files.length} imágenes subidas exitosamente`,
       });
     } catch (error) {
       next(error);

@@ -36,6 +36,7 @@
               type="email"
               id="email"
               formControlName="email"
+              autocomplete="off"
               class="w-full pl-10 pr-4 py-3 bg-stone-800/50 border border-amber-900/30 rounded-lg text-amber-100 placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
               placeholder="tu@email.com"
             />
@@ -64,6 +65,7 @@
               [type]="showPassword() ? 'text' : 'password'"
               id="password"
               formControlName="password"
+              autocomplete="new-password"
               class="w-full pl-10 pr-12 py-3 bg-stone-800/50 border border-amber-900/30 rounded-lg text-amber-100 placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
               placeholder="••••••••"
             />
