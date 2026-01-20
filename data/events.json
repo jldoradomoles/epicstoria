@@ -4,7 +4,7 @@
     "title": "Voyager 1 ",
     "date": "1977-09-05",
     "category": "Espacio ",
-    "imageUrl": "images/Voyager-1.jpg",
+    "imageUrl": "images/eventos/Voyager-1.jpg",
     "summary": [
       "En 1977, la NASA lanzó la Voyager 1, una sonda destinada a explorar Júpiter y Saturno, convirtiéndose en la actualidad en el objeto humano más alejado de la Tierra."
     ],
@@ -103,7 +103,7 @@
     "title": "La Estatua de la Libertad",
     "date": "1886-10-28",
     "category": "Monumentos",
-    "imageUrl": "images/La-Estatua-de-la-Libertad.jpg",
+    "imageUrl": "images/eventos/La-Estatua-de-la-Libertad.jpg",
     "summary": [
       "El 28 de octubre de 1886, Nueva York presenció la inauguración de un símbolo eterno. Regalo de Francia a Estados Unidos, la Estatua de la Libertad unió arte, ingeniería y un ideal universal. Su silueta marcaría para siempre el horizonte de la ciudad y la historia del mundo moderno."
     ],
@@ -201,7 +201,7 @@
     "title": "Roma",
     "date": "103-a.C.",
     "category": "Poder y Corrupción",
-    "imageUrl": "images/Roma-juicios-por-traición.jpg",
+    "imageUrl": "images/eventos/Roma-juicios-por-traición.jpg",
     "summary": [
       "Los juicios por traición surgieron en Roma en el 103 a. C. con la Ley Appuleia de Maiestas, creada para castigar a quienes pusieran en riesgo al pueblo o al ejército romano.",
       "Durante la época imperial, la ley cambió de sentido: ya no protegía al Estado, sino al emperador.",
@@ -315,7 +315,7 @@
     "title": "El Descubrimiento de América",
     "date": "1492-10-12",
     "category": "Descubrimientos",
-    "imageUrl": "images/El-descubrimiento-de-America.jpg",
+    "imageUrl": "images/eventos/El-descubrimiento-de-America.jpg",
     "summary": [
       "Cristóbal Colón y su expedición, financiada por los Reyes Católicos, llegaron el 12 de octubre de 1492 a una isla del actual archipiélago de las Bahamas, llamada San Salvador, tras más de dos meses de viaje desde Palos de la Frontera. Rodrigo de Triana, desde La Pinta, fue el primero en avistar tierra. Este acontecimiento marcó el inicio del encuentro entre Europa y América, cambiando para siempre el curso de la historia."
     ],
@@ -418,7 +418,7 @@
     "title": "Pompeya",
     "date": "79-d.C.",
     "category": "Catástrofes",
-    "imageUrl": "images/Pompeya.jpg",
+    "imageUrl": "images/eventos/Pompeya.jpg",
     "summary": [
       "En el año 79 d.C., el Monte Vesubio despertó con una fuerza devastadora, sepultando Pompeya bajo cenizas y fuego. Miles murieron en segundos, y la ciudad quedó congelada en el tiempo durante siglos. Hoy, sus ruinas revelan el último instante de una civilización sorprendida por la furia de la naturaleza."
     ],
@@ -519,7 +519,7 @@
     "title": "Cuauhtémoc",
     "date": "1904-02-03",
     "category": "Personajes históricos",
-    "imageUrl": "images/Cuauhtémoc.jpg",
+    "imageUrl": "images/eventos/Cuauhtemoc.jpg",
     "summary": [
       "Cuauhtémoc, último emperador mexica, ascendió al trono tras la muerte de Moctezuma II y la huida de los españoles en la Noche Triste. Con apenas 25 años lideró una resistencia heroica contra Hernán Cortés, enfrentando hambre, epidemias y traiciones. Capturado y ejecutado en 1525, su figura se convirtió en símbolo eterno de valentía y dignidad mexicana."
     ],
@@ -632,7 +632,7 @@
     "title": "Orfeo y Eurídice",
     "date": "Siglos VIII y VI a. C.",
     "category": "Mitología",
-    "imageUrl": "images/Orfeo-y-Euridice.png",
+    "imageUrl": "images/eventos/Orfeo-y-Euridice.jpg",
     "summary": [
       "Orfeo, un músico prodigioso cuya lira podía calmar a los animales y conmover incluso a los dioses, se enamora profundamente de la ninfa Eurídice y se casa con ella. Pero el mismo día de su boda, mientras celebra entre los prados, una serpiente muerde a Eurídice y la joven muere de inmediato. Abrumado por el dolor, Orfeo se niega a aceptar la pérdida y decide realizar lo imposible: descender al inframundo para recuperarla. No lleva armas ni aliados; solo confía en el poder de su música."
     ],
@@ -668,20 +668,11 @@
       },
       {
         "title": "Orfeo crea una religión",
-        "description": "En la Antigüedad surgió el orfismo, un movimiento religioso real inspirado en él. Enseñaba: \n\nLa reencarnación del alma."
-      },
-      {
-        "title": "La purificación espiritual."
-      },
-      {
-        "title": "La música como camino hacia lo divino."
+        "description": "En la Antigüedad surgió el orfismo, un movimiento religioso real inspirado en él. Enseñaba; La reencarnación del alma, La purificación espiritual, La música como camino hacia lo divino."
       },
       {
         "title": "Su muerte también tiene dos versiones",
-        "description": "Versión famosa: las Ménades (seguidoras de Dioniso) lo despedazan por rechazar sus rituales o por despreciar a las mujeres tras perder a Eurídice."
-      },
-      {
-        "title": "Versión alternativa: muere por un rayo de Zeus por revelar secretos divinos."
+        "description": "Versión famosa: las Ménades (seguidoras de Dioniso) lo despedazan por rechazar sus rituales o por despreciar a las mujeres tras perder a Eurídice. Versión alternativa: muere por un rayo de Zeus por revelar secretos divinos."
       },
       {
         "title": "Su cabeza siguió cantando",
@@ -748,6 +739,903 @@
     ],
     "consequences": [
       "El mito de Orfeo y Eurídice es uno de los relatos más importantes de la antigüedad porque simboliza el amor que se atreve a desafiar incluso a la muerte. Su historia convirtió a Orfeo en el ejemplo máximo del poder del arte: no vence con fuerza ni armas, sino con música, mostrando que la belleza puede conmover a dioses y criaturas oscuras. Al mismo tiempo, la tragedia final revela la fragilidad humana: Orfeo pierde a Eurídice por una duda, por un instante de miedo, recordando que a veces la inseguridad arruina aquello que más deseamos. Este mito también dio origen al orfismo, una corriente espiritual real que hablaba de la inmortalidad del alma, la reencarnación y la pureza moral. Además, su descenso al inframundo se convirtió en un modelo narrativo usado por escritores durante siglos, y su figura explicó para los antiguos griegos por qué existe una música capaz de expresar tristeza profunda. Por todo esto, el mito de Orfeo no solo cuenta una historia de amor trágico: también reflexiona sobre la pérdida, la esperanza y el poder transformador del arte."
+    ]
+  },
+  {
+    "id": "Entre-primates-y-ciencia",
+    "title": "Jane Goodall",
+    "date": "1934-04-03",
+    "category": "Personajes históricos",
+    "imageUrl": "images/eventos/Jane-Goodall.jpg",
+    "summary": [
+      "Pionera en el estudio de los chimpancés, revolucionó la ciencia al demostrar que fabrican y usan herramientas. Fundó el Jane Goodall Institute y el programa Roots & Shoots, y dedicó su vida a la conservación y a inspirar a nuevas generaciones. Fue Mensajera de la Paz de la ONU y una de las voces más influyentes en la protección de la naturaleza."
+    ],
+    "context": [
+      "Jane Goodall nació el 3 de abril de 1934 en Londres y desde muy joven sintió una profunda conexión con los animales y la naturaleza. Esa pasión temprana la llevó, años después, a viajar a África, un sueño que había alimentado desde la infancia. A finales de los años cincuenta llegó a Kenia, donde conoció al paleoantropólogo Louis Leakey, quien vio en ella una sensibilidad y determinación inusuales. Fue él quien la envió a Gombe, en la actual Tanzania, para iniciar un estudio pionero sobre los chimpancés salvajes, a pesar de que Jane no tenía formación universitaria en biología.",
+      "Su llegada a Gombe en 1960 marcó el comienzo de una de las investigaciones más influyentes del siglo XX. Observó durante largas jornadas el comportamiento de los chimpancés, registrando sus relaciones, jerarquías y patrones de inteligencia. Gracias a su paciencia y a la confianza que los animales fueron desarrollando hacia ella, pudo documentar conductas nunca antes vistas, transformando la comprensión científica sobre los primates y, por extensión, sobre la evolución humana. Su enfoque combinaba una observación rigurosa con una sensibilidad profunda hacia cada individuo, lo que abrió nuevos caminos dentro de la etología.",
+      "El impacto de sus descubrimientos llamó la atención de la comunidad académica internacional. Aunque carecía de estudios formales superiores, fue aceptada en la Universidad de Cambridge para realizar un doctorado en etología, un hecho excepcional para la época. Allí tuvo que enfrentarse a críticas iniciales por su estilo de investigación, considerado demasiado poco ortodoxo, y por otorgar personalidad y emociones a los animales que estudiaba. Sin embargo, su trabajo de campo era tan sólido que terminó imponiéndose por su valor científico. En diciembre de 1965 obtuvo su doctorado, consolidándose como una investigadora de referencia.",
+      "Tras completar su formación académica, Jane comenzó a difundir sus hallazgos mediante publicaciones, conferencias y documentales. Formó un equipo de investigación que continuó el trabajo en Gombe y, a lo largo de los años, convirtió la zona en uno de los centros de estudio de primates más importantes del mundo. En 1977 fundó el Jane Goodall Institute, una organización dedicada a la conservación, la investigación y la educación ambiental, que hoy desarrolla programas en numerosos países.",
+      "Con el tiempo, su compromiso trascendió el ámbito científico. Jane se dedicó a promover la protección de los ecosistemas, denunciar la pérdida de biodiversidad y trabajar con comunidades locales para impulsar alternativas sostenibles. En 1991 creó Roots & Shoots, un programa que involucra a jóvenes de todo el mundo en proyectos ambientales y sociales. Su mensaje, centrado en la responsabilidad individual y colectiva hacia el planeta, la convirtió en una figura moral y científica de alcance global.",
+      "Incluso después de cumplir 90 años, Jane seguía viajando y dando conferencias, inspirando a generaciones enteras. Falleció el 1 de octubre de 2025, a los 91 años, dejando un legado que transformó la ciencia, la conservación y la manera en que entendemos nuestra relación con la naturaleza."
+    ],
+    "keyFacts": [
+      {
+        "title": "Su primer “experimento científico” fue a los 4 años",
+        "description": "desapareció por horas para observar cómo ponían huevos las gallinas, tomando notas como una pequeña investigadora."
+      },
+      {
+        "title": "Su juguete favorito fue un chimpancé de peluche",
+        "description": "llamado Jubilee, que le regaló su padre. Lo conservó toda su vida."
+      },
+      {
+        "title": "No tenía estudios universitarios en biología",
+        "description": "cuando empezó en Gombe; su pasión fue suficiente para que Louis Leakey la seleccionara."
+      },
+      {
+        "title": "Revolucionó la ciencia sin usar bata ni seguir los métodos tradicionales",
+        "description": "se sentaba silenciosamente en el bosque durante horas, hasta que los chimpancés se acostumbraban a ella."
+      },
+      {
+        "title": "David Greybeard fue el primer chimpancé en confiar en ella",
+        "description": "algo inusual y fundamental para sus descubrimientos."
+      },
+      {
+        "title": "Le cambiaron el nombre a los chimpancés a números",
+        "description": "por exigencia científica… y ella se negó. Les puso nombres porque entendía que tenían personalidad."
+      },
+      {
+        "title": "Le enseñó al mundo que los chimpancés “pescan” termitas con palitos",
+        "description": "demostrando uso de herramientas."
+      },
+      {
+        "title": "Dormía en un pequeño remolque sin electricidad",
+        "description": "durante sus primeros años en la selva."
+      },
+      {
+        "title": "Era capaz de imitar los sonidos de los chimpancés",
+        "description": "para comunicarse con ellos, especialmente el “llamado de comida”."
+      },
+      {
+        "title": "Su famosa libreta de campo",
+        "description": "siempre viajaba con ella; escribía cada comportamiento observado, minuto a minuto."
+      },
+      {
+        "title": "Roots & Shoots nació con 12 estudiantes",
+        "description": "en una sala pequeña, y hoy está en más de 60 países."
+      },
+      {
+        "title": "No fumaba, no bebía alcohol y casi no enfermaba",
+        "description": "algo sorprendente para alguien que pasó décadas en la selva."
+      },
+      {
+        "title": "Tenía un ritual antes de cada charla",
+        "description": "tocar un pequeño tronco o piedra “para conectar con la naturaleza”."
+      },
+      {
+        "title": "Podía recordar el rostro de cada chimpancé",
+        "description": "que había estudiado, incluso décadas después."
+      }
+    ],
+    "timeline": [
+      {
+        "date": "1934-04-03",
+        "event": "Nace en Londres. Su juguete favorito es un chimpancé de peluche llamado Jubilee."
+      },
+      {
+        "date": "1938–1940",
+        "event": "Realiza su primer “experimento” siguiendo a gallinas durante horas para ver cómo ponen los huevos."
+      },
+      {
+        "date": "1952",
+        "event": "Termina la escuela y trabaja en varios oficios, soñando con ir a África."
+      },
+      {
+        "date": "1957",
+        "event": "Viaja por primera vez a Kenia y conoce a Louis Leakey."
+      },
+      {
+        "date": "1960-07-14",
+        "event": "Llega a Gombe, Tanzania, para iniciar su investigación con chimpancés."
+      },
+      {
+        "date": "1960",
+        "event": "David Greybeard se convierte en el primer chimpancé en confiar en ella."
+      },
+      {
+        "date": "1960-11-04",
+        "event": "Observa por primera vez a un chimpancé usando herramientas para “pescar” termitas."
+      },
+      {
+        "date": "1965-12-09",
+        "event": "Obtiene su doctorado en la Universidad de Cambridge sin tener título universitario previo."
+      },
+      {
+        "date": "1971",
+        "event": "Publica In the Shadow of Man."
+      },
+      {
+        "date": "1977",
+        "event": "Funda el Jane Goodall Institute."
+      },
+      {
+        "date": "1991",
+        "event": "Crea Roots & Shoots junto a un pequeño grupo de estudiantes."
+      },
+      {
+        "date": "2002",
+        "event": "Es nombrada Mensajera de la Paz de la ONU."
+      },
+      {
+        "date": "2024-04-03",
+        "event": "Cumple 90 años."
+      },
+      {
+        "date": "2025-10-01",
+        "event": "Fallece a los 91 años."
+      }
+    ],
+    "consequences": [
+      "La vida de Jane Goodall dejó consecuencias profundas en la ciencia y en la relación de la humanidad con la naturaleza. Sus observaciones en Gombe redefinieron lo que entendemos por “ser humano”, al demostrar que los chimpancés usan herramientas y poseen complejas emociones y vínculos sociales. Introdujo una forma nueva de estudiar a los animales, basada en la empatía y el respeto, que cambió la etología para siempre. Su labor impulsó programas globales de conservación, movilizó a millones de jóvenes y convirtió su voz en una referencia mundial sobre la protección del planeta. Su legado perdura en cada proyecto, cada investigación y cada conciencia que hoy comprende que los animales sienten, que los ecosistemas necesitan defensa, y que la ciencia puede transformar el mundo cuando se guía por la compasión."
+    ]
+  },
+  {
+    "id": "El-ordenador-del-mundo-antiguo",
+    "title": "Anticitera",
+    "date": "150–100 a. C.",
+    "category": "Artefactos históricos",
+    "imageUrl": "images/eventos/Anticitera.jpg",
+    "summary": [
+      "El Mecanismo de Anticitera es un dispositivo griego creado entre 150 y 100 a. C., considerado el primer ordenador analógico de la historia. Estaba formado por más de 30 engranajes de bronce capaces de predecir eclipses, mostrar ciclos solares y lunares, seguir calendarios complejos y hasta indicar fechas de juegos panhelénicos como los Olímpicos."
+    ],
+    "context": [
+      "En pleno siglo II a. C., el mundo helenístico vivía uno de los momentos de mayor esplendor intelectual de la historia. Tras las conquistas de Alejandro Magno, Grecia había conectado Egipto, Asia Menor y Mesopotamia en una red de conocimiento donde florecieron la astronomía, las matemáticas y la ingeniería. Era la época de Arquímedes, Hiparco y de centros de estudio como Alejandría y Rodas.",
+      "En ese entorno nació el Mecanismo de Anticitera, fabricado entre 150 y 100 a. C. por artesanos e ingenieros griegos capaces de combinar astronomía avanzada con una metalurgia de precisión excepcional. La influencia de la escuela de Rodas, donde trabajó Hiparco, es clave: sus cálculos sobre el movimiento lunar encajan con la función del mecanismo, lo que apunta a una colaboración directa entre científicos y artesanos de élite.",
+      "Aunque Arquímedes había muerto un siglo antes, su legado de máquinas astronómicas y modelos mecánicos influyó en la creación del dispositivo. El mecanismo representa la culminación de una tradición científica que mezclaba matemática, observación y mecánica: una auténtica máquina para comprender el cosmos.",
+      "El artefacto viajó dentro de un gran barco mercante romano, cargado con estatuas de bronce, mármoles, cerámicas finas y objetos valiosos destinados probablemente a un aristócrata muy rico de la época. Entre 80 y 50 a. C., una tormenta o un fallo de navegación provocó el hundimiento del barco cerca de la pequeña isla de Anticitera. Allí, a unos 50 metros de profundidad, el mecanismo quedó oculto y preservado durante dos milenios.",
+      "El hallazgo moderno comenzó en 1900, cuando unos buzos de esponjas de la isla de Symi, desviados por una tormenta, descendieron al fondo marino en busca de esponjas. Lo que encontraron fueron estatuas, cerámicas… y un bloque de bronce corroído que nadie supo interpretar en un primer momento.",
+      "La recuperación del pecio (1900–1901) fue una de las excavaciones submarinas más peligrosas de la época. Los buzos trabajaban con trajes pesados y aire bombeado manualmente, enfrentándose a profundidades letales. Algunos murieron o quedaron paralizados por descompresión, pero aun así consiguieron rescatar gran parte del cargamento.",
+      "En 1902, el arqueólogo Valerios Stais observó un pequeño engranaje incrustado en una de las piezas corroídas. A partir de ese instante, el objeto dejó de ser un bloque informe y se convirtió en un misterio. Muchos pensaron que era imposible que la Antigüedad hubiera creado algo así y lo ignoraron durante décadas.",
+      "La verdadera revolución llegó en el siglo XX. A partir de los años 50, investigadores como Derek de Solla Price comenzaron a estudiarlo en serio. Sin embargo, fue desde 2005 cuando la ciencia moderna —rayos X de alta energía, tomografías 3D y análisis epigráficos— permitió revelar su interior y leer inscripciones que habían permanecido ocultas más de dos mil años.",
+      "Gracias a estas tecnologías, hoy sabemos que el mecanismo era una representación mecánica del cosmos según la ciencia griega. No solo mostraba ciclos astronómicos: integraba conocimientos matemáticos, observaciones celestes y una ingeniería tan precisa que no volvería a verse en Europa hasta más de mil años después.",
+      ""
+    ],
+    "keyFacts": [
+      {
+        "title": "Tenía más de 30 engranajes internos",
+        "description": "Una complejidad mecánica que no volvería a verse hasta más de mil años después."
+      },
+      {
+        "title": "Incluía un “calendario de eclipses”",
+        "description": "Podía predecir eclipses solares y lunares con gran precisión."
+      },
+      {
+        "title": "Mostraba los Juegos Olímpicos",
+        "description": "El mecanismo tenía un dial dedicado a indicar las fechas de competiciones panhelénicas."
+      },
+      {
+        "title": "Funcionaba con una manivela",
+        "description": "El usuario giraba una pequeña manivela para mover todos los engranajes a la vez."
+      },
+      {
+        "title": "Tenía inscripciones ocultas",
+        "description": "Rayos X modernos revelaron más de 3.000 caracteres grabados dentro del bronce."
+      },
+      {
+        "title": "Usaba el calendario metónico",
+        "description": "Un ciclo de 19 años que sincroniza los calendarios solar y lunar."
+      },
+      {
+        "title": "Podía haber sido obra de Hiparco",
+        "description": "El modelo astronómico coincide con los cálculos del gran astrónomo griego."
+      },
+      {
+        "title": "Viajaba en un barco de lujo",
+        "description": "El pecio contenía estatuas de mármol, bronces y objetos carísimos."
+      },
+      {
+        "title": "Su tecnología se perdió",
+        "description": "No existe ningún otro aparato similar en el mundo antiguo."
+      },
+      {
+        "title": "Fue reconstruido gracias a rayos X",
+        "description": "La tecnología moderna permitió ver engranajes que no podían excavarse sin dañarlo."
+      },
+      {
+        "title": ""
+      }
+    ],
+    "timeline": [
+      {
+        "date": "150–100 a. C.",
+        "event": "Se fabrica el Mecanismo de Anticitera, una obra maestra de ingeniería helenística."
+      },
+      {
+        "date": "80–50 a. C.",
+        "event": "El barco mercante romano que lo transportaba se hunde cerca de Anticitera."
+      },
+      {
+        "date": "1900",
+        "event": "Un grupo de buzos de esponjas descubre el pecio frente a la isla griega."
+      },
+      {
+        "date": "1901",
+        "event": "Se recuperan los primeros fragmentos del misterioso bloque de bronce corroído."
+      },
+      {
+        "date": "1902",
+        "event": "Valerios Stais identifica un engranaje incrustado en la pieza. Nace el enigma."
+      },
+      {
+        "date": "1951–1959",
+        "event": "Derek de Solla Price inicia el estudio científico moderno del mecanismo."
+      },
+      {
+        "date": "1974",
+        "event": "Price publica Gears from the Greeks, primera reconstrucción seria del dispositivo."
+      },
+      {
+        "date": "2005",
+        "event": "Comienza el Antikythera Mechanism Research Project con rayos X y tomografías 3D."
+      },
+      {
+        "date": "2006",
+        "event": "Los nuevos escaneos revelan inscripciones ocultas y el complejo sistema de engranajes."
+      },
+      {
+        "date": "2012",
+        "event": "Se demuestra que el mecanismo predice eclipses, ciclos solares y lunares, e incluso juegos panhelénicos."
+      },
+      {
+        "date": "2014",
+        "event": "Se publica una reconstrucción altamente precisa basada en todos los datos 3D."
+      },
+      {
+        "date": "2022",
+        "event": "Nuevos estudios conectan el diseño astronómico del mecanismo con el trabajo de Hiparco."
+      },
+      {
+        "date": "Actualidad",
+        "event": "El Mecanismo de Anticitera es reconocido como el primer ordenador analógico de la historia."
+      },
+      {
+        "date": ""
+      }
+    ],
+    "consequences": [
+      "El Mecanismo de Anticitera demostró que la ingeniería griega era mucho más avanzada de lo que imaginábamos. Reveló que hace más de 2.000 años ya existían máquinas capaces de predecir eclipses y comprender los ciclos del cielo con una precisión que no volvería a verse hasta la Edad Media. Su hallazgo cambió para siempre nuestra visión del mundo antiguo y abrió una nueva puerta para entender la verdadera magnitud del conocimiento perdido."
+    ]
+  },
+  {
+    "id": "Sisi",
+    "title": "Isabel de Baviera ",
+    "date": "1837-12-24",
+    "category": "Personajes históricos",
+    "imageUrl": "images/eventos/Isabel-de-Baviera.jpg",
+    "summary": [
+      "Sisi, nacida en 1837 en Múnich, creció libre y lejos de la rígida etiqueta. A los 16 años se convirtió en emperatriz de Austria al casarse con Francisco José, pero pronto descubrió que la corte vienesa era una jaula dorada. La pérdida de su hija Sofía la marcó profundamente y aumentó su sensación de aislamiento. Aunque su belleza la convirtió en un mito europeo, ella buscó siempre escapar de las presiones viajando por todo el continente."
+    ],
+    "context": [
+      "Isabel de Baviera nació en 1837 en el seno de la Casa de Wittelsbach, una de las familias más antiguas de Alemania. Su infancia transcurrió en un ambiente poco convencional para una princesa: su familia prefería la vida campestre en Possenhofen, rodeada de lagos, montañas y animales. Allí creció libre, montando a caballo, pescando y explorando la naturaleza sin apenas restricciones. Esta educación, muy alejada del rígido ceremonial de otras cortes europeas, marcó profundamente su carácter independiente y su deseo de libertad.",
+      "En su juventud, Sisi no recibió una formación destinada al poder. Sus profesores eran pocos, los horarios flexibles y la disciplina mínima; la idea era que los niños crecieran felices, sin presión, algo inusual para la época. Ese contraste con la estricta corte vienesa sería uno de los choques más traumáticos de su vida adulta.",
+      "La vida de Isabel dio un giro inesperado cuando se casó en 1854 con Francisco José I, convirtiéndose en emperatriz de Austria. Su llegada a Viena la situó en el centro de uno de los estados más grandes y diversos de Europa, pero también en un entorno dominado por la etiqueta, el protocolo y la vigilancia constante. Aquí comenzó su lucha interna entre las obligaciones imperiales y su anhelo de libertad.",
+      "En Viena, Sisi tuvo que adaptarse a una corte extremadamente rígida, donde casi todo estaba controlado por su suegra, la poderosa archiduquesa Sofía. La muerte de su hija Sofía y la continua intromisión de su suegra en la crianza de sus otros hijos hicieron que Sisi se sintiera cada vez más sola y apartada. Al mismo tiempo, el imperio afrontaba fuertes tensiones entre húngaros, checos, austriacos, italianos y muchos otros pueblos, lo que hacía aún más difícil su papel como figura pública.",
+      "El papel de Sisi fue decisivo durante la crisis que precedió al Compromiso Austrohúngaro de 1867. Su cercanía con Hungría y el esfuerzo personal de aprender el idioma le permitieron ganarse el respeto y el cariño del pueblo húngaro. Su apoyo al reconocimiento del reino contribuyó a estabilizar un imperio que estaba al borde de la fragmentación. Su coronación como reina de Hungría simbolizó esta nueva relación política y reforzó su imagen como una figura clave en el equilibrio del imperio.",
+      "En los años siguientes, la emperatriz se apartó cada vez más de la vida pública, dedicándose a viajar por Europa y evitando la presión vienesa. La tragedia de Mayerling en 1889 —cuando su hijo Rodolfo, heredero al trono, se suicidó junto a su amante— marcó un antes y un después. A nivel personal la hundió en un dolor profundo, y a nivel político debilitó a la Casa de Habsburgo, acelerando su declive en el escenario europeo.",
+      "El asesinato de Sisi en 1898 reflejó el clima de tensión política y social de fin de siglo. Viajando bajo un nombre falso para mantener su privacidad, la emperatriz se hospedaba en el Hotel Beau-Rivage de Ginebra. Ese mismo día, un anarquista italiano, Luigi Lucheni, merodeaba por la ciudad con la intención de matar a cualquier aristócrata para dar notoriedad a su causa. Al descubrir que Sisi viajaba sin escolta, decidió atacarla. Cuando la emperatriz se dirigía al embarcadero para subir al vapor Genève, Lucheni se abalanzó sobre ella y le clavó una lima afilada en el pecho. Sisi cayó, pero se levantó y caminó varios metros sin que nadie comprendiera la gravedad del ataque. Ya en el barco perdió el conocimiento: la lima había perforado su corazón. Fue trasladada de vuelta al hotel, donde murió pocos minutos después.",
+      ""
+    ],
+    "keyFacts": [
+      {
+        "title": "Cabello legendario",
+        "description": "Su melena llegaba hasta los tobillos y requería horas de peinado."
+      },
+      {
+        "title": "Amazona imparable",
+        "description": "Montaba a caballo a diario y a gran velocidad; era una jinete excepcional."
+      },
+      {
+        "title": "Cintura imposible",
+        "description": "Su cintura medía solo 50 cm gracias a corsés extremadamente ajustados."
+      },
+      {
+        "title": "Obsesión por el ejercicio",
+        "description": "Hacía gimnasia todos los días y tenía un gimnasio privado en palacio."
+      },
+      {
+        "title": "Políglota brillante",
+        "description": "Aprendió húngaro para ganarse al pueblo magiar y hablaba varios idiomas."
+      },
+      {
+        "title": "Viajera incansable",
+        "description": "Pasó años recorriendo Europa para escapar de la rígida corte vienesa."
+      },
+      {
+        "title": "Dietas extremas",
+        "description": "A veces solo consumía caldos o zumos para mantener su figura."
+      },
+      {
+        "title": "Poeta secreta",
+        "description": "Escribía poesía melancólica bajo el seudónimo “Titania”."
+      },
+      {
+        "title": "Fobia a las cámaras",
+        "description": "Rechazaba ser fotografiada en su madurez; por eso hay pocas imágenes tardías."
+      },
+      {
+        "title": "Un destino trágico",
+        "description": "Fue asesinada al azar: el anarquista buscaba a cualquier aristócrata, no a ella."
+      },
+      {
+        "title": ""
+      }
+    ],
+    "timeline": [
+      {
+        "date": "1837",
+        "event": "Nace Isabel de Baviera (Sisi) el 24 de diciembre en Múnich."
+      },
+      {
+        "date": "1853",
+        "event": "Conoce al emperador Francisco José, quien se enamora de ella y decide casarse."
+      },
+      {
+        "date": "1854",
+        "event": "Se casa a los 16 años y se convierte en emperatriz de Austria."
+      },
+      {
+        "date": "1855",
+        "event": "Nace su primera hija, Sofía Federica."
+      },
+      {
+        "date": "1857",
+        "event": "Durante un viaje a Hungría muere la pequeña Sofía, tragedia que marcará su vida."
+      },
+      {
+        "date": "1867",
+        "event": "Es coronada reina de Hungría, donde se gana el afecto del pueblo."
+      },
+      {
+        "date": "1889",
+        "event": "Su hijo Rodolfo se suicida en Mayerling, hundiendo a Sisi en la melancolía."
+      },
+      {
+        "date": "1890–1898",
+        "event": "Viaja constantemente por Europa: Grecia, Suiza, Irlanda, Inglaterra… buscando libertad y calma."
+      },
+      {
+        "date": "1898",
+        "event": "El 10 de septiembre es asesinada en Ginebra por el anarquista Luigi Lucheni."
+      },
+      {
+        "date": "Actualidad",
+        "event": "Sisi es recordada como un icono de belleza, tragedia y libertad en la historia europea."
+      },
+      {
+        "date": ""
+      }
+    ],
+    "consequences": [
+      "La vida de Sisi dejó una huella profunda en la historia europea. Su figura rompió con la imagen rígida de la corte imperial y mostró el costo humano que había detrás de los tronos. Su influencia en Hungría contribuyó al equilibrio político del imperio austrohúngaro, y su defensa de la libertad personal la convirtió en un símbolo adelantado a su tiempo. Su belleza, su tragedia y su rebeldía inspiraron obras, biografías y películas que cimentaron su mito. Hoy, Sisi representa no solo a una emperatriz, sino a una mujer que luchó por preservar su identidad en un mundo que intentó moldearla. Su historia sigue recordándonos que incluso en las coronas más brillantes puede esconderse una vida marcada por la presión, el dolor y el deseo de libertad."
+    ]
+  },
+  {
+    "id": "El-Cristo-del-abismo",
+    "title": "El Cristo del abismo",
+    "date": "1954-08-22",
+    "category": "Monumentos",
+    "imageUrl": "images/eventos/El-Cristo-del-abismo.jpg",
+    "summary": [
+      "Situado bajo el mar, frente a la costa de San Fruttuoso (Italia), el Cristo del Abismo es una estatua de bronce creada como homenaje a los buceadores y marineros que perdieron la vida en el mar. Representa a Cristo con los brazos levantados hacia la superficie, en un gesto de bendición y protección. Con el paso del tiempo se ha convertido en un monumento submarino de gran valor histórico y espiritual, visitado por buceadores de todo el mundo y símbolo del vínculo entre el ser humano y el entorno marino."
+    ],
+    "context": [
+      "El Cristo del Abismo es una estatua de bronce colocada bajo el mar, frente a la costa de San Fruttuoso, en Italia. Fue creada como un homenaje a los buceadores y marineros que han perdido la vida en el mar y como símbolo de protección para quienes siguen trabajando o practicando actividades submarinas.",
+      "La idea de instalar una escultura bajo el agua surgió dentro del mundo del buceo, en un momento en el que esta actividad comenzaba a desarrollarse con mayor seguridad y difusión. Se buscaba un monumento que no estuviera en tierra firme, sino en el mismo entorno donde el riesgo existe: el fondo del mar. Por ello, la estatua fue diseñada para permanecer sumergida de forma permanente.",
+      "El escultor Guido Galletti representó a Cristo con los brazos levantados hacia la superficie, un gesto que se interpreta como una bendición y una señal de protección. Esta postura también permite que la figura sea fácilmente reconocible bajo el agua y refuerza su función simbólica para los buceadores que la visitan.",
+      "La estatua fue fabricada en bronce, un material resistente y duradero, adecuado para el entorno marino. Además, parte del metal utilizado procedía de objetos relacionados con la tradición religiosa y marítima, lo que reforzó el sentido conmemorativo de la obra. Para evitar que se desplazara por las corrientes, se colocó sobre una base pesada diseñada específicamente para el fondo marino.",
+      "Con el paso del tiempo, el Cristo del Abismo se convirtió en un punto de referencia para el buceo recreativo y profesional. Su presencia atrajo visitantes de distintos países y ayudó a consolidar el lugar como un espacio de interés cultural y espiritual. El desgaste natural del mar hizo necesarias tareas de conservación, durante las cuales se constató la pérdida de una de sus manos, que fue recuperada años más tarde y reinstalada tras un proceso de restauración, siempre con el objetivo de mantener la estatua en su emplazamiento original.",
+      "Hoy, el Cristo del Abismo es reconocido como un monumento histórico submarino. Más allá de su significado religioso, representa el respeto por el mar, la memoria de quienes perdieron la vida en él y el vínculo entre el ser humano y el entorno submarino."
+    ],
+    "keyFacts": [
+      {
+        "title": "La estatua es hueca",
+        "description": "Una técnica habitual en grandes esculturas de bronce para reducir peso y evitar tensiones estructurales."
+      },
+      {
+        "title": "Pesa cerca de 300 kilos",
+        "description": "Sin contar la base de cemento que la fija al fondo marino, que supera ampliamente una tonelada."
+      },
+      {
+        "title": "Está orientada de forma intencionada",
+        "description": "Hacia mar abierto y hacia la superficie, no hacia la costa, siguiendo el diseño original del escultor."
+      },
+      {
+        "title": "Fue bendecida oficialmente por la Iglesia",
+        "description": "Antes de su inmersión, lo que la convierte en un monumento religioso reconocido desde su origen."
+      },
+      {
+        "title": "La corrosión marina alteró su superficie original",
+        "description": "Creando una pátina natural que obligó a intervenirla décadas después para evitar daños irreversibles."
+      },
+      {
+        "title": "La mano recuperada fue autentificada",
+        "description": "Como parte original de la escultura antes de ser reinstalada tras la restauración."
+      },
+      {
+        "title": "Es la primera escultura religiosa de gran tamaño colocada de forma permanente bajo el mar",
+        "description": "Lo que la convierte en un precedente histórico."
+      },
+      {
+        "title": "Su ubicación fue elegida por seguridad",
+        "description": "Al encontrarse a una profundidad asumible para buceadores formados, no en aguas extremas."
+      }
+    ],
+    "timeline": [
+      {
+        "date": "1954",
+        "event": "El escultor Guido Galletti finaliza la escultura del Cristo del Abismo como homenaje a los buceadores y marineros fallecidos."
+      },
+      {
+        "date": "1954",
+        "event": "La estatua es bendecida por el papa Pío XII antes de su inmersión en el mar."
+      },
+      {
+        "date": "1954-08-22",
+        "event": "El Cristo del Abismo es sumergido frente a la abadía de San Fruttuoso, a unos 17 metros de profundidad."
+      },
+      {
+        "date": "Décadas posteriores",
+        "event": "La escultura se convierte en un punto de referencia para el buceo recreativo y profesional, atrayendo visitantes de todo el mundo."
+      },
+      {
+        "date": "Años 80",
+        "event": "Debido a la corrosión y al contacto humano, la estatua pierde una de sus manos."
+      },
+      {
+        "date": "Años 90",
+        "event": "La mano desprendida es encontrada por un pescador y recuperada."
+      },
+      {
+        "date": "2003",
+        "event": "El Cristo del Abismo es retirado temporalmente del mar para su restauración debido al deterioro."
+      },
+      {
+        "date": "2005",
+        "event": "Tras ser restaurado y reforzado, el Cristo del Abismo es devuelto a su emplazamiento original en el fondo marino."
+      },
+      {
+        "date": "Actualidad",
+        "event": "Es reconocido como un monumento histórico submarino y un símbolo de memoria, protección y respeto por el mar."
+      },
+      {
+        "date": ""
+      }
+    ],
+    "consequences": [
+      "La instalación del Cristo del Abismo tuvo un impacto duradero en el mundo del buceo y en la relación entre el ser humano y el entorno marino. La escultura se convirtió en uno de los primeros símbolos internacionales del buceo moderno, reforzando la idea del mar no solo como espacio de exploración, sino también de respeto y memoria. Su presencia ayudó a consolidar San Fruttuoso como un lugar de referencia cultural y espiritual, atrayendo a buceadores de todo el mundo y fomentando un turismo vinculado al patrimonio submarino. Además, el Cristo del Abismo inspiró la creación de réplicas en otros países, ampliando su significado más allá de Italia y convirtiéndolo en un referente global de homenaje, protección y recuerdo para quienes arriesgan su vida en el mar."
+    ]
+  },
+  {
+    "id": "La-apache",
+    "title": "Lozen",
+    "date": "1905-01-13",
+    "category": "Personajes históricos",
+    "imageUrl": "images/eventos/Lozen.jpg",
+    "summary": [
+      "Lozen fue una guerrera, líder espiritual y estratega de la tribu chiricahua apache durante la segunda mitad del siglo XIX. Hermana del jefe Victorio, participó activamente en la resistencia apache contra los ejércitos de Estados Unidos y México. Reconocida tanto por su habilidad en combate como por su don espiritual, guió a su pueblo en huidas y enfrentamientos decisivos. Tras la muerte de Victorio, continuó luchando junto a Gerónimo hasta la rendición final de los apaches en 1886. Murió prisionera en 1889, lejos de su tierra natal."
+    ],
+    "context": [
+      "Lozen nació en el seno de la tribu chiricahua apache y creció en un entorno donde la defensa del grupo y la movilidad eran esenciales para la supervivencia. Desde joven mostró una fortaleza física y una determinación poco comunes, lo que le permitió integrarse plenamente en la vida guerrera de su pueblo. Dentro de su comunidad también fue reconocida por su dimensión espiritual, considerada una persona con capacidades especiales para guiar y proteger a los suyos.",
+      "Durante los años de mayor presión militar sobre los apaches, Lozen se convirtió en una figura clave dentro de la resistencia liderada por su hermano Victorio. Combatió junto a él en campañas prolongadas, participó en huidas constantes y ayudó a mantener cohesionados a los grupos chiricahuas perseguidos por fuerzas muy superiores. Su presencia aportaba seguridad y confianza en momentos críticos, tanto en el combate como en los desplazamientos del grupo.",
+      "Tras la muerte de Victorio en 1880, Lozen se negó a abandonar la lucha. Se unió a Gerónimo y pasó a formar parte del núcleo de los últimos apaches que continuaron resistiendo en las montañas del suroeste de Estados Unidos y el norte de México. Durante estos años finales, marcados por el agotamiento y la persecución constante, Lozen compartió las mismas condiciones extremas que el resto de combatientes, participando activamente en enfrentamientos y desplazamientos hasta la rendición final.",
+      "En 1886, tras la capitulación de Gerónimo, Lozen fue capturada junto a los últimos apaches libres. En lugar de ser enviada a una reserva, fue deportada como prisionera de guerra lejos de su territorio natal. Pasó sus últimos años en cautiverio, enferma y privada de la libertad por la que había luchado durante décadas.",
+      "Lozen murió en 1889, lejos de las montañas que había defendido durante toda su vida. Su recuerdo permanece en la memoria apache como el de una guerrera y guía espiritual que dedicó su vida entera a la protección y supervivencia de su pueblo.",
+      ""
+    ],
+    "keyFacts": [
+      {
+        "title": "Guerrera y chamana",
+        "description": "Lozen no fue solo guerrera: también era considerada chamana y profetisa, un rol espiritual reconocido dentro de la cultura apache."
+      },
+      {
+        "title": "Rituales de orientación",
+        "description": "Según testimonios recogidos por contemporáneos apaches y cronistas, realizaba rituales orientados al sol para localizar la posición del enemigo, considerado por su pueblo un don real."
+      },
+      {
+        "title": "Combate a caballo",
+        "description": "Combatía a caballo, armada con rifle y lanza, y era famosa por disparar con gran precisión mientras se desplazaba a toda velocidad."
+      },
+      {
+        "title": "Testimonio de Gerónimo",
+        "description": "El propio Gerónimo la describió como “un escudo para su pueblo”, destacando su valor y su papel protector."
+      },
+      {
+        "title": "Mujer en la guerra apache",
+        "description": "Aunque el liderazgo militar era mayoritariamente masculino, la sociedad apache permitía que las mujeres combatieran, y Lozen destacó de forma excepcional."
+      },
+      {
+        "title": "Misiones de escolta",
+        "description": "Participó en misiones de escolta, evacuando mujeres y niños a través de territorios enemigos mientras el grupo principal combatía."
+      },
+      {
+        "title": ""
+      }
+    ],
+    "timeline": [
+      {
+        "date": "1840",
+        "event": "Nace Lozen en el territorio chiricahua apache."
+      },
+      {
+        "date": "1855–1878",
+        "event": "Desarrolla y demuestra sus habilidades como guerrera, jinete y guía espiritual dentro de su pueblo."
+      },
+      {
+        "date": "1879–1880",
+        "event": "Participa activamente en la Guerra de Victorio contra Estados Unidos y México."
+      },
+      {
+        "date": "1880",
+        "event": "Muerte de Victorio en Tres Castillos (México)."
+      },
+      {
+        "date": "1880–1886",
+        "event": "Continúa la resistencia junto a Gerónimo en el suroeste de Estados Unidos y el norte de México."
+      },
+      {
+        "date": "1886",
+        "event": "Captura de Lozen tras la rendición final de Gerónimo."
+      },
+      {
+        "date": "1886–1889",
+        "event": "Deportación y cautiverio como prisionera de guerra en Alabama."
+      },
+      {
+        "date": "1889",
+        "event": "Muerte de Lozen por tuberculosis."
+      },
+      {
+        "date": ""
+      }
+    ],
+    "consequences": [
+      "La captura de Lozen y de los últimos apaches marcó el fin efectivo de la resistencia armada chiricahua, poniendo término a décadas de lucha contra Estados Unidos y México. Los apaches supervivientes fueron deportados como prisioneros de guerra, una medida excepcional que se prolongó durante años y los mantuvo lejos de sus tierras ancestrales. Con el tiempo, la figura de Lozen se consolidó como símbolo de resistencia indígena y como ejemplo del papel activo de la mujer en la guerra apache. Su historia sobrevivió principalmente gracias a la tradición oral de su pueblo y a testimonios de líderes como Gerónimo. Hoy, Lozen es recordada como guerrera, guía espiritual y protectora de su gente, una figura histórica real cuya memoria se apoya en hechos documentados."
+    ]
+  },
+  {
+    "id": "Los-últimos-días",
+    "title": "Federico García Lorca",
+    "date": "1905-04-19",
+    "category": "Personajes históricos",
+    "imageUrl": "images/eventos/Federico-Garcia-Lorca.jpg",
+    "summary": [
+      "Federico García Lorca fue detenido en Granada en agosto de 1936, pocos días después del inicio de la Guerra Civil española. Tras ser arrestado en la casa donde se refugiaba, fue trasladado a la zona de Víznar y Alfacar, donde fue fusilado y enterrado en una fosa común. Su muerte marcó uno de los episodios más trágicos de la represión franquista y convirtió su figura en un símbolo de la memoria histórica.",
+      ""
+    ],
+    "context": [
+      "Tras el golpe militar de julio de 1936, Granada cayó rápidamente en manos franquistas. Se desató una oleada de detenciones y ejecuciones contra maestros, sindicalistas, políticos y artistas vinculados a la República, en uno de los episodios represivos más intensos del inicio de la Guerra Civil.",
+      "Federico García Lorca era consciente del peligro que corría. Había sido atacado en la prensa conservadora y recibido amenazas personales, lo que lo convirtió en un objetivo claro para los sublevados, especialmente por su relevancia pública y su cercanía a círculos intelectuales republicanos.",
+      "Buscando protección, Lorca se refugió en la casa de su amigo Luis Rosales, joven poeta falangista. Creía que la influencia y posición de la familia Rosales podrían garantizar su seguridad en un contexto donde las detenciones arbitrarias eran habituales.",
+      "La madrugada del 16 de agosto de 1936, un grupo armado encabezado por Ramón Ruiz Alonso irrumpió en la vivienda. Ruiz Alonso había denunciado a Lorca ante el gobernador civil de Granada, José Valdés Guzmán, autoridad responsable directa del aparato represivo en la provincia. A pesar de los intentos de intercesión de los hermanos Rosales y de sus contactos políticos, no lograron impedir la detención.",
+      "Tras su arresto, Lorca fue trasladado al Gobierno Civil de Granada, donde permaneció retenido sin que conste ningún proceso judicial, acusación formal ni orden escrita de ejecución, una práctica habitual en la represión de aquellos días.",
+      "Posteriormente fue llevado a Víznar, localidad utilizada como centro de detención provisional, donde se concentraban personas consideradas enemigas del nuevo régimen antes de ser ejecutadas. Allí compartió cautiverio con maestros, sindicalistas y campesinos detenidos en redadas similares.",
+      "Durante años se debatió cómo se supo que Lorca se encontraba refugiado en la casa de los Rosales. Se habló de rumores, de un delator o incluso de una traición interna, pero las investigaciones históricas actuales descartan que la familia Rosales lo entregara y confirman que intentaron salvarlo hasta el último momento.",
+      "En los días siguientes, Lorca fue sacado del lugar de detención y trasladado a un paraje situado entre Víznar y Alfacar, donde fue fusilado junto a otros prisioneros y enterrado en una fosa común. La fecha exacta de su ejecución nunca quedó establecida con certeza, situándose entre el 17 y el 19 de agosto de 1936.",
+      "Su asesinato estuvo rodeado de acusaciones falsas y propaganda posterior: fue señalado como espía y perseguido también por su condición de homosexual, en un intento de justificar una ejecución que nunca fue legal ni documentada.",
+      "Durante décadas, el franquismo prohibió hablar de su asesinato y negó cualquier investigación oficial. Sus restos no han sido encontrados, a pesar de varias excavaciones realizadas en Alfacar y Víznar en 2009, 2014 y 2020, lo que convirtió su caso en uno de los grandes símbolos de los desaparecidos de la Guerra Civil.",
+      "Sin embargo, su legado sobrevivió a la violencia y al silencio. Obras como Bodas de sangre, Yerma, La casa de Bernarda Alba o el Romancero gitano lo consolidaron como una de las figuras esenciales de la literatura universal y como un referente permanente de la memoria histórica española.",
+      ""
+    ],
+    "keyFacts": [
+      {
+        "title": "Lugar exacto desconocido",
+        "description": "Aunque se sabe que fue fusilado entre Víznar y Alfacar, el punto exacto del lugar de ejecución nunca ha podido determinarse con total certeza."
+      },
+      {
+        "title": "Fecha imprecisa",
+        "description": "No existe un día oficial de su fusilamiento; los testimonios lo sitúan entre el 17 y el 19 de Agosto de 1936."
+      },
+      {
+        "title": "Sin juicio previo",
+        "description": "Federico García Lorca fue ejecutado sin juicio, sin sentencia escrita y sin constar oficialmente como condenado."
+      },
+      {
+        "title": "Acusaciones falsas",
+        "description": "Para justificar su muerte, fue acusado de espionaje y de actividades subversivas, cargos sin pruebas documentadas."
+      },
+      {
+        "title": "Motivaciones múltiples",
+        "description": "Los historiadores coinciden en que su asesinato respondió a una combinación de motivos políticos, sociales y personales."
+      },
+      {
+        "title": "Fosa común",
+        "description": "Fue enterrado en una fosa común junto a otras víctimas de la represión, cuyos nombres en muchos casos tampoco se conocen."
+      },
+      {
+        "title": "Búsqueda sin resultado",
+        "description": "Varias excavaciones oficiales realizadas entre 2009 y 2020 no lograron localizar sus restos."
+      },
+      {
+        "title": "Silencio oficial",
+        "description": "Durante décadas, el régimen franquista prohibió investigar o mencionar públicamente las circunstancias de su muerte."
+      },
+      {
+        "title": ""
+      }
+    ],
+    "timeline": [
+      {
+        "date": "Julio 1936",
+        "event": "Estalla la Guerra Civil española tras el golpe militar contra la República."
+      },
+      {
+        "date": "Julio 1936",
+        "event": "Granada cae rápidamente en manos de los sublevados y comienza una fuerte represión política y cultural."
+      },
+      {
+        "date": "Finales de Julio 1936",
+        "event": "Federico García Lorca recibe amenazas y es atacado en la prensa conservadora, consciente del peligro que corre."
+      },
+      {
+        "date": "Principios de Agosto 1936",
+        "event": "Lorca se refugia en la casa de la familia Rosales en Granada."
+      },
+      {
+        "date": "1936-08-16",
+        "event": "Es detenido de madrugada por un grupo armado encabezado por Ramón Ruiz Alonso."
+      },
+      {
+        "date": "16/08/1936–17/08/1936",
+        "event": "Es trasladado al Gobierno Civil y posteriormente a Víznar, donde permanece detenido."
+      },
+      {
+        "date": "17/08/1936–19/08/1936",
+        "event": "Federico García Lorca es fusilado en un paraje entre Víznar y Alfacar y enterrado en una fosa común."
+      },
+      {
+        "date": "1939–1975",
+        "event": "Durante la dictadura franquista, su asesinato es silenciado y no se permite investigar el caso."
+      },
+      {
+        "date": "2009–2020",
+        "event": "Se realizan varias excavaciones en la zona de Alfacar y Víznar sin localizar sus restos."
+      },
+      {
+        "date": "Actualidad",
+        "event": "Lorca es reconocido como una figura central de la literatura universal y un símbolo de la memoria histórica."
+      },
+      {
+        "date": ""
+      }
+    ],
+    "consequences": [
+      "El asesinato de Federico García Lorca se convirtió en uno de los símbolos más conocidos de la represión franquista durante los primeros meses de la Guerra Civil española. Su muerte evidenció que la violencia no se limitaba a combatientes armados, sino que también se dirigía contra intelectuales, artistas y voces culturales consideradas incómodas.",
+      "El silencio impuesto durante décadas por la dictadura impidió que se investigara oficialmente su asesinato y que se recuperaran sus restos, convirtiendo su caso en un ejemplo de memoria histórica negada. Esta ausencia de verdad y reparación marcó profundamente a generaciones posteriores.",
+      "Con el paso del tiempo, la figura de Lorca trascendió su muerte violenta. Su obra se consolidó como patrimonio universal de la literatura y su nombre quedó ligado a la defensa de la libertad creativa y de pensamiento. Hoy, su asesinato sigue siendo un referente en el debate sobre la memoria histórica, la justicia y el reconocimiento de las víctimas de la represión.",
+      ""
+    ]
+  },
+  {
+    "id": "Del-desprecio-al-orgullo",
+    "title": "La Ópera de Viena",
+    "date": "1905-02-11",
+    "category": "Monumentos",
+    "imageUrl": "images/eventos/La-opera-de-Viena.jpg",
+    "summary": [
+      "La Ópera Estatal de Viena es uno de los grandes símbolos culturales de Austria. Concebida en el siglo XIX como parte de la modernización imperial de Viena, su construcción estuvo marcada por duras críticas públicas que acabaron trágicamente con la vida de sus dos arquitectos. Con el tiempo, el edificio pasó del desprecio social al orgullo nacional, sobrevivió a la destrucción parcial durante la Segunda Guerra Mundial y fue reconstruido como emblema de la identidad musical austriaca.",
+      ""
+    ],
+    "context": [
+      "En 1861, el emperador Francisco José I impulsó un ambicioso proyecto urbanístico para transformar Viena en una capital imperial moderna y representativa del poder cultural del Imperio austrohúngaro. Dentro de este plan se incluyó la construcción de un gran teatro de ópera en la nueva Ringstrasse, concebido como un símbolo de prestigio artístico y refinamiento.",
+      "El proyecto fue encargado a los arquitectos August Sicard von Sicardsburg y Eduard van der Nüll, quienes diseñaron un edificio de estilo neorrenacentista acorde con los gustos oficiales de la época. Sin embargo, durante la construcción se elevó el nivel de la calle frente al edificio, lo que provocó que la ópera pareciera más baja de lo previsto y alterara su impacto visual.",
+      "Antes incluso de que las obras finalizaran, la sociedad vienesa y la prensa comenzaron a criticar duramente el edificio, considerándolo poco monumental para una capital imperial. Las burlas y ataques públicos se intensificaron hasta el punto de afectar profundamente a sus creadores.",
+      "En abril de 1868, Eduard van der Nüll, afectado por la presión, la humillación pública y una profunda depresión, se suicidó sin llegar a ver la ópera terminada. Apenas dos meses después, en junio de 1868, August Sicard von Sicardsburg falleció de un ataque al corazón, una muerte que muchos contemporáneos atribuyeron al estrés y al impacto emocional de las críticas y de la pérdida de su compañero.",
+      "La Ópera Estatal de Viena fue finalmente inaugurada el 25 de mayo de 1869 con Don Giovanni de Mozart, sin que ninguno de sus arquitectos pudiera presenciar la culminación de su obra. Con el paso del tiempo, el edificio pasó de ser despreciado por la opinión pública a convertirse en una de las instituciones musicales más importantes del mundo.",
+      "Durante la Segunda Guerra Mundial, la ópera sufrió graves daños a causa de los bombardeos aliados en marzo de 1945, quedando destruidos el escenario y la sala principal. Tras la guerra, el edificio fue reconstruido respetando su fachada histórica y modernizando su interior, hasta su reapertura en 1955, momento en el que se consolidó definitivamente como símbolo cultural y orgullo nacional de Austria.",
+      ""
+    ],
+    "keyFacts": [
+      {
+        "title": "Críticas antes de inaugurarse",
+        "description": "El edificio fue duramente criticado incluso antes de terminarse, algo poco habitual en proyectos imperiales de la época."
+      },
+      {
+        "title": "Apodos despectivos",
+        "description": "La prensa vienesa llegó a llamarla “el cuartel de agua”, comparándola con un edificio militar."
+      },
+      {
+        "title": "Arquitectos ausentes",
+        "description": "Ninguno de los dos arquitectos vivió para ver la inauguración de la ópera."
+      },
+      {
+        "title": "Bombardeo parcial",
+        "description": "En 1945 solo sobrevivieron la fachada, el vestíbulo y la gran escalinata original."
+      },
+      {
+        "title": "Nueva acústica",
+        "description": "La reconstrucción permitió mejorar notablemente la acústica y la tecnología escénica."
+      },
+      {
+        "title": "Símbolo musical",
+        "description": "Es una de las sedes operísticas más activas del mundo, con cientos de funciones cada temporada."
+      },
+      {
+        "title": "Primera ópera representada",
+        "description": "La obra elegida para la inauguración fue Don Giovanni de Mozart, una elección simbólica por su vínculo con Viena."
+      },
+      {
+        "title": "Reapertura simbólica",
+        "description": "La reapertura en 1955 coincidió con la recuperación de la soberanía austríaca tras la ocupación aliada."
+      },
+      {
+        "title": "Ópera y política",
+        "description": "Durante décadas, la programación de la ópera fue utilizada como escaparate cultural del Estado austríaco."
+      },
+      {
+        "title": "Reconstrucción debatida",
+        "description": "Tras la guerra hubo un intenso debate sobre si reconstruir el interior original o modernizarlo por completo."
+      },
+      {
+        "title": "Capacidad reducida",
+        "description": "El interior reconstruido tiene menos aforo que el original, priorizando comodidad y acústica."
+      },
+      {
+        "title": "Orquesta residente",
+        "description": "La orquesta de la Ópera Estatal de Viena es la misma que forma la Filarmónica de Viena."
+      },
+      {
+        "title": "Tradición del Concierto de Año Nuevo",
+        "description": "Cada 1 de Enero, la Filarmónica de Viena interpreta valses, polcas y marchas de la familia Strauss, culminando con la Marcha Radetzky de Johann Strauss padre."
+      },
+      {
+        "title": "Edificio protegido",
+        "description": "La fachada y los espacios históricos están protegidos como patrimonio cultural de Austria."
+      },
+      {
+        "title": ""
+      }
+    ],
+    "timeline": [
+      {
+        "date": "1861",
+        "event": "El emperador Francisco José I aprueba el proyecto de la Ópera Estatal de Viena."
+      },
+      {
+        "date": "1861",
+        "event": "Comienzan las obras bajo la dirección de Sicardsburg y van der Nüll."
+      },
+      {
+        "date": "Abril 1868",
+        "event": "Eduard van der Nüll se suicida antes de la finalización del edificio."
+      },
+      {
+        "date": "Junio 1868",
+        "event": "August Sicard von Sicardsburg muere de un ataque al corazón."
+      },
+      {
+        "date": "1869-05-25",
+        "event": "Inauguración de la ópera con Don Giovanni de Mozart."
+      },
+      {
+        "date": "1945-03-12",
+        "event": "El edificio resulta gravemente dañado por un bombardeo aliado."
+      },
+      {
+        "date": "1946",
+        "event": "Comienzan las obras de reconstrucción."
+      },
+      {
+        "date": "1955-11-05",
+        "event": "Reapertura oficial con Fidelio de Beethoven."
+      },
+      {
+        "date": "Actualidad",
+        "event": "La Ópera Estatal de Viena es uno de los grandes referentes mundiales de la música clásica."
+      },
+      {
+        "date": ""
+      }
+    ],
+    "consequences": [
+      "La historia de la Ópera Estatal de Viena refleja el contraste entre el juicio inmediato de la opinión pública y el valor histórico a largo plazo de una obra cultural. Las críticas iniciales provocaron una tragedia personal para sus arquitectos y dejaron una huella amarga en el origen del edificio.",
+      "La destrucción parcial durante la Segunda Guerra Mundial convirtió a la ópera en símbolo de la devastación cultural del conflicto, pero también en ejemplo de reconstrucción y continuidad histórica.",
+      "Tras su reapertura, el edificio pasó a representar el orgullo nacional austriaco y la centralidad de la música en la identidad del país. Hoy, la Ópera Estatal de Viena es reconocida no solo como un teatro, sino como un emblema de la resiliencia cultural europea.",
+      ""
+    ]
+  },
+  {
+    "id": "El-hombre-que-quiso-volar",
+    "title": "Abbas Ibn Firnas",
+    "date": "875 d.C.",
+    "category": "Personajes históricos",
+    "imageUrl": "images/eventos/Abbas-Ibn-Firnas.jpg",
+    "summary": [
+      "Abbas Ibn Firnas fue un sabio andalusí del siglo IX que destacó como inventor, científico y pensador en la Córdoba del Emirato. Conocido por su intento de volar, desarrolló numerosos avances en astronomía, ingeniería y química. Su experimento aéreo, realizado décadas antes de su muerte, lo convirtió en uno de los primeros seres humanos en intentar el vuelo de forma experimental, adelantándose en siglos a la aviación moderna.",
+      ""
+    ],
+    "context": [
+      "Abbas Ibn Firnas nació en el año 810 en Ronda, en una época en la que Al-Ándalus vivía un intenso desarrollo cultural y científico bajo el Emirato de Córdoba. Este periodo se caracterizó por la convivencia de saberes heredados del mundo grecolatino, persa e indio, junto con nuevas aportaciones propias del pensamiento islámico.",
+      "Ibn Firnas se formó en este ambiente intelectual y llegó a integrarse en la corte de Abderramán II y, posteriormente, en la de Muhammad I. Las cortes omeyas actuaban como centros de conocimiento donde se fomentaban las ciencias, las artes y la innovación técnica.",
+      "Antes de su célebre intento de volar, Ibn Firnas ya era reconocido por sus contribuciones en múltiples disciplinas. Diseñó instrumentos astronómicos, experimentó con materiales como el vidrio, desarrolló sistemas de medición del tiempo y estudió fenómenos físicos relacionados con la luz, el sonido y el movimiento.",
+      "En el año 875, ya anciano, decidió llevar a la práctica una idea largamente meditada: el vuelo humano. Tras observar durante años el comportamiento de las aves, construyó un artefacto con estructura de madera recubierta de seda y plumas, que se sujetaba al cuerpo mediante un arnés. Desde una colina cercana a Córdoba se lanzó al vacío ante numerosos testigos.",
+      "Las fuentes andalusíes indican que logró planear durante unos segundos antes de caer al suelo. Aunque sobrevivió, sufrió lesiones en la espalda. Posteriormente reconoció que el diseño carecía de un elemento fundamental para el aterrizaje, una reflexión que muestra un razonamiento experimental poco común para su época.",
+      "Ibn Firnas murió en el año 888, dejando tras de sí una figura que combina ciencia, audacia y pensamiento crítico, y que siglos después sería reconocida como precursora del estudio experimental del vuelo.",
+      ""
+    ],
+    "keyFacts": [
+      {
+        "title": "Polímata andalusí",
+        "description": "Fue inventor, astrónomo, poeta, ingeniero, músico y químico, una combinación poco habitual incluso para su época."
+      },
+      {
+        "title": "Científico de corte",
+        "description": "Formó parte de la corte de Abderramán II y Muhammad I, donde desarrolló muchos de sus experimentos."
+      },
+      {
+        "title": "Planetario artificial",
+        "description": "Diseñó una sala que reproducía el movimiento de los astros, considerada uno de los primeros planetarios conocidos."
+      },
+      {
+        "title": "Vidrio transparente",
+        "description": "Logró producir vidrio claro a partir de arena, un avance técnico importante en Al-Ándalus."
+      },
+      {
+        "title": "Reloj hidráulico",
+        "description": "Creó un reloj de agua llamado al-Maqata para medir el paso del tiempo."
+      },
+      {
+        "title": "Vuelo documentado",
+        "description": "Su intento de volar fue descrito por cronistas andalusíes, lo que lo diferencia de figuras legendarias."
+      },
+      {
+        "title": "Error reconocido",
+        "description": "Él mismo identificó la falta de un sistema de aterrizaje como causa de su caída."
+      },
+      {
+        "title": "Mil años antes",
+        "description": "Su experimento ocurrió más de un milenio antes de los vuelos de los hermanos Wright."
+      },
+      {
+        "title": ""
+      }
+    ],
+    "timeline": [
+      {
+        "date": "810",
+        "event": "Nace Abbas Ibn Firnas en Ronda, en el Emirato de Córdoba."
+      },
+      {
+        "date": "825–875",
+        "event": "Se forma y desarrolla su actividad científica en la Córdoba andalusí."
+      },
+      {
+        "date": "Mediados del siglo IX",
+        "event": "Ingresa en la corte de Abderramán II y posteriormente en la de Muhammad I."
+      },
+      {
+        "date": "875",
+        "event": "Realiza su intento de vuelo desde una colina cercana a Córdoba."
+      },
+      {
+        "date": "875",
+        "event": "Sobrevive al experimento, pero sufre lesiones en la espalda."
+      },
+      {
+        "date": "888",
+        "event": "Muere Abbas Ibn Firnas en Córdoba."
+      },
+      {
+        "date": "Actualidad",
+        "event": "Es reconocido como precursor del vuelo humano y del método científico experimental."
+      },
+      {
+        "date": ""
+      }
+    ],
+    "consequences": [
+      "El intento de vuelo de Abbas Ibn Firnas no tuvo continuidad inmediata, pero dejó constancia de una aproximación racional y experimental al problema del vuelo humano. Su análisis posterior del fallo del aterrizaje demuestra una mentalidad científica adelantada a su tiempo.",
+      "Su figura se convirtió en símbolo del alto nivel intelectual alcanzado en Al-Ándalus durante la Edad Media y de la capacidad innovadora del mundo islámico occidental.",
+      "Con el paso de los siglos, Ibn Firnas fue recuperado como referente histórico de la aviación temprana y como ejemplo de pensamiento experimental previo al Renacimiento europeo. Hoy su nombre está asociado a la audacia científica y al deseo humano de superar sus propios límites.",
+      ""
     ]
   }
 ]
