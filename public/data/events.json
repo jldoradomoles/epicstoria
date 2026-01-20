@@ -1,0 +1,1641 @@
+[
+  {
+    "id": "La-voz-de-la-tierra",
+    "title": "Voyager 1 ",
+    "date": "1977-09-05",
+    "category": "Espacio ",
+    "imageUrl": "images/eventos/Voyager-1.jpg",
+    "summary": [
+      "En 1977, la NASA lanzó la Voyager 1, una sonda destinada a explorar Júpiter y Saturno, convirtiéndose en la actualidad en el objeto humano más alejado de la Tierra."
+    ],
+    "context": [
+      "En la década de 1970, la NASA se encontraba en plena era dorada de la exploración espacial. Las misiones Apolo habían terminado, y la agencia buscaba nuevos horizontes más allá de la Luna. Fue entonces cuando los científicos descubrieron algo extraordinario: una alineación única de los planetas exteriores —Júpiter, Saturno, Urano y Neptuno— que ocurriría solo una vez cada 176 años.",
+      "Esta disposición permitiría que una nave pudiera aprovechar la gravedad de cada planeta como impulso, acelerándose sin gastar tanto combustible y visitando varios mundos en un solo viaje. A esto se le conoce como asistencia gravitacional. Así nació el ambicioso Proyecto Voyager.",
+      "La NASA diseñó dos sondas gemelas, Voyager 1 y Voyager 2, con una misión doble:",
+      "Explorar los planetas gigantes del Sistema Solar exterior, en especial Júpiter y Saturno.",
+      "Estudiar sus lunas, anillos y campos magnéticos, obteniendo imágenes y datos científicos jamás vistos.",
+      "Aunque se planeó que Voyager 2 continuara hacia Urano y Neptuno, Voyager 1 tenía un propósito más enfocado: realizar un sobrevuelo cercano a Titán, la luna de Saturno, que intrigaba a los científicos por su atmósfera espesa y misteriosa.",
+      "Esa maniobra determinó que Voyager 1 siguiera una trayectoria más vertical, alejándose del plano de los planetas… rumbo al infinito.",
+      "Durante su paso por los planetas, Voyager 1 revolucionó nuestro conocimiento del Sistema Solar:",
+      "En Júpiter, mostró tormentas gigantes y descubrió volcanes activos en Ío, una de las lunas de Júpiter, la primera evidencia de actividad volcánica fuera de la Tierra.",
+      "En Saturno, reveló la complejidad de sus anillos y los misterios de Titán, confirmando su densa atmósfera de nitrógeno.",
+      "Después de ese punto, ya no había más destinos planetarios en su ruta. Así, la misión principal se dio por completada, pero la NASA decidió mantenerla activa como Misión Interestelar, para estudiar los límites del entorno solar.",
+      "Con el tiempo, la sonda siguió alejándose a velocidades enormes (más de 60 000 km/h).",
+      "En 2012, Voyager 1 cruzó la heliopausa, la frontera donde termina la influencia del viento solar y comienza el espacio interestelar.",
+      "Fue la primera nave humana en salir del Sistema Solar."
+    ],
+    "keyFacts": [
+      {
+        "title": "El viajero más lejano",
+        "description": "La Voyager 1 es el objeto humano que más se ha alejado de la Tierra: más de 24 mil millones de kilómetros (y aumentando cada segundo). Su señal tarda más de 22 horas en llegar a nosotros"
+      },
+      {
+        "title": "Lanzada después de su hermana",
+        "description": "Aunque lleva el número 1, la Voyager 1 fue lanzada 16 días después que la Voyager 2 (el 5 de septiembre de 1977). Sin embargo, siguió una ruta más rápida y la adelantó en su viaje"
+      },
+      {
+        "title": "Primera nave en el espacio interestelar",
+        "description": "El 25 de agosto de 2012, cruzó la heliopausa, el límite donde termina la influencia del Sol. Se convirtió así en la primera nave en llegar al espacio interestelar"
+      },
+      {
+        "title": "El Disco de Oro",
+        "description": "Lleva un Disco de Oro con sonidos, saludos e imágenes de la Tierra: 90 minutos de música, saludos en 55 idiomas y sonidos naturales (truenos, olas, risas, animales, etc.). Incluye desde Bach y Beethoven hasta Chuck Berry con Johnny B. Goode"
+      },
+      {
+        "title": "Instrucciones para extraterrestres",
+        "description": "El disco viene acompañado por un diagrama grabado en la cubierta, que explica con símbolos cómo reproducirlo. Usa pulsos de hidrógeno para definir el tiempo y un mapa con la posición del Sol respecto a 14 púlsares. Una forma de poder decirle a otras civilizaciones extraterrestres en qué lugar del cosmos nos encontramos"
+      },
+      {
+        "title": "La voz de la Tierra",
+        "description": "Entre los saludos grabados hay mensajes como: Hola desde los niños del planeta Tierra, dicho por una niña estadounidense de 6 años. También se escuchan saludos en español, latín, griego antiguo, árabe, chino y más"
+      },
+      {
+        "title": "Energía limitada, pero fiel",
+        "description": "Funciona con un generador nuclear de plutonio que produce cada año menos energía. Aun así, más de 45 años después del lanzamiento, sigue enviando señales a la Tierra"
+      },
+      {
+        "title": "Una señal más débil que una bombilla",
+        "description": "La potencia de transmisión de su antena es de apenas 23 vatios, menos que una bombilla doméstica. Sin embargo, el gigantesco sistema de antenas Deep Space Network logra captar su señal"
+      },
+      {
+        "title": "Durará miles de millones de años",
+        "description": "Incluso cuando sus instrumentos se apaguen, la Voyager 1 seguirá viajando durante miles de millones de años, llevando consigo el Disco de Oro: la huella más duradera de la humanidad"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "1972",
+        "event": "Comienza el diseño del Proyecto Voyager, aprovechando la futura alineación de los planetas exteriores"
+      },
+      {
+        "date": "1975–1977",
+        "event": "Se construyen las dos sondas gemelas Voyager 1 y Voyager 2, con 11 instrumentos científicos cada una"
+      },
+      {
+        "date": "05-09-1977",
+        "event": "Despegue de la Voyager 1 a bordo de un cohete Titan IIIE-Centaur. Su objetivo inicial: explorar Júpiter y Saturno"
+      },
+      {
+        "date": "05-03-1979",
+        "event": "Llega a Júpiter, enviando imágenes inéditas de sus nubes y de la Gran Mancha Roja. Descubre volcanes activos en Ío, el primer hallazgo de vulcanismo fuera de la Tierra"
+      },
+      {
+        "date": "12-11-1980",
+        "event": "Confirma la existencia de una atmósfera densa en Titán, lo que cambia su trayectoria: la nave se desvía hacia el espacio exterior en lugar de continuar hacia Urano y Neptuno"
+      },
+      {
+        "date": "25-08-2012",
+        "event": "La Voyager 1 cruza la heliopausa, convirtiéndose en la primera nave humana en llegar al espacio interestelar. Desde entonces estudia las partículas y el campo magnético del medio interestelar"
+      },
+      {
+        "date": "2025",
+        "event": "Aún envía datos a la NASA con energía limitada. Se prevé que sus instrumentos científicos funcionen hasta aproximadamente 2030. Luego seguirá su viaje por miles de millones de años, llevando el Disco de Oro como mensaje eterno de la humanidad"
+      }
+    ],
+    "consequences": [
+      "La misión Voyager 1 marcó un antes y un después en la historia de la exploración espacial.",
+      "No solo expandió nuestro conocimiento sobre los planetas gigantes y sus lunas, sino que también demostró que la humanidad puede enviar su voz más allá de los límites del Sol.",
+      "Su viaje simboliza la unión entre ciencia, curiosidad y esperanza: un pequeño artefacto creado por manos humanas que sigue viajando entre las estrellas, llevando consigo el mensaje eterno de que, en un rincón del universo, existió una especie que quiso comprenderlo todo."
+    ]
+  },
+  {
+    "id": "La-inauguración",
+    "title": "La Estatua de la Libertad",
+    "date": "1886-10-28",
+    "category": "Monumentos",
+    "imageUrl": "images/eventos/La-Estatua-de-la-Libertad.jpg",
+    "summary": [
+      "El 28 de octubre de 1886, Nueva York presenció la inauguración de un símbolo eterno. Regalo de Francia a Estados Unidos, la Estatua de la Libertad unió arte, ingeniería y un ideal universal. Su silueta marcaría para siempre el horizonte de la ciudad y la historia del mundo moderno."
+    ],
+    "context": [
+      "El 28 de octubre de 1886, una densa niebla cubría el puerto de Nueva York mientras miles de personas se reunían frente a la isla de Bedloe —hoy conocida como Liberty Island— para presenciar un acontecimiento sin precedentes. En medio del sonido de los barcos y las sirenas, emergía lentamente una silueta colosal: la Estatua de la Libertad, el regalo que Francia ofrecía a Estados Unidos como símbolo de amistad, esperanza y de los valores compartidos de libertad y democracia.",
+      "El monumento era la culminación de un proyecto concebido dos décadas antes por el pensador francés Édouard René de Laboulaye, quien quiso rendir homenaje a la independencia estadounidense y celebrar los ideales que inspiraron tanto la Revolución Americana como la Francesa. El escultor Frédéric Auguste Bartholdi fue el encargado de dar forma a esa visión, mientras que el ingeniero Gustave Eiffel —futuro creador de la célebre torre parisina— diseñó el armazón interno que permitiría sostener la gigantesca estructura de cobre.",
+      "Un año antes de su inauguración, la estatua había cruzado el Atlántico desmontada a bordo del barco francés Isère, enviada desde París en más de doscientas cajas. En Nueva York, miles de voluntarios trabajaron para ensamblar sus piezas sobre un pedestal diseñado por el arquitecto Richard Morris Hunt. Su construcción fue posible gracias a una campaña nacional de donaciones, en la que ciudadanos de todas las clases aportaron dinero para completar la obra.",
+      "Durante las semanas previas al acto oficial, la ciudad de Nueva York se preparó con desfiles, banquetes y ceremonias en honor a la delegación francesa. La prensa siguió cada detalle, desde la llegada del buque Isère hasta la colocación final de la antorcha. En la víspera de la inauguración, Bartholdi supervisó personalmente los preparativos del monumento y dispuso la gran bandera estadounidense que cubriría el rostro de la estatua, la misma que él mismo retiraría al día siguiente durante la ceremonia como gesto simbólico de unión entre ambas naciones.",
+      "La ceremonia de inauguración fue un evento nacional. Miles de personas acudieron al puerto, junto a autoridades, marineros, delegaciones francesas y norteamericanas. El presidente Grover Cleveland presidió el acto y, al descubrir la estatua, pronunció una frase que pasaría a la historia:",
+      "“La libertad ha elegido su morada; jamás verá extinguirse su luz.”"
+    ],
+    "keyFacts": [
+      {
+        "title": "El rostro de la libertad",
+        "description": "El escultor Frédéric Auguste Bartholdi se inspiró en el rostro de su madre para dar vida a la expresión serena de la Estatua de la Libertad."
+      },
+      {
+        "title": "Un ingeniero de altura",
+        "description": "La estructura interna fue diseñada por Gustave Eiffel, el mismo ingeniero que años más tarde levantaría la Torre Eiffel en París."
+      },
+      {
+        "title": "Financiada por el pueblo",
+        "description": "El pedestal se construyó gracias a miles de donaciones ciudadanas, impulsadas por una campaña del editor Joseph Pulitzer, que publicó en su periódico los nombres de todos los donantes."
+      },
+      {
+        "title": "Una antorcha renovada",
+        "description": "La antorcha original, iluminada con gas, fue reemplazada en 1986 por una réplica cubierta con pan de oro para celebrar el centenario del monumento."
+      },
+      {
+        "title": "Siete rayos para el mundo",
+        "description": "Cada uno de los siete rayos de su corona representa los siete continentes y los siete mares: un mensaje de libertad universal."
+      },
+      {
+        "title": "La fecha de la independencia",
+        "description": "En la tablilla que sostiene con su mano izquierda puede leerse “JULY IV MDCCLXXVI”, la fecha de la independencia de Estados Unidos: 4 de julio de 1776."
+      },
+      {
+        "title": "De Francia a Nueva York",
+        "description": "La estatua fue enviada desde Francia en 350 piezas, distribuidas en más de 200 cajas, y ensamblada durante cuatro meses en la isla de Bedloe."
+      },
+      {
+        "title": "Un coloso de cobre y hierro",
+        "description": "La Estatua de la Libertad mide 93 metros desde el suelo hasta la punta de la antorcha y pesa más de 200 toneladas, con un esqueleto de hierro cubierto por placas de cobre."
+      },
+      {
+        "title": "La primera “ticker-tape parade”",
+        "description": "En las calles de Manhattan, los oficinistas comenzaron espontáneamente a arrojar recortes de papel desde las ventanas, creando una lluvia blanca sobre la multitud. Sin saberlo, estaban inaugurando la primera “ticker-tape parade” de la historia, una tradición que más tarde se repetiría para celebrar victorias, héroes y momentos históricos."
+      }
+    ],
+    "timeline": [
+      {
+        "date": "1865",
+        "event": "El jurista y pensador francés Édouard René de Laboulaye propone crear un monumento que simbolice la amistad entre Francia y Estados Unidos y los ideales de libertad."
+      },
+      {
+        "date": "1870",
+        "event": "El escultor Frédéric Auguste Bartholdi comienza a diseñar la estatua, inspirándose en la figura clásica de Libertas, la diosa romana de la libertad."
+      },
+      {
+        "date": "1875",
+        "event": "Se formaliza el proyecto con el nombre La Liberté éclairant le monde (“La libertad iluminando el mundo”). Francia se compromete a construir la estatua, y Estados Unidos, el pedestal."
+      },
+      {
+        "date": "1876",
+        "event": "Se presenta la mano con la antorcha en la Exposición del Centenario en Filadelfia para recaudar fondos."
+      },
+      {
+        "date": "1878",
+        "event": "Se exhibe la cabeza de la estatua en la Exposición Universal de París, atrayendo gran atención internacional."
+      },
+      {
+        "date": "1881–1884",
+        "event": "Se construye la estatua en los talleres de Bartholdi en París, con estructura interna diseñada por Gustave Eiffel."
+      },
+      {
+        "date": "04-07-1884",
+        "event": "Francia celebra la finalización oficial de la estatua en París y la entrega simbólicamente a Estados Unidos."
+      },
+      {
+        "date": "17-06-1885",
+        "event": "El barco Isère llega al puerto de Nueva York con la estatua desmontada en 350 piezas y 214 cajas. Miles de personas la reciben con júbilo."
+      },
+      {
+        "date": "1885–1886",
+        "event": "Se construye el pedestal en la isla de Bedloe (hoy Liberty Island), diseñado por el arquitecto Richard Morris Hunt, financiado mediante donaciones populares impulsadas por Joseph Pulitzer."
+      }
+    ],
+    "consequences": [
+      "La inauguración de la Estatua de la Libertad en 1886 marcó un antes y un después en la historia moderna. Más que un monumento, se convirtió en un símbolo universal de libertad, esperanza y unión entre pueblos. Representó la amistad entre Francia y Estados Unidos, celebró el triunfo de los ideales democráticos y dio la bienvenida a millones de inmigrantes que llegaban a América en busca de un nuevo comienzo.",
+      "Su imagen, visible desde el mar, transformó el horizonte de Nueva York en un emblema global de los derechos humanos y la dignidad. Desde entonces, la antorcha de la Libertad brilla como una promesa: la de un mundo donde todos puedan aspirar a ser libres."
+    ]
+  },
+  {
+    "id": "Juicios-por-traición",
+    "title": "Roma",
+    "date": "103-a.C.",
+    "category": "Poder y Corrupción",
+    "imageUrl": "images/eventos/Roma-juicios-por-traición.jpg",
+    "summary": [
+      "Los juicios por traición surgieron en Roma en el 103 a. C. con la Ley Appuleia de Maiestas, creada para castigar a quienes pusieran en riesgo al pueblo o al ejército romano.",
+      "Durante la época imperial, la ley cambió de sentido: ya no protegía al Estado, sino al emperador.",
+      "Muchos emperadores se aprovecharon de la ley en beneficio propio, llegando a realizar grandes matanzas, mientras que otros, aunque no la abolieron, dieron un uso más moderado.",
+      "Con el tiempo, los juicios por traición perdieron su función política y desaparecieron en la práctica, marcando el paso de una Roma dominada por el temor a una más racional y estable."
+    ],
+    "context": [
+      "Los juicios por traición en Roma tienen su origen en el 103 a. C., durante la República, con la promulgación de la Ley Appuleia de Maiestas, impulsada por el tribuno Lucio Apuleyo Saturnino.",
+      "Su finalidad era proteger la majestad del pueblo romano (Maiestas populi Romani) y castigar los actos que pusieran en peligro la seguridad del Estado o del ejército. En ese contexto, el delito de Maiestas equivalía a una forma de alta traición contra la autoridad y la estabilidad de Roma, y se aplicaba a los ciudadanos que atentaran contra las instituciones republicanas o las campañas militares.",
+      "Durante la República, esta ley formó parte de un sistema judicial que buscaba salvaguardar el orden político en una época marcada por tensiones internas, guerras civiles y luchas entre facciones. Sin embargo, su alcance se limitaba a los delitos contra el Estado y no tenía relación con figuras personales o religiosas.",
+      "Con la llegada del Imperio, a partir del 27 a. C., el significado del delito de Maiestas cambió profundamente. Roma ya no estaba gobernada por magistrados electos, sino por un solo hombre: el emperador. Así, el concepto de traición dejó de referirse a la seguridad del pueblo o de las instituciones y pasó a centrarse en la lealtad hacia el emperador. Hablar mal de él, cuestionar su autoridad o no mostrarle el debido respeto podía ser considerado un acto de traición.",
+      "Durante el gobierno de Tiberio (14–37 d. C.), los juicios por traición se multiplicaron. El Senado, que debía actuar como órgano judicial, se vio dominado por el miedo, ya que cualquier acusación de Maiestas podía significar la pérdida de bienes, el destierro o la muerte. Este clima de desconfianza marcó el inicio del uso político de la ley como herramienta de represión.",
+      "Con Calígula (37–41 d. C.) y Nerón (54–68 d. C.), el abuso del delito alcanzó su punto máximo. En estos periodos, los juicios por traición se convirtieron en instrumentos de control absoluto, empleados para eliminar enemigos políticos, senadores o incluso familiares sospechosos de deslealtad. Las acusaciones eran muchas veces arbitrarias y respondían más al temor o al interés personal que a la justicia.",
+      "Tras la crisis del Año de los Cuatro Emperadores (69 d. C.), los nuevos gobernantes Vespasiano y Tito (69–79 d. C.) buscaron estabilizar el Imperio y restaurar la confianza entre el poder y el Senado. Bajo su gobierno, el uso del delito de Maiestas se moderó considerablemente, volviendo a un ámbito más legal que político.",
+      "Durante el gobierno de Domiciano (81–96 d. C.), la situación se tensó de nuevo. Este emperador restableció parcialmente los juicios por traición para castigar supuestas conspiraciones, especialmente entre senadores y filósofos. Sin embargo, tras su muerte, el sistema judicial romano evolucionó hacia una mayor racionalidad y estabilidad.",
+      "Con los emperadores adoptivos —Nerva, Trajano, Adriano, Antonino Pío y Marco Aurelio—, el delito de Maiestas permaneció en el derecho romano, pero sin los abusos que habían caracterizado a épocas anteriores. Los juicios por traición se convirtieron en una figura residual, más simbólica que práctica.",
+      "A lo largo de los siglos, la ley nunca fue abolida oficialmente, pero su aplicación desapareció gradualmente. Lo que en la República había nacido como una defensa del pueblo y del ejército terminó transformándose en un instrumento de control imperial, y finalmente, en una reliquia jurídica sin uso real.",
+      "De este modo, los juicios por traición reflejan la evolución del poder en Roma: el paso de una República legalista y colectiva a un Imperio centralizado en la figura del emperador, y posteriormente, el retorno a una administración más moderada y estable.",
+      "De este modo, los juicios por traición reflejan la evolución del poder en Roma: el paso de una República legalista y colectiva a un Imperio centralizado en la figura del emperador, y posteriormente, el retorno a una administración más moderada y estable."
+    ],
+    "keyFacts": [
+      {
+        "title": "Los delatores se enriquecían acusando a otros",
+        "description": "Existía una figura oficial llamada el delator, un ciudadano que denunciaba a presuntos traidores. Si el acusado era condenado, el delator recibía una parte de sus bienes confiscados. Esto provocó una ola de falsas acusaciones y corrupción dentro del Senado."
+      },
+      {
+        "title": "Calígula convirtió los juicios en espectáculos",
+        "description": "El emperador Calígula asistía a los juicios por traición como si fueran representaciones teatrales. En ocasiones, presenciaba las ejecuciones personalmente y hasta bromeaba sobre las condenas."
+      },
+      {
+        "title": "Condenado por una estatua sin cabeza",
+        "description": "Durante el gobierno de Tiberio, un ciudadano fue acusado de traición porque una de sus estatuas de bronce se cayó y perdió la cabeza. El hecho fue interpretado como un mal augurio contra el emperador, y bastó para abrir un proceso por Maiestas."
+      },
+      {
+        "title": "Un senador fue ejecutado por hablar durante la cena",
+        "description": "También bajo Tiberio, un senador fue acusado de traición por haber comentado un chiste político durante un banquete. Sus palabras fueron interpretadas como una crítica al emperador… y acabó ejecutado."
+      },
+      {
+        "title": "Un esclavo fue acusado por repetir palabras que oyó",
+        "description": "En una de las anécdotas más escalofriantes del periodo, un esclavo doméstico fue denunciado porque repitió una frase escuchada en casa de su amo que sonaba irrespetuosa hacia el emperador. Ambos —esclavo y amo— fueron juzgados por Maiestas."
+      },
+      {
+        "title": "Calígula mandó ejecutar a hombres por su peinado",
+        "description": "El emperador Calígula ordenó castigar a varios senadores porque llevaban el mismo tipo de peinado que él, considerándolo una falta de respeto. Según Suetonio, incluso mandó ejecutar a quien lo miraba directamente a los ojos."
+      },
+      {
+        "title": "No juró por la fortuna del César",
+        "description": "Durante el mismo periodo, se exigía que los ciudadanos juraran fidelidad al emperador “por su fortuna”. Un ciudadano olvidó hacerlo y fue acusado de traición por negligencia al no pronunciar la fórmula completa del juramento."
+      },
+      {
+        "title": "Nerón hacía ensayos de muerte",
+        "description": "Nerón usaba los juicios por traición para eliminar a sus rivales literarios y políticos. Según Tácito, ordenaba ejecuciones como si fueran escenas teatrales, a veces improvisando frases o gestos trágicos mientras observaba cómo se cumplían las sentencias."
+      },
+      {
+        "title": "Una mujer fue acusada por haber soñado con la caída del emperador",
+        "description": "En los últimos años de Tiberio, una mujer fue denunciada por haber contado que soñó con la caída de la estatua del emperador. Ese sueño fue interpretado como un deseo de su muerte… y fue procesada por Maiestas."
+      },
+      {
+        "title": "Calígula reabrió juicios antiguos para humillar al Senado",
+        "description": "Calígula mandó revisar expedientes de décadas pasadas para condenar otra vez a los descendientes de quienes ya habían sido castigados. El objetivo era dejar claro que solo él tenía poder sobre la memoria y la historia."
+      },
+      {
+        "title": "Domiciano castigó incluso a los muertos",
+        "description": "El emperador Domiciano llegó a reabrir causas contra personas ya fallecidas y ordenó que sus estatuas fueran destruidas. Borrar su memoria (damnatio memoriae) era considerado un castigo equivalente a la traición."
+      }
+    ],
+    "timeline": [
+      {
+        "date": "103 a. C.",
+        "event": "Creada por Lucio Apuleyo Saturnino durante la República. Buscaba castigar a quienes traicionaran al pueblo o pusieran en peligro al ejército romano."
+      },
+      {
+        "date": "27 a. C.",
+        "event": "Con Augusto, la ley comienza a reinterpretarse: la Maiestas pasa de proteger al Estado a proteger la figura del emperador."
+      },
+      {
+        "date": "14–37 d. C.",
+        "event": "Con el imperio de Tiberio los juicios por traición se multiplican. Una palabra o gesto contra el emperador bastaba para ser condenado. El Senado vivía aterrorizado."
+      },
+      {
+        "date": "37–41 d. C.",
+        "event": "Con Calígula al principio promete eliminar los juicios, pero tras enfermar enloquece. Reabre casos antiguos, confisca fortunas y convierte los juicios en espectáculos crueles."
+      },
+      {
+        "date": "41–68 d. C.",
+        "event": "Con Claudio y Nerón, el delito de Maiestas se usa como herramienta política. Bajo Nerón, los juicios se vuelven aún más sangrientos y arbitrarios."
+      },
+      {
+        "date": "69–79 d. C.",
+        "event": "Con los emperadores Vespasiano y Tito, tras el “Año de los Cuatro Emperadores”, buscan estabilidad. Moderan los juicios y reducen su uso como arma política."
+      },
+      {
+        "date": "81–96 d. C.",
+        "event": "Con el emperador Domiciano se revive parcialmente los juicios. Persigue a filósofos y senadores acusados de conspiración o deslealtad."
+      },
+      {
+        "date": "96–180 d. C.",
+        "event": "Durante la época de Nerva, Trajano, Adriano y los Antoninos, el delito de Maiestas permanece en la ley, pero deja de usarse con fines políticos. Los juicios por traición caen en desuso."
+      }
+    ],
+    "consequences": [
+      "Los juicios por traición reflejan la transformación del poder en Roma:",
+      "de una República basada en la ley y el pueblo, a un Imperio dominado por la figura del emperador.",
+      "Lo que comenzó como una medida para proteger la seguridad del Estado terminó convirtiéndose en un instrumento de miedo y control político. Bajo emperadores como Tiberio, Calígula o Nerón, la acusación de Maiestas sirvió para eliminar rivales, castigar la disidencia y consolidar el culto al poder personal.",
+      "Sin embargo, también muestran cómo la sociedad romana aprendió de sus excesos. Con los emperadores adoptivos, el uso de estos juicios se moderó, y Roma entró en una etapa de mayor estabilidad y racionalidad jurídica.",
+      ""
+    ]
+  },
+  {
+    "id": "El-viaje-de-Colón",
+    "title": "El Descubrimiento de América",
+    "date": "1492-10-12",
+    "category": "Descubrimientos",
+    "imageUrl": "images/eventos/El-descubrimiento-de-America.jpg",
+    "summary": [
+      "Cristóbal Colón y su expedición, financiada por los Reyes Católicos, llegaron el 12 de octubre de 1492 a una isla del actual archipiélago de las Bahamas, llamada San Salvador, tras más de dos meses de viaje desde Palos de la Frontera. Rodrigo de Triana, desde La Pinta, fue el primero en avistar tierra. Este acontecimiento marcó el inicio del encuentro entre Europa y América, cambiando para siempre el curso de la historia."
+    ],
+    "context": [
+      "A finales del siglo XV, el mundo conocido por los europeos se extendía solo por Europa, África y Asia. Las rutas comerciales hacia Oriente, esenciales para obtener especias, seda y otros productos valiosos, estaban controladas por el Imperio Otomano, que tras conquistar Constantinopla en 1453, bloqueó los caminos tradicionales entre Europa y Asia. Esto impulsó a las potencias europeas a buscar nuevas rutas marítimas.",
+      "En aquella época, Europa vivía una etapa de cambio profundo. El pensamiento medieval comenzaba a transformarse gracias a los avances en cartografía, astronomía y navegación, impulsados por el Renacimiento. El uso de nuevos instrumentos como la brújula, el astrolabio y el cuadrante permitía orientarse con mayor precisión en mar abierto, alentando a los exploradores a desafiar los límites del mundo conocido.",
+      "Mientras Portugal exploraba la costa africana hacia el sur, el navegante genovés Cristóbal Colón propuso una alternativa audaz: llegar a Asia navegando hacia el oeste, atravesando el Atlántico. Su proyecto fue rechazado en varias cortes, pero encontró apoyo en Castilla, donde los Reyes Católicos, Isabel I y Fernando II, recién triunfantes tras la conquista de Granada, vieron en su plan una oportunidad de expansión política, comercial y religiosa.",
+      "El 3 de agosto de 1492, Colón partió del puerto de Palos de la Frontera (Huelva) con tres embarcaciones: La Santa María, La Pinta y La Niña. Tras una escala en las Islas Canarias, la expedición se adentró en mares desconocidos durante más de dos meses, guiada por la fe, el cálculo y la determinación.",
+      "Durante la larga travesía, el cansancio y la incertidumbre comenzaron a apoderarse de la tripulación. La ausencia de tierra y el temor a lo desconocido provocaron tensiones y rumores de motín. Colón, firme en sus cálculos y convencido de su destino, logró mantener el control prometiendo regresar si en tres días no avistaban costas. A la madrugada del 12 de octubre de 1492, el grito de “¡Tierra!” rompió el silencio del océano, cambiando para siempre la historia del mundo.",
+      "La expedición había llegado a una isla del actual archipiélago de las Bahamas, llamada Guanahaní por los pueblos taínos y rebautizada San Salvador por Colón. Creyendo haber alcanzado las Indias Orientales, tomó posesión en nombre de los Reyes Católicos e inició la exploración de nuevas tierras caribeñas, como Cuba y La Española.",
+      "Tras varios meses de exploración, Colón emprendió el regreso a España el 15 de enero de 1493 a bordo de La Niña y La Pinta. Llegó al puerto de Palos de la Frontera el 15 de marzo del mismo año, siendo recibido como un héroe."
+    ],
+    "keyFacts": [
+      {
+        "title": "El viaje comenzó con una condena",
+        "description": "Colón zarpó del puerto de Palos de la Frontera el 3 de agosto de 1492, un puerto elegido no por azar, sino porque el pueblo estaba obligado por una sanción real a proporcionar dos embarcaciones y tripulación para la expedición."
+      },
+      {
+        "title": "El rumbo desconocido",
+        "description": "Nadie sabía qué habría al navegar hacia el oeste. Muchos marineros creían que el océano terminaba en un abismo o que monstruos marinos habitaban sus profundidades. Fue un viaje de auténtica fe y valentía."
+      },
+      {
+        "title": "América... sin saberlo",
+        "description": "Colón nunca supo que había descubierto un nuevo continente. Murió convencido de que había llegado a las costas de Asia, a las “Indias Orientales”."
+      },
+      {
+        "title": "Rodrigo de Triana, el olvidado",
+        "description": "Aunque fue Rodrigo de Triana quien primero gritó “¡Tierra!”, Colón se atribuyó el mérito del descubrimiento alegando que había visto una luz la noche anterior. Rodrigo nunca recibió la recompensa prometida."
+      },
+      {
+        "title": "La Pinta fue más rápida",
+        "description": "De las tres carabelas, La Pinta era la más veloz y maniobrable, por eso fue la primera en avistar tierra. Sin embargo, la nave capitana era La Santa María, la más grande de las tres."
+      },
+      {
+        "title": "El naufragio de la Santa María",
+        "description": "La nave capitana encalló la noche de Navidad de 1492 frente a las costas de La Española. Con su madera, Colón ordenó construir el primer asentamiento europeo en América: el Fuerte de la Navidad."
+      },
+      {
+        "title": "Un viaje que cambió el mapa",
+        "description": "Antes de Colón, el mapa del mundo terminaba en Europa, África y Asia. Después de 1492, los cartógrafos comenzaron a redibujar el planeta, dando origen a la visión global moderna."
+      },
+      {
+        "title": "El apoyo de los Reyes Católicos",
+        "description": "Isabel I de Castilla fue quien apostó por Colón cuando nadie más creyó en su proyecto. Vendió parte de sus joyas para financiar el viaje, aunque algunos historiadores matizan que fue más una decisión de Estado que un acto personal."
+      },
+      {
+        "title": "Colón murió sin gloria",
+        "description": "Cristóbal Colón murió en Valladolid en 1506, sin saber la magnitud de su hazaña y sin reconocimiento pleno. Sus restos fueron trasladados varias veces entre España y América, y aún existe debate sobre su paradero final."
+      },
+      {
+        "title": "El inicio de la era global",
+        "description": "El encuentro de 1492 marcó el comienzo de la globalización: intercambio de culturas, alimentos, animales, enfermedades y conocimientos entre Europa, África y América. Nada volvió a ser igual."
+      }
+    ],
+    "timeline": [
+      {
+        "date": "1492-03-08",
+        "event": "La expedición parte del puerto de Palos de la Frontera (Huelva) con tres embarcaciones: La Santa María, La Pinta y La Niña."
+      },
+      {
+        "date": "1492-06-09",
+        "event": "Tras una breve escala en las Islas Canarias, las naves retoman rumbo hacia el oeste por mares desconocidas."
+      },
+      {
+        "date": "1492-10-10",
+        "event": "La tripulación, cansada y temerosa, amenaza con amotinarse por no ver tierra. Colón logra calmarlos prometiendo regresar si en tres días no avistaban costas."
+      },
+      {
+        "date": "1492-12-10",
+        "event": "Rodrigo de Triana, desde La Pinta, grita “¡Tierra!” al avistar una isla del actual archipiélago de las Bahamas, llamada Guanahaní por los taínos y bautizada San Salvador por Colón. Colón desembarca y toma posesión en nombre de los Reyes Católicos, creyendo haber llegado a las Indias Orientales."
+      },
+      {
+        "date": "1492-28-10",
+        "event": "La expedición llega a Cuba, creyendo que era parte del continente asiático."
+      },
+      {
+        "date": "1492-06-12",
+        "event": "Arriban a La Española (actual Haití y República Dominicana), donde fundan el primer asentamiento europeo en América: La Navidad."
+      },
+      {
+        "date": "1492-25-12",
+        "event": "La Santa María encalla y se hunde en la costa norte de La Española."
+      },
+      {
+        "date": "1493-15-01",
+        "event": "Colón inicia el regreso a España con La Niña y La Pinta."
+      },
+      {
+        "date": "1493-15-03",
+        "event": "Colón llega a Palos de la Frontera, siendo recibido como héroe tras su primer viaje al Nuevo Mundo."
+      }
+    ],
+    "consequences": [
+      "El descubrimiento de América marcó uno de los momentos más trascendentales de la historia universal: el encuentro entre Europa y América. Este hecho abrió el camino a la expansión europea, el intercambio de culturas, recursos, conocimientos y también al inicio de profundas transformaciones políticas, económicas y sociales a ambos lados del Atlántico.",
+      "El viaje de Cristóbal Colón, financiado por los Reyes Católicos, no solo cambió la geografía conocida hasta entonces, sino que dio comienzo a la Edad Moderna, conectando por primera vez de forma permanente los dos hemisferios. A partir de este suceso, el mundo se volvió verdaderamente global, con un intercambio continuo de personas, ideas, especies y culturas que definiría la historia moderna."
+    ]
+  },
+  {
+    "id": "El-último-día",
+    "title": "Pompeya",
+    "date": "79-d.C.",
+    "category": "Catástrofes",
+    "imageUrl": "images/eventos/Pompeya.jpg",
+    "summary": [
+      "En el año 79 d.C., el Monte Vesubio despertó con una fuerza devastadora, sepultando Pompeya bajo cenizas y fuego. Miles murieron en segundos, y la ciudad quedó congelada en el tiempo durante siglos. Hoy, sus ruinas revelan el último instante de una civilización sorprendida por la furia de la naturaleza."
+    ],
+    "context": [
+      "La erupción del Monte Vesubio tuvo lugar en el año 79 d.C., durante el reinado del emperador Tito, en una de las regiones más prósperas del Imperio romano. Entre las ciudades situadas en sus faldas, Pompeya era una de las más activas y florecientes: contaba con templos, termas, teatros, talleres, tabernas y lujosas casas decoradas con frescos y mosaicos. Era un reflejo del bienestar y la vida cotidiana romana.",
+      "El entorno del golfo de Nápoles ofrecía un clima templado, suelos fértiles y un intenso comercio marítimo. El Vesubio, que dominaba el horizonte, era considerado una montaña pacífica y productiva. Nadie imaginaba que bajo sus laderas dormía una de las fuerzas más destructivas de la historia.",
+      "En los días previos al desastre se registraron ligeros temblores y alteraciones en los manantiales, pero los habitantes de Pompeya estaban acostumbrados a la actividad sísmica. Nadie pensó en abandonar la ciudad. No existía conocimiento de que aquel monte era un volcán, ni de que su interior albergaba una cámara de magma bajo enorme presión.",
+      "En la mañana del 24 de agosto del 79 d.C. —aunque estudios recientes sugieren una fecha más tardía, hacia octubre o noviembre—, el Vesubio despertó violentamente. Una colosal columna de humo, ceniza y piedra pómez se elevó más de veinte kilómetros en el aire, oscureciendo el sol y cubriendo Pompeya en una penumbra asfixiante. Durante horas, una lluvia continua de fragmentos volcánicos cayó sobre la ciudad, haciendo que los techos se derrumbaran y las calles quedaran cubiertas de escombros.",
+      "El pánico se apoderó de los habitantes. Muchos intentaron huir por las puertas de la muralla o hacia el puerto, pero el espesor de la ceniza y la oscuridad lo hicieron casi imposible. Otros buscaron refugio en sus casas o sótanos, esperando que la tormenta terminara.",
+      "Con la llegada de la madrugada del día siguiente, el Vesubio liberó su furia final. Una oleada ardiente de gases y cenizas incandescentes descendió sobre Pompeya a más de 100 km/h, alcanzando temperaturas superiores a 400 °C. En cuestión de segundos, el aire se volvió irrespirable y toda vida en la ciudad se extinguió al instante. Los cuerpos quedaron donde estaban: algunos protegiendo a sus hijos, otros cubriéndose el rostro o intentando escapar.",
+      "En pocas horas, Pompeya desapareció bajo varios metros de ceniza y piedra pómez. Cuando la erupción cesó, el lugar era un desierto gris, sin sonido ni movimiento. Las casas, los templos y los cuerpos quedaron sellados por el material volcánico, preservados de manera sorprendente por el paso del tiempo.",
+      "Los días siguientes fueron de oscuridad y silencio. Los supervivientes de las zonas cercanas huyeron dejando atrás todo. El Vesubio continuó lanzando humo durante varios días hasta que finalmente se apagó."
+    ],
+    "keyFacts": [
+      {
+        "title": "El perro encadenado",
+        "description": "Uno de los hallazgos más impactantes es el cuerpo de un perro atado con su cadena. Murió intentando liberarse mientras la ceniza lo cubría. Su molde, obtenido al rellenar con yeso el espacio que dejó su cuerpo, muestra al animal en posición de lucha, arqueado por el dolor."
+      },
+      {
+        "title": "El mar estaba mucho más cerca",
+        "description": "En la época romana, el mar llegaba hasta las puertas de Pompeya, a unos 500 metros de la ciudad. Tras la erupción, los depósitos volcánicos extendieron la línea de costa más de 2 kilómetros hacia el oeste. Hoy, el mar está a unos 2,5 kilómetros de las ruinas."
+      },
+      {
+        "title": "Pompeya fue redescubierta por accidente",
+        "description": "En 1748, mientras se realizaban excavaciones cerca de Nápoles, los obreros hallaron muros y frescos bajo la tierra. No sabían que era Pompeya: se creyó primero que eran restos de otra villa romana. Solo años después se comprendió la magnitud del descubrimiento."
+      },
+      {
+        "title": "Las cenizas conservaron todo",
+        "description": "La gruesa capa de ceniza y piedra pómez actuó como un sello natural, protegiendo edificios, pinturas y objetos del aire y la humedad. Gracias a eso, hoy se conservan murales, pan carbonizado, utensilios de cocina y hasta grafitis escritos en las paredes."
+      },
+      {
+        "title": "Los moldes de las víctimas",
+        "description": "Cuando los arqueólogos descubrieron que bajo la ceniza quedaban huecos con forma de cuerpos, los llenaron con yeso líquido para recrear sus posturas. Así surgieron las figuras de hombres, mujeres, niños y animales, capturados exactamente en el momento de su muerte."
+      },
+      {
+        "title": "La temperatura fue letal",
+        "description": "Estudios recientes revelan que el flujo piroclástico alcanzó temperaturas de hasta 500 °C, suficientes para provocar la muerte instantánea por choque térmico, antes incluso de que los cuerpos quedaran sepultados."
+      },
+      {
+        "title": "Una ciudad llena de mensajes",
+        "description": "En las paredes de Pompeya se han encontrado más de 11.000 inscripciones: anuncios, mensajes amorosos, chistes, críticas políticas y hasta bromas de taberna. Algunas aún se leen claramente, mostrando la voz cotidiana de sus habitantes."
+      },
+      {
+        "title": "Colores originales preservados",
+        "description": "A diferencia de otras ruinas romanas, en Pompeya los frescos aún conservan colores vivos gracias a la ceniza que los aisló de la luz. Los rojos, amarillos y azules que decoraban las casas revelan el lujo y el gusto artístico de sus habitantes."
+      },
+      {
+        "title": "Una vida interrumpida",
+        "description": "En Pompeya se han encontrado ollas aún sobre el fuego, comidas a medio preparar, y mesas servidas, tal como quedaron en el instante de la erupción. Es una fotografía exacta del último día de una ciudad romana."
+      }
+    ],
+    "timeline": [
+      {
+        "date": "Días previos, año 79 d.C.",
+        "event": "Pequeños temblores y cambios en los manantiales alteran la región del golfo de Nápoles. Los habitantes, acostumbrados a los sismos, no imaginan el peligro que se avecina."
+      },
+      {
+        "date": "La erupción: Mediodía",
+        "event": "Según las cartas de Plinio el Joven, el Vesubio entra en erupción a media mañana. Una columna de humo y ceniza se eleva más de 20 km sobre el cielo. Durante horas, cae una lluvia incesante de piedra pómez y ceniza que cubre Pompeya."
+      },
+      {
+        "date": "La erupción: Tarde",
+        "event": "Las calles se vuelven intransitables, los tejados colapsan y la ciudad queda sumida en la oscuridad. Muchos buscan refugio en casas o templos, mientras otros intentan huir hacia el mar."
+      },
+      {
+        "date": "La erupción: Madrugada",
+        "event": "Ocurre la fase más mortal del desastre, una oleada piroclástica desciende del volcán a más de 100 km/h y más de 400 °C. Pompeya es arrasada en segundos, y miles de personas mueren instantáneamente."
+      },
+      {
+        "date": "Días posteriores",
+        "event": "El Vesubio sigue expulsando ceniza y gases durante días. El paisaje queda transformado, cubierto de piedra pómez y silencio. Los supervivientes abandonan la zona, dejando las ciudades sepultadas."
+      },
+      {
+        "date": "Años 100–200 d.C.",
+        "event": "Años después de la erupción, saqueadores excavan túneles entre los restos para recuperar objetos valiosos y joyas."
+      },
+      {
+        "date": "1748",
+        "event": "Pompeya es redescubierta por accidente durante unas obras cerca de Nápoles. Empiezan las primeras excavaciones, que revelan murales, frescos y objetos cotidianos."
+      },
+      {
+        "date": "Años 2000–2010 d.C.",
+        "event": "Nuevos estudios arqueológicos y hallazgos —como frutas otoñales, braseros encendidos y una inscripción fechada el 17 de octubre— demuestran que la erupción no ocurrió en agosto, sino entre octubre y noviembre del 79 d.C. Esta fecha es hoy la más aceptada por la comunidad científica."
+      },
+      {
+        "date": "Actualidad",
+        "event": "Pompeya es Patrimonio Mundial de la UNESCO y uno de los yacimientos arqueológicos más visitados del mundo. El Monte Vesubio continúa activo, bajo vigilancia constante por parte de la Protección Civil italiana."
+      }
+    ],
+    "consequences": [
+      "La erupción del Vesubio en el año 79 d.C. es uno de los desastres naturales más célebres de la Antigüedad y una fuente invaluable para la historia. La destrucción de Pompeya no solo marcó una tragedia humana, sino que permitió conservar una instantánea única de la vida romana en el momento exacto en que el tiempo se detuvo.",
+      "Gracias a las cenizas que cubrieron la ciudad, hoy se conocen con precisión cómo vivían, trabajaban y pensaban los romanos: su arquitectura, sus costumbres, su arte y su organización social. Pompeya se convirtió así en un testimonio arqueológico sin precedentes, esencial para comprender la civilización romana.",
+      "Además, el suceso impulsó el desarrollo de la arqueología moderna, inspiró a generaciones de artistas y científicos, y continúa recordando la fragilidad del ser humano frente a la fuerza de la naturaleza."
+    ]
+  },
+  {
+    "id": "El-último-águila-de-Tenochtitlán",
+    "title": "Cuauhtémoc",
+    "date": "1904-02-03",
+    "category": "Personajes históricos",
+    "imageUrl": "images/eventos/Cuauhtemoc.jpg",
+    "summary": [
+      "Cuauhtémoc, último emperador mexica, ascendió al trono tras la muerte de Moctezuma II y la huida de los españoles en la Noche Triste. Con apenas 25 años lideró una resistencia heroica contra Hernán Cortés, enfrentando hambre, epidemias y traiciones. Capturado y ejecutado en 1525, su figura se convirtió en símbolo eterno de valentía y dignidad mexicana."
+    ],
+    "context": [
+      "Cuauhtémoc nació hacia 1495 en Tenochtitlán, dentro de una de las familias nobles más destacadas del Imperio mexica. Era descendiente del tlatoani Ahuízotl, lo que lo situaba dentro de la línea dinástica de los gobernantes de la capital. Desde joven fue instruido en el calmécac, la escuela de los nobles, donde aprendió religión, filosofía, estrategia militar y las leyes que regían la vida pública mexica. Su nombre, Cuāuhtémōc, significa “el que desciende como águila”, símbolo de fuerza, vigilancia y determinación.",
+      "En su juventud, Cuauhtémoc destacó como guerrero en las campañas contra pueblos rebeldes del Valle de México, ganando reputación por su valentía y sentido del deber. Pero el destino del imperio cambió en 1519 con la llegada de Hernán Cortés y sus hombres a las costas del Golfo de México. Los españoles avanzaron hacia el interior con el apoyo de pueblos indígenas enemigos de los mexicas, como los tlaxcaltecas, y se dirigieron a Tenochtitlán.",
+      "Moctezuma II, gobernante del imperio, dudó entre enfrentarse o recibir a los extranjeros como enviados divinos, influido por los presagios que anunciaban el fin de una era. Su indecisión permitió a Cortés entrar en la ciudad y tomarlo prisionero. La tensión se desbordó cuando los españoles masacraron a los nobles mexicas durante una ceremonia religiosa en el Templo Mayor, provocando un levantamiento general. Moctezuma murió durante los enfrentamientos —según las versiones, apedreado por su propio pueblo o abatido en el caos— y los conquistadores tuvieron que huir.",
+      "La noche del 30 de junio de 1520, los españoles fueron expulsados de Tenochtitlán en un episodio que pasaría a la historia como la Noche Triste. Cientos de soldados murieron en los canales y calzadas de la ciudad, cargando el oro que intentaban llevar consigo. Días después, el trono fue ocupado por Cuitláhuac, quien reorganizó la resistencia, pero murió poco después a causa de la viruela.",
+      "En ese contexto de ruina y desesperación, Cuauhtémoc fue elegido tlatoani en 1520, con apenas veinticinco años, para liderar la defensa del imperio. Durante su corto reinado, se preparó para una guerra total: fortificó los templos, organizó la producción de armas y coordinó las defensas sobre el lago. El asedio español de 1521 fue brutal: las calzadas fueron cortadas, los canales bloqueados y las reservas de agua y alimentos destruidas. Aun así, Cuauhtémoc resistió con coraje, combatiendo junto a sus guerreros hasta el final.",
+      "El 13 de agosto de 1521, al ver la derrota inevitable, Cuauhtémoc intentó huir por el lago de Texcoco en una canoa junto a su esposa, su familia y su primo Tetlepanquetzal, señor de Tlacopan. Sin embargo, fueron capturados por los hombres de Cortés y llevados ante él como prisioneros. Poco después, Cortés ordenó la tortura de Cuauhtémoc y de Tetlepanquetzal, buscando obligarlos a revelar el paradero del tesoro imperial mexica, que los conquistadores no habían logrado encontrar. Según las crónicas, ambos soportaron el tormento con dignidad, negándose a hablar.",
+      "Años más tarde, en 1525, Cortés emprendió una expedición hacia Honduras. Temiendo rebeliones y sospechando conspiraciones, llevó encadenados a Cuauhtémoc y a su primo. Durante la marcha por las selvas de Tabasco y el Petén, la desconfianza creció entre los españoles; Cortés acusó a los prisioneros de traición y ordenó su ejecución. El 28 de febrero de 1525, Cuauhtémoc y Tetlepanquetzal fueron ahorcados en Itzamkanac, poniendo fin al linaje de los tlatoanis mexicas."
+    ],
+    "keyFacts": [
+      {
+        "title": "El significado de su nombre",
+        "description": "Cuāuhtémōc en náhuatl significa “el que desciende como águila”, una metáfora del guerrero que se lanza desde el cielo sobre su enemigo, símbolo de valentía y visión."
+      },
+      {
+        "title": "El más joven de los tlatoanis",
+        "description": "Cuauhtémoc tenía apenas 25 años cuando fue elegido gobernante de Tenochtitlán, lo que lo convierte en el tlatoani más joven del imperio mexica en toda su historia registrada."
+      },
+      {
+        "title": "El tormento del oro",
+        "description": "Tras su captura, Hernán Cortés buscó desesperadamente el tesoro imperial mexica. Para obtener su ubicación, ordenó torturar a Cuauhtémoc y a su primo Tetlepanquetzal, señor de Tlacopan. Ambos fueron atados de pies y manos sobre braseros encendidos, y les vertieron aceite hirviendo en los pies, mientras eran interrogados una y otra vez."
+      },
+      {
+        "title": "Capturado por un bergantín",
+        "description": "Cuauhtémoc fue capturado en el lago de Texcoco cuando intentaba huir con su familia. Su canoa fue interceptada por un bergantín español, embarcación de guerra que Cortés había construido durante el sitio."
+      },
+      {
+        "title": "Su cuerpo nunca fue hallado",
+        "description": "El paradero exacto de los restos de Cuauhtémoc sigue siendo incierto. Existen varios monumentos y sitios conmemorativos, pero ninguno ha sido confirmado como su tumba real."
+      },
+      {
+        "title": "La muerte en la selva",
+        "description": "Cuauhtémoc fue ahorcado el 28 de febrero de 1525, acusado falsamente de conspirar contra Cortés durante la expedición a Honduras. Murió lejos de su tierra natal, en Itzamkanac."
+      },
+      {
+        "title": "Símbolo nacional",
+        "description": "Durante el siglo XIX, su figura fue recuperada como símbolo del honor y la resistencia mexicana, especialmente durante la Independencia. En 1887 se inauguró su monumento en el Paseo de la Reforma, Ciudad de México."
+      },
+      {
+        "title": "Fue sacerdote antes de ser guerrero",
+        "description": "Antes de dirigir ejércitos, Cuauhtémoc fue instruido en los templos como sacerdote del dios Huitzilopochtli, donde aprendió astronomía, rituales y filosofía mexica. Esta formación influenció su visión espiritual del deber y del sacrificio."
+      },
+      {
+        "title": "El propio Cortés admiró a Cuauhtémoc",
+        "description": "A pesar de haberlo derrotado, Hernán Cortés reconoció públicamente su valentía. En sus Cartas de relación lo llama “gran señor y persona de mucha autoridad”."
+      },
+      {
+        "title": ""
+      }
+    ],
+    "timeline": [
+      {
+        "date": "1495",
+        "event": "Cuauhtémoc nace alrededor de 1495, descendiente de la nobleza mexica y del tlatoani Ahuízotl. Desde joven es educado como guerrero y sacerdote en el calmécac."
+      },
+      {
+        "date": "1519",
+        "event": "Los españoles desembarcan en las costas del Golfo de México. Moctezuma II recibe noticias del avance de los extranjeros; Cuauhtémoc es ya un joven capitán de guerra."
+      },
+      {
+        "date": "1520",
+        "event": "Durante una ceremonia religiosa, los españoles atacan a los nobles mexicas. El pueblo se levanta contra ellos; Moctezuma es asesinado en medio del caos."
+      },
+      {
+        "date": "1520-06-30",
+        "event": "Los mexicas expulsan a los españoles de Tenochtitlán, causando numerosas bajas. Entre los defensores destaca Cuauhtémoc, que demuestra su liderazgo militar."
+      },
+      {
+        "date": "1520",
+        "event": "El nuevo tlatoani, Cuitláhuac, muere víctima de la viruela. El imperio queda sin líder en plena crisis."
+      },
+      {
+        "date": "1520",
+        "event": "A los 25 años, Cuauhtémoc es proclamado gobernante de Tenochtitlán. Reorganiza las fuerzas y prepara la defensa total de la ciudad ante el inminente regreso de Cortés."
+      },
+      {
+        "date": "1521",
+        "event": "Durante 93 días, la ciudad resiste el bloqueo español. Faltan alimentos y agua, y las epidemias se expanden. Cuauhtémoc dirige la defensa personalmente."
+      },
+      {
+        "date": "1521-08-13",
+        "event": "Cuauhtémoc intenta huir por el lago de Texcoco junto a su esposa, su familia y su primo Tetlepanquetzal, pero son capturados por los hombres de Cortés. El Imperio mexica cae."
+      },
+      {
+        "date": "1521",
+        "event": "Cortés ordena torturar a Cuauhtémoc y a Tetlepanquetzal para que revelen el paradero del tesoro mexica. Les queman los pies con braseros encendidos, pero ninguno confiesa."
+      },
+      {
+        "date": "1525",
+        "event": "Cortés obliga a Cuauhtémoc a acompañarlo en su marcha por la selva. Durante el viaje lo acusa de conspirar contra él."
+      },
+      {
+        "date": "1525-02-28",
+        "event": "Cortés ordena ahorcar a Cuauhtémoc y a Tetlepanquetzal en Itzamkanac. El último tlatoani de Tenochtitlán muere a los 30 años, símbolo de honor y resistencia."
+      },
+      {
+        "date": "Siglo XIX",
+        "event": "Durante la Independencia de México, Cuauhtémoc es reivindicado como héroe nacional. Su estatua se erige en el Paseo de la Reforma en 1887."
+      }
+    ],
+    "consequences": [
+      "Cuauhtémoc fue el último tlatoani del Imperio mexica y símbolo de la resistencia ante la conquista española. Asumió el poder en medio del caos tras la muerte de Moctezuma y defendió Tenochtitlán hasta su caída en 1521. Capturado, torturado y finalmente ejecutado por Hernán Cortés, su valor y dignidad lo convirtieron en un emblema eterno del honor y la identidad del pueblo mexicano."
+    ]
+  },
+  {
+    "id": "El-mito",
+    "title": "Orfeo y Eurídice",
+    "date": "Siglos VIII y VI a. C.",
+    "category": "Mitología",
+    "imageUrl": "images/eventos/Orfeo-y-Euridice.jpg",
+    "summary": [
+      "Orfeo, un músico prodigioso cuya lira podía calmar a los animales y conmover incluso a los dioses, se enamora profundamente de la ninfa Eurídice y se casa con ella. Pero el mismo día de su boda, mientras celebra entre los prados, una serpiente muerde a Eurídice y la joven muere de inmediato. Abrumado por el dolor, Orfeo se niega a aceptar la pérdida y decide realizar lo imposible: descender al inframundo para recuperarla. No lleva armas ni aliados; solo confía en el poder de su música."
+    ],
+    "context": [
+      "En los primeros tiempos del mundo, cuando los dioses aún caminaban entre los hombres y el eco de la poesía guiaba a los mortales, nació Orfeo, hijo del rey tracio Eagro y de Calíope, la más inspirada de las Musas. Desde niño, su música no se parecía a ninguna otra. Su lira no era solo un instrumento: era un puente entre lo humano y lo divino. Cuando Orfeo tocaba, los animales se detenían, los árboles se inclinaban y hasta los espíritus del viento parecían escuchar su melodía. La naturaleza, entera, se dejaba llevar por él.",
+      "Durante su juventud, Orfeo conoció a Eurídice, una ninfa de gracia luminosa. Su belleza no residía en adornos ni coronas, sino en una pureza casi celestial. El encuentro entre ambos fue inmediato, profundo, arrebatador. Pronto se casaron, celebrando su unión entre prados y flores. Pero la alegría duró poco: mientras bailaba entre la hierba, Eurídice pisó una serpiente escondida, y el veneno se extendió por su cuerpo como una sombra rápida. Murió en los brazos de sus compañeras ninfas, y la luz abandonó de golpe la vida de Orfeo.",
+      "Sumido en un dolor insoportable, Orfeo vagó días enteros tocando su lira con notas tan tristes que hasta las rocas lloraron. No aceptaba la muerte de Eurídice; no aceptaba que el destino le arrebatara lo que más amaba. Entonces tomó una decisión que ningún mortal había osado antes: descender al inframundo para traerla de vuelta.",
+      "El viaje hacia las profundidades era un camino reservado a héroes o a quienes no temían la muerte. Orfeo no llevó armas ni aliados. Su única defensa era su música. Al llegar a la ribera del río Aqueronte, el viejo barquero Caronte, guardián de la frontera entre la vida y la muerte, se negó a llevarlo. Pero cuando escuchó la melodía de Orfeo, una música llena de amor y súplica, sus manos temblaron: por primera vez dejó pasar a un mortal sin exigir el óbolo.",
+      "Más adelante, el guardián de tres cabezas, Cerbero, la bestia que jamás dormía, se derrumbó como un cachorro ante una melodía suave que hablaba de praderas y días dorados. Las almas errantes se detuvieron a su paso; algunas recordaron emociones que creían olvidadas hacía siglos. Incluso las Erinias, las Furias del castigo, dejaron escapar lágrimas.",
+      "Al fin, Orfeo llegó ante Hades y Perséfone, los soberanos del reino de los muertos. Allí, en ese trono oscuro donde el tiempo no existe, tocó para ellos. No pidió gloria ni desafío: solo el retorno de Eurídice. Cada nota era un ruego, cada acorde entregaba una parte de su alma. Y los dioses, conmovidos como nunca, aceptaron concederle lo imposible.",
+      "Sin embargo, había una condición: \nOrfeo debía caminar hacia la salida del inframundo con Eurídice detrás de él. No podía mirarla hasta cruzar el umbral del mundo de los vivos. Si lo hacía, la perdería para siempre.",
+      "El regreso fue casi insoportable. Orfeo avanzaba sin mirar atrás, y a sus espaldas escuchaba lo que parecían ser los pasos suaves de Eurídice. Pero el silencio del inframundo era tan profundo que empezó a dudar. ¿De verdad venía con él? ¿O todo era un engaño? ¿Era ella… o solo el eco de lo que deseaba escuchar? Cada paso hacia la salida se volvió una lucha entre la esperanza y el miedo.",
+      "Cuando la luz del mundo de los vivos apareció a unos metros, la angustia lo venció. En un instante de desesperación, giró la cabeza. Solo vio a Eurídice extender la mano hacia él, desvaneciéndose lentamente, murmurando su nombre con infinita tristeza.",
+      "Orfeo salió al mundo sin ella. Desde ese día, su música cambió. Ya no cantó sobre la alegría ni sobre los banquetes de los dioses; solo tocó melodías melancólicas que hablaban de amor perdido, de caminos rotos y de la fragilidad del destino. Vivió aislado, evitando a los mortales, hasta que finalmente la muerte lo alcanzó.",
+      "Cuando su alma descendió al inframundo, el reino de las sombras no fue un castigo. Allí, en el lugar donde una vez tuvo esperanza, encontró por fin a Eurídice. Y esta vez no hubo condiciones, ni pruebas, ni fronteras. Los dos permanecieron juntos para toda la eternidad, unidos por un amor tan profundo que ni la muerte pudo apagar."
+    ],
+    "keyFacts": [
+      {
+        "title": "Orfeo no solo encantaba animales",
+        "description": "En varios poemas antiguos se dice que las piedras y los árboles lo seguían cuando tocaba. No es metáfora: literalmente se movían para acercarse a él."
+      },
+      {
+        "title": "Eurídice tiene diferentes muertes según la versión",
+        "description": "La forma más conocida es la mordedura de serpiente, pero en otra versión antigua Eurídice huye de un pastor que intenta atacarla y, en esa huida, pisa accidentalmente la serpiente que la mata."
+      },
+      {
+        "title": "Orfeo es uno de los pocos mortales que entran al inframundo vivos",
+        "description": "En la mitología griega solo unos pocos logran esto: Heracles, Teseo, Ulises y Orfeo. Pero Orfeo es el único que lo hace sin armas y sin violencia."
+      },
+      {
+        "title": "Hades es sorprendentemente comprensivo",
+        "description": "Pese a su fama, Hades pocas veces aparece como “malo” en los mitos. En esta historia es justo pero inflexible: acepta que Eurídice viva, pero impone la famosa condición de no mirar atrás."
+      },
+      {
+        "title": "Orfeo crea una religión",
+        "description": "En la Antigüedad surgió el orfismo, un movimiento religioso real inspirado en él. Enseñaba; La reencarnación del alma, La purificación espiritual, La música como camino hacia lo divino."
+      },
+      {
+        "title": "Su muerte también tiene dos versiones",
+        "description": "Versión famosa: las Ménades (seguidoras de Dioniso) lo despedazan por rechazar sus rituales o por despreciar a las mujeres tras perder a Eurídice. Versión alternativa: muere por un rayo de Zeus por revelar secretos divinos."
+      },
+      {
+        "title": "Su cabeza siguió cantando",
+        "description": "Según la leyenda, su cabeza decapitada cayó al río Hebro y siguió cantando mientras flotaba, llevando su lira hasta llegar a la isla de Lesbos."
+      },
+      {
+        "title": "En la tradición romana sí se vuelven a reunir",
+        "description": "Los romanos suavizaron el mito: cuando Orfeo muere, su alma desciende al inframundo y por fin se reúne con Eurídice para siempre."
+      }
+    ],
+    "timeline": [
+      {
+        "date": "1. Nacimiento de Orfeo",
+        "event": "Hijo del rey Eagro y de Calíope, musa de la poesía; desde niño demuestra un talento musical sobrenatural."
+      },
+      {
+        "date": "2. Encuentro con Eurídice",
+        "event": "Orfeo conoce a la ninfa Eurídice y ambos se enamoran profundamente."
+      },
+      {
+        "date": "3. La boda",
+        "event": "Se casan rodeados de naturaleza y alegría."
+      },
+      {
+        "date": "4. La tragedia",
+        "event": "Durante la celebración, una serpiente muerde a Eurídice y ella muere de inmediato."
+      },
+      {
+        "date": "5. El duelo de Orfeo",
+        "event": "Desesperado, Orfeo toca canciones de dolor y decide descender al inframundo para recuperarla."
+      },
+      {
+        "date": "6. El descenso",
+        "event": "Con su música conmueve a Caronte, duerme a Cerbero y hace llorar a las Furias. Ningún mortal había llegado tan lejos sin violencia."
+      },
+      {
+        "date": "7. El encuentro con Hades y Perséfone",
+        "event": "Orfeo toca para ellos y logra lo imposible: los dioses permiten que Eurídice regrese al mundo de los vivos."
+      },
+      {
+        "date": "8. La condición",
+        "event": "Orfeo debe caminar hacia la salida sin mirar atrás hasta llegar por completo a la luz del mundo de los vivos."
+      },
+      {
+        "date": "9. El regreso",
+        "event": "Caminan en silencio: Orfeo delante, Eurídice detrás. La duda empieza a consumirlo."
+      },
+      {
+        "date": "10. La mirada prohibida",
+        "event": "Cuando está a punto de salir, Orfeo se gira impulsado por el miedo. Eurídice se desvanece para siempre."
+      },
+      {
+        "date": "11. La soledad de Orfeo",
+        "event": "Vuelve al mundo sin ella, deja de cantar melodías alegres y vive apartado, consumido por la tristeza."
+      },
+      {
+        "date": "12. La muerte de Orfeo",
+        "event": "Finalmente muere, y su alma desciende al inframundo."
+      },
+      {
+        "date": "13. El reencuentro",
+        "event": "Allí, por fin, Orfeo y Eurídice vuelven a encontrarse y permanecen juntos en la eternidad."
+      }
+    ],
+    "consequences": [
+      "El mito de Orfeo y Eurídice es uno de los relatos más importantes de la antigüedad porque simboliza el amor que se atreve a desafiar incluso a la muerte. Su historia convirtió a Orfeo en el ejemplo máximo del poder del arte: no vence con fuerza ni armas, sino con música, mostrando que la belleza puede conmover a dioses y criaturas oscuras. Al mismo tiempo, la tragedia final revela la fragilidad humana: Orfeo pierde a Eurídice por una duda, por un instante de miedo, recordando que a veces la inseguridad arruina aquello que más deseamos. Este mito también dio origen al orfismo, una corriente espiritual real que hablaba de la inmortalidad del alma, la reencarnación y la pureza moral. Además, su descenso al inframundo se convirtió en un modelo narrativo usado por escritores durante siglos, y su figura explicó para los antiguos griegos por qué existe una música capaz de expresar tristeza profunda. Por todo esto, el mito de Orfeo no solo cuenta una historia de amor trágico: también reflexiona sobre la pérdida, la esperanza y el poder transformador del arte."
+    ]
+  },
+  {
+    "id": "Entre-primates-y-ciencia",
+    "title": "Jane Goodall",
+    "date": "1934-04-03",
+    "category": "Personajes históricos",
+    "imageUrl": "images/eventos/Jane-Goodall.jpg",
+    "summary": [
+      "Pionera en el estudio de los chimpancés, revolucionó la ciencia al demostrar que fabrican y usan herramientas. Fundó el Jane Goodall Institute y el programa Roots & Shoots, y dedicó su vida a la conservación y a inspirar a nuevas generaciones. Fue Mensajera de la Paz de la ONU y una de las voces más influyentes en la protección de la naturaleza."
+    ],
+    "context": [
+      "Jane Goodall nació el 3 de abril de 1934 en Londres y desde muy joven sintió una profunda conexión con los animales y la naturaleza. Esa pasión temprana la llevó, años después, a viajar a África, un sueño que había alimentado desde la infancia. A finales de los años cincuenta llegó a Kenia, donde conoció al paleoantropólogo Louis Leakey, quien vio en ella una sensibilidad y determinación inusuales. Fue él quien la envió a Gombe, en la actual Tanzania, para iniciar un estudio pionero sobre los chimpancés salvajes, a pesar de que Jane no tenía formación universitaria en biología.",
+      "Su llegada a Gombe en 1960 marcó el comienzo de una de las investigaciones más influyentes del siglo XX. Observó durante largas jornadas el comportamiento de los chimpancés, registrando sus relaciones, jerarquías y patrones de inteligencia. Gracias a su paciencia y a la confianza que los animales fueron desarrollando hacia ella, pudo documentar conductas nunca antes vistas, transformando la comprensión científica sobre los primates y, por extensión, sobre la evolución humana. Su enfoque combinaba una observación rigurosa con una sensibilidad profunda hacia cada individuo, lo que abrió nuevos caminos dentro de la etología.",
+      "El impacto de sus descubrimientos llamó la atención de la comunidad académica internacional. Aunque carecía de estudios formales superiores, fue aceptada en la Universidad de Cambridge para realizar un doctorado en etología, un hecho excepcional para la época. Allí tuvo que enfrentarse a críticas iniciales por su estilo de investigación, considerado demasiado poco ortodoxo, y por otorgar personalidad y emociones a los animales que estudiaba. Sin embargo, su trabajo de campo era tan sólido que terminó imponiéndose por su valor científico. En diciembre de 1965 obtuvo su doctorado, consolidándose como una investigadora de referencia.",
+      "Tras completar su formación académica, Jane comenzó a difundir sus hallazgos mediante publicaciones, conferencias y documentales. Formó un equipo de investigación que continuó el trabajo en Gombe y, a lo largo de los años, convirtió la zona en uno de los centros de estudio de primates más importantes del mundo. En 1977 fundó el Jane Goodall Institute, una organización dedicada a la conservación, la investigación y la educación ambiental, que hoy desarrolla programas en numerosos países.",
+      "Con el tiempo, su compromiso trascendió el ámbito científico. Jane se dedicó a promover la protección de los ecosistemas, denunciar la pérdida de biodiversidad y trabajar con comunidades locales para impulsar alternativas sostenibles. En 1991 creó Roots & Shoots, un programa que involucra a jóvenes de todo el mundo en proyectos ambientales y sociales. Su mensaje, centrado en la responsabilidad individual y colectiva hacia el planeta, la convirtió en una figura moral y científica de alcance global.",
+      "Incluso después de cumplir 90 años, Jane seguía viajando y dando conferencias, inspirando a generaciones enteras. Falleció el 1 de octubre de 2025, a los 91 años, dejando un legado que transformó la ciencia, la conservación y la manera en que entendemos nuestra relación con la naturaleza."
+    ],
+    "keyFacts": [
+      {
+        "title": "Su primer “experimento científico” fue a los 4 años",
+        "description": "desapareció por horas para observar cómo ponían huevos las gallinas, tomando notas como una pequeña investigadora."
+      },
+      {
+        "title": "Su juguete favorito fue un chimpancé de peluche",
+        "description": "llamado Jubilee, que le regaló su padre. Lo conservó toda su vida."
+      },
+      {
+        "title": "No tenía estudios universitarios en biología",
+        "description": "cuando empezó en Gombe; su pasión fue suficiente para que Louis Leakey la seleccionara."
+      },
+      {
+        "title": "Revolucionó la ciencia sin usar bata ni seguir los métodos tradicionales",
+        "description": "se sentaba silenciosamente en el bosque durante horas, hasta que los chimpancés se acostumbraban a ella."
+      },
+      {
+        "title": "David Greybeard fue el primer chimpancé en confiar en ella",
+        "description": "algo inusual y fundamental para sus descubrimientos."
+      },
+      {
+        "title": "Le cambiaron el nombre a los chimpancés a números",
+        "description": "por exigencia científica… y ella se negó. Les puso nombres porque entendía que tenían personalidad."
+      },
+      {
+        "title": "Le enseñó al mundo que los chimpancés “pescan” termitas con palitos",
+        "description": "demostrando uso de herramientas."
+      },
+      {
+        "title": "Dormía en un pequeño remolque sin electricidad",
+        "description": "durante sus primeros años en la selva."
+      },
+      {
+        "title": "Era capaz de imitar los sonidos de los chimpancés",
+        "description": "para comunicarse con ellos, especialmente el “llamado de comida”."
+      },
+      {
+        "title": "Su famosa libreta de campo",
+        "description": "siempre viajaba con ella; escribía cada comportamiento observado, minuto a minuto."
+      },
+      {
+        "title": "Roots & Shoots nació con 12 estudiantes",
+        "description": "en una sala pequeña, y hoy está en más de 60 países."
+      },
+      {
+        "title": "No fumaba, no bebía alcohol y casi no enfermaba",
+        "description": "algo sorprendente para alguien que pasó décadas en la selva."
+      },
+      {
+        "title": "Tenía un ritual antes de cada charla",
+        "description": "tocar un pequeño tronco o piedra “para conectar con la naturaleza”."
+      },
+      {
+        "title": "Podía recordar el rostro de cada chimpancé",
+        "description": "que había estudiado, incluso décadas después."
+      }
+    ],
+    "timeline": [
+      {
+        "date": "1934-04-03",
+        "event": "Nace en Londres. Su juguete favorito es un chimpancé de peluche llamado Jubilee."
+      },
+      {
+        "date": "1938–1940",
+        "event": "Realiza su primer “experimento” siguiendo a gallinas durante horas para ver cómo ponen los huevos."
+      },
+      {
+        "date": "1952",
+        "event": "Termina la escuela y trabaja en varios oficios, soñando con ir a África."
+      },
+      {
+        "date": "1957",
+        "event": "Viaja por primera vez a Kenia y conoce a Louis Leakey."
+      },
+      {
+        "date": "1960-07-14",
+        "event": "Llega a Gombe, Tanzania, para iniciar su investigación con chimpancés."
+      },
+      {
+        "date": "1960",
+        "event": "David Greybeard se convierte en el primer chimpancé en confiar en ella."
+      },
+      {
+        "date": "1960-11-04",
+        "event": "Observa por primera vez a un chimpancé usando herramientas para “pescar” termitas."
+      },
+      {
+        "date": "1965-12-09",
+        "event": "Obtiene su doctorado en la Universidad de Cambridge sin tener título universitario previo."
+      },
+      {
+        "date": "1971",
+        "event": "Publica In the Shadow of Man."
+      },
+      {
+        "date": "1977",
+        "event": "Funda el Jane Goodall Institute."
+      },
+      {
+        "date": "1991",
+        "event": "Crea Roots & Shoots junto a un pequeño grupo de estudiantes."
+      },
+      {
+        "date": "2002",
+        "event": "Es nombrada Mensajera de la Paz de la ONU."
+      },
+      {
+        "date": "2024-04-03",
+        "event": "Cumple 90 años."
+      },
+      {
+        "date": "2025-10-01",
+        "event": "Fallece a los 91 años."
+      }
+    ],
+    "consequences": [
+      "La vida de Jane Goodall dejó consecuencias profundas en la ciencia y en la relación de la humanidad con la naturaleza. Sus observaciones en Gombe redefinieron lo que entendemos por “ser humano”, al demostrar que los chimpancés usan herramientas y poseen complejas emociones y vínculos sociales. Introdujo una forma nueva de estudiar a los animales, basada en la empatía y el respeto, que cambió la etología para siempre. Su labor impulsó programas globales de conservación, movilizó a millones de jóvenes y convirtió su voz en una referencia mundial sobre la protección del planeta. Su legado perdura en cada proyecto, cada investigación y cada conciencia que hoy comprende que los animales sienten, que los ecosistemas necesitan defensa, y que la ciencia puede transformar el mundo cuando se guía por la compasión."
+    ]
+  },
+  {
+    "id": "El-ordenador-del-mundo-antiguo",
+    "title": "Anticitera",
+    "date": "150–100 a. C.",
+    "category": "Artefactos históricos",
+    "imageUrl": "images/eventos/Anticitera.jpg",
+    "summary": [
+      "El Mecanismo de Anticitera es un dispositivo griego creado entre 150 y 100 a. C., considerado el primer ordenador analógico de la historia. Estaba formado por más de 30 engranajes de bronce capaces de predecir eclipses, mostrar ciclos solares y lunares, seguir calendarios complejos y hasta indicar fechas de juegos panhelénicos como los Olímpicos."
+    ],
+    "context": [
+      "En pleno siglo II a. C., el mundo helenístico vivía uno de los momentos de mayor esplendor intelectual de la historia. Tras las conquistas de Alejandro Magno, Grecia había conectado Egipto, Asia Menor y Mesopotamia en una red de conocimiento donde florecieron la astronomía, las matemáticas y la ingeniería. Era la época de Arquímedes, Hiparco y de centros de estudio como Alejandría y Rodas.",
+      "En ese entorno nació el Mecanismo de Anticitera, fabricado entre 150 y 100 a. C. por artesanos e ingenieros griegos capaces de combinar astronomía avanzada con una metalurgia de precisión excepcional. La influencia de la escuela de Rodas, donde trabajó Hiparco, es clave: sus cálculos sobre el movimiento lunar encajan con la función del mecanismo, lo que apunta a una colaboración directa entre científicos y artesanos de élite.",
+      "Aunque Arquímedes había muerto un siglo antes, su legado de máquinas astronómicas y modelos mecánicos influyó en la creación del dispositivo. El mecanismo representa la culminación de una tradición científica que mezclaba matemática, observación y mecánica: una auténtica máquina para comprender el cosmos.",
+      "El artefacto viajó dentro de un gran barco mercante romano, cargado con estatuas de bronce, mármoles, cerámicas finas y objetos valiosos destinados probablemente a un aristócrata muy rico de la época. Entre 80 y 50 a. C., una tormenta o un fallo de navegación provocó el hundimiento del barco cerca de la pequeña isla de Anticitera. Allí, a unos 50 metros de profundidad, el mecanismo quedó oculto y preservado durante dos milenios.",
+      "El hallazgo moderno comenzó en 1900, cuando unos buzos de esponjas de la isla de Symi, desviados por una tormenta, descendieron al fondo marino en busca de esponjas. Lo que encontraron fueron estatuas, cerámicas… y un bloque de bronce corroído que nadie supo interpretar en un primer momento.",
+      "La recuperación del pecio (1900–1901) fue una de las excavaciones submarinas más peligrosas de la época. Los buzos trabajaban con trajes pesados y aire bombeado manualmente, enfrentándose a profundidades letales. Algunos murieron o quedaron paralizados por descompresión, pero aun así consiguieron rescatar gran parte del cargamento.",
+      "En 1902, el arqueólogo Valerios Stais observó un pequeño engranaje incrustado en una de las piezas corroídas. A partir de ese instante, el objeto dejó de ser un bloque informe y se convirtió en un misterio. Muchos pensaron que era imposible que la Antigüedad hubiera creado algo así y lo ignoraron durante décadas.",
+      "La verdadera revolución llegó en el siglo XX. A partir de los años 50, investigadores como Derek de Solla Price comenzaron a estudiarlo en serio. Sin embargo, fue desde 2005 cuando la ciencia moderna —rayos X de alta energía, tomografías 3D y análisis epigráficos— permitió revelar su interior y leer inscripciones que habían permanecido ocultas más de dos mil años.",
+      "Gracias a estas tecnologías, hoy sabemos que el mecanismo era una representación mecánica del cosmos según la ciencia griega. No solo mostraba ciclos astronómicos: integraba conocimientos matemáticos, observaciones celestes y una ingeniería tan precisa que no volvería a verse en Europa hasta más de mil años después.",
+      ""
+    ],
+    "keyFacts": [
+      {
+        "title": "Tenía más de 30 engranajes internos",
+        "description": "Una complejidad mecánica que no volvería a verse hasta más de mil años después."
+      },
+      {
+        "title": "Incluía un “calendario de eclipses”",
+        "description": "Podía predecir eclipses solares y lunares con gran precisión."
+      },
+      {
+        "title": "Mostraba los Juegos Olímpicos",
+        "description": "El mecanismo tenía un dial dedicado a indicar las fechas de competiciones panhelénicas."
+      },
+      {
+        "title": "Funcionaba con una manivela",
+        "description": "El usuario giraba una pequeña manivela para mover todos los engranajes a la vez."
+      },
+      {
+        "title": "Tenía inscripciones ocultas",
+        "description": "Rayos X modernos revelaron más de 3.000 caracteres grabados dentro del bronce."
+      },
+      {
+        "title": "Usaba el calendario metónico",
+        "description": "Un ciclo de 19 años que sincroniza los calendarios solar y lunar."
+      },
+      {
+        "title": "Podía haber sido obra de Hiparco",
+        "description": "El modelo astronómico coincide con los cálculos del gran astrónomo griego."
+      },
+      {
+        "title": "Viajaba en un barco de lujo",
+        "description": "El pecio contenía estatuas de mármol, bronces y objetos carísimos."
+      },
+      {
+        "title": "Su tecnología se perdió",
+        "description": "No existe ningún otro aparato similar en el mundo antiguo."
+      },
+      {
+        "title": "Fue reconstruido gracias a rayos X",
+        "description": "La tecnología moderna permitió ver engranajes que no podían excavarse sin dañarlo."
+      },
+      {
+        "title": ""
+      }
+    ],
+    "timeline": [
+      {
+        "date": "150–100 a. C.",
+        "event": "Se fabrica el Mecanismo de Anticitera, una obra maestra de ingeniería helenística."
+      },
+      {
+        "date": "80–50 a. C.",
+        "event": "El barco mercante romano que lo transportaba se hunde cerca de Anticitera."
+      },
+      {
+        "date": "1900",
+        "event": "Un grupo de buzos de esponjas descubre el pecio frente a la isla griega."
+      },
+      {
+        "date": "1901",
+        "event": "Se recuperan los primeros fragmentos del misterioso bloque de bronce corroído."
+      },
+      {
+        "date": "1902",
+        "event": "Valerios Stais identifica un engranaje incrustado en la pieza. Nace el enigma."
+      },
+      {
+        "date": "1951–1959",
+        "event": "Derek de Solla Price inicia el estudio científico moderno del mecanismo."
+      },
+      {
+        "date": "1974",
+        "event": "Price publica Gears from the Greeks, primera reconstrucción seria del dispositivo."
+      },
+      {
+        "date": "2005",
+        "event": "Comienza el Antikythera Mechanism Research Project con rayos X y tomografías 3D."
+      },
+      {
+        "date": "2006",
+        "event": "Los nuevos escaneos revelan inscripciones ocultas y el complejo sistema de engranajes."
+      },
+      {
+        "date": "2012",
+        "event": "Se demuestra que el mecanismo predice eclipses, ciclos solares y lunares, e incluso juegos panhelénicos."
+      },
+      {
+        "date": "2014",
+        "event": "Se publica una reconstrucción altamente precisa basada en todos los datos 3D."
+      },
+      {
+        "date": "2022",
+        "event": "Nuevos estudios conectan el diseño astronómico del mecanismo con el trabajo de Hiparco."
+      },
+      {
+        "date": "Actualidad",
+        "event": "El Mecanismo de Anticitera es reconocido como el primer ordenador analógico de la historia."
+      },
+      {
+        "date": ""
+      }
+    ],
+    "consequences": [
+      "El Mecanismo de Anticitera demostró que la ingeniería griega era mucho más avanzada de lo que imaginábamos. Reveló que hace más de 2.000 años ya existían máquinas capaces de predecir eclipses y comprender los ciclos del cielo con una precisión que no volvería a verse hasta la Edad Media. Su hallazgo cambió para siempre nuestra visión del mundo antiguo y abrió una nueva puerta para entender la verdadera magnitud del conocimiento perdido."
+    ]
+  },
+  {
+    "id": "Sisi",
+    "title": "Isabel de Baviera ",
+    "date": "1837-12-24",
+    "category": "Personajes históricos",
+    "imageUrl": "images/eventos/Isabel-de-Baviera.jpg",
+    "summary": [
+      "Sisi, nacida en 1837 en Múnich, creció libre y lejos de la rígida etiqueta. A los 16 años se convirtió en emperatriz de Austria al casarse con Francisco José, pero pronto descubrió que la corte vienesa era una jaula dorada. La pérdida de su hija Sofía la marcó profundamente y aumentó su sensación de aislamiento. Aunque su belleza la convirtió en un mito europeo, ella buscó siempre escapar de las presiones viajando por todo el continente."
+    ],
+    "context": [
+      "Isabel de Baviera nació en 1837 en el seno de la Casa de Wittelsbach, una de las familias más antiguas de Alemania. Su infancia transcurrió en un ambiente poco convencional para una princesa: su familia prefería la vida campestre en Possenhofen, rodeada de lagos, montañas y animales. Allí creció libre, montando a caballo, pescando y explorando la naturaleza sin apenas restricciones. Esta educación, muy alejada del rígido ceremonial de otras cortes europeas, marcó profundamente su carácter independiente y su deseo de libertad.",
+      "En su juventud, Sisi no recibió una formación destinada al poder. Sus profesores eran pocos, los horarios flexibles y la disciplina mínima; la idea era que los niños crecieran felices, sin presión, algo inusual para la época. Ese contraste con la estricta corte vienesa sería uno de los choques más traumáticos de su vida adulta.",
+      "La vida de Isabel dio un giro inesperado cuando se casó en 1854 con Francisco José I, convirtiéndose en emperatriz de Austria. Su llegada a Viena la situó en el centro de uno de los estados más grandes y diversos de Europa, pero también en un entorno dominado por la etiqueta, el protocolo y la vigilancia constante. Aquí comenzó su lucha interna entre las obligaciones imperiales y su anhelo de libertad.",
+      "En Viena, Sisi tuvo que adaptarse a una corte extremadamente rígida, donde casi todo estaba controlado por su suegra, la poderosa archiduquesa Sofía. La muerte de su hija Sofía y la continua intromisión de su suegra en la crianza de sus otros hijos hicieron que Sisi se sintiera cada vez más sola y apartada. Al mismo tiempo, el imperio afrontaba fuertes tensiones entre húngaros, checos, austriacos, italianos y muchos otros pueblos, lo que hacía aún más difícil su papel como figura pública.",
+      "El papel de Sisi fue decisivo durante la crisis que precedió al Compromiso Austrohúngaro de 1867. Su cercanía con Hungría y el esfuerzo personal de aprender el idioma le permitieron ganarse el respeto y el cariño del pueblo húngaro. Su apoyo al reconocimiento del reino contribuyó a estabilizar un imperio que estaba al borde de la fragmentación. Su coronación como reina de Hungría simbolizó esta nueva relación política y reforzó su imagen como una figura clave en el equilibrio del imperio.",
+      "En los años siguientes, la emperatriz se apartó cada vez más de la vida pública, dedicándose a viajar por Europa y evitando la presión vienesa. La tragedia de Mayerling en 1889 —cuando su hijo Rodolfo, heredero al trono, se suicidó junto a su amante— marcó un antes y un después. A nivel personal la hundió en un dolor profundo, y a nivel político debilitó a la Casa de Habsburgo, acelerando su declive en el escenario europeo.",
+      "El asesinato de Sisi en 1898 reflejó el clima de tensión política y social de fin de siglo. Viajando bajo un nombre falso para mantener su privacidad, la emperatriz se hospedaba en el Hotel Beau-Rivage de Ginebra. Ese mismo día, un anarquista italiano, Luigi Lucheni, merodeaba por la ciudad con la intención de matar a cualquier aristócrata para dar notoriedad a su causa. Al descubrir que Sisi viajaba sin escolta, decidió atacarla. Cuando la emperatriz se dirigía al embarcadero para subir al vapor Genève, Lucheni se abalanzó sobre ella y le clavó una lima afilada en el pecho. Sisi cayó, pero se levantó y caminó varios metros sin que nadie comprendiera la gravedad del ataque. Ya en el barco perdió el conocimiento: la lima había perforado su corazón. Fue trasladada de vuelta al hotel, donde murió pocos minutos después.",
+      ""
+    ],
+    "keyFacts": [
+      {
+        "title": "Cabello legendario",
+        "description": "Su melena llegaba hasta los tobillos y requería horas de peinado."
+      },
+      {
+        "title": "Amazona imparable",
+        "description": "Montaba a caballo a diario y a gran velocidad; era una jinete excepcional."
+      },
+      {
+        "title": "Cintura imposible",
+        "description": "Su cintura medía solo 50 cm gracias a corsés extremadamente ajustados."
+      },
+      {
+        "title": "Obsesión por el ejercicio",
+        "description": "Hacía gimnasia todos los días y tenía un gimnasio privado en palacio."
+      },
+      {
+        "title": "Políglota brillante",
+        "description": "Aprendió húngaro para ganarse al pueblo magiar y hablaba varios idiomas."
+      },
+      {
+        "title": "Viajera incansable",
+        "description": "Pasó años recorriendo Europa para escapar de la rígida corte vienesa."
+      },
+      {
+        "title": "Dietas extremas",
+        "description": "A veces solo consumía caldos o zumos para mantener su figura."
+      },
+      {
+        "title": "Poeta secreta",
+        "description": "Escribía poesía melancólica bajo el seudónimo “Titania”."
+      },
+      {
+        "title": "Fobia a las cámaras",
+        "description": "Rechazaba ser fotografiada en su madurez; por eso hay pocas imágenes tardías."
+      },
+      {
+        "title": "Un destino trágico",
+        "description": "Fue asesinada al azar: el anarquista buscaba a cualquier aristócrata, no a ella."
+      },
+      {
+        "title": ""
+      }
+    ],
+    "timeline": [
+      {
+        "date": "1837",
+        "event": "Nace Isabel de Baviera (Sisi) el 24 de diciembre en Múnich."
+      },
+      {
+        "date": "1853",
+        "event": "Conoce al emperador Francisco José, quien se enamora de ella y decide casarse."
+      },
+      {
+        "date": "1854",
+        "event": "Se casa a los 16 años y se convierte en emperatriz de Austria."
+      },
+      {
+        "date": "1855",
+        "event": "Nace su primera hija, Sofía Federica."
+      },
+      {
+        "date": "1857",
+        "event": "Durante un viaje a Hungría muere la pequeña Sofía, tragedia que marcará su vida."
+      },
+      {
+        "date": "1867",
+        "event": "Es coronada reina de Hungría, donde se gana el afecto del pueblo."
+      },
+      {
+        "date": "1889",
+        "event": "Su hijo Rodolfo se suicida en Mayerling, hundiendo a Sisi en la melancolía."
+      },
+      {
+        "date": "1890–1898",
+        "event": "Viaja constantemente por Europa: Grecia, Suiza, Irlanda, Inglaterra… buscando libertad y calma."
+      },
+      {
+        "date": "1898",
+        "event": "El 10 de septiembre es asesinada en Ginebra por el anarquista Luigi Lucheni."
+      },
+      {
+        "date": "Actualidad",
+        "event": "Sisi es recordada como un icono de belleza, tragedia y libertad en la historia europea."
+      },
+      {
+        "date": ""
+      }
+    ],
+    "consequences": [
+      "La vida de Sisi dejó una huella profunda en la historia europea. Su figura rompió con la imagen rígida de la corte imperial y mostró el costo humano que había detrás de los tronos. Su influencia en Hungría contribuyó al equilibrio político del imperio austrohúngaro, y su defensa de la libertad personal la convirtió en un símbolo adelantado a su tiempo. Su belleza, su tragedia y su rebeldía inspiraron obras, biografías y películas que cimentaron su mito. Hoy, Sisi representa no solo a una emperatriz, sino a una mujer que luchó por preservar su identidad en un mundo que intentó moldearla. Su historia sigue recordándonos que incluso en las coronas más brillantes puede esconderse una vida marcada por la presión, el dolor y el deseo de libertad."
+    ]
+  },
+  {
+    "id": "El-Cristo-del-abismo",
+    "title": "El Cristo del abismo",
+    "date": "1954-08-22",
+    "category": "Monumentos",
+    "imageUrl": "images/eventos/El-Cristo-del-abismo.jpg",
+    "summary": [
+      "Situado bajo el mar, frente a la costa de San Fruttuoso (Italia), el Cristo del Abismo es una estatua de bronce creada como homenaje a los buceadores y marineros que perdieron la vida en el mar. Representa a Cristo con los brazos levantados hacia la superficie, en un gesto de bendición y protección. Con el paso del tiempo se ha convertido en un monumento submarino de gran valor histórico y espiritual, visitado por buceadores de todo el mundo y símbolo del vínculo entre el ser humano y el entorno marino."
+    ],
+    "context": [
+      "El Cristo del Abismo es una estatua de bronce colocada bajo el mar, frente a la costa de San Fruttuoso, en Italia. Fue creada como un homenaje a los buceadores y marineros que han perdido la vida en el mar y como símbolo de protección para quienes siguen trabajando o practicando actividades submarinas.",
+      "La idea de instalar una escultura bajo el agua surgió dentro del mundo del buceo, en un momento en el que esta actividad comenzaba a desarrollarse con mayor seguridad y difusión. Se buscaba un monumento que no estuviera en tierra firme, sino en el mismo entorno donde el riesgo existe: el fondo del mar. Por ello, la estatua fue diseñada para permanecer sumergida de forma permanente.",
+      "El escultor Guido Galletti representó a Cristo con los brazos levantados hacia la superficie, un gesto que se interpreta como una bendición y una señal de protección. Esta postura también permite que la figura sea fácilmente reconocible bajo el agua y refuerza su función simbólica para los buceadores que la visitan.",
+      "La estatua fue fabricada en bronce, un material resistente y duradero, adecuado para el entorno marino. Además, parte del metal utilizado procedía de objetos relacionados con la tradición religiosa y marítima, lo que reforzó el sentido conmemorativo de la obra. Para evitar que se desplazara por las corrientes, se colocó sobre una base pesada diseñada específicamente para el fondo marino.",
+      "Con el paso del tiempo, el Cristo del Abismo se convirtió en un punto de referencia para el buceo recreativo y profesional. Su presencia atrajo visitantes de distintos países y ayudó a consolidar el lugar como un espacio de interés cultural y espiritual. El desgaste natural del mar hizo necesarias tareas de conservación, durante las cuales se constató la pérdida de una de sus manos, que fue recuperada años más tarde y reinstalada tras un proceso de restauración, siempre con el objetivo de mantener la estatua en su emplazamiento original.",
+      "Hoy, el Cristo del Abismo es reconocido como un monumento histórico submarino. Más allá de su significado religioso, representa el respeto por el mar, la memoria de quienes perdieron la vida en él y el vínculo entre el ser humano y el entorno submarino."
+    ],
+    "keyFacts": [
+      {
+        "title": "La estatua es hueca",
+        "description": "Una técnica habitual en grandes esculturas de bronce para reducir peso y evitar tensiones estructurales."
+      },
+      {
+        "title": "Pesa cerca de 300 kilos",
+        "description": "Sin contar la base de cemento que la fija al fondo marino, que supera ampliamente una tonelada."
+      },
+      {
+        "title": "Está orientada de forma intencionada",
+        "description": "Hacia mar abierto y hacia la superficie, no hacia la costa, siguiendo el diseño original del escultor."
+      },
+      {
+        "title": "Fue bendecida oficialmente por la Iglesia",
+        "description": "Antes de su inmersión, lo que la convierte en un monumento religioso reconocido desde su origen."
+      },
+      {
+        "title": "La corrosión marina alteró su superficie original",
+        "description": "Creando una pátina natural que obligó a intervenirla décadas después para evitar daños irreversibles."
+      },
+      {
+        "title": "La mano recuperada fue autentificada",
+        "description": "Como parte original de la escultura antes de ser reinstalada tras la restauración."
+      },
+      {
+        "title": "Es la primera escultura religiosa de gran tamaño colocada de forma permanente bajo el mar",
+        "description": "Lo que la convierte en un precedente histórico."
+      },
+      {
+        "title": "Su ubicación fue elegida por seguridad",
+        "description": "Al encontrarse a una profundidad asumible para buceadores formados, no en aguas extremas."
+      }
+    ],
+    "timeline": [
+      {
+        "date": "1954",
+        "event": "El escultor Guido Galletti finaliza la escultura del Cristo del Abismo como homenaje a los buceadores y marineros fallecidos."
+      },
+      {
+        "date": "1954",
+        "event": "La estatua es bendecida por el papa Pío XII antes de su inmersión en el mar."
+      },
+      {
+        "date": "1954-08-22",
+        "event": "El Cristo del Abismo es sumergido frente a la abadía de San Fruttuoso, a unos 17 metros de profundidad."
+      },
+      {
+        "date": "Décadas posteriores",
+        "event": "La escultura se convierte en un punto de referencia para el buceo recreativo y profesional, atrayendo visitantes de todo el mundo."
+      },
+      {
+        "date": "Años 80",
+        "event": "Debido a la corrosión y al contacto humano, la estatua pierde una de sus manos."
+      },
+      {
+        "date": "Años 90",
+        "event": "La mano desprendida es encontrada por un pescador y recuperada."
+      },
+      {
+        "date": "2003",
+        "event": "El Cristo del Abismo es retirado temporalmente del mar para su restauración debido al deterioro."
+      },
+      {
+        "date": "2005",
+        "event": "Tras ser restaurado y reforzado, el Cristo del Abismo es devuelto a su emplazamiento original en el fondo marino."
+      },
+      {
+        "date": "Actualidad",
+        "event": "Es reconocido como un monumento histórico submarino y un símbolo de memoria, protección y respeto por el mar."
+      },
+      {
+        "date": ""
+      }
+    ],
+    "consequences": [
+      "La instalación del Cristo del Abismo tuvo un impacto duradero en el mundo del buceo y en la relación entre el ser humano y el entorno marino. La escultura se convirtió en uno de los primeros símbolos internacionales del buceo moderno, reforzando la idea del mar no solo como espacio de exploración, sino también de respeto y memoria. Su presencia ayudó a consolidar San Fruttuoso como un lugar de referencia cultural y espiritual, atrayendo a buceadores de todo el mundo y fomentando un turismo vinculado al patrimonio submarino. Además, el Cristo del Abismo inspiró la creación de réplicas en otros países, ampliando su significado más allá de Italia y convirtiéndolo en un referente global de homenaje, protección y recuerdo para quienes arriesgan su vida en el mar."
+    ]
+  },
+  {
+    "id": "La-apache",
+    "title": "Lozen",
+    "date": "1905-01-13",
+    "category": "Personajes históricos",
+    "imageUrl": "images/eventos/Lozen.jpg",
+    "summary": [
+      "Lozen fue una guerrera, líder espiritual y estratega de la tribu chiricahua apache durante la segunda mitad del siglo XIX. Hermana del jefe Victorio, participó activamente en la resistencia apache contra los ejércitos de Estados Unidos y México. Reconocida tanto por su habilidad en combate como por su don espiritual, guió a su pueblo en huidas y enfrentamientos decisivos. Tras la muerte de Victorio, continuó luchando junto a Gerónimo hasta la rendición final de los apaches en 1886. Murió prisionera en 1889, lejos de su tierra natal."
+    ],
+    "context": [
+      "Lozen nació en el seno de la tribu chiricahua apache y creció en un entorno donde la defensa del grupo y la movilidad eran esenciales para la supervivencia. Desde joven mostró una fortaleza física y una determinación poco comunes, lo que le permitió integrarse plenamente en la vida guerrera de su pueblo. Dentro de su comunidad también fue reconocida por su dimensión espiritual, considerada una persona con capacidades especiales para guiar y proteger a los suyos.",
+      "Durante los años de mayor presión militar sobre los apaches, Lozen se convirtió en una figura clave dentro de la resistencia liderada por su hermano Victorio. Combatió junto a él en campañas prolongadas, participó en huidas constantes y ayudó a mantener cohesionados a los grupos chiricahuas perseguidos por fuerzas muy superiores. Su presencia aportaba seguridad y confianza en momentos críticos, tanto en el combate como en los desplazamientos del grupo.",
+      "Tras la muerte de Victorio en 1880, Lozen se negó a abandonar la lucha. Se unió a Gerónimo y pasó a formar parte del núcleo de los últimos apaches que continuaron resistiendo en las montañas del suroeste de Estados Unidos y el norte de México. Durante estos años finales, marcados por el agotamiento y la persecución constante, Lozen compartió las mismas condiciones extremas que el resto de combatientes, participando activamente en enfrentamientos y desplazamientos hasta la rendición final.",
+      "En 1886, tras la capitulación de Gerónimo, Lozen fue capturada junto a los últimos apaches libres. En lugar de ser enviada a una reserva, fue deportada como prisionera de guerra lejos de su territorio natal. Pasó sus últimos años en cautiverio, enferma y privada de la libertad por la que había luchado durante décadas.",
+      "Lozen murió en 1889, lejos de las montañas que había defendido durante toda su vida. Su recuerdo permanece en la memoria apache como el de una guerrera y guía espiritual que dedicó su vida entera a la protección y supervivencia de su pueblo.",
+      ""
+    ],
+    "keyFacts": [
+      {
+        "title": "Guerrera y chamana",
+        "description": "Lozen no fue solo guerrera: también era considerada chamana y profetisa, un rol espiritual reconocido dentro de la cultura apache."
+      },
+      {
+        "title": "Rituales de orientación",
+        "description": "Según testimonios recogidos por contemporáneos apaches y cronistas, realizaba rituales orientados al sol para localizar la posición del enemigo, considerado por su pueblo un don real."
+      },
+      {
+        "title": "Combate a caballo",
+        "description": "Combatía a caballo, armada con rifle y lanza, y era famosa por disparar con gran precisión mientras se desplazaba a toda velocidad."
+      },
+      {
+        "title": "Testimonio de Gerónimo",
+        "description": "El propio Gerónimo la describió como “un escudo para su pueblo”, destacando su valor y su papel protector."
+      },
+      {
+        "title": "Mujer en la guerra apache",
+        "description": "Aunque el liderazgo militar era mayoritariamente masculino, la sociedad apache permitía que las mujeres combatieran, y Lozen destacó de forma excepcional."
+      },
+      {
+        "title": "Misiones de escolta",
+        "description": "Participó en misiones de escolta, evacuando mujeres y niños a través de territorios enemigos mientras el grupo principal combatía."
+      },
+      {
+        "title": ""
+      }
+    ],
+    "timeline": [
+      {
+        "date": "1840",
+        "event": "Nace Lozen en el territorio chiricahua apache."
+      },
+      {
+        "date": "1855–1878",
+        "event": "Desarrolla y demuestra sus habilidades como guerrera, jinete y guía espiritual dentro de su pueblo."
+      },
+      {
+        "date": "1879–1880",
+        "event": "Participa activamente en la Guerra de Victorio contra Estados Unidos y México."
+      },
+      {
+        "date": "1880",
+        "event": "Muerte de Victorio en Tres Castillos (México)."
+      },
+      {
+        "date": "1880–1886",
+        "event": "Continúa la resistencia junto a Gerónimo en el suroeste de Estados Unidos y el norte de México."
+      },
+      {
+        "date": "1886",
+        "event": "Captura de Lozen tras la rendición final de Gerónimo."
+      },
+      {
+        "date": "1886–1889",
+        "event": "Deportación y cautiverio como prisionera de guerra en Alabama."
+      },
+      {
+        "date": "1889",
+        "event": "Muerte de Lozen por tuberculosis."
+      },
+      {
+        "date": ""
+      }
+    ],
+    "consequences": [
+      "La captura de Lozen y de los últimos apaches marcó el fin efectivo de la resistencia armada chiricahua, poniendo término a décadas de lucha contra Estados Unidos y México. Los apaches supervivientes fueron deportados como prisioneros de guerra, una medida excepcional que se prolongó durante años y los mantuvo lejos de sus tierras ancestrales. Con el tiempo, la figura de Lozen se consolidó como símbolo de resistencia indígena y como ejemplo del papel activo de la mujer en la guerra apache. Su historia sobrevivió principalmente gracias a la tradición oral de su pueblo y a testimonios de líderes como Gerónimo. Hoy, Lozen es recordada como guerrera, guía espiritual y protectora de su gente, una figura histórica real cuya memoria se apoya en hechos documentados."
+    ]
+  },
+  {
+    "id": "Los-últimos-días",
+    "title": "Federico García Lorca",
+    "date": "1905-04-19",
+    "category": "Personajes históricos",
+    "imageUrl": "images/eventos/Federico-Garcia-Lorca.jpg",
+    "summary": [
+      "Federico García Lorca fue detenido en Granada en agosto de 1936, pocos días después del inicio de la Guerra Civil española. Tras ser arrestado en la casa donde se refugiaba, fue trasladado a la zona de Víznar y Alfacar, donde fue fusilado y enterrado en una fosa común. Su muerte marcó uno de los episodios más trágicos de la represión franquista y convirtió su figura en un símbolo de la memoria histórica.",
+      ""
+    ],
+    "context": [
+      "Tras el golpe militar de julio de 1936, Granada cayó rápidamente en manos franquistas. Se desató una oleada de detenciones y ejecuciones contra maestros, sindicalistas, políticos y artistas vinculados a la República, en uno de los episodios represivos más intensos del inicio de la Guerra Civil.",
+      "Federico García Lorca era consciente del peligro que corría. Había sido atacado en la prensa conservadora y recibido amenazas personales, lo que lo convirtió en un objetivo claro para los sublevados, especialmente por su relevancia pública y su cercanía a círculos intelectuales republicanos.",
+      "Buscando protección, Lorca se refugió en la casa de su amigo Luis Rosales, joven poeta falangista. Creía que la influencia y posición de la familia Rosales podrían garantizar su seguridad en un contexto donde las detenciones arbitrarias eran habituales.",
+      "La madrugada del 16 de agosto de 1936, un grupo armado encabezado por Ramón Ruiz Alonso irrumpió en la vivienda. Ruiz Alonso había denunciado a Lorca ante el gobernador civil de Granada, José Valdés Guzmán, autoridad responsable directa del aparato represivo en la provincia. A pesar de los intentos de intercesión de los hermanos Rosales y de sus contactos políticos, no lograron impedir la detención.",
+      "Tras su arresto, Lorca fue trasladado al Gobierno Civil de Granada, donde permaneció retenido sin que conste ningún proceso judicial, acusación formal ni orden escrita de ejecución, una práctica habitual en la represión de aquellos días.",
+      "Posteriormente fue llevado a Víznar, localidad utilizada como centro de detención provisional, donde se concentraban personas consideradas enemigas del nuevo régimen antes de ser ejecutadas. Allí compartió cautiverio con maestros, sindicalistas y campesinos detenidos en redadas similares.",
+      "Durante años se debatió cómo se supo que Lorca se encontraba refugiado en la casa de los Rosales. Se habló de rumores, de un delator o incluso de una traición interna, pero las investigaciones históricas actuales descartan que la familia Rosales lo entregara y confirman que intentaron salvarlo hasta el último momento.",
+      "En los días siguientes, Lorca fue sacado del lugar de detención y trasladado a un paraje situado entre Víznar y Alfacar, donde fue fusilado junto a otros prisioneros y enterrado en una fosa común. La fecha exacta de su ejecución nunca quedó establecida con certeza, situándose entre el 17 y el 19 de agosto de 1936.",
+      "Su asesinato estuvo rodeado de acusaciones falsas y propaganda posterior: fue señalado como espía y perseguido también por su condición de homosexual, en un intento de justificar una ejecución que nunca fue legal ni documentada.",
+      "Durante décadas, el franquismo prohibió hablar de su asesinato y negó cualquier investigación oficial. Sus restos no han sido encontrados, a pesar de varias excavaciones realizadas en Alfacar y Víznar en 2009, 2014 y 2020, lo que convirtió su caso en uno de los grandes símbolos de los desaparecidos de la Guerra Civil.",
+      "Sin embargo, su legado sobrevivió a la violencia y al silencio. Obras como Bodas de sangre, Yerma, La casa de Bernarda Alba o el Romancero gitano lo consolidaron como una de las figuras esenciales de la literatura universal y como un referente permanente de la memoria histórica española.",
+      ""
+    ],
+    "keyFacts": [
+      {
+        "title": "Lugar exacto desconocido",
+        "description": "Aunque se sabe que fue fusilado entre Víznar y Alfacar, el punto exacto del lugar de ejecución nunca ha podido determinarse con total certeza."
+      },
+      {
+        "title": "Fecha imprecisa",
+        "description": "No existe un día oficial de su fusilamiento; los testimonios lo sitúan entre el 17 y el 19 de Agosto de 1936."
+      },
+      {
+        "title": "Sin juicio previo",
+        "description": "Federico García Lorca fue ejecutado sin juicio, sin sentencia escrita y sin constar oficialmente como condenado."
+      },
+      {
+        "title": "Acusaciones falsas",
+        "description": "Para justificar su muerte, fue acusado de espionaje y de actividades subversivas, cargos sin pruebas documentadas."
+      },
+      {
+        "title": "Motivaciones múltiples",
+        "description": "Los historiadores coinciden en que su asesinato respondió a una combinación de motivos políticos, sociales y personales."
+      },
+      {
+        "title": "Fosa común",
+        "description": "Fue enterrado en una fosa común junto a otras víctimas de la represión, cuyos nombres en muchos casos tampoco se conocen."
+      },
+      {
+        "title": "Búsqueda sin resultado",
+        "description": "Varias excavaciones oficiales realizadas entre 2009 y 2020 no lograron localizar sus restos."
+      },
+      {
+        "title": "Silencio oficial",
+        "description": "Durante décadas, el régimen franquista prohibió investigar o mencionar públicamente las circunstancias de su muerte."
+      },
+      {
+        "title": ""
+      }
+    ],
+    "timeline": [
+      {
+        "date": "Julio 1936",
+        "event": "Estalla la Guerra Civil española tras el golpe militar contra la República."
+      },
+      {
+        "date": "Julio 1936",
+        "event": "Granada cae rápidamente en manos de los sublevados y comienza una fuerte represión política y cultural."
+      },
+      {
+        "date": "Finales de Julio 1936",
+        "event": "Federico García Lorca recibe amenazas y es atacado en la prensa conservadora, consciente del peligro que corre."
+      },
+      {
+        "date": "Principios de Agosto 1936",
+        "event": "Lorca se refugia en la casa de la familia Rosales en Granada."
+      },
+      {
+        "date": "1936-08-16",
+        "event": "Es detenido de madrugada por un grupo armado encabezado por Ramón Ruiz Alonso."
+      },
+      {
+        "date": "16/08/1936–17/08/1936",
+        "event": "Es trasladado al Gobierno Civil y posteriormente a Víznar, donde permanece detenido."
+      },
+      {
+        "date": "17/08/1936–19/08/1936",
+        "event": "Federico García Lorca es fusilado en un paraje entre Víznar y Alfacar y enterrado en una fosa común."
+      },
+      {
+        "date": "1939–1975",
+        "event": "Durante la dictadura franquista, su asesinato es silenciado y no se permite investigar el caso."
+      },
+      {
+        "date": "2009–2020",
+        "event": "Se realizan varias excavaciones en la zona de Alfacar y Víznar sin localizar sus restos."
+      },
+      {
+        "date": "Actualidad",
+        "event": "Lorca es reconocido como una figura central de la literatura universal y un símbolo de la memoria histórica."
+      },
+      {
+        "date": ""
+      }
+    ],
+    "consequences": [
+      "El asesinato de Federico García Lorca se convirtió en uno de los símbolos más conocidos de la represión franquista durante los primeros meses de la Guerra Civil española. Su muerte evidenció que la violencia no se limitaba a combatientes armados, sino que también se dirigía contra intelectuales, artistas y voces culturales consideradas incómodas.",
+      "El silencio impuesto durante décadas por la dictadura impidió que se investigara oficialmente su asesinato y que se recuperaran sus restos, convirtiendo su caso en un ejemplo de memoria histórica negada. Esta ausencia de verdad y reparación marcó profundamente a generaciones posteriores.",
+      "Con el paso del tiempo, la figura de Lorca trascendió su muerte violenta. Su obra se consolidó como patrimonio universal de la literatura y su nombre quedó ligado a la defensa de la libertad creativa y de pensamiento. Hoy, su asesinato sigue siendo un referente en el debate sobre la memoria histórica, la justicia y el reconocimiento de las víctimas de la represión.",
+      ""
+    ]
+  },
+  {
+    "id": "Del-desprecio-al-orgullo",
+    "title": "La Ópera de Viena",
+    "date": "1905-02-11",
+    "category": "Monumentos",
+    "imageUrl": "images/eventos/La-opera-de-Viena.jpg",
+    "summary": [
+      "La Ópera Estatal de Viena es uno de los grandes símbolos culturales de Austria. Concebida en el siglo XIX como parte de la modernización imperial de Viena, su construcción estuvo marcada por duras críticas públicas que acabaron trágicamente con la vida de sus dos arquitectos. Con el tiempo, el edificio pasó del desprecio social al orgullo nacional, sobrevivió a la destrucción parcial durante la Segunda Guerra Mundial y fue reconstruido como emblema de la identidad musical austriaca.",
+      ""
+    ],
+    "context": [
+      "En 1861, el emperador Francisco José I impulsó un ambicioso proyecto urbanístico para transformar Viena en una capital imperial moderna y representativa del poder cultural del Imperio austrohúngaro. Dentro de este plan se incluyó la construcción de un gran teatro de ópera en la nueva Ringstrasse, concebido como un símbolo de prestigio artístico y refinamiento.",
+      "El proyecto fue encargado a los arquitectos August Sicard von Sicardsburg y Eduard van der Nüll, quienes diseñaron un edificio de estilo neorrenacentista acorde con los gustos oficiales de la época. Sin embargo, durante la construcción se elevó el nivel de la calle frente al edificio, lo que provocó que la ópera pareciera más baja de lo previsto y alterara su impacto visual.",
+      "Antes incluso de que las obras finalizaran, la sociedad vienesa y la prensa comenzaron a criticar duramente el edificio, considerándolo poco monumental para una capital imperial. Las burlas y ataques públicos se intensificaron hasta el punto de afectar profundamente a sus creadores.",
+      "En abril de 1868, Eduard van der Nüll, afectado por la presión, la humillación pública y una profunda depresión, se suicidó sin llegar a ver la ópera terminada. Apenas dos meses después, en junio de 1868, August Sicard von Sicardsburg falleció de un ataque al corazón, una muerte que muchos contemporáneos atribuyeron al estrés y al impacto emocional de las críticas y de la pérdida de su compañero.",
+      "La Ópera Estatal de Viena fue finalmente inaugurada el 25 de mayo de 1869 con Don Giovanni de Mozart, sin que ninguno de sus arquitectos pudiera presenciar la culminación de su obra. Con el paso del tiempo, el edificio pasó de ser despreciado por la opinión pública a convertirse en una de las instituciones musicales más importantes del mundo.",
+      "Durante la Segunda Guerra Mundial, la ópera sufrió graves daños a causa de los bombardeos aliados en marzo de 1945, quedando destruidos el escenario y la sala principal. Tras la guerra, el edificio fue reconstruido respetando su fachada histórica y modernizando su interior, hasta su reapertura en 1955, momento en el que se consolidó definitivamente como símbolo cultural y orgullo nacional de Austria.",
+      ""
+    ],
+    "keyFacts": [
+      {
+        "title": "Críticas antes de inaugurarse",
+        "description": "El edificio fue duramente criticado incluso antes de terminarse, algo poco habitual en proyectos imperiales de la época."
+      },
+      {
+        "title": "Apodos despectivos",
+        "description": "La prensa vienesa llegó a llamarla “el cuartel de agua”, comparándola con un edificio militar."
+      },
+      {
+        "title": "Arquitectos ausentes",
+        "description": "Ninguno de los dos arquitectos vivió para ver la inauguración de la ópera."
+      },
+      {
+        "title": "Bombardeo parcial",
+        "description": "En 1945 solo sobrevivieron la fachada, el vestíbulo y la gran escalinata original."
+      },
+      {
+        "title": "Nueva acústica",
+        "description": "La reconstrucción permitió mejorar notablemente la acústica y la tecnología escénica."
+      },
+      {
+        "title": "Símbolo musical",
+        "description": "Es una de las sedes operísticas más activas del mundo, con cientos de funciones cada temporada."
+      },
+      {
+        "title": "Primera ópera representada",
+        "description": "La obra elegida para la inauguración fue Don Giovanni de Mozart, una elección simbólica por su vínculo con Viena."
+      },
+      {
+        "title": "Reapertura simbólica",
+        "description": "La reapertura en 1955 coincidió con la recuperación de la soberanía austríaca tras la ocupación aliada."
+      },
+      {
+        "title": "Ópera y política",
+        "description": "Durante décadas, la programación de la ópera fue utilizada como escaparate cultural del Estado austríaco."
+      },
+      {
+        "title": "Reconstrucción debatida",
+        "description": "Tras la guerra hubo un intenso debate sobre si reconstruir el interior original o modernizarlo por completo."
+      },
+      {
+        "title": "Capacidad reducida",
+        "description": "El interior reconstruido tiene menos aforo que el original, priorizando comodidad y acústica."
+      },
+      {
+        "title": "Orquesta residente",
+        "description": "La orquesta de la Ópera Estatal de Viena es la misma que forma la Filarmónica de Viena."
+      },
+      {
+        "title": "Tradición del Concierto de Año Nuevo",
+        "description": "Cada 1 de Enero, la Filarmónica de Viena interpreta valses, polcas y marchas de la familia Strauss, culminando con la Marcha Radetzky de Johann Strauss padre."
+      },
+      {
+        "title": "Edificio protegido",
+        "description": "La fachada y los espacios históricos están protegidos como patrimonio cultural de Austria."
+      },
+      {
+        "title": ""
+      }
+    ],
+    "timeline": [
+      {
+        "date": "1861",
+        "event": "El emperador Francisco José I aprueba el proyecto de la Ópera Estatal de Viena."
+      },
+      {
+        "date": "1861",
+        "event": "Comienzan las obras bajo la dirección de Sicardsburg y van der Nüll."
+      },
+      {
+        "date": "Abril 1868",
+        "event": "Eduard van der Nüll se suicida antes de la finalización del edificio."
+      },
+      {
+        "date": "Junio 1868",
+        "event": "August Sicard von Sicardsburg muere de un ataque al corazón."
+      },
+      {
+        "date": "1869-05-25",
+        "event": "Inauguración de la ópera con Don Giovanni de Mozart."
+      },
+      {
+        "date": "1945-03-12",
+        "event": "El edificio resulta gravemente dañado por un bombardeo aliado."
+      },
+      {
+        "date": "1946",
+        "event": "Comienzan las obras de reconstrucción."
+      },
+      {
+        "date": "1955-11-05",
+        "event": "Reapertura oficial con Fidelio de Beethoven."
+      },
+      {
+        "date": "Actualidad",
+        "event": "La Ópera Estatal de Viena es uno de los grandes referentes mundiales de la música clásica."
+      },
+      {
+        "date": ""
+      }
+    ],
+    "consequences": [
+      "La historia de la Ópera Estatal de Viena refleja el contraste entre el juicio inmediato de la opinión pública y el valor histórico a largo plazo de una obra cultural. Las críticas iniciales provocaron una tragedia personal para sus arquitectos y dejaron una huella amarga en el origen del edificio.",
+      "La destrucción parcial durante la Segunda Guerra Mundial convirtió a la ópera en símbolo de la devastación cultural del conflicto, pero también en ejemplo de reconstrucción y continuidad histórica.",
+      "Tras su reapertura, el edificio pasó a representar el orgullo nacional austriaco y la centralidad de la música en la identidad del país. Hoy, la Ópera Estatal de Viena es reconocida no solo como un teatro, sino como un emblema de la resiliencia cultural europea.",
+      ""
+    ]
+  },
+  {
+    "id": "El-hombre-que-quiso-volar",
+    "title": "Abbas Ibn Firnas",
+    "date": "875 d.C.",
+    "category": "Personajes históricos",
+    "imageUrl": "images/eventos/Abbas-Ibn-Firnas.jpg",
+    "summary": [
+      "Abbas Ibn Firnas fue un sabio andalusí del siglo IX que destacó como inventor, científico y pensador en la Córdoba del Emirato. Conocido por su intento de volar, desarrolló numerosos avances en astronomía, ingeniería y química. Su experimento aéreo, realizado décadas antes de su muerte, lo convirtió en uno de los primeros seres humanos en intentar el vuelo de forma experimental, adelantándose en siglos a la aviación moderna.",
+      ""
+    ],
+    "context": [
+      "Abbas Ibn Firnas nació en el año 810 en Ronda, en una época en la que Al-Ándalus vivía un intenso desarrollo cultural y científico bajo el Emirato de Córdoba. Este periodo se caracterizó por la convivencia de saberes heredados del mundo grecolatino, persa e indio, junto con nuevas aportaciones propias del pensamiento islámico.",
+      "Ibn Firnas se formó en este ambiente intelectual y llegó a integrarse en la corte de Abderramán II y, posteriormente, en la de Muhammad I. Las cortes omeyas actuaban como centros de conocimiento donde se fomentaban las ciencias, las artes y la innovación técnica.",
+      "Antes de su célebre intento de volar, Ibn Firnas ya era reconocido por sus contribuciones en múltiples disciplinas. Diseñó instrumentos astronómicos, experimentó con materiales como el vidrio, desarrolló sistemas de medición del tiempo y estudió fenómenos físicos relacionados con la luz, el sonido y el movimiento.",
+      "En el año 875, ya anciano, decidió llevar a la práctica una idea largamente meditada: el vuelo humano. Tras observar durante años el comportamiento de las aves, construyó un artefacto con estructura de madera recubierta de seda y plumas, que se sujetaba al cuerpo mediante un arnés. Desde una colina cercana a Córdoba se lanzó al vacío ante numerosos testigos.",
+      "Las fuentes andalusíes indican que logró planear durante unos segundos antes de caer al suelo. Aunque sobrevivió, sufrió lesiones en la espalda. Posteriormente reconoció que el diseño carecía de un elemento fundamental para el aterrizaje, una reflexión que muestra un razonamiento experimental poco común para su época.",
+      "Ibn Firnas murió en el año 888, dejando tras de sí una figura que combina ciencia, audacia y pensamiento crítico, y que siglos después sería reconocida como precursora del estudio experimental del vuelo.",
+      ""
+    ],
+    "keyFacts": [
+      {
+        "title": "Polímata andalusí",
+        "description": "Fue inventor, astrónomo, poeta, ingeniero, músico y químico, una combinación poco habitual incluso para su época."
+      },
+      {
+        "title": "Científico de corte",
+        "description": "Formó parte de la corte de Abderramán II y Muhammad I, donde desarrolló muchos de sus experimentos."
+      },
+      {
+        "title": "Planetario artificial",
+        "description": "Diseñó una sala que reproducía el movimiento de los astros, considerada uno de los primeros planetarios conocidos."
+      },
+      {
+        "title": "Vidrio transparente",
+        "description": "Logró producir vidrio claro a partir de arena, un avance técnico importante en Al-Ándalus."
+      },
+      {
+        "title": "Reloj hidráulico",
+        "description": "Creó un reloj de agua llamado al-Maqata para medir el paso del tiempo."
+      },
+      {
+        "title": "Vuelo documentado",
+        "description": "Su intento de volar fue descrito por cronistas andalusíes, lo que lo diferencia de figuras legendarias."
+      },
+      {
+        "title": "Error reconocido",
+        "description": "Él mismo identificó la falta de un sistema de aterrizaje como causa de su caída."
+      },
+      {
+        "title": "Mil años antes",
+        "description": "Su experimento ocurrió más de un milenio antes de los vuelos de los hermanos Wright."
+      },
+      {
+        "title": ""
+      }
+    ],
+    "timeline": [
+      {
+        "date": "810",
+        "event": "Nace Abbas Ibn Firnas en Ronda, en el Emirato de Córdoba."
+      },
+      {
+        "date": "825–875",
+        "event": "Se forma y desarrolla su actividad científica en la Córdoba andalusí."
+      },
+      {
+        "date": "Mediados del siglo IX",
+        "event": "Ingresa en la corte de Abderramán II y posteriormente en la de Muhammad I."
+      },
+      {
+        "date": "875",
+        "event": "Realiza su intento de vuelo desde una colina cercana a Córdoba."
+      },
+      {
+        "date": "875",
+        "event": "Sobrevive al experimento, pero sufre lesiones en la espalda."
+      },
+      {
+        "date": "888",
+        "event": "Muere Abbas Ibn Firnas en Córdoba."
+      },
+      {
+        "date": "Actualidad",
+        "event": "Es reconocido como precursor del vuelo humano y del método científico experimental."
+      },
+      {
+        "date": ""
+      }
+    ],
+    "consequences": [
+      "El intento de vuelo de Abbas Ibn Firnas no tuvo continuidad inmediata, pero dejó constancia de una aproximación racional y experimental al problema del vuelo humano. Su análisis posterior del fallo del aterrizaje demuestra una mentalidad científica adelantada a su tiempo.",
+      "Su figura se convirtió en símbolo del alto nivel intelectual alcanzado en Al-Ándalus durante la Edad Media y de la capacidad innovadora del mundo islámico occidental.",
+      "Con el paso de los siglos, Ibn Firnas fue recuperado como referente histórico de la aviación temprana y como ejemplo de pensamiento experimental previo al Renacimiento europeo. Hoy su nombre está asociado a la audacia científica y al deseo humano de superar sus propios límites.",
+      ""
+    ]
+  }
+]

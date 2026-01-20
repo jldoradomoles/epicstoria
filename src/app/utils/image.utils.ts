@@ -3,12 +3,13 @@
  */
 
 /**
- * Intenta cargar una imagen con diferentes extensiones (jpg, jpeg, png, gif, webp)
+ * Intenta cargar una imagen con diferentes extensiones (png, jpg, jpeg, gif, webp)
  * @param basePath - Ruta base sin extensión (ej: "/images/evento-id")
  * @returns Promise con la URL de la imagen que se cargó exitosamente
  */
 export async function tryLoadImageFormats(basePath: string): Promise<string> {
-  const extensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+  // Reordenado para probar PNG primero, que es más común en este proyecto
+  const extensions = ['png', 'jpg', 'jpeg', 'gif', 'webp'];
 
   for (const ext of extensions) {
     const imageUrl = `${basePath}.${ext}`;
@@ -32,6 +33,10 @@ export async function tryLoadImageFormats(basePath: string): Promise<string> {
 function checkImageExists(imageUrl: string): Promise<void> {
   return new Promise((resolve, reject) => {
     const img = new Image();
+
+    // Suprimir errores en consola del navegador
+    img.setAttribute('loading', 'eager');
+
     img.onload = () => resolve();
     img.onerror = () => reject();
     img.src = imageUrl;
@@ -79,13 +84,13 @@ export async function handleImageError(
     const workingUrl = await tryLoadImageFormats(pathWithoutExt);
     if (workingUrl !== originalUrl) {
       imgElement.src = workingUrl;
-      console.log(`Image found with alternative format: ${workingUrl}`);
       return;
     }
   } catch {
-    // Si todo falla, continuar con imagen por defecto
+    // Si todo falla, usar imagen por defecto sin mostrar error
+    // El placeholder ya está manejando la visualización
   }
 
-  console.warn(`Image not found: ${originalUrl}, using default`);
+  // Usar imagen por defecto silenciosamente
   imgElement.src = defaultImage;
 }

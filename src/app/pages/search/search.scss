@@ -6,3 +6,15 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+// Hacer que el texto de los inputs sea más oscuro y visible
+input[type='text'],
+select {
+  color: #1f2937 !important; // Color gris muy oscuro
+  font-weight: 500;
+
+  &::placeholder {
+    color: #9ca3af; // Color gris más claro para placeholders
+    font-weight: 400;
+  }
+}

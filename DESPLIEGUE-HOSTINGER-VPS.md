@@ -125,9 +125,9 @@ sudo chown -R $USER:$USER /var/www/epicstoria
 cd /var/www/epicstoria
 
 # Clonar repositorio
-git clone https://github.com/tu-usuario/epicstoria.git .
+git clone https://github.com/jldoradomoles/epicstoria.git .
 # O si usas autenticación:
-git clone https://<token>@github.com/tu-usuario/epicstoria.git .
+git clone https://<token>@github.com/jldoradomoles/epicstoria.git .
 ```
 
 ### 3.2. Configurar Variables de Entorno del Backend
@@ -160,7 +160,26 @@ JWT_SECRET=tu_jwt_secret_muy_seguro_generado_aleatoriamente
 FRONTEND_URL=https://tudominio.com
 ```
 
-### 3.3. Instalar Dependencias y Compilar Backend
+### 3.3. Configurar Environment del Frontend para Hostinger
+
+```bash
+cd /var/www/epicstoria
+
+# Editar environment.hostinger.ts
+nano src/environments/environment.hostinger.ts
+```
+
+Contenido:
+
+```typescript
+export const environment = {
+  production: true,
+  apiUrl: 'https://tudominio.com/api', // Tu dominio real
+  useStaticData: false, // En Hostinger usamos backend completo
+};
+```
+
+### 3.4. Instalar Dependencias y Compilar Backend
 
 ```bash
 cd /var/www/epicstoria/backend
@@ -172,7 +191,7 @@ npm install
 npm run build
 ```
 
-### 3.4. Inicializar Base de Datos
+### 3.5. Inicializar Base de Datos
 
 ```bash
 # Ejecutar migraciones
@@ -189,7 +208,7 @@ npm run db:seed
 
 **⚠️ IMPORTANTE:** Cambia estas contraseñas después del primer login.
 
-### 3.5. Iniciar Backend con PM2
+### 3.6. Iniciar Backend con PM2
 
 ```bash
 # Iniciar aplicación
@@ -208,27 +227,31 @@ pm2 status
 
 ## 🎨 Paso 4: Desplegar el Frontend
 
-### 4.1. Configurar Variables de Entorno del Frontend
+### 4.1. Compilar Frontend para Hostinger
 
 ```bash
 cd /var/www/epicstoria
 
-# Editar environment.prod.ts
-nano src/environments/environment.prod.ts
+# Instalar dependencias
+npm install
+
+# Compilar con configuración de Hostinger
+npm run build:hostinger
 ```
 
-Contenido:
+**Nota:** El comando `build:hostinger` usa `environment.hostinger.ts` que tiene:
 
-```typescript
-export const environment = {
-  production: true,
-  apiUrl: 'https://tudominio.com/api',
-  // O si usas subdominio:
-  // apiUrl: 'https://api.tudominio.com/api',
-};
+- `useStaticData: false` (usa backend completo)
+- `apiUrl` apuntando a tu dominio
+
+### 4.2. Verificar Build
+
+```bash
+# El frontend compilado estará en:
+ls -la dist/epicstoria/browser/
+
+# Debería contener archivos HTML, JS, CSS e imágenes
 ```
-
-### 4.2. Instalar Dependencias y Compilar Frontend
 
 ```bash
 cd /var/www/epicstoria

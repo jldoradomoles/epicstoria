@@ -1,0 +1,41 @@
+<!-- Sección de Redes Sociales -->
+<section class="social-media-section">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+    <div class="container-custom rounded-xl p-8 text-center shadow-2xl">
+      <h2 class="text-4xl font-bold mb-4 text-color">Síguenos en Redes Sociales</h2>
+      <p class="text-lg text-color mb-8">
+        Únete a nuestra comunidad y mantente al día con los últimos eventos históricos
+      </p>
+
+      <!-- Grid de Redes Sociales -->
+      <div class="flex flex-wrap justify-center gap-6">
+        @for (social of socialLinks; track social.name) {
+          <a
+            [href]="social.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            [title]="social.name"
+            class="social-icon-link group"
+          >
+            <div
+              class="social-icon {{
+                social.color
+              }} rounded-full w-16 h-16 flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 shadow-lg"
+            >
+              <i [class]="social.icon + ' text-white text-2xl'"></i>
+            </div>
+            <span class="text-sm text-color mt-2 block font-medium">{{ social.name }}</span>
+          </a>
+        }
+      </div>
+
+      <!-- Mensaje adicional -->
+      <div class="mt-8 pt-6">
+        <p class="text-color">
+          <i class="fas fa-heart text-red-500 mr-2"></i>
+          Comparte EpicStoria con tus amigos y ayúdanos a crecer
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

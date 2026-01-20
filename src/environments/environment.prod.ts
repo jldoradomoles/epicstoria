@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://your-api-domain.com/api', // Cambiar en producción
+  apiUrl: '', // Vacío para GitHub Pages - usará archivos estáticos
+  useStaticData: true, // Usar datos del JSON en lugar del backend
 };

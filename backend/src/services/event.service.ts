@@ -1,3 +1,5 @@
+import * as fs from 'fs';
+import * as path from 'path';
 import * as XLSX from 'xlsx';
 import { query } from '../config/database';
 import { AppError } from '../middleware/error.middleware';
@@ -23,13 +25,38 @@ interface UploadResult {
 }
 
 export class EventService {
+  private static readonly DEFAULT_IMAGE =
+    'https://placehold.co/600x400/1F2937/FFFFFF?text=Evento+Hist%C3%B3rico';
+
+  /**
+   * Verifica si una imagen existe en el sistema de archivos
+   * Si no existe, retorna la imagen por defecto
+   */
+  private static validateImageUrl(imageUrl: string): string {
+    if (!imageUrl || imageUrl.startsWith('http://') || imageUrl.startsWith('https://')) {
+      return imageUrl || this.DEFAULT_IMAGE;
+    }
+
+    // Construir la ruta completa del archivo
+    const imagePath = imageUrl.replace(/^\//, '');
+    const fullPath = path.join(__dirname, '../../../public', imagePath);
+
+    // Verificar si el archivo existe
+    if (fs.existsSync(fullPath)) {
+      return imageUrl;
+    }
+
+    // Si no existe, retornar la imagen por defecto
+    return this.DEFAULT_IMAGE;
+  }
+
   private static toEventResponse(event: Event): EventResponse {
     return {
       id: event.id,
       title: event.title,
       date: event.date,
       category: event.category,
-      imageUrl: event.image_url,
+      imageUrl: this.validateImageUrl(event.image_url),
       summary: event.summary,
       context: event.context,
       keyFacts: event.key_facts,

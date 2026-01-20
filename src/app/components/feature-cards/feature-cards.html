@@ -1,51 +1,86 @@
 <!-- Sección de Características -->
 <section class="feature-cards-section">
-  <div class="container mx-auto px-4 py-16">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
     <h2 class="text-4xl font-bold text-center mb-12 text-color">Explora EpicStoria</h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       <!-- Card 1: Eventos -->
-      <a routerLink="/eventos" class="feature-card group">
-        <div class="card-icon">
-          <i class="fas fa-calendar-alt"></i>
-        </div>
-        <h3 class="text-2xl font-bold mb-4">Eventos Históricos</h3>
-        <p class="text-gray-300 mb-6">
-          Descubre los acontecimientos más importantes que marcaron la historia de la humanidad.
-        </p>
-        <div class="card-footer">
-          <span class="text-blue-400 group-hover:text-blue-300">Explorar eventos</span>
-          <i class="fas fa-arrow-right ml-2"></i>
+      <a
+        routerLink="/eventos"
+        class="container-custom rounded-xl overflow-hidden shadow-2xl transition duration-300 hover:shadow-blue-500/20 hover:scale-[1.02] cursor-pointer flex flex-col"
+      >
+        <div class="p-8 flex flex-col h-full text-center">
+          <div class="card-icon mx-auto mb-6">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-color">Eventos Históricos</h3>
+          <p class="text-color mb-6 flex-grow">
+            Descubre los acontecimientos más importantes que marcaron la historia de la humanidad.
+          </p>
+          <div class="card-footer mt-auto pt-4">
+            <span class="text-blue-400 font-semibold">Explorar eventos</span>
+            <i class="fas fa-arrow-right ml-2 text-blue-400"></i>
+          </div>
         </div>
       </a>
 
       <!-- Card 2: Quiz -->
-      <a routerLink="/juegos" class="feature-card group">
-        <div class="card-icon">
-          <i class="fas fa-gamepad"></i>
-        </div>
-        <h3 class="text-2xl font-bold mb-4">Juegos y Quizzes</h3>
-        <p class="text-gray-300 mb-6">
-          Pon a prueba tus conocimientos históricos con nuestros divertidos quizzes interactivos.
-        </p>
-        <div class="card-footer">
-          <span class="text-blue-400 group-hover:text-blue-300">Jugar ahora</span>
-          <i class="fas fa-arrow-right ml-2"></i>
+      <a
+        routerLink="/juegos"
+        class="container-custom rounded-xl overflow-hidden shadow-2xl transition duration-300 hover:shadow-blue-500/20 hover:scale-[1.02] cursor-pointer flex flex-col"
+      >
+        <div class="p-8 flex flex-col h-full text-center">
+          <div class="card-icon mx-auto mb-6">
+            <i class="fas fa-gamepad"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-color">Juegos y Quizzes</h3>
+          <p class="text-color mb-6 flex-grow">
+            Pon a prueba tus conocimientos históricos con nuestros divertidos quizzes interactivos.
+          </p>
+          <div class="card-footer mt-auto pt-4">
+            <span class="text-blue-400 font-semibold">Jugar ahora</span>
+            <i class="fas fa-arrow-right ml-2 text-blue-400"></i>
+          </div>
         </div>
       </a>
 
       <!-- Card 3: Galería -->
-      <a routerLink="/galeria" class="feature-card group">
-        <div class="card-icon">
-          <i class="fas fa-images"></i>
+      <a
+        routerLink="/galeria"
+        class="container-custom rounded-xl overflow-hidden shadow-2xl transition duration-300 hover:shadow-blue-500/20 hover:scale-[1.02] cursor-pointer flex flex-col"
+      >
+        <div class="p-8 flex flex-col h-full text-center">
+          <div class="card-icon mx-auto mb-6">
+            <i class="fas fa-images"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-color">Galería Visual</h3>
+          <p class="text-color mb-6 flex-grow">
+            Explora nuestra colección de imágenes históricas y representaciones artísticas.
+          </p>
+          <div class="card-footer mt-auto pt-4">
+            <span class="text-blue-400 font-semibold">Ver galería</span>
+            <i class="fas fa-arrow-right ml-2 text-blue-400"></i>
+          </div>
         </div>
-        <h3 class="text-2xl font-bold mb-4">Galería Visual</h3>
-        <p class="text-gray-300 mb-6">
-          Explora nuestra colección de imágenes históricas y representaciones artísticas.
-        </p>
-        <div class="card-footer">
-          <span class="text-blue-400 group-hover:text-blue-300">Ver galería</span>
-          <i class="fas fa-arrow-right ml-2"></i>
+      </a>
+
+      <!-- Card 4: Buscador -->
+      <a
+        routerLink="/buscar"
+        class="container-custom rounded-xl overflow-hidden shadow-2xl transition duration-300 hover:shadow-blue-500/20 hover:scale-[1.02] cursor-pointer flex flex-col"
+      >
+        <div class="p-8 flex flex-col h-full text-center">
+          <div class="card-icon mx-auto mb-6">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-color">Buscador de Eventos</h3>
+          <p class="text-color mb-6 flex-grow">
+            Encuentra eventos históricos específicos por nombre, fecha, categoría o contenido.
+          </p>
+          <div class="card-footer mt-auto pt-4">
+            <span class="text-blue-400 font-semibold">Buscar eventos</span>
+            <i class="fas fa-arrow-right ml-2 text-blue-400"></i>
+          </div>
         </div>
       </a>
     </div>

@@ -9,7 +9,15 @@ El proyecto consta de dos partes:
 - **Frontend**: Angular 20+ con Tailwind CSS
 - **Backend**: Node.js/Express con PostgreSQL
 
-## 🚀 Inicio Rápido
+## � Documentación de Despliegue
+
+EpicStoria soporta múltiples ambientes de despliegue:
+
+- **[Guía de Ambientes](./DEPLOYMENT-ENVIRONMENTS.md)** - Comparación completa de ambientes (Desarrollo, GitHub Pages, Hostinger)
+- **[Sistema de Datos Estáticos](./STATIC-DATA-SYSTEM.md)** - Cómo funciona el sistema para GitHub Pages
+- **[Despliegue en Hostinger VPS](./DESPLIEGUE-HOSTINGER-VPS.md)** - Guía paso a paso para producción completa
+
+## 🚀 Inicio Rápido (Desarrollo Local)
 
 ### Requisitos
 

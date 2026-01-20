@@ -1,0 +1,36 @@
+.social-media-section {
+  .social-icon-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      .social-icon {
+        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+      }
+    }
+  }
+
+  .social-icon {
+    i {
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .social-icon-link:hover .social-icon i {
+    transform: rotate(360deg);
+  }
+
+  @media (max-width: 768px) {
+    .social-icon {
+      width: 56px;
+      height: 56px;
+
+      i {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

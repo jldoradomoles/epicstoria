@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Event } from '../models/event.model';
 import { ApiResponse } from '../models/user.model';
@@ -11,7 +11,9 @@ import { AuthService } from './auth.service';
 })
 export class EventApiService {
   private readonly apiUrl = environment.apiUrl;
+  private readonly useStaticData = environment.useStaticData;
   private authService = inject(AuthService);
+  private cachedEvents: Event[] | null = null;
 
   constructor(private http: HttpClient) {}
 
@@ -34,24 +36,76 @@ export class EventApiService {
   }
 
   getAllEvents(): Observable<Event[]> {
+    // Si estamos usando datos estáticos (GitHub Pages), cargar desde JSON
+    if (this.useStaticData) {
+      if (this.cachedEvents) {
+        return of(this.cachedEvents);
+      }
+      return this.http.get<Event[]>('data/events.json').pipe(
+        map((events) => {
+          this.cachedEvents = events;
+          return events;
+        }),
+      );
+    }
+
+    // En desarrollo, usar el backend
     return this.http
       .get<ApiResponse<Event[]>>(`${this.apiUrl}/events`)
       .pipe(map((response) => response.data));
   }
 
   getEventById(id: string): Observable<Event> {
+    // Si estamos usando datos estáticos, buscar en el JSON
+    if (this.useStaticData) {
+      return this.getAllEvents().pipe(
+        map((events) => {
+          const event = events.find((e) => e.id === id);
+          if (!event) {
+            throw new Error(`Event with id ${id} not found`);
+          }
+          return event;
+        }),
+      );
+    }
+
+    // En desarrollo, usar el backend
     return this.http
       .get<ApiResponse<Event>>(`${this.apiUrl}/events/${id}`)
       .pipe(map((response) => response.data));
   }
 
   getEventsByCategory(category: string): Observable<Event[]> {
+    // Si estamos usando datos estáticos, filtrar del JSON
+    if (this.useStaticData) {
+      return this.getAllEvents().pipe(
+        map((events) => events.filter((e) => e.category.toLowerCase() === category.toLowerCase())),
+      );
+    }
+
+    // En desarrollo, usar el backend
     return this.http
       .get<ApiResponse<Event[]>>(`${this.apiUrl}/events/category/${category}`)
       .pipe(map((response) => response.data));
   }
 
   searchEvents(query: string): Observable<Event[]> {
+    // Si estamos usando datos estáticos, buscar en el JSON
+    if (this.useStaticData) {
+      const lowerQuery = query.toLowerCase();
+      return this.getAllEvents().pipe(
+        map((events) =>
+          events.filter(
+            (e) =>
+              e.title.toLowerCase().includes(lowerQuery) ||
+              e.summary.toString().toLowerCase().includes(lowerQuery) ||
+              e.context.toString().toLowerCase().includes(lowerQuery),
+          ),
+        ),
+      );
+    }
+
+    // En desarrollo, usar el backend
     return this.http
       .get<ApiResponse<Event[]>>(`${this.apiUrl}/events/search`, {
         params: { q: query },
@@ -60,6 +114,17 @@ export class EventApiService {
   }
 
   getCategories(): Observable<string[]> {
+    // Si estamos usando datos estáticos, extraer categorías del JSON
+    if (this.useStaticData) {
+      return this.getAllEvents().pipe(
+        map((events) => {
+          const categories = new Set(events.map((e) => e.category));
+          return Array.from(categories).sort();
+        }),
+      );
+    }
+
+    // En desarrollo, usar el backend
     return this.http
       .get<ApiResponse<string[]>>(`${this.apiUrl}/events/categories`)
       .pipe(map((response) => response.data));

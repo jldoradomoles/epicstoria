@@ -5,14 +5,16 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:hostinger": "ng build --configuration hostinger",
+    "prebuild:gh-pages": "npx tsx scripts/excel-to-json.ts eventos-plantilla.xlsx public/data/events.json",
     "build:gh-pages": "ng build --configuration production --base-href /epicstoria/ && node fix-css-for-gh-pages.js",
     "deploy": "npm run build:gh-pages && npx angular-cli-ghpages --dir=dist/epicstoria/browser",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "format": "prettier --write \"src/**/*.{ts,html,scss,css,json}\"",
     "format:check": "prettier --check \"src/**/*.{ts,html,scss,css,json}\"",
-    "excel:convert": "ts-node -P scripts/tsconfig.json scripts/excel-to-json.ts",
-    "excel:template": "ts-node -P scripts/tsconfig.json scripts/create-excel-template.ts"
+    "excel:convert": "npx tsx scripts/excel-to-json.ts",
+    "excel:template": "npx tsx scripts/create-excel-template.ts"
   },
   "prettier": {
     "printWidth": 100,

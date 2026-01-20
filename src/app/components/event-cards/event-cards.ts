@@ -28,10 +28,10 @@ export class EventCards implements OnInit {
   ngOnInit() {
     console.log('Loading events from database');
     this.eventApiService.getAllEvents().subscribe({
-      next: (data) => {
+      next: async (data) => {
         console.log('Events loaded successfully:', data);
         // Procesar las URLs de imágenes para asegurar formatos correctos
-        this.events = this.processEventImages(data);
+        this.events = await this.processEventImages(data);
         this.cdr.markForCheck();
       },
       error: (error) => {
@@ -40,9 +40,9 @@ export class EventCards implements OnInit {
     });
   }
 
-  private processEventImages(events: Event[]): Event[] {
+  private async processEventImages(events: Event[]): Promise<Event[]> {
     // Procesar eventos para asegurar que las URLs de imágenes tengan formato correcto
-    return events.map((event) => {
+    const processedEvents = events.map((event) => {
       let imageUrl = event.imageUrl;
 
       // Si no hay imageUrl, usar imagen por defecto
@@ -60,14 +60,19 @@ export class EventCards implements OnInit {
         imageUrl = `/${imageUrl}`;
       }
 
-      // Si no tiene extensión, agregar .jpg por defecto
-      if (!imageUrl.match(/\.(jpg|jpeg|png|gif|webp)$/i)) {
-        imageUrl = `${imageUrl}.jpg`;
+      // Si YA tiene una extensión válida, confiar en ella y no verificar
+      // Esto evita intentos de carga innecesarios que generan 404s
+      const hasValidExtension = imageUrl.match(/\.(jpg|jpeg|png|gif|webp)$/i);
+
+      if (!hasValidExtension) {
+        // Solo si NO tiene extensión, agregar .png por defecto (más común)
+        imageUrl = `${imageUrl}.png`;
       }
 
-      console.log(`Processed image URL for ${event.id}: ${imageUrl}`);
       return { ...event, imageUrl };
     });
+
+    return Promise.resolve(processedEvents);
   }
 
   async onImageError(event: any) {

@@ -1,9 +1,9 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { Event } from '../../models/event.model';
 import { DateFormatPipe } from '../../pipes/date-format.pipe';
+import { EventApiService } from '../../services/event-api.service';
 import { getCategoryColor } from '../../utils/category.utils';
 
 @Component({
@@ -13,7 +13,7 @@ import { getCategoryColor } from '../../utils/category.utils';
   styleUrl: './search.scss',
 })
 export class Search implements OnInit {
-  private http = inject(HttpClient);
+  private eventApiService = inject(EventApiService);
 
   events: Event[] = [];
   filteredEvents: Event[] = [];
@@ -28,10 +28,11 @@ export class Search implements OnInit {
   getCategoryColor = getCategoryColor;
 
   ngOnInit() {
-    this.http.get<Event[]>('data/events.json').subscribe({
+    this.eventApiService.getAllEvents().subscribe({
       next: (events) => {
         this.events = events;
-        this.filteredEvents = events;
+        // No mostrar eventos hasta que el usuario realice una búsqueda
+        this.filteredEvents = [];
         this.extractCategories();
       },
       error: (error) => {
@@ -81,6 +82,7 @@ export class Search implements OnInit {
     this.searchDate = '';
     this.searchContent = '';
     this.selectedCategory = 'all';
-    this.filteredEvents = this.events;
+    // Al limpiar filtros, no mostrar eventos hasta nueva búsqueda
+    this.filteredEvents = [];
   }
 }

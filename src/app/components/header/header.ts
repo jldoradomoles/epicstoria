@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { environment } from '../../../environments/environment';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -9,6 +10,8 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './header.scss',
 })
 export class Header {
+  readonly useStaticData = environment.useStaticData;
+
   constructor(public authService: AuthService) {}
 
   get currentUser() {

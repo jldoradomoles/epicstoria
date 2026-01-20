@@ -1,72 +1,37 @@
 .feature-cards-section {
-  .feature-card {
-    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
-    border-radius: 1rem;
-    padding: 2rem;
-    text-align: center;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
+  .card-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+    border-radius: 50%;
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    color: white;
-    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 
-    &:hover:not(.cursor-not-allowed) {
-      transform: translateY(-8px);
-      border-color: #3b82f6;
-      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
-
-      .card-icon {
-        transform: scale(1.1);
-        background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
-      }
-    }
-
-    .card-icon {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 1.5rem;
-      background: linear-gradient(135deg, #4b5563 0%, #6b7280 100%);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-
-      i {
-        font-size: 2rem;
-        color: white;
-      }
-    }
-
-    h3 {
+    i {
+      font-size: 2rem;
       color: white;
-      margin-bottom: 1rem;
     }
+  }
 
-    p {
-      flex-grow: 1;
-      line-height: 1.6;
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+
+    i {
+      transition: transform 0.3s ease;
     }
+  }
 
-    .card-footer {
-      margin-top: auto;
-      padding-top: 1rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
+  a:hover .card-footer i {
+    transform: translateX(5px);
+  }
 
-      i {
-        transition: transform 0.3s ease;
-      }
-    }
-
-    &:hover:not(.cursor-not-allowed) .card-footer i {
-      transform: translateX(5px);
-    }
+  a:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
   }
 
   @media (max-width: 768px) {
