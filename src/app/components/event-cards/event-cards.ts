@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Event } from '../../models/event.model';
 import { DateFormatPipe } from '../../pipes/date-format.pipe';
@@ -18,6 +18,7 @@ export class EventCards implements OnInit {
   private eventApiService = inject(EventApiService);
   private cdr = inject(ChangeDetectorRef);
   events: Event[] = [];
+  isMobile = false;
 
   readonly defaultImage = 'https://placehold.co/600x400/1F2937/FFFFFF?text=Evento+Hist%C3%B3rico';
 
@@ -25,7 +26,14 @@ export class EventCards implements OnInit {
   getCategoryColor = getCategoryColor;
   getPlainText = getPlainText;
 
+  // Getter para obtener los eventos filtrados según el tamaño de pantalla
+  get displayedEvents(): Event[] {
+    const maxEvents = this.isMobile ? 3 : 6;
+    return this.events.slice(0, maxEvents);
+  }
+
   ngOnInit() {
+    this.checkScreenSize();
     console.log('Loading events from database');
     this.eventApiService.getAllEvents().subscribe({
       next: async (data) => {
@@ -78,5 +86,14 @@ export class EventCards implements OnInit {
   async onImageError(event: any) {
     const imgElement = event.target as HTMLImageElement;
     await handleImageError(event, imgElement.src, this.defaultImage);
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.checkScreenSize();
+  }
+
+  private checkScreenSize() {
+    this.isMobile = window.innerWidth < 768; // 768px es el breakpoint md de Tailwind
   }
 }

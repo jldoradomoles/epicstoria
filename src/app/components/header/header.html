@@ -67,21 +67,116 @@
     </nav>
 
     <!-- Mobile menu button -->
-    <div class="flex items-center gap-3 sm:hidden">
-      @if (!useStaticData) {
-        @if (isAuthenticated) {
-          <a
-            routerLink="/perfil"
-            class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-amber-600 to-amber-800 text-xs font-bold text-white"
-          >
-            {{ getInitials() }}
-          </a>
+    <button
+      (click)="toggleMobileMenu()"
+      class="sm:hidden p-2 text-gray-300 hover:text-blue-400 focus:outline-none"
+      aria-label="Toggle menu"
+    >
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        @if (!mobileMenuOpen) {
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
         } @else {
-          <a routerLink="/login" class="text-gray-300 hover:text-amber-400">
-            <i class="fas fa-sign-in-alt"></i>
-          </a>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
         }
-      }
-    </div>
+      </svg>
+    </button>
   </div>
+
+  <!-- Mobile menu -->
+  @if (mobileMenuOpen) {
+    <div class="sm:hidden border-t border-gray-700/50 bg-gray-900/95 backdrop-blur-sm">
+      <nav class="flex flex-col space-y-1 px-4 py-4">
+        <a
+          routerLink="/"
+          (click)="closeMobileMenu()"
+          class="rounded-lg px-3 py-2 text-gray-300 transition duration-150 hover:bg-gray-800 hover:text-blue-400"
+        >
+          Inicio
+        </a>
+        <a
+          routerLink="/eventos"
+          (click)="closeMobileMenu()"
+          class="rounded-lg px-3 py-2 text-gray-300 transition duration-150 hover:bg-gray-800 hover:text-blue-400"
+        >
+          Eventos
+        </a>
+        <a
+          routerLink="/juegos"
+          (click)="closeMobileMenu()"
+          class="rounded-lg px-3 py-2 text-gray-300 transition duration-150 hover:bg-gray-800 hover:text-blue-400"
+        >
+          Juegos
+        </a>
+        <a
+          routerLink="/galeria"
+          (click)="closeMobileMenu()"
+          class="rounded-lg px-3 py-2 text-gray-300 transition duration-150 hover:bg-gray-800 hover:text-blue-400"
+        >
+          Galería
+        </a>
+        <a
+          routerLink="/buscar"
+          (click)="closeMobileMenu()"
+          class="rounded-lg px-3 py-2 text-gray-300 transition duration-150 hover:bg-gray-800 hover:text-blue-400"
+        >
+          Buscador
+        </a>
+
+        @if (!useStaticData) {
+          <!-- Separador -->
+          <div class="my-2 border-t border-gray-700/50"></div>
+
+          @if (isAuthenticated) {
+            <!-- Usuario autenticado -->
+            <a
+              routerLink="/perfil"
+              (click)="closeMobileMenu()"
+              class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-300 transition duration-150 hover:bg-gray-800 hover:text-amber-400"
+            >
+              <span
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-amber-600 to-amber-800 text-xs font-bold text-white"
+              >
+                {{ getInitials() }}
+              </span>
+              <span>{{ currentUser?.name }}</span>
+            </a>
+            <button
+              (click)="logout(); closeMobileMenu()"
+              class="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-gray-400 transition duration-150 hover:bg-gray-800 hover:text-red-400"
+            >
+              <i class="fas fa-sign-out-alt"></i>
+              <span>Cerrar sesión</span>
+            </button>
+          } @else {
+            <!-- Usuario no autenticado -->
+            <a
+              routerLink="/login"
+              (click)="closeMobileMenu()"
+              class="flex items-center gap-2 rounded-lg px-3 py-2 text-gray-300 transition duration-150 hover:bg-gray-800 hover:text-amber-400"
+            >
+              <i class="fas fa-sign-in-alt"></i>
+              <span>Entrar</span>
+            </a>
+            <a
+              routerLink="/register"
+              (click)="closeMobileMenu()"
+              class="mt-2 rounded-lg bg-gradient-to-r from-amber-600 to-amber-700 px-3 py-2 text-center text-white transition duration-150 hover:from-amber-500 hover:to-amber-600"
+            >
+              Registrarse
+            </a>
+          }
+        }
+      </nav>
+    </div>
+  }
 </header>

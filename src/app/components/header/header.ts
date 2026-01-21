@@ -11,8 +11,17 @@ import { AuthService } from '../../services/auth.service';
 })
 export class Header {
   readonly useStaticData = environment.useStaticData;
+  mobileMenuOpen = false;
 
   constructor(public authService: AuthService) {}
+
+  toggleMobileMenu(): void {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
+  closeMobileMenu(): void {
+    this.mobileMenuOpen = false;
+  }
 
   get currentUser() {
     return this.authService.currentUser();
