@@ -50,6 +50,7 @@ const createTables = async () => {
         date VARCHAR(50) NOT NULL,
         category VARCHAR(100) NOT NULL,
         image_url VARCHAR(500) NOT NULL,
+        additional_images JSONB DEFAULT '[]'::jsonb,
         summary JSONB NOT NULL,
         context JSONB NOT NULL,
         key_facts JSONB NOT NULL,
@@ -60,6 +61,13 @@ const createTables = async () => {
       )
     `);
     console.log('✅ Events table created');
+
+    // Add additional_images column if it doesn't exist (for existing databases)
+    await query(`
+      ALTER TABLE events
+      ADD COLUMN IF NOT EXISTS additional_images JSONB DEFAULT '[]'::jsonb
+    `);
+    console.log('✅ Additional images column ensured');
 
     // Create user_favorite_events table (for future use)
     await query(`

@@ -4,6 +4,7 @@ export interface Event {
   date: string;
   category: string;
   imageUrl: string;
+  additionalImages?: string[]; // URLs de imágenes adicionales (sufijos -1, -2, -3, etc.)
   summary: string | string[]; // Puede ser un string o array de párrafos
   context: string | string[]; // Puede ser un string largo o array de párrafos
   keyFacts: EventFact[];

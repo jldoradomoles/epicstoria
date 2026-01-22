@@ -4,6 +4,7 @@ export interface Event {
   date: string;
   category: string;
   image_url: string;
+  additional_images?: string[]; // URLs de imágenes adicionales (sufijos -1, -2, -3, etc.)
   summary: string | string[];
   context: string | string[];
   key_facts: EventFact[];
@@ -29,6 +30,7 @@ export interface EventResponse {
   date: string;
   category: string;
   imageUrl: string;
+  additionalImages?: string[];
   summary: string | string[];
   context: string | string[];
   keyFacts: EventFact[];

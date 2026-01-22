@@ -1,3 +1,4 @@
+import { NgClass } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -5,10 +6,11 @@ import { Event } from '../../models/event.model';
 import { DateFormatPipe } from '../../pipes/date-format.pipe';
 import { EventApiService } from '../../services/event-api.service';
 import { getCategoryColor } from '../../utils/category.utils';
+import { getPlainText } from '../../utils/text.utils';
 
 @Component({
   selector: 'app-search',
-  imports: [RouterLink, FormsModule, DateFormatPipe],
+  imports: [RouterLink, FormsModule, DateFormatPipe, NgClass],
   templateUrl: './search.html',
   styleUrl: './search.scss',
 })
@@ -26,6 +28,7 @@ export class Search implements OnInit {
   categories: string[] = [];
 
   getCategoryColor = getCategoryColor;
+  getPlainText = getPlainText;
 
   ngOnInit() {
     this.eventApiService.getAllEvents().subscribe({

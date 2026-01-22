@@ -33,7 +33,7 @@ export class EventDetail implements OnInit {
       this.eventApiService.getEventById(eventId).subscribe({
         next: (event) => {
           console.log('Event loaded successfully:', event);
-          this.event = event;
+          this.event = this.loadAdditionalImages(event);
           this.cdr.markForCheck();
         },
         error: (error) => {
@@ -43,9 +43,64 @@ export class EventDetail implements OnInit {
     }
   }
 
+  /**
+   * Detecta y carga imágenes adicionales basadas en el patrón nombre-1, nombre-2, etc.
+   * Solo se cargan si existen imágenes con el sufijo numérico
+   */
+  private loadAdditionalImages(event: Event): Event {
+    if (!event.imageUrl) {
+      return event;
+    }
+
+    // Si ya tiene additionalImages definidas, usarlas
+    if (event.additionalImages && event.additionalImages.length > 0) {
+      return event;
+    }
+
+    // Extraer el nombre base de la imagen
+    const imageUrlWithoutLeadingSlash = event.imageUrl.replace(/^\//, '');
+    const pathMatch = imageUrlWithoutLeadingSlash.match(/^(.+\/)?(.+?)(\.[^.]+)$/);
+
+    if (!pathMatch) {
+      return event;
+    }
+
+    const directory = pathMatch[1] || '';
+    const baseName = pathMatch[2];
+    const extension = pathMatch[3];
+
+    // Detectar imágenes adicionales que existen físicamente
+    // Este array se llenará con las URLs de las imágenes que existen
+    const additionalImages: string[] = [];
+
+    // Para detectar imágenes, usamos un enfoque: intentamos cargar hasta 10 imágenes
+    // Si el evento ya tiene las imágenes cargadas desde la BD, no intentamos detectarlas
+    // Por ahora, retornamos el evento sin modificar ya que la detección real
+    // se hará desde el backend o se configurará manualmente
+
+    return event;
+  }
+
   async onImageError(event: any) {
     const imgElement = event.target as HTMLImageElement;
     await handleImageError(event, imgElement.src, this.defaultImage);
+  }
+
+  /**
+   * Obtiene una imagen adicional por índice si existe
+   */
+  getAdditionalImage(index: number): string | null {
+    if (!this.event?.additionalImages || index >= this.event.additionalImages.length) {
+      return null;
+    }
+    return this.event.additionalImages[index];
+  }
+
+  /**
+   * Verifica si hay imágenes adicionales disponibles
+   */
+  hasAdditionalImages(): boolean {
+    return !!this.event?.additionalImages && this.event.additionalImages.length > 0;
   }
 
   /**

@@ -57,7 +57,7 @@
       <!-- Resumen -->
       <div class="mb-12 rounded-xl container-custom p-8 shadow-2xl">
         <h2 class="mb-4 text-2xl font-bold flex items-center gap-3 border-title pb-2">
-          <i class="fas fa-file-alt text-blue-500 text-xl"></i>
+          <img src="images/logos/resumen.png" alt="Resumen" class="h-14" />
           Resumen
         </h2>
         @for (paragraph of getParagraphs(event.summary); track $index) {
@@ -73,12 +73,12 @@
         </h2>
         <div class="space-y-4">
           @for (paragraph of getParagraphs(event.context); track $index) {
-            @if ($index === 0) {
+            @if ($index === 0 && getAdditionalImage(0)) {
               <!-- Párrafo con imagen al lado izquierdo (primer párrafo) -->
               <div class="flex flex-col md:flex-row gap-6 items-start">
                 <div class="md:w-1/3">
                   <img
-                    [src]="event.imageUrl"
+                    [src]="getAdditionalImage(0)!"
                     [alt]="event.title"
                     class="w-full h-auto rounded-lg shadow-lg object-cover imagen-dato-curioso"
                     (error)="onImageError($event)"
@@ -88,10 +88,18 @@
                   <p class="text-lg leading-relaxed">{{ paragraph }}</p>
                 </div>
               </div>
-            } @else if ($index === 2) {
+            } @else if ($index === 2 && getAdditionalImage(1)) {
               <!-- Párrafo con imagen al lado derecho (tercer párrafo) -->
-              <div class="flex flex-col md:flex-row gap-6 items-start">
-                <div class="">
+              <div class="flex flex-col md:flex-row-reverse gap-6 items-start">
+                <div class="md:w-1/3">
+                  <img
+                    [src]="getAdditionalImage(1)!"
+                    [alt]="event.title"
+                    class="w-full h-auto rounded-lg shadow-lg object-cover imagen-dato-curioso"
+                    (error)="onImageError($event)"
+                  />
+                </div>
+                <div class="md:w-2/3">
                   <p class="text-lg leading-relaxed">{{ paragraph }}</p>
                 </div>
               </div>
@@ -104,16 +112,16 @@
       <!-- Datos Curiosos -->
       <div class="mb-12 container-custom px-6 rounded-xl py-3">
         <h2 class="mb-6 text-3xl font-bold flex items-center gap-3">
-          <i class="fas fa-lightbulb text-purple-500 text-2xl"></i>
+          <img src="images/logos/datos-curiosos.png" alt="Datos Curiosos" class="h-14" />
           Datos Curiosos
         </h2>
         <div class="grid gap-6 md:grid-cols-2">
           @for (fact of event.keyFacts; track fact.title; let idx = $index; let isLast = $last) {
-            @if (idx === 0) {
+            @if (idx === 0 && getAdditionalImage(2)) {
               <!-- Primer dato curioso - imagen a la izquierda -->
               <div class="rounded-xl overflow-hidden">
                 <img
-                  [src]="event.imageUrl"
+                  [src]="getAdditionalImage(2)!"
                   [alt]="event.title"
                   class="imagen-dato-curioso"
                   (error)="onImageError($event)"
@@ -134,7 +142,7 @@
                 </h3>
                 <p>{{ fact.description }}</p>
               </div>
-            } @else if (idx === 4) {
+            } @else if (idx === 4 && getAdditionalImage(3)) {
               <!-- Quinto dato curioso con imagen al lado derecho - fila 3 -->
               <div
                 class="rounded-xl container-custom p-6 transition duration-300 hover:border-blue-500/50 hover:shadow-xl md:col-start-1 md:row-start-3"
@@ -155,17 +163,17 @@
                 class="rounded-xl overflow-hidden w-full aspect-square md:col-start-2 md:row-start-3"
               >
                 <img
-                  [src]="event.imageUrl"
+                  [src]="getAdditionalImage(3)!"
                   [alt]="event.title"
                   class="w-full h-full object-cover"
                   (error)="onImageError($event)"
                 />
               </div>
-            } @else if (isLast && event.keyFacts.length % 2 !== 0) {
+            } @else if (isLast && event.keyFacts.length % 2 !== 0 && getAdditionalImage(4)) {
               <!-- Último dato si el total es impar - imagen a la izquierda -->
               <div class="rounded-xl overflow-hidden">
                 <img
-                  [src]="event.imageUrl"
+                  [src]="getAdditionalImage(4)!"
                   [alt]="event.title"
                   class="imagen-dato-curioso"
                   (error)="onImageError($event)"
@@ -211,7 +219,7 @@
       <!-- Cronología -->
       <div class="mb-12 container-custom px-6 rounded-xl py-3">
         <h2 class="mb-6 pb-2 text-3xl font-bold flex items-center gap-3">
-          <i class="fas fa-clock text-green-500 text-2xl"></i>
+          <img src="images/logos/cronologia.png" alt="Cronología" class="h-14" />
           Cronología
         </h2>
         <div class="space-y-6">
@@ -236,7 +244,11 @@
       <!-- Consecuencias -->
       <div class="mb-12 rounded-xl container-custom p-8 shadow-2xl">
         <h2 class="border-title mb-6 text-3xl font-bold flex items-center gap-3 pb-2">
-          <i class="fas fa-meteor text-red-500 text-2xl"></i>
+          <img
+            src="images/logos/consecuencias-legado.png"
+            alt="Consecuencias y Legado"
+            class="h-14"
+          />
           Consecuencias y Legado
         </h2>
         <div class="space-y-4">
@@ -248,8 +260,8 @@
 
       <!-- Quiz Interactivo -->
       <div class="mb-12">
-        <h2 class="mb-6 text-3xl font-bold text-color-dark flex items-center gap-3">
-          <i class="fas fa-brain text-purple-500 text-2xl"></i>
+        <h2 class="mb-6 text-3xl font-bold text-color flex items-center gap-3">
+          <img src="images/logos/quiz-interactivo.png" alt="Quiz Interactivo" class="h-14" />
           Quiz Interactivo
         </h2>
         <app-quiz [event]="event"></app-quiz>

@@ -57,6 +57,7 @@ export class EventService {
       date: event.date,
       category: event.category,
       imageUrl: this.validateImageUrl(event.image_url),
+      additionalImages: event.additional_images || [],
       summary: event.summary,
       context: event.context,
       keyFacts: event.key_facts,

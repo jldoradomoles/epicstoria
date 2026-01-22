@@ -109,43 +109,36 @@
           </p>
         </div>
       } @else {
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           @for (event of filteredEvents; track event.id) {
-            <div
-              class="container-custom rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105"
+            <a
+              [routerLink]="['/evento', event.id]"
+              class="container-custom flex flex-col overflow-hidden rounded-xl shadow-2xl transition duration-300 hover:shadow-blue-500/20 hover:scale-[1.02] cursor-pointer"
             >
-              <div class="relative h-48 overflow-hidden">
+              <div class="relative h-56 bg-gradient-to-tr from-gray-700 to-gray-900">
                 <img
                   [src]="event.imageUrl"
                   [alt]="event.title"
                   class="h-full w-full object-cover"
                 />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <span
-                  [class]="
-                    'absolute top-4 right-4 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider text-white ' +
-                    getCategoryColor(event.category)
-                  "
+                  class="text-color absolute left-4 top-4 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider"
+                  [ngClass]="getCategoryColor(event.category)"
                 >
                   {{ event.category }}
                 </span>
               </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-color mb-2">{{ event.title }}</h3>
-                <p class="text-sm text-color mb-3">
-                  <i class="fas fa-calendar-alt text-blue-500 mr-2"></i>
-                  {{ event.date | dateFormat }}
+              <div class="flex flex-grow flex-col p-6">
+                <p class="text-color mb-2 text-sm font-semibold">{{ event.date | dateFormat }}</p>
+                <h4 class="text-color mb-3 text-2xl font-bold">{{ event.title }}</h4>
+                <p class="text-color mb-4 text-base line-clamp-3">
+                  {{ getPlainText(event.summary) }}
                 </p>
-                <p class="text-sm text-color mb-4 line-clamp-3">{{ event.summary }}</p>
-                <a
-                  [routerLink]="['/evento', event.id]"
-                  class="btns-color inline-block rounded-full px-4 py-2 text-sm font-semibold shadow transition duration-150 hover:shadow-lg"
-                >
-                  Ver Detalles
-                  <i class="fas fa-arrow-right ml-2"></i>
-                </a>
+                <span class="text-color mt-4 self-start text-sm font-medium hover:text-blue-300">
+                  Ver Más →
+                </span>
               </div>
-            </div>
+            </a>
           }
         </div>
       }

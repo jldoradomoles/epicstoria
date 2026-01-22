@@ -104,6 +104,7 @@
     "date": "1886-10-28",
     "category": "Monumentos",
     "imageUrl": "images/eventos/La-Estatua-de-la-Libertad.jpg",
+    "additionalImages": ["images/eventos/La-Estatua-de-la-Libertad-2.jpg"],
     "summary": [
       "El 28 de octubre de 1886, Nueva York presenció la inauguración de un símbolo eterno. Regalo de Francia a Estados Unidos, la Estatua de la Libertad unió arte, ingeniería y un ideal universal. Su silueta marcaría para siempre el horizonte de la ciudad y la historia del mundo moderno."
     ],
@@ -747,6 +748,7 @@
     "date": "1934-04-03",
     "category": "Personajes históricos",
     "imageUrl": "images/eventos/Jane-Goodall.jpg",
+    "additionalImages": ["images/eventos/Jane-Goodall-2.jpg", "images/eventos/Jane-Goodall-3.jpg"],
     "summary": [
       "Pionera en el estudio de los chimpancés, revolucionó la ciencia al demostrar que fabrican y usan herramientas. Fundó el Jane Goodall Institute y el programa Roots & Shoots, y dedicó su vida a la conservación y a inspirar a nuevas generaciones. Fue Mensajera de la Paz de la ONU y una de las voces más influyentes en la protección de la naturaleza."
     ],
@@ -884,6 +886,7 @@
     "date": "150–100 a. C.",
     "category": "Artefactos históricos",
     "imageUrl": "images/eventos/Anticitera.jpg",
+    "additionalImages": ["images/eventos/Anticitera-2.jpg", "images/eventos/Anticitera-3.jpg"],
     "summary": [
       "El Mecanismo de Anticitera es un dispositivo griego creado entre 150 y 100 a. C., considerado el primer ordenador analógico de la historia. Estaba formado por más de 30 engranajes de bronce capaces de predecir eclipses, mostrar ciclos solares y lunares, seguir calendarios complejos y hasta indicar fechas de juegos panhelénicos como los Olímpicos."
     ],
@@ -1011,6 +1014,10 @@
     "date": "1837-12-24",
     "category": "Personajes históricos",
     "imageUrl": "images/eventos/Isabel-de-Baviera.jpg",
+    "additionalImages": [
+      "images/eventos/Isabel-de-Baviera-2.jpg",
+      "images/eventos/Isabel-de-Baviera-3.jpg"
+    ],
     "summary": [
       "Sisi, nacida en 1837 en Múnich, creció libre y lejos de la rígida etiqueta. A los 16 años se convirtió en emperatriz de Austria al casarse con Francisco José, pero pronto descubrió que la corte vienesa era una jaula dorada. La pérdida de su hija Sofía la marcó profundamente y aumentó su sensación de aislamiento. Aunque su belleza la convirtió en un mito europeo, ella buscó siempre escapar de las presiones viajando por todo el continente."
     ],
@@ -1124,6 +1131,10 @@
     "date": "1954-08-22",
     "category": "Monumentos",
     "imageUrl": "images/eventos/El-Cristo-del-abismo.jpg",
+    "additionalImages": [
+      "images/eventos/El-Cristo-del-abismo-2.jpg",
+      "images/eventos/El-Cristo-del-abismo-3.jpg"
+    ],
     "summary": [
       "Situado bajo el mar, frente a la costa de San Fruttuoso (Italia), el Cristo del Abismo es una estatua de bronce creada como homenaje a los buceadores y marineros que perdieron la vida en el mar. Representa a Cristo con los brazos levantados hacia la superficie, en un gesto de bendición y protección. Con el paso del tiempo se ha convertido en un monumento submarino de gran valor histórico y espiritual, visitado por buceadores de todo el mundo y símbolo del vínculo entre el ser humano y el entorno marino."
     ],
@@ -1220,6 +1231,11 @@
     "date": "1905-01-13",
     "category": "Personajes históricos",
     "imageUrl": "images/eventos/Lozen.jpg",
+    "additionalImages": [
+      "images/eventos/Lozen-2.jpg",
+      "images/eventos/Lozen-3.jpg",
+      "images/eventos/Lozen-4.jpg"
+    ],
     "summary": [
       "Lozen fue una guerrera, líder espiritual y estratega de la tribu chiricahua apache durante la segunda mitad del siglo XIX. Hermana del jefe Victorio, participó activamente en la resistencia apache contra los ejércitos de Estados Unidos y México. Reconocida tanto por su habilidad en combate como por su don espiritual, guió a su pueblo en huidas y enfrentamientos decisivos. Tras la muerte de Victorio, continuó luchando junto a Gerónimo hasta la rendición final de los apaches en 1886. Murió prisionera en 1889, lejos de su tierra natal."
     ],
@@ -1307,6 +1323,10 @@
     "date": "1905-04-19",
     "category": "Personajes históricos",
     "imageUrl": "images/eventos/Federico-Garcia-Lorca.jpg",
+    "additionalImages": [
+      "images/eventos/Federico-García-Lorca-2.jpg",
+      "images/eventos/Federico-García-Lorca-3.jpg"
+    ],
     "summary": [
       "Federico García Lorca fue detenido en Granada en agosto de 1936, pocos días después del inicio de la Guerra Civil española. Tras ser arrestado en la casa donde se refugiaba, fue trasladado a la zona de Víznar y Alfacar, donde fue fusilado y enterrado en una fosa común. Su muerte marcó uno de los episodios más trágicos de la represión franquista y convirtió su figura en un símbolo de la memoria histórica.",
       ""
@@ -1420,6 +1440,11 @@
     "date": "1905-02-11",
     "category": "Monumentos",
     "imageUrl": "images/eventos/La-opera-de-Viena.jpg",
+    "additionalImages": [
+      "images/eventos/La-opera-de-Viena-2.jpg",
+      "images/eventos/La-opera-de-Viena-3.jpg",
+      "images/eventos/La-opera-de-Viena-4.jpg"
+    ],
     "summary": [
       "La Ópera Estatal de Viena es uno de los grandes símbolos culturales de Austria. Concebida en el siglo XIX como parte de la modernización imperial de Viena, su construcción estuvo marcada por duras críticas públicas que acabaron trágicamente con la vida de sus dos arquitectos. Con el tiempo, el edificio pasó del desprecio social al orgullo nacional, sobrevivió a la destrucción parcial durante la Segunda Guerra Mundial y fue reconstruido como emblema de la identidad musical austriaca.",
       ""
@@ -1548,6 +1573,7 @@
     "date": "875 d.C.",
     "category": "Personajes históricos",
     "imageUrl": "images/eventos/Abbas-Ibn-Firnas.jpg",
+    "additionalImages": ["images/eventos/Abbas-Ibn-Firnas-2.jpg"],
     "summary": [
       "Abbas Ibn Firnas fue un sabio andalusí del siglo IX que destacó como inventor, científico y pensador en la Córdoba del Emirato. Conocido por su intento de volar, desarrolló numerosos avances en astronomía, ingeniería y química. Su experimento aéreo, realizado décadas antes de su muerte, lo convirtió en uno de los primeros seres humanos en intentar el vuelo de forma experimental, adelantándose en siglos a la aviación moderna.",
       ""
