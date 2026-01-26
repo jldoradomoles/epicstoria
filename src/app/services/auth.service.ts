@@ -177,4 +177,15 @@ export class AuthService {
       });
     }
   }
+
+  /**
+   * Refresca el perfil del usuario desde el servidor
+   */
+  refreshProfile(): void {
+    this.getProfile().subscribe({
+      error: (error) => {
+        console.error('Error refreshing profile:', error);
+      },
+    });
+  }
 }

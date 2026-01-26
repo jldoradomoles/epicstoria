@@ -8,6 +8,9 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "db:migrate": "ts-node src/database/migrate.ts",
+    "db:migrate-points": "ts-node src/database/migrate-points.ts",
+    "db:migrate-friendships": "ts-node src/database/migrate-friendships.ts",
+    "db:test-points": "ts-node src/database/test-points.ts",
     "db:seed": "ts-node src/database/seed.ts",
     "db:clear-events": "ts-node src/database/clear-events.ts",
     "db:fix-images": "ts-node src/database/fix-image-urls.ts"

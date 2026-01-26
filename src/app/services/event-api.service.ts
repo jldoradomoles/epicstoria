@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { map, Observable, of } from 'rxjs';
+import { catchError, map, Observable, of, throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Event } from '../models/event.model';
 import { ApiResponse } from '../models/user.model';
@@ -66,13 +66,21 @@ export class EventApiService {
           }
           return event;
         }),
+        catchError((error) => {
+          console.error('Error finding event:', error);
+          return throwError(() => error);
+        }),
       );
     }
 
     // En desarrollo, usar el backend
-    return this.http
-      .get<ApiResponse<Event>>(`${this.apiUrl}/events/${id}`)
-      .pipe(map((response) => response.data));
+    return this.http.get<ApiResponse<Event>>(`${this.apiUrl}/events/${id}`).pipe(
+      map((response) => response.data),
+      catchError((error) => {
+        console.error('Error loading event from API:', error);
+        return throwError(() => error);
+      }),
+    );
   }
 
   getEventsByCategory(category: string): Observable<Event[]> {

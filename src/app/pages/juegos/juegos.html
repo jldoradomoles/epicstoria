@@ -1,33 +1,165 @@
 <!-- Página de Juegos -->
 <!-- Sección Hero -->
-<section
-  class="hero-section relative overflow-hidden bg-cover bg-center bg-no-repeat"
-  style="background-image: url('images/home.png')"
->
-  <div class="hero-overlay"></div>
-  <div class="relative z-10 mx-auto max-w-7xl px-4 py-24 text-center sm:px-6 lg:px-8">
-    <h1 class="mb-6 text-6xl font-black leading-tight text-white drop-shadow-lg">
-      Juegos y <span class="text-blue-400">Quizzes</span>
-    </h1>
-    <p class="mx-auto max-w-3xl text-xl text-gray-200 drop-shadow-md">
-      Pon a prueba tus conocimientos históricos con nuestros desafiantes juegos interactivos
-    </p>
-  </div>
-</section>
+<app-hero />
 
 <!-- Contenido Principal -->
-<section class="content-section">
-  <div class="container mx-auto px-4 py-16">
-    <div class="text-center">
-      <div
-        class="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 mb-6"
-      >
-        <i class="fas fa-gamepad text-4xl text-white"></i>
+<section class="py-16 px-4">
+  <div class="container mx-auto">
+    <!-- Tabla de Líderes -->
+    <div class="max-w-5xl mx-auto mb-16">
+      <div class="text-center mb-8">
+        <div
+          class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-yellow-600 to-yellow-800 mb-4"
+        >
+          <i class="fas fa-trophy text-3xl text-white"></i>
+        </div>
+        <h2 class="text-4xl font-bold text-amber-100 mb-2">Tabla de Líderes</h2>
+        <p class="text-xl text-amber-200/70">Los mejores exploradores de la historia</p>
       </div>
-      <h2 class="text-3xl font-bold text-white mb-4">Próximamente</h2>
-      <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-        Estamos trabajando en emocionantes juegos y quizzes para que disfrutes aprendiendo historia.
-        ¡Vuelve pronto para descubrir nuevas formas de explorar el pasado!
+
+      <!-- Loading State -->
+      @if (isLoading()) {
+        <div class="text-center py-12">
+          <i class="fas fa-spinner fa-spin text-4xl text-amber-500 mb-4"></i>
+          <p class="text-amber-200/70">Cargando clasificación...</p>
+        </div>
+      }
+
+      <!-- Leaderboard -->
+      @if (!isLoading() && leaderboard().length > 0) {
+        <div class="container-custom rounded-xl overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead class="bg-amber-900/30 border-b border-amber-900/50">
+                <tr>
+                  <th class="px-6 py-4 text-left text-sm font-semibold text-amber-100">Posición</th>
+                  <th class="px-6 py-4 text-left text-sm font-semibold text-amber-100">Usuario</th>
+                  <th class="px-6 py-4 text-center text-sm font-semibold text-amber-100">
+                    Puntos
+                  </th>
+                  <th class="px-6 py-4 text-center text-sm font-semibold text-amber-100">
+                    Estrellas
+                  </th>
+                  <th class="px-6 py-4 text-center text-sm font-semibold text-amber-100">
+                    Quizzes
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-amber-900/30">
+                @for (entry of leaderboard(); track entry.id; let i = $index) {
+                  <tr
+                    class="hover:bg-amber-900/10 transition-colors"
+                    [class.bg-amber-900/20]="i < 3"
+                  >
+                    <!-- Posición -->
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-3">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full"
+                             [class]="i < 3 ? 'bg-gradient-to-br from-yellow-600 to-yellow-800' : 'bg-stone-700'">
+                          <i class="fas text-lg" [class]="getRankIcon(i) + ' ' + getRankClass(i)"></i>
+                        </div>
+                        <span class="text-2xl font-bold" [class]="getRankClass(i)">
+                          #{{ i + 1 }}
+                        </span>
+                      </div>
+                    </td>
+
+                    <!-- Usuario -->
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center text-lg font-bold text-white shadow-lg flex-shrink-0"
+                        >
+                          {{ getInitials(entry.name, entry.lastname) }}
+                        </div>
+                        <div>
+                          <div class="font-semibold text-amber-100">
+                            {{ entry.name }}
+                            @if (entry.lastname) {
+                              {{ entry.lastname }}
+                            }
+                          </div>
+                          <div class="text-sm text-amber-200/60">
+                            Miembro desde {{ entry.created_at | date: 'MMM yyyy' }}
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+
+                    <!-- Puntos -->
+                    <td class="px-6 py-4 text-center">
+                      <div class="inline-flex items-center gap-2 bg-amber-900/30 rounded-lg px-4 py-2">
+                        <i class="fas fa-coins text-yellow-400"></i>
+                        <span class="text-2xl font-bold text-amber-100">{{ entry.points }}</span>
+                      </div>
+                    </td>
+
+                    <!-- Estrellas -->
+                    <td class="px-6 py-4">
+                      <div class="flex items-center justify-center gap-1">
+                        @if (entry.stars > 0) {
+                          @for (star of getStarsArray(entry.stars); track $index) {
+                            <i class="fas fa-star text-yellow-400"></i>
+                          }
+                          @if (entry.stars > 10) {
+                            <span class="ml-1 text-sm text-amber-200/70">+{{ entry.stars - 10 }}</span>
+                          }
+                        } @else {
+                          <span class="text-sm text-amber-200/50">-</span>
+                        }
+                      </div>
+                    </td>
+
+                    <!-- Quizzes Completados -->
+                    <td class="px-6 py-4 text-center">
+                      <div class="text-lg font-semibold text-amber-100">
+                        {{ entry.quizzes_completed }}
+                      </div>
+                    </td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Footer con total -->
+          <div class="bg-amber-900/20 border-t border-amber-900/30 px-6 py-4 text-center">
+            <p class="text-amber-200/70">
+              <i class="fas fa-users mr-2"></i>
+              Total de jugadores: <strong class="text-amber-100">{{ total() }}</strong>
+            </p>
+          </div>
+        </div>
+      }
+
+      <!-- Empty State -->
+      @if (!isLoading() && leaderboard().length === 0) {
+        <div class="container-custom rounded-xl p-12 text-center">
+          <i class="fas fa-trophy text-6xl text-amber-500/50 mb-4"></i>
+          <h3 class="text-2xl font-bold text-amber-100 mb-2">
+            Aún no hay clasificaciones
+          </h3>
+          <p class="text-amber-200/70 mb-6">
+            ¡Sé el primero en aparecer en la tabla de líderes completando quizzes!
+          </p>
+          <a
+            routerLink="/eventos"
+            class="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+          >
+            <i class="fas fa-calendar-alt"></i>
+            Ver Eventos
+          </a>
+        </div>
+      }
+    </div>
+
+    <!-- Sección de Próximamente -->
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-amber-100 mb-4">Más Juegos Próximamente</h2>
+      <p class="text-xl text-amber-200/70">
+        Estamos trabajando en emocionantes juegos interactivos para que disfrutes aprendiendo
+        historia. ¡Vuelve pronto para descubrir nuevas formas de explorar el pasado y ganar más
+        puntos!
       </p>
     </div>
   </div>

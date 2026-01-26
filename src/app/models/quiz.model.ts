@@ -15,6 +15,8 @@ export interface QuizResult {
   correctAnswers: number;
   percentage: number;
   answers: QuizAnswer[];
+  pointsEarned?: number;
+  canRetryAt?: Date;
 }
 
 export interface QuizAnswer {

@@ -1,0 +1,115 @@
+<!-- Lista de Usuarios -->
+<div class="max-w-7xl mx-auto">
+  <!-- Buscador -->
+  <div class="mb-8">
+    <div class="relative max-w-2xl mx-auto">
+      <div class="relative">
+        <input
+          type="text"
+          [value]="searchTerm()"
+          (input)="onSearchChange($any($event.target).value)"
+          placeholder="Buscar usuarios por nombre o email..."
+          class="w-full px-6 py-4 pl-14 bg-stone-900/50 border border-amber-900/30 rounded-xl text-amber-100 placeholder-amber-200/40 focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 transition-all"
+        />
+        <i
+          class="fas fa-search absolute left-5 top-1/2 -translate-y-1/2 text-amber-400/70 text-xl"
+        ></i>
+      </div>
+      @if (searchTerm().length > 0 && searchTerm().length < 2) {
+        <p class="text-amber-200/60 text-sm mt-2 ml-2">
+          <i class="fas fa-info-circle mr-1"></i>
+          Escribe al menos 2 caracteres para buscar
+        </p>
+      }
+    </div>
+  </div>
+
+  <!-- Loading State -->
+  @if (isLoading()) {
+    <div class="text-center py-12">
+      <i class="fas fa-spinner fa-spin text-4xl text-amber-500 mb-4"></i>
+      <p class="text-amber-200/70">Buscando usuarios...</p>
+    </div>
+  }
+
+  <!-- Grid de usuarios -->
+  @if (!isLoading() && users().length > 0) {
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      @for (user of users(); track user.id) {
+        <div
+          class="relative bg-gradient-to-br from-stone-900/80 to-stone-950/80 rounded-xl p-6 border border-amber-900/30 hover:border-amber-500/50 transition-all duration-300"
+        >
+          <!-- Botón de corazón -->
+          <button
+            (click)="toggleFriend(user)"
+            class="absolute top-4 right-4 text-2xl transition-all duration-300 hover:scale-110"
+            [class.text-red-500]="user.isFriend"
+            [class.text-gray-500]="!user.isFriend"
+            [attr.aria-label]="user.isFriend ? 'Eliminar de amigos' : 'Añadir a amigos'"
+          >
+            <i [class]="user.isFriend ? 'fas fa-heart' : 'far fa-heart'"></i>
+          </button>
+
+          <!-- Avatar -->
+          <div class="flex justify-center mb-4">
+            <div
+              class="w-20 h-20 rounded-full bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-white text-2xl font-bold"
+            >
+              {{ getInitials(user.name, user.lastname) }}
+            </div>
+          </div>
+
+          <!-- Nombre de usuario -->
+          <h3 class="text-xl font-bold text-amber-100 text-center mb-2 truncate">
+            {{ user.name }} {{ user.lastname || '' }}
+          </h3>
+
+          <!-- Puntos -->
+          <div class="flex items-center justify-center gap-2 mb-3">
+            <i class="fas fa-trophy text-amber-400"></i>
+            <span class="text-amber-200 font-semibold">{{ user.points }} pts</span>
+          </div>
+
+          <!-- Estrellas -->
+          @if (getStarsCount(user.points) > 0) {
+            <div class="flex justify-center gap-1 mb-2">
+              @for (star of getStarsArray(user.points); track $index) {
+                <i class="fas fa-star text-amber-400 text-sm"></i>
+              }
+            </div>
+          }
+
+          <!-- Estado de amistad -->
+          <div class="text-center text-sm">
+            @if (user.isFriend) {
+              <span class="text-green-400 flex items-center justify-center gap-2">
+                <i class="fas fa-check-circle"></i>
+                Amigo
+              </span>
+            } @else {
+              <span class="text-gray-400">No es amigo</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  }
+
+  <!-- Empty State -->
+  @if (!isLoading() && users().length === 0 && searchTerm().length >= 2) {
+    <div class="text-center py-16">
+      <i class="fas fa-user-slash text-6xl text-amber-500/50 mb-4"></i>
+      <h3 class="text-2xl font-bold text-amber-100 mb-2">No se encontraron usuarios</h3>
+      <p class="text-amber-200/70">Intenta con otro término de búsqueda</p>
+    </div>
+  }
+
+  <!-- Estado inicial -->
+  @if (!isLoading() && users().length === 0 && searchTerm().length === 0) {
+    <div class="text-center py-16">
+      <i class="fas fa-search text-6xl text-amber-500/50 mb-4"></i>
+      <h3 class="text-2xl font-bold text-amber-100 mb-2">Busca usuarios para añadir como amigos</h3>
+      <p class="text-amber-200/70">Usa el buscador para encontrar usuarios por nombre o email</p>
+    </div>
+  }
+</div>

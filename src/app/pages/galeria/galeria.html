@@ -1,34 +1,126 @@
 <!-- Página de Galería -->
 <!-- Sección Hero -->
-<section
-  class="hero-section relative overflow-hidden bg-cover bg-center bg-no-repeat"
-  style="background-image: url('images/home.png')"
->
-  <div class="hero-overlay"></div>
-  <div class="relative z-10 mx-auto max-w-7xl px-4 py-24 text-center sm:px-6 lg:px-8">
-    <h1 class="mb-6 text-6xl font-black leading-tight text-white drop-shadow-lg">
-      Galería <span class="text-blue-400">Visual</span>
-    </h1>
-    <p class="mx-auto max-w-3xl text-xl text-gray-200 drop-shadow-md">
-      Explora nuestra colección de imágenes históricas y representaciones artísticas
-    </p>
+<app-hero />
+
+<!-- Contenido Principal -->
+<section class="py-16 px-4">
+  <div class="container mx-auto">
+    <!-- Loading State -->
+    @if (isLoading()) {
+      <div class="text-center py-12">
+        <i class="fas fa-spinner fa-spin text-4xl text-amber-500 mb-4"></i>
+        <p class="text-amber-200/70">Cargando galería...</p>
+      </div>
+    }
+
+    <!-- Galería de imágenes -->
+    @if (!isLoading() && images().length > 0) {
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-amber-100 mb-2">Galería de Eventos Históricos</h2>
+        </div>
+
+        <!-- Grid de imágenes -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          @for (image of images(); track image.url) {
+            <div
+              class="group relative overflow-hidden rounded-xl bg-stone-900/50 border border-amber-900/30 hover:border-amber-500/50 transition-all duration-300 cursor-pointer transform hover:scale-105"
+              (click)="openImage(image)"
+            >
+              <div class="aspect-[4/3] overflow-hidden">
+                <img
+                  [src]="image.url"
+                  [alt]="image.title"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 class="text-white font-semibold text-lg mb-1">{{ image.title }}</h3>
+                  <p class="text-amber-300 text-sm flex items-center gap-2">
+                    <i class="fas fa-search-plus"></i>
+                    Click para ampliar
+                  </p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    }
+
+    <!-- Empty State -->
+    @if (!isLoading() && images().length === 0) {
+      <div class="text-center py-16">
+        <i class="fas fa-images text-6xl text-amber-500/50 mb-4"></i>
+        <h3 class="text-2xl font-bold text-amber-100 mb-2">No hay imágenes disponibles</h3>
+        <p class="text-amber-200/70">
+          Vuelve pronto para ver nuestra galería de eventos históricos
+        </p>
+      </div>
+    }
   </div>
 </section>
 
-<!-- Contenido Principal -->
-<section class="content-section">
-  <div class="container mx-auto px-4 py-16">
-    <div class="text-center">
+<!-- Modal de imagen ampliada -->
+@if (selectedImage()) {
+  <div
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+    (click)="closeImage()"
+  >
+    <button
+      class="absolute top-4 right-4 text-white hover:text-amber-400 transition-colors z-10"
+      (click)="closeImage()"
+    >
+      <i class="fas fa-times text-3xl"></i>
+    </button>
+
+    <!-- Botón anterior -->
+    <button
+      class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-amber-400 transition-colors z-10 bg-black/50 rounded-full p-4 hover:bg-black/70"
+      (click)="previousImage(); $event.stopPropagation()"
+    >
+      <i class="fas fa-chevron-left text-2xl"></i>
+    </button>
+
+    <!-- Botón siguiente -->
+    <button
+      class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-amber-400 transition-colors z-10 bg-black/50 rounded-full p-4 hover:bg-black/70"
+      (click)="nextImage(); $event.stopPropagation()"
+    >
+      <i class="fas fa-chevron-right text-2xl"></i>
+    </button>
+
+    <!-- Imagen -->
+    <div class="max-w-5xl max-h-[90vh] relative" (click)="$event.stopPropagation()">
+      <img
+        [src]="selectedImage()!.url"
+        [alt]="selectedImage()!.title"
+        class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+      />
       <div
-        class="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-purple-600 to-purple-800 mb-6"
+        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6 rounded-b-lg"
       >
-        <i class="fas fa-images text-4xl text-white"></i>
+        <h3 class="text-white text-2xl font-bold mb-3">{{ selectedImage()!.title }}</h3>
+        @if (getEventLink(selectedImage()!)) {
+          <a
+            [routerLink]="getEventLink(selectedImage()!)"
+            class="inline-flex items-center gap-2 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-lg transition-colors duration-200"
+            (click)="closeImage()"
+          >
+            <i class="fas fa-book-open"></i>
+            Ver detalles del evento
+          </a>
+        } @else {
+          <p class="text-amber-300/70 text-sm">
+            <i class="fas fa-info-circle mr-2"></i>
+            Evento no disponible
+          </p>
+        }
       </div>
-      <h2 class="text-3xl font-bold text-white mb-4">Próximamente</h2>
-      <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-        Estamos preparando una increíble galería visual con imágenes históricas de alta calidad y
-        representaciones artísticas de los eventos más importantes de la historia. ¡Vuelve pronto!
-      </p>
     </div>
   </div>
-</section>
+}

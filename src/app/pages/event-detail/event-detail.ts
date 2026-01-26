@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { QuizComponent } from '../../components/quiz/quiz';
 import { Event } from '../../models/event.model';
 import { DateFormatPipe } from '../../pipes/date-format.pipe';
@@ -17,6 +17,7 @@ import { getParagraphs } from '../../utils/text.utils';
 export class EventDetail implements OnInit {
   private eventApiService = inject(EventApiService);
   private route = inject(ActivatedRoute);
+  private router = inject(Router);
   private cdr = inject(ChangeDetectorRef);
 
   event: Event | undefined;
@@ -32,14 +33,24 @@ export class EventDetail implements OnInit {
       console.log('Loading event from database:', eventId);
       this.eventApiService.getEventById(eventId).subscribe({
         next: (event) => {
+          if (!event) {
+            console.error('Event not found:', eventId);
+            this.router.navigate(['/']);
+            return;
+          }
           console.log('Event loaded successfully:', event);
           this.event = this.loadAdditionalImages(event);
           this.cdr.markForCheck();
         },
         error: (error) => {
           console.error('Error loading event:', error);
+          // Si el evento no existe, redirigir a la página principal
+          this.router.navigate(['/']);
         },
       });
+    } else {
+      // Si no hay eventId, redirigir a la home
+      this.router.navigate(['/']);
     }
   }
 

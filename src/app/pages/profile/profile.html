@@ -3,7 +3,7 @@
     <!-- Título de la página -->
     <div class="text-center mb-8">
       <h1 class="text-3xl font-bold text-amber-100 mb-2">Mi Perfil</h1>
-      <p class="text-amber-200/70">Administra tu información personal</p>
+      <p class="text-color">Administra tu información personal</p>
     </div>
 
     @if (currentUser) {
@@ -20,7 +20,7 @@
             >
               {{ getInitials() }}
             </div>
-            <div>
+            <div class="flex-grow">
               <h2 class="text-xl font-semibold text-amber-100">
                 {{ currentUser.name }} {{ currentUser.lastname }}
               </h2>
@@ -28,6 +28,46 @@
               <p class="text-amber-200/40 text-lg mt-1">
                 Miembro desde {{ currentUser.created_at | date: 'MMMM yyyy' }}
               </p>
+            </div>
+
+            <!-- Puntos y estrellas -->
+            <div class="text-right">
+              <div
+                class="bg-gradient-to-br from-yellow-600/30 to-yellow-700/30 rounded-lg p-4 border border-yellow-500/30"
+              >
+                <div class="flex items-center gap-2 mb-2">
+                  <i class="fas fa-trophy text-yellow-400 text-xl"></i>
+                  <div class="text-3xl font-bold text-yellow-300 d-flex">
+                    {{ currentUser.points || 0 }}
+                    <div class="text-xs text-yellow-200/70 mb-2 ml-1">puntos totales</div>
+                  </div>
+                </div>
+
+                <!-- Estrellas -->
+                <div class="flex items-center gap-1 mb-2">
+                  @for (star of getStarsArray(); track $index) {
+                    <i class="fas fa-star text-yellow-400"></i>
+                  }
+                  @if (getStarsCount() === 0) {
+                    <span class="text-xs text-yellow-200/50">Sin estrellas aún</span>
+                  }
+                </div>
+
+                <!-- Progreso a siguiente estrella -->
+                @if (getStarsCount() < 10) {
+                  <div class="mt-2">
+                    <div class="text-xs text-yellow-200/70 mb-1">
+                      {{ getPointsToNextStar() }} pts para próxima ⭐
+                    </div>
+                    <div class="w-full bg-yellow-900/30 rounded-full h-1.5">
+                      <div
+                        class="bg-yellow-400 h-1.5 rounded-full transition-all duration-300"
+                        [style.width.%]="getProgressToNextStar()"
+                      ></div>
+                    </div>
+                  </div>
+                }
+              </div>
             </div>
           </div>
         </div>
@@ -629,6 +669,18 @@
           <i class="fas fa-sign-out-alt"></i>
           Cerrar Sesión
         </button>
+      </div>
+
+      <!-- Sección de Usuarios para Añadir Amigos -->
+      <div class="mt-8">
+        <div class="text-center mb-6">
+          <h2 class="text-3xl font-bold text-amber-100 mb-2">
+            <i class="fas fa-users mr-2"></i>
+            Usuarios
+          </h2>
+          <p class="text-amber-200/70">Añade amigos haciendo click en el corazón</p>
+        </div>
+        <app-users-list></app-users-list>
       </div>
     } @else {
       <!-- No autenticado -->

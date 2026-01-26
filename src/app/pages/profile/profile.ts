@@ -2,14 +2,16 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { UsersList } from '../../components/users-list/users-list';
 import { UserRole } from '../../models/user.model';
 import { AuthService } from '../../services/auth.service';
 import { EventApiService } from '../../services/event-api.service';
+import { PointsService } from '../../services/points.service';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [CommonModule, RouterLink, ReactiveFormsModule],
+  imports: [CommonModule, RouterLink, ReactiveFormsModule, UsersList],
   templateUrl: './profile.html',
   styleUrls: ['./profile.scss'],
 })
@@ -51,6 +53,7 @@ export class ProfileComponent implements OnInit {
     private fb: FormBuilder,
     public authService: AuthService,
     private eventApiService: EventApiService,
+    private pointsService: PointsService,
   ) {
     this.profileForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
@@ -354,5 +357,29 @@ export class ProfileComponent implements OnInit {
         this.imageSuccessMessage.set('');
       }, 2000);
     });
+  }
+
+  // Métodos para el sistema de puntos
+  getStarsCount(): number {
+    const user = this.authService.currentUser();
+    return user ? this.pointsService.calculateStars(user.points || 0) : 0;
+  }
+
+  getStarsArray(): number[] {
+    const user = this.authService.currentUser();
+    return user ? this.pointsService.getStarsArray(user.points || 0) : [];
+  }
+
+  getPointsToNextStar(): number {
+    const user = this.authService.currentUser();
+    return user ? this.pointsService.getPointsToNextStar(user.points || 0) : 100;
+  }
+
+  getProgressToNextStar(): number {
+    const user = this.authService.currentUser();
+    if (!user) return 0;
+    const currentPoints = user.points || 0;
+    const pointsInCurrentLevel = currentPoints % 100;
+    return pointsInCurrentLevel;
   }
 }

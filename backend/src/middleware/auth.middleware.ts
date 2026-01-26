@@ -1,9 +1,13 @@
 import { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import { AppError } from './error.middleware';
 import { UserRole } from '../models/user.model';
+import { AppError } from './error.middleware';
 
 export interface AuthRequest extends Request {
+  user?: {
+    userId: number;
+    role: UserRole;
+  };
   userId?: number;
   userRole?: UserRole;
 }
@@ -22,6 +26,7 @@ export const authMiddleware = (req: AuthRequest, res: Response, next: NextFuncti
     const decoded = jwt.verify(token, secret) as { userId: number; role: UserRole };
     req.userId = decoded.userId;
     req.userRole = decoded.role;
+    req.user = { userId: decoded.userId, role: decoded.role };
 
     next();
   } catch (error) {

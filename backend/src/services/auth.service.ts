@@ -22,6 +22,7 @@ export class AuthService {
       avatar_url: user.avatar_url,
       bio: user.bio,
       favorite_category: user.favorite_category,
+      points: user.points || 0,
       created_at: user.created_at,
     };
   }
