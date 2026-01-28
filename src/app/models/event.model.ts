@@ -1,5 +1,6 @@
 export interface Event {
   id: string;
+  slug: string; // URL-friendly identifier (ej: 'llegada-hombre-luna-1969')
   title: string;
   date: string;
   category: string;

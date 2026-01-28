@@ -96,6 +96,17 @@
             <i class="fas fa-lock mr-2"></i>
             Cambiar Contraseña
           </button>
+          <button
+            (click)="setActiveTab('friends')"
+            [class]="
+              activeTab() === 'friends'
+                ? 'flex-1 py-4 px-6 text-amber-100 border-b-2 border-amber-500 font-medium bg-amber-900/20'
+                : 'flex-1 py-4 px-6 text-amber-200/60 hover:text-amber-200 hover:bg-amber-900/10 transition-colors'
+            "
+          >
+            <i class="fas fa-heart mr-2"></i>
+            Favoritos
+          </button>
           @if (isAdmin) {
             <button
               (click)="setActiveTab('admin')"
@@ -351,6 +362,88 @@
                 </button>
               </div>
             </form>
+          }
+
+          <!-- Tab: Favoritos -->
+          @if (activeTab() === 'friends') {
+            <div>
+              <div class="mb-6">
+                <h2 class="text-2xl font-semibold text-amber-100 mb-2">
+                  <i class="fas fa-heart mr-2 text-red-400"></i>
+                  Mis Favoritos
+                </h2>
+                <p class="text-amber-200/60 text-lg">Usuarios que has agregado como favoritos</p>
+              </div>
+
+              @if (isLoadingFriends()) {
+                <div class="flex items-center justify-center py-12">
+                  <i class="fas fa-spinner fa-spin text-3xl text-amber-400"></i>
+                  <span class="ml-3 text-amber-200 text-lg">Cargando favoritos...</span>
+                </div>
+              } @else if (friends().length === 0) {
+                <div class="text-center py-12">
+                  <i class="fas fa-heart-broken text-5xl text-amber-900/50 mb-4"></i>
+                  <p class="text-amber-200/60 text-xl">No tienes usuarios favoritos aún</p>
+                  <p class="text-amber-200/40 text-lg mt-2">
+                    Ve a la búsqueda de usuarios y agrega algunos favoritos
+                  </p>
+                  <a
+                    routerLink="/search"
+                    class="inline-block mt-6 px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-semibold rounded-lg transition-all duration-300"
+                  >
+                    <i class="fas fa-search mr-2"></i>
+                    Buscar Usuarios
+                  </a>
+                </div>
+              } @else {
+                <div class="grid gap-4">
+                  @for (friend of friends(); track friend.id) {
+                    <div
+                      class="flex items-center gap-4 p-4 bg-stone-800/30 border border-amber-900/20 rounded-lg hover:bg-stone-800/50 transition-colors"
+                    >
+                      <!-- Avatar -->
+                      <div
+                        class="w-14 h-14 rounded-full bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center text-xl font-bold text-white shadow-lg flex-shrink-0"
+                      >
+                        {{ friend.name.charAt(0).toUpperCase()
+                        }}{{ friend.lastname ? friend.lastname.charAt(0).toUpperCase() : '' }}
+                      </div>
+
+                      <!-- Info del usuario -->
+                      <div class="flex-grow min-w-0">
+                        <h3 class="text-amber-100 font-semibold text-lg truncate">
+                          {{ friend.name }} {{ friend.lastname }}
+                        </h3>
+                        <p class="text-amber-200/60 text-lg truncate">{{ friend.email }}</p>
+                      </div>
+
+                      <!-- Puntos -->
+                      <div class="text-right flex-shrink-0">
+                        <div class="flex items-center gap-2">
+                          <i class="fas fa-trophy text-yellow-400"></i>
+                          <span class="text-yellow-300 font-bold text-lg">{{
+                            friend.points || 0
+                          }}</span>
+                        </div>
+                        <p class="text-amber-200/60 text-lg">puntos</p>
+                      </div>
+
+                      <!-- Botón de chat -->
+                      <div class="flex-shrink-0">
+                        <a
+                          [routerLink]="['/chat', friend.id]"
+                          class="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-medium rounded-lg transition-all duration-300 flex items-center gap-2"
+                          title="Abrir chat"
+                        >
+                          <i class="fas fa-comment-dots"></i>
+                          Chat
+                        </a>
+                      </div>
+                    </div>
+                  }
+                </div>
+              }
+            </div>
           }
 
           <!-- Tab: Administración (solo admin) -->

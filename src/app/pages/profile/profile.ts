@@ -3,9 +3,10 @@ import { Component, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { UsersList } from '../../components/users-list/users-list';
-import { UserRole } from '../../models/user.model';
+import { Friend, UserRole } from '../../models/user.model';
 import { AuthService } from '../../services/auth.service';
 import { EventApiService } from '../../services/event-api.service';
+import { FriendshipService } from '../../services/friendship.service';
 import { PointsService } from '../../services/points.service';
 
 @Component({
@@ -28,7 +29,11 @@ export class ProfileComponent implements OnInit {
 
   showCurrentPassword = signal<boolean>(false);
   showNewPassword = signal<boolean>(false);
-  activeTab = signal<'profile' | 'password' | 'admin'>('profile');
+  activeTab = signal<'profile' | 'password' | 'friends' | 'admin'>('profile');
+
+  // Friends state
+  friends = signal<Friend[]>([]);
+  isLoadingFriends = signal<boolean>(false);
 
   // Admin upload state
   selectedFile = signal<File | null>(null);
@@ -54,6 +59,7 @@ export class ProfileComponent implements OnInit {
     public authService: AuthService,
     private eventApiService: EventApiService,
     private pointsService: PointsService,
+    private friendshipService: FriendshipService,
   ) {
     this.profileForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
@@ -109,9 +115,27 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  setActiveTab(tab: 'profile' | 'password' | 'admin'): void {
+  setActiveTab(tab: 'profile' | 'password' | 'friends' | 'admin'): void {
     this.activeTab.set(tab);
     this.clearMessages();
+
+    if (tab === 'friends') {
+      this.loadFriends();
+    }
+  }
+
+  loadFriends(): void {
+    this.isLoadingFriends.set(true);
+    this.friendshipService.getFriends().subscribe({
+      next: (friends) => {
+        this.friends.set(friends);
+        this.isLoadingFriends.set(false);
+      },
+      error: (error) => {
+        console.error('Error al cargar amigos:', error);
+        this.isLoadingFriends.set(false);
+      },
+    });
   }
 
   clearMessages(): void {

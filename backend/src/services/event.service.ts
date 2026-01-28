@@ -4,6 +4,7 @@ import * as XLSX from 'xlsx';
 import { query } from '../config/database';
 import { AppError } from '../middleware/error.middleware';
 import { Event, EventResponse } from '../models/event.model';
+import { generateEventSlug } from '../utils/slug.utils';
 
 interface ExcelRow {
   id: string;
@@ -53,6 +54,7 @@ export class EventService {
   private static toEventResponse(event: Event): EventResponse {
     return {
       id: event.id,
+      slug: event.slug,
       title: event.title,
       date: event.date,
       category: event.category,
@@ -73,6 +75,19 @@ export class EventService {
 
   static async getEventById(id: string): Promise<EventResponse> {
     const result = await query('SELECT * FROM events WHERE id = $1', [id]);
+    if (result.rows.length === 0) {
+      throw new AppError('Event not found', 404);
+    }
+    return this.toEventResponse(result.rows[0] as Event);
+  }
+
+  /**
+   * Obtiene un evento por su slug (URL-friendly)
+   * @param slug - Slug del evento
+   * @returns Evento encontrado
+   */
+  static async getEventBySlug(slug: string): Promise<EventResponse> {
+    const result = await query('SELECT * FROM events WHERE slug = $1', [slug]);
     if (result.rows.length === 0) {
       throw new AppError('Event not found', 404);
     }
@@ -216,6 +231,7 @@ export class EventService {
 
           const eventData = {
             id: row.id,
+            slug: generateEventSlug(row.title, this.convertDate(row.date)),
             title: row.title,
             date: this.convertDate(row.date),
             category: row.category,
@@ -234,18 +250,20 @@ export class EventService {
             // Actualizar evento existente
             await query(
               `UPDATE events SET
-                title = $1,
-                date = $2,
-                category = $3,
-                image_url = $4,
-                summary = $5,
-                context = $6,
-                key_facts = $7,
-                timeline = $8,
-                consequences = $9,
+                slug = $1,
+                title = $2,
+                date = $3,
+                category = $4,
+                image_url = $5,
+                summary = $6,
+                context = $7,
+                key_facts = $8,
+                timeline = $9,
+                consequences = $10,
                 updated_at = NOW()
-              WHERE id = $10`,
+              WHERE id = $11`,
               [
+                eventData.slug,
                 eventData.title,
                 eventData.date,
                 eventData.category,
@@ -262,10 +280,11 @@ export class EventService {
           } else {
             // Crear nuevo evento
             await query(
-              `INSERT INTO events (id, title, date, category, image_url, summary, context, key_facts, timeline, consequences)
-               VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
+              `INSERT INTO events (id, slug, title, date, category, image_url, summary, context, key_facts, timeline, consequences)
+               VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)`,
               [
                 eventData.id,
+                eventData.slug,
                 eventData.title,
                 eventData.date,
                 eventData.category,

@@ -1,5 +1,6 @@
+import { isPlatformBrowser } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { computed, Injectable, signal } from '@angular/core';
+import { computed, inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError, Observable, tap, throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
@@ -20,6 +21,8 @@ export class AuthService {
   private readonly apiUrl = environment.apiUrl;
   private readonly TOKEN_KEY = 'epicstoria_token';
   private readonly USER_KEY = 'epicstoria_user';
+  private platformId = inject(PLATFORM_ID);
+  private isBrowser = isPlatformBrowser(this.platformId);
 
   // Signals para el estado de autenticación
   private currentUserSignal = signal<User | null>(this.getStoredUser());
@@ -39,23 +42,27 @@ export class AuthService {
   }
 
   private getStoredUser(): User | null {
-    const userJson = localStorage.getItem(this.USER_KEY);
+    if (!this.isBrowser) return null;
+    const userJson = sessionStorage.getItem(this.USER_KEY);
     return userJson ? JSON.parse(userJson) : null;
   }
 
   private getStoredToken(): string | null {
-    return localStorage.getItem(this.TOKEN_KEY);
+    if (!this.isBrowser) return null;
+    return sessionStorage.getItem(this.TOKEN_KEY);
   }
 
   private setAuth(user: User, token: string): void {
-    localStorage.setItem(this.TOKEN_KEY, token);
-    localStorage.setItem(this.USER_KEY, JSON.stringify(user));
+    if (!this.isBrowser) return;
+    sessionStorage.setItem(this.TOKEN_KEY, token);
+    sessionStorage.setItem(this.USER_KEY, JSON.stringify(user));
     this.currentUserSignal.set(user);
   }
 
   private clearAuth(): void {
-    localStorage.removeItem(this.TOKEN_KEY);
-    localStorage.removeItem(this.USER_KEY);
+    if (!this.isBrowser) return;
+    sessionStorage.removeItem(this.TOKEN_KEY);
+    sessionStorage.removeItem(this.USER_KEY);
     this.currentUserSignal.set(null);
   }
 
@@ -119,7 +126,7 @@ export class AuthService {
         tap((response) => {
           if (response.success) {
             this.currentUserSignal.set(response.data);
-            localStorage.setItem(this.USER_KEY, JSON.stringify(response.data));
+            sessionStorage.setItem(this.USER_KEY, JSON.stringify(response.data));
           }
         }),
       );
@@ -136,7 +143,7 @@ export class AuthService {
         tap((response) => {
           if (response.success) {
             this.currentUserSignal.set(response.data);
-            localStorage.setItem(this.USER_KEY, JSON.stringify(response.data));
+            sessionStorage.setItem(this.USER_KEY, JSON.stringify(response.data));
           }
           this.isLoadingSignal.set(false);
         }),

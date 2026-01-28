@@ -60,9 +60,10 @@ export class EventApiService {
     if (this.useStaticData) {
       return this.getAllEvents().pipe(
         map((events) => {
-          const event = events.find((e) => e.id === id);
+          // Buscar primero por slug, luego por id (compatibilidad)
+          const event = events.find((e) => e.slug === id || e.id === id);
           if (!event) {
-            throw new Error(`Event with id ${id} not found`);
+            throw new Error(`Event with id/slug ${id} not found`);
           }
           return event;
         }),
@@ -73,7 +74,7 @@ export class EventApiService {
       );
     }
 
-    // En desarrollo, usar el backend
+    // En desarrollo, usar el backend (acepta tanto ID como slug)
     return this.http.get<ApiResponse<Event>>(`${this.apiUrl}/events/${id}`).pipe(
       map((response) => response.data),
       catchError((error) => {

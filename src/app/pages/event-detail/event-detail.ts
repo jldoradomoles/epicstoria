@@ -1,9 +1,11 @@
+import { DOCUMENT } from '@angular/common';
 import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { QuizComponent } from '../../components/quiz/quiz';
 import { Event } from '../../models/event.model';
 import { DateFormatPipe } from '../../pipes/date-format.pipe';
 import { EventApiService } from '../../services/event-api.service';
+import { SeoService } from '../../services/seo.service';
 import { getCategoryColor as getCategoryColorUtil } from '../../utils/category.utils';
 import { handleImageError } from '../../utils/image.utils';
 import { getParagraphs } from '../../utils/text.utils';
@@ -19,6 +21,8 @@ export class EventDetail implements OnInit {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private cdr = inject(ChangeDetectorRef);
+  private seo = inject(SeoService);
+  private document = inject(DOCUMENT);
 
   event: Event | undefined;
   getCategoryColor = getCategoryColorUtil;
@@ -40,6 +44,13 @@ export class EventDetail implements OnInit {
           }
           console.log('Event loaded successfully:', event);
           this.event = this.loadAdditionalImages(event);
+
+          // Actualizar meta tags SEO
+          this.updateSeoTags(event);
+
+          // Agregar structured data JSON-LD
+          this.addStructuredData(event);
+
           this.cdr.markForCheck();
         },
         error: (error) => {
@@ -52,6 +63,85 @@ export class EventDetail implements OnInit {
       // Si no hay eventId, redirigir a la home
       this.router.navigate(['/']);
     }
+  }
+
+  private updateSeoTags(event: Event) {
+    // Descripción del evento (primeros 160 caracteres del resumen)
+    const description = Array.isArray(event.summary)
+      ? event.summary[0].substring(0, 160)
+      : event.summary.substring(0, 160);
+
+    // Imagen del evento
+    const imageUrl = event.imageUrl.startsWith('http')
+      ? event.imageUrl
+      : `https://epicstoria.com${event.imageUrl}`;
+
+    // Actualizar meta tags
+    this.seo.updateMetaTags({
+      title: event.title,
+      description: `${description}...`,
+      keywords: `historia, ${event.category}, ${event.title}, ${event.date}`,
+      image: imageUrl,
+      url: `https://epicstoria.com/evento/${event.slug || event.id}`,
+      type: 'article',
+    });
+
+    this.seo.updateCanonicalUrl(`https://epicstoria.com/evento/${event.slug || event.id}`);
+  }
+
+  private addStructuredData(event: Event) {
+    // Descripción completa del evento
+    const description = Array.isArray(event.summary) ? event.summary.join(' ') : event.summary;
+
+    // Imagen del evento
+    const imageUrl = event.imageUrl.startsWith('http')
+      ? event.imageUrl
+      : `https://epicstoria.com${event.imageUrl}`;
+
+    // Eliminar script anterior si existe
+    const existingScript = this.document.querySelector(
+      'script[type="application/ld+json"][data-event-schema]',
+    );
+    if (existingScript) {
+      existingScript.remove();
+    }
+
+    // Crear el script con los datos estructurados
+    const script = this.document.createElement('script');
+    script.type = 'application/ld+json';
+    script.setAttribute('data-event-schema', 'true');
+    script.text = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: event.title,
+      description: description.substring(0, 300),
+      image: imageUrl,
+      datePublished: event.date,
+      dateModified: event.date,
+      author: {
+        '@type': 'Organization',
+        name: 'Epicstoria',
+        url: 'https://epicstoria.com',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Epicstoria',
+        url: 'https://epicstoria.com',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://epicstoria.com/favicon.ico',
+        },
+      },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': `https://epicstoria.com/evento/${event.slug || event.id}`,
+      },
+      articleSection: event.category,
+      keywords: `historia, ${event.category}, ${event.title}`,
+      inLanguage: 'es-ES',
+    });
+
+    this.document.head.appendChild(script);
   }
 
   /**

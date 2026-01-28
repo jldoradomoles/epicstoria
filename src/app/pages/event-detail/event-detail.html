@@ -8,6 +8,7 @@
         [alt]="event.title"
         class="heigth-full w-full object-cover opacity-60"
         (error)="onImageError($event)"
+        loading="eager"
       />
       <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
 
@@ -57,7 +58,12 @@
       <!-- Resumen -->
       <div class="mb-12 rounded-xl container-custom p-8 shadow-2xl">
         <h2 class="mb-4 text-2xl font-bold flex items-center gap-3 border-title pb-2">
-          <img src="images/logos/resumen.png" alt="Resumen" class="h-14" />
+          <img
+            src="images/logos/resumen.png"
+            alt="Icono de Resumen del evento"
+            class="h-14"
+            loading="lazy"
+          />
           Resumen
         </h2>
         @for (paragraph of getParagraphs(event.summary); track $index) {
@@ -68,7 +74,12 @@
       <!-- Contexto Histórico -->
       <div class="mb-12 rounded-xl container-custom p-8 shadow-2xl">
         <h2 class="mb-6 border-title pb-2 text-3xl font-bold flex items-center gap-3">
-          <img src="images/logos/contexto.png" alt="Contexto" class="h-14" />
+          <img
+            src="images/logos/contexto.png"
+            alt="Icono de Contexto Histórico"
+            class="h-14"
+            loading="lazy"
+          />
           Contexto Histórico
         </h2>
         <div class="space-y-4">
@@ -82,6 +93,7 @@
                     [alt]="event.title"
                     class="w-full h-auto rounded-lg shadow-lg object-cover imagen-dato-curioso"
                     (error)="onImageError($event)"
+                    loading="lazy"
                   />
                 </div>
                 <div class="md:w-2/3">
@@ -97,6 +109,7 @@
                     [alt]="event.title"
                     class="w-full h-auto rounded-lg shadow-lg object-cover imagen-dato-curioso"
                     (error)="onImageError($event)"
+                    loading="lazy"
                   />
                 </div>
                 <div class="md:w-2/3">
@@ -112,7 +125,12 @@
       <!-- Datos Curiosos -->
       <div class="mb-12 container-custom px-6 rounded-xl py-3">
         <h2 class="mb-6 text-3xl font-bold flex items-center gap-3">
-          <img src="images/logos/datos-curiosos.png" alt="Datos Curiosos" class="h-14" />
+          <img
+            src="images/logos/datos-curiosos.png"
+            alt="Icono de Datos Curiosos e interesantes"
+            class="h-14"
+            loading="lazy"
+          />
           Datos Curiosos
         </h2>
         <div class="grid gap-6 md:grid-cols-2">
@@ -125,6 +143,7 @@
                   [alt]="event.title"
                   class="imagen-dato-curioso"
                   (error)="onImageError($event)"
+                  loading="lazy"
                 />
               </div>
               <div
@@ -167,6 +186,7 @@
                   [alt]="event.title"
                   class="w-full h-full object-cover"
                   (error)="onImageError($event)"
+                  loading="lazy"
                 />
               </div>
             } @else if (isLast && event.keyFacts.length % 2 !== 0 && getAdditionalImage(4)) {
@@ -177,6 +197,7 @@
                   [alt]="event.title"
                   class="imagen-dato-curioso"
                   (error)="onImageError($event)"
+                  loading="lazy"
                 />
               </div>
               <div
@@ -219,7 +240,12 @@
       <!-- Cronología -->
       <div class="mb-12 container-custom px-6 rounded-xl py-3">
         <h2 class="mb-6 pb-2 text-3xl font-bold flex items-center gap-3">
-          <img src="images/logos/cronologia.png" alt="Cronología" class="h-14" />
+          <img
+            src="images/logos/cronologia.png"
+            alt="Icono de Cronología de eventos"
+            class="h-14"
+            loading="lazy"
+          />
           Cronología
         </h2>
         <div class="space-y-6">
@@ -246,8 +272,9 @@
         <h2 class="border-title mb-6 text-3xl font-bold flex items-center gap-3 pb-2">
           <img
             src="images/logos/consecuencias-legado.png"
-            alt="Consecuencias y Legado"
+            alt="Icono de Consecuencias y Legado histórico"
             class="h-14"
+            loading="lazy"
           />
           Consecuencias y Legado
         </h2>
@@ -261,7 +288,12 @@
       <!-- Quiz Interactivo -->
       <div class="mb-12">
         <h2 class="mb-6 text-3xl font-bold text-color flex items-center gap-3">
-          <img src="images/logos/quiz-interactivo.png" alt="Quiz Interactivo" class="h-14" />
+          <img
+            src="images/logos/quiz-interactivo.png"
+            alt="Icono de Quiz Interactivo sobre el evento"
+            class="h-14"
+            loading="lazy"
+          />
           Quiz Interactivo
         </h2>
         <app-quiz [event]="event"></app-quiz>

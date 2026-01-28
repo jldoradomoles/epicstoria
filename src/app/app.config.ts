@@ -7,8 +7,14 @@ import {
   provideBrowserGlobalErrorListeners,
   provideZonelessChangeDetection,
 } from '@angular/core';
-import { provideRouter, withViewTransitions } from '@angular/router';
+import {
+  PreloadAllModules,
+  provideRouter,
+  withPreloading,
+  withViewTransitions,
+} from '@angular/router';
 
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { routes } from './app.routes';
 
 // Registrar locale español
@@ -20,6 +26,7 @@ export const appConfig: ApplicationConfig = {
     provideZonelessChangeDetection(),
     provideRouter(
       routes,
+      withPreloading(PreloadAllModules), // Precargar todos los módulos lazy después de la carga inicial
       withViewTransitions({
         skipInitialTransition: true,
         onViewTransitionCreated: () => {
@@ -29,5 +36,6 @@ export const appConfig: ApplicationConfig = {
     ),
     provideHttpClient(),
     { provide: LOCALE_ID, useValue: 'es' },
+    provideClientHydration(withEventReplay()),
   ],
 };

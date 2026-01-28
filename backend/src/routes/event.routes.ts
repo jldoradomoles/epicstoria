@@ -230,10 +230,19 @@ router.get('/category/:category', async (req: Request, res: Response, next: Next
 });
 
 // GET /api/events/:id
-router.get('/:id', async (req: Request, res: Response, next: NextFunction) => {
+// GET /api/events/:idOrSlug - Obtener evento por ID o slug
+router.get('/:idOrSlug', async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { id } = req.params;
-    const event = await EventService.getEventById(id);
+    const { idOrSlug } = req.params;
+
+    // Intentar primero buscar por slug, si falla buscar por ID
+    let event;
+    try {
+      event = await EventService.getEventBySlug(idOrSlug);
+    } catch {
+      // Si no encuentra por slug, intentar por ID (para compatibilidad)
+      event = await EventService.getEventById(idOrSlug);
+    }
 
     res.json({
       success: true,

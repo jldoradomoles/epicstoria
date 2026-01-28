@@ -1,17 +1,6 @@
 import { Routes } from '@angular/router';
 import { authGuard, guestGuard } from './guards/auth.guard';
-import { About } from './pages/about/about';
-import { EventDetail } from './pages/event-detail/event-detail';
-import { Eventos } from './pages/eventos/eventos';
-import { Galeria } from './pages/galeria/galeria';
 import { Home } from './pages/home/home';
-import { Juegos } from './pages/juegos/juegos';
-import { LoginComponent } from './pages/login/login';
-import { Privacy } from './pages/privacy/privacy';
-import { ProfileComponent } from './pages/profile/profile';
-import { RegisterComponent } from './pages/register/register';
-import { Search } from './pages/search/search';
-import { Terms } from './pages/terms/terms';
 
 export const routes: Routes = [
   {
@@ -20,49 +9,54 @@ export const routes: Routes = [
   },
   {
     path: 'evento/:id',
-    component: EventDetail,
+    loadComponent: () => import('./pages/event-detail/event-detail').then((m) => m.EventDetail),
   },
   {
     path: 'buscar',
-    component: Search,
+    loadComponent: () => import('./pages/search/search').then((m) => m.Search),
   },
   {
     path: 'eventos',
-    component: Eventos,
+    loadComponent: () => import('./pages/eventos/eventos').then((m) => m.Eventos),
   },
   {
     path: 'juegos',
-    component: Juegos,
+    loadComponent: () => import('./pages/juegos/juegos').then((m) => m.Juegos),
   },
   {
     path: 'galeria',
-    component: Galeria,
+    loadComponent: () => import('./pages/galeria/galeria').then((m) => m.Galeria),
   },
   {
     path: 'acerca',
-    component: About,
+    loadComponent: () => import('./pages/about/about').then((m) => m.About),
   },
   {
     path: 'terminos',
-    component: Terms,
+    loadComponent: () => import('./pages/terms/terms').then((m) => m.Terms),
   },
   {
     path: 'privacidad',
-    component: Privacy,
+    loadComponent: () => import('./pages/privacy/privacy').then((m) => m.Privacy),
   },
   {
     path: 'login',
-    component: LoginComponent,
+    loadComponent: () => import('./pages/login/login').then((m) => m.LoginComponent),
     canActivate: [guestGuard],
   },
   {
     path: 'register',
-    component: RegisterComponent,
+    loadComponent: () => import('./pages/register/register').then((m) => m.RegisterComponent),
     canActivate: [guestGuard],
   },
   {
     path: 'perfil',
-    component: ProfileComponent,
+    loadComponent: () => import('./pages/profile/profile').then((m) => m.ProfileComponent),
+    canActivate: [authGuard],
+  },
+  {
+    path: 'chat/:userId',
+    loadComponent: () => import('./pages/chat/chat').then((m) => m.ChatComponent),
     canActivate: [authGuard],
   },
   {

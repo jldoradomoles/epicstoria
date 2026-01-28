@@ -1,8 +1,8 @@
-import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Hero } from '../../components/hero/hero';
 import { EventApiService } from '../../services/event-api.service';
+import { SeoService } from '../../services/seo.service';
 
 interface GalleryImage {
   url: string;
@@ -14,12 +14,13 @@ interface GalleryImage {
 @Component({
   selector: 'app-galeria',
   standalone: true,
-  imports: [CommonModule, RouterModule, Hero],
+  imports: [RouterModule, Hero],
   templateUrl: './galeria.html',
   styleUrl: './galeria.scss',
 })
 export class Galeria implements OnInit {
   private eventApiService = inject(EventApiService);
+  private seo = inject(SeoService);
 
   images = signal<GalleryImage[]>([]);
   selectedImage = signal<GalleryImage | null>(null);
@@ -68,6 +69,17 @@ export class Galeria implements OnInit {
   ];
 
   ngOnInit(): void {
+    this.seo.updateMetaTags({
+      title: 'Galería de Imágenes Históricas',
+      description:
+        'Explora una colección visual de momentos históricos capturados en imágenes. Desde civilizaciones antiguas hasta eventos recientes.',
+      keywords: 'galería histórica, imágenes historia, fotografías históricas, archivo visual',
+      url: 'https://epicstoria.com/galeria',
+      type: 'website',
+    });
+
+    this.seo.updateCanonicalUrl('https://epicstoria.com/galeria');
+
     this.loadImages();
   }
 

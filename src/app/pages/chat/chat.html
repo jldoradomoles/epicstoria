@@ -1,0 +1,104 @@
+<div class="min-h-screen py-8 px-4">
+  <div class="max-w-4xl mx-auto">
+    <!-- Header -->
+    <div class="mb-6">
+      <button
+        (click)="goBack()"
+        class="text-amber-100 hover:text-amber-200 mb-4 flex items-center gap-2 transition-colors"
+      >
+        <i class="fas fa-arrow-left"></i>
+        Volver
+      </button>
+
+      @if (otherUser()) {
+        <div class="flex items-center gap-4">
+          <!-- Avatar del otro usuario -->
+          <div
+            class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center text-xl font-bold text-white shadow-lg"
+          >
+            {{ otherUser()!.name.charAt(0).toUpperCase()
+            }}{{ otherUser()!.lastname?.charAt(0)?.toUpperCase() || '' }}
+          </div>
+          <div>
+            <h1 class="text-2xl font-bold text-amber-100">
+              {{ otherUser()!.name }} {{ otherUser()!.lastname }}
+            </h1>
+            <p class="text-amber-200/60">{{ otherUser()!.email }}</p>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Chat Container -->
+    <div class="container-custom rounded-xl overflow-hidden flex flex-col" style="height: 600px">
+      <!-- Messages Area -->
+      <div #messagesContainer class="flex-1 overflow-y-auto p-6 space-y-4">
+        @if (isLoadingMessages()) {
+          <div class="flex items-center justify-center h-full">
+            <i class="fas fa-spinner fa-spin text-3xl text-amber-400"></i>
+            <span class="ml-3 text-amber-200 text-lg">Cargando mensajes...</span>
+          </div>
+        } @else if (messages().length === 0) {
+          <div class="flex items-center justify-center h-full">
+            <div class="text-center">
+              <i class="fas fa-comments text-5xl text-amber-900/50 mb-4"></i>
+              <p class="text-amber-200/60 text-xl">No hay mensajes aún</p>
+              <p class="text-amber-200/40 text-lg mt-2">Inicia la conversación</p>
+            </div>
+          </div>
+        } @else {
+          @for (message of messages(); track message.id) {
+            <div
+              [class]="
+                message.sender_id === currentUser()?.id ? 'flex justify-end' : 'flex justify-start'
+              "
+            >
+              <div
+                [class]="
+                  message.sender_id === currentUser()?.id
+                    ? 'max-w-[70%] bg-gradient-to-r from-amber-600 to-amber-700 text-white rounded-2xl rounded-tr-sm p-4 shadow-lg'
+                    : 'max-w-[70%] bg-stone-800/50 text-amber-100 rounded-2xl rounded-tl-sm p-4 shadow-lg border border-amber-900/20'
+                "
+              >
+                <p class="break-words whitespace-pre-wrap">{{ message.message }}</p>
+              </div>
+            </div>
+          }
+        }
+      </div>
+
+      <!-- Input Area -->
+      <div class="border-t border-amber-900/30 p-4 bg-stone-900/30">
+        @if (errorMessage()) {
+          <div
+            class="mb-3 p-3 bg-red-900/50 border border-red-500/50 rounded-lg text-red-200 text-sm"
+          >
+            {{ errorMessage() }}
+          </div>
+        }
+
+        <form (submit)="sendMessage($event)" class="flex gap-3">
+          <input
+            type="text"
+            name="message"
+            [(ngModel)]="newMessage"
+            [disabled]="isSending()"
+            placeholder="Escribe un mensaje..."
+            class="flex-1 px-4 py-3 bg-stone-800/50 border border-amber-900/30 rounded-lg text-amber-100 placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors disabled:opacity-50"
+          />
+          <button
+            type="submit"
+            [disabled]="!newMessage.trim() || isSending()"
+            class="px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+          >
+            @if (isSending()) {
+              <i class="fas fa-spinner fa-spin"></i>
+            } @else {
+              <i class="fas fa-paper-plane"></i>
+            }
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -15,7 +15,8 @@ EpicStoria soporta múltiples ambientes de despliegue:
 
 - **[Guía de Ambientes](./DEPLOYMENT-ENVIRONMENTS.md)** - Comparación completa de ambientes (Desarrollo, GitHub Pages, Hostinger)
 - **[Sistema de Datos Estáticos](./STATIC-DATA-SYSTEM.md)** - Cómo funciona el sistema para GitHub Pages
-- **[Despliegue en Hostinger VPS](./DESPLIEGUE-HOSTINGER-VPS.md)** - Guía paso a paso para producción completa
+- **[🚀 Despliegue SSR en Hostinger](./DESPLIEGUE-SSR-HOSTINGER.md)** - **NUEVO: Guía completa para despliegue con Server-Side Rendering**
+- **[Despliegue VPS (Antigua)](./DESPLIEGUE-HOSTINGER-VPS.md)** - Guía anterior sin SSR
 
 ## 🚀 Inicio Rápido (Desarrollo Local)
 
@@ -140,6 +141,7 @@ Para más detalles, consulta:
 
 - [SISTEMA-SUBIDA-IMAGENES.md](SISTEMA-SUBIDA-IMAGENES.md) - Documentación del sistema de imágenes
 - [GUIA-NOMBRES-IMAGENES.md](GUIA-NOMBRES-IMAGENES.md) - Guía de buenas prácticas para nombrar imágenes
+- [IMAGE-OPTIMIZATION.md](IMAGE-OPTIMIZATION.md) - **NUEVO: Optimización de imágenes para SEO y Performance**
 - [DESPLIEGUE-HOSTINGER-VPS.md](DESPLIEGUE-HOSTINGER-VPS.md) - Guía de despliegue en VPS
 
 ## 🛠️ Scripts Disponibles

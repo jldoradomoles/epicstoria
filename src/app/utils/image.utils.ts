@@ -34,8 +34,8 @@ function checkImageExists(imageUrl: string): Promise<void> {
   return new Promise((resolve, reject) => {
     const img = new Image();
 
-    // Suprimir errores en consola del navegador
-    img.setAttribute('loading', 'eager');
+    // Lazy loading por defecto para mejor performance
+    img.setAttribute('loading', 'lazy');
 
     img.onload = () => resolve();
     img.onerror = () => reject();

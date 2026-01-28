@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Hero } from '../../components/hero/hero';
 import { PointsService } from '../../services/points.service';
+import { SeoService } from '../../services/seo.service';
 
 interface LeaderboardEntry {
   id: number;
@@ -27,10 +28,22 @@ export class Juegos implements OnInit {
   isLoading = signal<boolean>(false);
   total = signal<number>(0);
   limit = 10;
+  private seo = inject(SeoService);
 
   constructor(private pointsService: PointsService) {}
 
   ngOnInit(): void {
+    this.seo.updateMetaTags({
+      title: 'Juegos y Quizzes',
+      description:
+        'Pon a prueba tus conocimientos de historia con nuestros quizzes interactivos. Compite en el ranking global y gana estrellas mientras aprendes.',
+      keywords: 'quiz historia, juegos educativos, trivial historia, ranking, puntos, estrellas',
+      url: 'https://epicstoria.com/juegos',
+      type: 'website',
+    });
+
+    this.seo.updateCanonicalUrl('https://epicstoria.com/juegos');
+
     this.loadLeaderboard();
   }
 

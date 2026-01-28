@@ -1,5 +1,6 @@
 export interface Event {
   id: string;
+  slug: string; // URL-friendly identifier
   title: string;
   date: string;
   category: string;
@@ -26,6 +27,7 @@ export interface TimelineItem {
 
 export interface EventResponse {
   id: string;
+  slug: string;
   title: string;
   date: string;
   category: string;
