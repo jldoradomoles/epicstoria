@@ -2,7 +2,7 @@
   <div class="max-w-3xl mx-auto">
     <!-- Título de la página -->
     <div class="text-center mb-8">
-      <h1 class="text-3xl font-bold text-amber-100 mb-2">Mi Perfil</h1>
+      <h1 class="text-3xl font-bold text-color mb-2">Mi Perfil</h1>
       <p class="text-color">Administra tu información personal</p>
     </div>
 
@@ -21,7 +21,7 @@
               {{ getInitials() }}
             </div>
             <div class="flex-grow">
-              <h2 class="text-xl font-semibold text-amber-100">
+              <h2 class="text-xl font-semibold text-color">
                 {{ currentUser.name }} {{ currentUser.lastname }}
               </h2>
               <p class="text-amber-200/60">{{ currentUser.email }}</p>
@@ -78,7 +78,7 @@
             (click)="setActiveTab('profile')"
             [class]="
               activeTab() === 'profile'
-                ? 'flex-1 py-4 px-6 text-amber-100 border-b-2 border-amber-500 font-medium bg-amber-900/20'
+                ? 'flex-1 py-4 px-6 text-color border-b-2 border-amber-500 font-medium bg-amber-900/20'
                 : 'flex-1 py-4 px-6 text-amber-200/60 hover:text-amber-200 hover:bg-amber-900/10 transition-colors'
             "
           >
@@ -89,7 +89,7 @@
             (click)="setActiveTab('password')"
             [class]="
               activeTab() === 'password'
-                ? 'flex-1 py-4 px-6 text-amber-100 border-b-2 border-amber-500 font-medium bg-amber-900/20'
+                ? 'flex-1 py-4 px-6 text-color border-b-2 border-amber-500 font-medium bg-amber-900/20'
                 : 'flex-1 py-4 px-6 text-amber-200/60 hover:text-amber-200 hover:bg-amber-900/10 transition-colors'
             "
           >
@@ -100,7 +100,7 @@
             (click)="setActiveTab('friends')"
             [class]="
               activeTab() === 'friends'
-                ? 'flex-1 py-4 px-6 text-amber-100 border-b-2 border-amber-500 font-medium bg-amber-900/20'
+                ? 'flex-1 py-4 px-6 text-color border-b-2 border-amber-500 font-medium bg-amber-900/20'
                 : 'flex-1 py-4 px-6 text-amber-200/60 hover:text-amber-200 hover:bg-amber-900/10 transition-colors'
             "
           >
@@ -112,7 +112,7 @@
               (click)="setActiveTab('admin')"
               [class]="
                 activeTab() === 'admin'
-                  ? 'flex-1 py-4 px-6 text-amber-100 border-b-2 border-amber-500 font-medium bg-amber-900/20'
+                  ? 'flex-1 py-4 px-6 text-color border-b-2 border-amber-500 font-medium bg-amber-900/20'
                   : 'flex-1 py-4 px-6 text-amber-200/60 hover:text-amber-200 hover:bg-amber-900/10 transition-colors'
               "
             >
@@ -148,14 +148,14 @@
               <div class="grid md:grid-cols-2 gap-6">
                 <!-- Nombre -->
                 <div>
-                  <label for="name" class="block text-amber-100 text-lg font-medium mb-2">
+                  <label for="name" class="block text-color text-lg font-medium mb-2">
                     Nombre <span class="text-red-400">*</span>
                   </label>
                   <input
                     type="text"
                     id="name"
                     formControlName="name"
-                    class="w-full px-4 py-3 bg-stone-800/50 border border-amber-900/30 rounded-lg text-amber-100 placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
+                    class="w-full px-4 py-3 bg-stone-800/50 border border-amber-900/30 rounded-lg text-color placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
                     placeholder="Tu nombre"
                   />
                   @if (profileForm.get('name')?.touched && profileForm.get('name')?.errors) {
@@ -165,14 +165,14 @@
 
                 <!-- Apellido -->
                 <div>
-                  <label for="lastname" class="block text-amber-100 text-lg font-medium mb-2">
+                  <label for="lastname" class="block text-color text-lg font-medium mb-2">
                     Apellido
                   </label>
                   <input
                     type="text"
                     id="lastname"
                     formControlName="lastname"
-                    class="w-full px-4 py-3 bg-stone-800/50 border border-amber-900/30 rounded-lg text-amber-100 placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
+                    class="w-full px-4 py-3 bg-stone-800/50 border border-amber-900/30 rounded-lg text-color placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
                     placeholder="Tu apellido"
                   />
                 </div>
@@ -180,16 +180,13 @@
 
               <!-- Categoría favorita -->
               <div class="mt-6">
-                <label
-                  for="favorite_category"
-                  class="block text-amber-100 text-lg font-medium mb-2"
-                >
+                <label for="favorite_category" class="block text-color text-lg font-medium mb-2">
                   Categoría favorita
                 </label>
                 <select
                   id="favorite_category"
                   formControlName="favorite_category"
-                  class="w-full px-4 py-3 bg-stone-800/50 border border-amber-900/30 rounded-lg text-amber-100 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
+                  class="w-full px-4 py-3 bg-stone-800/50 border border-amber-900/30 rounded-lg text-color focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
                 >
                   <option value="">Selecciona una categoría</option>
                   @for (category of categories; track category) {
@@ -200,14 +197,14 @@
 
               <!-- Bio -->
               <div class="mt-6">
-                <label for="bio" class="block text-amber-100 text-lg font-medium mb-2">
+                <label for="bio" class="block text-color text-lg font-medium mb-2">
                   Sobre mí
                 </label>
                 <textarea
                   id="bio"
                   formControlName="bio"
                   rows="4"
-                  class="w-full px-4 py-3 bg-stone-800/50 border border-amber-900/30 rounded-lg text-amber-100 placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors resize-none"
+                  class="w-full px-4 py-3 bg-stone-800/50 border border-amber-900/30 rounded-lg text-color placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors resize-none"
                   placeholder="Cuéntanos un poco sobre ti..."
                 ></textarea>
               </div>
@@ -254,7 +251,7 @@
             <form [formGroup]="passwordForm" (ngSubmit)="onPasswordSubmit()" class="max-w-md">
               <!-- Contraseña actual -->
               <div class="mb-6">
-                <label for="currentPassword" class="block text-amber-100 text-lg font-medium mb-2">
+                <label for="currentPassword" class="block text-color text-lg font-medium mb-2">
                   Contraseña actual <span class="text-red-400">*</span>
                 </label>
                 <div class="relative">
@@ -262,7 +259,7 @@
                     [type]="showCurrentPassword() ? 'text' : 'password'"
                     id="currentPassword"
                     formControlName="currentPassword"
-                    class="w-full px-4 py-3 pr-12 bg-stone-800/50 border border-amber-900/30 rounded-lg text-amber-100 placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
+                    class="w-full px-4 py-3 pr-12 bg-stone-800/50 border border-amber-900/30 rounded-lg text-color placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
                     placeholder="Tu contraseña actual"
                   />
                   <button
@@ -283,7 +280,7 @@
 
               <!-- Nueva contraseña -->
               <div class="mb-6">
-                <label for="newPassword" class="block text-amber-100 text-lg font-medium mb-2">
+                <label for="newPassword" class="block text-color text-lg font-medium mb-2">
                   Nueva contraseña <span class="text-red-400">*</span>
                 </label>
                 <div class="relative">
@@ -291,7 +288,7 @@
                     [type]="showNewPassword() ? 'text' : 'password'"
                     id="newPassword"
                     formControlName="newPassword"
-                    class="w-full px-4 py-3 pr-12 bg-stone-800/50 border border-amber-900/30 rounded-lg text-amber-100 placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
+                    class="w-full px-4 py-3 pr-12 bg-stone-800/50 border border-amber-900/30 rounded-lg text-color placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
                     placeholder="Mínimo 6 caracteres"
                   />
                   <button
@@ -318,17 +315,14 @@
 
               <!-- Confirmar nueva contraseña -->
               <div class="mb-6">
-                <label
-                  for="confirmNewPassword"
-                  class="block text-amber-100 text-lg font-medium mb-2"
-                >
+                <label for="confirmNewPassword" class="block text-color text-lg font-medium mb-2">
                   Confirmar nueva contraseña <span class="text-red-400">*</span>
                 </label>
                 <input
                   type="password"
                   id="confirmNewPassword"
                   formControlName="confirmNewPassword"
-                  class="w-full px-4 py-3 bg-stone-800/50 border border-amber-900/30 rounded-lg text-amber-100 placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
+                  class="w-full px-4 py-3 bg-stone-800/50 border border-amber-900/30 rounded-lg text-color placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors"
                   placeholder="Repite la nueva contraseña"
                 />
                 @if (
@@ -368,7 +362,7 @@
           @if (activeTab() === 'friends') {
             <div>
               <div class="mb-6">
-                <h2 class="text-2xl font-semibold text-amber-100 mb-2">
+                <h2 class="text-2xl font-semibold text-color mb-2">
                   <i class="fas fa-heart mr-2 text-red-400"></i>
                   Mis Favoritos
                 </h2>
@@ -399,7 +393,7 @@
                 <div class="grid gap-4">
                   @for (friend of friends(); track friend.id) {
                     <div
-                      class="flex items-center gap-4 p-4 bg-stone-800/30 border border-amber-900/20 rounded-lg hover:bg-stone-800/50 transition-colors"
+                      class="grid grid-cols-1 lg:grid-cols-[auto_1fr_auto_auto] gap-4 items-center p-4 bg-stone-800/30 border border-amber-900/20 rounded-lg hover:bg-stone-800/50 transition-colors"
                     >
                       <!-- Avatar -->
                       <div
@@ -410,29 +404,30 @@
                       </div>
 
                       <!-- Info del usuario -->
-                      <div class="flex-grow min-w-0">
-                        <h3 class="text-amber-100 font-semibold text-lg truncate">
+                      <div class="min-w-0">
+                        <h3 class="text-color font-semibold text-lg break-words">
                           {{ friend.name }} {{ friend.lastname }}
                         </h3>
                         <p class="text-amber-200/60 text-lg truncate">{{ friend.email }}</p>
                       </div>
 
                       <!-- Puntos -->
-                      <div class="text-right flex-shrink-0">
+                      <div class="text-left lg:text-right flex-shrink-0">
                         <div class="flex items-center gap-2">
                           <i class="fas fa-trophy text-yellow-400"></i>
                           <span class="text-yellow-300 font-bold text-lg">{{
                             friend.points || 0
                           }}</span>
+                          <span class="text-amber-200/60 text-lg lg:hidden">puntos</span>
                         </div>
-                        <p class="text-amber-200/60 text-lg">puntos</p>
+                        <p class="text-amber-200/60 text-lg hidden lg:block">puntos</p>
                       </div>
 
                       <!-- Botón de chat -->
                       <div class="flex-shrink-0">
                         <a
                           [routerLink]="['/chat', friend.id]"
-                          class="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-medium rounded-lg transition-all duration-300 flex items-center gap-2"
+                          class="px-4 py-2 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-medium rounded-lg transition-all duration-300 flex items-center gap-2 w-full lg:w-auto justify-center"
                           title="Abrir chat"
                         >
                           <i class="fas fa-comment-dots"></i>
@@ -452,7 +447,7 @@
               <!-- Sección: Subida de Imágenes -->
               <div class="border-b border-amber-900/30 pb-8">
                 <div class="mb-6">
-                  <h2 class="text-lg font-semibold text-amber-100 mb-2">
+                  <h2 class="text-lg font-semibold text-color mb-2">
                     <i class="fas fa-images mr-2"></i>
                     Subir Imágenes de Eventos
                   </h2>
@@ -463,7 +458,7 @@
                     IMPORTANTE: Las imágenes no deben contener espacios en blanco ni caracteres
                     especiales ni tildes en el nombre, para separar palabras usar guiones medios
                     (-). Ejemplo:
-                    <strong class="text-amber-100">llegada-a-la-luna.jpg</strong>
+                    <strong class="text-color">llegada-a-la-luna.jpg</strong>
                   </p>
                 </div>
 
@@ -488,7 +483,7 @@
                 <!-- Resultado de upload de imágenes -->
                 @if (imageUploadResult() && imageUploadResult()!.length > 0) {
                   <div class="p-4 bg-stone-800/50 border border-amber-900/30 rounded-lg mb-4">
-                    <h4 class="text-amber-100 font-medium mb-3">
+                    <h4 class="text-color font-medium mb-3">
                       Imágenes subidas ({{ imageUploadResult()!.length }}):
                     </h4>
                     <div class="space-y-3">
@@ -498,7 +493,7 @@
                         >
                           <i class="fas fa-image text-green-400"></i>
                           <div class="flex-1 min-w-0">
-                            <p class="text-amber-100 text-xl truncate">{{ image.originalName }}</p>
+                            <p class="text-color text-xl truncate">{{ image.originalName }}</p>
                             <p class="text-amber-200/60 text-lg font-mono truncate">
                               {{ image.imageUrl }}
                             </p>
@@ -533,7 +528,7 @@
                       <i class="fas fa-image text-4xl text-amber-400/60 mb-4"></i>
                       <p class="text-amber-200 mb-2">
                         @if (selectedImages().length > 0) {
-                          <span class="text-amber-100 font-medium text-lg">
+                          <span class="text-color font-medium text-lg">
                             {{ selectedImages().length }} imagen(es) seleccionada(s)
                           </span>
                         } @else {
@@ -555,7 +550,7 @@
                         >
                           <i class="fas fa-image text-amber-400"></i>
                           <div class="flex-1 min-w-0">
-                            <p class="text-amber-100 text-xl truncate">{{ image.name }}</p>
+                            <p class="text-color text-xl truncate">{{ image.name }}</p>
                             <p class="text-amber-200/60 text-lg">
                               {{ (image.size / 1024 / 1024).toFixed(2) }} MB
                             </p>
@@ -592,7 +587,7 @@
               <!-- Sección: Cargar Eventos desde Excel -->
               <div>
                 <div class="mb-6">
-                  <h3 class="text-lg font-semibold text-amber-100 mb-2">
+                  <h3 class="text-lg font-semibold text-color mb-2">
                     <i class="fas fa-upload mr-2"></i>
                     Cargar Eventos desde Excel
                   </h3>
@@ -623,7 +618,7 @@
                 <!-- Resultado de upload -->
                 @if (uploadResult()) {
                   <div class="p-4 bg-stone-800/50 border border-amber-900/30 rounded-lg">
-                    <h4 class="text-amber-100 font-medium mb-3">Resultado del proceso:</h4>
+                    <h4 class="text-color font-medium mb-3">Resultado del proceso:</h4>
                     <div class="grid grid-cols-2 gap-4 text-lg">
                       <div class="flex items-center gap-2">
                         <i class="fas fa-plus-circle text-green-400"></i>
@@ -675,7 +670,7 @@
                       <i class="fas fa-file-excel text-4xl text-amber-400/60 mb-4"></i>
                       <p class="text-amber-200 mb-2">
                         @if (selectedFile()) {
-                          <span class="text-amber-100 font-medium">{{ selectedFile()!.name }}</span>
+                          <span class="text-color font-medium">{{ selectedFile()!.name }}</span>
                         } @else {
                           Haz clic para seleccionar un archivo Excel
                         }
@@ -704,7 +699,7 @@
 
                 <!-- Instrucciones -->
                 <div class="mt-6 p-4 bg-stone-800/30 rounded-lg border border-amber-900/20">
-                  <h2 class="text-amber-100 text-xl mb-3 flex items-center gap-2">
+                  <h2 class="text-color text-xl mb-3 flex items-center gap-2">
                     <i class="fas fa-info-circle text-amber-400"></i>
                     Formato del archivo Excel
                   </h2>
@@ -713,36 +708,36 @@
                   </p>
                   <ul class="text-amber-200/70 text-lg space-y-1">
                     <li>
-                      <strong class="text-amber-100">id:</strong> Identificador único del evento
-                      (ej: apolo-11)
+                      <strong class="text-color">id:</strong> Identificador único del evento (ej:
+                      apolo-11)
                     </li>
-                    <li><strong class="text-amber-100">title:</strong> Título del evento</li>
+                    <li><strong class="text-color">title:</strong> Título del evento</li>
                     <li>
-                      <strong class="text-amber-100">date:</strong> Fecha (DD-MM-YYYY o YYYY-MM-DD)
+                      <strong class="text-color">date:</strong> Fecha (DD-MM-YYYY o YYYY-MM-DD)
                     </li>
-                    <li><strong class="text-amber-100">category:</strong> Categoría del evento</li>
+                    <li><strong class="text-color">category:</strong> Categoría del evento</li>
                     <li>
-                      <strong class="text-amber-100">imageUrl:</strong> URL de la imagen
+                      <strong class="text-color">imageUrl:</strong> URL de la imagen
                       (images/eventos/nombre-del-archivo.jpg)
                     </li>
                     <li>
-                      <strong class="text-amber-100">summary:</strong> Resumen (párrafos separados
-                      por ||)
+                      <strong class="text-color">summary:</strong> Resumen (párrafos separados por
+                      ||)
                     </li>
                     <li>
-                      <strong class="text-amber-100">context:</strong> Contexto (párrafos separados
-                      por ||)
+                      <strong class="text-color">context:</strong> Contexto (párrafos separados por
+                      ||)
                     </li>
                     <li>
-                      <strong class="text-amber-100">keyFacts:</strong> Datos clave
+                      <strong class="text-color">keyFacts:</strong> Datos clave
                       (Título|Desc||Título2|Desc2)
                     </li>
                     <li>
-                      <strong class="text-amber-100">timeline:</strong> Línea de tiempo
+                      <strong class="text-color">timeline:</strong> Línea de tiempo
                       (Fecha|Evento||Fecha2|Evento2)
                     </li>
                     <li>
-                      <strong class="text-amber-100">consequences:</strong> Consecuencias (párrafos
+                      <strong class="text-color">consequences:</strong> Consecuencias (párrafos
                       separados por ||)
                     </li>
                   </ul>
@@ -767,7 +762,7 @@
       <!-- Sección de Usuarios para Añadir Amigos -->
       <div class="mt-8">
         <div class="text-center mb-6">
-          <h2 class="text-3xl font-bold text-amber-100 mb-2">
+          <h2 class="text-3xl font-bold text-color mb-2">
             <i class="fas fa-users mr-2"></i>
             Usuarios
           </h2>

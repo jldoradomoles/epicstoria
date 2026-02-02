@@ -51,6 +51,52 @@ export class EventService {
     return this.DEFAULT_IMAGE;
   }
 
+  /**
+   * Detecta automáticamente imágenes adicionales con el patrón nombre-2, nombre-3, etc.
+   * @param imageUrl URL de la imagen principal
+   * @returns Array de URLs de imágenes adicionales encontradas
+   */
+  private static detectAdditionalImages(imageUrl: string): string[] {
+    if (!imageUrl || imageUrl.startsWith('http://') || imageUrl.startsWith('https://')) {
+      return [];
+    }
+
+    const additionalImages: string[] = [];
+    let imagePath = imageUrl.replace(/^\//, '');
+
+    // Si la ruta no incluye 'eventos', agregarla
+    if (!imagePath.includes('eventos/') && !imagePath.startsWith('http')) {
+      // Extraer solo el nombre del archivo
+      const fileName = imagePath.split('/').pop() || imagePath;
+      imagePath = `images/eventos/${fileName}`;
+    }
+
+    // Extraer directorio, nombre base y extensión
+    const pathMatch = imagePath.match(/^(.+\/)?(.+?)(\.[^.]+)$/);
+    if (!pathMatch) {
+      return [];
+    }
+
+    const directory = pathMatch[1] || '';
+    const baseName = pathMatch[2];
+    const extension = pathMatch[3];
+
+    // Buscar imágenes con sufijo -2, -3, -4, etc. hasta -10
+    for (let i = 2; i <= 10; i++) {
+      const additionalImagePath = `${directory}${baseName}-${i}${extension}`;
+      const fullPath = path.join(__dirname, '../../../public', additionalImagePath);
+
+      if (fs.existsSync(fullPath)) {
+        additionalImages.push(`/${additionalImagePath}`);
+      } else {
+        // Si no encontramos una imagen, dejar de buscar
+        break;
+      }
+    }
+
+    return additionalImages;
+  }
+
   private static toEventResponse(event: Event): EventResponse {
     return {
       id: event.id,
@@ -69,7 +115,7 @@ export class EventService {
   }
 
   static async getAllEvents(): Promise<EventResponse[]> {
-    const result = await query('SELECT * FROM events ORDER BY date DESC');
+    const result = await query('SELECT * FROM events ORDER BY id DESC');
     return result.rows.map((event: Event) => this.toEventResponse(event));
   }
 
@@ -229,13 +275,18 @@ export class EventService {
             ? row.consequences.split('||').map((p) => p.trim())
             : [];
 
+          // Detectar imágenes adicionales automáticamente
+          const normalizedImageUrl = this.normalizeImageUrl(row.imageUrl);
+          const additionalImages = this.detectAdditionalImages(normalizedImageUrl);
+
           const eventData = {
             id: row.id,
             slug: generateEventSlug(row.title, this.convertDate(row.date)),
             title: row.title,
             date: this.convertDate(row.date),
             category: row.category,
-            image_url: this.normalizeImageUrl(row.imageUrl),
+            image_url: normalizedImageUrl,
+            additional_images: JSON.stringify(additionalImages),
             summary: JSON.stringify(summary),
             context: JSON.stringify(context),
             key_facts: JSON.stringify(keyFacts),
@@ -255,19 +306,21 @@ export class EventService {
                 date = $3,
                 category = $4,
                 image_url = $5,
-                summary = $6,
-                context = $7,
-                key_facts = $8,
-                timeline = $9,
-                consequences = $10,
+                additional_images = $6::jsonb,
+                summary = $7,
+                context = $8,
+                key_facts = $9,
+                timeline = $10,
+                consequences = $11,
                 updated_at = NOW()
-              WHERE id = $11`,
+              WHERE id = $12`,
               [
                 eventData.slug,
                 eventData.title,
                 eventData.date,
                 eventData.category,
                 eventData.image_url,
+                eventData.additional_images,
                 eventData.summary,
                 eventData.context,
                 eventData.key_facts,
@@ -280,8 +333,8 @@ export class EventService {
           } else {
             // Crear nuevo evento
             await query(
-              `INSERT INTO events (id, slug, title, date, category, image_url, summary, context, key_facts, timeline, consequences)
-               VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)`,
+              `INSERT INTO events (id, slug, title, date, category, image_url, additional_images, summary, context, key_facts, timeline, consequences)
+               VALUES ($1, $2, $3, $4, $5, $6, $7::jsonb, $8, $9, $10, $11, $12)`,
               [
                 eventData.id,
                 eventData.slug,
@@ -289,6 +342,7 @@ export class EventService {
                 eventData.date,
                 eventData.category,
                 eventData.image_url,
+                eventData.additional_images,
                 eventData.summary,
                 eventData.context,
                 eventData.key_facts,

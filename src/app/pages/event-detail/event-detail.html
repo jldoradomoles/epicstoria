@@ -123,149 +123,159 @@
         </div>
       </div>
       <!-- Datos Curiosos -->
-      <div class="mb-12 container-custom px-6 rounded-xl py-3">
-        <h2 class="mb-6 text-3xl font-bold flex items-center gap-3">
-          <img
-            src="images/logos/datos-curiosos.png"
-            alt="Icono de Datos Curiosos e interesantes"
-            class="h-14"
-            loading="lazy"
-          />
-          Datos Curiosos
-        </h2>
-        <div class="grid gap-6 md:grid-cols-2">
-          @for (fact of event.keyFacts; track fact.title; let idx = $index; let isLast = $last) {
-            @if (idx === 0 && getAdditionalImage(2)) {
-              <!-- Primer dato curioso - imagen a la izquierda -->
-              <div class="rounded-xl overflow-hidden">
-                <img
-                  [src]="getAdditionalImage(2)!"
-                  [alt]="event.title"
-                  class="imagen-dato-curioso"
-                  (error)="onImageError($event)"
-                  loading="lazy"
-                />
-              </div>
-              <div
-                class="rounded-xl container-custom p-6 transition duration-300 hover:border-blue-500/50 hover:shadow-xl"
-              >
-                <h3 class="mb-2 text-lg font-bold flex items-center gap-2">
-                  <i
-                    [class]="
-                      getFactIcon(fact.title, fact.description).icon +
-                      ' text-sm ' +
-                      getFactIcon(fact.title, fact.description).color
-                    "
-                  ></i>
-                  {{ fact.title }}
-                </h3>
-                <p>{{ fact.description }}</p>
-              </div>
-            } @else if (idx === 4 && getAdditionalImage(3)) {
-              <!-- Quinto dato curioso con imagen al lado derecho - fila 3 -->
-              <div
-                class="rounded-xl container-custom p-6 transition duration-300 hover:border-blue-500/50 hover:shadow-xl md:col-start-1 md:row-start-3"
-              >
-                <h3 class="mb-2 text-lg font-bold flex items-center gap-2">
-                  <i
-                    [class]="
-                      getFactIcon(fact.title, fact.description).icon +
-                      ' text-sm ' +
-                      getFactIcon(fact.title, fact.description).color
-                    "
-                  ></i>
-                  {{ fact.title }}
-                </h3>
-                <p>{{ fact.description }}</p>
-              </div>
-              <div
-                class="rounded-xl overflow-hidden w-full aspect-square md:col-start-2 md:row-start-3"
-              >
-                <img
-                  [src]="getAdditionalImage(3)!"
-                  [alt]="event.title"
-                  class="w-full h-full object-cover"
-                  (error)="onImageError($event)"
-                  loading="lazy"
-                />
-              </div>
-            } @else if (isLast && event.keyFacts.length % 2 !== 0 && getAdditionalImage(4)) {
-              <!-- Último dato si el total es impar - imagen a la izquierda -->
-              <div class="rounded-xl overflow-hidden">
-                <img
-                  [src]="getAdditionalImage(4)!"
-                  [alt]="event.title"
-                  class="imagen-dato-curioso"
-                  (error)="onImageError($event)"
-                  loading="lazy"
-                />
-              </div>
-              <div
-                class="rounded-xl container-custom p-6 transition duration-300 hover:border-blue-500/50 hover:shadow-xl"
-              >
-                <h3 class="mb-2 text-lg font-bold flex items-center gap-2">
-                  <i
-                    [class]="
-                      getFactIcon(fact.title, fact.description).icon +
-                      ' text-sm ' +
-                      getFactIcon(fact.title, fact.description).color
-                    "
-                  ></i>
-                  {{ fact.title }}
-                </h3>
-                <p>{{ fact.description }}</p>
-              </div>
-            } @else {
-              <!-- Resto de datos curiosos -->
-              <div
-                class="rounded-xl container-custom p-6 transition duration-300 hover:border-blue-500/50 hover:shadow-xl"
-              >
-                <h3 class="mb-2 text-lg font-bold flex items-center gap-2">
-                  <i
-                    [class]="
-                      getFactIcon(fact.title, fact.description).icon +
-                      ' text-sm ' +
-                      getFactIcon(fact.title, fact.description).color
-                    "
-                  ></i>
-                  {{ fact.title }}
-                </h3>
-                <p>{{ fact.description }}</p>
-              </div>
+      @if (hasValidKeyFacts()) {
+        <div class="mb-12 container-custom px-6 rounded-xl py-3">
+          <h2 class="mb-6 text-3xl font-bold flex items-center gap-3">
+            <img
+              src="images/logos/datos-curiosos.png"
+              alt="Icono de Datos Curiosos e interesantes"
+              class="h-14"
+              loading="lazy"
+            />
+            Datos Curiosos
+          </h2>
+          <div class="grid gap-6 md:grid-cols-2">
+            @for (fact of event.keyFacts; track fact.title; let idx = $index; let isLast = $last) {
+              @if (fact.title && fact.description) {
+                @if (idx === 0 && getAdditionalImage(2)) {
+                  <!-- Primer dato curioso - imagen a la izquierda -->
+                  <div class="rounded-xl overflow-hidden">
+                    <img
+                      [src]="getAdditionalImage(2)!"
+                      [alt]="event.title"
+                      class="imagen-dato-curioso"
+                      (error)="onImageError($event)"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div
+                    class="rounded-xl container-custom p-6 transition duration-300 hover:border-blue-500/50 hover:shadow-xl"
+                  >
+                    <h3 class="mb-2 text-lg font-bold flex items-center gap-2">
+                      <i
+                        [class]="
+                          getFactIcon(fact.title, fact.description).icon +
+                          ' text-sm ' +
+                          getFactIcon(fact.title, fact.description).color
+                        "
+                      ></i>
+                      {{ fact.title }}
+                    </h3>
+                    <p>{{ fact.description }}</p>
+                  </div>
+                } @else if (idx === 4 && getAdditionalImage(3)) {
+                  <!-- Quinto dato curioso con imagen al lado derecho - fila 3 -->
+                  <div
+                    class="rounded-xl container-custom p-6 transition duration-300 hover:border-blue-500/50 hover:shadow-xl md:col-start-1 md:row-start-3"
+                  >
+                    <h3 class="mb-2 text-lg font-bold flex items-center gap-2">
+                      <i
+                        [class]="
+                          getFactIcon(fact.title, fact.description).icon +
+                          ' text-sm ' +
+                          getFactIcon(fact.title, fact.description).color
+                        "
+                      ></i>
+                      {{ fact.title }}
+                    </h3>
+                    <p>{{ fact.description }}</p>
+                  </div>
+                  <div
+                    class="rounded-xl overflow-hidden w-full aspect-square md:col-start-2 md:row-start-3"
+                  >
+                    <img
+                      [src]="getAdditionalImage(3)!"
+                      [alt]="event.title"
+                      class="w-full h-full object-cover"
+                      (error)="onImageError($event)"
+                      loading="lazy"
+                    />
+                  </div>
+                } @else if (isLast && event.keyFacts.length % 2 !== 0 && getAdditionalImage(4)) {
+                  <!-- Último dato si el total es impar - imagen a la izquierda -->
+                  <div class="rounded-xl overflow-hidden">
+                    <img
+                      [src]="getAdditionalImage(4)!"
+                      [alt]="event.title"
+                      class="imagen-dato-curioso"
+                      (error)="onImageError($event)"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div
+                    class="rounded-xl container-custom p-6 transition duration-300 hover:border-blue-500/50 hover:shadow-xl"
+                  >
+                    <h3 class="mb-2 text-lg font-bold flex items-center gap-2">
+                      <i
+                        [class]="
+                          getFactIcon(fact.title, fact.description).icon +
+                          ' text-sm ' +
+                          getFactIcon(fact.title, fact.description).color
+                        "
+                      ></i>
+                      {{ fact.title }}
+                    </h3>
+                    <p>{{ fact.description }}</p>
+                  </div>
+                } @else {
+                  <!-- Resto de datos curiosos -->
+                  <div
+                    class="rounded-xl container-custom p-6 transition duration-300 hover:border-blue-500/50 hover:shadow-xl"
+                  >
+                    <h3 class="mb-2 text-lg font-bold flex items-center gap-2">
+                      <i
+                        [class]="
+                          getFactIcon(fact.title, fact.description).icon +
+                          ' text-sm ' +
+                          getFactIcon(fact.title, fact.description).color
+                        "
+                      ></i>
+                      {{ fact.title }}
+                    </h3>
+                    <p>{{ fact.description }}</p>
+                  </div>
+                }
+              }
             }
-          }
+          </div>
         </div>
-      </div>
+      }
 
       <!-- Cronología -->
-      <div class="mb-12 container-custom px-6 rounded-xl py-3">
-        <h2 class="mb-6 pb-2 text-3xl font-bold flex items-center gap-3">
-          <img
-            src="images/logos/cronologia.png"
-            alt="Icono de Cronología de eventos"
-            class="h-14"
-            loading="lazy"
-          />
-          Cronología
-        </h2>
-        <div class="space-y-6">
-          @for (item of event.timeline; track item.date) {
-            <div class="container-custom border-cronologia flex gap-6 px-6 py-3">
-              <div class="flex-shrink-0 flex items-center gap-3">
-                <i
-                  [class]="
-                    getTimelineIcon(item.date).icon + ' text-lg ' + getTimelineIcon(item.date).color
-                  "
-                ></i>
-                <div class="rounded-full px-4 py-2 text-sm font-bold">{{ item.date }}</div>
-              </div>
-              <div class="flex-grow">
-                <p class="">{{ item.event }}</p>
-              </div>
-            </div>
-          }
+      @if (hasValidTimeline()) {
+        <div class="mb-12 container-custom px-6 rounded-xl py-3">
+          <h2 class="mb-6 pb-2 text-3xl font-bold flex items-center gap-3">
+            <img
+              src="images/logos/cronologia.png"
+              alt="Icono de Cronología de eventos"
+              class="h-14"
+              loading="lazy"
+            />
+            Cronología
+          </h2>
+          <div class="space-y-6">
+            @for (item of event.timeline; track item.date) {
+              @if (item.date && item.event) {
+                <div class="container-custom border-cronologia flex gap-6 px-6 py-3">
+                  <div class="flex-shrink-0 flex items-center gap-3">
+                    <i
+                      [class]="
+                        getTimelineIcon(item.date).icon +
+                        ' text-lg ' +
+                        getTimelineIcon(item.date).color
+                      "
+                    ></i>
+                    <div class="rounded-full px-4 py-2 text-sm font-bold">{{ item.date }}</div>
+                  </div>
+                  <div class="flex-grow">
+                    <p class="">{{ item.event }}</p>
+                  </div>
+                </div>
+              }
+            }
+          </div>
         </div>
-      </div>
+      }
 
       <!-- Consecuencias -->
       <div class="mb-12 rounded-xl container-custom p-8 shadow-2xl">

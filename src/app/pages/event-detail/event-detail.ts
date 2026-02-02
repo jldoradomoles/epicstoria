@@ -205,6 +205,28 @@ export class EventDetail implements OnInit {
   }
 
   /**
+   * Verifica si hay datos curiosos válidos para mostrar
+   */
+  hasValidKeyFacts(): boolean {
+    return !!(
+      this.event?.keyFacts &&
+      this.event.keyFacts.length > 0 &&
+      this.event.keyFacts.some((f) => f.title && f.description)
+    );
+  }
+
+  /**
+   * Verifica si hay una cronología válida para mostrar
+   */
+  hasValidTimeline(): boolean {
+    return !!(
+      this.event?.timeline &&
+      this.event.timeline.length > 0 &&
+      this.event.timeline.some((t) => t.date && t.event)
+    );
+  }
+
+  /**
    * Obtiene el icono apropiado para un dato curioso basado en su título y descripción
    */
   getFactIcon(title: string, description: string): { icon: string; color: string } {

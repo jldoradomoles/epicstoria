@@ -13,15 +13,15 @@
         >
           <i class="fas fa-trophy text-3xl text-white"></i>
         </div>
-        <h2 class="text-4xl font-bold text-amber-100 mb-2">Tabla de Líderes</h2>
-        <p class="text-xl text-amber-200/70">Los mejores exploradores de la historia</p>
+        <h2 class="text-4xl font-bold text-color mb-2">Tabla de Líderes</h2>
+        <p class="text-xl text-color">Los mejores exploradores de la historia</p>
       </div>
 
       <!-- Loading State -->
       @if (isLoading()) {
         <div class="text-center py-12">
           <i class="fas fa-spinner fa-spin text-4xl text-amber-500 mb-4"></i>
-          <p class="text-amber-200/70">Cargando clasificación...</p>
+          <p class="text-color">Cargando clasificación...</p>
         </div>
       }
 
@@ -32,15 +32,15 @@
             <table class="w-full">
               <thead class="bg-amber-900/30 border-b border-amber-900/50">
                 <tr>
-                  <th class="px-6 py-4 text-left text-sm font-semibold text-amber-100">Posición</th>
-                  <th class="px-6 py-4 text-left text-sm font-semibold text-amber-100">Usuario</th>
-                  <th class="px-6 py-4 text-center text-sm font-semibold text-amber-100">
+                  <th class="px-6 py-4 text-left text-sm font-semibold text-color">Posición</th>
+                  <th class="px-6 py-4 text-left text-sm font-semibold text-color">Usuario</th>
+                  <th class="px-6 py-4 text-center text-sm font-semibold text-color">
                     Puntos
                   </th>
-                  <th class="px-6 py-4 text-center text-sm font-semibold text-amber-100">
+                  <th class="px-6 py-4 text-center text-sm font-semibold text-color">
                     Estrellas
                   </th>
-                  <th class="px-6 py-4 text-center text-sm font-semibold text-amber-100">
+                  <th class="px-6 py-4 text-center text-sm font-semibold text-color">
                     Quizzes
                   </th>
                 </tr>
@@ -73,7 +73,7 @@
                           {{ getInitials(entry.name, entry.lastname) }}
                         </div>
                         <div>
-                          <div class="font-semibold text-amber-100">
+                          <div class="font-semibold text-color">
                             {{ entry.name }}
                             @if (entry.lastname) {
                               {{ entry.lastname }}
@@ -90,7 +90,7 @@
                     <td class="px-6 py-4 text-center">
                       <div class="inline-flex items-center gap-2 bg-amber-900/30 rounded-lg px-4 py-2">
                         <i class="fas fa-coins text-yellow-400"></i>
-                        <span class="text-2xl font-bold text-amber-100">{{ entry.points }}</span>
+                        <span class="text-2xl font-bold text-color">{{ entry.points }}</span>
                       </div>
                     </td>
 
@@ -102,7 +102,7 @@
                             <i class="fas fa-star text-yellow-400"></i>
                           }
                           @if (entry.stars > 10) {
-                            <span class="ml-1 text-sm text-amber-200/70">+{{ entry.stars - 10 }}</span>
+                            <span class="ml-1 text-sm text-color">+{{ entry.stars - 10 }}</span>
                           }
                         } @else {
                           <span class="text-sm text-amber-200/50">-</span>
@@ -112,7 +112,7 @@
 
                     <!-- Quizzes Completados -->
                     <td class="px-6 py-4 text-center">
-                      <div class="text-lg font-semibold text-amber-100">
+                      <div class="text-lg font-semibold text-color">
                         {{ entry.quizzes_completed }}
                       </div>
                     </td>
@@ -124,9 +124,9 @@
 
           <!-- Footer con total -->
           <div class="bg-amber-900/20 border-t border-amber-900/30 px-6 py-4 text-center">
-            <p class="text-amber-200/70">
+            <p class="text-color">
               <i class="fas fa-users mr-2"></i>
-              Total de jugadores: <strong class="text-amber-100">{{ total() }}</strong>
+              Total de jugadores: <strong class="text-color">{{ total() }}</strong>
             </p>
           </div>
         </div>
@@ -136,10 +136,10 @@
       @if (!isLoading() && leaderboard().length === 0) {
         <div class="container-custom rounded-xl p-12 text-center">
           <i class="fas fa-trophy text-6xl text-amber-500/50 mb-4"></i>
-          <h3 class="text-2xl font-bold text-amber-100 mb-2">
+          <h3 class="text-2xl font-bold text-color mb-2">
             Aún no hay clasificaciones
           </h3>
-          <p class="text-amber-200/70 mb-6">
+          <p class="text-color mb-6">
             ¡Sé el primero en aparecer en la tabla de líderes completando quizzes!
           </p>
           <a
@@ -155,8 +155,8 @@
 
     <!-- Sección de Próximamente -->
     <div class="text-center max-w-3xl mx-auto">
-      <h2 class="text-3xl font-bold text-amber-100 mb-4">Más Juegos Próximamente</h2>
-      <p class="text-xl text-amber-200/70">
+      <h2 class="text-3xl font-bold text-color mb-4">Más Juegos Próximamente</h2>
+      <p class="text-xl text-color">
         Estamos trabajando en emocionantes juegos interactivos para que disfrutes aprendiendo
         historia. ¡Vuelve pronto para descubrir nuevas formas de explorar el pasado y ganar más
         puntos!

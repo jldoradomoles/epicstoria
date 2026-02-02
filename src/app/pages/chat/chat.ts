@@ -1,4 +1,3 @@
-
 import { Component, ElementRef, OnDestroy, OnInit, signal, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -46,7 +45,7 @@ export class ChatComponent implements OnInit, OnDestroy {
     this.route.params.subscribe((params) => {
       const userId = parseInt(params['userId']);
       if (isNaN(userId)) {
-        this.router.navigate(['/profile']);
+        this.router.navigate(['/perfil']);
         return;
       }
 
@@ -70,7 +69,7 @@ export class ChatComponent implements OnInit, OnDestroy {
           this.otherUser.set(user as User);
         } else {
           this.errorMessage.set('Usuario no encontrado');
-          setTimeout(() => this.router.navigate(['/profile']), 2000);
+          setTimeout(() => this.router.navigate(['/perfil']), 2000);
         }
       },
       error: (error) => {
@@ -186,6 +185,6 @@ export class ChatComponent implements OnInit, OnDestroy {
   }
 
   goBack(): void {
-    this.router.navigate(['/profile']);
+    this.router.navigate(['/perfil']);
   }
 }

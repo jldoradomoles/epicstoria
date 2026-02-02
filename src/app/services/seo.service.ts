@@ -1,4 +1,5 @@
-import { inject, Injectable } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Injectable({
@@ -7,6 +8,9 @@ import { Meta, Title } from '@angular/platform-browser';
 export class SeoService {
   private title = inject(Title);
   private meta = inject(Meta);
+  private platformId = inject(PLATFORM_ID);
+  private isBrowser = isPlatformBrowser(this.platformId);
+  private document = inject(DOCUMENT);
 
   updateTitle(title: string) {
     this.title.setTitle(`${title} | Epicstoria - Historia del Mundo`);
@@ -73,11 +77,12 @@ export class SeoService {
   }
 
   updateCanonicalUrl(url: string) {
-    const head = document.getElementsByTagName('head')[0];
-    let element: HTMLLinkElement | null = document.querySelector('link[rel="canonical"]');
+    if (!this.isBrowser) return;
+    const head = this.document.getElementsByTagName('head')[0];
+    let element: HTMLLinkElement | null = this.document.querySelector('link[rel="canonical"]');
 
     if (!element) {
-      element = document.createElement('link');
+      element = this.document.createElement('link');
       element.setAttribute('rel', 'canonical');
       head.appendChild(element);
     }
@@ -86,7 +91,8 @@ export class SeoService {
   }
 
   removeCanonicalUrl() {
-    const element: HTMLLinkElement | null = document.querySelector('link[rel="canonical"]');
+    if (!this.isBrowser) return;
+    const element: HTMLLinkElement | null = this.document.querySelector('link[rel="canonical"]');
     if (element) {
       element.remove();
     }

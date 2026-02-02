@@ -4,7 +4,7 @@
     <div class="mb-6">
       <button
         (click)="goBack()"
-        class="text-amber-100 hover:text-amber-200 mb-4 flex items-center gap-2 transition-colors"
+        class="text-color hover:text-amber-200 mb-4 flex items-center gap-2 transition-colors"
       >
         <i class="fas fa-arrow-left"></i>
         Volver
@@ -20,10 +20,10 @@
             }}{{ otherUser()!.lastname?.charAt(0)?.toUpperCase() || '' }}
           </div>
           <div>
-            <h1 class="text-2xl font-bold text-amber-100">
+            <h1 class="text-2xl font-bold text-color">
               {{ otherUser()!.name }} {{ otherUser()!.lastname }}
             </h1>
-            <p class="text-amber-200/60">{{ otherUser()!.email }}</p>
+            <p class="text-color">{{ otherUser()!.email }}</p>
           </div>
         </div>
       }
@@ -42,8 +42,8 @@
           <div class="flex items-center justify-center h-full">
             <div class="text-center">
               <i class="fas fa-comments text-5xl text-amber-900/50 mb-4"></i>
-              <p class="text-amber-200/60 text-xl">No hay mensajes aún</p>
-              <p class="text-amber-200/40 text-lg mt-2">Inicia la conversación</p>
+              <p class="text-color text-xl">No hay mensajes aún</p>
+              <p class="text-color text-lg mt-2">Inicia la conversación</p>
             </div>
           </div>
         } @else {
@@ -57,7 +57,7 @@
                 [class]="
                   message.sender_id === currentUser()?.id
                     ? 'max-w-[70%] bg-gradient-to-r from-amber-600 to-amber-700 text-white rounded-2xl rounded-tr-sm p-4 shadow-lg'
-                    : 'max-w-[70%] bg-stone-800/50 text-amber-100 rounded-2xl rounded-tl-sm p-4 shadow-lg border border-amber-900/20'
+                    : 'max-w-[70%] bg-stone-800/50 text-color rounded-2xl rounded-tl-sm p-4 shadow-lg border border-amber-900/20'
                 "
               >
                 <p class="break-words whitespace-pre-wrap">{{ message.message }}</p>
@@ -84,7 +84,7 @@
             [(ngModel)]="newMessage"
             [disabled]="isSending()"
             placeholder="Escribe un mensaje..."
-            class="flex-1 px-4 py-3 bg-stone-800/50 border border-amber-900/30 rounded-lg text-amber-100 placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors disabled:opacity-50"
+            class="flex-1 px-4 py-3 bg-stone-800/50 border border-amber-900/30 rounded-lg text-color placeholder-amber-100/40 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-colors disabled:opacity-50"
           />
           <button
             type="submit"
