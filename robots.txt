@@ -1,0 +1,15 @@
+# Epicstoria - robots.txt
+
+User-agent: *
+Allow: /
+Disallow: /perfil
+Disallow: /login
+Disallow: /register
+Disallow: /chat
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://epicstoria.com/sitemap.xml
+
+# Crawl delay (opcional, si hay problemas de carga)
+# Crawl-delay: 1

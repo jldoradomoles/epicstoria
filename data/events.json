@@ -1637,5 +1637,195 @@
       "Con el paso de los siglos, Ibn Firnas fue recuperado como referente histórico de la aviación temprana y como ejemplo de pensamiento experimental previo al Renacimiento europeo. Hoy su nombre está asociado a la audacia científica y al deseo humano de superar sus propios límites.",
       ""
     ]
+  },
+  {
+    "id": "Periodismo-y-revolución",
+    "title": "Jean-Paul Marat",
+    "date": "1793-07-13",
+    "category": "Personajes históricos",
+    "imageUrl": "images/eventos/Jean-Paul-Marat.jpg",
+    "summary": [
+      "Jean-Paul Marat fue una de las figuras más radicales e influyentes de la Revolución Francesa. Médico, científico y periodista, utilizó la prensa como arma política para denunciar a la monarquía y a los enemigos de la revolución. Admirado por las clases populares y odiado por sus adversarios, su asesinato en 1793 lo convirtió en un mártir revolucionario y en un símbolo del sacrificio por la causa del pueblo.",
+      ""
+    ],
+    "context": [
+      "Jean-Paul Marat nació en 1743 y se formó como médico y científico antes de dedicarse plenamente a la política. Con el estallido de la Revolución Francesa en 1789, abandonó la investigación científica para centrarse en la lucha revolucionaria, convencido de que Francia necesitaba una transformación total de su sistema político y social.",
+      "Durante los primeros años de la Revolución, Marat se convirtió en una de las voces más extremas contra la monarquía, la aristocracia y los sectores moderados. Desde su periódico L’Ami du Peuple denunció conspiraciones, exigió castigos ejemplares y alentó la vigilancia constante contra los enemigos de la revolución. Sus artículos señalaban nombres concretos y contribuían a crear un clima en el que la persecución, los arrestos y las ejecuciones se volvieron socialmente aceptables, otorgando a su pluma un poder político comparable al de los propios mecanismos represivos.",
+      "Su discurso radical le granjeó un enorme apoyo entre los sans-culottes y las clases populares de París, pero también un profundo odio por parte de los girondinos y otros sectores revolucionarios más moderados. Marat fue perseguido, acusado y obligado a esconderse en varias ocasiones.",
+      "En 1793, en plena lucha interna entre facciones revolucionarias, Marat sufría una grave enfermedad de la piel que lo obligaba a pasar largas horas sumergido en una bañera mientras trabajaba. Desde allí continuó escribiendo y recibiendo visitas políticas.",
+      "El 13 de julio de 1793, Charlotte Corday, simpatizante girondina, logró acceder a su vivienda bajo el pretexto de entregarle información. En la bañera, Marat fue apuñalado mortalmente. Su muerte conmocionó a París y fue interpretada por los jacobinos como un sacrificio por la revolución.",
+      "Tras su asesinato, Marat fue exaltado como mártir revolucionario, comparado con una figura casi sagrada que había entregado su vida por el pueblo. Su palabra, que en vida había impulsado la radicalización revolucionaria, continuó influyendo en el imaginario político durante el periodo"
+    ],
+    "keyFacts": [
+      {
+        "title": "Periodista revolucionario",
+        "description": "Su periódico L’Ami du Peuple fue uno de los más influyentes y temidos de la Revolución Francesa."
+      },
+      {
+        "title": "Vida científica previa",
+        "description": "Antes de la revolución publicó trabajos de medicina, óptica y física."
+      },
+      {
+        "title": "Perseguido constante",
+        "description": "Vivió largos periodos escondido para evitar arrestos por sus escritos incendiarios."
+      },
+      {
+        "title": "Enfermedad crónica",
+        "description": "Sufría una afección cutánea dolorosa que le obligaba a trabajar desde la bañera."
+      },
+      {
+        "title": "Asesinato político",
+        "description": "Charlotte Corday afirmó que lo mató para salvar a Francia de la violencia revolucionaria."
+      },
+      {
+        "title": "Icono artístico",
+        "description": "Su muerte fue inmortalizada por Jacques-Louis David en una de las pinturas más famosas de la historia."
+      },
+      {
+        "title": "Culto revolucionario",
+        "description": "Tras su muerte fue tratado como un santo laico y llamado “el amigo del pueblo”."
+      },
+      {
+        "title": "Jesucristo de la Revolución",
+        "description": "Su asesinato lo transformó en un mártir político; fue comparado con una figura redentora que había entregado su vida por el pueblo, ganándose el apelativo de “Jesucristo de la Revolución Francesa”."
+      },
+      {
+        "title": ""
+      }
+    ],
+    "timeline": [
+      {
+        "date": "1743-05-24",
+        "event": "Nace Jean-Paul Marat en Boudry, actual Suiza."
+      },
+      {
+        "date": "1770–1780",
+        "event": "Ejercita como médico y científico en Europa."
+      },
+      {
+        "date": "1789",
+        "event": "Estalla la Revolución Francesa; Marat inicia su actividad política."
+      },
+      {
+        "date": "1789-09-12",
+        "event": "Funda el periódico L’Ami du Peuple."
+      },
+      {
+        "date": "1792",
+        "event": "Se convierte en una de las voces más influyentes del sector radical."
+      },
+      {
+        "date": "1792-09-21",
+        "event": "Pasa a formar parte de la Convención Nacional."
+      },
+      {
+        "date": "1793-07-13",
+        "event": "Es asesinado por Charlotte Corday en París."
+      },
+      {
+        "date": "1793",
+        "event": "Es exaltado como mártir de la Revolución Francesa."
+      },
+      {
+        "date": ""
+      }
+    ],
+    "consequences": [
+      "El asesinato de Jean-Paul Marat radicalizó aún más el clima político de la Revolución Francesa y fue utilizado por los jacobinos como justificación para intensificar la represión contra los enemigos internos.",
+      "Su figura fue convertida en símbolo de sacrificio revolucionario, comparado con un mártir que había dado su vida por el pueblo, lo que reforzó el discurso del Terror como una necesidad para proteger la revolución.",
+      "Con el paso del tiempo, la imagen de Marat se volvió más ambigua. Para algunos fue un defensor radical de la justicia social; para otros, un agitador que contribuyó a la espiral de violencia revolucionaria. Su legado sigue siendo uno de los más controvertidos de la Revolución Francesa.",
+      ""
+    ]
+  },
+  {
+    "id": "Revolución-poder-y-caída",
+    "title": "Georges-Jacques Danton",
+    "date": "1794-04-05",
+    "category": "Personajes históricos",
+    "imageUrl": "images/eventos/Georges-Jacques-Danton.jpg",
+    "summary": [
+      "Georges Danton fue una de las figuras clave de los primeros años de la Revolución Francesa. Abogado y orador carismático, desempeñó un papel decisivo en la caída de la monarquía y en la defensa de la Revolución frente a sus enemigos. Sin embargo, su postura más pragmática y conciliadora lo enfrentó a los sectores más radicales, lo que terminó llevándolo a la guillotina en 1794.",
+      ""
+    ],
+    "context": [
+      "Georges Danton nació en 1759 y se formó como abogado en un contexto de creciente tensión social y política en Francia. Con el estallido de la Revolución en 1789, se convirtió rápidamente en uno de los líderes populares de París, destacando por su capacidad oratoria y su conexión con las masas urbanas.",
+      "Danton fue una figura central durante los momentos más decisivos del proceso revolucionario. Participó activamente en la insurrección del 10 de agosto de 1792, que provocó la caída definitiva de la monarquía, y poco después fue nombrado ministro de Justicia. Desde ese cargo defendió medidas excepcionales para salvar la Revolución en un momento de guerra exterior e inestabilidad interna.",
+      "A diferencia de otros líderes jacobinos, Danton consideraba que la violencia revolucionaria debía tener límites. Con el avance del Terror, empezó a defender una política de moderación y reconciliación nacional, lo que lo enfrentó a Robespierre y al sector más intransigente del Comité de Salvación Pública.",
+      "Acusado de corrupción, indulgencia y de traicionar los ideales revolucionarios, Danton fue arrestado junto a sus aliados. En un juicio político sin garantías, fue condenado a muerte. Su ejecución marcó el punto de no retorno del Terror, demostrando que la Revolución también devoraba a sus propios líderes.",
+      ""
+    ],
+    "keyFacts": [
+      {
+        "title": "Orador excepcional",
+        "description": "Era famoso por sus discursos improvisados y su enorme fuerza persuasiva."
+      },
+      {
+        "title": "Abogado de formación",
+        "description": "Su experiencia jurídica le permitió dominar la retórica política y parlamentaria."
+      },
+      {
+        "title": "Ministro de Justicia",
+        "description": "Ocupó este cargo en 1792, en uno de los momentos más críticos de la Revolución."
+      },
+      {
+        "title": "Rivalidad con Robespierre",
+        "description": "Pasó de aliado a enemigo político del líder jacobino."
+      },
+      {
+        "title": "Frase histórica",
+        "description": "Se le atribuye la expresión “Audacia, más audacia, siempre audacia” como lema revolucionario."
+      },
+      {
+        "title": "Juicio sin defensa",
+        "description": "Durante su proceso apenas se le permitió hablar en su propia defensa."
+      },
+      {
+        "title": "Ejecutado por la Revolución",
+        "description": "Fue guillotinado por el mismo régimen que ayudó a consolidar."
+      },
+      {
+        "title": ""
+      }
+    ],
+    "timeline": [
+      {
+        "date": "1759-10-26",
+        "event": "Nace Georges Danton en Arcis-sur-Aube, Francia."
+      },
+      {
+        "date": "1789",
+        "event": "Estalla la Revolución Francesa; Danton emerge como líder popular en París."
+      },
+      {
+        "date": "1792-08-10",
+        "event": "Participa en la insurrección que provoca la caída de la monarquía."
+      },
+      {
+        "date": "08/1792",
+        "event": "Es nombrado ministro de Justicia."
+      },
+      {
+        "date": "1793",
+        "event": "Se distancia de la política del Terror y defiende una línea más moderada."
+      },
+      {
+        "date": "1794-03-30",
+        "event": "Es arrestado acusado de traición y corrupción."
+      },
+      {
+        "date": "1794-04-05",
+        "event": "Es ejecutado en la guillotina en París."
+      },
+      {
+        "date": ""
+      }
+    ],
+    "consequences": [
+      "La ejecución de Georges-Jacques Danton consolidó el poder del sector más radical de la Revolución Francesa y eliminó una de las últimas voces influyentes que defendían el fin del Terror.",
+      "Resulta una de las mayores ironías de la historia que Danton fuera devorado por el mismo sistema que él ayudó a construir; como principal impulsor de la creación del Tribunal Revolucionario, sentó las bases legales de una maquinaria judicial que finalmente le prohibió defenderse mediante la oratoria, su arma más poderosa.",
+      "Su muerte evidenció que ningún líder revolucionario estaba a salvo y que la lógica de la violencia política se había vuelto imparable. Al enviar a la guillotina a quien fuera el rostro del patriotismo en 1792, el proceso revolucionario demostró que la pureza ideológica se había vuelto más importante que la propia victoria de la República.",
+      "Con el tiempo, Danton pasó a ser visto como símbolo del revolucionario pragmático, capaz de impulsar el cambio pero también consciente de sus límites. Su figura representa el choque entre idealismo, poder y supervivencia dentro de los procesos revolucionarios, recordado por sus últimas palabras ante el verdugo: “No olvides mostrar mi cabeza al pueblo; vale la pena”.",
+      ""
+    ]
   }
 ]
