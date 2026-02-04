@@ -13,6 +13,7 @@ interface ExcelRow {
   keyFacts: string;
   timeline: string;
   consequences: string;
+  exam?: string; // Columna K: preguntas del examen
 }
 
 /**
@@ -76,6 +77,7 @@ function convertDate(dateStr: string | number): string {
  * - Columna H: keyFacts (formato: Título 1|Descripción 1||Título 2|Descripción 2)
  * - Columna I: timeline (formato: DD-MM-YYYY|Evento 1||DD-MM-YYYY|Evento 2)
  * - Columna J: consequences (cada párrafo separado por ||)
+ * - Columna K: exam (formato: Pregunta1|Opción1|Opción2|Opción3|Opción4|ÍndiceCorrect|Explicación||Pregunta2|...)
  */
 function excelToJson(excelFilePath: string, outputJsonPath: string) {
   try {
@@ -116,6 +118,25 @@ function excelToJson(excelFilePath: string, outputJsonPath: string) {
         ? row.consequences.split('||').map((p) => p.trim())
         : [];
 
+      // Procesar exam (array de preguntas)
+      const exam = row.exam
+        ? row.exam
+            .split('||')
+            .map((questionStr) => {
+              const parts = questionStr.split('|').map((s) => s.trim());
+              if (parts.length >= 6) {
+                return {
+                  question: parts[0],
+                  options: [parts[1], parts[2], parts[3], parts[4]],
+                  correctAnswer: parseInt(parts[5], 10),
+                  explanation: parts[6] || undefined,
+                };
+              }
+              return null;
+            })
+            .filter((q) => q !== null)
+        : undefined;
+
       return {
         id: row.id,
         title: row.title,
@@ -127,6 +148,7 @@ function excelToJson(excelFilePath: string, outputJsonPath: string) {
         keyFacts,
         timeline,
         consequences,
+        exam,
       };
     });
 
@@ -164,6 +186,7 @@ Formato del Excel:
   - Columna H: keyFacts (formato: Título1|Desc1||Título2|Desc2)
   - Columna I: timeline (formato: Fecha1|Evento1||Fecha2|Evento2)
   - Columna J: consequences (párrafos separados por ||)
+  - Columna K: exam (formato: Pregunta1|Opción1|Opción2|Opción3|Opción4|ÍndiceCorrect|Explicación||Pregunta2|...)
     `);
     process.exit(1);
   }

@@ -11,6 +11,7 @@ export interface Event {
   keyFacts: EventFact[];
   timeline: TimelineItem[];
   consequences: string | string[]; // Puede ser un string largo o array de párrafos
+  exam?: ExamQuestion[]; // Preguntas del examen (20 preguntas del Excel)
 }
 
 export interface EventFact {
@@ -21,4 +22,11 @@ export interface EventFact {
 export interface TimelineItem {
   date: string;
   event: string;
+}
+
+export interface ExamQuestion {
+  question: string;
+  options: string[]; // 4 opciones
+  correctAnswer: number; // índice de la opción correcta (0-3)
+  explanation?: string; // explicación de la respuesta correcta
 }

@@ -17,6 +17,7 @@ interface ExcelRow {
   keyFacts: string;
   timeline: string;
   consequences: string;
+  exam?: string; // Columna K: preguntas del examen
 }
 
 interface UploadResult {
@@ -111,6 +112,7 @@ export class EventService {
       keyFacts: event.key_facts,
       timeline: event.timeline,
       consequences: event.consequences,
+      exam: event.exam,
     };
   }
 
@@ -275,6 +277,25 @@ export class EventService {
             ? row.consequences.split('||').map((p) => p.trim())
             : [];
 
+          // Procesar exam (array de preguntas)
+          const exam = row.exam
+            ? row.exam
+                .split('||')
+                .map((questionStr) => {
+                  const parts = questionStr.split('|').map((s) => s.trim());
+                  if (parts.length >= 6) {
+                    return {
+                      question: parts[0],
+                      options: [parts[1], parts[2], parts[3], parts[4]],
+                      correctAnswer: parseInt(parts[5], 10),
+                      explanation: parts[6] || undefined,
+                    };
+                  }
+                  return null;
+                })
+                .filter((q) => q !== null)
+            : [];
+
           // Detectar imágenes adicionales automáticamente
           const normalizedImageUrl = this.normalizeImageUrl(row.imageUrl);
           const additionalImages = this.detectAdditionalImages(normalizedImageUrl);
@@ -292,6 +313,7 @@ export class EventService {
             key_facts: JSON.stringify(keyFacts),
             timeline: JSON.stringify(timeline),
             consequences: JSON.stringify(consequences),
+            exam: exam.length > 0 ? JSON.stringify(exam) : null,
           };
 
           // Verificar si el evento ya existe
@@ -312,8 +334,9 @@ export class EventService {
                 key_facts = $9,
                 timeline = $10,
                 consequences = $11,
+                exam = $12::jsonb,
                 updated_at = NOW()
-              WHERE id = $12`,
+              WHERE id = $13`,
               [
                 eventData.slug,
                 eventData.title,
@@ -326,6 +349,7 @@ export class EventService {
                 eventData.key_facts,
                 eventData.timeline,
                 eventData.consequences,
+                eventData.exam,
                 eventData.id,
               ],
             );
@@ -333,8 +357,8 @@ export class EventService {
           } else {
             // Crear nuevo evento
             await query(
-              `INSERT INTO events (id, slug, title, date, category, image_url, additional_images, summary, context, key_facts, timeline, consequences)
-               VALUES ($1, $2, $3, $4, $5, $6, $7::jsonb, $8, $9, $10, $11, $12)`,
+              `INSERT INTO events (id, slug, title, date, category, image_url, additional_images, summary, context, key_facts, timeline, consequences, exam)
+               VALUES ($1, $2, $3, $4, $5, $6, $7::jsonb, $8, $9, $10, $11, $12, $13::jsonb)`,
               [
                 eventData.id,
                 eventData.slug,
@@ -348,6 +372,7 @@ export class EventService {
                 eventData.key_facts,
                 eventData.timeline,
                 eventData.consequences,
+                eventData.exam,
               ],
             );
             result.created++;

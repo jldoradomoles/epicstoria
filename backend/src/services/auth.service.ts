@@ -1,4 +1,5 @@
 import bcrypt from 'bcryptjs';
+import crypto from 'crypto';
 import jwt from 'jsonwebtoken';
 import { query } from '../config/database';
 import { AppError } from '../middleware/error.middleware';
@@ -10,6 +11,7 @@ import {
   UserRole,
   UserUpdateDTO,
 } from '../models/user.model';
+import { EmailService } from './email.service';
 
 export class AuthService {
   private static toPublicUser(user: User): UserPublic {
@@ -54,6 +56,12 @@ export class AuthService {
 
     const user = result.rows[0] as User;
     const token = this.generateToken(user.id, user.role);
+
+    // Enviar email de bienvenida (no bloqueante)
+    EmailService.sendWelcomeEmail(user.email, user.name).catch((error) => {
+      console.error('Error enviando email de bienvenida:', error);
+      // No lanzamos error para no bloquear el registro
+    });
 
     return {
       user: this.toPublicUser(user),
@@ -159,5 +167,93 @@ export class AuthService {
     // Hash and update new password
     const hashedPassword = await bcrypt.hash(newPassword, 12);
     await query('UPDATE users SET password = $1 WHERE id = $2', [hashedPassword, userId]);
+  }
+
+  /**
+   * Solicita un reset de contraseña generando un token y enviando email
+   */
+  static async requestPasswordReset(email: string): Promise<void> {
+    // Buscar usuario por email
+    const result = await query('SELECT * FROM users WHERE email = $1', [email]);
+
+    if (result.rows.length === 0) {
+      // Por seguridad, no revelamos si el email existe o no
+      // Retornamos éxito pero no hacemos nada
+      return;
+    }
+
+    const user = result.rows[0] as User;
+
+    // Generar token aleatorio seguro
+    const resetToken = crypto.randomBytes(32).toString('hex');
+
+    // Hash del token para almacenarlo de forma segura
+    const hashedToken = crypto.createHash('sha256').update(resetToken).digest('hex');
+
+    // Token válido por 1 hora
+    const expiryDate = new Date();
+    expiryDate.setHours(expiryDate.getHours() + 1);
+
+    // Guardar token en base de datos
+    await query('UPDATE users SET reset_token = $1, reset_token_expiry = $2 WHERE id = $3', [
+      hashedToken,
+      expiryDate,
+      user.id,
+    ]);
+
+    // Enviar email con el token (sin hashear)
+    try {
+      await EmailService.sendPasswordResetEmail(user.email, user.name, resetToken);
+    } catch (error) {
+      console.error('Error enviando email de reset:', error);
+      // Limpiar el token si falla el envío del email
+      await query('UPDATE users SET reset_token = NULL, reset_token_expiry = NULL WHERE id = $1', [
+        user.id,
+      ]);
+      throw new AppError('Failed to send password reset email', 500);
+    }
+  }
+
+  /**
+   * Resetea la contraseña usando el token recibido por email
+   */
+  static async resetPassword(token: string, newPassword: string): Promise<void> {
+    // Hash del token recibido para comparar con el almacenado
+    const hashedToken = crypto.createHash('sha256').update(token).digest('hex');
+
+    // Buscar usuario con el token válido
+    const result = await query(
+      `SELECT * FROM users
+       WHERE reset_token = $1
+       AND reset_token_expiry > NOW()`,
+      [hashedToken],
+    );
+
+    if (result.rows.length === 0) {
+      throw new AppError('Invalid or expired reset token', 400);
+    }
+
+    const user = result.rows[0] as User;
+
+    // Hash de la nueva contraseña
+    const hashedPassword = await bcrypt.hash(newPassword, 12);
+
+    // Actualizar contraseña y limpiar token
+    await query(
+      `UPDATE users
+       SET password = $1,
+           reset_token = NULL,
+           reset_token_expiry = NULL
+       WHERE id = $2`,
+      [hashedPassword, user.id],
+    );
+
+    // Enviar email de confirmación
+    try {
+      await EmailService.sendPasswordChangedConfirmation(user.email, user.name);
+    } catch (error) {
+      console.error('Error enviando email de confirmación:', error);
+      // No lanzamos error porque la contraseña ya fue cambiada exitosamente
+    }
   }
 }

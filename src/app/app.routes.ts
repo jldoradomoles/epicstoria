@@ -50,6 +50,22 @@ export const routes: Routes = [
     canActivate: [guestGuard],
   },
   {
+    path: 'recuperar-password',
+    loadComponent: () =>
+      import('./pages/recuperar-password/recuperar-password').then(
+        (m) => m.RecuperarPasswordComponent,
+      ),
+    canActivate: [guestGuard],
+  },
+  {
+    path: 'restablecer-password',
+    loadComponent: () =>
+      import('./pages/restablecer-password/restablecer-password').then(
+        (m) => m.RestablecerPasswordComponent,
+      ),
+    canActivate: [guestGuard],
+  },
+  {
     path: 'perfil',
     loadComponent: () => import('./pages/profile/profile').then((m) => m.ProfileComponent),
     canActivate: [authGuard],

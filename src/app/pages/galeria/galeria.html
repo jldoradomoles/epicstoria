@@ -8,8 +8,8 @@
     <!-- Loading State -->
     @if (isLoading()) {
       <div class="text-center py-12">
-        <i class="fas fa-spinner fa-spin text-4xl text-amber-500 mb-4"></i>
-        <p class="text-amber-200/70">Cargando galería...</p>
+        <i class="fas fa-spinner fa-spin text-4xl text-color mb-4"></i>
+        <p class="text-color">Cargando galería...</p>
       </div>
     }
 
@@ -17,7 +17,7 @@
     @if (!isLoading() && images().length > 0) {
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-12">
-          <h2 class="text-4xl font-bold text-amber-100 mb-2">Galería de Eventos Históricos</h2>
+          <h2 class="text-3xl font-bold text-color mb-2">Galería de Eventos Históricos</h2>
         </div>
 
         <!-- Grid de imágenes -->
@@ -40,7 +40,7 @@
               >
                 <div class="absolute bottom-0 left-0 right-0 p-4">
                   <h3 class="text-white font-semibold text-lg mb-1">{{ image.title }}</h3>
-                  <p class="text-amber-300 text-sm flex items-center gap-2">
+                  <p class="text-color text-sm flex items-center gap-2">
                     <i class="fas fa-search-plus"></i>
                     Click para ampliar
                   </p>
@@ -55,7 +55,7 @@
     <!-- Empty State -->
     @if (!isLoading() && images().length === 0) {
       <div class="text-center py-16">
-        <i class="fas fa-images text-6xl text-amber-500/50 mb-4"></i>
+        <i class="fas fa-images text-6xl text-color/50 mb-4"></i>
         <h3 class="text-2xl font-bold text-amber-100 mb-2">No hay imágenes disponibles</h3>
         <p class="text-amber-200/70">
           Vuelve pronto para ver nuestra galería de eventos históricos

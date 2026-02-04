@@ -11,6 +11,7 @@ export interface Event {
   key_facts: EventFact[];
   timeline: TimelineItem[];
   consequences: string | string[];
+  exam?: ExamQuestion[]; // Preguntas del examen (20 preguntas del Excel)
   created_at: Date;
   updated_at: Date;
 }
@@ -23,6 +24,13 @@ export interface EventFact {
 export interface TimelineItem {
   date: string;
   event: string;
+}
+
+export interface ExamQuestion {
+  question: string;
+  options: string[]; // 4 opciones
+  correctAnswer: number; // índice de la opción correcta (0-3)
+  explanation?: string; // explicación de la respuesta correcta
 }
 
 export interface EventResponse {
@@ -38,4 +46,5 @@ export interface EventResponse {
   keyFacts: EventFact[];
   timeline: TimelineItem[];
   consequences: string | string[];
+  exam?: ExamQuestion[];
 }

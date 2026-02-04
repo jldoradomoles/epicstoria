@@ -10,6 +10,12 @@ export class QuizService {
    * Genera un quiz automáticamente basado en el contenido del evento
    */
   generateEventQuiz(event: Event): EventQuiz {
+    // Si el evento tiene preguntas de examen del Excel, usar esas
+    if (event.exam && event.exam.length > 0) {
+      return this.generateQuizFromExam(event);
+    }
+
+    // Fallback: usar el sistema de generación automática actual
     const questions: QuizQuestion[] = [];
 
     // Pregunta sobre la fecha
@@ -35,6 +41,37 @@ export class QuizService {
       eventId: event.id,
       eventTitle: event.title,
       questions: shuffledQuestions.slice(0, 5), // Máximo 5 preguntas por quiz
+    };
+  }
+
+  /**
+   * Genera un quiz usando las preguntas del Excel
+   */
+  private generateQuizFromExam(event: Event): EventQuiz {
+    if (!event.exam || event.exam.length === 0) {
+      throw new Error('No exam questions available');
+    }
+
+    // Determinar cuántas preguntas usar (máximo 5 o todas si hay menos)
+    const numQuestions = Math.min(5, event.exam.length);
+
+    // Seleccionar preguntas aleatorias
+    const shuffledExam = this.shuffleArray([...event.exam]);
+    const selectedQuestions = shuffledExam.slice(0, numQuestions);
+
+    // Convertir las preguntas del examen al formato QuizQuestion
+    const questions: QuizQuestion[] = selectedQuestions.map((examQuestion, index) => ({
+      id: `exam-${event.id}-${index}`,
+      question: examQuestion.question,
+      options: examQuestion.options,
+      correctAnswer: examQuestion.correctAnswer,
+      explanation: examQuestion.explanation,
+    }));
+
+    return {
+      eventId: event.id,
+      eventTitle: event.title,
+      questions,
     };
   }
 

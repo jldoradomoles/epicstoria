@@ -195,4 +195,40 @@ export class AuthService {
       },
     });
   }
+
+  /**
+   * Solicita un reset de contraseña enviando un email con el token
+   */
+  forgotPassword(email: string): Observable<ApiResponse<void>> {
+    this.isLoadingSignal.set(true);
+
+    return this.http.post<ApiResponse<void>>(`${this.apiUrl}/auth/forgot-password`, { email }).pipe(
+      tap(() => {
+        this.isLoadingSignal.set(false);
+      }),
+      catchError((error) => {
+        this.isLoadingSignal.set(false);
+        return throwError(() => error);
+      }),
+    );
+  }
+
+  /**
+   * Resetea la contraseña usando el token recibido por email
+   */
+  resetPassword(token: string, password: string): Observable<ApiResponse<void>> {
+    this.isLoadingSignal.set(true);
+
+    return this.http
+      .post<ApiResponse<void>>(`${this.apiUrl}/auth/reset-password`, { token, password })
+      .pipe(
+        tap(() => {
+          this.isLoadingSignal.set(false);
+        }),
+        catchError((error) => {
+          this.isLoadingSignal.set(false);
+          return throwError(() => error);
+        }),
+      );
+  }
 }

@@ -144,4 +144,50 @@ router.put(
   },
 );
 
+// POST /api/auth/forgot-password
+router.post(
+  '/forgot-password',
+  [body('email').isEmail().withMessage('Please provide a valid email')],
+  validateRequest,
+  async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const { email } = req.body;
+      await AuthService.requestPasswordReset(email);
+
+      // Siempre devolvemos el mismo mensaje por seguridad
+      res.json({
+        success: true,
+        message: 'If the email exists, a password reset link has been sent',
+      });
+    } catch (error) {
+      next(error);
+    }
+  },
+);
+
+// POST /api/auth/reset-password
+router.post(
+  '/reset-password',
+  [
+    body('token').notEmpty().withMessage('Reset token is required'),
+    body('password')
+      .isLength({ min: 6 })
+      .withMessage('Password must be at least 6 characters long'),
+  ],
+  validateRequest,
+  async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const { token, password } = req.body;
+      await AuthService.resetPassword(token, password);
+
+      res.json({
+        success: true,
+        message: 'Password has been reset successfully',
+      });
+    } catch (error) {
+      next(error);
+    }
+  },
+);
+
 export default router;

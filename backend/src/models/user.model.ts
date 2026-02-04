@@ -14,6 +14,8 @@ export interface User {
   bio?: string;
   favorite_category?: string;
   points: number;
+  reset_token?: string;
+  reset_token_expiry?: Date;
   created_at: Date;
   updated_at: Date;
 }
