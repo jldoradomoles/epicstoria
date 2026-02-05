@@ -1,10 +1,24 @@
+import dotenv from 'dotenv';
 import { EmailService } from '../services/email.service';
+
+// Cargar variables de entorno
+dotenv.config();
 
 /**
  * Script de prueba para verificar la configuración de email
  */
 async function testEmailService() {
   console.log('🧪 Probando servicio de email...\n');
+
+  // Debug: mostrar configuración (sin mostrar password completa)
+  console.log('📝 Configuración actual:');
+  console.log(`   EMAIL_HOST: ${process.env.EMAIL_HOST || '(no configurado)'}`);
+  console.log(`   EMAIL_PORT: ${process.env.EMAIL_PORT || '(no configurado)'}`);
+  console.log(`   EMAIL_SECURE: ${process.env.EMAIL_SECURE || '(no configurado)'}`);
+  console.log(`   EMAIL_USER: ${process.env.EMAIL_USER || '(no configurado)'}`);
+  console.log(
+    `   EMAIL_PASSWORD: ${process.env.EMAIL_PASSWORD ? '***********' : '(no configurado)'}\n`,
+  );
 
   try {
     // 1. Verificar conexión
