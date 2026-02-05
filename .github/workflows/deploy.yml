@@ -1,0 +1,65 @@
+name: Deploy to IONOS VPS
+
+on:
+  push:
+    branches:
+      - main # Se ejecuta automáticamente al hacer push a main
+  workflow_dispatch: # También permite ejecutarlo manualmente desde GitHub
+
+jobs:
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚀 Deploy to VPS via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: 22
+          script: |
+            echo "📦 Iniciando despliegue en IONOS VPS..."
+
+            # Ir al directorio del proyecto
+            cd ~/epicstoria || exit 1
+
+            # Actualizar código desde GitHub
+            echo "🔄 Descargando últimos cambios..."
+            git pull origin main
+
+            # Backend
+            echo "🔧 Actualizando backend..."
+            cd backend
+            npm install --production
+            npm run build
+
+            # Ejecutar migraciones si existen nuevas
+            npm run db:migrate || echo "⚠️ No hay migraciones nuevas"
+
+            # Frontend
+            echo "🎨 Actualizando frontend..."
+            cd ..
+            npm install --production
+            npm run build:ssr
+
+            # Reiniciar servicios con PM2
+            echo "🔄 Reiniciando servicios..."
+            pm2 restart epicstoria-backend || pm2 start backend/dist/index.js --name epicstoria-backend
+            pm2 restart epicstoria-frontend || pm2 start dist/epicstoria/server/server.mjs --name epicstoria-frontend
+
+            # Guardar configuración de PM2
+            pm2 save
+
+            # Mostrar estado final
+            echo "✅ Despliegue completado!"
+            pm2 status
+
+      - name: ✅ Deployment Status
+        if: success()
+        run: echo "🎉 Despliegue exitoso en IONOS VPS!"
+
+      - name: ❌ Deployment Failed
+        if: failure()
+        run: echo "💥 Error en el despliegue. Revisa los logs."
