@@ -131,7 +131,10 @@ const seedEvents = async () => {
 
 const runSeed = async () => {
   await seedAdminUsers();
-  await seedEvents();
+  // await seedEvents(); // Comentado: usar backup de BD local para eventos reales
+  console.log('\n✅ Seed completado: Solo usuarios admin creados');
+  console.log('💡 Para eventos: restaura backup de BD local con psql');
+  process.exit(0);
 };
 
 runSeed();
