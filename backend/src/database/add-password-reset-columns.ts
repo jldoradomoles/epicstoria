@@ -1,4 +1,4 @@
-import { pool } from '../config/database';
+import pool from '../config/database';
 
 async function addPasswordResetColumns() {
   const client = await pool.connect();
@@ -19,7 +19,7 @@ async function addPasswordResetColumns() {
     if (existingColumns.rows.length > 0) {
       console.log(
         '⚠️  Las columnas ya existen:',
-        existingColumns.rows.map((r) => r.column_name),
+        existingColumns.rows.map((r: any) => r.column_name),
       );
 
       // Preguntar si queremos recrearlas
@@ -46,7 +46,7 @@ async function addPasswordResetColumns() {
     `);
 
     console.log('\n📋 Estructura final de la tabla users:');
-    finalStructure.rows.forEach((col) => {
+    finalStructure.rows.forEach((col: any) => {
       console.log(`  - ${col.column_name}: ${col.data_type} (nullable: ${col.is_nullable})`);
     });
   } catch (error) {
