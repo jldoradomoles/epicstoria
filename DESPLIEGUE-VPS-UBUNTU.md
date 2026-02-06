@@ -534,10 +534,12 @@ export const environment = {
 
 ```bash
 npm install
-npm run build:ssr
+npm run build:ionos
 ```
 
 Esto generará la aplicación en `dist/epicstoria/`.
+
+**Nota**: El comando `build:ionos` usa la configuración de producción optimizada para el servidor.
 
 ---
 
@@ -855,7 +857,7 @@ pm2 restart epicstoria-backend
 # Frontend
 cd ..
 npm install
-npm run build:ssr
+npm run build:ionos
 pm2 restart epicstoria-frontend
 ```
 
@@ -924,15 +926,15 @@ pm2 logs epicstoria-backend | grep -i email
 **"Failed to send email" o "Connection refused":**
 
 - Verifica que `EMAIL_HOST`, `EMAIL_PORT` sean correctos
-- **Hostinger**: Usa `smtp.hostinger.com` puerto 465 o 587
+- **IONOS**: Usa `smtp.ionos.es` puerto 587 (TLS) o 465 (SSL)
 - Gmail: asegúrate de usar contraseña de aplicación (16 caracteres)
 - Verifica que no haya firewall bloqueando el puerto 587/465
 
 ```bash
 # Probar conectividad al servidor SMTP
-# Para Hostinger
-telnet smtp.hostinger.com 465
-nc -zv smtp.hostinger.com 465
+# Para IONOS
+telnet smtp.ionos.es 587
+nc -zv smtp.ionos.es 587
 
 # Para Gmail
 telnet smtp.gmail.com 587
@@ -1246,7 +1248,7 @@ crontab -e
 
 ## 🎉 ¡LISTO!
 
-Tu aplicación Epicstoria ahora está desplegada en tu VPS Ubuntu de Hostinger.
+Tu aplicación Epicstoria ahora está desplegada en tu VPS Ubuntu de IONOS.
 
 **URLs de acceso:**
 

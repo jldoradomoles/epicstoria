@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:hostinger": "ng build --configuration hostinger",
+    "build:ionos": "ng build --configuration ionos",
     "prebuild:gh-pages": "npx tsx scripts/excel-to-json.ts eventos-plantilla.xlsx public/data/events.json",
     "build:gh-pages": "ng build --configuration production --base-href /epicstoria/ && node fix-css-for-gh-pages.js",
     "deploy": "npm run build:gh-pages && npx angular-cli-ghpages --dir=dist/epicstoria/browser",

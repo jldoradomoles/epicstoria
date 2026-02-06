@@ -26,9 +26,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": ["src/styles.scss"],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
@@ -57,7 +55,7 @@
                 }
               ]
             },
-            "hostinger": {
+            "ionos": {
               "budgets": [
                 {
                   "type": "initial",
@@ -74,7 +72,7 @@
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.hostinger.ts"
+                  "with": "src/environments/environment.ionos.ts"
                 }
               ]
             },
