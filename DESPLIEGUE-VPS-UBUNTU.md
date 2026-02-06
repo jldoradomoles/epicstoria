@@ -174,7 +174,7 @@ DB_USER=epicstoria_user
 DB_PASSWORD=TuPasswordSegura123!
 
 # JWT
-JWT_SECRET=tu-clave-secreta-super-segura-y-larga-aqui
+JWT_SECRET=fjdskldJFK45D41+*-k5d45f4JKDCJ
 JWT_EXPIRES_IN=7d
 
 # Email Configuration (IONOS)
@@ -414,7 +414,95 @@ npm run db:add-reset-columns
 # npm run db:seed
 ```
 
+### 4.4.1 Restaurar Datos desde Base de Datos Local (Opcional)
+
+Si ya tienes datos en tu base de datos local (usuarios, eventos, imágenes, etc.) y quieres migrarlos al servidor de IONOS:
+
+**En tu máquina local (Windows):**
+
+```powershell
+# Primero, navega al directorio donde quieres guardar el backup
+cd C:\Users\Usuario\Documents\repos\epicstoria
+
+# pg_dump está en el directorio de instalación de PostgreSQL
+# Ajusta la versión según tu instalación (15, 16, etc.)
+$PG_BIN = "C:\Program Files\PostgreSQL\16\bin"
+
+# Hacer backup de la base de datos local
+# Opción 1: Backup completo (estructura + datos)
+& "$PG_BIN\pg_dump.exe" -U postgres -d epicstoria > epicstoria_backup.sql
+
+# Opción 2: Solo datos (si ya ejecutaste las migraciones en el servidor) - RECOMENDADO
+& "$PG_BIN\pg_dump.exe" -U postgres -d epicstoria --data-only > epicstoria_data.sql
+
+# Opción 3: Tablas específicas (ej: solo usuarios y eventos)
+& "$PG_BIN\pg_dump.exe" -U postgres -d epicstoria -t users -t events -t friendships -t messages --data-only > epicstoria_partial.sql
+
+# Verificar que se creó el archivo
+ls *.sql
+```
+
+**Alternativa si no encuentras pg_dump:**
+
+```powershell
+# Buscar donde está instalado PostgreSQL
+Get-ChildItem "C:\Program Files" -Filter pg_dump.exe -Recurse -ErrorAction SilentlyContinue
+
+# Una vez encontrado, usa la ruta completa, por ejemplo:
+& "C:\Program Files\PostgreSQL\16\bin\pg_dump.exe" -U postgres -d epicstoria --data-only > epicstoria_data.sql
+```
+
+**Transferir el archivo al servidor de IONOS:**
+
+```powershell
+# Opción 1: Usando SCP (desde PowerShell o CMD en Windows)
+scp epicstoria_backup.sql epicstoria@tu-ip-vps:~/
+
+# Opción 2: Usando SFTP
+# 1. Conectar por SFTP con FileZilla, WinSCP, o similar
+# 2. Subir el archivo .sql al directorio home del servidor
+```
+
+**En el servidor de IONOS:**
+
+```bash
+# Restaurar el backup en la base de datos
+psql -U epicstoria_user -d epicstoria < ~/epicstoria_backup.sql
+
+# O si usaste --data-only:
+psql -U epicstoria_user -d epicstoria < ~/epicstoria_data.sql
+
+# Verificar que los datos se importaron
+psql -U epicstoria_user -d epicstoria -c "SELECT COUNT(*) FROM users;"
+psql -U epicstoria_user -d epicstoria -c "SELECT COUNT(*) FROM events;"
+
+# Limpiar el archivo de backup (opcional)
+rm ~/epicstoria_backup.sql
+```
+
+**⚠️ Notas importantes:**
+
+- Si importas un backup completo (con estructura), hazlo **antes** de ejecutar las migraciones
+- Si importas solo datos (`--data-only`), hazlo **después** de las migraciones
+- Si tienes imágenes, también necesitas copiar la carpeta `backend/public/images/` al servidor:
+
+```powershell
+# En local (Windows), comprimir las imágenes
+cd C:\Users\Usuario\Documents\repos\epicstoria\backend\public
+tar -czf images.tar.gz images/
+
+# Subir al servidor
+scp images.tar.gz epicstoria@tu-ip-vps:~/
+
+# En el servidor, descomprimir
+cd ~/epicstoria/backend/public
+tar -xzf ~/images.tar.gz
+rm ~/images.tar.gz
+```
+
 ### 4.5 Construir el Backend
+
+---
 
 ```bash
 npm run build
