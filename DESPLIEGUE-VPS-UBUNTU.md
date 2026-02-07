@@ -410,6 +410,9 @@ npm run db:migrate-friendships
 # Migración de slug (para URLs amigables)
 npm run db:migrate-slug
 
+# Migración de examen (preguntas de examen en Excel)
+npm run db:migrate-exam
+
 # Migración de reset de contraseñas
 npm run db:add-reset-columns
 
