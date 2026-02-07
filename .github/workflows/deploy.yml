@@ -32,7 +32,7 @@ jobs:
             # Backend
             echo "🔧 Actualizando backend..."
             cd backend
-            npm install --production
+            npm install
             npm run build
 
             # Ejecutar migraciones si existen nuevas
@@ -41,8 +41,8 @@ jobs:
             # Frontend
             echo "🎨 Actualizando frontend..."
             cd ..
-            npm install --production
-            npm run build:ssr
+            npm install
+            npm run build:ionos
 
             # Reiniciar servicios con PM2
             echo "🔄 Reiniciando servicios..."
