@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnDestroy, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { UsersList } from '../../components/users-list/users-list';
 import { Friend, UserRole } from '../../models/user.model';
 import { AuthService } from '../../services/auth.service';
@@ -16,7 +17,7 @@ import { PointsService } from '../../services/points.service';
   templateUrl: './profile.html',
   styleUrls: ['./profile.scss'],
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit, OnDestroy {
   profileForm: FormGroup;
   passwordForm: FormGroup;
 
@@ -34,6 +35,9 @@ export class ProfileComponent implements OnInit {
   // Friends state
   friends = signal<Friend[]>([]);
   isLoadingFriends = signal<boolean>(false);
+
+  // Subscription
+  private friendsSubscription?: Subscription;
 
   // Admin upload state
   selectedFile = signal<File | null>(null);
@@ -82,6 +86,24 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadProfile();
+
+    // Suscribirse a cambios en la lista de amigos
+    this.friendsSubscription = this.friendshipService.friendsChanged$.subscribe(() => {
+      // Recargar la lista de amigos automáticamente sin verificar isLoading
+      this.friendshipService.getFriends().subscribe({
+        next: (friends) => {
+          this.friends.set(friends);
+        },
+        error: (error) => {
+          console.error('Error al cargar amigos:', error);
+        },
+      });
+    });
+  }
+
+  ngOnDestroy(): void {
+    // Limpiar suscripción
+    this.friendsSubscription?.unsubscribe();
   }
 
   get isLoading() {

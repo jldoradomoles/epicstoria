@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { map, Observable, Subject, tap } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { ApiResponse, AreFriendsResponse, Friend, FriendshipResponse } from '../models/user.model';
 import { AuthService } from './auth.service';
@@ -12,6 +12,10 @@ export class FriendshipService {
   private readonly apiUrl = environment.apiUrl;
   private authService = inject(AuthService);
   private http = inject(HttpClient);
+
+  // Subject para notificar cambios en la lista de amigos
+  private friendsChangedSubject = new Subject<void>();
+  public friendsChanged$ = this.friendsChangedSubject.asObservable();
 
   /**
    * Obtiene los headers con autenticación
@@ -31,7 +35,10 @@ export class FriendshipService {
       .post<
         ApiResponse<void>
       >(`${this.apiUrl}/friends/add`, { friendId }, { headers: this.getAuthHeaders() })
-      .pipe(map(() => undefined));
+      .pipe(
+        map(() => undefined),
+        tap(() => this.friendsChangedSubject.next()),
+      );
   }
 
   /**
@@ -42,7 +49,10 @@ export class FriendshipService {
       .delete<ApiResponse<void>>(`${this.apiUrl}/friends/remove/${friendId}`, {
         headers: this.getAuthHeaders(),
       })
-      .pipe(map(() => undefined));
+      .pipe(
+        map(() => undefined),
+        tap(() => this.friendsChangedSubject.next()),
+      );
   }
 
   /**

@@ -2,7 +2,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { computed, inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
 import { Router } from '@angular/router';
-import { catchError, Observable, tap, throwError } from 'rxjs';
+import { catchError, Observable, Subject, tap, throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
 import {
   ApiResponse,
@@ -27,6 +27,10 @@ export class AuthService {
   // Signals para el estado de autenticación
   private currentUserSignal = signal<User | null>(this.getStoredUser());
   private isLoadingSignal = signal<boolean>(false);
+
+  // Subject para emitir cambios en el usuario
+  private currentUserSubject = new Subject<User | null>();
+  public currentUser$ = this.currentUserSubject.asObservable();
 
   // Computed signals públicos
   currentUser = computed(() => this.currentUserSignal());
@@ -57,6 +61,7 @@ export class AuthService {
     sessionStorage.setItem(this.TOKEN_KEY, token);
     sessionStorage.setItem(this.USER_KEY, JSON.stringify(user));
     this.currentUserSignal.set(user);
+    this.currentUserSubject.next(user);
   }
 
   private clearAuth(): void {
@@ -64,6 +69,7 @@ export class AuthService {
     sessionStorage.removeItem(this.TOKEN_KEY);
     sessionStorage.removeItem(this.USER_KEY);
     this.currentUserSignal.set(null);
+    this.currentUserSubject.next(null);
   }
 
   getToken(): string | null {
