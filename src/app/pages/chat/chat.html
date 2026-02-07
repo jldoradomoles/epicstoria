@@ -77,7 +77,7 @@
           </div>
         }
 
-        <form (submit)="sendMessage($event)" class="flex gap-2 md:gap-3">
+        <form (submit)="sendMessage($event)" class="flex flex-col md:flex-row gap-2 md:gap-3">
           <input
             type="text"
             name="message"
@@ -89,14 +89,15 @@
           <button
             type="submit"
             [disabled]="!newMessage.trim() || isSending()"
-            class="px-4 md:px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 flex-shrink-0"
+            class="w-full md:w-auto px-4 md:px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 flex-shrink-0"
           >
             @if (isSending()) {
               <i class="fas fa-spinner fa-spin"></i>
+              <span>Enviando...</span>
             } @else {
               <i class="fas fa-paper-plane"></i>
+              <span>Enviar</span>
             }
-            <span class="hidden sm:inline">Enviar</span>
           </button>
         </form>
       </div>
