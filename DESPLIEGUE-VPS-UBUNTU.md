@@ -719,6 +719,8 @@ sudo certbot renew --dry-run
 
 ## PARTE 10: CONFIGURAR TAREAS PROGRAMADAS (CRON)
 
+---
+
 ### 10.1 Configurar Limpieza de Mensajes
 
 ```bash
@@ -753,9 +755,39 @@ sudo systemctl status nginx
 # Estado de PostgreSQL
 sudo systemctl status postgresql
 
-# Verificar puertos abiertos
-sudo netstat -tlnp | grep -E ':(80|443|3000|4000|5432)'
+# Verificar puertos abiertos (comando moderno)
+sudo ss -tlnp | grep -E ':(80|443|3000|4000|5432)'
+
+# O instalar net-tools para usar netstat:
+# sudo apt install -y net-tools
+# sudo netstat -tlnp | grep -E ':(80|443|3000|4000|5432)'
 ```
+
+**Salida esperada del comando de puertos:**
+
+```
+LISTEN 0      511          0.0.0.0:80         0.0.0.0:*    users:(("nginx",pid=1234,fd=6))
+LISTEN 0      511          0.0.0.0:443        0.0.0.0:*    users:(("nginx",pid=1234,fd=7))
+LISTEN 0      511        127.0.0.1:3000       0.0.0.0:*    users:(("node",pid=5678,fd=18))
+LISTEN 0      511        127.0.0.1:4000       0.0.0.0:*    users:(("node",pid=5679,fd=18))
+LISTEN 0      244        127.0.0.1:5432       0.0.0.0:*    users:(("postgres",pid=9012,fd=5))
+```
+
+**Nota:** El número antes de la dirección IP (ej: `511`, `244`) es el "backlog" y puede variar según la configuración. Es normal que difiera del ejemplo.
+
+**Interpretación:**
+
+- ✅ **Puerto 80** (HTTP): Nginx escuchando → Frontend accesible por HTTP
+- ✅ **Puerto 443** (HTTPS): Nginx escuchando → Frontend accesible por HTTPS (si configuraste SSL)
+- ✅ **Puerto 3000**: Node.js (backend) escuchando en localhost → API funcionando
+- ✅ **Puerto 4000**: Node.js (frontend SSR) escuchando en localhost → Frontend SSR funcionando
+- ✅ **Puerto 5432**: PostgreSQL escuchando en localhost → Base de datos funcionando
+
+**⚠️ Nota importante:**
+
+- Los puertos 3000, 4000 y 5432 deben mostrar `127.0.0.1` (localhost), NO `0.0.0.0`
+- Esto es correcto porque solo Nginx debe ser accesible desde internet
+- El backend y la BD solo aceptan conexiones locales (más seguro)
 
 ### 11.2 Probar la Aplicación
 
