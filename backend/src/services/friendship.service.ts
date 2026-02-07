@@ -107,7 +107,9 @@ export class FriendshipService {
     const client = await pool.connect();
 
     try {
+      console.log('searchUsers - userId:', currentUserId, 'searchTerm:', searchTerm);
       const searchPattern = `%${searchTerm.toLowerCase()}%`;
+      console.log('searchPattern:', searchPattern);
       const result = await client.query(
         `SELECT
           u.id,
@@ -131,6 +133,7 @@ export class FriendshipService {
         [currentUserId, searchPattern],
       );
 
+      console.log('searchUsers - found:', result.rows.length, 'users');
       return result.rows.map((row) => ({
         id: row.id,
         name: row.name,
