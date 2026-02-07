@@ -75,38 +75,40 @@
         </div>
 
         <!-- Tabs -->
-        <div class="flex border-b border-amber-900/30">
+        <div class="flex overflow-x-auto border-b border-amber-900/30 scrollbar-thin">
           <button
             (click)="setActiveTab('profile')"
             [class]="
               activeTab() === 'profile'
-                ? 'flex-1 py-4 px-6 text-color border-b-2 border-amber-500 font-medium bg-amber-900/20'
-                : 'flex-1 py-4 px-6 text-amber-200/60 hover:text-amber-200 hover:bg-amber-900/10 transition-colors'
+                ? 'flex-1 min-w-fit py-3 px-3 md:py-4 md:px-6 text-color text-sm md:text-base border-b-2 border-amber-500 font-medium bg-amber-900/20 whitespace-nowrap'
+                : 'flex-1 min-w-fit py-3 px-3 md:py-4 md:px-6 text-amber-200/60 text-sm md:text-base hover:text-amber-200 hover:bg-amber-900/10 transition-colors whitespace-nowrap'
             "
           >
-            <i class="fas fa-user mr-2"></i>
-            Datos Personales
+            <i class="fas fa-user mr-1 md:mr-2"></i>
+            <span class="hidden xs:inline">Datos Personales</span>
+            <span class="xs:hidden">Datos</span>
           </button>
           <button
             (click)="setActiveTab('password')"
             [class]="
               activeTab() === 'password'
-                ? 'flex-1 py-4 px-6 text-color border-b-2 border-amber-500 font-medium bg-amber-900/20'
-                : 'flex-1 py-4 px-6 text-amber-200/60 hover:text-amber-200 hover:bg-amber-900/10 transition-colors'
+                ? 'flex-1 min-w-fit py-3 px-3 md:py-4 md:px-6 text-color text-sm md:text-base border-b-2 border-amber-500 font-medium bg-amber-900/20 whitespace-nowrap'
+                : 'flex-1 min-w-fit py-3 px-3 md:py-4 md:px-6 text-amber-200/60 text-sm md:text-base hover:text-amber-200 hover:bg-amber-900/10 transition-colors whitespace-nowrap'
             "
           >
-            <i class="fas fa-lock mr-2"></i>
-            Cambiar Contraseña
+            <i class="fas fa-lock mr-1 md:mr-2"></i>
+            <span class="hidden xs:inline">Cambiar Contraseña</span>
+            <span class="xs:hidden">Contraseña</span>
           </button>
           <button
             (click)="setActiveTab('friends')"
             [class]="
               activeTab() === 'friends'
-                ? 'flex-1 py-4 px-6 text-color border-b-2 border-amber-500 font-medium bg-amber-900/20'
-                : 'flex-1 py-4 px-6 text-amber-200/60 hover:text-amber-200 hover:bg-amber-900/10 transition-colors'
+                ? 'flex-1 min-w-fit py-3 px-3 md:py-4 md:px-6 text-color text-sm md:text-base border-b-2 border-amber-500 font-medium bg-amber-900/20 whitespace-nowrap'
+                : 'flex-1 min-w-fit py-3 px-3 md:py-4 md:px-6 text-amber-200/60 text-sm md:text-base hover:text-amber-200 hover:bg-amber-900/10 transition-colors whitespace-nowrap'
             "
           >
-            <i class="fas fa-heart mr-2"></i>
+            <i class="fas fa-heart mr-1 md:mr-2"></i>
             Favoritos
           </button>
           @if (isAdmin) {
@@ -114,12 +116,13 @@
               (click)="setActiveTab('admin')"
               [class]="
                 activeTab() === 'admin'
-                  ? 'flex-1 py-4 px-6 text-color border-b-2 border-amber-500 font-medium bg-amber-900/20'
-                  : 'flex-1 py-4 px-6 text-amber-200/60 hover:text-amber-200 hover:bg-amber-900/10 transition-colors'
+                  ? 'flex-1 min-w-fit py-3 px-3 md:py-4 md:px-6 text-color text-sm md:text-base border-b-2 border-amber-500 font-medium bg-amber-900/20 whitespace-nowrap'
+                  : 'flex-1 min-w-fit py-3 px-3 md:py-4 md:px-6 text-amber-200/60 text-sm md:text-base hover:text-amber-200 hover:bg-amber-900/10 transition-colors whitespace-nowrap'
               "
             >
-              <i class="fas fa-cog mr-2"></i>
-              Administración
+              <i class="fas fa-cog mr-1 md:mr-2"></i>
+              <span class="hidden xs:inline">Administración</span>
+              <span class="xs:hidden">Admin</span>
             </button>
           }
         </div>
