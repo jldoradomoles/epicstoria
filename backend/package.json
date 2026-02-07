@@ -10,6 +10,7 @@
     "db:migrate": "ts-node src/database/migrate.ts",
     "db:migrate-points": "ts-node src/database/migrate-points.ts",
     "db:migrate-friendships": "ts-node src/database/migrate-friendships.ts",
+    "db:migrate-messages": "ts-node src/database/create-messages-table.ts",
     "db:migrate-slug": "ts-node src/database/add-slug-column.ts",
     "db:migrate-exam": "ts-node src/database/add-exam-column.ts",
     "db:test-points": "ts-node src/database/test-points.ts",
