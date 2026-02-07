@@ -98,7 +98,6 @@ export class NotificationService {
         icon: '/logos/epicstoria-logo.png',
         badge: '/logos/epicstoria-logo.png',
         tag: 'chat-notification',
-        renotify: true,
       });
 
       // Cerrar notificación después de 5 segundos
