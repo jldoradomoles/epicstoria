@@ -11,16 +11,16 @@
       <div class="container-custom rounded-xl overflow-hidden">
         <!-- Header con avatar -->
         <div
-          class="bg-gradient-to-r from-amber-900/50 to-stone-900/50 p-6 border-b border-amber-900/30"
+          class="bg-gradient-to-r from-amber-900/50 to-stone-900/50 p-4 md:p-6 border-b border-amber-900/30"
         >
-          <div class="flex items-center gap-4">
+          <div class="flex flex-col md:flex-row items-center gap-4 md:gap-4">
             <!-- Avatar -->
             <div
-              class="w-20 h-20 rounded-full bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center text-2xl font-bold text-white shadow-lg"
+              class="w-20 h-20 flex-shrink-0 rounded-full bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center text-2xl font-bold text-white shadow-lg"
             >
               {{ getInitials() }}
             </div>
-            <div class="flex-grow">
+            <div class="flex-grow text-center md:text-left">
               <h2 class="text-xl font-semibold text-color">
                 {{ currentUser.name }} {{ currentUser.lastname }}
               </h2>
@@ -31,20 +31,22 @@
             </div>
 
             <!-- Puntos y estrellas -->
-            <div class="text-right">
+            <div class="w-full md:w-auto">
               <div
                 class="bg-gradient-to-br from-yellow-600/30 to-yellow-700/30 rounded-lg p-4 border border-yellow-500/30"
               >
-                <div class="flex items-center gap-2 mb-2">
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-2 mb-2">
                   <i class="fas fa-trophy text-yellow-400 text-xl"></i>
-                  <div class="text-3xl font-bold text-yellow-300 d-flex">
+                  <div class="text-3xl font-bold text-yellow-300 text-center">
                     {{ currentUser.points || 0 }}
-                    <div class="text-xs text-yellow-200/70 mb-2 ml-1">puntos totales</div>
+                  </div>
+                  <div class="text-xs text-yellow-200/70 text-center sm:text-left">
+                    puntos totales
                   </div>
                 </div>
 
                 <!-- Estrellas -->
-                <div class="flex items-center gap-1 mb-2">
+                <div class="flex items-center justify-center gap-1 mb-2">
                   @for (star of getStarsArray(); track $index) {
                     <i class="fas fa-star text-yellow-400"></i>
                   }
@@ -56,7 +58,7 @@
                 <!-- Progreso a siguiente estrella -->
                 @if (getStarsCount() < 10) {
                   <div class="mt-2">
-                    <div class="text-xs text-yellow-200/70 mb-1">
+                    <div class="text-xs text-yellow-200/70 mb-1 text-center">
                       {{ getPointsToNextStar() }} pts para próxima ⭐
                     </div>
                     <div class="w-full bg-yellow-900/30 rounded-full h-1.5">
@@ -706,7 +708,7 @@
                   <p class="text-amber-200/60 text-lg mb-3">
                     El archivo debe contener las siguientes columnas:
                   </p>
-                  <ul class="text-amber-200/70 text-lg space-y-1">
+                  <ul class="text-color text-lg space-y-1">
                     <li>
                       <strong class="text-color">id:</strong> Identificador único del evento (ej:
                       apolo-11)
@@ -752,10 +754,10 @@
       <div class="mt-8 text-center">
         <button
           (click)="authService.logout()"
-          class="text-red-400 hover:text-red-300 transition-colors inline-flex items-center gap-2"
+          class="text-red-500 transition-colors inline-flex items-center gap-2"
         >
           <i class="fas fa-sign-out-alt"></i>
-          Cerrar Sesión
+          <span class="text-xl">Cerrar Sesión</span>
         </button>
       </div>
 
@@ -766,7 +768,7 @@
             <i class="fas fa-users mr-2"></i>
             Usuarios
           </h2>
-          <p class="text-amber-200/70">Añade amigos haciendo click en el corazón</p>
+          <p class="text-color">Añade amigos haciendo click en el corazón</p>
         </div>
         <app-users-list></app-users-list>
       </div>
@@ -774,7 +776,7 @@
       <!-- No autenticado -->
       <div class="container-custom rounded-xl p-8 text-center">
         <i class="fas fa-user-lock text-4xl text-amber-400/50 mb-4"></i>
-        <p class="text-amber-200/70 mb-4">Debes iniciar sesión para ver tu perfil</p>
+        <p class="text-color mb-4">Debes iniciar sesión para ver tu perfil</p>
         <a
           routerLink="/login"
           class="inline-block px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-semibold rounded-lg transition-all duration-300"
