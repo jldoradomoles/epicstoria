@@ -122,9 +122,9 @@ export class FriendshipService {
          WHERE u.id != $1
            AND (
              LOWER(u.name) LIKE $2
-             OR LOWER(u.lastname) LIKE $2
+             OR LOWER(COALESCE(u.lastname, '')) LIKE $2
              OR LOWER(u.email) LIKE $2
-             OR LOWER(CONCAT(u.name, ' ', u.lastname)) LIKE $2
+             OR LOWER(CONCAT(u.name, ' ', COALESCE(u.lastname, ''))) LIKE $2
            )
          ORDER BY u.name ASC
          LIMIT 20`,
