@@ -17,10 +17,28 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Configurar CORS para aceptar múltiples orígenes
+const allowedOrigins = [
+  process.env.FRONTEND_URL || 'http://localhost:4200',
+  'https://epicstoria.es',
+  'https://www.epicstoria.es',
+  'http://epicstoria.es',
+  'http://www.epicstoria.es',
+];
+
 // Middleware
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:4200',
+    origin: (origin, callback) => {
+      // Permitir requests sin origin (como mobile apps o curl)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     credentials: true,
   }),
 );
