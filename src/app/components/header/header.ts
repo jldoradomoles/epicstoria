@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { AuthService } from '../../services/auth.service';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'app-header',
@@ -9,11 +11,32 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
-export class Header {
+export class Header implements OnInit, OnDestroy {
   readonly useStaticData = environment.useStaticData;
   mobileMenuOpen = false;
+  unreadCount = signal<number>(0);
 
-  constructor(public authService: AuthService) {}
+  private unreadSubscription?: Subscription;
+
+  constructor(
+    public authService: AuthService,
+    private notificationService: NotificationService,
+  ) {}
+
+  ngOnInit(): void {
+    // Suscribirse al contador de mensajes sin leer
+    this.unreadSubscription = this.notificationService.newMessage$.subscribe((count) => {
+      this.unreadCount.set(count);
+    });
+
+    // Obtener el contador actual
+    const currentCount = this.notificationService.getCurrentUnreadCount();
+    this.unreadCount.set(currentCount);
+  }
+
+  ngOnDestroy(): void {
+    this.unreadSubscription?.unsubscribe();
+  }
 
   toggleMobileMenu(): void {
     this.mobileMenuOpen = !this.mobileMenuOpen;

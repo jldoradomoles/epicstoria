@@ -23,6 +23,24 @@ router.get('/unread', authMiddleware, async (req: AuthRequest, res) => {
 });
 
 /**
+ * Obtener número de mensajes no leídos agrupados por usuario
+ */
+router.get('/unread-by-user', authMiddleware, async (req: AuthRequest, res) => {
+  try {
+    const userId = req.user!.userId;
+    const unreadByUser = await ChatService.getUnreadCountByUser(userId);
+
+    res.json({
+      success: true,
+      data: unreadByUser,
+    });
+  } catch (error: any) {
+    console.error('Error getting unread count by user:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+/**
  * Obtener mensajes con un usuario específico
  */
 router.get('/:userId', authMiddleware, async (req: AuthRequest, res) => {

@@ -80,4 +80,15 @@ export class ChatService {
       })
       .pipe(map((response) => response.data.count));
   }
+
+  /**
+   * Obtener número de mensajes no leídos agrupados por usuario
+   */
+  getUnreadCountByUser(): Observable<{ [userId: number]: number }> {
+    return this.http
+      .get<ApiResponse<{ [userId: number]: number }>>(`${this.apiUrl}/chat/unread-by-user`, {
+        headers: this.getAuthHeaders(),
+      })
+      .pipe(map((response) => response.data));
+  }
 }

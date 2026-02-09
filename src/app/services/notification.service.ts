@@ -11,12 +11,17 @@ export class NotificationService {
   private authService = inject(AuthService);
 
   private previousUnreadCount = 0;
+  private previousUnreadByUser: { [userId: number]: number } = {};
   private pollInterval = 10000; // 10 segundos
   private pollingSubscription: any;
 
   // Subject para emitir cuando hay nuevos mensajes
   private newMessageSubject = new Subject<number>();
   public newMessage$ = this.newMessageSubject.asObservable();
+
+  // Subject para emitir contadores por usuario
+  private unreadByUserSubject = new Subject<{ [userId: number]: number }>();
+  public unreadByUser$ = this.unreadByUserSubject.asObservable();
 
   /**
    * Iniciar el polling de mensajes no leídos
@@ -64,12 +69,25 @@ export class NotificationService {
         if (count > this.previousUnreadCount && this.previousUnreadCount > 0) {
           const newMessages = count - this.previousUnreadCount;
           this.showNotification(newMessages);
-          this.newMessageSubject.next(count);
         }
+
+        // Siempre emitir el contador actualizado
+        this.newMessageSubject.next(count);
         this.previousUnreadCount = count;
       },
       error: (error) => {
         console.error('Error al verificar mensajes no leídos:', error);
+      },
+    });
+
+    // También obtener contadores por usuario
+    this.chatService.getUnreadCountByUser().subscribe({
+      next: (unreadByUser) => {
+        this.unreadByUserSubject.next(unreadByUser);
+        this.previousUnreadByUser = unreadByUser;
+      },
+      error: (error) => {
+        console.error('Error al verificar mensajes no leídos por usuario:', error);
       },
     });
   }
@@ -116,5 +134,12 @@ export class NotificationService {
    */
   getCurrentUnreadCount(): number {
     return this.previousUnreadCount;
+  }
+
+  /**
+   * Obtener los contadores por usuario
+   */
+  getCurrentUnreadByUser(): { [userId: number]: number } {
+    return this.previousUnreadByUser;
   }
 }

@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { interval, Subscription } from 'rxjs';
 import { UsersList } from '../../components/users-list/users-list';
 import { Friend, UserRole } from '../../models/user.model';
 import { AuthService } from '../../services/auth.service';
+import { ChatService } from '../../services/chat.service';
 import { EventApiService } from '../../services/event-api.service';
 import { FriendshipService } from '../../services/friendship.service';
 import { PointsService } from '../../services/points.service';
@@ -35,9 +36,11 @@ export class ProfileComponent implements OnInit, OnDestroy {
   // Friends state
   friends = signal<Friend[]>([]);
   isLoadingFriends = signal<boolean>(false);
+  unreadMessages = signal<{ [userId: number]: number }>({});
 
   // Subscription
   private friendsSubscription?: Subscription;
+  private unreadMessagesSubscription?: Subscription;
 
   // Admin upload state
   selectedFile = signal<File | null>(null);
@@ -64,6 +67,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     private eventApiService: EventApiService,
     private pointsService: PointsService,
     private friendshipService: FriendshipService,
+    private chatService: ChatService,
   ) {
     this.profileForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
@@ -104,6 +108,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     // Limpiar suscripción
     this.friendsSubscription?.unsubscribe();
+    this.unreadMessagesSubscription?.unsubscribe();
   }
 
   get isLoading() {
@@ -143,6 +148,10 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
     if (tab === 'friends') {
       this.loadFriends();
+      this.loadUnreadMessages();
+      this.startUnreadMessagesPolling();
+    } else {
+      this.stopUnreadMessagesPolling();
     }
   }
 
@@ -158,6 +167,39 @@ export class ProfileComponent implements OnInit, OnDestroy {
         this.isLoadingFriends.set(false);
       },
     });
+  }
+
+  loadUnreadMessages(): void {
+    if (!this.authService.currentUser()) {
+      return;
+    }
+
+    this.chatService.getUnreadCountByUser().subscribe({
+      next: (unreadByUser) => {
+        this.unreadMessages.set(unreadByUser);
+      },
+      error: (error) => {
+        console.error('Error al cargar mensajes sin leer:', error);
+      },
+    });
+  }
+
+  startUnreadMessagesPolling(): void {
+    // Actualizar contadores cada 5 segundos
+    this.unreadMessagesSubscription = interval(5000).subscribe(() => {
+      this.loadUnreadMessages();
+    });
+  }
+
+  stopUnreadMessagesPolling(): void {
+    if (this.unreadMessagesSubscription) {
+      this.unreadMessagesSubscription.unsubscribe();
+      this.unreadMessagesSubscription = undefined;
+    }
+  }
+
+  getUnreadCount(userId: number): number {
+    return this.unreadMessages()[userId] || 0;
   }
 
   clearMessages(): void {

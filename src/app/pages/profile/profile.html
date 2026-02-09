@@ -432,11 +432,20 @@
                       <div class="flex-shrink-0">
                         <a
                           [routerLink]="['/chat', friend.id]"
-                          class="px-4 py-2 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-medium rounded-lg transition-all duration-300 flex items-center gap-2 w-full lg:w-auto justify-center"
+                          class="px-4 py-2 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-medium rounded-lg transition-all duration-300 flex items-center gap-2 w-full lg:w-auto justify-center relative"
                           title="Abrir chat"
                         >
                           <i class="fas fa-comment-dots"></i>
                           Chat
+                          @if (getUnreadCount(friend.id) > 0) {
+                            <span
+                              class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center shadow-lg"
+                            >
+                              {{
+                                getUnreadCount(friend.id) > 99 ? '99+' : getUnreadCount(friend.id)
+                              }}
+                            </span>
+                          }
                         </a>
                       </div>
                     </div>

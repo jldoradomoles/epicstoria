@@ -75,6 +75,26 @@ export class ChatService {
   }
 
   /**
+   * Obtener número de mensajes no leídos agrupados por usuario
+   */
+  static async getUnreadCountByUser(userId: number): Promise<{ [userId: number]: number }> {
+    const result = await pool.query(
+      `SELECT sender_id, COUNT(*) as count
+       FROM messages
+       WHERE receiver_id = $1 AND read = false
+       GROUP BY sender_id`,
+      [userId],
+    );
+
+    const unreadByUser: { [userId: number]: number } = {};
+    result.rows.forEach((row) => {
+      unreadByUser[row.sender_id] = parseInt(row.count);
+    });
+
+    return unreadByUser;
+  }
+
+  /**
    * Eliminar un mensaje
    */
   static async deleteMessage(messageId: number, userId: number): Promise<boolean> {
