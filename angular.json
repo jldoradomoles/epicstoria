@@ -24,6 +24,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "google479ed8853d04a1c9.html",
+                "input": "src",
+                "output": "/"
               }
             ],
             "styles": ["src/styles.scss"],
@@ -110,6 +115,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "google479ed8853d04a1c9.html",
+                "input": "src",
+                "output": "/"
               }
             ],
             "styles": ["src/styles.scss"]
