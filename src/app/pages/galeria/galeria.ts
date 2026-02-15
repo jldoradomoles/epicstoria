@@ -25,6 +25,10 @@ export class Galeria implements OnInit {
   images = signal<GalleryImage[]>([]);
   selectedImage = signal<GalleryImage | null>(null);
   isLoading = signal<boolean>(true);
+  imagesPerPage = 1;
+  imagesPerGroup = 10; // Imágenes por grupo de paginación
+  currentIndex = signal<number>(0);
+  loadedImagesCount = signal<number>(10); // Cargar la primera página completa
 
   // Lista de imágenes de eventos históricos
   private imageFiles = [
@@ -133,6 +137,113 @@ export class Galeria implements OnInit {
     });
   }
 
+  getVisibleImages(): GalleryImage[] {
+    const startIdx = this.currentIndex();
+    const endIdx = Math.min(startIdx + this.imagesPerPage, this.loadedImagesCount());
+    return this.images().slice(startIdx, endIdx);
+  }
+
+  previousSlide() {
+    if (this.currentIndex() > 0) {
+      this.currentIndex.update((i) => i - 1);
+    }
+  }
+
+  nextSlide() {
+    const nextIndex = this.currentIndex() + 1;
+    const maxIndex = this.images().length - 1;
+
+    if (nextIndex <= maxIndex) {
+      this.currentIndex.set(nextIndex);
+
+      // Cargar más imágenes si nos acercamos al final
+      if (nextIndex >= this.loadedImagesCount() - 2) {
+        this.loadMoreImages();
+      }
+    }
+  }
+
+  loadMoreImages() {
+    const currentLoaded = this.loadedImagesCount();
+    const total = this.images().length;
+    if (currentLoaded < total) {
+      // Cargar la siguiente página completa (10 imágenes)
+      this.loadedImagesCount.set(Math.min(currentLoaded + this.imagesPerGroup, total));
+    }
+  }
+
+  canGoPrevious(): boolean {
+    return this.currentIndex() > 0;
+  }
+
+  canGoNext(): boolean {
+    return this.currentIndex() < this.images().length - 1;
+  }
+
+  getCurrentPosition(): string {
+    const current = this.currentIndex() + 1;
+    const total = this.images().length;
+    return `${current} de ${total}`;
+  }
+
+  getCurrentPage(): number {
+    return Math.floor(this.currentIndex() / this.imagesPerGroup);
+  }
+
+  getTotalPages(): number {
+    return Math.ceil(this.images().length / this.imagesPerGroup);
+  }
+
+  getPageRange(): string {
+    const currentPage = this.getCurrentPage();
+    const startImage = currentPage * this.imagesPerGroup + 1;
+    const endImage = Math.min((currentPage + 1) * this.imagesPerGroup, this.images().length);
+    return `${startImage}-${endImage} de ${this.images().length}`;
+  }
+
+  getTotalSlides(): number {
+    return Math.ceil(this.images().length / this.imagesPerGroup);
+  }
+
+  getSlideArray(): number[] {
+    const totalPages = this.getTotalPages();
+    const currentPage = this.getCurrentPage();
+
+    // Calcular qué grupo de 10 páginas mostrar
+    const groupIndex = Math.floor(currentPage / 10);
+    const startPage = groupIndex * 10;
+    const endPage = Math.min(startPage + 10, totalPages);
+
+    // Crear array con los índices de página del grupo actual
+    const pages: number[] = [];
+    for (let i = startPage; i < endPage; i++) {
+      pages.push(i);
+    }
+    return pages;
+  }
+
+  getPageIndex(dotIndex: number): number {
+    return dotIndex;
+  }
+
+  goToPage(pageIndex: number) {
+    const targetIndex = pageIndex * this.imagesPerGroup;
+    if (targetIndex < this.images().length) {
+      this.currentIndex.set(targetIndex);
+
+      // Cargar suficientes imágenes para mostrar la página completa
+      const requiredImages = targetIndex + this.imagesPerGroup;
+      if (requiredImages > this.loadedImagesCount()) {
+        const total = this.images().length;
+        this.loadedImagesCount.set(Math.min(requiredImages, total));
+      }
+    }
+  }
+
+  isCurrentPage(pageIndex: number): boolean {
+    return this.getCurrentPage() === pageIndex;
+  }
+
   formatTitle(filename: string): string {
     // Convertir nombre de archivo a título legible
     return filename
@@ -158,7 +269,7 @@ export class Galeria implements OnInit {
     this.selectedImage.set(null);
   }
 
-  previousImage() {
+  previousImageModal() {
     const current = this.selectedImage();
     if (!current) return;
 
@@ -168,7 +279,7 @@ export class Galeria implements OnInit {
     }
   }
 
-  nextImage() {
+  nextImageModal() {
     const current = this.selectedImage();
     if (!current) return;
 

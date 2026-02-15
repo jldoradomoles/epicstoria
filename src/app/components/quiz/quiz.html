@@ -14,8 +14,37 @@
         </p>
       </div>
 
-      <!-- Mensaje si no puede tomar el quiz -->
-      @if (!canTakeQuiz && retryAvailableDate) {
+      <!-- Mensaje para usuarios NO autenticados -->
+      @if (!isUserAuthenticated) {
+        <div class="bg-blue-900/50 border border-blue-600 rounded-lg p-6 mb-4">
+          <i class="fas fa-lock text-blue-400 text-3xl mb-3"></i>
+          <p class="text-blue-200 font-medium mb-3 text-lg">
+            Quiz exclusivo para usuarios registrados
+          </p>
+          <p class="text-blue-300 text-sm mb-4">
+            Para acceder a los quizzes y ganar puntos, necesitas estar registrado e iniciar sesión.
+          </p>
+          <div class="flex gap-3 justify-center flex-wrap">
+            <a
+              routerLink="/login"
+              class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 inline-flex items-center gap-2"
+            >
+              <i class="fas fa-sign-in-alt"></i>
+              Iniciar Sesión
+            </a>
+            <a
+              routerLink="/register"
+              class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 inline-flex items-center gap-2"
+            >
+              <i class="fas fa-user-plus"></i>
+              Registrarse
+            </a>
+          </div>
+        </div>
+      }
+
+      <!-- Mensaje si no puede tomar el quiz (solo para usuarios autenticados) -->
+      @if (isUserAuthenticated && !canTakeQuiz && retryAvailableDate) {
         <div class="bg-yellow-900/50 border border-yellow-600 rounded-lg p-4 mb-4">
           <i class="fas fa-clock text-yellow-400 text-2xl mb-2"></i>
           <p class="text-yellow-200 font-medium mb-2">Ya has completado este quiz recientemente</p>
@@ -25,18 +54,21 @@
         </div>
       }
 
-      <button
-        (click)="startQuiz()"
-        [disabled]="!canTakeQuiz"
-        [class]="
-          canTakeQuiz
-            ? 'bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105'
-            : 'bg-gray-600 text-gray-400 font-bold py-3 px-8 rounded-lg cursor-not-allowed opacity-50'
-        "
-      >
-        <i class="fas fa-play mr-2"></i>
-        {{ canTakeQuiz ? 'Comenzar Quiz' : 'Quiz No Disponible' }}
-      </button>
+      <!-- Botón de iniciar quiz (solo para usuarios autenticados) -->
+      @if (isUserAuthenticated) {
+        <button
+          (click)="startQuiz()"
+          [disabled]="!canTakeQuiz"
+          [class]="
+            canTakeQuiz
+              ? 'bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105'
+              : 'bg-gray-600 text-gray-400 font-bold py-3 px-8 rounded-lg cursor-not-allowed opacity-50'
+          "
+        >
+          <i class="fas fa-play mr-2"></i>
+          {{ canTakeQuiz ? 'Comenzar Quiz' : 'Quiz No Disponible' }}
+        </button>
+      }
     </div>
   }
 

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { Event } from '../../models/event.model';
 import { EventQuiz, QuizAnswer, QuizQuestion, QuizResult } from '../../models/quiz.model';
 import { QuizStatusResponse } from '../../models/user.model';
@@ -10,7 +11,7 @@ import { QuizService } from '../../services/quiz.service';
 @Component({
   selector: 'app-quiz',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './quiz.html',
   styleUrl: './quiz.scss',
 })
@@ -63,8 +64,14 @@ export class QuizComponent implements OnInit {
   }
 
   startQuiz() {
+    // Verificar que el usuario esté autenticado
+    if (!this.authService.isAuthenticated()) {
+      console.warn('Usuario no autenticado intentando iniciar quiz');
+      return;
+    }
+
     // Verificar si el usuario puede tomar el quiz
-    if (this.authService.isAuthenticated() && this.quizStatus && !this.quizStatus.can_take) {
+    if (this.quizStatus && !this.quizStatus.can_take) {
       const retryDate = this.quizStatus.retry_available_at;
       if (retryDate) {
         const dateStr = new Date(retryDate).toLocaleDateString('es-ES', {
@@ -250,9 +257,9 @@ export class QuizComponent implements OnInit {
   }
 
   get canTakeQuiz(): boolean {
-    // Si no está autenticado, puede tomar el quiz (no se guardará)
+    // Solo usuarios autenticados pueden tomar el quiz
     if (!this.authService.isAuthenticated()) {
-      return true;
+      return false;
     }
     // Si no hay estado cargado aún, permitir por defecto
     if (!this.quizStatus) {
@@ -260,6 +267,10 @@ export class QuizComponent implements OnInit {
     }
     // Verificar el estado del quiz
     return this.quizStatus.can_take;
+  }
+
+  get isUserAuthenticated(): boolean {
+    return this.authService.isAuthenticated();
   }
 
   get retryAvailableDate(): string | null {

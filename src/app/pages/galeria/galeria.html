@@ -13,41 +13,93 @@
       </div>
     }
 
-    <!-- Galería de imágenes -->
+    <!-- Carrusel de imágenes -->
     @if (!isLoading() && images().length > 0) {
       <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-color mb-2">Galería de Eventos Históricos</h2>
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold text-color mb-3">Galería de Eventos Históricos</h2>
+          <div class="space-y-1">
+            <p class="text-amber-300/90 font-semibold">Imagen {{ getCurrentPosition() }}</p>
+            <p class="text-amber-300/60 text-sm">
+              Página {{ getCurrentPage() + 1 }} de {{ getTotalPages() }} •
+              Mostrando imágenes {{ getPageRange() }}
+            </p>
+          </div>
         </div>
 
-        <!-- Grid de imágenes -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          @for (image of images(); track image.url) {
-            <div
-              class="group relative overflow-hidden rounded-xl bg-stone-900/50 border border-amber-900/30 hover:border-amber-500/50 transition-all duration-300 cursor-pointer transform hover:scale-105"
-              (click)="openImage(image)"
-            >
-              <div class="aspect-[4/3] overflow-hidden">
-                <img
-                  [src]="image.url"
-                  [alt]="image.title"
-                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  loading="lazy"
-                />
-              </div>
+        <!-- Carrusel Container -->
+        <div class="relative">
+          <!-- Botón Anterior -->
+          <button
+            (click)="previousSlide()"
+            [disabled]="!canGoPrevious()"
+            class="absolute left-0 top-1/2 -translate-y-1/2 z-10 -translate-x-0 md:-translate-x-4 bg-amber-500 hover:bg-amber-600 disabled:bg-gray-600 disabled:cursor-not-allowed text-white rounded-full p-3 md:p-4 shadow-lg transition-all duration-300 hover:scale-110 disabled:hover:scale-100"
+            [class.opacity-50]="!canGoPrevious()"
+          >
+            <i class="fas fa-chevron-left text-lg md:text-xl"></i>
+          </button>
+
+          <!-- Imagen única centrada -->
+          <div class="flex justify-center items-center px-12 md:px-20">
+            @for (image of getVisibleImages(); track image.url) {
               <div
-                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                class="group relative overflow-hidden rounded-xl bg-stone-900/50 border-2 border-amber-900/30 hover:border-amber-500/50 transition-all duration-300 cursor-pointer w-full max-w-4xl"
+                (click)="openImage(image)"
               >
-                <div class="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 class="text-white font-semibold text-lg mb-1">{{ image.title }}</h3>
-                  <p class="text-color text-sm flex items-center gap-2">
-                    <i class="fas fa-search-plus"></i>
-                    Click para ampliar
-                  </p>
+                <div class="aspect-[4/3] overflow-hidden">
+                  <img
+                    [src]="image.url"
+                    [alt]="image.title"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                >
+                  <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="text-white font-semibold text-xl md:text-2xl mb-2">{{ image.title }}</h3>
+                    <p class="text-amber-300 text-sm md:text-base flex items-center gap-2">
+                      <i class="fas fa-search-plus"></i>
+                      Click para ampliar y ver detalles
+                    </p>
+                  </div>
                 </div>
               </div>
+            }
+          </div>
+
+          <!-- Botón Siguiente -->
+          <button
+            (click)="nextSlide()"
+            [disabled]="!canGoNext()"
+            class="absolute right-0 top-1/2 -translate-y-1/2 z-10 translate-x-0 md:translate-x-4 bg-amber-500 hover:bg-amber-600 disabled:bg-gray-600 disabled:cursor-not-allowed text-white rounded-full p-3 md:p-4 shadow-lg transition-all duration-300 hover:scale-110 disabled:hover:scale-100"
+            [class.opacity-50]="!canGoNext()"
+          >
+            <i class="fas fa-chevron-right text-lg md:text-xl"></i>
+          </button>
+        </div>
+
+        <!-- Indicadores de navegación por página -->
+        <div class="flex flex-col items-center gap-3 mt-8">
+          @if (getSlideArray().length > 0) {
+            <div class="text-amber-300/70 text-xs md:text-sm">
+              Páginas {{ getSlideArray()[0] + 1 }}-{{ getSlideArray()[getSlideArray().length - 1] + 1 }}
+                (10 imágenes por página)
             </div>
           }
+          <div class="flex justify-center items-center gap-2 flex-wrap max-w-md">
+            @for (pageIdx of getSlideArray(); track pageIdx) {
+              <button
+                (click)="goToPage(pageIdx)"
+                class="w-2 h-2 rounded-full transition-all duration-300 hover:scale-150"
+                [class.bg-amber-500]="isCurrentPage(pageIdx)"
+                [class.w-8]="isCurrentPage(pageIdx)"
+                [class.bg-amber-900/30]="!isCurrentPage(pageIdx)"
+                [attr.aria-label]="'Ir a página ' + (pageIdx + 1)"
+              ></button>
+            }
+          </div>
         </div>
       </div>
     }
@@ -81,7 +133,7 @@
     <!-- Botón anterior -->
     <button
       class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-amber-400 transition-colors z-10 bg-black/50 rounded-full p-4 hover:bg-black/70"
-      (click)="previousImage(); $event.stopPropagation()"
+      (click)="previousImageModal(); $event.stopPropagation()"
     >
       <i class="fas fa-chevron-left text-2xl"></i>
     </button>
@@ -89,7 +141,7 @@
     <!-- Botón siguiente -->
     <button
       class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-amber-400 transition-colors z-10 bg-black/50 rounded-full p-4 hover:bg-black/70"
-      (click)="nextImage(); $event.stopPropagation()"
+      (click)="nextImageModal(); $event.stopPropagation()"
     >
       <i class="fas fa-chevron-right text-2xl"></i>
     </button>
