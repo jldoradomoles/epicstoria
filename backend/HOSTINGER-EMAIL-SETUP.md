@@ -238,9 +238,9 @@ pm2 logs epicstoria-backend --err | grep -i email
 EMAIL_HOST=smtp.hostinger.com
 EMAIL_PORT=465
 EMAIL_SECURE=true
-EMAIL_USER=contacto@epicstoria.com
+EMAIL_USER=contacto@epicstoria.es
 EMAIL_PASSWORD=ContraseñaSegura123!
-FRONTEND_URL=https://epicstoria.com
+FRONTEND_URL=https://epicstoria.es
 ```
 
 ## 📞 Soporte

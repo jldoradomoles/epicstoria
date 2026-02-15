@@ -9,7 +9,7 @@ Disallow: /chat
 Disallow: /api/
 
 # Sitemap
-Sitemap: https://epicstoria.com/sitemap.xml
+Sitemap: https://epicstoria.es/sitemap.xml
 
 # Crawl delay (opcional, si hay problemas de carga)
 # Crawl-delay: 1

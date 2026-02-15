@@ -3,7 +3,7 @@
 
   <!-- Página principal -->
   <url>
-    <loc>https://epicstoria.com/</loc>
+    <loc>https://epicstoria.es/</loc>
     <lastmod>2026-01-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -11,43 +11,43 @@
 
   <!-- Páginas estáticas -->
   <url>
-    <loc>https://epicstoria.com/eventos</loc>
+    <loc>https://epicstoria.es/eventos</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://epicstoria.com/buscar</loc>
+    <loc>https://epicstoria.es/buscar</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://epicstoria.com/juegos</loc>
+    <loc>https://epicstoria.es/juegos</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://epicstoria.com/galeria</loc>
+    <loc>https://epicstoria.es/galeria</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://epicstoria.com/acerca</loc>
+    <loc>https://epicstoria.es/acerca</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://epicstoria.com/privacidad</loc>
+    <loc>https://epicstoria.es/privacidad</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://epicstoria.com/terminos</loc>
+    <loc>https://epicstoria.es/terminos</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

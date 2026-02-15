@@ -19,7 +19,7 @@ services:
     image: dpage/pgadmin4:latest
     container_name: epicstoria-pgadmin
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@epicstoria.com
+      PGADMIN_DEFAULT_EMAIL: admin@epicstoria.es
       PGADMIN_DEFAULT_PASSWORD: admin123
     ports:
       - '5050:80'

@@ -21,10 +21,10 @@ export class Home implements OnInit {
         'Explora eventos históricos fascinantes, resuelve quizzes educativos y aprende historia de manera divertida. Desde el espacio hasta la mitología antigua.',
       keywords:
         'historia, eventos históricos, educación, quiz historia, cultura, ciencia, arte, mitología, tecnología',
-      url: 'https://epicstoria.com',
+      url: 'https://epicstoria.es',
       type: 'website',
     });
 
-    this.seo.updateCanonicalUrl('https://epicstoria.com');
+    this.seo.updateCanonicalUrl('https://epicstoria.es');
   }
 }

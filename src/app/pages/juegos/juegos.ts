@@ -38,11 +38,11 @@ export class Juegos implements OnInit {
       description:
         'Pon a prueba tus conocimientos de historia con nuestros quizzes interactivos. Compite en el ranking global y gana estrellas mientras aprendes.',
       keywords: 'quiz historia, juegos educativos, trivial historia, ranking, puntos, estrellas',
-      url: 'https://epicstoria.com/juegos',
+      url: 'https://epicstoria.es/juegos',
       type: 'website',
     });
 
-    this.seo.updateCanonicalUrl('https://epicstoria.com/juegos');
+    this.seo.updateCanonicalUrl('https://epicstoria.es/juegos');
 
     this.loadLeaderboard();
   }

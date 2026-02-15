@@ -10,7 +10,7 @@ router.get('/sitemap.xml', async (req: Request, res: Response) => {
       'SELECT id, slug, updated_at FROM events ORDER BY updated_at DESC',
     );
 
-    const baseUrl = process.env.FRONTEND_URL || 'https://epicstoria.com';
+    const baseUrl = process.env.FRONTEND_URL || 'https://epicstoria.es';
 
     let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

@@ -19,10 +19,10 @@ export class Eventos implements OnInit {
         'Descubre y explora una colección completa de eventos históricos fascinantes. Desde batallas épicas hasta descubrimientos científicos revolucionarios.',
       keywords:
         'eventos históricos, historia mundial, cronología histórica, hechos históricos, cultura, ciencia, guerras, descubrimientos',
-      url: 'https://epicstoria.com/eventos',
+      url: 'https://epicstoria.es/eventos',
       type: 'website',
     });
 
-    this.seo.updateCanonicalUrl('https://epicstoria.com/eventos');
+    this.seo.updateCanonicalUrl('https://epicstoria.es/eventos');
   }
 }

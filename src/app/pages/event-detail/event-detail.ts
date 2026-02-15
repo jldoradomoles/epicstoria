@@ -74,7 +74,7 @@ export class EventDetail implements OnInit {
     // Imagen del evento
     const imageUrl = event.imageUrl.startsWith('http')
       ? event.imageUrl
-      : `https://epicstoria.com${event.imageUrl}`;
+      : `https://epicstoria.es${event.imageUrl}`;
 
     // Actualizar meta tags
     this.seo.updateMetaTags({
@@ -82,11 +82,11 @@ export class EventDetail implements OnInit {
       description: `${description}...`,
       keywords: `historia, ${event.category}, ${event.title}, ${event.date}`,
       image: imageUrl,
-      url: `https://epicstoria.com/evento/${event.slug || event.id}`,
+      url: `https://epicstoria.es/evento/${event.slug || event.id}`,
       type: 'article',
     });
 
-    this.seo.updateCanonicalUrl(`https://epicstoria.com/evento/${event.slug || event.id}`);
+    this.seo.updateCanonicalUrl(`https://epicstoria.es/evento/${event.slug || event.id}`);
   }
 
   private addStructuredData(event: Event) {
@@ -96,7 +96,7 @@ export class EventDetail implements OnInit {
     // Imagen del evento
     const imageUrl = event.imageUrl.startsWith('http')
       ? event.imageUrl
-      : `https://epicstoria.com${event.imageUrl}`;
+      : `https://epicstoria.es${event.imageUrl}`;
 
     // Eliminar script anterior si existe
     const existingScript = this.document.querySelector(
@@ -121,20 +121,20 @@ export class EventDetail implements OnInit {
       author: {
         '@type': 'Organization',
         name: 'Epicstoria',
-        url: 'https://epicstoria.com',
+        url: 'https://epicstoria.es',
       },
       publisher: {
         '@type': 'Organization',
         name: 'Epicstoria',
-        url: 'https://epicstoria.com',
+        url: 'https://epicstoria.es',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://epicstoria.com/favicon.ico',
+          url: 'https://epicstoria.es/favicon.ico',
         },
       },
       mainEntityOfPage: {
         '@type': 'WebPage',
-        '@id': `https://epicstoria.com/evento/${event.slug || event.id}`,
+        '@id': `https://epicstoria.es/evento/${event.slug || event.id}`,
       },
       articleSection: event.category,
       keywords: `historia, ${event.category}, ${event.title}`,

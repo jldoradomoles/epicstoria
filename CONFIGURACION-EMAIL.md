@@ -329,7 +329,7 @@ EMAIL_USER=apikey
 EMAIL_PASSWORD=${SENDGRID_API_KEY}
 
 # URL de producción
-FRONTEND_URL=https://epicstoria.com
+FRONTEND_URL=https://epicstoria.es
 ```
 
 ### Consideraciones

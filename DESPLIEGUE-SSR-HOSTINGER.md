@@ -141,7 +141,7 @@ DB_PASSWORD=tu_password_seguro
 JWT_SECRET=tu_secret_jwt_muy_seguro_y_aleatorio
 
 # Frontend URL (para CORS)
-FRONTEND_URL=https://epicstoria.com
+FRONTEND_URL=https://epicstoria.es
 ```
 
 ---
@@ -233,7 +233,7 @@ sudo nano /etc/nginx/sites-available/epicstoria
 # Frontend SSR (Puerto 4000)
 server {
     listen 80;
-    server_name epicstoria.com www.epicstoria.com;
+    server_name epicstoria.es www.epicstoria.es;
 
     # Logs
     access_log /var/log/nginx/epicstoria-access.log;
@@ -323,7 +323,7 @@ sudo systemctl reload nginx
 sudo apt install -y certbot python3-certbot-nginx
 
 # Obtener certificado SSL
-sudo certbot --nginx -d epicstoria.com -d www.epicstoria.com
+sudo certbot --nginx -d epicstoria.es -d www.epicstoria.es
 
 # El certificado se renovará automáticamente
 # Verificar renovación automática:
@@ -405,7 +405,7 @@ curl http://localhost:3000/api/health
 curl http://localhost:3000/sitemap.xml
 
 # Desde fuera (con tu dominio)
-curl https://epicstoria.com
+curl https://epicstoria.es
 ```
 
 ### 8.4. Ver logs en tiempo real

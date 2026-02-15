@@ -78,11 +78,11 @@ export class Galeria implements OnInit {
       description:
         'Explora una colección visual de momentos históricos capturados en imágenes. Desde civilizaciones antiguas hasta eventos recientes.',
       keywords: 'galería histórica, imágenes historia, fotografías históricas, archivo visual',
-      url: 'https://epicstoria.com/galeria',
+      url: 'https://epicstoria.es/galeria',
       type: 'website',
     });
 
-    this.seo.updateCanonicalUrl('https://epicstoria.com/galeria');
+    this.seo.updateCanonicalUrl('https://epicstoria.es/galeria');
 
     this.loadImages();
   }

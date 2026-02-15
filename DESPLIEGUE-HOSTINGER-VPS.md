@@ -203,8 +203,8 @@ npm run db:seed
 
 **Nota:** Los usuarios admin creados son:
 
-- Email: `admin@epicstoria.com` - Password: `Admin@Secure#2026!$gHI`
-- Email: `superadmin@epicstoria.com` - Password: `SuperAdmin@Secure#2026!$gHI`
+- Email: `admin@epicstoria.es` - Password: `Admin@Secure#2026!$gHI`
+- Email: `superadmin@epicstoria.es` - Password: `SuperAdmin@Secure#2026!$gHI`
 
 **⚠️ IMPORTANTE:** Cambia estas contraseñas después del primer login.
 
@@ -581,7 +581,7 @@ Tu aplicación Epicstoria ahora está desplegada en Hostinger VPS y accesible en
 
 ### Credenciales Iniciales
 
-- **Email:** admin@epicstoria.com
+- **Email:** admin@epicstoria.es
 - **Password:** Admin@Secure#2026!$gHI
 
 **⚠️ Cambia la contraseña inmediatamente después del primer login.**

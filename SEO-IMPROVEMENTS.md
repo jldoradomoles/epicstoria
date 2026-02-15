@@ -149,11 +149,11 @@ export class EventDetail implements OnInit {
       description: this.event.description,
       keywords: `historia, ${this.event.category}, ${this.event.title}`,
       image: this.event.imageUrl,
-      url: `https://epicstoria.com/evento/${this.event.id}`,
+      url: `https://epicstoria.es/evento/${this.event.id}`,
       type: 'article',
     });
 
-    this.seo.updateCanonicalUrl(`https://epicstoria.com/evento/${this.event.id}`);
+    this.seo.updateCanonicalUrl(`https://epicstoria.es/evento/${this.event.id}`);
   }
 }
 ```
@@ -194,28 +194,28 @@ export class EventDetail implements OnInit {
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://epicstoria.com/" />
+    <meta property="og:url" content="https://epicstoria.es/" />
     <meta property="og:title" content="Epicstoria - Descubre la Historia del Mundo" />
     <meta
       property="og:description"
       content="Explora eventos históricos fascinantes y aprende de forma interactiva"
     />
-    <meta property="og:image" content="https://epicstoria.com/images/og-image.jpg" />
+    <meta property="og:image" content="https://epicstoria.es/images/og-image.jpg" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:site_name" content="Epicstoria" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://epicstoria.com/" />
+    <meta property="twitter:url" content="https://epicstoria.es/" />
     <meta property="twitter:title" content="Epicstoria - Descubre la Historia del Mundo" />
     <meta
       property="twitter:description"
       content="Explora eventos históricos fascinantes y aprende de forma interactiva"
     />
-    <meta property="twitter:image" content="https://epicstoria.com/images/twitter-card.jpg" />
+    <meta property="twitter:image" content="https://epicstoria.es/images/twitter-card.jpg" />
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://epicstoria.com/" />
+    <link rel="canonical" href="https://epicstoria.es/" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -236,11 +236,11 @@ export class EventDetail implements OnInit {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Epicstoria",
-        "url": "https://epicstoria.com",
+        "url": "https://epicstoria.es",
         "description": "Plataforma educativa de historia interactiva",
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://epicstoria.com/buscar?q={search_term_string}",
+          "target": "https://epicstoria.es/buscar?q={search_term_string}",
           "query-input": "required name=search_term_string"
         }
       }
@@ -272,7 +272,7 @@ Disallow: /chat
 Disallow: /api/
 
 # Sitemap
-Sitemap: https://epicstoria.com/sitemap.xml
+Sitemap: https://epicstoria.es/sitemap.xml
 
 # Crawl delay (opcional, si hay problemas de carga)
 # Crawl-delay: 1
@@ -292,7 +292,7 @@ Sitemap: https://epicstoria.com/sitemap.xml
 
   <!-- Página principal -->
   <url>
-    <loc>https://epicstoria.com/</loc>
+    <loc>https://epicstoria.es/</loc>
     <lastmod>2026-01-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -300,31 +300,31 @@ Sitemap: https://epicstoria.com/sitemap.xml
 
   <!-- Páginas estáticas -->
   <url>
-    <loc>https://epicstoria.com/eventos</loc>
+    <loc>https://epicstoria.es/eventos</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://epicstoria.com/buscar</loc>
+    <loc>https://epicstoria.es/buscar</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://epicstoria.com/juegos</loc>
+    <loc>https://epicstoria.es/juegos</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://epicstoria.com/galeria</loc>
+    <loc>https://epicstoria.es/galeria</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://epicstoria.com/acerca</loc>
+    <loc>https://epicstoria.es/acerca</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -333,7 +333,7 @@ Sitemap: https://epicstoria.com/sitemap.xml
   <!-- Ejemplo: -->
   <!--
   <url>
-    <loc>https://epicstoria.com/evento/llegada-hombre-luna</loc>
+    <loc>https://epicstoria.es/evento/llegada-hombre-luna</loc>
     <lastmod>2026-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -357,7 +357,7 @@ router.get('/sitemap.xml', async (req, res) => {
     // Obtener todos los eventos
     const events = await pool.query('SELECT id, updated_at FROM events ORDER BY updated_at DESC');
 
-    const baseUrl = 'https://epicstoria.com';
+    const baseUrl = 'https://epicstoria.es';
 
     let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -437,12 +437,12 @@ export class EventDetail implements OnInit {
         name: 'Epicstoria',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://epicstoria.com/logo.png',
+          url: 'https://epicstoria.es/logo.png',
         },
       },
       mainEntityOfPage: {
         '@type': 'WebPage',
-        '@id': `https://epicstoria.com/evento/${this.event.id}`,
+        '@id': `https://epicstoria.es/evento/${this.event.id}`,
       },
     });
 
@@ -501,13 +501,13 @@ Convertir IDs en slugs descriptivos.
 **Malo:**
 
 ```
-https://epicstoria.com/evento/123
+https://epicstoria.es/evento/123
 ```
 
 **Bueno:**
 
 ```
-https://epicstoria.com/evento/llegada-hombre-luna-1969
+https://epicstoria.es/evento/llegada-hombre-luna-1969
 ```
 
 **Implementación:**

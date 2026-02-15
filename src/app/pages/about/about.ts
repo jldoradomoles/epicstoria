@@ -17,10 +17,10 @@ export class About implements OnInit {
       description:
         'Conoce más sobre Epicstoria, la plataforma educativa que hace que aprender historia sea divertido e interactivo. Descubre nuestra misión y equipo.',
       keywords: 'acerca de, sobre nosotros, epicstoria, historia educativa, plataforma educativa',
-      url: 'https://epicstoria.com/acerca',
+      url: 'https://epicstoria.es/acerca',
       type: 'website',
     });
 
-    this.seo.updateCanonicalUrl('https://epicstoria.com/acerca');
+    this.seo.updateCanonicalUrl('https://epicstoria.es/acerca');
   }
 }

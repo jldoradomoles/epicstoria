@@ -27,7 +27,7 @@ docker-compose up -d
 Esto levantará:
 
 - PostgreSQL en `localhost:5432`
-- pgAdmin en `localhost:5050` (admin@epicstoria.com / admin123)
+- pgAdmin en `localhost:5050` (admin@epicstoria.es / admin123)
 
 #### Opción B: PostgreSQL local
 

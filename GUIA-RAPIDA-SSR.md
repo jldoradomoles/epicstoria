@@ -58,7 +58,7 @@ DB_NAME=epicstoria_db
 DB_USER=epicstoria_user
 DB_PASSWORD=tu_password_seguro
 JWT_SECRET=tu_secret_muy_seguro
-FRONTEND_URL=https://epicstoria.com
+FRONTEND_URL=https://epicstoria.es
 ```
 
 ### 4️⃣ Configurar PostgreSQL
@@ -110,7 +110,7 @@ sudo nano /etc/nginx/sites-available/epicstoria
 ```nginx
 server {
     listen 80;
-    server_name epicstoria.com www.epicstoria.com;
+    server_name epicstoria.es www.epicstoria.es;
 
     location / {
         proxy_pass http://localhost:4000;
@@ -149,7 +149,7 @@ sudo systemctl reload nginx
 
 ```bash
 sudo apt install -y certbot python3-certbot-nginx
-sudo certbot --nginx -d epicstoria.com -d www.epicstoria.com
+sudo certbot --nginx -d epicstoria.es -d www.epicstoria.es
 ```
 
 ### 8️⃣ Verificar que Todo Funciona
@@ -162,7 +162,7 @@ pm2 status
 # Probar URLs
 curl http://localhost:4000  # Frontend SSR
 curl http://localhost:3000/api/health  # Backend
-curl https://epicstoria.com  # Público
+curl https://epicstoria.es  # Público
 ```
 
 ---
@@ -224,10 +224,10 @@ pm2 flush
 
 Tu aplicación estará disponible en:
 
-- **Frontend**: https://epicstoria.com (SSR en puerto 4000)
-- **API**: https://epicstoria.com/api/* (Backend en puerto 3000)
-- **Sitemap**: https://epicstoria.com/sitemap.xml
-- **Robots**: https://epicstoria.com/robots.txt
+- **Frontend**: https://epicstoria.es (SSR en puerto 4000)
+- **API**: https://epicstoria.es/api/* (Backend en puerto 3000)
+- **Sitemap**: https://epicstoria.es/sitemap.xml
+- **Robots**: https://epicstoria.es/robots.txt
 
 ---
 

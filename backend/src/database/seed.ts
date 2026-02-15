@@ -21,14 +21,14 @@ const seedAdminUsers = async () => {
 
   const adminUsers = [
     {
-      email: 'admin@epicstoria.com',
+      email: 'admin@epicstoria.es',
       password: 'Admin@Secure#2026!$gHI',
       name: 'Admin',
       lastname: 'Principal',
       role: 'admin',
     },
     {
-      email: 'superadmin@epicstoria.com',
+      email: 'superadmin@epicstoria.es',
       password: 'SuperAdmin@Secure#2026!$gHI',
       name: 'Super',
       lastname: 'Administrador',
