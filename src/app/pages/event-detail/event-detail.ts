@@ -129,7 +129,7 @@ export class EventDetail implements OnInit {
         url: 'https://epicstoria.es',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://epicstoria.es/favicon.ico',
+          url: 'https://epicstoria.es/images/logo_transparent.png',
         },
       },
       mainEntityOfPage: {

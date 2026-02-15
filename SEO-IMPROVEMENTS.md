@@ -218,8 +218,10 @@ export class EventDetail implements OnInit {
     <link rel="canonical" href="https://epicstoria.es/" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/logo_transparent.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/logo_transparent.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/logo_transparent.png" />
+    <link rel="shortcut icon" href="/images/logo_transparent.png" />
 
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
