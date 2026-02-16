@@ -1,3 +1,12 @@
 .h-42 {
   height: 42rem;
 }
+
+.hero-background {
+  background-image: url('/images/Cabecera1.jpg');
+  background-blend-mode: overlay;
+
+  @media (max-width: 768px) {
+    background-image: url('/images/home-movil.jpg');
+  }
+}
