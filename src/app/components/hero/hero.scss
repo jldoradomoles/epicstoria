@@ -1,5 +1,10 @@
 .h-42 {
   height: 42rem;
+
+  @media (min-width: 1920px) {
+    height: auto;
+    min-height: 42rem;
+  }
 }
 
 .hero-background {
@@ -8,5 +13,11 @@
 
   @media (max-width: 768px) {
     background-image: url('/images/home-movil.jpg');
+  }
+
+  @media (min-width: 1920px) {
+    background-size: 100% auto;
+    background-position: center top;
+    height: 800px;
   }
 }
