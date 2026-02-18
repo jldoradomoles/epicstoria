@@ -9,15 +9,11 @@
 
 .hero-background {
   background-image: url('/images/Cabecera1.jpg');
-  background-blend-mode: overlay;
+  background-size: 100% auto;
+  background-position: center top;
+  height: 800px;
 
   @media (max-width: 768px) {
     background-image: url('/images/home-movil.jpg');
-  }
-
-  @media (min-width: 1920px) {
-    background-size: 100% auto;
-    background-position: center top;
-    height: 800px;
   }
 }

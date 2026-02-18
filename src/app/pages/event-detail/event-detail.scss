@@ -1,7 +1,3 @@
-.heigth-full {
-  height: 150%;
-}
-
 .border-cronologia {
   border-radius: 0.4rem;
 }
@@ -24,4 +20,12 @@
 .icon-transparent {
   background: transparent !important;
   background-color: transparent !important;
+}
+
+.event-image {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center -5rem;
+  width: 100%;
+  height: 100%;
 }

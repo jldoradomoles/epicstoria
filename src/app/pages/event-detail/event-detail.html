@@ -2,20 +2,19 @@
 <div class="min-h-screen">
   @if (event) {
     <!-- Hero Section con Imagen -->
-    <div class="relative h-96 overflow-hidden">
-      <img
-        [src]="event.imageUrl"
-        [alt]="event.title"
-        class="heigth-full w-full object-cover opacity-60"
-        (error)="onImageError($event)"
-        loading="eager"
-      />
+    <div class="relative h-[800px] overflow-hidden">
+      <div
+        class="event-image"
+        role="img"
+        [attr.aria-label]="event.title"
+        [style.background-image]="'url(' + event.imageUrl + ')'"
+      ></div>
       <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
 
       <!-- Botón de Regreso -->
       <div class="absolute left-4 top-4 sm:left-8 sm:top-8">
         <a
-          routerLink="/"
+          routerLink="/eventos"
           class="btns-color inline-flex items-center rounded-full bg-gray-800/80 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm transition duration-150 hover:bg-gray-700"
         >
           <svg

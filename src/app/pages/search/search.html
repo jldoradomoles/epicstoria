@@ -116,12 +116,12 @@
               class="container-custom flex flex-col overflow-hidden rounded-xl shadow-2xl transition duration-300 hover:shadow-blue-500/20 hover:scale-[1.02] cursor-pointer"
             >
               <div class="relative h-56 bg-gradient-to-tr from-gray-700 to-gray-900">
-                <img
-                  [src]="event.imageUrl"
-                  [alt]="event.title"
-                  class="h-full w-full object-cover"
-                  loading="lazy"
-                />
+                <div
+                  class="search-event-image"
+                  role="img"
+                  [attr.aria-label]="event.title"
+                  [style.background-image]="'url(' + event.imageUrl + ')'"
+                ></div>
                 <span
                   class="text-color absolute left-4 top-4 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider"
                   [ngClass]="getCategoryColor(event.category)"
