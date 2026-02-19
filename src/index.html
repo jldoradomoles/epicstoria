@@ -15,7 +15,7 @@
       content="historia, eventos históricos, educación, quiz historia, cultura, ciencia, arte, mitología, tecnología"
     />
     <meta name="author" content="Epicstoria" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
 
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -32,6 +32,13 @@
       content="Explora eventos históricos fascinantes y aprende de forma interactiva"
     />
     <meta property="og:image" content="https://epicstoria.es/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Epicstoria - Historia del Mundo" />
+    <meta property="og:image" content="https://epicstoria.es/images/og-image-square.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+    <meta property="og:image:alt" content="Epicstoria - Historia del Mundo" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:site_name" content="Epicstoria" />
 
@@ -44,6 +51,10 @@
       content="Explora eventos históricos fascinantes y aprende de forma interactiva"
     />
     <meta property="twitter:image" content="https://epicstoria.es/images/twitter-card.jpg" />
+    <meta property="twitter:image:alt" content="Epicstoria - Historia del Mundo" />
+
+    <!-- Legacy image hint -->
+    <link rel="image_src" href="https://epicstoria.es/images/og-image.jpg" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://epicstoria.es/" />
@@ -71,6 +82,10 @@
         "name": "Epicstoria",
         "url": "https://epicstoria.es",
         "description": "Plataforma educativa de historia interactiva",
+        "image": [
+          "https://epicstoria.es/images/og-image.jpg",
+          "https://epicstoria.es/images/og-image-square.jpg"
+        ],
         "potentialAction": {
           "@type": "SearchAction",
           "target": "https://epicstoria.es/buscar?q={search_term_string}",
