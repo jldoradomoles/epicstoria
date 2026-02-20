@@ -9,6 +9,9 @@ export interface User {
   password: string;
   name: string;
   lastname?: string;
+  nickname?: string;
+  birth_date?: string;
+  country?: string;
   role: UserRole;
   avatar_url?: string;
   bio?: string;
@@ -25,12 +28,18 @@ export interface UserCreateDTO {
   password: string;
   name: string;
   lastname?: string;
+  nickname?: string;
+  birth_date?: string;
+  country?: string;
   role?: UserRole;
 }
 
 export interface UserUpdateDTO {
   name?: string;
   lastname?: string;
+  nickname?: string;
+  birth_date?: string;
+  country?: string;
   avatar_url?: string;
   bio?: string;
   favorite_category?: string;
@@ -41,6 +50,9 @@ export interface UserPublic {
   email: string;
   name: string;
   lastname?: string;
+  nickname?: string;
+  birth_date?: string;
+  country?: string;
   role: UserRole;
   avatar_url?: string;
   bio?: string;

@@ -27,12 +27,33 @@ router.post(
       .withMessage('Password must be at least 6 characters long'),
     body('name').trim().notEmpty().withMessage('Name is required'),
     body('lastname').optional().trim(),
+    body('nickname').optional().trim(),
+    body('birth_date')
+      .optional()
+      .custom((value) => {
+        if (!value) return true; // Permitir null o undefined
+        // Validar formato YYYY-MM-DD
+        const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+        if (!dateRegex.test(value)) {
+          throw new Error('Invalid date format. Expected YYYY-MM-DD');
+        }
+        return true;
+      }),
+    body('country').optional().trim(),
   ],
   validateRequest,
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const { email, password, name, lastname } = req.body;
-      const result = await AuthService.register({ email, password, name, lastname });
+      const { email, password, name, lastname, nickname, birth_date, country } = req.body;
+      const result = await AuthService.register({
+        email,
+        password,
+        name,
+        lastname,
+        nickname,
+        birth_date,
+        country,
+      });
 
       res.status(201).json({
         success: true,
@@ -92,6 +113,19 @@ router.put(
   [
     body('name').optional().trim().notEmpty().withMessage('Name cannot be empty'),
     body('lastname').optional().trim(),
+    body('nickname').optional().trim(),
+    body('birth_date')
+      .optional()
+      .custom((value) => {
+        if (!value) return true; // Permitir null o undefined
+        // Validar formato YYYY-MM-DD
+        const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+        if (!dateRegex.test(value)) {
+          throw new Error('Invalid date format. Expected YYYY-MM-DD');
+        }
+        return true;
+      }),
+    body('country').optional().trim(),
     body('avatar_url').optional().trim(),
     body('bio').optional().trim(),
     body('favorite_category').optional().trim(),
@@ -99,10 +133,14 @@ router.put(
   validateRequest,
   async (req: AuthRequest, res: Response, next: NextFunction) => {
     try {
-      const { name, lastname, avatar_url, bio, favorite_category } = req.body;
+      const { name, lastname, nickname, birth_date, country, avatar_url, bio, favorite_category } =
+        req.body;
       const user = await AuthService.updateProfile(req.userId!, {
         name,
         lastname,
+        nickname,
+        birth_date,
+        country,
         avatar_url,
         bio,
         favorite_category,

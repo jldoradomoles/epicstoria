@@ -13,6 +13,7 @@
     "db:migrate-messages": "ts-node src/database/create-messages-table.ts",
     "db:migrate-slug": "ts-node src/database/add-slug-column.ts",
     "db:migrate-exam": "ts-node src/database/add-exam-column.ts",
+    "db:migrate-user-profile": "ts-node src/database/add-user-profile-fields.ts",
     "db:test-points": "ts-node src/database/test-points.ts",
     "db:seed": "ts-node src/database/seed.ts",
     "db:clear-events": "ts-node src/database/clear-events.ts",

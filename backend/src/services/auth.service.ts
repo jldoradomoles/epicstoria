@@ -15,11 +15,22 @@ import { EmailService } from './email.service';
 
 export class AuthService {
   private static toPublicUser(user: User): UserPublic {
+    // Convertir birth_date a formato YYYY-MM-DD string si existe
+    // Como usamos ::TEXT en las queries, birth_date siempre vendrá como string
+    let birthDateStr: string | undefined = undefined;
+    if (user.birth_date) {
+      // Tomar solo la parte de fecha en caso de que tenga timestamp
+      birthDateStr = String(user.birth_date).split('T')[0];
+    }
+
     return {
       id: user.id,
       email: user.email,
       name: user.name,
       lastname: user.lastname,
+      nickname: user.nickname,
+      birth_date: birthDateStr,
+      country: user.country,
       role: user.role,
       avatar_url: user.avatar_url,
       bio: user.bio,
@@ -48,10 +59,19 @@ export class AuthService {
     // Insert user with default role 'user'
     const role = userData.role || UserRole.USER;
     const result = await query(
-      `INSERT INTO users (email, password, name, lastname, role)
-       VALUES ($1, $2, $3, $4, $5)
-       RETURNING *`,
-      [userData.email, hashedPassword, userData.name, userData.lastname || null, role],
+      `INSERT INTO users (email, password, name, lastname, nickname, birth_date, country, role)
+       VALUES ($1, $2, $3, $4, $5, $6::DATE, $7, $8)
+       RETURNING id, email, password, name, lastname, nickname, birth_date::TEXT, country, role, avatar_url, bio, favorite_category, points, created_at, updated_at`,
+      [
+        userData.email,
+        hashedPassword,
+        userData.name,
+        userData.lastname || null,
+        userData.nickname || null,
+        userData.birth_date || null,
+        userData.country || null,
+        role,
+      ],
     );
 
     const user = result.rows[0] as User;
@@ -71,7 +91,10 @@ export class AuthService {
 
   static async login(email: string, password: string): Promise<AuthResponse> {
     // Find user
-    const result = await query('SELECT * FROM users WHERE email = $1', [email]);
+    const result = await query(
+      'SELECT id, email, password, name, lastname, nickname, birth_date::TEXT, country, role, avatar_url, bio, favorite_category, points, created_at, updated_at FROM users WHERE email = $1',
+      [email],
+    );
     if (result.rows.length === 0) {
       throw new AppError('Invalid email or password', 401);
     }
@@ -93,7 +116,10 @@ export class AuthService {
   }
 
   static async getProfile(userId: number): Promise<UserPublic> {
-    const result = await query('SELECT * FROM users WHERE id = $1', [userId]);
+    const result = await query(
+      'SELECT id, email, password, name, lastname, nickname, birth_date::TEXT, country, role, avatar_url, bio, favorite_category, points, created_at, updated_at FROM users WHERE id = $1',
+      [userId],
+    );
     if (result.rows.length === 0) {
       throw new AppError('User not found', 404);
     }
@@ -126,6 +152,19 @@ export class AuthService {
       fields.push(`favorite_category = $${paramIndex++}`);
       values.push(updateData.favorite_category);
     }
+    if (updateData.nickname !== undefined) {
+      fields.push(`nickname = $${paramIndex++}`);
+      values.push(updateData.nickname);
+    }
+    if (updateData.birth_date !== undefined) {
+      // Usar CAST a DATE para evitar problemas de timezone
+      fields.push(`birth_date = $${paramIndex++}::DATE`);
+      values.push(updateData.birth_date);
+    }
+    if (updateData.country !== undefined) {
+      fields.push(`country = $${paramIndex++}`);
+      values.push(updateData.country);
+    }
 
     if (fields.length === 0) {
       throw new AppError('No fields to update', 400);
@@ -134,7 +173,7 @@ export class AuthService {
     values.push(userId);
 
     const result = await query(
-      `UPDATE users SET ${fields.join(', ')} WHERE id = $${paramIndex} RETURNING *`,
+      `UPDATE users SET ${fields.join(', ')} WHERE id = $${paramIndex} RETURNING id, email, password, name, lastname, nickname, birth_date::TEXT, country, role, avatar_url, bio, favorite_category, points, created_at, updated_at`,
       values,
     );
 
@@ -151,7 +190,10 @@ export class AuthService {
     newPassword: string,
   ): Promise<void> {
     // Get current user
-    const result = await query('SELECT * FROM users WHERE id = $1', [userId]);
+    const result = await query(
+      'SELECT id, email, password, name, lastname, nickname, birth_date::TEXT, country, role, avatar_url, bio, favorite_category, points, created_at, updated_at FROM users WHERE id = $1',
+      [userId],
+    );
     if (result.rows.length === 0) {
       throw new AppError('User not found', 404);
     }
@@ -174,7 +216,10 @@ export class AuthService {
    */
   static async requestPasswordReset(email: string): Promise<void> {
     // Buscar usuario por email
-    const result = await query('SELECT * FROM users WHERE email = $1', [email]);
+    const result = await query(
+      'SELECT id, email, password, name, lastname, nickname, birth_date::TEXT, country, role, avatar_url, bio, favorite_category, points, reset_token, reset_token_expiry, created_at, updated_at FROM users WHERE email = $1',
+      [email],
+    );
 
     if (result.rows.length === 0) {
       // Por seguridad, no revelamos si el email existe o no
@@ -223,7 +268,7 @@ export class AuthService {
 
     // Buscar usuario con el token válido
     const result = await query(
-      `SELECT * FROM users
+      `SELECT id, email, password, name, lastname, nickname, birth_date::TEXT, country, role, avatar_url, bio, favorite_category, points, reset_token, reset_token_expiry, created_at, updated_at FROM users
        WHERE reset_token = $1
        AND reset_token_expiry > NOW()`,
       [hashedToken],

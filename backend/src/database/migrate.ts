@@ -22,6 +22,9 @@ const createTables = async () => {
         password VARCHAR(255) NOT NULL,
         name VARCHAR(255) NOT NULL,
         lastname VARCHAR(255),
+        nickname VARCHAR(100),
+        birth_date DATE,
+        country VARCHAR(100),
         role user_role DEFAULT 'user' NOT NULL,
         avatar_url VARCHAR(500),
         bio TEXT,
@@ -41,6 +44,15 @@ const createTables = async () => {
       END $$;
     `);
     console.log('✅ Role column ensured');
+
+    // Add new profile fields if they don't exist (for existing databases)
+    await query(`
+      ALTER TABLE users
+      ADD COLUMN IF NOT EXISTS nickname VARCHAR(100),
+      ADD COLUMN IF NOT EXISTS birth_date DATE,
+      ADD COLUMN IF NOT EXISTS country VARCHAR(100)
+    `);
+    console.log('✅ Nickname, birth_date and country columns ensured');
 
     // Create events table
     await query(`

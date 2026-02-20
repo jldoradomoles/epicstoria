@@ -121,6 +121,7 @@ router.get('/leaderboard', async (req, res, next) => {
         u.id,
         u.name,
         u.lastname,
+        u.nickname,
         u.avatar_url,
         u.points,
         u.created_at,
@@ -128,15 +129,18 @@ router.get('/leaderboard', async (req, res, next) => {
         COUNT(DISTINCT qc.id) as quizzes_completed
       FROM users u
       LEFT JOIN quiz_completions qc ON u.id = qc.user_id
-      WHERE u.points > 0
-      GROUP BY u.id, u.name, u.lastname, u.avatar_url, u.points, u.created_at
+      WHERE u.points > 0 AND u.role != 'admin'
+      GROUP BY u.id, u.name, u.lastname, u.nickname, u.avatar_url, u.points, u.created_at
       ORDER BY u.points DESC, u.created_at ASC
       LIMIT $1 OFFSET $2`,
       [limit, offset],
     );
 
-    // Obtener el total de usuarios con puntos
-    const countResult = await query('SELECT COUNT(*) as total FROM users WHERE points > 0', []);
+    // Obtener el total de usuarios con puntos (excluyendo admins)
+    const countResult = await query(
+      "SELECT COUNT(*) as total FROM users WHERE points > 0 AND role != 'admin'",
+      [],
+    );
 
     res.json({
       success: true,
