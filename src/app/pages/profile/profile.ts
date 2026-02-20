@@ -61,6 +61,31 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
   categories = ['Espacio', 'Historia', 'Ciencia', 'Arte', 'Tecnología', 'Naturaleza', 'Mitología'];
 
+  countries = [
+    'Argentina',
+    'Bolivia',
+    'Chile',
+    'Colombia',
+    'Costa Rica',
+    'Cuba',
+    'Ecuador',
+    'El Salvador',
+    'España',
+    'Estados Unidos',
+    'Guatemala',
+    'Honduras',
+    'México',
+    'Nicaragua',
+    'Panamá',
+    'Paraguay',
+    'Perú',
+    'Puerto Rico',
+    'República Dominicana',
+    'Uruguay',
+    'Venezuela',
+    'Otro',
+  ];
+
   constructor(
     private fb: FormBuilder,
     public authService: AuthService,
@@ -72,6 +97,9 @@ export class ProfileComponent implements OnInit, OnDestroy {
     this.profileForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       lastname: [''],
+      nickname: [''],
+      birth_date: [''],
+      country: [''],
       bio: [''],
       favorite_category: [''],
     });
@@ -133,9 +161,21 @@ export class ProfileComponent implements OnInit, OnDestroy {
   loadProfile(): void {
     const user = this.currentUser;
     if (user) {
+      // Manejar birth_date correctamente para usuarios existentes sin este campo
+      let birthDate = '';
+      if (user.birth_date) {
+        // Asegurar que la fecha esté en formato YYYY-MM-DD sin zona horaria
+        // Si viene como string 'YYYY-MM-DD' o 'YYYY-MM-DDTHH:MM:SS'
+        const dateStr = String(user.birth_date);
+        birthDate = dateStr.split('T')[0];
+      }
+
       this.profileForm.patchValue({
         name: user.name,
         lastname: user.lastname || '',
+        nickname: user.nickname || '',
+        birth_date: birthDate,
+        country: user.country || '',
         bio: user.bio || '',
         favorite_category: user.favorite_category || '',
       });
@@ -227,6 +267,14 @@ export class ProfileComponent implements OnInit, OnDestroy {
     this.showNewPassword.update((v) => !v);
   }
 
+  getCurrentDate(): string {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
   onProfileSubmit(): void {
     if (this.profileForm.invalid) {
       this.profileForm.markAllAsTouched();
@@ -235,7 +283,25 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
     this.clearMessages();
 
-    this.authService.updateProfile(this.profileForm.value).subscribe({
+    // Obtener los valores del formulario
+    const formData = { ...this.profileForm.value };
+
+    // Asegurar que birth_date se envíe como string YYYY-MM-DD sin conversiones
+    if (formData.birth_date && formData.birth_date !== '') {
+      // Si es un string, mantenerlo como está
+      // Si por alguna razón es Date, convertir a YYYY-MM-DD
+      if (formData.birth_date instanceof Date) {
+        const year = formData.birth_date.getFullYear();
+        const month = String(formData.birth_date.getMonth() + 1).padStart(2, '0');
+        const day = String(formData.birth_date.getDate()).padStart(2, '0');
+        formData.birth_date = `${year}-${month}-${day}`;
+      }
+    } else {
+      // Si está vacío, enviar null en lugar de string vacío
+      formData.birth_date = null;
+    }
+
+    this.authService.updateProfile(formData).subscribe({
       next: () => {
         this.successMessage.set('Perfil actualizado correctamente');
       },

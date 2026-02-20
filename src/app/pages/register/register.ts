@@ -1,4 +1,3 @@
-
 import { Component, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
@@ -17,6 +16,31 @@ export class RegisterComponent {
   showPassword = signal<boolean>(false);
   showConfirmPassword = signal<boolean>(false);
 
+  countries = [
+    'Argentina',
+    'Bolivia',
+    'Chile',
+    'Colombia',
+    'Costa Rica',
+    'Cuba',
+    'Ecuador',
+    'El Salvador',
+    'España',
+    'Estados Unidos',
+    'Guatemala',
+    'Honduras',
+    'México',
+    'Nicaragua',
+    'Panamá',
+    'Paraguay',
+    'Perú',
+    'Puerto Rico',
+    'República Dominicana',
+    'Uruguay',
+    'Venezuela',
+    'Otro',
+  ];
+
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
@@ -26,6 +50,9 @@ export class RegisterComponent {
       {
         name: ['', [Validators.required, Validators.minLength(2)]],
         lastname: [''],
+        nickname: [''],
+        birth_date: [''],
+        country: [''],
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(6)]],
         confirmPassword: ['', [Validators.required]],
@@ -59,6 +86,14 @@ export class RegisterComponent {
     this.showConfirmPassword.update((v) => !v);
   }
 
+  getCurrentDate(): string {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
   onSubmit(): void {
     if (this.registerForm.invalid) {
       this.registerForm.markAllAsTouched();
@@ -67,16 +102,19 @@ export class RegisterComponent {
 
     this.errorMessage.set('');
 
-    const { name, lastname, email, password } = this.registerForm.value;
+    const { name, lastname, nickname, birth_date, country, email, password } =
+      this.registerForm.value;
 
-    this.authService.register({ name, lastname, email, password }).subscribe({
-      next: () => {
-        this.router.navigate(['/']);
-      },
-      error: (error) => {
-        const message = error.error?.message || 'Error al registrarse. Inténtalo de nuevo.';
-        this.errorMessage.set(message);
-      },
-    });
+    this.authService
+      .register({ name, lastname, nickname, birth_date, country, email, password })
+      .subscribe({
+        next: () => {
+          this.router.navigate(['/']);
+        },
+        error: (error) => {
+          const message = error.error?.message || 'Error al registrarse. Inténtalo de nuevo.';
+          this.errorMessage.set(message);
+        },
+      });
   }
 }

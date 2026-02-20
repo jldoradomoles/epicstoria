@@ -8,6 +8,9 @@ export interface User {
   email: string;
   name: string;
   lastname?: string;
+  nickname?: string;
+  birth_date?: string;
+  country?: string;
   role: UserRole;
   avatar_url?: string;
   bio?: string;
@@ -26,11 +29,17 @@ export interface RegisterRequest {
   password: string;
   name: string;
   lastname?: string;
+  nickname?: string;
+  birth_date?: string;
+  country?: string;
 }
 
 export interface UpdateProfileRequest {
   name?: string;
   lastname?: string;
+  nickname?: string;
+  birth_date?: string;
+  country?: string;
   avatar_url?: string;
   bio?: string;
   favorite_category?: string;

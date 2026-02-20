@@ -70,13 +70,14 @@
                         <div
                           class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center text-lg font-bold text-white shadow-lg flex-shrink-0"
                         >
-                          {{ getInitials(entry.name, entry.lastname) }}
+                          {{ getInitials(entry) }}
                         </div>
                         <div>
                           <div class="font-semibold text-color">
-                            {{ entry.name }}
-                            @if (entry.lastname) {
-                              {{ entry.lastname }}
+                            @if (entry.nickname) {
+                              {{ entry.nickname }}
+                            } @else {
+                              {{ entry.name }}
                             }
                           </div>
                           <div class="text-sm text-amber-200/60">

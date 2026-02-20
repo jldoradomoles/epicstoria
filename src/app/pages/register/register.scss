@@ -1,1 +1,88 @@
 // Register page styles
+
+// Estilos mejorados para input de fecha
+input[type='date'] {
+  position: relative;
+  color-scheme: dark; // Usar tema oscuro nativo del navegador
+
+  // Personalizar el icono del calendario nativo - HACERLO VISIBLE Y ESTILIZADO
+  &::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 1;
+    // Crear un indicador personalizado con filter (tono amber/dorado)
+    filter: invert(68%) sepia(21%) saturate(1500%) hue-rotate(350deg) brightness(100%) contrast(92%);
+    transition: all 0.3s ease;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: 0.5rem;
+    position: relative;
+    z-index: 20;
+
+    &:hover {
+      filter: invert(68%) sepia(21%) saturate(2000%) hue-rotate(350deg) brightness(110%)
+        contrast(100%);
+      transform: scale(1.15);
+    }
+
+    &:active {
+      transform: scale(1.05);
+    }
+  }
+
+  // Mejorar apariencia en navegadores Webkit (Chrome, Safari, Edge)
+  &::-webkit-datetime-edit {
+    padding: 0;
+    color: inherit;
+  }
+
+  &::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+
+  &::-webkit-datetime-edit-text {
+    color: rgb(255 255 255 / 0.4);
+    padding: 0 0.25rem;
+    font-weight: 500;
+  }
+
+  &::-webkit-datetime-edit-month-field,
+  &::-webkit-datetime-edit-day-field,
+  &::-webkit-datetime-edit-year-field {
+    color: white;
+    padding: 0.25rem 0.375rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s;
+    font-weight: 600;
+
+    &:hover {
+      background: rgb(255 255 255 / 0.1);
+      color: rgb(255 255 255 / 0.95);
+    }
+
+    &:focus {
+      background: rgb(255 255 255 / 0.15);
+      color: white;
+      outline: none;
+      box-shadow: 0 0 0 2px rgb(255 255 255 / 0.2);
+    }
+  }
+
+  // Estado cuando está vacío - mostrar placeholder personalizado
+  &:not(:focus):invalid {
+    &::-webkit-datetime-edit {
+      color: rgb(255 255 255 / 0.4);
+    }
+  }
+
+  // Hover en el input completo
+  &:hover {
+    border-color: rgb(245 158 11 / 0.6) !important; // amber-500/60
+    box-shadow: 0 0 0 3px rgb(245 158 11 / 0.1);
+  }
+
+  // Focus mejorado
+  &:focus {
+    border-color: rgb(245 158 11 / 0.7) !important;
+    box-shadow: 0 0 0 3px rgb(245 158 11 / 0.15);
+  }
+}

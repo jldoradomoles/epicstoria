@@ -9,6 +9,7 @@ interface LeaderboardEntry {
   id: number;
   name: string;
   lastname?: string;
+  nickname?: string;
   avatar_url?: string;
   points: number;
   stars: number;
@@ -62,9 +63,14 @@ export class Juegos implements OnInit {
     });
   }
 
-  getInitials(name: string, lastname?: string): string {
-    const firstInitial = name.charAt(0).toUpperCase();
-    const lastInitial = lastname ? lastname.charAt(0).toUpperCase() : '';
+  getInitials(entry: LeaderboardEntry): string {
+    // Si tiene nickname, usar las primeras dos letras del nickname
+    if (entry.nickname) {
+      return entry.nickname.substring(0, 2).toUpperCase();
+    }
+    // Si no, usar inicial del nombre y apellido
+    const firstInitial = entry.name.charAt(0).toUpperCase();
+    const lastInitial = entry.lastname ? entry.lastname.charAt(0).toUpperCase() : '';
     return firstInitial + lastInitial;
   }
 
