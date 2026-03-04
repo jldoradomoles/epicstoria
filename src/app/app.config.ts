@@ -1,5 +1,5 @@
 import { registerLocaleData } from '@angular/common';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import localeEs from '@angular/common/locales/es';
 import {
   ApplicationConfig,
@@ -34,7 +34,7 @@ export const appConfig: ApplicationConfig = {
         },
       }),
     ),
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
     { provide: LOCALE_ID, useValue: 'es' },
     provideClientHydration(withEventReplay()),
   ],

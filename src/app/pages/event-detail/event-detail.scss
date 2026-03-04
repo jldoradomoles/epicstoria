@@ -24,8 +24,30 @@
 
 .event-image {
   background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: center -5rem;
+  background-size: cover;
+  background-position: center center;
   width: 100%;
   height: 100%;
+
+  // Solo usar el posicionamiento especial en pantallas muy grandes
+  @media (min-width: 1280px) {
+    background-size: 100% auto;
+    background-position: center -5rem;
+  }
+}
+
+.event-image-desktop {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+
+.event-image-mobile {
+  display: block;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 }

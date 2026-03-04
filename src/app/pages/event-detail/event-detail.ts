@@ -198,6 +198,23 @@ export class EventDetail implements OnInit {
   }
 
   /**
+   * Obtiene la URL de la imagen optimizada para móviles
+   * Reemplaza la extensión con -movil.extension
+   */
+  getMobileImageUrl(imageUrl: string): string {
+    if (!imageUrl) {
+      return imageUrl;
+    }
+    // Buscar la última extensión del archivo
+    const lastDotIndex = imageUrl.lastIndexOf('.');
+    if (lastDotIndex === -1) {
+      return imageUrl;
+    }
+    // Insertar -movil antes de la extensión
+    return imageUrl.substring(0, lastDotIndex) + '-movil' + imageUrl.substring(lastDotIndex);
+  }
+
+  /**
    * Verifica si hay imágenes adicionales disponibles
    */
   hasAdditionalImages(): boolean {

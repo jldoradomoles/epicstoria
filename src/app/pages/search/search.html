@@ -64,7 +64,7 @@
             class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
           >
             <option value="all">Todas las Categorías</option>
-            @for (category of categories; track category) {
+            @for (category of categories(); track category) {
               <option [value]="category">{{ category }}</option>
             }
           </select>
@@ -93,14 +93,14 @@
       <div class="mt-4 text-center">
         <p class="text-lg font-semibold text-color">
           <i class="fas fa-list-check text-blue-500 mr-2"></i>
-          {{ filteredEvents.length }} evento(s) encontrado(s)
+          {{ filteredEvents().length }} evento(s) encontrado(s)
         </p>
       </div>
     </div>
 
     <!-- Resultados -->
     <div class="space-y-6">
-      @if (filteredEvents.length === 0) {
+      @if (filteredEvents().length === 0) {
         <div class="container-custom rounded-xl p-12 text-center shadow-2xl">
           <i class="fas fa-search text-6xl text-gray-400 mb-4"></i>
           <h3 class="text-2xl font-bold text-color mb-2">No se encontraron eventos</h3>
@@ -110,7 +110,7 @@
         </div>
       } @else {
         <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-          @for (event of filteredEvents; track event.id) {
+          @for (event of filteredEvents(); track event.id) {
             <a
               [routerLink]="['/evento', event.slug || event.id]"
               class="container-custom flex flex-col overflow-hidden rounded-xl shadow-2xl transition duration-300 hover:shadow-blue-500/20 hover:scale-[1.02] cursor-pointer"

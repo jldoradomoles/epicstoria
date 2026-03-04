@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { Event } from '../../models/event.model';
@@ -14,28 +14,28 @@ import { getPlainText } from '../../utils/text.utils';
   templateUrl: './search.html',
   styleUrl: './search.scss',
 })
-export class Search implements OnInit {
+export class Search {
   private eventApiService = inject(EventApiService);
 
-  events: Event[] = [];
-  filteredEvents: Event[] = [];
+  events = signal<Event[]>([]);
+  filteredEvents = signal<Event[]>([]);
 
   searchName: string = '';
   searchDate: string = '';
   searchContent: string = '';
 
   selectedCategory: string = 'all';
-  categories: string[] = [];
+  categories = signal<string[]>([]);
 
   getCategoryColor = getCategoryColor;
   getPlainText = getPlainText;
 
-  ngOnInit() {
+  constructor() {
     this.eventApiService.getAllEvents().subscribe({
       next: (events) => {
-        this.events = events;
+        this.events.set(events);
         // No mostrar eventos hasta que el usuario realice una búsqueda
-        this.filteredEvents = [];
+        this.filteredEvents.set([]);
         this.extractCategories();
       },
       error: (error) => {
@@ -45,39 +45,41 @@ export class Search implements OnInit {
   }
 
   extractCategories() {
-    const categorySet = new Set(this.events.map((e) => e.category));
-    this.categories = Array.from(categorySet).sort();
+    const categorySet = new Set(this.events().map((e) => e.category));
+    this.categories.set(Array.from(categorySet).sort());
   }
 
   applyFilters() {
-    this.filteredEvents = this.events.filter((event) => {
-      // Filtro por nombre
-      const matchesName =
-        this.searchName.trim() === '' ||
-        event.title.toLowerCase().includes(this.searchName.toLowerCase());
+    this.filteredEvents.set(
+      this.events().filter((event) => {
+        // Filtro por nombre
+        const matchesName =
+          this.searchName.trim() === '' ||
+          event.title.toLowerCase().includes(this.searchName.toLowerCase());
 
-      // Filtro por fecha
-      const matchesDate = this.searchDate.trim() === '' || event.date.includes(this.searchDate);
+        // Filtro por fecha
+        const matchesDate = this.searchDate.trim() === '' || event.date.includes(this.searchDate);
 
-      // Filtro por contenido (busca en summary, context, consequences)
-      const summary = Array.isArray(event.summary) ? event.summary.join(' ') : event.summary;
-      const context = Array.isArray(event.context) ? event.context.join(' ') : event.context;
-      const consequences = Array.isArray(event.consequences)
-        ? event.consequences.join(' ')
-        : event.consequences;
+        // Filtro por contenido (busca en summary, context, consequences)
+        const summary = Array.isArray(event.summary) ? event.summary.join(' ') : event.summary;
+        const context = Array.isArray(event.context) ? event.context.join(' ') : event.context;
+        const consequences = Array.isArray(event.consequences)
+          ? event.consequences.join(' ')
+          : event.consequences;
 
-      const matchesContent =
-        this.searchContent.trim() === '' ||
-        summary.toLowerCase().includes(this.searchContent.toLowerCase()) ||
-        context.toLowerCase().includes(this.searchContent.toLowerCase()) ||
-        consequences.toLowerCase().includes(this.searchContent.toLowerCase());
+        const matchesContent =
+          this.searchContent.trim() === '' ||
+          summary.toLowerCase().includes(this.searchContent.toLowerCase()) ||
+          context.toLowerCase().includes(this.searchContent.toLowerCase()) ||
+          consequences.toLowerCase().includes(this.searchContent.toLowerCase());
 
-      // Filtro por categoría
-      const matchesCategory =
-        this.selectedCategory === 'all' || event.category === this.selectedCategory;
+        // Filtro por categoría
+        const matchesCategory =
+          this.selectedCategory === 'all' || event.category === this.selectedCategory;
 
-      return matchesName && matchesDate && matchesContent && matchesCategory;
-    });
+        return matchesName && matchesDate && matchesContent && matchesCategory;
+      }),
+    );
   }
 
   clearFilters() {
@@ -86,6 +88,6 @@ export class Search implements OnInit {
     this.searchContent = '';
     this.selectedCategory = 'all';
     // Al limpiar filtros, no mostrar eventos hasta nueva búsqueda
-    this.filteredEvents = [];
+    this.filteredEvents.set([]);
   }
 }

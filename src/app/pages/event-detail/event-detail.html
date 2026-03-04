@@ -2,14 +2,22 @@
 <div class="min-h-screen">
   @if (event) {
     <!-- Hero Section con Imagen -->
-    <div class="relative h-[800px] overflow-hidden">
+    <div class="relative h-[500px] md:h-[600px] lg:h-[700px] xl:h-[800px] overflow-hidden">
+      <!-- Imagen para Desktop -->
       <div
-        class="event-image"
+        class="event-image event-image-desktop"
         role="img"
         [attr.aria-label]="event.title"
         [style.background-image]="'url(' + event.imageUrl + ')'"
       ></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+      <!-- Imagen para Móvil -->
+      <div
+        class="event-image event-image-mobile"
+        role="img"
+        [attr.aria-label]="event.title"
+        [style.background-image]="'url(' + getMobileImageUrl(event.imageUrl) + ')'"
+      ></div>
+      <!-- <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div> -->
 
       <!-- Botón de Regreso -->
       <div class="absolute left-4 top-4 sm:left-8 sm:top-8">
@@ -36,18 +44,24 @@
       </div>
 
       <!-- Título y Fecha en la Imagen -->
-      <div class="absolute bottom-0 left-0 right-0 p-8">
+      <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8">
         <div class="mx-auto max-w-5xl">
           <span
             [class]="
-              'mb-4 inline-block rounded-full px-4 py-1 text-sm font-bold uppercase tracking-wider text-color ' +
+              'mb-2 md:mb-4 inline-block rounded-full px-3 py-1 md:px-4 md:py-1 text-xs md:text-sm font-bold uppercase tracking-wider text-color ' +
               getCategoryColor(event.category)
             "
           >
             {{ event.category }}
           </span>
-          <h1 class="text-color mb-2 text-5xl font-black md:text-6xl">{{ event.title }}</h1>
-          <p class="text-xl font-semibold text-color">{{ event.date | dateFormat }}</p>
+          <h1
+            class="text-color mb-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black"
+          >
+            {{ event.title }}
+          </h1>
+          <p class="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-color">
+            {{ event.date | dateFormat }}
+          </p>
         </div>
       </div>
     </div>

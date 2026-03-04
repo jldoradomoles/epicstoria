@@ -188,6 +188,8 @@ export class QuizComponent implements OnInit {
         this.isSavingResult = false;
         // Actualizar el perfil del usuario para reflejar los nuevos puntos
         this.authService.refreshProfile();
+        // Recargar el estado del quiz para reflejar que ya no se puede repetir
+        this.loadQuizStatus();
       },
       error: (error) => {
         console.error('Error saving quiz result:', error);
@@ -204,6 +206,8 @@ export class QuizComponent implements OnInit {
     this.selectedAnswers = [];
     this.showResult = false;
     this.quizResult = null;
+    // Recargar el estado del quiz para verificar si se puede repetir
+    this.loadQuizStatus();
   }
 
   get currentQuestion(): QuizQuestion | null {
