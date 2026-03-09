@@ -85,6 +85,8 @@ export interface QuizCompletionRequest {
 
 export interface QuizStatusResponse {
   can_take: boolean;
+  attempts_today: number;
+  last_score: number | null;
   last_completion: QuizCompletion | null;
   retry_available_at: Date | null;
 }

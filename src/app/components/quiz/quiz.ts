@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Event } from '../../models/event.model';
 import { EventQuiz, QuizAnswer, QuizQuestion, QuizResult } from '../../models/quiz.model';
@@ -32,6 +32,7 @@ export class QuizComponent implements OnInit {
     private quizService: QuizService,
     private pointsService: PointsService,
     private authService: AuthService,
+    private cdr: ChangeDetectorRef,
   ) {}
 
   ngOnInit() {
@@ -183,13 +184,29 @@ export class QuizComponent implements OnInit {
 
     this.pointsService.completeQuiz(quizData).subscribe({
       next: (response) => {
+        console.log('🔍 Respuesta del backend - attempts_today:', response.data.attempts_today);
         this.quizResult!.pointsEarned = response.data.points_earned;
         this.quizResult!.canRetryAt = response.data.can_retry_at;
         this.isSavingResult = false;
         // Actualizar el perfil del usuario para reflejar los nuevos puntos
         this.authService.refreshProfile();
-        // Recargar el estado del quiz para reflejar que ya no se puede repetir
-        this.loadQuizStatus();
+
+        // Usar setTimeout para actualizar en el siguiente ciclo y evitar ExpressionChangedAfterItHasBeenCheckedError
+        setTimeout(() => {
+          // Crear un NUEVO objeto quizStatus para forzar detección de cambios
+          this.quizStatus = {
+            can_take: response.data.attempts_today < 4 && this.quizResult?.percentage !== 100,
+            attempts_today: response.data.attempts_today,
+            last_score: this.quizResult?.percentage ?? null,
+            last_completion: this.quizStatus?.last_completion ?? null,
+            retry_available_at: response.data.can_retry_at,
+          };
+          console.log(
+            '✅ quizStatus actualizado - attempts_today:',
+            this.quizStatus.attempts_today,
+          );
+          this.cdr.markForCheck();
+        }, 0);
       },
       error: (error) => {
         console.error('Error saving quiz result:', error);

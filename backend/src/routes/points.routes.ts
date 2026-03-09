@@ -28,15 +28,15 @@ router.post('/quiz', authMiddleware, async (req: AuthRequest, res, next) => {
     }
 
     const completion = await PointsService.completeQuiz(userId, quizData);
+    const status = await PointsService.getQuizStatus(userId, quizData.event_id);
 
     res.json({
       success: true,
       data: {
         completion,
         points_earned: completion.points_earned,
-        can_retry_at: new Date(
-          new Date(completion.completed_at).getTime() + 7 * 24 * 60 * 60 * 1000,
-        ),
+        can_retry_at: status.retry_available_at,
+        attempts_today: status.attempts_today,
       },
     });
   } catch (error) {
@@ -89,17 +89,17 @@ router.get('/quiz/:eventId/status', authMiddleware, async (req: AuthRequest, res
     const userId = req.user!.userId;
     const eventId = req.params.eventId;
 
-    const canTake = await PointsService.canTakeQuiz(userId, eventId);
+    const status = await PointsService.getQuizStatus(userId, eventId);
     const lastCompletion = await PointsService.getLastQuizCompletion(userId, eventId);
 
     res.json({
       success: true,
       data: {
-        can_take: canTake,
+        can_take: status.can_take,
+        attempts_today: status.attempts_today,
+        last_score: status.last_score,
         last_completion: lastCompletion,
-        retry_available_at: lastCompletion
-          ? new Date(new Date(lastCompletion.completed_at).getTime() + 7 * 24 * 60 * 60 * 1000)
-          : null,
+        retry_available_at: status.retry_available_at,
       },
     });
   } catch (error) {

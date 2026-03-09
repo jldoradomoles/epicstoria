@@ -30,6 +30,7 @@ export class PointsService {
       completion: QuizCompletion;
       points_earned: number;
       can_retry_at: Date;
+      attempts_today: number;
     };
   }> {
     return this.http.post<{
@@ -38,6 +39,7 @@ export class PointsService {
         completion: QuizCompletion;
         points_earned: number;
         can_retry_at: Date;
+        attempts_today: number;
       };
     }>(`${this.apiUrl}/quiz`, data, {
       headers: this.authService.getAuthHeaders(),

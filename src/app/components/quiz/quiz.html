@@ -47,11 +47,75 @@
       @if (isUserAuthenticated && !canTakeQuiz && retryAvailableDate) {
         <div class="bg-yellow-900/50 border border-yellow-600 rounded-lg p-4 mb-4">
           <i class="fas fa-clock text-yellow-400 text-2xl mb-2"></i>
-          <p class="text-yellow-200 font-medium mb-2">Ya has completado este quiz recientemente</p>
-          <p class="text-yellow-300 text-sm">
-            Podrás repetirlo el <strong>{{ retryAvailableDate }}</strong>
-          </p>
+          @if (quizStatus && quizStatus.last_score !== null && quizStatus.last_score >= 100) {
+            <p class="text-yellow-200 font-medium mb-2">
+              ¡Felicitaciones! Obtuviste una nota perfecta
+            </p>
+            <p class="text-yellow-300 text-sm">
+              Podrás repetir el quiz el <strong>{{ retryAvailableDate }}</strong> (24 horas después
+              de tu último intento)
+            </p>
+          } @else {
+            <p class="text-yellow-200 font-medium mb-2">
+              Has alcanzado el límite de intentos de hoy
+            </p>
+            <p class="text-yellow-300 text-sm">
+              Usaste los 4 intentos disponibles. Podrás intentarlo nuevamente el
+              <strong>{{ retryAvailableDate }}</strong>
+            </p>
+          }
         </div>
+      }
+
+      <!-- Mostrar intentos disponibles si puede tomar el quiz -->
+      @if (isUserAuthenticated && canTakeQuiz && quizStatus) {
+        @if (quizStatus.attempts_today === 0) {
+          <div class="bg-green-900/50 border border-green-600 rounded-lg p-4 mb-4">
+            <i class="fas fa-info-circle text-green-400 text-xl mb-2"></i>
+            <p class="text-green-200 text-sm font-semibold">
+              Este será tu primer intento. Tienes 4 intentos disponibles hoy.
+            </p>
+          </div>
+        } @else if (quizStatus.attempts_today === 1) {
+          <div class="bg-blue-900/50 border border-blue-600 rounded-lg p-4 mb-4">
+            <i class="fas fa-info-circle text-blue-400 text-xl mb-2"></i>
+            <p class="text-blue-200 text-sm">
+              Has utilizado <strong>1 intento</strong> de 4.
+              <span class="font-semibold">Te quedan 3 intentos.</span>
+            </p>
+            @if (quizStatus.last_score !== null && quizStatus.last_score < 100) {
+              <p class="text-blue-300 text-xs mt-2">
+                Última puntuación: {{ quizStatus.last_score }}%. Puedes mejorarla.
+              </p>
+            }
+          </div>
+        } @else if (quizStatus.attempts_today === 2) {
+          <div class="bg-blue-900/50 border border-blue-600 rounded-lg p-4 mb-4">
+            <i class="fas fa-info-circle text-blue-400 text-xl mb-2"></i>
+            <p class="text-blue-200 text-sm">
+              Has utilizado <strong>2 intentos</strong> de 4.
+              <span class="font-semibold">Te quedan 2 intentos.</span>
+            </p>
+            @if (quizStatus.last_score !== null && quizStatus.last_score < 100) {
+              <p class="text-blue-300 text-xs mt-2">
+                Última puntuación: {{ quizStatus.last_score }}%. Puedes mejorarla.
+              </p>
+            }
+          </div>
+        } @else if (quizStatus.attempts_today === 3) {
+          <div class="bg-amber-900/50 border border-amber-600 rounded-lg p-4 mb-4">
+            <i class="fas fa-exclamation-triangle text-amber-400 text-xl mb-2"></i>
+            <p class="text-amber-200 text-sm">
+              Has utilizado <strong>3 intentos</strong> de 4.
+              <span class="font-semibold">Te queda 1 último intento.</span>
+            </p>
+            @if (quizStatus.last_score !== null && quizStatus.last_score < 100) {
+              <p class="text-amber-300 text-xs mt-2">
+                Última puntuación: {{ quizStatus.last_score }}%. ¡Último intento!
+              </p>
+            }
+          </div>
+        }
       }
 
       <!-- Botón de iniciar quiz (solo para usuarios autenticados) -->
@@ -211,14 +275,57 @@
           </div>
         }
 
-        <!-- Info de próximo intento si ya completó antes -->
-        @if (quizResult.canRetryAt) {
-          <div class="bg-blue-900/50 rounded-lg p-3 mb-4 border border-blue-700">
-            <div class="text-blue-300 text-sm">
-              <i class="fas fa-clock mr-2"></i>
-              Podrás repetir este quiz el {{ quizResult.canRetryAt | date: 'dd/MM/yyyy' }}
+        <!-- Info sobre intentos restantes o próximo intento -->
+        @if (quizStatus) {
+          @if (quizResult.percentage >= 100) {
+            <div class="bg-green-900/50 rounded-lg p-4 mb-4 border border-green-700">
+              <div class="text-green-200 text-sm">
+                <i class="fas fa-trophy mr-2"></i>
+                <strong>¡Puntuación perfecta!</strong> Has bloqueado este quiz por 24 horas.
+              </div>
+              @if (quizResult.canRetryAt) {
+                <div class="text-green-300 text-xs mt-2">
+                  Podrás repetirlo después del
+                  {{ quizResult.canRetryAt | date: 'dd/MM/yyyy HH:mm' }}
+                </div>
+              }
             </div>
-          </div>
+          } @else if (quizStatus.attempts_today >= 4) {
+            <div class="bg-orange-900/50 rounded-lg p-4 mb-4 border border-orange-700">
+              <div class="text-orange-200 text-sm">
+                <i class="fas fa-exclamation-triangle mr-2"></i>
+                Has usado tus 4 intentos de hoy. El quiz está bloqueado por 24 horas.
+              </div>
+              @if (quizResult.canRetryAt) {
+                <div class="text-orange-300 text-xs mt-2">
+                  Podrás intentarlo nuevamente después del
+                  {{ quizResult.canRetryAt | date: 'dd/MM/yyyy HH:mm' }}
+                </div>
+              }
+            </div>
+          } @else if (quizStatus.attempts_today < 4) {
+            <div class="bg-blue-900/50 rounded-lg p-4 mb-4 border border-blue-700">
+              <div class="text-blue-200 text-sm">
+                <i class="fas fa-info-circle mr-2"></i>
+                @if (quizStatus.attempts_today === 1) {
+                  Este fue tu <strong>primer intento</strong> de 4.
+                  <strong>Te quedan 3 intentos.</strong>
+                } @else if (quizStatus.attempts_today === 2) {
+                  Este fue tu <strong>segundo intento</strong> de 4.
+                  <strong>Te quedan 2 intentos.</strong>
+                } @else if (quizStatus.attempts_today === 3) {
+                  Este fue tu <strong>tercer intento</strong> de 4.
+                  <strong>Te queda 1 intento.</strong>
+                } @else {
+                  Has usado <strong>{{ quizStatus.attempts_today }}</strong> de 4 intentos.
+                  <strong>Te quedan {{ 4 - quizStatus.attempts_today }} intentos.</strong>
+                }
+              </div>
+              <div class="text-blue-300 text-xs mt-2">
+                Puedes intentar mejorar tu puntuación ahora mismo.
+              </div>
+            </div>
+          }
         }
       </div>
 
