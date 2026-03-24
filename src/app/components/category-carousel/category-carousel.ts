@@ -22,7 +22,7 @@ export class CategoryCarousel {
   categories = computed<CategoryCard[]>(() => {
     return this.categoryNames().map((name) => ({
       name,
-      imageUrl: `images/categorias/${this.normalizeImageName(name)}.jpg`,
+      imageUrl: `/images/categorias/${this.normalizeImageName(name)}.jpg`,
     }));
   });
 
