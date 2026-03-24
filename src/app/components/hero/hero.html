@@ -2,6 +2,7 @@
 <main
   id="inicio"
   class="hero-background relative overflow-hidden bg-cover bg-center bg-no-repeat"
+  [class.hero-compact]="noMainImage()"
   [style.background-image]="'url(' + backgroundImageUrl() + ')'"
 >
   >

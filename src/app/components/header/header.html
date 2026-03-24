@@ -22,9 +22,6 @@
       <a routerLink="/galeria" class="text-white transition duration-150 hover:text-amber-400"
         >Galería</a
       >
-      <a routerLink="/buscar" class="text-white transition duration-150 hover:text-amber-400"
-        >Buscador</a
-      >
 
       <!-- Separador -->
       @if (!useStaticData) {
@@ -137,13 +134,6 @@
           class="rounded-lg px-3 py-2 text-white transition duration-150 hover:bg-gray-800 hover:text-amber-400"
         >
           Galería
-        </a>
-        <a
-          routerLink="/buscar"
-          (click)="closeMobileMenu()"
-          class="rounded-lg px-3 py-2 text-white transition duration-150 hover:bg-gray-800 hover:text-amber-400"
-        >
-          Buscador
         </a>
 
         @if (!useStaticData) {

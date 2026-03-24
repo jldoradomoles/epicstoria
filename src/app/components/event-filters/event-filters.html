@@ -1,0 +1,78 @@
+<section class="py-8 bg-gradient-to-b from-gray-900/50 to-transparent">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="container-custom rounded-xl p-6 shadow-2xl">
+      <h2 class="text-2xl font-bold text-color mb-4">
+        <i class="fas fa-search text-blue-500 mr-2"></i>
+        Buscar Eventos
+      </h2>
+
+      <div class="grid gap-4 md:grid-cols-3">
+        <!-- Búsqueda por Nombre -->
+        <div>
+          <label class="block text-sm font-bold text-color mb-2">
+            <i class="fas fa-signature text-blue-500 mr-2"></i>
+            Nombre del Evento
+          </label>
+          <input
+            type="text"
+            [value]="searchName()"
+            (input)="searchName.set($any($event.target).value)"
+            placeholder="Ej: Revolución, Guerra..."
+            class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+          />
+        </div>
+
+        <!-- Búsqueda por Contenido -->
+        <div>
+          <label class="block text-sm font-bold text-color mb-2">
+            <i class="fas fa-search text-purple-500 mr-2"></i>
+            Palabras Clave
+          </label>
+          <input
+            type="text"
+            [value]="searchContent()"
+            (input)="searchContent.set($any($event.target).value)"
+            placeholder="Buscar en descripción..."
+            class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+          />
+        </div>
+
+        <!-- Filtro por Categoría -->
+        <div>
+          <label class="block text-sm font-bold text-color mb-2">
+            <i class="fas fa-filter text-amber-500 mr-2"></i>
+            Categoría
+          </label>
+          <select
+            [value]="selectedCategory()"
+            (change)="selectedCategory.set($any($event.target).value)"
+            class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+          >
+            <option value="all">Todas las Categorías</option>
+            @for (category of categories(); track category) {
+              <option [value]="category">{{ category }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <!-- Botones de Acción -->
+      <div class="mt-4 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+        <button
+          (click)="applyFilters()"
+          class="btns-color rounded-lg sm:rounded-full px-6 sm:px-8 py-3 sm:py-2 font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 active:scale-95 text-base sm:text-sm w-full sm:w-auto"
+        >
+          <i class="fas fa-search mr-2 text-lg sm:text-base"></i>
+          Buscar Resultados
+        </button>
+        <button
+          (click)="clearFilters()"
+          class="btns-color rounded-lg sm:rounded-full px-6 sm:px-8 py-3 sm:py-2 font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 active:scale-95 text-base sm:text-sm w-full sm:w-auto"
+        >
+          <i class="fas fa-redo mr-2 text-lg sm:text-base"></i>
+          Limpiar Filtros
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

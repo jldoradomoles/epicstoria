@@ -1,3 +1,18 @@
 <!-- Página de Eventos -->
-<app-hero />
-<app-event-cards />
+<app-hero [noMainImage]="true" [imageUrl]="'images/eventos.jpg'" />
+
+<!-- Buscador de Eventos -->
+<app-event-filters
+  [categories]="categories()"
+  (filtersApplied)="onFiltersApplied($event)"
+  (filtersCleared)="onFiltersCleared()"
+/>
+
+<!-- Carrusel de Categorías -->
+<app-category-carousel
+  [categoryNames]="categories()"
+  (categorySelected)="onCategorySelected($event)"
+/>
+
+<!-- Tarjetas de Eventos -->
+<app-event-cards [events]="filteredEvents()" [resetTrigger]="paginationReset()" />

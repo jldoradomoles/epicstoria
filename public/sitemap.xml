@@ -17,12 +17,6 @@
   </url>
 
   <url>
-    <loc>https://epicstoria.es/buscar</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
     <loc>https://epicstoria.es/juegos</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

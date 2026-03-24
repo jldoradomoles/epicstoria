@@ -1,0 +1,128 @@
+<!-- Página de Galería de Evento Individual -->
+<section class="min-h-screen py-16 px-4 bg-stone-950">
+  <div class="container mx-auto max-w-7xl">
+    <!-- Loading State -->
+    @if (isLoading()) {
+      <div class="text-center py-12">
+        <i class="fas fa-spinner fa-spin text-4xl text-amber-500 mb-4"></i>
+        <p class="text-amber-300">Cargando galería...</p>
+      </div>
+    }
+
+    <!-- Event Gallery Content -->
+    @if (!isLoading() && event()) {
+      <div>
+        <!-- Header -->
+        <div class="mb-8">
+          <button
+            (click)="goBack()"
+            class="mb-4 text-amber-500 hover:text-amber-400 transition-colors flex items-center gap-2"
+          >
+            <i class="fas fa-arrow-left"></i>
+            Volver a Galería
+          </button>
+
+          <h1 class="text-4xl font-bold text-amber-500 mb-2">{{ event()!.title }}</h1>
+          <div class="flex items-center gap-4 text-amber-300/70 mb-4">
+            <span><i class="fas fa-calendar mr-2"></i>{{ event()!.date }}</span>
+            <span><i class="fas fa-tag mr-2"></i>{{ event()!.category }}</span>
+            <span><i class="fas fa-images mr-2"></i>{{ event()!.allImages.length }} imágenes</span>
+          </div>
+          <button
+            (click)="goToEventDetail()"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-lg transition-colors duration-200"
+          >
+            <i class="fas fa-book-open"></i>
+            Ver detalles del evento
+          </button>
+        </div>
+
+        <!-- Image Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          @for (image of event()!.allImages; track image; let i = $index) {
+            <div
+              class="group relative overflow-hidden rounded-xl bg-stone-900/50 border-2 border-amber-900/30 hover:border-amber-500/50 transition-all duration-300 cursor-pointer"
+              (click)="openImage(image, i)"
+            >
+              <div class="aspect-[4/3] overflow-hidden">
+                <img
+                  [src]="image"
+                  [alt]="event()!.title + ' - Imagen ' + (i + 1)"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                  <p class="text-white font-semibold text-lg">
+                    Imagen {{ i + 1 }} de {{ event()!.allImages.length }}
+                  </p>
+                  <p class="text-amber-300 text-sm flex items-center gap-2">
+                    <i class="fas fa-search-plus"></i>
+                    Click para ampliar
+                  </p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- Modal de Imagen Ampliada -->
+@if (isModalOpen() && selectedImage()) {
+  <div
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4"
+    (click)="closeModal()"
+  >
+    <div class="relative max-w-7xl w-full" (click)="$event.stopPropagation()">
+      <!-- Botón Cerrar -->
+      <button
+        (click)="closeModal()"
+        class="absolute -top-12 right-0 text-white hover:text-amber-500 transition-colors text-2xl z-10"
+        aria-label="Cerrar"
+      >
+        <i class="fas fa-times"></i>
+      </button>
+
+      <!-- Navegación -->
+      <div class="flex items-center gap-4">
+        <!-- Botón Anterior -->
+        <button
+          (click)="previousImage(); $event.stopPropagation()"
+          [disabled]="!canGoPrevious()"
+          class="text-white hover:text-amber-500 disabled:text-gray-600 disabled:cursor-not-allowed transition-colors text-4xl"
+          aria-label="Anterior"
+        >
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <!-- Imagen -->
+        <div class="flex-1 flex flex-col items-center">
+          <img
+            [src]="selectedImage()"
+            [alt]="event()!.title"
+            class="max-h-[80vh] w-auto object-contain rounded-lg"
+          />
+          <p class="text-white mt-4 text-center">
+            Imagen {{ selectedImageIndex() + 1 }} de {{ event()!.allImages.length }}
+          </p>
+        </div>
+
+        <!-- Botón Siguiente -->
+        <button
+          (click)="nextImage(); $event.stopPropagation()"
+          [disabled]="!canGoNext()"
+          class="text-white hover:text-amber-500 disabled:text-gray-600 disabled:cursor-not-allowed transition-colors text-4xl"
+          aria-label="Siguiente"
+        >
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+}

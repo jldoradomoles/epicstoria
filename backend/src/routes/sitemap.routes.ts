@@ -30,12 +30,6 @@ router.get('/sitemap.xml', async (req: Request, res: Response) => {
   </url>
 
   <url>
-    <loc>${baseUrl}/buscar</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
     <loc>${baseUrl}/juegos</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

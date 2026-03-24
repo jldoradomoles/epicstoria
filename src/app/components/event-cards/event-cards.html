@@ -2,71 +2,64 @@
 <section id="eventos" class="py-20">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <h3 class="mb-16 inline-block pb-2 text-center text-4xl font-bold text-color w-100">
-      Ultimos Eventos
+      Eventos Históricos
     </h3>
 
     <!-- Grid de Tarjetas (Responsive) -->
-    <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-      @for (event of displayedEvents; track event.id) {
-        <a
-          [routerLink]="['/evento', event.slug || event.id]"
-          class="container-custom flex flex-col overflow-hidden rounded-xl shadow-2xl transition duration-300 hover:shadow-blue-500/20 hover:scale-[1.02] cursor-pointer"
-        >
-          <div class="relative h-56 bg-gradient-to-tr from-gray-700 to-gray-900">
-            <div
-              class="event-card-image"
-              role="img"
-              [attr.aria-label]="event.title"
-              [style.background-image]="'url(' + (event.imageUrl || defaultImage) + ')'"
-            ></div>
-            <span
-              class="text-color absolute left-4 top-4 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider"
-              [ngClass]="getCategoryColor(event.category)"
-            >
-              {{ event.category }}
-            </span>
-          </div>
-          <div class="flex flex-grow flex-col p-6">
-            <p class="text-color mb-2 text-sm font-semibold">{{ event.date | dateFormat }}</p>
-            <h4 class="text-color mb-3 text-xl font-bold">{{ event.title }}</h4>
-            <p class="text-color mb-4 text-base line-clamp-3">
-              {{ getPlainText(event.summary) }}
-            </p>
-            <span class="text-color mt-4 self-start text-sm font-medium hover:text-blue-300">
-              Ver Más →
-            </span>
-          </div>
-        </a>
-      }
+    @if (displayedEvents.length > 0) {
+      <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+        @for (event of displayedEvents; track event.id) {
+          <a
+            [routerLink]="['/evento', event.slug || event.id]"
+            class="container-custom flex flex-col overflow-hidden rounded-xl shadow-2xl transition duration-300 hover:shadow-blue-500/20 hover:scale-[1.02] cursor-pointer"
+          >
+            <div class="relative h-56 bg-gradient-to-tr from-gray-700 to-gray-900">
+              <div
+                class="event-card-image"
+                role="img"
+                [attr.aria-label]="event.title"
+                [style.background-image]="'url(' + (event.imageUrl || defaultImage) + ')'"
+              ></div>
+              <span
+                class="text-color absolute left-4 top-4 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider"
+                [ngClass]="getCategoryColor(event.category)"
+              >
+                {{ event.category }}
+              </span>
+            </div>
+            <div class="flex flex-grow flex-col p-6">
+              <p class="text-color mb-2 text-sm font-semibold">{{ event.date | dateFormat }}</p>
+              <h4 class="text-color mb-3 text-xl font-bold">{{ event.title }}</h4>
+              <p class="text-color mb-4 text-base line-clamp-3">
+                {{ getPlainText(event.summary) }}
+              </p>
+              <span class="text-color mt-4 self-start text-sm font-medium hover:text-blue-300">
+                Ver Más →
+              </span>
+            </div>
+          </a>
+        }
+      </div>
 
-      <!-- Tarjeta de Llamada a la Acción -->
-      <!-- <div
-        class="flex flex-col items-center justify-center overflow-hidden rounded-xl border-2 border-dashed border-blue-500 bg-blue-900/40 p-8 text-center shadow-2xl transition duration-300 hover:bg-blue-900/60"
-      >
-        <svg
-          class="mb-4 h-12 w-12 text-blue-400"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-          ></path>
-        </svg>
-        <h4 class="mb-2 text-xl font-bold">¿Qué Sucederá Mañana?</h4>
-        <p class="mb-6 text-sm text-gray-300">
-          La historia continúa. Explora miles de sucesos diarios y sus imágenes conceptuales.
-        </p>
-        <button
-          class="rounded-full bg-red-600 px-6 py-2 font-semibold text-white shadow-lg transition duration-150 hover:bg-red-700"
-        >
-          Ver Calendario Completo
-        </button>
-      </div> -->
-    </div>
+      <!-- Botón "Ver Más" -->
+      @if (hasMoreEvents) {
+        <div class="mt-16 flex justify-center">
+          <button
+            (click)="loadMoreEvents()"
+            class="btns-color rounded-full px-8 py-3 font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 active:scale-95"
+          >
+            <i class="fas fa-chevron-down mr-2"></i>
+            Ver Más Eventos
+          </button>
+        </div>
+      }
+    } @else {
+      <!-- Mensaje cuando no hay eventos -->
+      <div class="container-custom rounded-xl p-12 text-center shadow-2xl">
+        <i class="fas fa-calendar-xmark text-6xl text-gray-400 mb-4"></i>
+        <h4 class="text-2xl font-bold text-color mb-2">No se encontraron eventos</h4>
+        <p class="text-lg text-color">No hay eventos que coincidan con tus criterios de búsqueda</p>
+      </div>
+    }
   </div>
 </section>

@@ -16,4 +16,9 @@
     // La imagen móvil se aplicará desde el componente TypeScript
     background-size: cover;
   }
+
+  &.hero-compact {
+    height: 400px;
+    background-position: center !important;
+  }
 }

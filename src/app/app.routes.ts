@@ -12,10 +12,6 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/event-detail/event-detail').then((m) => m.EventDetail),
   },
   {
-    path: 'buscar',
-    loadComponent: () => import('./pages/search/search').then((m) => m.Search),
-  },
-  {
     path: 'eventos',
     loadComponent: () => import('./pages/eventos/eventos').then((m) => m.Eventos),
   },
@@ -26,6 +22,11 @@ export const routes: Routes = [
   {
     path: 'galeria',
     loadComponent: () => import('./pages/galeria/galeria').then((m) => m.Galeria),
+  },
+  {
+    path: 'galeria/evento/:id',
+    loadComponent: () =>
+      import('./pages/galeria-evento/galeria-evento').then((m) => m.GaleriaEvento),
   },
   {
     path: 'acerca',

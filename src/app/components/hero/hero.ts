@@ -13,6 +13,9 @@ export class Hero {
   // Input para la imagen de fondo (desktop)
   imageUrl = input<string>('');
 
+  // Input opcional para la imagen de fondo (desktop)
+  noMainImage = input<boolean>(false);
+
   // Input opcional para la imagen móvil
   mobileImageUrl = input<string>('');
 
@@ -42,13 +45,20 @@ export class Hero {
   // URL de imagen final que cambia según el dispositivo
   backgroundImageUrl = computed(() => {
     const isM = this.isMobile();
+    const customImage = this.imageUrl();
+    const customMobileImage = this.mobileImageUrl();
 
+    // Si hay una imagen personalizada, usarla en todas las resoluciones
+    if (customImage) {
+      // Solo usar imagen móvil personalizada si está definida
+      return isM && customMobileImage ? customMobileImage : customImage;
+    }
+
+    // Sin imagen personalizada (home): usar imágenes por defecto
     if (isM) {
-      // En móvil, usar la imagen móvil si está disponible, sino la por defecto
-      return this.mobileImageUrl() || this.defaultMobileImage;
+      return customMobileImage || this.defaultMobileImage;
     } else {
-      // En desktop, usar la imagen principal o la por defecto
-      return this.imageUrl() || this.defaultImage;
+      return this.defaultImage;
     }
   });
 }
