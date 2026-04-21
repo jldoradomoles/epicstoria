@@ -8,14 +8,14 @@
         class="event-image event-image-desktop"
         role="img"
         [attr.aria-label]="event.title"
-        [style.background-image]="'url(' + event.imageUrl + ')'"
+        [style.background-image]="'url(\'' + event.imageUrl + '\')'"
       ></div>
       <!-- Imagen para Móvil -->
       <div
         class="event-image event-image-mobile"
         role="img"
         [attr.aria-label]="event.title"
-        [style.background-image]="'url(' + getMobileImageUrl(event.imageUrl) + ')'"
+        [style.background-image]="'url(\'' + getMobileImageUrl(event.imageUrl) + '\')'"
       ></div>
       <!-- <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent\"></div> -->
 
