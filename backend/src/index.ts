@@ -45,7 +45,12 @@ app.use(
 app.use(express.json());
 
 // Servir archivos estáticos (imágenes subidas)
-app.use('/images', express.static(path.join(__dirname, '../../public/images')));
+// Usar process.cwd() para que funcione en desarrollo y producción
+const publicPath = process.env.PUBLIC_DIR || path.join(process.cwd(), '../public');
+app.use('/images', express.static(path.join(publicPath, 'images')));
+
+// Log de la ruta de imágenes para depuración
+console.log('📁 Serving images from:', path.join(publicPath, 'images'));
 
 // Routes
 app.use('/api/auth', authRoutes);

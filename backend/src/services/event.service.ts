@@ -31,6 +31,20 @@ export class EventService {
     'https://placehold.co/600x400/1F2937/FFFFFF?text=Evento+Hist%C3%B3rico';
 
   /**
+   * Obtiene la ruta base del directorio public
+   */
+  private static getPublicPath(): string {
+    // Usar variable de entorno si está definida
+    if (process.env.PUBLIC_DIR) {
+      return process.env.PUBLIC_DIR;
+    }
+
+    // En producción: /var/www/epicstoria/backend/dist → /var/www/epicstoria/public
+    // En desarrollo: /backend/src → /public
+    return path.join(process.cwd(), '../public');
+  }
+
+  /**
    * Verifica si una imagen existe en el sistema de archivos
    * Si no existe, retorna la imagen por defecto
    */
@@ -41,7 +55,7 @@ export class EventService {
 
     // Construir la ruta completa del archivo
     const imagePath = imageUrl.replace(/^\//, '');
-    const fullPath = path.join(__dirname, '../../../public', imagePath);
+    const fullPath = path.join(this.getPublicPath(), imagePath);
 
     // Verificar si el archivo existe
     if (fs.existsSync(fullPath)) {
@@ -49,6 +63,7 @@ export class EventService {
     }
 
     // Si no existe, retornar la imagen por defecto
+    console.warn(`⚠️  Imagen no encontrada: ${fullPath}`);
     return this.DEFAULT_IMAGE;
   }
 
@@ -85,7 +100,7 @@ export class EventService {
     // Buscar imágenes con sufijo -2, -3, -4, etc. hasta -10
     for (let i = 2; i <= 10; i++) {
       const additionalImagePath = `${directory}${baseName}-${i}${extension}`;
-      const fullPath = path.join(__dirname, '../../../public', additionalImagePath);
+      const fullPath = path.join(this.getPublicPath(), additionalImagePath);
 
       if (fs.existsSync(fullPath)) {
         additionalImages.push(`/${additionalImagePath}`);
