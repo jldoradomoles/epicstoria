@@ -59,7 +59,8 @@ export class EventService {
 
     // Verificar si el archivo existe
     if (fs.existsSync(fullPath)) {
-      return imageUrl;
+      // Siempre devolver con barra inicial para que sea una ruta absoluta
+      return `/${imagePath}`;
     }
 
     // Si no existe, retornar la imagen por defecto
@@ -121,7 +122,9 @@ export class EventService {
       date: event.date,
       category: event.category,
       imageUrl: this.validateImageUrl(event.image_url),
-      additionalImages: event.additional_images || [],
+      additionalImages: (event.additional_images || []).map((url: string) =>
+        this.normalizeImageUrl(url),
+      ),
       summary: event.summary,
       context: event.context,
       keyFacts: event.key_facts,
