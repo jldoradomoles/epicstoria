@@ -38,6 +38,10 @@ jobs:
             # Ejecutar migraciones si existen nuevas
             npm run db:migrate || echo "⚠️ No hay migraciones nuevas"
 
+            # Sincronizar imágenes adicionales con la base de datos
+            echo "🖼️ Sincronizando imágenes adicionales..."
+            npm run db:sync-images || echo "⚠️ Error al sincronizar imágenes adicionales"
+
             # Frontend
             echo "🎨 Actualizando frontend..."
             cd ..
