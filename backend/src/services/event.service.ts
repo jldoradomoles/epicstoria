@@ -105,9 +105,6 @@ export class EventService {
 
       if (fs.existsSync(fullPath)) {
         additionalImages.push(`/${additionalImagePath}`);
-      } else {
-        // Si no encontramos una imagen, dejar de buscar
-        break;
       }
     }
 
