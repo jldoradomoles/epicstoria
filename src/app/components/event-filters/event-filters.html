@@ -9,10 +9,7 @@
       <div class="grid gap-4 md:grid-cols-3">
         <!-- Búsqueda por Nombre -->
         <div>
-          <label class="block text-sm font-bold text-color mb-2">
-            <i class="fas fa-signature text-blue-500 mr-2"></i>
-            Nombre del Evento
-          </label>
+          <label class="block text-sm font-bold text-color mb-2"> Nombre del Evento </label>
           <input
             type="text"
             [value]="searchName()"
@@ -24,10 +21,7 @@
 
         <!-- Búsqueda por Contenido -->
         <div>
-          <label class="block text-sm font-bold text-color mb-2">
-            <i class="fas fa-search text-purple-500 mr-2"></i>
-            Palabras Clave
-          </label>
+          <label class="block text-sm font-bold text-color mb-2"> Palabras Clave </label>
           <input
             type="text"
             [value]="searchContent()"
@@ -39,10 +33,7 @@
 
         <!-- Filtro por Categoría -->
         <div>
-          <label class="block text-sm font-bold text-color mb-2">
-            <i class="fas fa-filter text-amber-500 mr-2"></i>
-            Categoría
-          </label>
+          <label class="block text-sm font-bold text-color mb-2"> Categoría </label>
           <select
             [value]="selectedCategory()"
             (change)="selectedCategory.set($any($event.target).value)"
