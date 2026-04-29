@@ -256,6 +256,30 @@ export class EventService {
   }
 
   /**
+   * Re-escanea el filesystem y actualiza additional_images en todos los eventos.
+   * Se llama automáticamente tras cada subida de imagen.
+   */
+  static async syncAdditionalImages(): Promise<{ updated: number }> {
+    const result = await query('SELECT id, image_url, additional_images FROM events');
+    let updated = 0;
+
+    for (const event of result.rows) {
+      const detected = this.detectAdditionalImages(event.image_url);
+      const current: string[] = event.additional_images || [];
+
+      if (JSON.stringify(detected.sort()) !== JSON.stringify([...current].sort())) {
+        await query(
+          'UPDATE events SET additional_images = $1::jsonb, updated_at = NOW() WHERE id = $2',
+          [JSON.stringify(detected), event.id],
+        );
+        updated++;
+      }
+    }
+
+    return { updated };
+  }
+
+  /**
    * Procesa un archivo Excel y actualiza/crea eventos en la base de datos
    */
   static async processExcelUpload(buffer: Buffer): Promise<UploadResult> {

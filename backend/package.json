@@ -19,7 +19,7 @@
     "db:list-events": "ts-node src/database/list-events.ts",
     "db:clear-events": "ts-node src/database/clear-events.ts",
     "db:fix-images": "ts-node src/database/fix-image-urls.ts",
-    "db:sync-images": "ts-node src/database/add-additional-images.ts",
+    "db:sync-images": "ts-node src/database/sync-additional-images.ts",
     "db:add-reset-columns": "ts-node src/database/add-password-reset-columns.ts",
     "test:email": "ts-node src/database/test-email.ts"
   },

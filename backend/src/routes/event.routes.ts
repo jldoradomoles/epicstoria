@@ -112,6 +112,11 @@ router.post(
       // Obtener la URL relativa de la imagen
       const imageUrl = `/images/eventos/${req.file.filename}`;
 
+      // Sincronizar imágenes adicionales en background
+      EventService.syncAdditionalImages().catch((err) =>
+        console.error('Error sincronizando imágenes adicionales:', err),
+      );
+
       res.json({
         success: true,
         data: {
@@ -151,6 +156,11 @@ router.post(
         originalName: file.originalname,
         size: file.size,
       }));
+
+      // Sincronizar imágenes adicionales en background
+      EventService.syncAdditionalImages().catch((err) =>
+        console.error('Error sincronizando imágenes adicionales:', err),
+      );
 
       res.json({
         success: true,
