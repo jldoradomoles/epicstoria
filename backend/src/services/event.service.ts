@@ -260,7 +260,10 @@ export class EventService {
    * Se llama automáticamente tras cada subida de imagen.
    */
   static async syncAdditionalImages(): Promise<{ updated: number }> {
+    const publicPath = this.getPublicPath();
+    console.log(`🔍 [sync] Escaneando imágenes en: ${publicPath}`);
     const result = await query('SELECT id, image_url, additional_images FROM events');
+    console.log(`📝 [sync] Procesando ${result.rows.length} eventos...`);
     let updated = 0;
 
     for (const event of result.rows) {
@@ -272,10 +275,12 @@ export class EventService {
           'UPDATE events SET additional_images = $1::jsonb, updated_at = NOW() WHERE id = $2',
           [JSON.stringify(detected), event.id],
         );
+        console.log(`  ✅ [sync] ${event.id}: ${detected.length} imágenes adicionales`);
         updated++;
       }
     }
 
+    console.log(`✨ [sync] Completado: ${updated} eventos actualizados.`);
     return { updated };
   }
 
@@ -459,6 +464,13 @@ export class EventService {
           await query('DELETE FROM events WHERE id = $1', [dbRow.id]);
           result.deleted++;
         }
+      }
+
+      // Sincronizar imágenes adicionales tras procesar el Excel
+      try {
+        await this.syncAdditionalImages();
+      } catch (syncError) {
+        console.error('⚠️  Error sincronizando imágenes adicionales:', syncError);
       }
 
       return result;

@@ -187,6 +187,25 @@ router.get('/', async (req: Request, res: Response, next: NextFunction) => {
   }
 });
 
+// POST /api/events/sync-images - Sincronizar imágenes adicionales manualmente (solo admin)
+router.post(
+  '/sync-images',
+  authMiddleware,
+  adminMiddleware,
+  async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const result = await EventService.syncAdditionalImages();
+      res.json({
+        success: true,
+        data: result,
+        message: `Sincronización completada: ${result.updated} eventos actualizados`,
+      });
+    } catch (error) {
+      next(error);
+    }
+  },
+);
+
 // GET /api/events/categories
 router.get('/categories', async (req: Request, res: Response, next: NextFunction) => {
   try {
