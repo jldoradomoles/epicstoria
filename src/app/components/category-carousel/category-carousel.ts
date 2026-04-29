@@ -20,10 +20,11 @@ export class CategoryCarousel {
 
   // Computed para convertir nombres de categorías en CategoryCard[]
   categories = computed<CategoryCard[]>(() => {
-    return this.categoryNames().map((name) => ({
-      name,
-      imageUrl: `/images/categorias/${this.normalizeImageName(name)}.jpg`,
-    }));
+    return this.categoryNames().map((name) => {
+      const imageUrl = `/images/categorias/${this.normalizeImageName(name)}.jpg`;
+      console.log(`[CategoryCarousel] Categoría "${name}" → ${imageUrl}`);
+      return { name, imageUrl };
+    });
   });
 
   private normalizeImageName(name: string): string {
