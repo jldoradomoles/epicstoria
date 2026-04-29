@@ -1,4 +1,5 @@
-import { Component, computed, inject, OnDestroy, OnInit, signal } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, computed, inject, OnDestroy, OnInit, PLATFORM_ID, signal } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { Footer } from './components/footer/footer';
@@ -19,6 +20,7 @@ export class App implements OnInit, OnDestroy {
   private authService = inject(AuthService);
   private notificationService = inject(NotificationService);
   private eventApiService = inject(EventApiService);
+  private platformId = inject(PLATFORM_ID);
   private currentUrl = signal<string>('');
 
   // Rutas donde no se muestra el header/footer
@@ -37,21 +39,23 @@ export class App implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.eventApiService.getAllEvents().subscribe((events) => {
-      console.log(
-        `%c📋 Eventos en BD (${events.length} total)`,
-        'font-size:14px;font-weight:bold;color:#6366f1',
-      );
-      console.table(
-        events.map((e) => ({
-          id: e.id,
-          slug: e.slug,
-          titulo: e.title,
-          fecha: e.date,
-          categoria: e.category,
-        })),
-      );
-    });
+    if (isPlatformBrowser(this.platformId)) {
+      this.eventApiService.getAllEvents().subscribe((events) => {
+        console.log(
+          `%c📋 Eventos en BD (${events.length} total)`,
+          'font-size:14px;font-weight:bold;color:#6366f1',
+        );
+        console.table(
+          events.map((e) => ({
+            id: e.id,
+            slug: e.slug,
+            titulo: e.title,
+            fecha: e.date,
+            categoria: e.category,
+          })),
+        );
+      });
+    }
 
     // Iniciar polling de notificaciones si el usuario está autenticado
     if (this.authService.currentUser()) {
