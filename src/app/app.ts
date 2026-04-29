@@ -40,20 +40,26 @@ export class App implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.eventApiService.getAllEvents().subscribe((events) => {
-        console.log(
-          `%c📋 Eventos en BD (${events.length} total)`,
-          'font-size:14px;font-weight:bold;color:#6366f1',
-        );
-        console.table(
-          events.map((e) => ({
-            id: e.id,
-            slug: e.slug,
-            titulo: e.title,
-            fecha: e.date,
-            categoria: e.category,
-          })),
-        );
+      console.log('%c[App] isPlatformBrowser ✅ - cargando eventos...', 'color:#22c55e');
+      this.eventApiService.getAllEvents().subscribe({
+        next: (events) => {
+          console.log(
+            `%c📋 Eventos en BD (${events.length} total)`,
+            'font-size:14px;font-weight:bold;color:#6366f1',
+          );
+          console.table(
+            events.map((e) => ({
+              id: e.id,
+              slug: e.slug,
+              titulo: e.title,
+              fecha: e.date,
+              categoria: e.category,
+            })),
+          );
+        },
+        error: (err) => {
+          console.error('[App] Error al cargar eventos:', err);
+        },
       });
     }
 
