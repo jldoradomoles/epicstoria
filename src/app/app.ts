@@ -56,6 +56,24 @@ export class App implements OnInit, OnDestroy {
               categoria: e.category,
             })),
           );
+
+          const eventsWithImages = events.filter(
+            (e) => e.additionalImages && e.additionalImages.length > 0,
+          );
+          console.log(
+            `%c🖼️ Imágenes adicionales (${eventsWithImages.length} eventos con imágenes extra)`,
+            'font-size:14px;font-weight:bold;color:#f59e0b',
+          );
+          console.table(
+            eventsWithImages.flatMap((e) =>
+              (e.additionalImages ?? []).map((url, i) => ({
+                evento_id: e.id,
+                titulo: e.title,
+                indice: i + 1,
+                url,
+              })),
+            ),
+          );
         },
         error: (err) => {
           console.error('[App] Error al cargar eventos:', err);
