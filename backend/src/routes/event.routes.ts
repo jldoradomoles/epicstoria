@@ -86,7 +86,7 @@ router.post(
       res.json({
         success: true,
         data: result,
-        message: `Procesados: ${result.created} creados, ${result.updated} actualizados`,
+        message: `Procesados: ${result.created} creados, ${result.updated} actualizados, ${result.deleted} eliminados`,
       });
     } catch (error) {
       next(error);

@@ -23,6 +23,7 @@ interface ExcelRow {
 interface UploadResult {
   created: number;
   updated: number;
+  deleted: number;
   errors: string[];
 }
 
@@ -261,6 +262,7 @@ export class EventService {
     const result: UploadResult = {
       created: 0,
       updated: 0,
+      deleted: 0,
       errors: [],
     };
 
@@ -276,6 +278,11 @@ export class EventService {
       if (data.length === 0) {
         throw new AppError('El archivo Excel está vacío', 400);
       }
+
+      // IDs presentes en el Excel
+      const excelIds = new Set(
+        data.filter((row) => row.id && row.title).map((row) => String(row.id)),
+      );
 
       // Procesar cada fila
       for (const row of data) {
@@ -418,6 +425,15 @@ export class EventService {
         } catch (rowError: unknown) {
           const errorMessage = rowError instanceof Error ? rowError.message : 'Error desconocido';
           result.errors.push(`Error en evento ${row.id}: ${errorMessage}`);
+        }
+      }
+
+      // Eliminar eventos que ya no están en el Excel
+      const dbEvents = await query('SELECT id FROM events');
+      for (const dbRow of dbEvents.rows) {
+        if (!excelIds.has(dbRow.id)) {
+          await query('DELETE FROM events WHERE id = $1', [dbRow.id]);
+          result.deleted++;
         }
       }
 
