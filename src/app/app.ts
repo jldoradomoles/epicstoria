@@ -4,6 +4,7 @@ import { filter } from 'rxjs/operators';
 import { Footer } from './components/footer/footer';
 import { Header } from './components/header/header';
 import { AuthService } from './services/auth.service';
+import { EventApiService } from './services/event-api.service';
 import { NotificationService } from './services/notification.service';
 
 @Component({
@@ -17,6 +18,7 @@ export class App implements OnInit, OnDestroy {
   private router = inject(Router);
   private authService = inject(AuthService);
   private notificationService = inject(NotificationService);
+  private eventApiService = inject(EventApiService);
   private currentUrl = signal<string>('');
 
   // Rutas donde no se muestra el header/footer
@@ -35,6 +37,22 @@ export class App implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.eventApiService.getAllEvents().subscribe((events) => {
+      console.log(
+        `%c📋 Eventos en BD (${events.length} total)`,
+        'font-size:14px;font-weight:bold;color:#6366f1',
+      );
+      console.table(
+        events.map((e) => ({
+          id: e.id,
+          slug: e.slug,
+          titulo: e.title,
+          fecha: e.date,
+          categoria: e.category,
+        })),
+      );
+    });
+
     // Iniciar polling de notificaciones si el usuario está autenticado
     if (this.authService.currentUser()) {
       this.notificationService.startPolling();

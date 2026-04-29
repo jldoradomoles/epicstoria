@@ -16,6 +16,7 @@
     "db:migrate-user-profile": "ts-node src/database/add-user-profile-fields.ts",
     "db:test-points": "ts-node src/database/test-points.ts",
     "db:seed": "ts-node src/database/seed.ts",
+    "db:list-events": "ts-node src/database/list-events.ts",
     "db:clear-events": "ts-node src/database/clear-events.ts",
     "db:fix-images": "ts-node src/database/fix-image-urls.ts",
     "db:sync-images": "ts-node src/database/add-additional-images.ts",

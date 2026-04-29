@@ -235,6 +235,26 @@ export class EventService {
   }
 
   /**
+   * Genera un slug único verificando que no exista ya en la BD para otro evento distinto.
+   * Si hay colisión, agrega un sufijo numérico (-2, -3, …).
+   */
+  private static async generateUniqueSlug(baseSlug: string, eventId: string): Promise<string> {
+    let slug = baseSlug;
+    let counter = 2;
+    while (true) {
+      const existing = await query('SELECT id FROM events WHERE slug = $1 AND id != $2', [
+        slug,
+        eventId,
+      ]);
+      if (existing.rows.length === 0) {
+        return slug;
+      }
+      slug = `${baseSlug}-${counter}`;
+      counter++;
+    }
+  }
+
+  /**
    * Procesa un archivo Excel y actualiza/crea eventos en la base de datos
    */
   static async processExcelUpload(buffer: Buffer): Promise<UploadResult> {
@@ -315,9 +335,12 @@ export class EventService {
           const normalizedImageUrl = this.normalizeImageUrl(row.imageUrl);
           const additionalImages = this.detectAdditionalImages(normalizedImageUrl);
 
+          const baseSlug = generateEventSlug(row.title, this.convertDate(row.date));
+          const uniqueSlug = await this.generateUniqueSlug(baseSlug, row.id);
+
           const eventData = {
             id: row.id,
-            slug: generateEventSlug(row.title, this.convertDate(row.date)),
+            slug: uniqueSlug,
             title: row.title,
             date: this.convertDate(row.date),
             category: row.category,
