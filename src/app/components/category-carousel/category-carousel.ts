@@ -1,4 +1,4 @@
-import { Component, computed, input, output } from '@angular/core';
+import { Component, output } from '@angular/core';
 
 interface CategoryCard {
   name: string;
@@ -12,29 +12,18 @@ interface CategoryCard {
   styleUrl: './category-carousel.scss',
 })
 export class CategoryCarousel {
-  // Input de categorías disponibles
-  categoryNames = input.required<string[]>();
-
-  // Output para emitir la categoría seleccionada
   categorySelected = output<string>();
 
-  // Computed para convertir nombres de categorías en CategoryCard[]
-  categories = computed<CategoryCard[]>(() => {
-    return this.categoryNames().map((name) => {
-      const imageUrl = `/images/categorias/${this.normalizeImageName(name)}.jpg`;
-      console.log(`[CategoryCarousel] Categoría "${name}" → ${imageUrl}`);
-      return { name, imageUrl };
-    });
-  });
-
-  private normalizeImageName(name: string): string {
-    return name
-      .trim()
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .replace(/\s+/g, '-');
-  }
+  readonly categories: CategoryCard[] = [
+    { name: 'Personajes históricos', imageUrl: '/images/categorias/personajes-historicos.jpg' },
+    { name: 'Rincón histórico', imageUrl: '/images/categorias/rincon-historico.jpg' },
+    { name: 'Monumentos', imageUrl: '/images/categorias/monumentos.jpg' },
+    { name: 'Catástrofes', imageUrl: '/images/categorias/catastrofes.jpg' },
+    { name: 'Mitología', imageUrl: '/images/categorias/mitologia.jpg' },
+    { name: 'Descubrimientos', imageUrl: '/images/categorias/descubrimientos.jpg' },
+    { name: 'Espacio', imageUrl: '/images/categorias/espacio.jpg' },
+    { name: 'Artefactos', imageUrl: '/images/categorias/artefactos-historicos.jpg' },
+  ];
 
   selectCategory(category: string) {
     this.categorySelected.emit(category);

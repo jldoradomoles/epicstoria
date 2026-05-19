@@ -18,7 +18,7 @@
         class="category-scroll-container flex gap-4 overflow-x-auto pb-4 scroll-smooth"
         style="scrollbar-width: none; -ms-overflow-style: none"
       >
-        @for (category of categories(); track category.name) {
+        @for (category of categories; track category.name) {
           <div
             (click)="selectCategory(category.name)"
             class="category-card flex-shrink-0 w-48 h-32 rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl relative"

@@ -9,10 +9,7 @@
 />
 
 <!-- Carrusel de Categorías -->
-<app-category-carousel
-  [categoryNames]="categories()"
-  (categorySelected)="onCategorySelected($event)"
-/>
+<app-category-carousel (categorySelected)="onCategorySelected($event)" />
 
 <!-- Tarjetas de Eventos -->
 <app-event-cards [events]="filteredEvents()" [resetTrigger]="paginationReset()" />
