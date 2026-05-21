@@ -34,6 +34,7 @@
                 <tr>
                   <th class="px-6 py-4 text-left text-sm font-semibold text-color">Posición</th>
                   <th class="px-6 py-4 text-left text-sm font-semibold text-color">Usuario</th>
+                  <th class="px-6 py-4 text-center text-sm font-semibold text-color">País</th>
                   <th class="px-6 py-4 text-center text-sm font-semibold text-color">
                     Puntos
                   </th>
@@ -85,6 +86,22 @@
                           </div>
                         </div>
                       </div>
+                    </td>
+
+                    <!-- País -->
+                    <td class="px-6 py-4 text-center">
+                      @if (entry.country && entry.country !== 'Otro' && getCountryCode(entry.country)) {
+                        <span
+                          class="fi rounded-sm shadow-sm"
+                          [class]="'fi-' + getCountryCode(entry.country)"
+                          [title]="entry.country"
+                          style="font-size: 1.5rem;"
+                        ></span>
+                      } @else if (entry.country && entry.country !== 'Otro') {
+                        <span class="text-sm text-amber-200/60">{{ entry.country }}</span>
+                      } @else {
+                        <span class="text-sm text-amber-200/30">-</span>
+                      }
                     </td>
 
                     <!-- Puntos -->

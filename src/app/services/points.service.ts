@@ -126,7 +126,9 @@ export class PointsService {
         id: number;
         name: string;
         lastname?: string;
+        nickname?: string;
         avatar_url?: string;
+        country?: string;
         points: number;
         stars: number;
         quizzes_completed: number;
@@ -144,7 +146,9 @@ export class PointsService {
           id: number;
           name: string;
           lastname?: string;
+          nickname?: string;
           avatar_url?: string;
+          country?: string;
           points: number;
           stars: number;
           quizzes_completed: number;

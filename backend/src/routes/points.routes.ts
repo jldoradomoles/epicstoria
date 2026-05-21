@@ -123,6 +123,7 @@ router.get('/leaderboard', async (req, res, next) => {
         u.lastname,
         u.nickname,
         u.avatar_url,
+        u.country,
         u.points,
         u.created_at,
         FLOOR(u.points / 100) as stars,
@@ -130,7 +131,7 @@ router.get('/leaderboard', async (req, res, next) => {
       FROM users u
       LEFT JOIN quiz_completions qc ON u.id = qc.user_id
       WHERE u.points > 0 AND u.role != 'admin'
-      GROUP BY u.id, u.name, u.lastname, u.nickname, u.avatar_url, u.points, u.created_at
+      GROUP BY u.id, u.name, u.lastname, u.nickname, u.avatar_url, u.country, u.points, u.created_at
       ORDER BY u.points DESC, u.created_at ASC
       LIMIT $1 OFFSET $2`,
       [limit, offset],

@@ -43,37 +43,40 @@ export class App implements OnInit, OnDestroy {
       console.log('%c[App] isPlatformBrowser ✅ - cargando eventos...', 'color:#22c55e');
       this.eventApiService.getAllEvents().subscribe({
         next: (events) => {
-          console.log(
-            `%c📋 Eventos en BD (${events.length} total)`,
-            'font-size:14px;font-weight:bold;color:#6366f1',
-          );
-          console.table(
-            events.map((e) => ({
-              id: e.id,
-              slug: e.slug,
-              titulo: e.title,
-              fecha: e.date,
-              categoria: e.category,
-            })),
-          );
+          // Logs para comtrolar la estructura de los eventos y detectar posibles problemas con las imágenes
+          // console.log(
+          //   `%c📋 Eventos en BD (${events.length} total)`,
+          //   'font-size:14px;font-weight:bold;color:#6366f1',
+          // );
+          // Logs para comtrolar la estructura de los eventos y detectar posibles problemas con las imágenes
+          // console.table(
+          //   events.map((e) => ({
+          //     id: e.id,
+          //     slug: e.slug,
+          //     titulo: e.title,
+          //     fecha: e.date,
+          //     categoria: e.category,
+          //   })),
+          // );
 
           const eventsWithImages = events.filter(
             (e) => e.additionalImages && e.additionalImages.length > 0,
           );
-          console.log(
-            `%c🖼️ Imágenes adicionales (${eventsWithImages.length} eventos con imágenes extra)`,
-            'font-size:14px;font-weight:bold;color:#f59e0b',
-          );
-          console.table(
-            eventsWithImages.flatMap((e) =>
-              (e.additionalImages ?? []).map((url, i) => ({
-                evento_id: e.id,
-                titulo: e.title,
-                indice: i + 1,
-                url,
-              })),
-            ),
-          );
+          // Logs para comtrolar la estructura de los eventos y detectar posibles problemas con las imágenes
+          // console.log(
+          //   `%c🖼️ Imágenes adicionales (${eventsWithImages.length} eventos con imágenes extra)`,
+          //   'font-size:14px;font-weight:bold;color:#f59e0b',
+          // );
+          // console.table(
+          //   eventsWithImages.flatMap((e) =>
+          //     (e.additionalImages ?? []).map((url, i) => ({
+          //       evento_id: e.id,
+          //       titulo: e.title,
+          //       indice: i + 1,
+          //       url,
+          //     })),
+          //   ),
+          // );
         },
         error: (err) => {
           console.error('[App] Error al cargar eventos:', err);

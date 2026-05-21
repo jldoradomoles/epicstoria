@@ -11,6 +11,7 @@ interface LeaderboardEntry {
   lastname?: string;
   nickname?: string;
   avatar_url?: string;
+  country?: string;
   points: number;
   stars: number;
   quizzes_completed: number;
@@ -90,5 +91,34 @@ export class Juegos implements OnInit {
     if (index === 1) return 'fa-medal';
     if (index === 2) return 'fa-award';
     return 'fa-trophy';
+  }
+
+  private readonly countryCodes: Record<string, string> = {
+    Argentina: 'ar',
+    Bolivia: 'bo',
+    Chile: 'cl',
+    Colombia: 'co',
+    'Costa Rica': 'cr',
+    Cuba: 'cu',
+    Ecuador: 'ec',
+    'El Salvador': 'sv',
+    España: 'es',
+    'Estados Unidos': 'us',
+    Guatemala: 'gt',
+    Honduras: 'hn',
+    México: 'mx',
+    Nicaragua: 'ni',
+    Panamá: 'pa',
+    Paraguay: 'py',
+    Perú: 'pe',
+    'Puerto Rico': 'pr',
+    'República Dominicana': 'do',
+    Uruguay: 'uy',
+    Venezuela: 've',
+  };
+
+  getCountryCode(country?: string): string {
+    if (!country) return '';
+    return this.countryCodes[country] ?? '';
   }
 }
