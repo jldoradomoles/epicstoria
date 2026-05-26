@@ -22,7 +22,7 @@ export class CategoryCarousel {
     { name: 'Mitología', imageUrl: '/images/categorias/mitologia.jpg' },
     { name: 'Descubrimientos', imageUrl: '/images/categorias/descubrimientos.jpg' },
     { name: 'Espacio', imageUrl: '/images/categorias/espacio.jpg' },
-    { name: 'Artefactos', imageUrl: '/images/categorias/artefactos-historicos.jpg' },
+    { name: 'Artefactos históricos', imageUrl: '/images/categorias/artefactos-historicos.jpg' },
   ];
 
   selectCategory(category: string) {

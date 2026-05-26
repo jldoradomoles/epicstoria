@@ -47,9 +47,10 @@ export class Eventos implements OnInit {
         const sortedEvents = [...events].sort((a, b) => {
           return new Date(b.date).getTime() - new Date(a.date).getTime();
         });
-        this.allEvents.set(sortedEvents);
+        const trimmedEvents = sortedEvents.map((e) => ({ ...e, category: e.category?.trim() }));
+        this.allEvents.set(trimmedEvents);
         // Por defecto mostrar todos los eventos (la paginación mostrará los 6 primeros)
-        this.filteredEvents.set(sortedEvents);
+        this.filteredEvents.set(trimmedEvents);
         // Extraer categorías después de cargar los eventos
         this.extractCategories();
       },
@@ -111,8 +112,15 @@ export class Eventos implements OnInit {
 
   onCategorySelected(category: string) {
     this.selectedCategory.set(category);
-    // Filtrar eventos por la categoría seleccionada
-    const filtered = this.allEvents().filter((event) => event.category === category);
+    const normalize = (s: string) =>
+      s
+        .trim()
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+    const filtered = this.allEvents().filter(
+      (event) => normalize(event.category) === normalize(category),
+    );
     this.filteredEvents.set(filtered);
     // Reiniciar la paginación al seleccionar categoría
     this.resetPagination();

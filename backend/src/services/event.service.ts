@@ -160,7 +160,7 @@ export class EventService {
 
   static async getEventsByCategory(category: string): Promise<EventResponse[]> {
     const result = await query(
-      'SELECT * FROM events WHERE LOWER(category) = LOWER($1) ORDER BY date DESC',
+      'SELECT * FROM events WHERE LOWER(TRIM(category)) = LOWER(TRIM($1)) ORDER BY date DESC',
       [category],
     );
     return result.rows.map((event: Event) => this.toEventResponse(event));

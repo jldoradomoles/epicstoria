@@ -116,11 +116,9 @@
                     <td class="px-6 py-4">
                       <div class="flex items-center justify-center gap-1">
                         @if (entry.stars > 0) {
-                          @for (star of getStarsArray(entry.stars); track $index) {
-                            <i class="fas fa-star text-yellow-400"></i>
-                          }
-                          @if (entry.stars > 10) {
-                            <span class="ml-1 text-sm text-color">+{{ entry.stars - 10 }}</span>
+                          <i class="fas fa-star text-yellow-400"></i>
+                          @if (entry.stars > 1) {
+                            <span class="text-2xl font-bold text-color">{{ entry.stars }}</span>
                           }
                         } @else {
                           <span class="text-sm text-amber-200/50">-</span>
