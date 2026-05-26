@@ -17,6 +17,7 @@ export interface User {
   bio?: string;
   favorite_category?: string;
   points: number;
+  level: string;
   reset_token?: string;
   reset_token_expiry?: Date;
   created_at: Date;
@@ -58,6 +59,7 @@ export interface UserPublic {
   bio?: string;
   favorite_category?: string;
   points: number;
+  level: string;
   created_at: Date;
 }
 

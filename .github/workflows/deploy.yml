@@ -35,8 +35,9 @@ jobs:
             npm install
             npm run build
 
-            # Ejecutar migraciones si existen nuevas
-            npm run db:migrate || echo "⚠️ No hay migraciones nuevas"
+            # Ejecutar todas las migraciones (idempotentes con IF NOT EXISTS)
+            echo "🗄️ Ejecutando migraciones de base de datos..."
+            npm run db:migrate-all || echo "⚠️ Error en alguna migración, revisa los logs"
 
             # Sincronizar imágenes adicionales con la base de datos
             echo "🖼️ Sincronizando imágenes adicionales..."

@@ -1,6 +1,7 @@
 import { query } from '../config/database';
 import { AppError } from '../middleware/error.middleware';
 import { PointsHistory, QuizCompletion, QuizCompletionRequest } from '../models/user.model';
+import { calculateLevel } from '../utils/levels';
 
 export class PointsService {
   /**
@@ -176,7 +177,12 @@ export class PointsService {
 
       // Si se ganaron puntos, actualizar el total del usuario y registrar en historial
       if (pointsEarned > 0) {
-        await query('UPDATE users SET points = points + $1 WHERE id = $2', [pointsEarned, userId]);
+        const updatedUser = await query(
+          'UPDATE users SET points = points + $1 WHERE id = $2 RETURNING points',
+          [pointsEarned, userId],
+        );
+        const newLevel = calculateLevel(updatedUser.rows[0].points);
+        await query('UPDATE users SET level = $1 WHERE id = $2', [newLevel, userId]);
 
         await query(
           `INSERT INTO points_history (user_id, points, source, source_id)
@@ -261,7 +267,12 @@ export class PointsService {
     const client = await query('BEGIN', []);
 
     try {
-      await query('UPDATE users SET points = points + $1 WHERE id = $2', [points, userId]);
+      const updatedUser = await query(
+        'UPDATE users SET points = points + $1 WHERE id = $2 RETURNING points',
+        [points, userId],
+      );
+      const newLevel = calculateLevel(updatedUser.rows[0].points);
+      await query('UPDATE users SET level = $1 WHERE id = $2', [newLevel, userId]);
 
       await query(
         `INSERT INTO points_history (user_id, points, source, source_id)

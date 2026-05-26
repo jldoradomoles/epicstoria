@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 import { Hero } from '../../components/hero/hero';
 import { PointsService } from '../../services/points.service';
 import { SeoService } from '../../services/seo.service';
+import { LEVELS } from '../../utils/levels.utils';
 
 interface LeaderboardEntry {
   id: number;
@@ -14,6 +15,7 @@ interface LeaderboardEntry {
   country?: string;
   points: number;
   stars: number;
+  level: string;
   quizzes_completed: number;
   created_at: Date;
 }
@@ -120,5 +122,12 @@ export class Juegos implements OnInit {
   getCountryCode(country?: string): string {
     if (!country) return '';
     return this.countryCodes[country] ?? '';
+  }
+
+  private readonly levelImageMap = new Map<string, number>(LEVELS.map((l) => [l.name, l.index]));
+
+  getLevelImage(levelName: string): string {
+    const index = this.levelImageMap.get(levelName) ?? 0;
+    return `images/levels/Nivel-${index}.jpg`;
   }
 }

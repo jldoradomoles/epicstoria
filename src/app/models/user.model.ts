@@ -16,6 +16,7 @@ export interface User {
   bio?: string;
   favorite_category?: string;
   points: number;
+  level: string;
   created_at: Date;
 }
 

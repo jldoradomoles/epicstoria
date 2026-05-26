@@ -1,12 +1,12 @@
-import { NgClass } from '@angular/common';
+import { isPlatformBrowser, NgClass } from '@angular/common';
 import {
   ChangeDetectorRef,
   Component,
   effect,
-  HostListener,
   inject,
   input,
   OnInit,
+  PLATFORM_ID,
   signal,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
@@ -21,9 +21,11 @@ import { getPlainText } from '../../utils/text.utils';
   imports: [RouterLink, DateFormatPipe, NgClass],
   templateUrl: './event-cards.html',
   styleUrl: './event-cards.scss',
+  host: { '(window:resize)': 'onResize()' },
 })
 export class EventCards implements OnInit {
   private cdr = inject(ChangeDetectorRef);
+  private platformId = inject(PLATFORM_ID);
 
   // Input de eventos desde el componente padre
   events = input<Event[]>([]);
@@ -76,12 +78,13 @@ export class EventCards implements OnInit {
     await handleImageError(event, imgElement.src, this.defaultImage);
   }
 
-  @HostListener('window:resize')
   onResize() {
     this.checkScreenSize();
   }
 
   private checkScreenSize() {
-    this.isMobile = window.innerWidth < 768; // 768px es el breakpoint md de Tailwind
+    if (isPlatformBrowser(this.platformId)) {
+      this.isMobile = window.innerWidth < 768;
+    }
   }
 }

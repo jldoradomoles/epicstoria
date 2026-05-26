@@ -34,6 +34,7 @@
                 <tr>
                   <th class="px-6 py-4 text-left text-sm font-semibold text-color">Posición</th>
                   <th class="px-6 py-4 text-left text-sm font-semibold text-color">Usuario</th>
+                  <th class="px-6 py-4 text-left text-sm font-semibold text-color">Nivel</th>
                   <th class="px-6 py-4 text-center text-sm font-semibold text-color">País</th>
                   <th class="px-6 py-4 text-center text-sm font-semibold text-color">
                     Puntos
@@ -85,6 +86,18 @@
                             Miembro desde {{ entry.created_at | date: 'MMM yyyy' }}
                           </div>
                         </div>
+                      </div>
+                    </td>
+
+                    <!-- Nivel -->
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-3">
+                        <img
+                          [src]="getLevelImage(entry.level)"
+                          [alt]="entry.level"
+                          class="w-12 h-12 rounded-full object-cover shadow-md flex-shrink-0"
+                        />
+                        <span class="text-sm font-medium text-amber-300 leading-tight">{{ entry.level }}</span>
                       </div>
                     </td>
 

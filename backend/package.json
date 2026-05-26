@@ -14,6 +14,8 @@
     "db:migrate-slug": "ts-node src/database/add-slug-column.ts",
     "db:migrate-exam": "ts-node src/database/add-exam-column.ts",
     "db:migrate-user-profile": "ts-node src/database/add-user-profile-fields.ts",
+    "db:migrate-level": "ts-node src/database/add-level-column.ts",
+    "db:migrate-all": "ts-node src/database/migrate.ts && ts-node src/database/migrate-points.ts && ts-node src/database/migrate-friendships.ts && ts-node src/database/create-messages-table.ts && ts-node src/database/add-slug-column.ts && ts-node src/database/add-exam-column.ts && ts-node src/database/add-user-profile-fields.ts && ts-node src/database/add-level-column.ts",
     "db:test-points": "ts-node src/database/test-points.ts",
     "db:seed": "ts-node src/database/seed.ts",
     "db:list-events": "ts-node src/database/list-events.ts",

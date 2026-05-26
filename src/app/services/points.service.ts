@@ -131,6 +131,7 @@ export class PointsService {
         country?: string;
         points: number;
         stars: number;
+        level: string;
         quizzes_completed: number;
         created_at: Date;
       }>;
@@ -151,6 +152,7 @@ export class PointsService {
           country?: string;
           points: number;
           stars: number;
+          level: string;
           quizzes_completed: number;
           created_at: Date;
         }>;
