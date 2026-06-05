@@ -15,10 +15,20 @@
         >
           <div class="flex flex-col md:flex-row items-center gap-4 md:gap-4">
             <!-- Avatar -->
-            <div
-              class="w-20 h-20 flex-shrink-0 rounded-full bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center text-2xl font-bold text-white shadow-lg"
-            >
-              {{ getInitials() }}
+            <div class="w-20 h-20 flex-shrink-0 rounded-full shadow-lg overflow-hidden">
+              @if (currentUser.avatar_url) {
+                <img
+                  [src]="currentUser.avatar_url"
+                  [alt]="currentUser.name"
+                  class="w-full h-full object-cover"
+                />
+              } @else {
+                <div
+                  class="w-full h-full bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center text-2xl font-bold text-white"
+                >
+                  {{ getInitials() }}
+                </div>
+              }
             </div>
             <div class="flex-grow text-center md:text-left">
               <h2 class="text-xl font-semibold text-color">
@@ -110,6 +120,17 @@
           >
             <i class="fas fa-heart mr-1 md:mr-2"></i>
             Favoritos
+          </button>
+          <button
+            (click)="setActiveTab('avatar')"
+            [class]="
+              activeTab() === 'avatar'
+                ? 'flex-1 min-w-fit py-3 px-3 md:py-4 md:px-6 text-color text-sm md:text-base border-b-2 border-amber-500 font-medium bg-amber-900/20 whitespace-nowrap'
+                : 'flex-1 min-w-fit py-3 px-3 md:py-4 md:px-6 text-amber-200/60 text-sm md:text-base hover:text-amber-200 hover:bg-amber-900/10 transition-colors whitespace-nowrap'
+            "
+          >
+            <i class="fas fa-user-circle mr-1 md:mr-2"></i>
+            Avatar
           </button>
           @if (isAdmin) {
             <button
@@ -817,6 +838,197 @@
                   </ul>
                 </div>
               </div>
+            </div>
+          }
+
+          <!-- Tab: Avatar -->
+          @if (activeTab() === 'avatar') {
+            <!-- Modal de información del avatar -->
+            @if (isAvatarModalOpen()) {
+              <div
+                class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+                (click)="closeAvatarInfo()"
+              >
+                <div class="relative max-w-lg w-full" (click)="$event.stopPropagation()">
+                  <img
+                    [src]="selectedInfoImage()"
+                    alt="Información del avatar"
+                    class="w-full rounded-xl shadow-2xl"
+                  />
+                  <button
+                    (click)="closeAvatarInfo()"
+                    class="absolute top-3 right-3 w-10 h-10 bg-black/60 hover:bg-black/80 text-white rounded-full flex items-center justify-center transition-colors"
+                  >
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+            }
+
+            <div>
+              <div class="mb-6">
+                <h2 class="text-2xl font-semibold text-color mb-2">
+                  <i class="fas fa-user-circle mr-2 text-amber-400"></i>
+                  Elige tu Avatar
+                </h2>
+                <p class="text-amber-200/60 text-lg">
+                  Selecciona un avatar disponible según tu nivel. Haz clic en la imagen para ver más
+                  información.
+                </p>
+              </div>
+
+              <!-- Mensajes -->
+              @if (avatarSuccessMessage()) {
+                <div
+                  class="mb-6 p-4 bg-green-900/50 border border-green-500/50 rounded-lg text-green-200 text-lg flex items-center gap-3"
+                >
+                  <i class="fas fa-check-circle text-green-400"></i>
+                  <span>{{ avatarSuccessMessage() }}</span>
+                </div>
+              }
+              @if (avatarErrorMessage()) {
+                <div
+                  class="mb-6 p-4 bg-red-900/50 border border-red-500/50 rounded-lg text-red-200 text-lg flex items-center gap-3"
+                >
+                  <i class="fas fa-exclamation-circle text-red-400"></i>
+                  <span>{{ avatarErrorMessage() }}</span>
+                </div>
+              }
+
+              <!-- Secciones por nivel -->
+              @for (level of avatarLevels; track level.index) {
+                <div class="mb-10">
+                  <!-- Cabecera del nivel -->
+                  <div
+                    class="flex items-center gap-3 mb-4 pb-2 border-b"
+                    [class]="
+                      level.index <= userLevelIndex()
+                        ? 'border-amber-700/40'
+                        : 'border-amber-900/20'
+                    "
+                  >
+                    <!-- Logo del nivel -->
+                    <div
+                      class="w-28 h-28 rounded-full overflow-hidden flex-shrink-0 border-2 transition-all"
+                      [class]="
+                        level.index <= userLevelIndex()
+                          ? 'border-amber-500/60'
+                          : 'border-amber-900/20 opacity-30'
+                      "
+                    >
+                      <img
+                        [src]="'images/levels/Nivel-' + level.index + '.jpg'"
+                        [alt]="level.name"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    @if (level.index <= userLevelIndex()) {
+                      <i class="fas fa-unlock-alt text-amber-400 text-lg"></i>
+                    } @else {
+                      <i class="fas fa-lock text-amber-900/50 text-lg"></i>
+                    }
+                    <h3
+                      class="text-lg font-semibold"
+                      [class]="level.index <= userLevelIndex() ? 'text-color' : 'text-amber-200/30'"
+                    >
+                      Nivel {{ level.index + 1 }}: {{ level.name }}
+                    </h3>
+                    <span
+                      class="text-sm px-2 py-0.5 rounded-full"
+                      [class]="
+                        level.index <= userLevelIndex()
+                          ? 'bg-amber-600/20 text-amber-300'
+                          : 'bg-stone-800/30 text-amber-200/20'
+                      "
+                    >
+                      {{ level.minPoints }} pts
+                    </span>
+                  </div>
+
+                  <!-- Grid de avatares -->
+                  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                    @for (avatar of avatars; track avatar.image) {
+                      <div class="flex flex-col items-center gap-2">
+                        <!-- Imagen del avatar (clic abre info) -->
+                        <button
+                          (click)="
+                            level.index <= userLevelIndex() && openAvatarInfo(avatar.infoImage)
+                          "
+                          class="relative group w-full aspect-square rounded-xl overflow-hidden border-2 transition-all duration-200"
+                          [class]="
+                            level.index <= userLevelIndex()
+                              ? currentUser && currentUser.avatar_url === avatar.image
+                                ? 'border-amber-400 ring-2 ring-amber-400/50 cursor-pointer'
+                                : 'border-amber-900/50 hover:border-amber-500/70 cursor-pointer'
+                              : 'border-amber-900/20 cursor-default opacity-40'
+                          "
+                        >
+                          <img
+                            [src]="avatar.image"
+                            [alt]="avatar.name"
+                            class="w-full h-full object-cover"
+                          />
+                          @if (level.index <= userLevelIndex()) {
+                            <div
+                              class="absolute inset-0 bg-black/0 group-hover:bg-black/30 flex items-center justify-center transition-all duration-200"
+                            >
+                              <i
+                                class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg"
+                              ></i>
+                            </div>
+                          } @else {
+                            <div
+                              class="absolute inset-0 bg-black/40 flex items-center justify-center"
+                            >
+                              <i class="fas fa-lock text-white/40 text-2xl"></i>
+                            </div>
+                          }
+                        </button>
+
+                        <!-- Nombre del avatar -->
+                        <p
+                          class="text-sm text-center font-medium"
+                          [class]="
+                            level.index <= userLevelIndex()
+                              ? 'text-amber-200/80'
+                              : 'text-amber-200/25'
+                          "
+                        >
+                          {{ avatar.name }}
+                        </p>
+
+                        <!-- Botón seleccionar avatar -->
+                        @if (level.index <= userLevelIndex()) {
+                          @if (currentUser && currentUser.avatar_url === avatar.image) {
+                            <span
+                              class="w-full py-1.5 px-2 text-xs text-center rounded-lg font-medium bg-amber-900/40 border border-amber-500/40 text-amber-300"
+                            >
+                              <i class="fas fa-check mr-1"></i>Seleccionado
+                            </span>
+                          } @else {
+                            <button
+                              (click)="selectAvatar(avatar.image)"
+                              [disabled]="isSelectingAvatar()"
+                              class="w-full py-1.5 px-2 text-xs rounded-lg font-medium bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                              @if (isSelectingAvatar()) {
+                                <i class="fas fa-spinner fa-spin mr-1"></i>
+                              }
+                              Usar avatar
+                            </button>
+                          }
+                        } @else {
+                          <span
+                            class="w-full py-1.5 px-2 text-xs text-center rounded-lg font-medium bg-stone-800/30 text-amber-200/20 cursor-not-allowed"
+                          >
+                            <i class="fas fa-lock mr-1"></i>Bloqueado
+                          </span>
+                        }
+                      </div>
+                    }
+                  </div>
+                </div>
+              }
             </div>
           }
         </div>

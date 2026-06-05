@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit, signal } from '@angular/core';
+import { Component, computed, OnDestroy, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { interval, Subscription } from 'rxjs';
@@ -10,6 +10,36 @@ import { ChatService } from '../../services/chat.service';
 import { EventApiService } from '../../services/event-api.service';
 import { FriendshipService } from '../../services/friendship.service';
 import { PointsService } from '../../services/points.service';
+import { getLevelInfo, LEVELS } from '../../utils/levels.utils';
+
+interface AvatarItem {
+  name: string;
+  image: string;
+  infoImage: string;
+}
+
+const AVATAR_LIST: AvatarItem[] = [
+  {
+    name: 'Marco Polo',
+    image: 'images/logos-levels/Marco-Polo.jpg',
+    infoImage: 'images/logos-levels/Marco-Polo-info.jpg',
+  },
+  {
+    name: 'Tutankamón',
+    image: 'images/logos-levels/Tutankamon.jpg',
+    infoImage: 'images/logos-levels/Tutankamon-info.jpg',
+  },
+  {
+    name: 'Tutankamón II',
+    image: 'images/logos-levels/Tutankamon2.jpg',
+    infoImage: 'images/logos-levels/Tutankamon-info.jpg',
+  },
+  {
+    name: 'Barba Negra',
+    image: 'images/logos-levels/barba-negra.jpg',
+    infoImage: 'images/logos-levels/barba-negra.jpg',
+  },
+];
 
 @Component({
   selector: 'app-profile',
@@ -31,7 +61,23 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
   showCurrentPassword = signal<boolean>(false);
   showNewPassword = signal<boolean>(false);
-  activeTab = signal<'profile' | 'password' | 'friends' | 'admin'>('profile');
+  activeTab = signal<'profile' | 'password' | 'friends' | 'admin' | 'avatar'>('profile');
+
+  // Avatar selection state
+  isAvatarModalOpen = signal<boolean>(false);
+  selectedInfoImage = signal<string>('');
+  avatarSuccessMessage = signal<string>('');
+  avatarErrorMessage = signal<string>('');
+  isSelectingAvatar = signal<boolean>(false);
+
+  readonly avatarLevels = LEVELS;
+  readonly avatars = AVATAR_LIST;
+
+  userLevelIndex = computed(() => {
+    const user = this.authService.currentUser();
+    if (!user) return 0;
+    return getLevelInfo(user.points || 0).index;
+  });
 
   // Friends state
   friends = signal<Friend[]>([]);
@@ -182,7 +228,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     }
   }
 
-  setActiveTab(tab: 'profile' | 'password' | 'friends' | 'admin'): void {
+  setActiveTab(tab: 'profile' | 'password' | 'friends' | 'admin' | 'avatar'): void {
     this.activeTab.set(tab);
     this.clearMessages();
 
@@ -253,6 +299,37 @@ export class ProfileComponent implements OnInit, OnDestroy {
     this.imageSuccessMessage.set('');
     this.imageErrorMessage.set('');
     this.imageUploadResult.set(null);
+    this.avatarSuccessMessage.set('');
+    this.avatarErrorMessage.set('');
+  }
+
+  openAvatarInfo(infoImage: string): void {
+    this.selectedInfoImage.set(infoImage);
+    this.isAvatarModalOpen.set(true);
+  }
+
+  closeAvatarInfo(): void {
+    this.isAvatarModalOpen.set(false);
+    this.selectedInfoImage.set('');
+  }
+
+  selectAvatar(avatarUrl: string): void {
+    if (this.isSelectingAvatar()) return;
+    this.isSelectingAvatar.set(true);
+    this.avatarSuccessMessage.set('');
+    this.avatarErrorMessage.set('');
+
+    this.authService.updateProfile({ avatar_url: avatarUrl }).subscribe({
+      next: () => {
+        this.avatarSuccessMessage.set('Avatar actualizado correctamente');
+        this.isSelectingAvatar.set(false);
+      },
+      error: (error) => {
+        const message = error.error?.message || 'Error al actualizar el avatar';
+        this.avatarErrorMessage.set(message);
+        this.isSelectingAvatar.set(false);
+      },
+    });
   }
 
   get isAdmin(): boolean {

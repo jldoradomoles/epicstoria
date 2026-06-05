@@ -39,9 +39,17 @@
             >
               <span class="relative">
                 <span
-                  class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-amber-600 to-amber-800 text-xs font-bold text-white"
+                  class="flex h-8 w-8 rounded-full overflow-hidden bg-gradient-to-br from-amber-600 to-amber-800 items-center justify-center text-xs font-bold text-white"
                 >
-                  {{ getInitials() }}
+                  @if (currentUser?.avatar_url) {
+                    <img
+                      [src]="currentUser!.avatar_url"
+                      [alt]="currentUser!.name"
+                      class="h-full w-full object-cover"
+                    />
+                  } @else {
+                    {{ getInitials() }}
+                  }
                 </span>
                 @if (unreadCount() > 0) {
                   <span
@@ -149,9 +157,17 @@
             >
               <span class="relative">
                 <span
-                  class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-amber-600 to-amber-800 text-xs font-bold text-white"
+                  class="flex h-8 w-8 rounded-full overflow-hidden bg-gradient-to-br from-amber-600 to-amber-800 items-center justify-center text-xs font-bold text-white"
                 >
-                  {{ getInitials() }}
+                  @if (currentUser?.avatar_url) {
+                    <img
+                      [src]="currentUser!.avatar_url"
+                      [alt]="currentUser!.name"
+                      class="h-full w-full object-cover"
+                    />
+                  } @else {
+                    {{ getInitials() }}
+                  }
                 </span>
                 @if (unreadCount() > 0) {
                   <span
