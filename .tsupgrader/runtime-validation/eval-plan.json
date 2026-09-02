@@ -1,0 +1,30 @@
+{
+  "projectType": "webapp",
+  "setup": [
+    {
+      "command": "npm",
+      "args": ["install"],
+      "timeoutSeconds": 300
+    }
+  ],
+  "assertions": [
+    {
+      "name": "build-succeeds",
+      "kind": "process",
+      "verificationMethod": "exit-code",
+      "command": "npm",
+      "args": ["run", "build"],
+      "expected": "0",
+      "timeoutSeconds": 120
+    },
+    {
+      "name": "tests-pass",
+      "kind": "process",
+      "verificationMethod": "exit-code",
+      "command": "npm",
+      "args": ["run", "test", "--", "--watch=false", "--browsers=ChromeHeadless"],
+      "expected": "0",
+      "timeoutSeconds": 180
+    }
+  ]
+}
