@@ -15,6 +15,7 @@
     "format:check": "prettier --check \"src/**/*.{ts,html,scss,css,json}\"",
     "excel:convert": "npx tsx scripts/excel-to-json.ts",
     "excel:template": "npx tsx scripts/create-excel-template.ts",
+    "images:json-to-webp": "npx tsx scripts/convert-json-images-to-webp.ts public/data/events.json",
     "serve:ssr:epicstoria": "node dist/epicstoria/server/server.mjs"
   },
   "prettier": {

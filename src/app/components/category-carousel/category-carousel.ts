@@ -15,14 +15,14 @@ export class CategoryCarousel {
   categorySelected = output<string>();
 
   readonly categories: CategoryCard[] = [
-    { name: 'Personajes históricos', imageUrl: '/images/categorias/personajes-historicos.jpg' },
-    { name: 'Rincón histórico', imageUrl: '/images/categorias/rincon-historico.jpg' },
-    { name: 'Monumentos', imageUrl: '/images/categorias/monumentos.jpg' },
-    { name: 'Catástrofes', imageUrl: '/images/categorias/catastrofes.jpg' },
-    { name: 'Mitología', imageUrl: '/images/categorias/mitologia.jpg' },
-    { name: 'Descubrimientos', imageUrl: '/images/categorias/descubrimientos.jpg' },
-    { name: 'Espacio', imageUrl: '/images/categorias/espacio.jpg' },
-    { name: 'Artefactos históricos', imageUrl: '/images/categorias/artefactos-historicos.jpg' },
+    { name: 'Personajes históricos', imageUrl: '/images/categorias/personajes-historicos.webp' },
+    { name: 'Rincón histórico', imageUrl: '/images/categorias/rincon-historico.webp' },
+    { name: 'Monumentos', imageUrl: '/images/categorias/monumentos.webp' },
+    { name: 'Catástrofes', imageUrl: '/images/categorias/catastrofes.webp' },
+    { name: 'Mitología', imageUrl: '/images/categorias/mitologia.webp' },
+    { name: 'Descubrimientos', imageUrl: '/images/categorias/descubrimientos.webp' },
+    { name: 'Espacio', imageUrl: '/images/categorias/espacio.webp' },
+    { name: 'Artefactos históricos', imageUrl: '/images/categorias/artefactos-historicos.webp' },
   ];
 
   selectCategory(category: string) {

@@ -1,4 +1,4 @@
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT, NgOptimizedImage } from '@angular/common';
 import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { QuizComponent } from '../../components/quiz/quiz';
@@ -12,7 +12,7 @@ import { getParagraphs } from '../../utils/text.utils';
 
 @Component({
   selector: 'app-event-detail',
-  imports: [RouterLink, DateFormatPipe, QuizComponent],
+  imports: [RouterLink, DateFormatPipe, QuizComponent, NgOptimizedImage],
   templateUrl: './event-detail.html',
   styleUrl: './event-detail.scss',
 })
@@ -30,9 +30,6 @@ export class EventDetail implements OnInit {
 
   readonly defaultImage = 'https://placehold.co/1200x600/1F2937/FFFFFF?text=Evento+Hist%C3%B3rico';
 
-  // Cache para almacenar qué imágenes móviles existen
-  private mobileImageCache = new Map<string, string>();
-
   ngOnInit() {
     const eventId = this.route.snapshot.paramMap.get('id');
 
@@ -47,11 +44,6 @@ export class EventDetail implements OnInit {
           }
           console.log('Event loaded successfully:', event);
           this.event = this.loadAdditionalImages(event);
-
-          // Verificar existencia de imagen móvil
-          if (this.event.imageUrl) {
-            this.preloadMobileImage(this.event.imageUrl);
-          }
 
           // Actualizar meta tags SEO
           this.updateSeoTags(event);
@@ -203,65 +195,6 @@ export class EventDetail implements OnInit {
       return null;
     }
     return this.event.additionalImages[index];
-  }
-
-  /**
-   * Precarga y verifica la imagen móvil
-   */
-  private async preloadMobileImage(imageUrl: string): Promise<void> {
-    const lastDotIndex = imageUrl.lastIndexOf('.');
-    if (lastDotIndex === -1) {
-      this.mobileImageCache.set(imageUrl, imageUrl);
-      return;
-    }
-
-    const mobileUrl =
-      imageUrl.substring(0, lastDotIndex) + '-movil' + imageUrl.substring(lastDotIndex);
-
-    const exists = await this.checkImageExists(mobileUrl);
-    if (exists) {
-      this.mobileImageCache.set(imageUrl, mobileUrl);
-    } else {
-      // Si no existe, usar la imagen principal
-      this.mobileImageCache.set(imageUrl, imageUrl);
-    }
-
-    this.cdr.markForCheck();
-  }
-
-  /**
-   * Obtiene la URL de la imagen optimizada para móviles
-   * Verifica con JavaScript si existe, si no usa la imagen principal
-   */
-  getMobileImageUrl(imageUrl: string): string {
-    if (!imageUrl) {
-      return imageUrl;
-    }
-
-    // Si ya está en caché, usar el valor cacheado
-    if (this.mobileImageCache.has(imageUrl)) {
-      return this.mobileImageCache.get(imageUrl)!;
-    }
-
-    // Si no está en caché aún, devolver la URL móvil por defecto
-    // (la precarga ya se habrá iniciado en ngOnInit)
-    const lastDotIndex = imageUrl.lastIndexOf('.');
-    if (lastDotIndex === -1) {
-      return imageUrl;
-    }
-    return imageUrl.substring(0, lastDotIndex) + '-movil' + imageUrl.substring(lastDotIndex);
-  }
-
-  /**
-   * Verifica si una imagen existe usando JavaScript
-   */
-  private checkImageExists(url: string): Promise<boolean> {
-    return new Promise((resolve) => {
-      const img = new Image();
-      img.onload = () => resolve(true);
-      img.onerror = () => resolve(false);
-      img.src = url;
-    });
   }
 
   /**
