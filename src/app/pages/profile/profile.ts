@@ -10,36 +10,8 @@ import { ChatService } from '../../services/chat.service';
 import { EventApiService } from '../../services/event-api.service';
 import { FriendshipService } from '../../services/friendship.service';
 import { PointsService } from '../../services/points.service';
+import { getAvatarsByLevel, LevelAvatar } from '../../utils/avatar-levels.utils';
 import { getLevelInfo, LEVELS } from '../../utils/levels.utils';
-
-interface AvatarItem {
-  name: string;
-  image: string;
-  infoImage: string;
-}
-
-const AVATAR_LIST: AvatarItem[] = [
-  {
-    name: 'Marco Polo',
-    image: 'images/logos-levels/Marco-Polo.jpg',
-    infoImage: 'images/logos-levels/Marco-Polo-info.jpg',
-  },
-  {
-    name: 'Tutankamón',
-    image: 'images/logos-levels/Tutankamon.jpg',
-    infoImage: 'images/logos-levels/Tutankamon-info.jpg',
-  },
-  {
-    name: 'Tutankamón II',
-    image: 'images/logos-levels/Tutankamon2.jpg',
-    infoImage: 'images/logos-levels/Tutankamon-info.jpg',
-  },
-  {
-    name: 'Barba Negra',
-    image: 'images/logos-levels/barba-negra.jpg',
-    infoImage: 'images/logos-levels/barba-negra.jpg',
-  },
-];
 
 @Component({
   selector: 'app-profile',
@@ -71,13 +43,19 @@ export class ProfileComponent implements OnInit, OnDestroy {
   isSelectingAvatar = signal<boolean>(false);
 
   readonly avatarLevels = LEVELS;
-  readonly avatars = AVATAR_LIST;
 
   userLevelIndex = computed(() => {
     const user = this.authService.currentUser();
     if (!user) return 0;
     return getLevelInfo(user.points || 0).index;
   });
+
+  /**
+   * Obtener avatares para un nivel específico
+   */
+  getAvatarsByLevelIndex(levelIndex: number): LevelAvatar[] {
+    return getAvatarsByLevel(levelIndex);
+  }
 
   // Friends state
   friends = signal<Friend[]>([]);

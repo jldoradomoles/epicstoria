@@ -947,7 +947,7 @@
 
                   <!-- Grid de avatares -->
                   <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                    @for (avatar of avatars; track avatar.image) {
+                    @for (avatar of getAvatarsByLevelIndex(level.index); track avatar.image) {
                       <div class="flex flex-col items-center gap-2">
                         <!-- Imagen del avatar (clic abre info) -->
                         <button
