@@ -232,8 +232,12 @@ async function optimizeImages(options: OptimizationOptions): Promise<Optimizatio
       stats.optimizedSize += result.outputSize;
 
       if (options.verbose) {
-        const ratio = ((result.inputSize - result.outputSize) / result.inputSize * 100).toFixed(1);
-        console.log(`✅ (${formatSize(result.inputSize)} → ${formatSize(result.outputSize)}, -${ratio}%)`);
+        const ratio = (((result.inputSize - result.outputSize) / result.inputSize) * 100).toFixed(
+          1,
+        );
+        console.log(
+          `✅ (${formatSize(result.inputSize)} → ${formatSize(result.outputSize)}, -${ratio}%)`,
+        );
       }
 
       // Eliminar original si se especifica
@@ -259,8 +263,7 @@ async function optimizeImages(options: OptimizationOptions): Promise<Optimizatio
 
   stats.endTime = Date.now();
   stats.savedSize = stats.originalSize - stats.optimizedSize;
-  stats.savedPercentage =
-    stats.originalSize > 0 ? (stats.savedSize / stats.originalSize) * 100 : 0;
+  stats.savedPercentage = stats.originalSize > 0 ? (stats.savedSize / stats.originalSize) * 100 : 0;
 
   return stats;
 }
@@ -278,7 +281,9 @@ function printStats(stats: OptimizationStats): void {
   console.log(`❌ Imágenes con errores: ${stats.failedFiles}`);
   console.log(`\n💾 Tamaño original: ${formatSize(stats.originalSize)}`);
   console.log(`📦 Tamaño optimizado: ${formatSize(stats.optimizedSize)}`);
-  console.log(`💪 Espacio ahorrado: ${formatSize(stats.savedSize)} (${stats.savedPercentage.toFixed(1)}%)`);
+  console.log(
+    `💪 Espacio ahorrado: ${formatSize(stats.savedSize)} (${stats.savedPercentage.toFixed(1)}%)`,
+  );
   console.log(`⏱️  Tiempo total: ${duration}s`);
   console.log('='.repeat(60) + '\n');
 }

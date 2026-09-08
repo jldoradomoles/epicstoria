@@ -149,15 +149,15 @@ npm run images:optimize -- -h
 
 ## 📋 Opciones de Línea de Comandos
 
-| Opción | Corta | Descripción | Defecto |
-|--------|-------|-------------|---------|
-| `--input` | `-i` | Directorio de entrada (requerido) | - |
-| `--output` | `-o` | Directorio de salida | Mismo que entrada |
-| `--quality` | `-q` | Calidad WebP (1-100) | 80 |
-| `--replace` | `-r` | Eliminar JPGs originales | No |
-| `--no-recursive` | - | No procesar subdirectorios | Recursivo |
-| `--quiet` | - | Sin mensajes detallados | Verbose |
-| `--help` | `-h` | Mostrar ayuda | - |
+| Opción           | Corta | Descripción                       | Defecto           |
+| ---------------- | ----- | --------------------------------- | ----------------- |
+| `--input`        | `-i`  | Directorio de entrada (requerido) | -                 |
+| `--output`       | `-o`  | Directorio de salida              | Mismo que entrada |
+| `--quality`      | `-q`  | Calidad WebP (1-100)              | 80                |
+| `--replace`      | `-r`  | Eliminar JPGs originales          | No                |
+| `--no-recursive` | -     | No procesar subdirectorios        | Recursivo         |
+| `--quiet`        | -     | Sin mensajes detallados           | Verbose           |
+| `--help`         | `-h`  | Mostrar ayuda                     | -                 |
 
 ## 💡 Ejemplos Completos
 
