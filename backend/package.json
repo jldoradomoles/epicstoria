@@ -22,8 +22,14 @@
     "db:clear-events": "ts-node src/database/clear-events.ts",
     "db:fix-images": "ts-node src/database/fix-image-urls.ts",
     "db:sync-images": "ts-node src/database/sync-additional-images.ts",
+    "db:normalize-placeholders": "ts-node src/database/normalize-placeholder-images.ts",
+    "db:verify-images": "ts-node src/database/verify-image-urls.ts",
+    "db:convert-images-to-webp": "ts-node src/database/convert-images-to-webp.ts",
+    "db:migrate-images-to-webp": "ts-node src/database/migrate-images-to-webp.ts",
     "db:add-reset-columns": "ts-node src/database/add-password-reset-columns.ts",
-    "test:email": "ts-node src/database/test-email.ts"
+    "test:email": "ts-node src/database/test-email.ts",
+    "deploy:prod": "ts-node scripts/quick-deploy.ts",
+    "deploy:post": "bash scripts/post-deploy.sh"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

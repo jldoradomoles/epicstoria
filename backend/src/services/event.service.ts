@@ -54,13 +54,20 @@ export class EventService {
       return imageUrl || this.DEFAULT_IMAGE;
     }
 
+    // Normalizar: si viene de /images-optimized/, cambiar a /images/
+    let normalizedUrl = imageUrl;
+    if (normalizedUrl.startsWith('/images-optimized/')) {
+      normalizedUrl = normalizedUrl.replace(/^\/images-optimized\//, '/images/');
+    }
+
     // Construir la ruta completa del archivo
-    const imagePath = imageUrl.replace(/^\//, '');
-    const fullPath = path.join(this.getPublicPath(), imagePath);
+    const imagePath = normalizedUrl.replace(/^\//, '');
+    const publicPath = this.getPublicPath();
+    const fullPath = path.join(publicPath, imagePath);
 
     // Verificar si el archivo existe
     if (fs.existsSync(fullPath)) {
-      // Siempre devolver con barra inicial para que sea una ruta absoluta
+      // Siempre devolver con barra inicial y /images/ prefix
       return `/${imagePath}`;
     }
 

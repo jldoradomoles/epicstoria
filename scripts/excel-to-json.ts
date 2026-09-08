@@ -18,16 +18,23 @@ interface ExcelRow {
 
 /**
  * Normaliza la ruta de la imagen para que sea relativa (sin barra inicial)
+ * y convierte la extensión a .webp
  */
 function normalizeImageUrl(imageUrl: string): string {
   if (!imageUrl) return imageUrl;
 
   // Si la ruta empieza con "/", eliminarla para hacerla relativa
-  if (imageUrl.startsWith('/')) {
-    return imageUrl.substring(1);
+  let normalized = imageUrl;
+  if (normalized.startsWith('/')) {
+    normalized = normalized.substring(1);
   }
 
-  return imageUrl;
+  // Convertir extensión a .webp (para rutas locales, no URLs externas)
+  if (!normalized.startsWith('http://') && !normalized.startsWith('https://')) {
+    normalized = normalized.replace(/\.(jpg|jpeg|png|gif)$/i, '.webp');
+  }
+
+  return normalized;
 }
 
 /**
