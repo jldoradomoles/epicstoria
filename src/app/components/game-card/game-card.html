@@ -1,0 +1,11 @@
+<div class="game-card">
+  <div class="game-card-image">
+    <img [src]="game().imageUrl" [alt]="game().title" />
+  </div>
+  <button
+    [routerLink]="game().route"
+    class="play-button bg-gradient-to-br from-yellow-600 to-yellow-800"
+  >
+    JUGAR
+  </button>
+</div>

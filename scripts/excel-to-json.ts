@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as XLSX from 'xlsx';
+import { resolveEventImageUrl } from './event-image-folders';
 
 interface ExcelRow {
   id: string;
@@ -32,6 +33,7 @@ function normalizeImageUrl(imageUrl: string): string {
   // Convertir extensión a .webp (para rutas locales, no URLs externas)
   if (!normalized.startsWith('http://') && !normalized.startsWith('https://')) {
     normalized = normalized.replace(/\.(jpg|jpeg|png|gif)$/i, '.webp');
+    normalized = resolveEventImageUrl(normalized);
   }
 
   return normalized;

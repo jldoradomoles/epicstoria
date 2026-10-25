@@ -6,7 +6,6 @@ interface OptimizationOptions {
   inputDir: string;
   outputDir?: string;
   quality: number;
-  recursive: boolean;
   replace: boolean;
   verbose: boolean;
 }
@@ -31,7 +30,6 @@ function parseArguments(): Partial<OptimizationOptions> {
   const args = process.argv.slice(2);
   const options: Partial<OptimizationOptions> = {
     quality: 80,
-    recursive: true,
     replace: false,
     verbose: true,
   };
@@ -53,9 +51,6 @@ function parseArguments(): Partial<OptimizationOptions> {
       case '--replace':
       case '-r':
         options.replace = true;
-        break;
-      case '--no-recursive':
-        options.recursive = false;
         break;
       case '--quiet':
         options.verbose = false;
@@ -84,42 +79,51 @@ function validateDirectory(dir: string): boolean {
   return true;
 }
 
+const IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tif', '.tiff', '.avif'];
+
 /**
- * Obtener lista de archivos a procesar
+ * Obtener las carpetas de eventos (subdirectorios directos del directorio de entrada)
  */
-function getImageFiles(
-  dir: string,
-  recursive: boolean = true,
-  extensions = ['.jpg', '.jpeg'],
-): string[] {
-  const files: string[] = [];
-
-  function traverse(currentDir: string) {
-    try {
-      const entries = fs.readdirSync(currentDir, { withFileTypes: true });
-
-      for (const entry of entries) {
-        const fullPath = path.join(currentDir, entry.name);
-
-        if (entry.isDirectory()) {
-          if (recursive && !entry.name.startsWith('.')) {
-            traverse(fullPath);
-          }
-        } else if (entry.isFile()) {
-          const ext = path.extname(entry.name).toLowerCase();
-          if (extensions.includes(ext)) {
-            files.push(fullPath);
-          }
-        }
-      }
-    } catch (error) {
-      console.error(`⚠️  Error leyendo directorio ${currentDir}:`, error);
-    }
-  }
-
-  traverse(dir);
-  return files;
+function getEventFolders(dir: string): string[] {
+  return fs
+    .readdirSync(dir, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory() && !entry.name.startsWith('.'))
+    .map((entry) => entry.name);
 }
+
+/**
+ * Obtener las imágenes de una carpeta de evento (sin entrar en subcarpetas)
+ */
+function getImageFiles(dir: string): string[] {
+  return fs
+    .readdirSync(dir, { withFileTypes: true })
+    .filter(
+      (entry) => entry.isFile() && IMAGE_EXTENSIONS.includes(path.extname(entry.name).toLowerCase()),
+    )
+    .map((entry) => path.join(dir, entry.name));
+}
+
+/**
+ * Normalizar nombre de carpeta (minúsculas, espacios → guiones)
+ */
+function normalizeFolderName(name: string): string {
+  return name.trim().toLowerCase().replace(/\s+/g, '-');
+}
+
+/**
+ * Normalizar nombre de archivo (minúsculas, sin tildes, espacios → guiones)
+ */
+function normalizeFilename(filename: string): string {
+  return filename
+    .toLowerCase() // Convertir a minúsculas
+    .normalize('NFD') // Descomponer caracteres acentuados
+    .replace(/[\u0300-\u036f]/g, '') // Eliminar marcas diacríticas
+    .replace(/\s+/g, '-'); // Reemplazar espacios con guiones
+}
+
+type ConversionResult =
+  | { success: true; inputSize: number; outputSize: number }
+  | { success: false; error: string };
 
 /**
  * Convertir una imagen a WebP
@@ -128,7 +132,7 @@ async function convertToWebP(
   inputFile: string,
   outputFile: string,
   quality: number,
-): Promise<boolean> {
+): Promise<ConversionResult> {
   try {
     const inputStats = fs.statSync(inputFile);
     await sharp(inputFile).webp({ quality }).toFile(outputFile);
@@ -138,13 +142,13 @@ async function convertToWebP(
       success: true,
       inputSize: inputStats.size,
       outputSize: outputStats.size,
-    } as any;
+    };
   } catch (error) {
     console.error(`  ❌ Error al procesar ${inputFile}:`, error);
     return {
       success: false,
       error: error instanceof Error ? error.message : String(error),
-    } as any;
+    };
   }
 }
 
@@ -190,75 +194,120 @@ async function optimizeImages(options: OptimizationOptions): Promise<Optimizatio
     }
   }
 
-  // Obtener lista de archivos
-  const imageFiles = getImageFiles(options.inputDir, options.recursive);
-  stats.totalFiles = imageFiles.length;
+  // Obtener carpetas de eventos
+  const eventFolders = getEventFolders(options.inputDir);
 
-  if (stats.totalFiles === 0) {
-    console.log('⚠️  No se encontraron imágenes JPG/JPEG para procesar');
+  if (eventFolders.length === 0) {
+    console.log('⚠️  No se encontraron carpetas de eventos para procesar');
     return stats;
   }
 
   if (options.verbose) {
-    console.log(`\n🔍 Se encontraron ${stats.totalFiles} imagen(es) a procesar`);
+    console.log(`
+🔍 Se encontraron ${eventFolders.length} carpeta(s) de eventos`);
     console.log(`📊 Calidad WebP: ${options.quality}`);
     console.log(`💾 Directorio de salida: ${outputDir}`);
     if (options.replace) {
-      console.log(`🗑️  Se eliminarán los JPGs originales después de convertir\n`);
+      console.log(`🗑️  Se eliminarán las imágenes originales después de convertir
+`);
     }
   }
 
-  // Procesar cada archivo
-  for (const inputFile of imageFiles) {
-    const relativePath = path.relative(options.inputDir, inputFile);
-    const outputFileName = path.basename(inputFile, path.extname(inputFile)) + '.webp';
-    const outputFilePath = path.join(outputDir, path.dirname(relativePath), outputFileName);
+  for (const folderName of eventFolders) {
+    const inputFolder = path.join(options.inputDir, folderName);
+    const normalizedFolderName = normalizeFolderName(folderName);
+    const outputFolder = path.join(outputDir, normalizedFolderName);
+    const imageFiles = getImageFiles(inputFolder);
 
-    // Crear subdirectorio si es necesario
-    const outputFileDir = path.dirname(outputFilePath);
-    if (!fs.existsSync(outputFileDir)) {
-      fs.mkdirSync(outputFileDir, { recursive: true });
+    if (imageFiles.length === 0) {
+      if (options.verbose) {
+        console.log(`📁 ${folderName}: sin imágenes, se omite`);
+      }
+      continue;
     }
+
+    stats.totalFiles += imageFiles.length;
 
     if (options.verbose) {
-      process.stdout.write(`  ${relativePath} → ${outputFileName}... `);
+      console.log(`
+📁 ${folderName} → ${normalizedFolderName} (${imageFiles.length} imagen(es))`);
     }
 
-    const result = await convertToWebP(inputFile, outputFilePath, options.quality);
+    fs.mkdirSync(outputFolder, { recursive: true });
 
-    if (result.success) {
-      stats.successFiles++;
-      stats.originalSize += result.inputSize;
-      stats.optimizedSize += result.outputSize;
+    const usedNames = new Set<string>();
+
+    for (const inputFile of imageFiles) {
+      const baseName = path.basename(inputFile, path.extname(inputFile));
+      const outputFileName = normalizeFilename(baseName) + '.webp';
+      const outputFilePath = path.join(outputFolder, outputFileName);
 
       if (options.verbose) {
-        const ratio = (((result.inputSize - result.outputSize) / result.inputSize) * 100).toFixed(
-          1,
-        );
-        console.log(
-          `✅ (${formatSize(result.inputSize)} → ${formatSize(result.outputSize)}, -${ratio}%)`,
-        );
+        process.stdout.write(`  ${path.basename(inputFile)} → ${outputFileName}... `);
       }
 
-      // Eliminar original si se especifica
-      if (options.replace) {
-        try {
-          fs.unlinkSync(inputFile);
-          if (options.verbose) {
-            console.log(`     🗑️  Original eliminado`);
+      if (usedNames.has(outputFileName)) {
+        stats.failedFiles++;
+        stats.processedFiles++;
+        console.log(`❌ Nombre duplicado en la carpeta, se omite`);
+        continue;
+      }
+      usedNames.add(outputFileName);
+
+      const result = await convertToWebP(inputFile, outputFilePath, options.quality);
+
+      if (result.success) {
+        stats.successFiles++;
+        stats.originalSize += result.inputSize;
+        stats.optimizedSize += result.outputSize;
+
+        if (options.verbose) {
+          const ratio = (
+            ((result.inputSize - result.outputSize) / result.inputSize) *
+            100
+          ).toFixed(1);
+          console.log(
+            `✅ (${formatSize(result.inputSize)} → ${formatSize(result.outputSize)}, -${ratio}%)`,
+          );
+        }
+
+        if (options.replace) {
+          try {
+            fs.unlinkSync(inputFile);
+          } catch (error) {
+            console.error(`     ⚠️  No se pudo eliminar ${inputFile}: ${error}`);
           }
-        } catch (error) {
-          console.error(`     ⚠️  No se pudo eliminar: ${error}`);
+        }
+      } else {
+        stats.failedFiles++;
+        if (options.verbose) {
+          console.log(`❌ ${result.error}`);
         }
       }
-    } else {
-      stats.failedFiles++;
-      if (options.verbose) {
-        console.log(`❌ ${result.error}`);
-      }
+
+      stats.processedFiles++;
     }
 
-    stats.processedFiles++;
+    // Con --replace, la carpeta original se sustituye por la normalizada
+    if (options.replace && path.resolve(inputFolder) !== path.resolve(outputFolder)) {
+      try {
+        const sameFolderDifferentCase =
+          path.resolve(inputFolder).toLowerCase() === path.resolve(outputFolder).toLowerCase();
+        if (sameFolderDifferentCase) {
+          // Sistema de archivos insensible a mayúsculas: renombrar vía nombre temporal
+          const tmp = inputFolder + '.tmp-rename';
+          fs.renameSync(inputFolder, tmp);
+          fs.renameSync(tmp, outputFolder);
+        } else if (fs.readdirSync(inputFolder).length === 0) {
+          fs.rmdirSync(inputFolder);
+        }
+        if (options.verbose) {
+          console.log(`  ✏️  Carpeta renombrada a: ${normalizedFolderName}`);
+        }
+      } catch (error) {
+        console.error(`  ⚠️  No se pudo renombrar/eliminar la carpeta ${inputFolder}: ${error}`);
+      }
+    }
   }
 
   stats.endTime = Date.now();
@@ -293,19 +342,31 @@ function printStats(stats: OptimizationStats): void {
  */
 function printHelp(): void {
   console.log(`
-🖼️  Optimizador de Imágenes JPG → WebP
+🖼️  Optimizador de Imágenes → WebP por carpeta de evento
 
 Uso:
   npm run images:optimize -- [opciones]
 
 Opciones:
-  -i, --input <dir>      Directorio de entrada (requerido)
+  -i, --input <dir>      Directorio con una carpeta por evento (requerido)
   -o, --output <dir>     Directorio de salida (por defecto: mismo que entrada)
   -q, --quality <0-100>  Calidad WebP (por defecto: 80)
-  -r, --replace          Eliminar JPGs originales después de convertir
-  --no-recursive         No procesar subdirectorios
+  -r, --replace          Eliminar originales y renombrar carpetas
   --quiet                No mostrar mensajes detallados
   -h, --help             Mostrar esta ayuda
+
+Funcionamiento:
+  • Entra en cada subcarpeta (evento) del directorio de entrada
+  • Convierte todas sus imágenes a WebP
+  • La carpeta resultante se llama igual en minúsculas y con guiones
+    en lugar de espacios (ej: "Abbas Ibn Firnas" → "abbas-ibn-firnas")
+
+Normalización de nombres de archivo:
+  • Convierte a minúsculas
+  • Elimina tildes y acentos
+  • Reemplaza espacios con guiones
+  • Ejemplo: "Mi Imagen.jpg" → "mi-imagen.webp"
+  • Ejemplo: "Café Español.jpg" → "cafe-espanol.webp"
 
 Ejemplos:
   npm run images:optimize -- -i public/images/eventos
@@ -342,7 +403,6 @@ async function main(): Promise<void> {
     inputDir: args.inputDir,
     outputDir: args.outputDir,
     quality: args.quality || 80,
-    recursive: args.recursive !== false,
     replace: args.replace || false,
     verbose: args.verbose !== false,
   };

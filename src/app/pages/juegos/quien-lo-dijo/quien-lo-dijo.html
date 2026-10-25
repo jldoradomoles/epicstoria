@@ -1,0 +1,248 @@
+<!-- Hero Section -->
+<app-hero [noMainImage]="true" [imageUrl]="'images/juegos.jpg'" />
+
+<!-- Main Content -->
+<section class="py-16 px-4">
+  <div class="container mx-auto">
+    <!-- Sección de Presentación de Juegos -->
+    <div class="presentation-section mb-20">
+      <div class="presentation-content">
+        <p class="text-3xl text-color presentation-title">¿Quién lo dijo?</p>
+
+        <h1 class="text-color text-3xl presentation-title">
+          ¿Serías capaz de reconocer a los grandes personajes de la historia por sus propias
+          palabras?
+        </h1>
+
+        <p class="text-xl text-color presentation-description">
+          En ¿Quién lo dijo? tendrás que descubrir quién pronunció o escribió algunas de las frases
+          más célebres de filósofos, científicos, escritores, gobernantes y personajes que dejaron
+          su huella en la historia.
+        </p>
+
+        <p class="text-xl text-color presentation-challenge">¿Descubrirás quién lo dijo?</p>
+
+        <!-- Back to Games Button -->
+        <div class="mt-8">
+          <a href="/juegos" class="back-button-presentation">
+            <i class="fas fa-arrow-left mr-2"></i>
+            Volver a Juegos
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Game Container -->
+    @if (!gameStarted()) {
+      <div class="game-start-container">
+        <div class="start-card">
+          <div class="start-header">
+            <i class="fas fa-quote-left start-icon"></i>
+            <h2 class="start-title">¿Quién lo dijo?</h2>
+          </div>
+
+          <div class="start-content">
+            <p class="start-description">
+              Demuestra tus conocimientos históricos adivinando quién pronunció las frases más
+              célebres de la historia.
+            </p>
+
+            <ul class="start-features">
+              <li>
+                <i class="fas fa-list-check"></i>
+                5 preguntas por partida
+              </li>
+              <li>
+                <i class="fas fa-star"></i>
+                2 puntos por respuesta correcta
+              </li>
+              <li>
+                <i class="fas fa-graduation-cap"></i>
+                4 opciones de respuesta
+              </li>
+              <li>
+                <i class="fas fa-book"></i>
+                Contexto histórico incluido
+              </li>
+            </ul>
+
+            <div class="difficulty-info-start">
+              <p class="difficulty-label">
+                Dificultad: <span class="difficulty-medium">Media</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="start-actions">
+            <button class="start-button" (click)="startGame()">
+              <i class="fas fa-play"></i> Iniciar Juego
+            </button>
+            <a href="/juegos" class="back-button-start">
+              <i class="fas fa-arrow-left"></i> Volver a Juegos
+            </a>
+          </div>
+        </div>
+      </div>
+    } @else if (!gameFinished()) {
+      <div class="game-container">
+        <!-- Progress Bar -->
+        <div class="progress-section">
+          <div class="progress-header">
+            <div class="progress-info">
+              <h2 class="game-title">¿Quién lo dijo?</h2>
+              <p class="progress-text">
+                Pregunta {{ currentQuestion() + 1 }} de {{ questions().length }}
+              </p>
+            </div>
+            <div class="score-display">
+              <i class="fas fa-star text-yellow-400"></i>
+              <span>{{ score() }} pts</span>
+            </div>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="progress-bar-container">
+            <div
+              class="progress-bar-fill"
+              [style.width.%]="((currentQuestion() + 1) / questions().length) * 100"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Question Card -->
+        <div class="question-card">
+          <div class="quote-section">
+            <i class="fas fa-quote-left quote-icon"></i>
+            <p class="quote-text">{{ currentQuestionData.quote }}</p>
+            <i class="fas fa-quote-right quote-icon-end"></i>
+          </div>
+
+          <!-- Difficulty Badge -->
+          <div class="difficulty-info">
+            <span class="difficulty-badge" [class]="'difficulty-' + currentQuestionData.difficulty">
+              {{ currentQuestionData.difficulty | uppercase }}
+            </span>
+            @if (currentQuestionData.year) {
+              <span class="year-badge">
+                {{
+                  currentQuestionData.year > 0
+                    ? currentQuestionData.year + ' d.C.'
+                    : -currentQuestionData.year + ' a.C.'
+                }}
+              </span>
+            }
+          </div>
+
+          <!-- Options -->
+          <div class="options-container">
+            @for (option of currentQuestionData.options; track option) {
+              <button
+                class="option-button"
+                [class.selected]="selectedAnswer() === option"
+                [class.correct]="answered() && option === currentQuestionData.correctAnswer"
+                [class.incorrect]="
+                  answered() &&
+                  selectedAnswer() === option &&
+                  option !== currentQuestionData.correctAnswer
+                "
+                [class.disabled]="answered()"
+                (click)="selectAnswer(option)"
+              >
+                <span class="option-letter">
+                  {{ String.fromCharCode(65 + currentQuestionData.options.indexOf(option)) }}
+                </span>
+                <span class="option-text">{{ option }}</span>
+                @if (answered() && option === currentQuestionData.correctAnswer) {
+                  <i class="fas fa-check-circle"></i>
+                }
+                @if (
+                  answered() &&
+                  selectedAnswer() === option &&
+                  option !== currentQuestionData.correctAnswer
+                ) {
+                  <i class="fas fa-times-circle"></i>
+                }
+              </button>
+            }
+          </div>
+
+          <!-- Historical Context -->
+          @if (currentQuestionData.historical_context && answered()) {
+            <div class="context-box">
+              <h4>Contexto Histórico</h4>
+              <p>{{ currentQuestionData.historical_context }}</p>
+            </div>
+          }
+
+          <!-- Next Button -->
+          <div class="action-buttons">
+            <button *ngIf="answered()" class="next-button" (click)="nextQuestion()">
+              {{
+                currentQuestion() === questions().length - 1
+                  ? 'Ver Resultados'
+                  : 'Siguiente Pregunta'
+              }}
+            </button>
+          </div>
+        </div>
+      </div>
+    }
+
+    <!-- Results Screen -->
+    @if (gameFinished()) {
+      <div class="results-container">
+        <div class="results-card">
+          <div class="results-header">
+            <div class="trophy-container">
+              @if (getPercentage() >= 80) {
+                <i class="fas fa-trophy trophy-icon gold"></i>
+              } @else if (getPercentage() >= 60) {
+                <i class="fas fa-medal trophy-icon silver"></i>
+              } @else {
+                <i class="fas fa-star trophy-icon bronze"></i>
+              }
+            </div>
+
+            <h2 class="results-title">¡Juego Finalizado!</h2>
+          </div>
+
+          <div class="results-stats">
+            <div class="stat-box">
+              <h3>Puntuación</h3>
+              <p class="stat-value">{{ score() }} / {{ MAX_POINTS_PER_GAME }}</p>
+              <p class="stat-percentage">{{ getPercentage() }}%</p>
+            </div>
+
+            <div class="stat-box">
+              <h3>Respuestas Correctas</h3>
+              <p class="stat-value">
+                {{ score() / POINTS_PER_CORRECT_ANSWER }} de {{ questions().length }}
+              </p>
+            </div>
+          </div>
+
+          <!-- Performance Message -->
+          <div class="performance-message">
+            @if (getPercentage() >= 80) {
+              <p>¡Excelente! Eres un verdadero conocedor de la historia.</p>
+            } @else if (getPercentage() >= 60) {
+              <p>¡Muy bien! Tienes buenos conocimientos históricos.</p>
+            } @else if (getPercentage() >= 40) {
+              <p>¡Buen intento! Sigue estudiando y mejora tu puntuación.</p>
+            } @else {
+              <p>Sigue practicando para mejorar tus conocimientos históricos.</p>
+            }
+          </div>
+
+          <div class="action-buttons">
+            <button class="restart-button" (click)="restartGame()">
+              <i class="fas fa-redo"></i> Jugar de Nuevo
+            </button>
+            <button class="back-button" [routerLink]="'/juegos'">
+              <i class="fas fa-arrow-left"></i> Volver a Juegos
+            </button>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

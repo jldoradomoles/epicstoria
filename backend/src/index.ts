@@ -7,6 +7,7 @@ import authRoutes from './routes/auth.routes';
 import chatRoutes from './routes/chat.routes';
 import eventRoutes from './routes/event.routes';
 import friendshipRoutes from './routes/friendship.routes';
+import gameRoutes from './routes/game.routes';
 import pointsRoutes from './routes/points.routes';
 import sitemapRoutes from './routes/sitemap.routes';
 import userRoutes from './routes/user.routes';
@@ -42,7 +43,15 @@ app.use(
     credentials: true,
   }),
 );
-app.use(express.json());
+
+// Middleware para especificar UTF-8 en todas las respuestas
+app.use((req, res, next) => {
+  res.setHeader('Content-Type', 'application/json; charset=utf-8');
+  next();
+});
+
+// Configurar express.json() con charset UTF-8
+app.use(express.json({ limit: '50mb', strict: false }));
 
 // Servir archivos estáticos (imágenes subidas)
 // Usar process.cwd() para que funcione en desarrollo y producción
@@ -57,6 +66,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/points', pointsRoutes);
+app.use('/api/games', gameRoutes);
 app.use('/api/friends', friendshipRoutes);
 app.use('/api/chat', chatRoutes);
 

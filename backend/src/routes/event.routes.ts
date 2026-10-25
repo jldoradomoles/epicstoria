@@ -2,6 +2,7 @@ import { NextFunction, Request, Response, Router } from 'express';
 import multer, { FileFilterCallback } from 'multer';
 import { adminMiddleware, authMiddleware, AuthRequest } from '../middleware/auth.middleware';
 import { EventService } from '../services/event.service';
+import { getEventImageFolder } from '../utils/event-image.utils';
 
 const router = Router();
 
@@ -36,7 +37,12 @@ const uploadImage = multer({
     destination: (req, file, cb) => {
       const path = require('path');
       const fs = require('fs');
-      const uploadDir = path.join(__dirname, '../../../public/images/eventos');
+      const sanitizedName = file.originalname.replace(/[^a-zA-Z0-9._-]/g, '_');
+      const uploadDir = path.join(
+        __dirname,
+        '../../../public/images/eventos',
+        getEventImageFolder(sanitizedName),
+      );
 
       // Crear directorio si no existe
       if (!fs.existsSync(uploadDir)) {
@@ -110,7 +116,7 @@ router.post(
       }
 
       // Obtener la URL relativa de la imagen
-      const imageUrl = `/images/eventos/${req.file.filename}`;
+      const imageUrl = `/images/eventos/${getEventImageFolder(req.file.filename)}/${req.file.filename}`;
 
       // Sincronizar imágenes adicionales en background
       EventService.syncAdditionalImages().catch((err) =>
@@ -152,7 +158,7 @@ router.post(
 
       const uploadedImages = files.map((file) => ({
         filename: file.filename,
-        imageUrl: `/images/eventos/${file.filename}`,
+        imageUrl: `/images/eventos/${getEventImageFolder(file.filename)}/${file.filename}`,
         originalName: file.originalname,
         size: file.size,
       }));

@@ -20,6 +20,20 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/juegos/juegos').then((m) => m.Juegos),
   },
   {
+    path: 'juegos/quien-lo-dijo',
+    loadComponent: () =>
+      import('./pages/juegos/quien-lo-dijo/quien-lo-dijo').then((m) => m.QuienLoDijo),
+  },
+  {
+    path: 'juegos/epic-puzzle',
+    loadComponent: () => import('./pages/juegos/epic-puzzle/epic-puzzle').then((m) => m.EpicPuzzle),
+  },
+  {
+    path: 'juegos/imprime-y-colorea',
+    loadComponent: () =>
+      import('./pages/juegos/imprime-y-colorea/imprime-y-colorea').then((m) => m.ImprimeYColorea),
+  },
+  {
     path: 'galeria',
     loadComponent: () => import('./pages/galeria/galeria').then((m) => m.Galeria),
   },

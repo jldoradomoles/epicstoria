@@ -14,6 +14,24 @@ const app = express();
 const angularApp = new AngularNodeAppEngine();
 
 /**
+ * Middleware para especificar UTF-8 en todas las respuestas
+ */
+app.use((req, res, next) => {
+  const originalSend = res.send;
+  res.send = function (data) {
+    // Asegurar que el Content-Type incluya charset=utf-8
+    const contentType = res.get('Content-Type');
+    if (contentType && !contentType.includes('charset')) {
+      res.set('Content-Type', `${contentType}; charset=utf-8`);
+    } else if (!contentType) {
+      res.set('Content-Type', 'text/html; charset=utf-8');
+    }
+    return originalSend.call(this, data);
+  };
+  next();
+});
+
+/**
  * Example Express Rest API endpoints can be defined here.
  * Uncomment and define endpoints as necessary.
  *
@@ -56,9 +74,7 @@ app.use(
 app.use((req, res, next) => {
   angularApp
     .handle(req)
-    .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
-    )
+    .then((response) => (response ? writeResponseToNodeResponse(response, res) : next()))
     .catch(next);
 });
 

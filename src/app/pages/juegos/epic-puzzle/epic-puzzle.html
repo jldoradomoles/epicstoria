@@ -1,0 +1,257 @@
+<!-- Hero Section -->
+<app-hero [noMainImage]="true" [imageUrl]="'images/juegos.jpg'" />
+
+<!-- Main Content -->
+<section class="py-16 px-4">
+  <div class="container mx-auto">
+    <!-- Sección de Presentación de Juegos -->
+    <div class="presentation-section mb-20">
+      <div class="presentation-content">
+        <p class="text-3xl text-color presentation-title">EpicPuzzle</p>
+
+        <h1 class="text-color text-3xl presentation-title">
+          ¡Tenemos un problema!
+          <strong>Las piezas de nuestros puzles históricos se han desordenado</strong> y ahora
+          necesitamos tu ayuda para descubrir qué acontecimiento representa cada uno.
+        </h1>
+
+        <p class="text-xl text-color presentation-description">
+          En <strong>EpicPuzzle</strong> tendrás que observar atentamente las piezas, buscar las
+          pistas y averiguar qué hecho histórico esconden. Batallas, descubrimientos, revoluciones,
+          grandes inventos y otros acontecimientos que cambiaron la historia se han convertido en un
+          auténtico rompecabezas.
+        </p>
+
+        <p class="text-xl text-color presentation-challenge">
+          <strong>¿Serás capaz de descubrir qué hecho histórico se esconde en cada puzle?</strong>
+        </p>
+
+        <!-- Back to Games Button -->
+        <div class="mt-8">
+          <a href="/juegos" class="back-button-presentation">
+            <i class="fas fa-arrow-left mr-2"></i>
+            Volver a Juegos
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game Container -->
+    @if (!gameStarted()) {
+      <div class="game-start-container">
+        <div class="start-card">
+          <div class="start-header">
+            <i class="fas fa-puzzle-piece start-icon"></i>
+            <h2 class="start-title">EpicPuzzle</h2>
+          </div>
+
+          <div class="start-content">
+            <p class="start-description">
+              Observa atentamente los puzles, busca las pistas y descubre qué acontecimiento
+              histórico representan.
+            </p>
+
+            <ul class="start-features">
+              <li>
+                <i class="fas fa-image"></i>
+                5 puzles por partida
+              </li>
+              <li>
+                <i class="fas fa-star"></i>
+                2 puntos por respuesta correcta
+              </li>
+              <li>
+                <i class="fas fa-layer-group"></i>
+                4 opciones de respuesta
+              </li>
+              <li>
+                <i class="fas fa-history"></i>
+                Contexto histórico incluido
+              </li>
+            </ul>
+
+            <div class="difficulty-info-start">
+              <p class="difficulty-label">
+                Dificultad: <span class="difficulty-medium">Media</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="start-actions">
+            <button class="start-button" (click)="startGame()">
+              <i class="fas fa-play"></i> Iniciar Juego
+            </button>
+            <a href="/juegos" class="back-button-start">
+              <i class="fas fa-arrow-left"></i> Volver a Juegos
+            </a>
+          </div>
+        </div>
+      </div>
+    } @else if (!gameFinished()) {
+      <div class="game-container">
+        <!-- Progress Bar -->
+        <div class="progress-section">
+          <div class="progress-header">
+            <div class="progress-info">
+              <h2 class="game-title">EpicPuzzle</h2>
+              <p class="progress-text">
+                Pregunta {{ currentQuestion() + 1 }} de {{ questions().length }}
+              </p>
+            </div>
+            <div class="score-display">
+              <i class="fas fa-star text-yellow-400"></i>
+              <span>{{ score() }} pts</span>
+            </div>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="progress-bar-container">
+            <div
+              class="progress-bar-fill"
+              [style.width.%]="((currentQuestion() + 1) / questions().length) * 100"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Question Card -->
+        <div class="question-card">
+          <!-- Puzzle Image -->
+          <div class="puzzle-image-container">
+            <img
+              [src]="currentQuestionData.imageUrl"
+              [alt]="'Puzzle ' + (currentQuestion() + 1)"
+              class="puzzle-image"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Difficulty Badge -->
+          <div class="difficulty-info">
+            <span class="difficulty-badge" [class]="'difficulty-' + currentQuestionData.difficulty">
+              {{ currentQuestionData.difficulty | uppercase }}
+            </span>
+            @if (currentQuestionData.year) {
+              <span class="year-badge">
+                {{
+                  currentQuestionData.year > 0
+                    ? currentQuestionData.year + ' d.C.'
+                    : -currentQuestionData.year + ' a.C.'
+                }}
+              </span>
+            }
+          </div>
+
+          <!-- Question Text -->
+          <p class="question-text">¿Qué evento histórico ves en esta imagen?</p>
+
+          <!-- Answer Options -->
+          <div class="options-container">
+            @for (option of currentQuestionData.options; track option) {
+              <button
+                (click)="selectAnswer(option)"
+                [class.selected]="selectedAnswer() === option && answered()"
+                [class.correct]="
+                  selectedAnswer() === option && answered() && isAnswerCorrect(option)
+                "
+                [class.incorrect]="
+                  selectedAnswer() === option && answered() && !isAnswerCorrect(option)
+                "
+                [class.show-correct]="
+                  answered() && isAnswerCorrect(option) && selectedAnswer() !== option
+                "
+                [disabled]="answered()"
+                class="option-button"
+              >
+                <span class="option-text">{{ option }}</span>
+                @if (selectedAnswer() === option && answered()) {
+                  @if (isAnswerCorrect(option)) {
+                    <i class="fas fa-check-circle text-green-400 ml-2"></i>
+                  } @else {
+                    <i class="fas fa-times-circle text-red-400 ml-2"></i>
+                  }
+                } @else if (answered() && isAnswerCorrect(option)) {
+                  <i class="fas fa-check-circle text-green-400 ml-2"></i>
+                }
+              </button>
+            }
+          </div>
+
+          <!-- Context Information (after answer) -->
+          @if (answered() && currentQuestionData.historical_context) {
+            <div class="context-box">
+              <p class="context-text">
+                <strong>Dato histórico:</strong> {{ currentQuestionData.historical_context }}
+              </p>
+            </div>
+          }
+
+          <!-- Next Button -->
+          @if (answered()) {
+            <button (click)="nextQuestion()" class="next-button">
+              @if (currentQuestion() < questions().length - 1) {
+                <span>Siguiente Puzzle</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              } @else {
+                <span>Ver Resultados</span>
+                <i class="fas fa-check-circle ml-2"></i>
+              }
+            </button>
+          }
+        </div>
+      </div>
+    }
+
+    <!-- Results Screen -->
+    @if (gameFinished()) {
+      <div class="results-container">
+        <!-- Results Header -->
+        <div class="results-header">
+          <div class="score-circle">
+            <div class="score-value">{{ score() }}</div>
+            <div class="score-max">/ {{ MAX_POINTS_PER_GAME }}</div>
+          </div>
+
+          <h2 class="results-title">¡Partida Completada!</h2>
+
+          <p class="results-percentage">
+            Has acertado el {{ (score() / MAX_POINTS_PER_GAME) * 100 | number: '1.0-0' }}%
+          </p>
+
+          <!-- Performance Message -->
+          @if ((score() / MAX_POINTS_PER_GAME) * 100 >= 80) {
+            <p class="results-message excellent">
+              <i class="fas fa-trophy text-yellow-400 mr-2"></i>
+              ¡Excelente! Eres un verdadero historiador
+            </p>
+          } @else if ((score() / MAX_POINTS_PER_GAME) * 100 >= 60) {
+            <p class="results-message good">
+              <i class="fas fa-thumbs-up text-blue-400 mr-2"></i>
+              ¡Muy bien! Tus conocimientos son sólidos
+            </p>
+          } @else if ((score() / MAX_POINTS_PER_GAME) * 100 >= 40) {
+            <p class="results-message decent">
+              <i class="fas fa-star text-purple-400 mr-2"></i>
+              No está mal, pero aún hay mucho por aprender
+            </p>
+          } @else {
+            <p class="results-message low">
+              <i class="fas fa-book text-gray-400 mr-2"></i>
+              Sigue estudiando y lo lograrás
+            </p>
+          }
+        </div>
+
+        <!-- Restart Button -->
+        <button (click)="restartGame()" class="restart-button">
+          <i class="fas fa-redo mr-2"></i>
+          Jugar de Nuevo
+        </button>
+
+        <!-- Back to Games Button -->
+        <button class="back-button" [routerLink]="'/juegos'">
+          <i class="fas fa-arrow-left"></i> Volver a Juegos
+        </button>
+      </div>
+    }
+  </div>
+</section>

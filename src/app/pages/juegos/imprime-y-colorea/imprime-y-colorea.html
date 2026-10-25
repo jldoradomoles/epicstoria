@@ -1,0 +1,90 @@
+<app-hero [noMainImage]="true" [imageUrl]="'images/juegos.jpg'" />
+
+<section class="py-16 px-4">
+  <div class="container mx-auto">
+    <div class="presentation-section">
+      <p class="text-3xl text-color presentation-title">Imprime y colorea</p>
+
+      <h1 class="text-color text-3xl presentation-title">
+        En <strong>Imprime y colorea</strong> encontrarás ilustraciones de faraones, gladiadores,
+        vikingos, samuráis, exploradores, inventores y muchos otros protagonistas de la historia.
+      </h1>
+
+      <p class="text-xl text-color presentation-description">
+        Elige tu dibujo favorito, imprímelo y dale vida con tus colores. ¿De qué color será la
+        armadura de tu gladiador? ¿Cómo decorarás el palacio de un emperador? ¡Tú decides!
+      </p>
+
+      <p class="text-xl text-color presentation-description">
+        Una forma divertida y creativa de acercarte a la historia, descubrir otras épocas y
+        convertirte en artista de tus propias aventuras.
+      </p>
+
+      <p class="text-xl text-color presentation-challenge">
+        <strong>¡Prepara tus lápices, elige una época y comienza a colorear la historia!</strong>
+      </p>
+
+      <div class="mt-8">
+        <a routerLink="/juegos" class="back-button-presentation">
+          <i class="fas fa-arrow-left mr-2"></i>
+          Volver a Juegos
+        </a>
+      </div>
+    </div>
+
+    <div class="carousel-card">
+      <h2 class="carousel-title">{{ current().title }}</h2>
+
+      <div class="carousel">
+        <button type="button" class="nav-button" aria-label="Dibujo anterior" (click)="previous()">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="image-frame">
+          <img
+            [ngSrc]="current().file"
+            [alt]="'Ilustración para colorear: ' + current().title"
+            fill
+            priority
+          />
+        </div>
+
+        <button type="button" class="nav-button" aria-label="Dibujo siguiente" (click)="next()">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <p class="counter">{{ currentIndex() + 1 }} / {{ images.length }}</p>
+
+      <div class="actions">
+        <a
+          class="action-button primary"
+          [href]="current().file"
+          [attr.download]="current().title + '.webp'"
+        >
+          <i class="fas fa-download"></i>
+          Descargar
+        </a>
+        <!-- <button type="button" class="action-button" (click)="print()">
+          <i class="fas fa-print"></i>
+          Imprimir
+        </button> -->
+      </div>
+
+      <div class="thumbnails">
+        @for (image of images; track image.file; let i = $index) {
+          <button
+            type="button"
+            class="thumbnail"
+            [class.active]="i === currentIndex()"
+            [attr.aria-label]="image.title"
+            [attr.aria-current]="i === currentIndex()"
+            (click)="select(i)"
+          >
+            <img [ngSrc]="image.file" [alt]="image.title" width="64" height="64" />
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+</section>

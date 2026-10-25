@@ -4,6 +4,7 @@ import * as XLSX from 'xlsx';
 import { query } from '../config/database';
 import { AppError } from '../middleware/error.middleware';
 import { Event, EventResponse } from '../models/event.model';
+import { resolveEventImageUrl } from '../utils/event-image.utils';
 import { generateEventSlug } from '../utils/slug.utils';
 
 interface ExcelRow {
@@ -59,6 +60,7 @@ export class EventService {
     if (normalizedUrl.startsWith('/images-optimized/')) {
       normalizedUrl = normalizedUrl.replace(/^\/images-optimized\//, '/images/');
     }
+    normalizedUrl = resolveEventImageUrl(normalizedUrl);
 
     // Construir la ruta completa del archivo
     const imagePath = normalizedUrl.replace(/^\//, '');
@@ -95,6 +97,7 @@ export class EventService {
       const fileName = imagePath.split('/').pop() || imagePath;
       imagePath = `images/eventos/${fileName}`;
     }
+    imagePath = resolveEventImageUrl(imagePath);
 
     // Extraer directorio, nombre base y extensión
     const pathMatch = imagePath.match(/^(.+\/)?(.+?)(\.[^.]+)$/);
@@ -235,11 +238,10 @@ export class EventService {
     }
 
     // Para rutas relativas, asegurar que empiecen con /
-    if (!imageUrl.startsWith('/')) {
-      return `/${imageUrl}`;
-    }
+    const withSlash = imageUrl.startsWith('/') ? imageUrl : `/${imageUrl}`;
 
-    return imageUrl;
+    // Las imágenes de eventos viven en una subcarpeta por evento
+    return resolveEventImageUrl(withSlash);
   }
 
   /**

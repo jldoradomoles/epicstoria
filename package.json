@@ -17,6 +17,7 @@
     "excel:template": "npx tsx scripts/create-excel-template.ts",
     "images:json-to-webp": "npx tsx scripts/convert-json-images-to-webp.ts public/data/events.json",
     "images:optimize": "npx tsx scripts/optimize-images.ts",
+    "images:organize": "npx tsx scripts/organize-event-images.ts",
     "serve:ssr:epicstoria": "node dist/epicstoria/server/server.mjs"
   },
   "prettier": {

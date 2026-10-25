@@ -20,7 +20,7 @@ export class Hero {
   mobileImageUrl = input<string>('');
 
   // Imagen por defecto para desktop
-  private readonly defaultImage = '/images/Cabecera1.jpg';
+  private readonly defaultImage = '/images/Cabecera.jpg';
 
   // Imagen por defecto para móvil
   private readonly defaultMobileImage = '/images/home-movil.jpg';

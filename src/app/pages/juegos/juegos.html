@@ -5,6 +5,90 @@
 <!-- Contenido Principal -->
 <section class="py-16 px-4">
   <div class="container mx-auto">
+    <!-- Sección de Presentación de Juegos -->
+    <div class="presentation-section mb-20">
+      <div class="presentation-content">
+        <h1 class="text-color text-3xl presentation-title">¿Crees que conoces bien la historia? Ha llegado el momento de demostrarlo.</h1>
+
+        <p class="text-xl text-color presentation-description">
+          Pon a prueba tus conocimientos con los juegos de Epicstoria. Descubre personajes, revive grandes momentos históricos y supera diferentes desafíos mientras recorres algunas de las épocas más fascinantes del pasado.
+        </p>
+
+        <p class="text-xl text-color presentation-challenge">
+          Y eso no es todo. Recuerda que cada evento histórico cuenta con su propio test, donde podrás demostrar cuánto has aprendido sobre él y seguir sumando puntos.
+        </p>
+
+        <p class="text-xl text-color presentation-challenge">
+          Juega, aprende, supera los tests, suma puntos, consigue estrellas y escala posiciones en la Tabla de Líderes.
+        </p>
+
+        <p class="text-xl text-color presentation-challenge">
+          ¿Hasta dónde serás capaz de llegar?
+        </p>
+      </div>
+    </div>
+
+    <!-- Sección de Juegos Disponibles -->
+    <div class="games-section mb-24">
+      <!-- Advertencia de acceso restringido -->
+      @if (!authService.isAuthenticated()) {
+        <div class="mb-8 p-6 bg-amber-900/20 border-2 border-amber-600 rounded-lg">
+          <div class="flex items-start gap-4">
+            <i class="fas fa-lock text-2xl text-amber-500 mt-1"></i>
+            <div>
+              <h3 class="text-xl font-bold text-amber-300 mb-2">Acceso Restringido</h3>
+              <p class="text-color mb-3">
+                Debes estar registrado y autenticado para acceder a los juegos.
+              </p>
+              <p class="text-color mb-4">
+                Crea una cuenta o inicia sesión para comenzar a jugar y ganar puntos.
+              </p>
+              <div class="flex gap-4">
+                <a
+                  routerLink="/register"
+                  class="px-6 py-2 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-colors"
+                >
+                  Crear Cuenta
+                </a>
+                <a
+                  routerLink="/login"
+                  class="px-6 py-2 bg-amber-800 hover:bg-amber-900 text-white font-semibold rounded-lg transition-colors"
+                >
+                  Iniciar Sesión
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+
+      <!-- Grid de Juegos -->
+      <div class="games-grid max-w-5xl mx-auto mb-16" [class.opacity-50]="!authService.isAuthenticated()" [class.pointer-events-none]="!authService.isAuthenticated()">
+        @for (game of availableGames(); track game.id) {
+          <div [class.relative]="!authService.isAuthenticated()">
+            <app-game-card [game]="game" />
+            @if (!authService.isAuthenticated()) {
+              <div class="absolute inset-0 rounded-lg bg-black/40 flex items-center justify-center">
+                <div class="text-center">
+                  <i class="fas fa-lock text-4xl text-amber-300 mb-2"></i>
+                  <p class="text-white font-semibold">Inicia Sesión</p>
+                </div>
+              </div>
+            }
+          </div>
+        }
+      </div>
+
+      <!-- Empty State si no hay juegos -->
+      @if (availableGames().length === 0) {
+        <div class="empty-games">
+          <i class="fas fa-gamepad text-6xl text-amber-500/50 mb-4"></i>
+          <h3 class="text-2xl font-bold text-color mb-2">Próximamente</h3>
+          <p class="text-color mb-6">Estamos preparando increíbles juegos interactivos para ti.</p>
+        </div>
+      }
+    </div>
+
     <!-- Tabla de Líderes -->
     <div class="max-w-5xl mx-auto mb-16">
       <div class="text-center mb-8">
@@ -70,12 +154,18 @@
                     <td class="px-6 py-4">
                       <div class="flex items-center gap-3">
                         <div
-                          class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center text-lg font-bold text-white shadow-lg flex-shrink-0"
+                          class="flex items-center gap-3"
                         >
-                          {{ getInitials(entry) }}
+                           @if (currentUser?.avatar_url) {
+                          <img
+                            [src]="currentUser!.avatar_url"
+                            [alt]="currentUser!.name"
+                            class="w-12 h-12 rounded-full object-cover shadow-md flex-shrink-0"
+                          />
+                        }
                         </div>
                         <div>
-                          <div class="font-semibold text-color">
+                          <div class="font-semibold text-color ">
                             @if (entry.nickname) {
                               {{ entry.nickname }}
                             } @else {
@@ -180,16 +270,6 @@
           </a>
         </div>
       }
-    </div>
-
-    <!-- Sección de Próximamente -->
-    <div class="text-center max-w-3xl mx-auto">
-      <h2 class="text-3xl font-bold text-color mb-4">Más Juegos Próximamente</h2>
-      <p class="text-xl text-color">
-        Estamos trabajando en emocionantes juegos interactivos para que disfrutes aprendiendo
-        historia. ¡Vuelve pronto para descubrir nuevas formas de explorar el pasado y ganar más
-        puntos!
-      </p>
     </div>
   </div>
 </section>

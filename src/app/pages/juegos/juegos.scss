@@ -23,3 +23,125 @@
     font-size: 3rem;
   }
 }
+
+// Sección de Presentación
+.presentation-section {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  .presentation-content {
+    text-align: center;
+  }
+
+  .presentation-title {
+    font-weight: 900;
+    margin: 0 0 24px 0;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+  }
+
+  .presentation-description {
+    margin: 0 0 20px 0;
+    line-height: 1.7;
+  }
+
+  .presentation-challenge {
+    margin: 0;
+    line-height: 1.7;
+  }
+}
+
+// Sección de Juegos
+.games-section {
+  .games-header {
+    text-align: center;
+    margin-bottom: 40px;
+
+    .games-title {
+      font-size: 32px;
+      font-weight: bold;
+      color: #1f2937;
+      margin: 0 0 12px 0;
+    }
+
+    .games-subtitle {
+      font-size: 16px;
+      color: #6b7280;
+      margin: 0;
+    }
+  }
+
+  .games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .empty-games {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(217, 119, 6, 0.05);
+    border: 2px dashed rgba(217, 119, 6, 0.3);
+    border-radius: 12px;
+
+    i {
+      font-size: 3rem;
+      display: block;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .presentation-section {
+    padding: 32px 24px;
+    margin-bottom: 32px;
+
+    .presentation-title {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .presentation-description,
+    .presentation-challenge {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+  }
+
+  .games-section {
+    .games-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .games-header {
+      .games-title {
+        font-size: 24px;
+      }
+
+      .games-subtitle {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .presentation-section {
+    padding: 24px 16px;
+    border-radius: 12px;
+
+    .presentation-title {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .presentation-description,
+    .presentation-challenge {
+      font-size: 13px;
+    }
+  }
+}
