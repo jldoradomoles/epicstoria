@@ -19,6 +19,7 @@ export class CategoryCarousel {
     { name: 'Rincón histórico', imageUrl: '/images/categorias/rincon-historico.webp' },
     { name: 'Monumentos', imageUrl: '/images/categorias/monumentos.webp' },
     { name: 'Catástrofes', imageUrl: '/images/categorias/catastrofes.webp' },
+    { name: 'Conflictos', imageUrl: '/images/categorias/conflictos.webp' },
     { name: 'Mitología', imageUrl: '/images/categorias/mitologia.webp' },
     { name: 'Descubrimientos', imageUrl: '/images/categorias/descubrimientos.webp' },
     { name: 'Espacio', imageUrl: '/images/categorias/espacio.webp' },

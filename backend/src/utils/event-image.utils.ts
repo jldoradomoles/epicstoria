@@ -58,3 +58,42 @@ export function resolveEventImageUrl(url: string): string {
   const [, prefix, fileName] = match;
   return `${prefix}${getEventImageFolder(fileName)}/${fileName}`;
 }
+
+/**
+ * Resuelve una ruta relativa dentro de `baseDir` ignorando mayúsculas/minúsculas
+ * y la forma de normalización Unicode (NFC/NFD) de cada segmento.
+ * El servidor es Linux (sensible a mayúsculas) pero muchas imágenes se subieron
+ * desde Windows con un casing distinto al guardado en BD.
+ * Devuelve la ruta relativa con el casing real, o null si no existe.
+ */
+export function findImagePathIgnoreCase(baseDir: string, relativePath: string): string | null {
+  const fs = require('fs') as typeof import('fs');
+  const path = require('path') as typeof import('path');
+  const normalize = (s: string) => s.normalize('NFC').toLowerCase();
+
+  let current = baseDir;
+  const resolved: string[] = [];
+
+  for (const segment of relativePath.split('/').filter(Boolean)) {
+    const exact = path.join(current, segment);
+    let actual: string | undefined;
+
+    if (fs.existsSync(exact)) {
+      actual = segment;
+    } else {
+      let entries: string[];
+      try {
+        entries = fs.readdirSync(current);
+      } catch {
+        return null;
+      }
+      actual = entries.find((entry) => normalize(entry) === normalize(segment));
+    }
+
+    if (!actual) return null;
+    resolved.push(actual);
+    current = path.join(current, actual);
+  }
+
+  return resolved.join('/');
+}

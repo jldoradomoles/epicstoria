@@ -4,7 +4,7 @@ import * as XLSX from 'xlsx';
 import { query } from '../config/database';
 import { AppError } from '../middleware/error.middleware';
 import { Event, EventResponse } from '../models/event.model';
-import { resolveEventImageUrl } from '../utils/event-image.utils';
+import { findImagePathIgnoreCase, resolveEventImageUrl } from '../utils/event-image.utils';
 import { generateEventSlug } from '../utils/slug.utils';
 
 interface ExcelRow {
@@ -73,6 +73,12 @@ export class EventService {
       return `/${imagePath}`;
     }
 
+    // Linux distingue mayúsculas: buscar el archivo real ignorando el casing
+    const actualPath = findImagePathIgnoreCase(publicPath, imagePath);
+    if (actualPath) {
+      return `/${actualPath}`;
+    }
+
     // Si no existe, retornar la imagen por defecto
     console.warn(`⚠️  Imagen no encontrada: ${fullPath}`);
     return this.DEFAULT_IMAGE;
@@ -116,6 +122,12 @@ export class EventService {
 
       if (fs.existsSync(fullPath)) {
         additionalImages.push(`/${additionalImagePath}`);
+        continue;
+      }
+
+      const actualPath = findImagePathIgnoreCase(this.getPublicPath(), additionalImagePath);
+      if (actualPath) {
+        additionalImages.push(`/${actualPath}`);
       }
     }
 
