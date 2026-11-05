@@ -156,13 +156,17 @@
                         <div
                           class="flex items-center gap-3"
                         >
-                           @if (currentUser?.avatar_url) {
-                          <img
-                            [src]="currentUser!.avatar_url"
-                            [alt]="currentUser!.name"
-                            class="w-12 h-12 rounded-full object-cover shadow-md flex-shrink-0"
-                          />
-                        }
+                          @if (entry?.avatar_url) {
+                            <img
+                              [src]="entry!.avatar_url"
+                              [alt]="entry!.name"
+                              class="w-12 h-12 rounded-full object-cover shadow-md flex-shrink-0"
+                            />
+                          } @else {
+                            <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 shadow-md bg-gradient-to-br from-amber-600 to-amber-800 text-white font-bold text-lg select-none">
+                              {{ (entry.nickname || entry.name) | slice:0:1 | uppercase }}
+                            </div>
+                          }
                         </div>
                         <div>
                           <div class="font-semibold text-color ">

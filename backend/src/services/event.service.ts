@@ -142,9 +142,10 @@ export class EventService {
       date: event.date,
       category: event.category,
       imageUrl: this.validateImageUrl(event.image_url),
-      additionalImages: (event.additional_images || []).map((url: string) =>
-        this.normalizeImageUrl(url),
-      ),
+      additionalImages: (event.additional_images?.length
+        ? event.additional_images
+        : this.detectAdditionalImages(event.image_url ?? '')
+      ).map((url: string) => this.normalizeImageUrl(url)),
       summary: event.summary,
       context: event.context,
       keyFacts: event.key_facts,

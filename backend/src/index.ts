@@ -12,6 +12,7 @@ import pointsRoutes from './routes/points.routes';
 import sitemapRoutes from './routes/sitemap.routes';
 import userRoutes from './routes/user.routes';
 import { scheduleMessageCleanup } from './services/message-cleanup.scheduler';
+import { EventService } from './services/event.service';
 
 dotenv.config();
 
@@ -87,6 +88,11 @@ app.listen(PORT, () => {
 
   // Iniciar tarea programada de limpieza de mensajes
   scheduleMessageCleanup();
+
+  // Sincronizar imágenes adicionales de todos los eventos con el filesystem
+  EventService.syncAdditionalImages()
+    .then(() => console.log('✅ Additional images synced'))
+    .catch(err => console.error('⚠️ Additional images sync failed (non-fatal):', err));
 });
 
 export default app;
