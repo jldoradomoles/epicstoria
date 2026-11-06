@@ -5,5 +5,33 @@
       "maxFindings": 5,
       "maxChars": 8000
     }
+  },
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [
+      ".impeccable/mocks/decision/assigned.html",
+      ".impeccable/mocks/decision/dealt-oraculo.html",
+      ".impeccable/mocks/decision/dealt-tablero.html"
+    ],
+    "ignoreValues": [
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "src/app/pages/event-detail/event-detail.html"
+        ],
+        "createdAt": "2026-11-05T10:55:18.763Z",
+        "reason": "Agent: NgOptimizedImage uses ngSrc not src; detector sees no src attribute but Angular resolves it at runtime"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "src/app/components/feature-cards/feature-cards.html"
+        ],
+        "createdAt": "2026-11-06T08:01:21.067Z",
+        "reason": "NgOptimizedImage [ngSrc] dynamic binding - real image paths from component data array"
+      }
+    ]
   }
 }

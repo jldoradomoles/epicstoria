@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jose Luis Dorado Moles - Senior Fullstack & AI Frameworks Specialist</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-ai: #c084fc;
+            --border: #334155;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .cv-hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 1.5rem;
+            background: radial-gradient(circle at center, #1e293b 0%, var(--bg-color) 70%);
+            box-sizing: border-box;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .badge-group {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .badge {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .ai-badge {
+            background: rgba(168, 85, 247, 0.1) !important;
+            color: var(--accent-ai) !important;
+            border-color: rgba(168, 85, 247, 0.3) !important;
+        }
+
+        .cv-hero h1 {
+            font-size: 3rem;
+            margin: 0.5rem 0;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .cv-hero h2 {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .cv-hero p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg-color);
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.2s, background 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #0ea5e9;
+            transform: translateY(-2px);
+        }
+
+        .scroll-hint {
+            font-size: 0.9rem;
+            color: #64748b;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-6px); }
+            60% { transform: translateY(-3px); }
+        }
+
+        /* Experience Section (Sticky Scroll) */
+        .experience-section {
+            height: 500vh; /* Espacio para las 6 tarjetas */
+            position: relative;
+            background: var(--bg-color);
+        }
+
+        .sticky-wrapper {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            box-sizing: border-box;
+        }
+
+        .experience-header-side {
+            flex: 1;
+            padding-right: 3rem;
+        }
+
+        .experience-header-side h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .experience-header-side p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .indicators {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #334155;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .dot.active-dot {
+            background: var(--accent);
+            transform: scale(1.3);
+        }
+
+        .cards-container {
+            flex: 1.2;
+            position: relative;
+            height: 420px;
+        }
+
+        .exp-card {
+            position: absolute;
+            width: 100%;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-sizing: border-box;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+            pointer-events: none;
+        }
+
+        .exp-card.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        .exp-period {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .exp-card h4 {
+            font-size: 1.4rem;
+            margin: 0 0 0.25rem 0;
+            color: #ffffff;
+        }
+
+        .company-name {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin: 0 0 1rem 0;
+            font-weight: 500;
+        }
+
+        .exp-card p {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: #0f172a;
+            color: var(--accent);
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            border: 1px solid #1e3a8a;
+        }
+
+        /* Skills Section */
+        .skills-section, .education-section {
+            padding: 6rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .skills-section h3, .education-section h3 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .skill-category.highlight {
+            border-color: var(--accent-ai);
+            background: linear-gradient(135deg, #1e293b 0%, #2e1065 100%);
+        }
+
+        .skill-category.highlight h4 {
+            color: var(--accent-ai);
+        }
+
+        .skill-category h4 {
+            color: var(--accent);
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-category p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* Education Grid */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .edu-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem;
+        }
+
+        .edu-card .year {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .edu-card h4 {
+            margin: 0 0 0.25rem 0;
+            font-size: 1.05rem;
+            color: var(--text-main);
+        }
+
+        .edu-card p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sticky-wrapper {
+                flex-direction: column;
+                justify-content: center;
+                padding: 1rem;
+            }
+            .experience-header-side {
+                padding-right: 0;
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+            .indicators {
+                justify-content: center;
+            }
+            .cv-hero h1 {
+                font-size: 2.2rem;
+            }
+            .cards-container {
+                height: 480px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header class="cv-hero">
+        <div class="hero-content">
+            <div class="badge-group">
+                <span class="badge">Málaga, España • +34 627 270 083</span>
+                <span class="badge ai-badge">AI Frameworks Specialist</span>
+            </div>
+            <h1>Jose Luis Dorado Moles</h1>
+            <h2>Desarrollador Web Fullstack</h2>
+            <p>
+                Especialista en desarrollo web escalable con Angular y React, e integración avanzada de frameworks de IA como <strong>GitHub Copilot</strong> y <strong>Claude Code</strong>[cite: 3]. Experiencia en arquitecturas Micro Frontends (Single-SPA), gestión de estados complejos (NgRx, Redux, RxJS) y desarrollo Backend con Node, PostgreSQL, MongoDB y Docker[cite: 3].
+            </p>
+            <div class="hero-actions">
+                <a href="mailto:jldoradomoles@gmail.com" class="btn-primary">Contactar</a>
+                <span class="scroll-hint">Desliza para ver la experiencia laboral 👇</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- EXPERIENCIA (EFECTO STICKY & SCROLL DINÁMICO) -->
+    <section class="experience-section" id="sticky-container">
+        <div class="sticky-wrapper">
+            <div class="experience-header-side">
+                <h3>Experiencia Laboral</h3>
+                <p>Trayectoria profesional en desarrollo Frontend y Fullstack para grandes clientes corporativos[cite: 3, 4].</p>
+                
+                <div class="indicators" id="indicatorsContainer">
+                    <!-- Generado dinámicamente por JS -->
+                </div>
+            </div>
+
+            <div class="cards-container" id="cardsContainer">
+                <!-- Generado dinámicamente por JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- HABILIDADES & IA -->
+    <section class="skills-section">
+        <h3>Stack Tecnológico & Especialidades</h3>
+        <div class="skills-grid">
+            <div class="skill-category highlight">
+                <h4>Especialista IA</h4>
+                <p>GitHub Copilot, Claude Code[cite: 5]</p>
+            </div>
+            <div class="skill-category">
+                <h4>Frontend & Microfrontends</h4>
+                <p>Angular (v15-v20), React, Vue.js, TypeScript, JavaScript, Single-SPA[cite: 3, 5]</p>
+            </div>
+            <div class="skill-category">
+                <h4>Backend & Bases de Datos</h4>
+                <p>Node.js, PostgreSQL, Express, Webhooks, Servidores REST, MySQL, MongoDB, Docker[cite: 3, 5]</p>
+            </div>
+            <div class="skill-category">
+                <h4>Gestión de Estado</h4>
+                <p>NGRX, Redux, NGXS, RxJS[cite: 3, 5]</p>
+            </div>
+            <div class="skill-category">
+                <h4>Layout & Design</h4>
+                <p>HTML5, CSS3 (Flex/Grid), SASS, Tailwind CSS, Bootstrap, Figma, Angular Material, PrimeNG[cite: 3, 5]</p>
+            </div>
+            <div class="skill-category">
+                <h4>Deploy, Testing & Agile</h4>
+                <p>Gitflow, CI/CD (GitHub Actions, Jenkins), Jasmine/Karma, Scrum Master Certified[cite: 3, 5]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMACIÓN & CERTIFICACIONES -->
+    <section class="education-section">
+        <h3>Formación & Certificaciones</h3>
+        <div class="education-grid">
+            <div class="edu-card">
+                <span class="year">2026</span>
+                <h4>Vue de cero a experto</h4>
+                <p>Certificación / Curso de especialización[cite: 5]</p>
+            </div>
+            <div class="edu-card">
+                <span class="year">2025</span>
+                <h4>Arquitectura de Aplicaciones</h4>
+                <p>Patrones de Diseño y Capas[cite: 5]</p>
+            </div>
+            <div class="edu-card">
+                <span class="year">2024</span>
+                <h4>Node de cero a experto</h4>
+                <p>Certificación / Curso de especialización[cite: 5]</p>
+            </div>
+            <div class="edu-card">
+                <span class="year">2023 - 2024</span>
+                <h4>Máster en Frontend</h4>
+                <p>Lemoncode (Online)[cite: 5]</p>
+            </div>
+            <div class="edu-card">
+                <span class="year">2021</span>
+                <h4>Scrum Master Certified</h4>
+                <p>Scrum Alliance[cite: 5]</p>
+            </div>
+            <div class="edu-card">
+                <span class="year">2017 - 2018</span>
+                <h4>Máster en Big Data y Análisis de Datos</h4>
+                <p>CICE Madrid[cite: 5]</p>
+            </div>
+            <div class="edu-card">
+                <span class="year">2014 - 2018</span>
+                <h4>Técnico Superior DAW & DAM</h4>
+                <p>IES Aguadulce, Almería (Doble Titulación)[cite: 5]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCRIPT DE INTERACTIVIDAD PARA EL SCROLL -->
+    <script>
+        const experiences = [
+            {
+                period: "2024 - 2026",
+                role: "Frontend Developer",
+                company: "El Corte Inglés (Knowmadmood) — Madrid",
+                description: "Desarrollo de nuevos módulos y mantenimiento evolutivo/correctivo en Angular 15. Desarrollo y versionado de componentes para librería propia, migración de Angular 15 a 20 y despliegues en Pre y Prod mediante Jenkins y Gitflow.",
+                tech: ["Angular 15-20", "Node 16", "TypeScript", "Angular Material", "Jenkins", "Gitflow"]
+            },
+            {
+                period: "2024",
+                role: "Fullstack Developer",
+                company: "MAPFRE (Knowmadmood) — Madrid",
+                description: "Desarrollo bajo arquitectura de Micro Frontends (MFE) e implementación de lógica de negocio compleja con NGRX y RxJS. Backend: creación de nuevos servicios y mantenimiento de servidor Node y BBDD PostgreSQL.",
+                tech: ["Angular 15", "Node", "NGRX", "RxJS", "PrimeNG", "PostgreSQL", "MFE"]
+            },
+            {
+                period: "2023 - 2024",
+                role: "Fullstack Developer",
+                company: "Mutua Madrileña (Knowmadmood) — Madrid",
+                description: "Migración de módulos críticos de AngularJS a Angular 15 y creación de librerías de componentes corporativas desde cero. Backend: creación de servicios en Node y gestión de bases de datos PostgreSQL.",
+                tech: ["Angular 15", "NGXS", "RxJS", "Node", "PostgreSQL", "Bootstrap", "SCSS"]
+            },
+            {
+                period: "2023",
+                role: "Frontend Developer",
+                company: "Overlap (Knowmadmood) — Madrid",
+                description: "Análisis y desarrollo de lógica de negocio escalable, modularización de rutas, uso intensivo de NGRX/PrimeNG y testing unitario con Jasmine y Karma.",
+                tech: ["Angular", "NGRX", "RxJS", "PrimeNG", "Jasmine", "Karma"]
+            },
+            {
+                period: "2021 - 2023",
+                role: "Frontend Developer",
+                company: "PWC ESPAÑA — Madrid",
+                description: "Desarrollo de aplicaciones para consultores en PWC USA con grandes volúmenes de datos (Big Data) en React y Angular. Integración de MFE con SPA, optimización de performance y maquetación pixel-perfect.",
+                tech: ["React", "Redux", "Apollo", "Mongoose", "Angular", "Single-SPA"]
+            },
+            {
+                period: "2019 - 2020",
+                role: "Frontend Developer",
+                company: "Malasphina Creativos — Málaga",
+                description: "Desarrollo de aplicaciones de promociones urbanísticas y maquetación web a partir de diseños complejos en Figma para agencia de marketing, aplicando un enfoque mobile-first y precisión pixel-perfect.",
+                tech: ["React", "HTML5", "CSS3", "Tailwind CSS", "SASS", "Bootstrap 4", "Figma"]
+            }
+        ];
+
+        const cardsContainer = document.getElementById('cardsContainer');
+        const indicatorsContainer = document.getElementById('indicatorsContainer');
+
+        // Renderizar elementos dinámicamente
+        experiences.forEach((exp, idx) => {
+            // Tarjetas de experiencia
+            const card = document.createElement('div');
+            card.className = `exp-card ${idx === 0 ? 'visible' : ''}`;
+            card.innerHTML = `
+                <span class="exp-period">${exp.period}</span>
+                <h4>${exp.role}</h4>
+                <h5 class="company-name">${exp.company}</h5>
+                <p>${exp.description}</p>
+                <div class="tech-tags">
+                    ${exp.tech.map(t => `<span class="tag">${t}</span>`).join('')}
+                </div>
+            `;
+            cardsContainer.appendChild(card);
+
+            // Indicadores (puntos de navegación)
+            const dot = document.createElement('span');
+            dot.className = `dot ${idx === 0 ? 'active-dot' : ''}`;
+            indicatorsContainer.appendChild(dot);
+        });
+
+        const cards = document.querySelectorAll('.exp-card');
+        const dots = document.querySelectorAll('.dot');
+        const stickyContainer = document.getElementById('sticky-container');
+
+        // Control del scroll interactivo
+        window.addEventListener('scroll', () => {
+            const rect = stickyContainer.getBoundingClientRect();
+            const scrollProgress = -rect.top / (stickyContainer.clientHeight - window.innerHeight);
+
+            if (scrollProgress >= 0 && scrollProgress <= 1) {
+                const index = Math.min(
+                    Math.floor(scrollProgress * experiences.length),
+                    experiences.length - 1
+                );
+
+                cards.forEach((card, i) => {
+                    if (i === index) {
+                        card.classList.add('visible');
+                    } else {
+                        card.classList.remove('visible');
+                    }
+                });
+
+                dots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.add('active-dot');
+                    } else {
+                        dot.classList.remove('active-dot');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

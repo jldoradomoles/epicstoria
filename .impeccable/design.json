@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-05T00:00:00Z",
+  "title": "Design System: Epicstoria",
+  "extensions": {
+    "colorMeta": {
+      "gold-amber": {
+        "role": "primary",
+        "displayName": "Oro Imperial",
+        "canonical": "#fbbf24",
+        "tonalRamp": ["#271a00", "#451a03", "#78350f", "#92400e", "#d97706", "#f59e0b", "#fbbf24", "#fef9c3"]
+      },
+      "imperial-blue": {
+        "role": "secondary",
+        "displayName": "Azul Imperial",
+        "canonical": "#1e40af",
+        "tonalRamp": ["#060f35", "#0d2170", "#1e3a8a", "#1e40af", "#2563eb", "#60a5fa", "#bfdbfe", "#eff6ff"]
+      },
+      "history-red": {
+        "role": "secondary",
+        "displayName": "Rojo Historia",
+        "canonical": "#dc2626",
+        "tonalRamp": ["#2a0404", "#560808", "#7f1d1d", "#991b1b", "#dc2626", "#f87171", "#fecaca", "#fff5f5"]
+      },
+      "ink-dark": {
+        "role": "neutral",
+        "displayName": "Noche Imperial",
+        "canonical": "#111827",
+        "tonalRamp": ["#02030a", "#080c18", "#111827", "#1f2937", "#374151", "#6b7280", "#d1d5db", "#f9fafb"]
+      },
+      "leather": {
+        "role": "neutral",
+        "displayName": "Cuero Antiguo",
+        "canonical": "#1f150c",
+        "tonalRamp": ["#060300", "#120d07", "#1f150c", "#2e1f12", "#4a3220", "#7a5a38", "#c0956e", "#f0e0cc"]
+      },
+      "leather-muted": {
+        "role": "neutral",
+        "displayName": "Pizarra Oscura",
+        "canonical": "#1f2937",
+        "tonalRamp": ["#06080e", "#0e1420", "#1f2937", "#374151", "#4b5563", "#9ca3af", "#e5e7eb", "#f9fafb"]
+      },
+      "stone-dark": {
+        "role": "neutral",
+        "displayName": "Piedra Oscura",
+        "canonical": "#292524",
+        "tonalRamp": ["#080706", "#141211", "#292524", "#44403c", "#57534e", "#a8a29e", "#e7e5e4", "#fafaf9"]
+      },
+      "warm-parchment": {
+        "role": "neutral",
+        "displayName": "Pergamino Cálido",
+        "canonical": "#e8dcc4",
+        "tonalRamp": ["#1e1308", "#3d2a16", "#6b4c2a", "#9b7555", "#c5a07a", "#d4b896", "#e8dcc4", "#f8f4ee"]
+      },
+      "cream-ivory": {
+        "role": "neutral",
+        "displayName": "Crema Imperial",
+        "canonical": "#fcf8d8",
+        "tonalRamp": ["#2e2c00", "#5c5800", "#8a8400", "#b8b200", "#d4cf5a", "#ece99b", "#f7f4c8", "#fcf8d8"]
+      },
+      "parchment-text": {
+        "role": "neutral",
+        "displayName": "Texto Pergamino",
+        "canonical": "#e1c7b1",
+        "tonalRamp": ["#1e1208", "#3d2a16", "#6b4a2a", "#9b7050", "#c5a070", "#d4b694", "#e1c7b1", "#f5ede4"]
+      },
+      "bronze-deep": {
+        "role": "neutral",
+        "displayName": "Bronce Profundo",
+        "canonical": "#78350f",
+        "tonalRamp": ["#1a0a02", "#331507", "#4d1f0b", "#78350f", "#92400e", "#b45309", "#d97706", "#fef3c7"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Event hero titles on detail pages. Used once per page." },
+      "headline": { "displayName": "Headline", "purpose": "Page titles, main section headers." },
+      "title": { "displayName": "Title", "purpose": "Card titles, sub-section headers, event names in listing grids." },
+      "body": { "displayName": "Body", "purpose": "All narrative copy. Max ~72ch on desktop." },
+      "label": { "displayName": "Label", "purpose": "Category chips, metadata dates, nav links. Always uppercase." }
+    },
+    "shadows": [
+      { "name": "card-resting", "value": "0 25px 50px -12px rgba(0,0,0,0.25)", "purpose": "Event cards and section containers at rest." },
+      { "name": "card-hover", "value": "0 25px 50px -12px rgba(59,130,246,0.2)", "purpose": "Event card hover. The only colored shadow in the system." },
+      { "name": "header", "value": "0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1)", "purpose": "Header persistent lift." },
+      { "name": "button-resting", "value": "0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)", "purpose": "Button at rest." },
+      { "name": "button-hover", "value": "0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1)", "purpose": "Elevated button on hover." }
+    ],
+    "motion": [
+      { "name": "scale-card", "value": "transform 0.3s cubic-bezier(0.4,0,0.2,1)", "purpose": "Event card and carousel tile scale on hover." },
+      { "name": "scale-button", "value": "transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1)", "purpose": "Button scale and shadow promotion on hover." },
+      { "name": "color-fast", "value": "color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease", "purpose": "Fast color transitions for nav links and input state changes." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px", "purpose": "Nav appears; layout widens; 2-column grids." },
+      { "name": "md", "value": "768px", "purpose": "Grid shifts from 1 to 2 columns." },
+      { "name": "lg", "value": "1024px", "purpose": "Grid shifts to 3 columns; max content width narrows to max-w-5xl on detail pages." },
+      { "name": "xl", "value": "1280px", "purpose": "max-w-7xl container ceiling reached." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main CTA surface. Parchment cream background signals action in the archive palette.",
+      "html": "<button class=\"ds-btn-primary\">Ver Eventos →</button>",
+      "css": ".ds-btn-primary { background-color: #fcf8d8; color: #1f150c; border-radius: 9999px; padding: 12px 32px; font-family: 'Poppins', sans-serif; font-size: 0.9375rem; font-weight: 600; border: none; cursor: pointer; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1); transition: background-color 0.15s, transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1); display: inline-flex; align-items: center; gap: 8px; } .ds-btn-primary:hover { background-color: #f0e6b8; transform: scale(1.05); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1); } .ds-btn-primary:active { transform: scale(0.95); } .ds-btn-primary:focus-visible { outline: 2px solid #fbbf24; outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Glass-dark button for back-navigation and secondary overlaid actions.",
+      "html": "<button class=\"ds-btn-ghost\">← Volver</button>",
+      "css": ".ds-btn-ghost { background-color: rgba(31,39,55,0.8); color: #ffffff; border-radius: 9999px; padding: 8px 16px; font-family: 'Poppins', sans-serif; font-size: 0.875rem; font-weight: 500; border: none; cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); transition: background-color 0.15s; display: inline-flex; align-items: center; gap: 8px; } .ds-btn-ghost:hover { background-color: rgba(55,65,81,0.9); } .ds-btn-ghost:focus-visible { outline: 2px solid #fbbf24; outline-offset: 2px; }"
+    },
+    {
+      "name": "Event Card",
+      "kind": "card",
+      "refersTo": "event-card",
+      "description": "The core content unit. Leather-dark container over parchment background, with blue glow on hover.",
+      "html": "<a class=\"ds-event-card\" href=\"#\">\n  <div class=\"ds-event-card__image\" role=\"img\" aria-label=\"Llegada a la Luna\" style=\"background-image:url('https://picsum.photos/400/224')\"></div>\n  <span class=\"ds-event-card__category ds-cat-espacio\">Espacio</span>\n  <div class=\"ds-event-card__body\">\n    <p class=\"ds-event-card__date\">20 Jul 1969</p>\n    <h4 class=\"ds-event-card__title\">Llegada del Hombre a la Luna</h4>\n    <p class=\"ds-event-card__summary\">El Apollo 11 aterriza en la superficie lunar, marcando un hito histórico para la humanidad.</p>\n    <span class=\"ds-event-card__cta\">Ver Más →</span>\n  </div>\n</a>",
+      "css": ".ds-event-card { display:flex; flex-direction:column; overflow:hidden; border-radius:12px; box-shadow:0 25px 50px -12px rgba(0,0,0,0.25); transition:transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1); cursor:pointer; text-decoration:none; background-color:rgba(31,21,12,0.64); color:#ffffff; position:relative; } .ds-event-card:hover { transform:scale(1.02); box-shadow:0 25px 50px -12px rgba(59,130,246,0.2); } .ds-event-card__image { height:224px; background-size:cover; background-position:center; flex-shrink:0; position:relative; } .ds-event-card__category { position:absolute; top:16px; left:16px; border-radius:9999px; padding:4px 12px; font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#ffffff; } .ds-cat-espacio { background-color:rgba(37,99,235,0.85); } .ds-event-card__body { display:flex; flex-direction:column; flex-grow:1; padding:24px; gap:8px; } .ds-event-card__date { font-family:'Poppins',sans-serif; font-size:0.875rem; font-weight:600; opacity:0.7; margin:0; } .ds-event-card__title { font-family:'Poppins',sans-serif; font-size:1.25rem; font-weight:700; margin:0; line-height:1.3; } .ds-event-card__summary { font-family:'Poppins',sans-serif; font-size:1rem; line-height:1.6; margin:0; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; opacity:0.85; } .ds-event-card__cta { font-family:'Poppins',sans-serif; font-size:0.875rem; font-weight:500; margin-top:8px; align-self:flex-start; color:#ffffff; opacity:0.7; transition:opacity 0.15s, color 0.15s; } .ds-event-card:hover .ds-event-card__cta { opacity:1; color:#93c5fd; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input-default",
+      "description": "Stone-dark field with amber-tinted icon and focus ring. Used in login, register, and profile forms.",
+      "html": "<div class=\"ds-input-wrap\">\n  <span class=\"ds-input-icon\" aria-hidden=\"true\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\"/><polyline points=\"22,4 12,13 2,4\"/></svg></span>\n  <input class=\"ds-input\" type=\"email\" placeholder=\"tu@email.com\" />\n</div>",
+      "css": ".ds-input-wrap { position:relative; display:flex; align-items:center; } .ds-input-icon { position:absolute; left:12px; color:rgba(251,191,36,0.6); pointer-events:none; display:flex; align-items:center; } .ds-input { width:100%; padding:12px 16px 12px 40px; background-color:rgba(41,37,36,0.5); border:1px solid rgba(120,53,15,0.3); border-radius:8px; color:#e1c7b1; font-family:'Poppins',sans-serif; font-size:1rem; outline:none; transition:border-color 0.15s, box-shadow 0.15s; box-sizing:border-box; } .ds-input::placeholder { color:rgba(225,199,177,0.4); } .ds-input:focus { border-color:rgba(245,158,11,0.5); box-shadow:0 0 0 1px rgba(245,158,11,0.3); }"
+    },
+    {
+      "name": "Category Chip",
+      "kind": "chip",
+      "description": "Pill badge for event categories. Per-category background, always white text, uppercase label.",
+      "html": "<div style=\"display:flex;gap:8px;flex-wrap:wrap;\">\n  <span class=\"ds-chip ds-chip--espacio\">Espacio</span>\n  <span class=\"ds-chip ds-chip--ciencia\">Ciencia</span>\n  <span class=\"ds-chip ds-chip--historia\">Historia</span>\n  <span class=\"ds-chip ds-chip--tecnologia\">Tecnología</span>\n</div>",
+      "css": ".ds-chip { display:inline-block; border-radius:9999px; padding:4px 12px; font-family:'Poppins',sans-serif; font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#ffffff; } .ds-chip--espacio { background-color:#2563eb; } .ds-chip--ciencia { background-color:#16a34a; } .ds-chip--historia { background-color:#dc2626; } .ds-chip--tecnologia { background-color:#4f46e5; } .ds-chip--politica { background-color:#ca8a04; } .ds-chip--arte { background-color:#e11d48; } .ds-chip--cultura { background-color:#db2777; } .ds-chip--economia { background-color:#ea580c; } .ds-chip--descubrimientos { background-color:#0d9488; } .ds-chip--monumentos { background-color:#4b5563; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "Horizontal top navigation. White text at rest; gold amber on hover.",
+      "html": "<nav class=\"ds-nav\">\n  <a href=\"/\" class=\"ds-nav__link ds-nav__link--active\">Inicio</a>\n  <a href=\"/eventos\" class=\"ds-nav__link\">Eventos</a>\n  <a href=\"/juegos\" class=\"ds-nav__link\">Juegos</a>\n  <a href=\"/galeria\" class=\"ds-nav__link\">Galería</a>\n</nav>",
+      "css": ".ds-nav { display:flex; align-items:center; gap:24px; } .ds-nav__link { font-family:'Poppins',sans-serif; font-size:0.875rem; font-weight:500; color:#ffffff; text-decoration:none; transition:color 0.15s; } .ds-nav__link:hover, .ds-nav__link--active { color:#fbbf24; }"
+    },
+    {
+      "name": "Content Section Container",
+      "kind": "card",
+      "description": "The standard wrapper for all readable content blocks — event summaries, context panels, about sections.",
+      "html": "<div class=\"ds-section-container\">\n  <h2 class=\"ds-section-title\">Resumen</h2>\n  <p class=\"ds-section-body\">El Apollo 11 aterriza en la superficie lunar el 20 de julio de 1969, cumpliendo el objetivo propuesto por el presidente Kennedy en 1961 de poner un hombre en la Luna antes de que terminara la década.</p>\n</div>",
+      "css": ".ds-section-container { background-color:rgba(31,21,12,0.64); border-radius:12px; padding:32px; box-shadow:0 25px 50px -12px rgba(0,0,0,0.25); color:#ffffff; } .ds-section-title { font-family:'Poppins',sans-serif; font-size:1.5rem; font-weight:700; margin:0 0 16px; line-height:1.25; } .ds-section-body { font-family:'Poppins',sans-serif; font-size:1.125rem; line-height:1.75; margin:0 0 16px; } .ds-section-body:last-child { margin-bottom:0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "El Archivo Imperial",
+    "overview": "Epicstoria's visual world is built on the metaphor of a great imperial archive — a solemn hall lit by amber lanterns, its walls lined with dark stone, its cases holding parchment scrolls sealed in gold. The visitor doesn't feel like they're browsing a website; they feel like they've been granted access to a repository of civilization's most consequential moments. The darkness is not menacing: it's the reverent quiet of a space where important things are kept.\n\nThe palette speaks this architecture directly. Deep leather and ink dark form the structural shell: the header, containers, and overlays. Warm parchment and cream ivory surface the content layers, creating the tactile sense of old paper under light. Gold amber burns as the single interactive voice — a flame in the archive — marking every hover state, focus ring, and interactive icon.\n\nThe character is adventurous and warm, not academic or intimidating. History is presented as treasure, not curriculum. The scale transforms that animate buttons and cards reinforce this: the archive responds to the curious visitor who leans in.",
+    "keyCharacteristics": [
+      "Warm-dark layering: leather containers float over a beige-textured background, never on pure white or black",
+      "Amber as the single interactive voice; no competing accent color",
+      "Full-bleed hero images as the primary storytelling surface at every event entry point",
+      "Scale transforms (not opacity) as the tactile hover response",
+      "Parchment cream for all primary CTAs — never blue, never generic"
+    ],
+    "rules": [
+      { "name": "La Regla del Pergamino", "body": "Primary CTAs use cream-ivory (#fcf8d8) with leather text (#1f150c). Never blue, never white, never transparent.", "section": "colors" },
+      { "name": "La Regla del Oro Único", "body": "Amber is the one interactive accent. Do not introduce a second color for hover, focus, or link states.", "section": "colors" },
+      { "name": "La Regla de Poppins", "body": "One typeface, one family. Inter is not promoted to body usage. Satisfy is restricted to brand-name display on auth screens.", "section": "typography" },
+      { "name": "La Regla de la Sombra Azul", "body": "The only colored shadow is the blue glow on event card hover. Do not apply it to any other component type.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use #fcf8d8 (cream-ivory) as the background for every primary CTA.",
+      "Do use amber (#fbbf24) as the sole interactive accent — hover, focus rings, icon tints.",
+      "Do use rgba(31,21,12,0.64) with border-radius 12px and shadow-2xl as the standard content container.",
+      "Do use full-bleed cover images for event entries.",
+      "Do animate with scale transforms (scale(1.02) for cards, scale(1.05) for buttons).",
+      "Do use Poppins 900 (font-black) for display-level titles."
+    ],
+    "donts": [
+      "Don't use pure white (#ffffff) as a surface background.",
+      "Don't introduce new accent colors — blue and red are structural/semantic, not general-purpose.",
+      "Don't use the Satisfy font (title-font) for anything other than the 'Epicstoria' brand name on auth screens.",
+      "Don't apply the blue hover glow (shadow-blue-500/20) to anything other than event cards.",
+      "Don't mix the pill shape (action layer) with rounded-xl (container layer).",
+      "Don't reduce container opacity below 60%."
+    ]
+  }
+}

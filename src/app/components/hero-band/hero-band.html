@@ -1,0 +1,44 @@
+<div class="hero-band">
+  <div class="hero-band__content" [class.in-view]="contentInView()">
+    <span class="hero-overline">Epicstoria · El Archivo Imperial</span>
+    <h2 class="hero-headline">
+      La Historia<br />
+      <em>está viva.</em>
+    </h2>
+    <p class="hero-sub">
+      Desciende por los siglos. Cada época, una cámara del archivo. Cada evento, un pergamino
+      que espera ser abierto.
+    </p>
+    <div class="hero-cta-row">
+      <a routerLink="/eventos" class="hero-cta">Comenzar a explorar</a>
+      <span class="hero-scroll-hint" aria-hidden="true">↓ Desciende</span>
+    </div>
+  </div>
+
+  <div
+    class="hero-band__stats"
+    [class.in-view]="statsInView()"
+    role="list"
+    aria-label="Estadísticas del archivo"
+  >
+    <div class="hero-stat" role="listitem">
+      <span class="stat-number">200+</span>
+      <span class="stat-label">Eventos históricos</span>
+    </div>
+    <div class="stat-sep" aria-hidden="true"></div>
+    <div class="hero-stat" role="listitem">
+      <span class="stat-number">12</span>
+      <span class="stat-label">Categorías</span>
+    </div>
+    <div class="stat-sep" aria-hidden="true"></div>
+    <div class="hero-stat" role="listitem">
+      <span class="stat-number">Quiz</span>
+      <span class="stat-label">por cada evento</span>
+    </div>
+    <div class="stat-sep" aria-hidden="true"></div>
+    <div class="hero-stat" role="listitem">
+      <span class="stat-number">Juegos</span>
+      <span class="stat-label">temáticos</span>
+    </div>
+  </div>
+</div>

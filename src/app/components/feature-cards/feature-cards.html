@@ -1,86 +1,42 @@
-<!-- Sección de Características -->
-<section class="feature-cards-section">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-    <h2 class="text-4xl font-bold text-center mb-12 text-color">Explora EpicStoria</h2>
+<section class="fc-section">
+  <div class="fc-sticky-frame">
+    <div class="fc-sticky">
 
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
-      <!-- Card 1: Eventos -->
-      <a
-        routerLink="/eventos"
-        class="container-custom rounded-xl overflow-hidden shadow-2xl transition duration-300 hover:shadow-blue-500/20 hover:scale-[1.02] cursor-pointer flex flex-col"
-      >
-        <div class="p-8 flex flex-col h-full text-center">
-          <div class="card-icon mx-auto mb-6">
-            <img
-              ngSrc="images/logos/eventos-historicos.webp"
-              alt="Icono de Eventos Históricos - Explorar acontecimientos importantes"
-              class="h-15 w-auto"
-              width="60"
-              height="60"
-            />
-          </div>
-          <h3 class="text-xl font-bold mb-4 text-color">Eventos Históricos</h3>
-          <p class="text-color mb-6 flex-grow">
-            Descubre los acontecimientos más importantes que marcaron la historia de la humanidad.
-          </p>
-          <div class="card-footer mt-auto pt-4">
-            <span class="text-color font-semibold">Explorar eventos</span>
-            <i class="fas fa-arrow-right ml-2 text-color"></i>
-          </div>
+      <!-- Columna izquierda: fondo marrón con título e indicadores -->
+      <div class="fc-left">
+        <span class="fc-overline">El Archivo Imperial</span>
+        <h2 class="fc-title">
+          Explora<br>
+          <em>la historia.</em>
+        </h2>
+        <p class="fc-sub">
+          Desciende por los siglos. Cada sección, una cámara del archivo que aguarda ser descubierta.
+        </p>
+        <div class="fc-indicators">
+          @for (card of cards; track card.route; let i = $index) {
+            <span class="fc-dot" [class.active]="activeCard() >= i"></span>
+          }
         </div>
-      </a>
+      </div>
 
-      <!-- Card 2: Quiz -->
-      <a
-        routerLink="/juegos"
-        class="container-custom rounded-xl overflow-hidden shadow-2xl transition duration-300 hover:shadow-blue-500/20 hover:scale-[1.02] cursor-pointer flex flex-col"
-      >
-        <div class="p-8 flex flex-col h-full text-center">
-          <div class="card-icon mx-auto mb-6">
-            <img
-              ngSrc="images/logos/quiz-interactivo.webp"
-              alt="Icono de Quiz Interactivo - Pon a prueba tus conocimientos"
-              class="h-15 w-auto"
-              width="60"
-              height="60"
-            />
-          </div>
-          <h3 class="text-xl font-bold mb-4 text-color">Juegos y Quizzes</h3>
-          <p class="text-color mb-6 flex-grow">
-            Pon a prueba tus conocimientos históricos con nuestros divertidos quizzes interactivos.
-          </p>
-          <div class="card-footer mt-auto pt-4">
-            <span class="text-color font-semibold">Jugar ahora</span>
-            <i class="fas fa-arrow-right ml-2 text-color"></i>
-          </div>
-        </div>
-      </a>
+      <!-- Columna derecha: tarjetas apiladas que aparecen con el scroll -->
+      <div class="fc-cards-panel">
+        @for (card of cards; track card.route; let i = $index) {
+          <a [routerLink]="card.route" class="fc-card" [class.visible]="activeCard() >= i">
+            <span class="fc-card-badge">{{ card.badge }}</span>
+            <div class="fc-card-icon-wrap">
+              <img [ngSrc]="card.icon" [alt]="card.iconAlt" width="60" height="60" />
+            </div>
+            <h4 class="fc-card-title">{{ card.title }}</h4>
+            <p class="fc-card-desc">{{ card.description }}</p>
+            <div class="fc-card-cta">
+              <span>{{ card.cta }}</span>
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </a>
+        }
+      </div>
 
-      <!-- Card 3: Galería -->
-      <a
-        routerLink="/galeria"
-        class="container-custom rounded-xl overflow-hidden shadow-2xl transition duration-300 hover:shadow-blue-500/20 hover:scale-[1.02] cursor-pointer flex flex-col"
-      >
-        <div class="p-8 flex flex-col h-full text-center">
-          <div class="card-icon mx-auto mb-6">
-            <img
-              ngSrc="images/logos/galeria-visual.webp"
-              alt="Icono de Galería Visual - Explora imágenes históricas"
-              class="h-15 w-auto"
-              width="60"
-              height="60"
-            />
-          </div>
-          <h3 class="text-xl font-bold mb-4 text-color">Galería Visual</h3>
-          <p class="text-color mb-6 flex-grow">
-            Explora nuestra colección de imágenes históricas y representaciones artísticas.
-          </p>
-          <div class="card-footer mt-auto pt-4">
-            <span class="text-color font-semibold">Ver galería</span>
-            <i class="fas fa-arrow-right ml-2 text-color"></i>
-          </div>
-        </div>
-      </a>
     </div>
   </div>
 </section>

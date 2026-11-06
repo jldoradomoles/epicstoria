@@ -6,6 +6,10 @@
   color: white;
 }
 
+.container-background {
+  background: rgba(31, 21, 12, 0.64);
+}
+
 .container-custom:hover {
   transform: translateY(-5px) scale(1.01);
   box-shadow:
