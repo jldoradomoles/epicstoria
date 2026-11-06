@@ -26,11 +26,11 @@
 
 // Sección de Presentación
 .presentation-section {
-  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
   .presentation-content {
-    text-align: center;
+    padding: 40px 48px;
+    text-align: left;
   }
 
   .presentation-title {
@@ -96,8 +96,11 @@
 // Responsive
 @media (max-width: 768px) {
   .presentation-section {
-    padding: 32px 24px;
     margin-bottom: 32px;
+
+    .presentation-content {
+      padding: 32px 24px;
+    }
 
     .presentation-title {
       font-size: 24px;
@@ -131,8 +134,11 @@
 
 @media (max-width: 480px) {
   .presentation-section {
-    padding: 24px 16px;
     border-radius: 12px;
+
+    .presentation-content {
+      padding: 24px 16px;
+    }
 
     .presentation-title {
       font-size: 20px;
@@ -144,4 +150,8 @@
       font-size: 13px;
     }
   }
+}
+
+.container-background {
+  background: rgba(31, 21, 12, 0.64);
 }

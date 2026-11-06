@@ -1,0 +1,164 @@
+{
+  "title": "Elige la composición de la home",
+  "question": "El mundo (El Archivo Imperial) está fijado. Esta elección es de estructura: cómo se organiza el espacio, cómo se mueve la página y dónde vive Épico.",
+  "options": [
+    {
+      "id": "assigned",
+      "kind": "assigned",
+      "kicker": "THE ROLL",
+      "label": "La Columna de Herodoto",
+      "lineage": "Columna inscrita · épocas como bandas grabadas en piedra",
+      "thesis": "La página es una columna de piedra: Épico en la cima, las épocas históricas como bandas talladas a su lado izquierdo. Bajas por los siglos al hacer scroll.",
+      "palette": ["#1f150c", "#e1c7b1", "#fbbf24", "#78350f"],
+      "materials": ["stone inscription", "carved era bands", "amber lantern glow"],
+      "viewport": "Split asimétrico: banda izquierda (140px) con épocas apiladas y ámbar en la activa · titular masivo 88px a la izquierda · Épico a la derecha · fila de estadísticas al fondo.",
+      "risk": "La banda de épocas debe responder táctilmente en móvil — como carrusel horizontal, no como menú colapsado.",
+      "raised": [
+        {
+          "from": "1914-manifesto-blast",
+          "raise": "Las etiquetas de cada época usan condensed-caps a gran escala: las marcas de sección son hechos tipográficos, no etiquetas de menú."
+        }
+      ],
+      "html": ".impeccable/mocks/decision/assigned.html"
+    },
+    {
+      "id": "dealt-oraculo",
+      "kind": "dealt",
+      "label": "El Escenario del Oráculo",
+      "lineage": "Proscenio teatral · Épico como oráculo en el escenario · historia como actos",
+      "thesis": "El proscenio enmarca todo el viewport. Épico está en el centro del escenario con un foco ámbar. Las tres secciones principales son los 'Actos' visibles al pie del escenario.",
+      "palette": ["#0d0804", "#e1c7b1", "#fbbf24", "#2d1608"],
+      "materials": ["proscenium arch molding", "stage cloth", "amber spotlight"],
+      "viewport": "Marco de proscenio en torno al viewport completo · Épico centrado bajo el foco · titular en la zona alta del escenario · tres 'Actos' como paneles al pie.",
+      "risk": "El arco debe leerse como chrome estructural, no como decoración — los Actos deben ser claramente navegables.",
+      "raised": [
+        {
+          "from": "advertising-calendar-pinup",
+          "raise": "Épico ocupa la placa pintada superior del proscenio — el 'panel del artista' — y los tres Actos son el pad estructurado bajo la línea dorada de separación."
+        }
+      ],
+      "html": ".impeccable/mocks/decision/dealt-oraculo.html"
+    },
+    {
+      "id": "dealt-tablero",
+      "kind": "dealt",
+      "label": "El Tablero del Estratega",
+      "lineage": "Mesa de estrategia · vista cenital · territorios de contenido como zonas de campaña",
+      "thesis": "Una vista cenital de la gran mesa del archivo: Épico se inclina desde el borde superior, sus manos señalando los tres territorios de contenido desplegados en la superficie.",
+      "palette": ["#160e07", "#e1c7b1", "#fbbf24", "#1e40af"],
+      "materials": ["strategy table surface", "campaign map", "candlelight zones"],
+      "viewport": "Fondo de mesa oscura con trama de cuadrícula · tres zonas circulares de luz de vela (Eventos · Juegos · Galería) · Épico asomándose desde el margen superior.",
+      "risk": "La perspectiva cenital elimina el hero convencional — las zonas deben iluminarse con hover para que la tabla 'cobre vida' desde el primer segundo.",
+      "raised": [
+        {
+          "from": "1914-manifesto-blast",
+          "raise": "Los nombres de las zonas usan condensed-bold en grande — cada zona tiene un título que es un hecho tipográfico en sí mismo, no una etiqueta pequeña sobre un círculo."
+        }
+      ],
+      "html": ".impeccable/mocks/decision/dealt-tablero.html"
+    },
+    {
+      "id": "challenger-manifesto",
+      "kind": "challenger",
+      "catalogId": "design-canon-blast-manifesto-page",
+      "label": "1914 Manifesto Page",
+      "verdict": "competitive",
+      "lineage": "Vortex/Blast manifesto · madera tipo condensado · cuñas diagonales",
+      "thesis": "La página entera es un manifiesto en madera tipo. Sin imágenes: las letras son el golpe.",
+      "palette": ["#1a1200", "#e1c7b1", "#fbbf24"],
+      "materials": ["wood type", "puce paper", "diagonal rules"],
+      "viewport": "Bloques tipográficos apilados a 90° · reglas diagonales que cortan el campo · ninguna imagen en ningún sitio.",
+      "case": "Se fusiona fuerte en energía compositiva. Pierde en claridad de producto: Epicstoria es una plataforma visual — sin imágenes el archivo queda en palabras.",
+      "kept": "Su disciplina tipográfica — la escala de los títulos de sección y el peso del texto como masa visual — vive ahora como líneas 'raised' en las tres cartas estructurales.",
+      "risk": "Sin imágenes, el contenido histórico queda abstracto para un visitante que no conoce la plataforma.",
+      "hero": "https://impeccable.style/worlds/cards/design-canon-blast-manifesto-page-hero.webp"
+    },
+    {
+      "id": "challenger-calendar",
+      "kind": "challenger",
+      "catalogId": "vernacular-ephemera-calendar-pinup-pad",
+      "label": "Advertising Calendar",
+      "verdict": "competitive",
+      "lineage": "Calendario publicitario · figura pintada · pad de fechas con el nombre del comerciante",
+      "thesis": "La mitad superior: Épico como figura pintada pagada. La mitad inferior: una rejilla de contenido estructurada como el pad de fechas.",
+      "palette": ["#fcf8d8", "#1f150c", "#fbbf24", "#e1c7b1"],
+      "materials": ["painted plate", "cream board", "gold rule"],
+      "viewport": "Épico como lámina pintada en el tercio superior · regla dorada · rejilla de eventos como pad de meses debajo.",
+      "case": "El formato de 'figura sobre pad' encaja con Épico como mascota. Pierde en ambición moderna — la cuadrícula inferior es el default que el usuario quiere abandonar.",
+      "kept": "La proporción 'figura pintada dominante / contenido estructurado bajo la regla' vive como la relación Épico / Actos en El Escenario del Oráculo.",
+      "risk": "El formato calendario puede sentirse estático si el pad inferior no tiene interacción.",
+      "hero": "https://impeccable.style/worlds/cards/vernacular-ephemera-calendar-pinup-pad-hero.webp"
+    },
+    {
+      "id": "challenger-cloudquarry",
+      "kind": "challenger",
+      "catalogId": "dream-surreal-impossible-worlds-cloud-quarry",
+      "label": "Cloud Quarry",
+      "verdict": "declined",
+      "lineage": "Cantera de nubes · arquitectura efímera · bloques de tormenta",
+      "thesis": "Bloques de tiempo cortados del cielo, apilados como historia construida.",
+      "palette": ["#f0f4ff", "#1a2a4a", "#c0c8d8"],
+      "materials": ["cumulus mass", "cut cloud faces", "silver saw line"],
+      "viewport": "Masa blanca como superficie principal · cortes de frente abiertos en azul vacío · escalonado como bloques apilados.",
+      "case": "Interesante visualmente. Pierde en identificación de producto: los hispanohablantes no identifican una cantera de nubes con historia — el mundo es demasiado abstracto para convertir en la primera visita.",
+      "kept": "La estructura de bloques apilados, cada uno con su propio peso visual.",
+      "risk": "Pierde claridad de producto en el primer viewport.",
+      "hero": "https://impeccable.style/worlds/cards/dream-surreal-impossible-worlds-cloud-quarry-hero.webp"
+    },
+    {
+      "id": "challenger-fontspec",
+      "kind": "challenger",
+      "catalogId": "variable-font-specimen",
+      "label": "Variable Font Specimen",
+      "verdict": "declined",
+      "lineage": "Espécimen tipográfico · slider de eje · grilla de glifos en tiempo real",
+      "thesis": "Una sola letra enorme. Mueve el slider de peso y se transforma en vivo.",
+      "palette": ["#f5f5f0", "#111111", "#1e40af"],
+      "materials": ["ink on paper", "monospace UI", "variable axis"],
+      "viewport": "Una letra gigante · sliders de eje · rejilla de glifos respirando debajo.",
+      "case": "La interacción tipográfica es brillante. Pierde en identificación de audiencia: los estudiantes e interesados en historia no llegan a Epicstoria buscando tipografía.",
+      "kept": "La sala de un solo tipo gigante como apertura — el nombre 'Epicstoria' en display enorme — inspira el tamaño de los titulares en las tres cartas estructurales.",
+      "risk": "Sin imágenes ni contenido histórico, la primera impresión no comunica el producto.",
+      "hero": "https://impeccable.style/worlds/cards/variable-font-specimen-hero.webp"
+    },
+    {
+      "id": "challenger-teletext",
+      "kind": "challenger",
+      "catalogId": "broadcast-programming-teletext-service",
+      "label": "Teletext Magazine",
+      "verdict": "declined",
+      "lineage": "Teletexto · cuadrícula de 40×24 · ocho colores planos sobre negro",
+      "thesis": "El catálogo de eventos como páginas de teletexto. Tecla 302 para ver la Revolución Francesa.",
+      "palette": ["#000000", "#ffff00", "#00c0c0", "#ffffff"],
+      "materials": ["block mosaic", "bitmap face", "phosphor glow"],
+      "viewport": "Rejilla de celdas · encabezados en doble altura amarillo · figuras en mosaico de bloque.",
+      "case": "El grid y la navegación directa por número son potentes. Pierde en identificación de audiencia: el estético de teletexto británico de los 80 es culturalmente distante de los hispanohablantes de hoy.",
+      "kept": "La navegación directa por número/categoría, sin menús intermedios.",
+      "risk": "Lectura retro-novedad cuando la cuadrícula no es estricta.",
+      "hero": "https://impeccable.style/worlds/cards/broadcast-programming-teletext-service-hero.webp"
+    },
+    {
+      "id": "challenger-sewing",
+      "kind": "challenger",
+      "catalogId": "fashion-folded-worlds-sewing-pattern-envelope",
+      "label": "Sewing Pattern Envelope",
+      "verdict": "declined",
+      "lineage": "Patrón de costura · figuras en vistas letradas · mapa de líneas de corte",
+      "thesis": "El archivo histórico como patrón: cada evento, una pieza que encaja con las demás.",
+      "palette": ["#f5eed8", "#1a1200", "#c03020"],
+      "materials": ["manila tissue", "dressmaker red", "dashed cut lines"],
+      "viewport": "Figuras en tres vistas letradas · tabla de materiales · mapa plegado de líneas de corte.",
+      "case": "La metáfora del patrón-como-mapa es original. Pierde en identificación de audiencia: los jóvenes y adultos curiosos de historia no conectan la costura con el aprendizaje histórico.",
+      "kept": "La estructura de 'piezas numeradas que se ensamblan' como metáfora para el sistema de contenido.",
+      "risk": "Audiencia no identifica el contexto visual.",
+      "hero": "https://impeccable.style/worlds/cards/fashion-folded-worlds-sewing-pattern-envelope-hero.webp"
+    }
+  ],
+  "reroll": {
+    "registers": ["safer", "bolder"]
+  },
+  "buildPath": {
+    "value": "code"
+  },
+  "steer": true
+}

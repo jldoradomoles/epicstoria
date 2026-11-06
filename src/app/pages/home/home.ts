@@ -1,13 +1,14 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FeatureCards } from '../../components/feature-cards/feature-cards';
 import { Hero } from '../../components/hero/hero';
+import { HeroBand } from '../../components/hero-band/hero-band';
 import { InfoSection } from '../../components/info-section/info-section';
 import { SocialMedia } from '../../components/social-media/social-media';
 import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-home',
-  imports: [Hero, InfoSection, FeatureCards, SocialMedia],
+  imports: [Hero, HeroBand, InfoSection, FeatureCards, SocialMedia],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

@@ -53,6 +53,22 @@ npm run db:migrate-images-to-webp || {
 }
 
 echo ""
+echo "   - Actualizando rutas de imágenes Voyager..."
+npm run db:update-voyager-paths || {
+    echo "⚠️  Advertencia: La actualización de rutas Voyager falló"
+    echo "   El servidor se reiniciará, pero verifica los logs"
+    exit 1
+}
+
+echo ""
+echo "   - Sincronizando imágenes adicionales desde filesystem..."
+npm run db:sync-images || {
+    echo "⚠️  Advertencia: La sincronización de imágenes adicionales falló"
+    echo "   El servidor se reiniciará, pero verifica los logs"
+    exit 1
+}
+
+echo ""
 echo "======================================================================"
 echo "✅ Post-Deploy completado exitosamente"
 echo "======================================================================"

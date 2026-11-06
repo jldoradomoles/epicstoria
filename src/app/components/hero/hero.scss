@@ -1,3 +1,5 @@
+// ── Sub-page hero (image background) ─────────────────────────────────────────
+
 .h-42 {
   height: 42rem;
 
@@ -10,15 +12,414 @@
 .hero-background {
   background-size: 100% auto;
   background-position: center top;
-  height: 800px;
-
-  @media (max-width: 768px) {
-    // La imagen móvil se aplicará desde el componente TypeScript
-    background-size: cover;
-  }
+  aspect-ratio: 3 / 2;
 
   &.hero-compact {
+    aspect-ratio: auto;
     height: 400px;
+    background-size: cover;
     background-position: center !important;
+
+    @media (max-width: 768px) {
+      height: 220px;
+    }
   }
+
+  @media (max-width: 768px) {
+    aspect-ratio: auto;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+// ── La Columna de Herodoto — Home Hero ───────────────────────────────────────
+
+.hero-column {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  background: url('/images/Cabecera.jpg') center top/100% auto no-repeat;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(22, 14, 7, 0.25);
+    z-index: 0;
+  }
+
+  @media (max-width: 768px) {
+    aspect-ratio: auto;
+    min-height: 100svh;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+// Mobile epoch horizontal strip
+
+.epoch-mobile-strip {
+  display: none;
+  overflow-x: auto;
+  background: #2a1a0e;
+  border-bottom: 1px solid #3d2410;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+}
+
+.epoch-mobile-btn {
+  all: unset;
+  white-space: nowrap;
+  padding: 11px 16px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #e1c7b1;
+  opacity: 0.5;
+  cursor: pointer;
+  border-right: 1px solid rgba(225, 199, 177, 0.07);
+  transition:
+    opacity 0.15s ease,
+    background 0.15s ease;
+  box-sizing: border-box;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  &.epoch-mobile-btn--active {
+    color: #fbbf24;
+    opacity: 1;
+    background: rgba(251, 191, 36, 0.06);
+  }
+}
+
+// Desktop epoch stripe (left column)
+
+.epoch-stripe {
+  grid-column: 1;
+  background: linear-gradient(180deg, #2a1a0e 0%, #1f150c 100%);
+  border-right: 1px solid #3d2410;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.epoch-stripe-top {
+  padding: 24px 0 16px;
+  text-align: center;
+  border-bottom: 1px solid rgba(225, 199, 177, 0.12);
+  flex-shrink: 0;
+}
+
+.epoch-stripe-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #fbbf24;
+  opacity: 0.8;
+}
+
+.epoch-band {
+  all: unset;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 14px 14px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #e1c7b1;
+  opacity: 0.4;
+  border-bottom: 1px solid rgba(225, 199, 177, 0.07);
+  cursor: pointer;
+  position: relative;
+  transition:
+    opacity 0.2s ease,
+    background 0.2s ease;
+  min-height: 60px;
+  justify-content: center;
+
+  &:hover {
+    opacity: 0.75;
+    background: rgba(251, 191, 36, 0.04);
+  }
+
+  &.epoch-band--active {
+    opacity: 1;
+    color: #fbbf24;
+    background: rgba(251, 191, 36, 0.07);
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: #fbbf24;
+      animation: epoch-pulse 2s ease-in-out infinite;
+    }
+  }
+}
+
+.epoch-band-name {
+  display: block;
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+.epoch-band-range {
+  display: block;
+  font-size: 7.5px;
+  font-weight: 400;
+  opacity: 0.6;
+  letter-spacing: 0.08em;
+  text-transform: none;
+  margin-top: 3px;
+}
+
+.epoch-stripe-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(251, 191, 36, 0.12) 30%,
+    rgba(251, 191, 36, 0.12) 70%,
+    transparent
+  );
+  pointer-events: none;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+@keyframes epoch-pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+// Hero main content area
+
+.hero-main {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding: 56px 72px 44px;
+  height: 100%;
+
+  @media (max-width: 768px) {
+    padding: 40px 20px 36px;
+  }
+
+  @media (max-width: 1100px) and (min-width: 769px) {
+    padding: 48px 40px 40px;
+  }
+}
+
+.hero-glow {
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+  max-width: 580px;
+  grid-row: 1;
+  align-self: end;
+  margin-left: auto;
+  text-align: right;
+}
+
+.hero-overline {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: white;
+}
+
+.hero-headline {
+  font-size: clamp(52px, 5.5vw, 88px);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: white;
+
+  em {
+    font-style: italic;
+    color: white;
+    display: block;
+    margin-top: 4px;
+  }
+}
+
+.hero-sub {
+  color: white;
+  font-size: 17px;
+  max-width: 460px;
+  line-height: 1.7;
+}
+
+.hero-cta-row {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.hero-cta {
+  display: inline-block;
+  background: #fcf8d8;
+  color: #1f150c;
+  padding: 14px 36px;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    background: #fff9e0;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #fbbf24;
+    outline-offset: 3px;
+  }
+}
+
+.hero-scroll-hint {
+  color: white;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+// Épico zone (absolutely positioned, right side)
+
+.hero-epico-zone {
+  position: absolute;
+  right: 48px;
+  top: 50%;
+  transform: translateY(-55%);
+  width: 260px;
+  height: 420px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+
+  @media (max-width: 1100px) {
+    display: none;
+  }
+}
+
+.hero-epico-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom;
+  filter: drop-shadow(0 20px 48px rgba(251, 191, 36, 0.14));
+}
+
+// Stats row
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(225, 199, 177, 0.1);
+  position: relative;
+  z-index: 1;
+  grid-row: 2;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    gap: 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.stat-number {
+  font-size: 28px;
+  font-weight: 900;
+  color: #fbbf24;
+  line-height: 1;
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+  }
+}
+
+.stat-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: #e1c7b1;
+  opacity: 0.45;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.stat-sep {
+  width: 1px;
+  height: 36px;
+  background: rgba(225, 199, 177, 0.12);
+  flex-shrink: 0;
 }

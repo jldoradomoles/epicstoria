@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:900px;overflow:hidden;font-family:'Poppins',sans-serif;background:#160e07}
+.table-surface{width:1440px;height:900px;position:relative;background:radial-gradient(ellipse 100% 80% at 50% 100%,#2a1a0c 0%,#160e07 70%);overflow:hidden}
+/* Grid lines on table */
+.table-surface::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(225,199,177,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(225,199,177,.04) 1px,transparent 1px);background-size:80px 80px;pointer-events:none}
+/* Nav */
+.nav{position:absolute;top:0;left:0;right:0;height:52px;background:rgba(17,8,2,.85);border-bottom:1px solid rgba(251,191,36,.15);display:flex;align-items:center;justify-content:space-between;padding:0 60px;z-index:10}
+.nav-brand{font-size:14px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#fbbf24}
+.nav-links{display:flex;gap:36px}
+.nav-links a{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#e1c7b1;opacity:.5}
+/* Épico at top */
+.epico-top{position:absolute;top:52px;left:50%;transform:translateX(-50%);width:420px;height:200px;display:flex;flex-direction:column;align-items:center}
+.epico-arms{width:400px;height:120px;position:relative}
+.arm-l{position:absolute;left:0;bottom:0;width:160px;height:80px;background:linear-gradient(135deg,rgba(251,191,36,.18),rgba(251,191,36,.06));border-radius:40px 8px 0 40px;transform:rotate(-15deg);transform-origin:bottom right}
+.arm-r{position:absolute;right:0;bottom:0;width:160px;height:80px;background:linear-gradient(225deg,rgba(251,191,36,.18),rgba(251,191,36,.06));border-radius:8px 40px 40px 0;transform:rotate(15deg);transform-origin:bottom left}
+.epico-body{position:absolute;top:20px;left:50%;transform:translateX(-50%);width:80px;height:100px;background:linear-gradient(180deg,rgba(251,191,36,.25),rgba(251,191,36,.1));border-radius:50% 50% 20px 20px / 55% 55% 20px 20px}
+.table-title{position:absolute;top:52px;left:50%;transform:translateX(-50%);text-align:center;width:600px;padding-top:220px}
+.table-overline{font-size:10px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:#fbbf24;opacity:.65}
+/* Territory zones */
+.territories{position:absolute;top:52px;left:0;right:0;bottom:0;pointer-events:none}
+/* Zone A — center, largest — Eventos */
+.zone{position:absolute;border-radius:50%;border:1px solid;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.zone-a{width:360px;height:360px;top:50%;left:50%;transform:translate(-50%,-30%);border-color:rgba(251,191,36,.22);background:radial-gradient(circle,rgba(251,191,36,.09) 0%,rgba(251,191,36,.02) 70%,transparent 100%);animation:glow-a 3s ease-in-out infinite}
+@keyframes glow-a{0%,100%{background:radial-gradient(circle,rgba(251,191,36,.09) 0%,rgba(251,191,36,.02) 70%,transparent 100%)}50%{background:radial-gradient(circle,rgba(251,191,36,.14) 0%,rgba(251,191,36,.04) 70%,transparent 100%)}}
+.zone-b{width:240px;height:240px;bottom:60px;left:160px;border-color:rgba(30,64,175,.35);background:radial-gradient(circle,rgba(30,64,175,.1) 0%,transparent 70%)}
+.zone-c{width:240px;height:240px;bottom:60px;right:160px;border-color:rgba(220,38,38,.25);background:radial-gradient(circle,rgba(220,38,38,.08) 0%,transparent 70%)}
+.zone-label{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#e1c7b1;opacity:.55}
+.zone-name{font-size:28px;font-weight:900;color:#e1c7b1;letter-spacing:-.02em;text-align:center}
+.zone-name.amber{color:#fbbf24}
+.zone-hint{font-size:10px;color:#e1c7b1;opacity:.35;letter-spacing:.1em}
+/* Compass rose */
+.compass{position:absolute;bottom:30px;right:60px;width:60px;height:60px;opacity:.2}
+.compass-n,.compass-s,.compass-e,.compass-w{position:absolute;width:2px;background:#fbbf24;left:50%;transform:translateX(-50%)}
+.compass-n{height:24px;top:0;transform-origin:bottom center}
+.compass-s{height:18px;bottom:0;transform-origin:top center}
+.compass-e,.compass-w{width:24px;height:2px;top:50%;transform:translateY(-50%)}
+.compass-e{right:0;width:24px;left:auto}
+.compass-w{left:0;width:24px}
+.compass-label{position:absolute;top:-12px;left:50%;transform:translateX(-50%);font-size:8px;font-weight:700;color:#fbbf24;letter-spacing:.1em}
+/* Measurement lines */
+.measure-h{position:absolute;left:0;right:0;border-top:1px dashed rgba(225,199,177,.06);pointer-events:none}
+</style>
+</head>
+<body>
+<div class="table-surface">
+  <div class="measure-h" style="top:300px"></div>
+  <div class="measure-h" style="top:600px"></div>
+  <nav class="nav">
+    <span class="nav-brand">Epicstoria</span>
+    <div class="nav-links">
+      <a>Eventos</a><a>Juegos</a><a>Galería</a><a>Perfil</a>
+    </div>
+  </nav>
+  <div class="epico-top">
+    <div class="epico-arms">
+      <div class="arm-l"></div>
+      <div class="arm-r"></div>
+      <div class="epico-body"></div>
+    </div>
+  </div>
+  <div class="territories">
+    <div class="zone zone-a">
+      <span class="zone-label">Territorio principal</span>
+      <span class="zone-name amber">Eventos<br>Históricos</span>
+      <span class="zone-hint">200+ eventos</span>
+    </div>
+    <div class="zone zone-b">
+      <span class="zone-label">Zona de juego</span>
+      <span class="zone-name">Juegos</span>
+      <span class="zone-hint">Quizzes · Puzzles</span>
+    </div>
+    <div class="zone zone-c">
+      <span class="zone-label">Archivo visual</span>
+      <span class="zone-name">Galería</span>
+      <span class="zone-hint">Imágenes históricas</span>
+    </div>
+  </div>
+  <div class="compass">
+    <div class="compass-n"><span class="compass-label">N</span></div>
+    <div class="compass-s"></div>
+    <div class="compass-e"></div>
+    <div class="compass-w"></div>
+  </div>
+</div>
+</body>
+</html>

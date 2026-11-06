@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:900px;overflow:hidden;font-family:'Poppins',sans-serif;background:#0d0804}
+.scene{width:1440px;height:900px;position:relative;overflow:hidden}
+/* Curtain side panels */
+.curtain-l,.curtain-r{position:absolute;top:0;width:120px;height:100%;background:linear-gradient(90deg,#1a0d05 0%,#2d1608 60%,rgba(45,22,8,0) 100%);z-index:3}
+.curtain-r{right:0;background:linear-gradient(270deg,#1a0d05 0%,#2d1608 60%,rgba(45,22,8,0) 100%)}
+/* Arch molding */
+.arch{position:absolute;top:0;left:0;right:0;height:48px;background:linear-gradient(180deg,#2a1709 0%,#1f1008 100%);border-bottom:2px solid rgba(251,191,36,.25);z-index:4;display:flex;align-items:center;justify-content:space-between;padding:0 140px}
+.arch-brand{font-size:13px;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:#fbbf24;opacity:.85}
+.arch-nav{display:flex;gap:36px}
+.arch-nav a{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#e1c7b1;opacity:.55}
+.arch-nav a.on{color:#fbbf24;opacity:1}
+/* Molding corners */
+.corner{position:absolute;top:0;width:120px;height:48px;background:rgba(251,191,36,.06);z-index:5}
+.corner-l{left:0;border-right:1px solid rgba(251,191,36,.2)}
+.corner-r{right:0;border-left:1px solid rgba(251,191,36,.2)}
+/* Stage background gradient */
+.stage-bg{position:absolute;top:48px;left:0;right:0;bottom:0;background:radial-gradient(ellipse 80% 70% at 50% 40%,#1a0d05 0%,#0d0804 100%)}
+/* Spotlight */
+.spotlight{position:absolute;top:48px;left:50%;transform:translateX(-50%);width:400px;height:620px;background:radial-gradient(ellipse 60% 90% at 50% 20%,rgba(251,191,36,.12) 0%,rgba(251,191,36,.04) 40%,transparent 70%);animation:flicker 4s ease-in-out infinite;pointer-events:none}
+@keyframes flicker{0%,100%{opacity:.8}50%{opacity:1}75%{opacity:.9}}
+/* Épico stage */
+.epico-stage{position:absolute;bottom:200px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0}
+.epico-figure{width:200px;height:340px;background:linear-gradient(180deg,rgba(251,191,36,.22) 0%,rgba(251,191,36,.08) 50%,rgba(251,191,36,.14) 100%);border-radius:50% 50% 24px 24px / 55% 55% 24px 24px}
+/* Headline */
+.headline-block{position:absolute;top:100px;left:50%;transform:translateX(-50%);text-align:center;width:900px}
+.h-overline{font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:#fbbf24;opacity:.7;margin-bottom:12px}
+.h-title{font-size:72px;font-weight:900;line-height:.95;letter-spacing:-.03em;color:#e1c7b1}
+.h-title span{color:#fbbf24}
+/* Acts row */
+.acts{position:absolute;bottom:0;left:120px;right:120px;height:160px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;border-top:1px solid rgba(251,191,36,.2)}
+.act{background:rgba(31,21,12,.7);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;padding:20px}
+.act:hover{background:rgba(31,21,12,.85)}
+.act-num{font-size:9px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#fbbf24;opacity:.55}
+.act-name{font-size:22px;font-weight:900;color:#e1c7b1;letter-spacing:-.01em}
+.act-desc{font-size:11px;color:#e1c7b1;opacity:.45;letter-spacing:.08em}
+/* Floor line */
+.floor{position:absolute;bottom:160px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(251,191,36,.2) 20%,rgba(251,191,36,.2) 80%,transparent)}
+</style>
+</head>
+<body>
+<div class="scene">
+  <div class="curtain-l"></div>
+  <div class="curtain-r"></div>
+  <div class="arch">
+    <div class="corner-l"></div>
+    <span class="arch-brand">Epicstoria</span>
+    <nav class="arch-nav">
+      <a class="on">Inicio</a>
+      <a>Eventos</a>
+      <a>Juegos</a>
+      <a>Galería</a>
+      <a>Perfil</a>
+    </nav>
+    <div class="corner-r"></div>
+  </div>
+  <div class="stage-bg"></div>
+  <div class="spotlight"></div>
+  <div class="headline-block">
+    <p class="h-overline">El gran archivo de la humanidad</p>
+    <h1 class="h-title">Historia que<br><span>se siente.</span></h1>
+  </div>
+  <div class="epico-stage">
+    <div class="epico-figure"></div>
+  </div>
+  <div class="floor"></div>
+  <div class="acts">
+    <div class="act">
+      <span class="act-num">Acto I</span>
+      <span class="act-name">Eventos Históricos</span>
+      <span class="act-desc">200+ momentos que cambiaron el mundo</span>
+    </div>
+    <div class="act" style="border-left:1px solid rgba(251,191,36,.12);border-right:1px solid rgba(251,191,36,.12)">
+      <span class="act-num">Acto II</span>
+      <span class="act-name">Juegos y Quizzes</span>
+      <span class="act-desc">Pon a prueba tu memoria histórica</span>
+    </div>
+    <div class="act">
+      <span class="act-num">Acto III</span>
+      <span class="act-name">Galería Visual</span>
+      <span class="act-desc">Imágenes que narran el pasado</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

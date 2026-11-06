@@ -1,5 +1,5 @@
 import { DOCUMENT, NgOptimizedImage } from '@angular/common';
-import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { QuizComponent } from '../../components/quiz/quiz';
 import { Event } from '../../models/event.model';
@@ -12,6 +12,7 @@ import { getParagraphs } from '../../utils/text.utils';
 
 @Component({
   selector: 'app-event-detail',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RouterLink, DateFormatPipe, QuizComponent, NgOptimizedImage],
   templateUrl: './event-detail.html',
   styleUrl: './event-detail.scss',
@@ -25,6 +26,9 @@ export class EventDetail implements OnInit {
   private document = inject(DOCUMENT);
 
   event: Event | undefined;
+  readonly loading = signal(true);
+  readonly loadError = signal(false);
+  readonly relatedEvents = signal<Event[]>([]);
   getCategoryColor = getCategoryColorUtil;
   getParagraphs = getParagraphs;
 
@@ -33,36 +37,39 @@ export class EventDetail implements OnInit {
   ngOnInit() {
     const eventId = this.route.snapshot.paramMap.get('id');
 
-    if (eventId) {
-      console.log('Loading event from database:', eventId);
-      this.eventApiService.getEventById(eventId).subscribe({
-        next: (event) => {
-          if (!event) {
-            console.error('Event not found:', eventId);
-            this.router.navigate(['/']);
-            return;
-          }
-          console.log('Event loaded successfully:', event);
-          this.event = this.loadAdditionalImages(event);
-
-          // Actualizar meta tags SEO
-          this.updateSeoTags(event);
-
-          // Agregar structured data JSON-LD
-          this.addStructuredData(event);
-
-          this.cdr.markForCheck();
-        },
-        error: (error) => {
-          console.error('Error loading event:', error);
-          // Si el evento no existe, redirigir a la página principal
-          this.router.navigate(['/']);
-        },
-      });
-    } else {
-      // Si no hay eventId, redirigir a la home
-      this.router.navigate(['/']);
+    if (!eventId) {
+      this.router.navigate(['/eventos']);
+      return;
     }
+
+    this.eventApiService.getEventById(eventId).subscribe({
+      next: (event) => {
+        if (!event) {
+          this.loading.set(false);
+          this.loadError.set(true);
+          setTimeout(() => this.router.navigate(['/eventos']), 2500);
+          return;
+        }
+        this.event = this.loadAdditionalImages(event);
+        this.loading.set(false);
+        this.updateSeoTags(event);
+        this.addStructuredData(event);
+        this.cdr.markForCheck();
+
+        this.eventApiService.getEventsByCategory(event.category).subscribe({
+          next: (events) => {
+            this.relatedEvents.set(events.filter((e) => e.id !== event.id).slice(0, 3));
+          },
+          error: () => {},
+        });
+      },
+      error: (error) => {
+        console.error('Error loading event:', error);
+        this.loading.set(false);
+        this.loadError.set(true);
+        setTimeout(() => this.router.navigate(['/eventos']), 2500);
+      },
+    });
   }
 
   private updateSeoTags(event: Event) {
@@ -232,7 +239,6 @@ export class EventDetail implements OnInit {
   getFactIcon(title: string, description: string): { icon: string; color: string } {
     const text = (title + ' ' + description).toLowerCase();
 
-    // Palabras clave y sus iconos correspondientes
     if (
       text.includes('distancia') ||
       text.includes('kilómetros') ||
@@ -240,7 +246,7 @@ export class EventDetail implements OnInit {
       text.includes('espacio') ||
       text.includes('años luz')
     ) {
-      return { icon: 'fas fa-rocket', color: 'text-blue-500' };
+      return { icon: 'fas fa-rocket', color: 'text-amber-300' };
     }
     if (
       text.includes('tiempo') ||
@@ -249,7 +255,7 @@ export class EventDetail implements OnInit {
       text.includes('días') ||
       text.includes('duración')
     ) {
-      return { icon: 'fas fa-clock', color: 'text-green-500' };
+      return { icon: 'fas fa-clock', color: 'text-amber-400' };
     }
     if (
       text.includes('música') ||
@@ -257,7 +263,7 @@ export class EventDetail implements OnInit {
       text.includes('disco') ||
       text.includes('audio')
     ) {
-      return { icon: 'fas fa-music', color: 'text-purple-500' };
+      return { icon: 'fas fa-music', color: 'text-amber-300' };
     }
     if (
       text.includes('mensaje') ||
@@ -265,7 +271,7 @@ export class EventDetail implements OnInit {
       text.includes('comunicación') ||
       text.includes('saludos')
     ) {
-      return { icon: 'fas fa-comment', color: 'text-blue-400' };
+      return { icon: 'fas fa-comment', color: 'text-amber-300' };
     }
     if (
       text.includes('primera') ||
@@ -273,7 +279,7 @@ export class EventDetail implements OnInit {
       text.includes('único') ||
       text.includes('primero')
     ) {
-      return { icon: 'fas fa-trophy', color: 'text-yellow-500' };
+      return { icon: 'fas fa-trophy', color: 'text-amber-400' };
     }
     if (
       text.includes('tierra') ||
@@ -281,7 +287,7 @@ export class EventDetail implements OnInit {
       text.includes('mundo') ||
       text.includes('global')
     ) {
-      return { icon: 'fas fa-globe', color: 'text-green-400' };
+      return { icon: 'fas fa-globe', color: 'text-amber-500' };
     }
     if (
       text.includes('tecnología') ||
@@ -289,7 +295,7 @@ export class EventDetail implements OnInit {
       text.includes('equipo') ||
       text.includes('dispositivo')
     ) {
-      return { icon: 'fas fa-cog', color: 'text-gray-500' };
+      return { icon: 'fas fa-cog', color: 'text-amber-500' };
     }
     if (
       text.includes('descubrimiento') ||
@@ -297,7 +303,7 @@ export class EventDetail implements OnInit {
       text.includes('encontró') ||
       text.includes('reveló')
     ) {
-      return { icon: 'fas fa-search', color: 'text-orange-500' };
+      return { icon: 'fas fa-search', color: 'text-amber-400' };
     }
     if (
       text.includes('científico') ||
@@ -305,7 +311,7 @@ export class EventDetail implements OnInit {
       text.includes('estudio') ||
       text.includes('ciencia')
     ) {
-      return { icon: 'fas fa-flask', color: 'text-cyan-500' };
+      return { icon: 'fas fa-flask', color: 'text-amber-400' };
     }
     if (
       text.includes('récord') ||
@@ -313,11 +319,10 @@ export class EventDetail implements OnInit {
       text.includes('mayor') ||
       text.includes('extremo')
     ) {
-      return { icon: 'fas fa-medal', color: 'text-amber-500' };
+      return { icon: 'fas fa-medal', color: 'text-amber-400' };
     }
 
-    // Icono por defecto
-    return { icon: 'fas fa-star', color: 'text-yellow-500' };
+    return { icon: 'fas fa-star', color: 'text-amber-400' };
   }
 
   /**
@@ -326,37 +331,37 @@ export class EventDetail implements OnInit {
   getTimelineIcon(dateString: string): { icon: string; color: string } {
     const year = parseInt(dateString.split('-')[0]);
 
-    // Prehistoria y Antigüedad (antes del año 500)
+    // Prehistoria y Antigüedad (antes del año 500) — oro más profundo, patinado
     if (year < 500) {
-      return { icon: 'fas fa-mountain', color: 'text-amber-800' };
+      return { icon: 'fas fa-mountain', color: 'text-amber-600' };
     }
     // Edad Media (500-1450)
     else if (year >= 500 && year < 1450) {
-      return { icon: 'fas fa-chess-rook', color: 'text-gray-600' };
+      return { icon: 'fas fa-chess-rook', color: 'text-amber-500' };
     }
     // Renacimiento y Edad Moderna (1450-1800)
     else if (year >= 1450 && year < 1800) {
-      return { icon: 'fas fa-feather', color: 'text-purple-600' };
+      return { icon: 'fas fa-feather', color: 'text-amber-400' };
     }
     // Revolución Industrial (1800-1900)
     else if (year >= 1800 && year < 1900) {
-      return { icon: 'fas fa-industry', color: 'text-orange-600' };
+      return { icon: 'fas fa-industry', color: 'text-amber-400' };
     }
     // Siglo XX temprano (1900-1950)
     else if (year >= 1900 && year < 1950) {
-      return { icon: 'fas fa-car', color: 'text-blue-600' };
+      return { icon: 'fas fa-car', color: 'text-amber-300' };
     }
     // Era Espacial/Nuclear (1950-1990)
     else if (year >= 1950 && year < 1990) {
-      return { icon: 'fas fa-rocket', color: 'text-cyan-500' };
+      return { icon: 'fas fa-rocket', color: 'text-amber-300' };
     }
     // Era Digital (1990-2010)
     else if (year >= 1990 && year < 2010) {
-      return { icon: 'fas fa-desktop', color: 'text-green-500' };
+      return { icon: 'fas fa-desktop', color: 'text-amber-200' };
     }
-    // Era Moderna/Internet (2010+)
+    // Era Moderna/Internet (2010+) — oro más claro, contemporáneo
     else {
-      return { icon: 'fas fa-wifi', color: 'text-blue-400' };
+      return { icon: 'fas fa-wifi', color: 'text-amber-200' };
     }
   }
 }
