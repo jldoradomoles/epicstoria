@@ -1,6 +1,10 @@
 @if (!imageUrl()) {
   <!-- La Columna de Herodoto — Home Hero -->
-  <section id="inicio" class="hero-column"></section>
+  <section
+    id="inicio"
+    class="hero-column"
+    [style.background-image]="'url(\'' + backgroundImageUrl() + '\')'"
+  ></section>
 } @else {
   <!-- Compact/image hero for sub-pages -->
   <main

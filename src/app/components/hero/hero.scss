@@ -37,8 +37,10 @@
 
 .hero-column {
   position: relative;
-  aspect-ratio: 3 / 2;
-  background: url('/images/Cabecera.jpg') center top/100% auto no-repeat;
+  min-height: 100svh;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
   overflow: hidden;
 
   &::before {
@@ -50,9 +52,6 @@
   }
 
   @media (max-width: 768px) {
-    aspect-ratio: auto;
-    min-height: 100svh;
-    background-size: cover;
     background-position: center;
   }
 }
