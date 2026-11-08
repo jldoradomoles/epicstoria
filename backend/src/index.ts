@@ -13,6 +13,8 @@ import sitemapRoutes from './routes/sitemap.routes';
 import userRoutes from './routes/user.routes';
 import { scheduleMessageCleanup } from './services/message-cleanup.scheduler';
 import { EventService } from './services/event.service';
+import { checkVoyagerImagePaths } from './database/check-voyager-image-paths';
+import pool from './config/database'; // usado para el check de Voyager al arrancar
 
 dotenv.config();
 
@@ -93,6 +95,11 @@ app.listen(PORT, () => {
   EventService.syncAdditionalImages()
     .then(() => console.log('✅ Additional images synced'))
     .catch(err => console.error('⚠️ Additional images sync failed (non-fatal):', err));
+
+  // Comprobar estado de las rutas de imágenes Voyager
+  pool.connect()
+    .then(client => checkVoyagerImagePaths(client).finally(() => client.release()))
+    .catch(err => console.error('⚠️ Voyager image check failed (non-fatal):', err));
 });
 
 export default app;
