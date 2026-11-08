@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { catchError, map, Observable, of, throwError } from 'rxjs';
+import { catchError, map, Observable, of, tap, throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Event } from '../models/event.model';
 import { ApiResponse } from '../models/user.model';
@@ -77,6 +77,7 @@ export class EventApiService {
     // En desarrollo, usar el backend (acepta tanto ID como slug)
     return this.http.get<ApiResponse<Event>>(`${this.apiUrl}/events/${id}`).pipe(
       map((response) => response.data),
+      tap((e) => console.log('[Epicstoria] Evento:', e)),
       catchError((error) => {
         console.error('Error loading event from API:', error);
         return throwError(() => error);
