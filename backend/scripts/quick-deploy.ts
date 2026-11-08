@@ -42,7 +42,12 @@ const steps: DeployStep[] = [
   {
     name: '🎨 Migrate images to WebP',
     command: 'cd backend && npm run db:migrate-images-to-webp',
-    critical: false, // No detener si falla
+    critical: false,
+  },
+  {
+    name: '🛸 Update Voyager image paths',
+    command: 'cd backend && npm run db:update-voyager-paths',
+    critical: false,
   },
   {
     name: '✅ Verify image URLs',

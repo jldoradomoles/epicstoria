@@ -7,9 +7,9 @@
 import { PoolClient } from 'pg';
 import pool from '../config/database';
 
-const VOYAGER1_OLD_URL = '/images/eventos/Voyager/Voyager-1.webp';
+const VOYAGER1_SLUG = 'voyager-1-1977';
 const VOYAGER1_NEW_URL = '/images/eventos/Voyager1/Voyager1.webp';
-const VOYAGER2_OLD_URL = '/images/eventos/Voyager/Voyager-2.webp';
+const VOYAGER2_SLUG = 'voyager-2-1977';
 const VOYAGER2_NEW_URL = '/images/eventos/Voyager2/Voyager2.webp';
 
 export async function checkVoyagerImagePaths(client: PoolClient): Promise<void> {
@@ -19,53 +19,41 @@ export async function checkVoyagerImagePaths(client: PoolClient): Promise<void> 
   // --- Voyager 1 ---
   console.log('1️⃣  Voyager 1');
 
-  const v1Old = await client.query(
-    `SELECT id, slug, title, image_url, additional_images FROM events WHERE image_url = $1`,
-    [VOYAGER1_OLD_URL],
-  );
-  const v1New = await client.query(
-    `SELECT id, slug, title, image_url, additional_images FROM events WHERE image_url = $1`,
-    [VOYAGER1_NEW_URL],
+  const v1 = await client.query(
+    `SELECT id, slug, title, image_url, additional_images FROM events WHERE slug = $1`,
+    [VOYAGER1_SLUG],
   );
 
-  if (v1Old.rows.length > 0) {
-    console.log('   ❌ MIGRACIÓN NO EJECUTADA — aún tiene la ruta antigua:');
-    console.log(`      image_url: ${v1Old.rows[0].image_url}`);
-    console.log(`      additional_images: ${JSON.stringify(v1Old.rows[0].additional_images)}`);
-  } else if (v1New.rows.length > 0) {
-    console.log('   ✅ MIGRACIÓN APLICADA — ruta nueva encontrada:');
-    console.log(`      image_url: ${v1New.rows[0].image_url}`);
-    console.log(`      additional_images: ${JSON.stringify(v1New.rows[0].additional_images)}`);
+  if (v1.rows.length === 0) {
+    console.log(`   ⚠️  Evento no encontrado con slug "${VOYAGER1_SLUG}".`);
+  } else if (v1.rows[0].image_url === VOYAGER1_NEW_URL) {
+    console.log('   ✅ MIGRACIÓN APLICADA:');
+    console.log(`      image_url: ${v1.rows[0].image_url}`);
+    console.log(`      additional_images: ${JSON.stringify(v1.rows[0].additional_images)}`);
   } else {
-    console.log('   ⚠️  Evento Voyager 1 NO encontrado con ninguna de las dos rutas.');
-    console.log(`      Buscado (antigua): ${VOYAGER1_OLD_URL}`);
-    console.log(`      Buscado (nueva):   ${VOYAGER1_NEW_URL}`);
+    console.log('   ❌ MIGRACIÓN PENDIENTE — image_url actual:');
+    console.log(`      image_url: ${v1.rows[0].image_url}`);
+    console.log(`      additional_images: ${JSON.stringify(v1.rows[0].additional_images)}`);
   }
 
   // --- Voyager 2 ---
   console.log('2️⃣  Voyager 2');
 
-  const v2Old = await client.query(
-    `SELECT id, slug, title, image_url, additional_images FROM events WHERE image_url = $1`,
-    [VOYAGER2_OLD_URL],
-  );
-  const v2New = await client.query(
-    `SELECT id, slug, title, image_url, additional_images FROM events WHERE image_url = $1`,
-    [VOYAGER2_NEW_URL],
+  const v2 = await client.query(
+    `SELECT id, slug, title, image_url, additional_images FROM events WHERE slug = $1`,
+    [VOYAGER2_SLUG],
   );
 
-  if (v2Old.rows.length > 0) {
-    console.log('   ❌ MIGRACIÓN NO EJECUTADA — aún tiene la ruta antigua:');
-    console.log(`      image_url: ${v2Old.rows[0].image_url}`);
-    console.log(`      additional_images: ${JSON.stringify(v2Old.rows[0].additional_images)}`);
-  } else if (v2New.rows.length > 0) {
-    console.log('   ✅ MIGRACIÓN APLICADA — ruta nueva encontrada:');
-    console.log(`      image_url: ${v2New.rows[0].image_url}`);
-    console.log(`      additional_images: ${JSON.stringify(v2New.rows[0].additional_images)}`);
+  if (v2.rows.length === 0) {
+    console.log(`   ⚠️  Evento no encontrado con slug "${VOYAGER2_SLUG}".`);
+  } else if (v2.rows[0].image_url === VOYAGER2_NEW_URL) {
+    console.log('   ✅ MIGRACIÓN APLICADA:');
+    console.log(`      image_url: ${v2.rows[0].image_url}`);
+    console.log(`      additional_images: ${JSON.stringify(v2.rows[0].additional_images)}`);
   } else {
-    console.log('   ⚠️  Evento Voyager 2 NO encontrado con ninguna de las dos rutas.');
-    console.log(`      Buscado (antigua): ${VOYAGER2_OLD_URL}`);
-    console.log(`      Buscado (nueva):   ${VOYAGER2_NEW_URL}`);
+    console.log('   ❌ MIGRACIÓN PENDIENTE — image_url actual:');
+    console.log(`      image_url: ${v2.rows[0].image_url}`);
+    console.log(`      additional_images: ${JSON.stringify(v2.rows[0].additional_images)}`);
   }
 
   console.log('✅ Diagnóstico Voyager completado');

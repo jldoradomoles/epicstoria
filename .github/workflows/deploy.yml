@@ -43,6 +43,10 @@ jobs:
             echo "🖼️ Sincronizando imágenes adicionales..."
             npm run db:sync-images || echo "⚠️ Error al sincronizar imágenes adicionales"
 
+            # Actualizar rutas de imágenes Voyager
+            echo "🛸 Actualizando rutas de imágenes Voyager..."
+            npm run db:update-voyager-paths || echo "⚠️ Error al actualizar rutas Voyager"
+
             # Frontend
             echo "🎨 Actualizando frontend..."
             cd ..
