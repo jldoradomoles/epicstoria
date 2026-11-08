@@ -34,6 +34,7 @@
     "db:recovery-wizard": "ts-node src/database/recovery-wizard.ts",
     "db:add-reset-columns": "ts-node src/database/add-password-reset-columns.ts",
     "db:update-voyager-paths": "ts-node src/database/update-voyager-image-paths.ts",
+    "db:check-voyager-paths": "ts-node src/database/check-voyager-image-paths.ts",
     "test:email": "ts-node src/database/test-email.ts",
     "deploy:prod": "ts-node scripts/quick-deploy.ts",
     "deploy:post": "bash scripts/post-deploy.sh"
