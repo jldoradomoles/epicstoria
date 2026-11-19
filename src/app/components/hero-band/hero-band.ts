@@ -3,12 +3,16 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component,
+  computed,
   ElementRef,
   inject,
   PLATFORM_ID,
   signal,
 } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
+import { combineLatest, map } from 'rxjs';
+import { EventApiService } from '../../services/event-api.service';
 
 @Component({
   selector: 'app-hero-band',
@@ -20,6 +24,22 @@ import { RouterLink } from '@angular/router';
 export class HeroBand implements AfterViewInit {
   private platformId = inject(PLATFORM_ID);
   private el = inject(ElementRef);
+  private eventApi = inject(EventApiService);
+
+  private stats = toSignal(
+    combineLatest([this.eventApi.getAllEvents(), this.eventApi.getCategories()]).pipe(
+      map(([events, categories]) => ({ eventCount: events.length, categoryCount: categories.length })),
+    ),
+    { initialValue: { eventCount: 0, categoryCount: 0 } },
+  );
+
+  eventCountLabel = computed(() => {
+    const count = this.stats().eventCount;
+    if (count <= 100) return '100+';
+    return `${Math.ceil(count / 20) * 20}+`;
+  });
+
+  categoryCount = computed(() => this.stats().categoryCount || '—');
 
   contentInView = signal(false);
   statsInView = signal(false);

@@ -88,6 +88,7 @@ export class QuienLoDijo implements OnInit {
   }
 
   nextQuestion(): void {
+    if (this.gameFinished() || !this.answered()) return;
     if (this.currentQuestion() < this.questions().length - 1) {
       this.currentQuestion.update((q) => q + 1);
       this.selectedAnswer.set(null);
