@@ -103,7 +103,7 @@
           <div class="progress-bar-container">
             <div
               class="progress-bar-fill"
-              [style.width.%]="((currentQuestion() + 1) / questions().length) * 100"
+              [style.width.%]="(currentQuestion() / questions().length) * 100"
             ></div>
           </div>
         </div>
@@ -145,6 +145,7 @@
                   option !== currentQuestionData.correctAnswer
                 "
                 [class.disabled]="answered()"
+                [disabled]="answered()"
                 (click)="selectAnswer(option)"
               >
                 <span class="option-letter">
@@ -175,13 +176,15 @@
 
           <!-- Next Button -->
           <div class="action-buttons">
-            <button *ngIf="answered()" class="next-button" (click)="nextQuestion()">
-              {{
-                currentQuestion() === questions().length - 1
-                  ? 'Ver Resultados'
-                  : 'Siguiente Pregunta'
-              }}
-            </button>
+            @if (answered()) {
+              <button class="next-button" (click)="nextQuestion()">
+                {{
+                  currentQuestion() === questions().length - 1
+                    ? 'Ver Resultados'
+                    : 'Siguiente Pregunta'
+                }}
+              </button>
+            }
           </div>
         </div>
       </div>

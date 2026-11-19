@@ -31,6 +31,15 @@
         ],
         "createdAt": "2026-11-06T08:01:21.067Z",
         "reason": "NgOptimizedImage [ngSrc] dynamic binding - real image paths from component data array"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "src/app/pages/juegos/epic-puzzle/epic-puzzle.html"
+        ],
+        "createdAt": "2026-11-18T12:28:14.266Z",
+        "reason": "dynamic Angular binding [src]=currentQuestionData.imageUrl — src is never empty at runtime"
       }
     ]
   }

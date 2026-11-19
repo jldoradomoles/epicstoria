@@ -11,7 +11,7 @@ const router = Router();
 router.post('/complete', authMiddleware, async (req: AuthRequest, res, next) => {
   try {
     const userId = req.user!.userId;
-    const { game_id, score, max_score, difficulty } = req.body;
+    const { game_id, score, max_score } = req.body;
 
     // Validar datos requeridos
     if (!game_id || score === undefined || !max_score) {
@@ -35,10 +35,6 @@ router.post('/complete', authMiddleware, async (req: AuthRequest, res, next) => 
     else if (percentage >= 30) pointsEarned = 2;
     else if (percentage >= 20) pointsEarned = 1;
     else pointsEarned = 0;
-
-    // Bonus por dificultad
-    if (difficulty === 'hard') pointsEarned += 2;
-    else if (difficulty === 'medium') pointsEarned += 1;
 
     // Otorgar puntos
     if (pointsEarned > 0) {

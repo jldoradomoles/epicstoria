@@ -22,12 +22,12 @@
     aria-label="Estadísticas del archivo"
   >
     <div class="hero-stat" role="listitem">
-      <span class="stat-number">200+</span>
+      <span class="stat-number">{{ eventCountLabel() }}</span>
       <span class="stat-label">Eventos históricos</span>
     </div>
     <div class="stat-sep" aria-hidden="true"></div>
     <div class="hero-stat" role="listitem">
-      <span class="stat-number">12</span>
+      <span class="stat-number">{{ categoryCount() }}</span>
       <span class="stat-label">Categorías</span>
     </div>
     <div class="stat-sep" aria-hidden="true"></div>
